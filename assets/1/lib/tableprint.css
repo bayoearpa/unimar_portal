@@ -1,0 +1,27 @@
+#table-a table
+{ font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+font-size: 12px;
+width: 500px;
+text-align: center;
+border-collapse: collapse;
+}
+#table-a th
+{ font-size: 15px;
+font-weight: bold;
+padding: 8px;
+background: #BABABA;
+border-bottom: 4px solid #707070;
+/*border-bottom: 1px solid #fff;*/
+color: #000;
+}
+#table-a td
+{ padding: 8px;
+background: #ffffff;
+border-bottom: 1px solid #000;
+color: #669;
+border-top: 1px solid transparent;
+}
+#table-a tr:hover td
+{ background: #d0dafd;
+color: #339;
+}
