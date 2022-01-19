@@ -1,8 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+
+use chriskacerguis\RestServer\RestController;
+
 require APPATH . "libraries/Format.php";
 require APPATH . "libraries/RestController.php";
-use chriskacerguis\RestServer\RestController;	
+
 
 
 class Rest_api_tbl_kues_mhsdsn extends RestController {
