@@ -111,5 +111,8 @@ $route['kues_dsnlem'] = 'kues/kues_dsnlem';
 $route['aset'] = 'aset';
 $route['aset/detail_inventaris/(:num)'] = 'aset/detail_inven/$1';
 
+//API
+$route['api/kues/mhsdsn'] = 'Rest_api_tbl_kues_mhsdsn/index';
+
 
 $route['translate_uri_dashes'] = FALSE;

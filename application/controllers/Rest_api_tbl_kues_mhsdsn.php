@@ -17,6 +17,14 @@ class Rest_api_tbl_kues_mhsdsn extends RestController {
 	public function index_get()
 	{
 		$data = $this->m_restapi->get_tbl_kues_mhsdsn();
+		if ($data) {
+			# code...
+			$this->response([
+				'status' => true,
+				'data' => $data
+
+			], RestController::HTTP_OK);
+		}
 	}
 
 }
