@@ -67,6 +67,13 @@
                 <li><a href="<?php echo base_url() ?>kues_dsnlem">Dosen ke Lemdik</a></li>
               </ul>
             </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kegiatan MAHATAR<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="https://forms.gle/aVBCkPjMYRq4HLiv5" target="__blank">Upload Data Prestasi</a></li>
+                <li><a href="https://forms.gle/Yz2Nx89qbQLuSDPi7" target="__blank">Upload Data Kegiatan MAHATAR</a></li>
+              </ul>
+            </li>
           </ul>
         </div>
         <!-- /.navbar-collapse -->

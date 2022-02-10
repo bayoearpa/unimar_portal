@@ -107,6 +107,11 @@ $route['kues_mhlem'] = 'kues/kues_mhlem';
 $route['kues_tenlem'] = 'kues/kues_tenlem';
 $route['kues_dsnlem'] = 'kues/kues_dsnlem';
 
+// //Mahatar
+// $route['mahatar_prestasi'] = 'welcome/mhtr_prestasi';
+// $route['mahatar_kegiatan'] = 'welcome/mhtr_kegiatan';
+
+
 //manajemen aset
 $route['aset'] = 'aset';
 $route['aset/detail_inventaris/(:num)'] = 'aset/detail_inven/$1';

@@ -517,5 +517,21 @@ class Welcome extends CI_Controller {
 
 	////////////////////////////////prada//////////////////////////////
 
+	// ////////////////////////////////////////MAHATAR 2022////////////////////////////////////////////////////////////////////
+	// public function mhtr_prestasi()
+	// {
+	// 	# code...
+	// 	$this->load->view('header');
+	// 	$this->load->view('kues/mhtr_prestasi');
+	// 	$this->load->view('footer');
+	// }
+	// public function mhtr_kegiatan()
+	// {
+	// 	# code...
+	// 	$this->load->view('header');
+	// 	$this->load->view('kues/mhtr_kegiatan');
+	// 	$this->load->view('footer');
+	// }
+
 	
 }
