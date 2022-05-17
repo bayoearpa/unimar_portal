@@ -7,6 +7,9 @@ class Front_lpm extends CI_Controller {
 	{
 		parent::__construct();
 		//Do your magic here
+		$this->load->model('m_kues');
+		$this->load->library('m_pdf');
+		$this->load->helper('tgl_indo');
 	}
 
 	public function index()
