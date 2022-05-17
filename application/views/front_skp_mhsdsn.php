@@ -11,7 +11,7 @@
             // echo $this->session->flashdata('success');
             // echo $this->session->flashdata('error');
               ?>
-              <form action="<?php echo base_url() ?>lpm/kues_mhsdsn_prosesrekap" name="form1" id="form1" method="post">
+              <form action="<?php echo base_url() ?>front_lpm/kues_mhsdsn_prosesrekap" name="form1" id="form1" method="post">
                 <div class="form-group">
                 <label for="exampleInputEmail1">Pilih Prodi</label>
                    <select class="form-control" name="prodi" id="prodi">
@@ -33,7 +33,7 @@
 
 
                 <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i>Tekan Untuk Mencari</button>
-                <a href="<?php echo base_url() ?>baak/"><button type="button" class="btn btn-success pull-left"><i class="fa fa-chevron-left"></i>Kembali</button></a>
+               <!--  <a href="<?php //echo base_url() ?>baak/"><button type="button" class="btn btn-success pull-left"><i class="fa fa-chevron-left"></i>Kembali</button></a> -->
                 </form>
           </div>
           <!-- /.box-body -->

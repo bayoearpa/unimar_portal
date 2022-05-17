@@ -71,7 +71,7 @@
                 <tr>
                   <td><?php echo $k->kddosen ?></td>
                   <td><?php echo $k->nama_dosen ?></td>
-                  <td><a href="<?php echo base_url() ?>lpm/kues_mhsdsn_prosesrekap_dosen/<?php echo $k->kddosen ?>/<?php echo $prodi ?>/<?php echo $ta ?>" target="_blank"><button type="button" class="btn btn-block btn-primary btn-sm"><i class="fa fa-fw fa-eye"></i>Lihat Statistik</button></a></td>
+                  <td><a href="<?php echo base_url() ?>front_lpm/kues_mhsdsn_prosesrekap_dosen/<?php echo $k->kddosen ?>/<?php echo $prodi ?>/<?php echo $ta ?>" target="_blank"><button type="button" class="btn btn-block btn-primary btn-sm"><i class="fa fa-fw fa-eye"></i>Lihat Statistik</button></a></td>
 
                 </tr>
                 <?php } ?>
