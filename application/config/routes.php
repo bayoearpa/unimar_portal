@@ -107,6 +107,9 @@ $route['kues_mhlem'] = 'kues/kues_mhlem';
 $route['kues_tenlem'] = 'kues/kues_tenlem';
 $route['kues_dsnlem'] = 'kues/kues_dsnlem';
 
+//front_web_lpm
+$route['front_skp_mhsdsn'] = 'front_lpm';
+
 // //Mahatar
 // $route['mahatar_prestasi'] = 'welcome/mhtr_prestasi';
 // $route['mahatar_kegiatan'] = 'welcome/mhtr_kegiatan';
