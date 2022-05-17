@@ -18,6 +18,36 @@ class Front_lpm extends CI_Controller {
 		$this->load->view('front_skp_mhsdsn');
 		$this->load->view('ftr');
 	}
+	public function getProdi($prodi)
+	{
+		# code...
+		//get nama
+		$where = array(
+			'Kode_program_studi' => $prodi,			       
+        );
+		$getP = $this->m_kues->get_data($where,'tmst_program_studi')->result();
+		foreach ($getP as $p) {
+			# code...
+			//$data['nama'] = $n->Nama_mahasiswa ;
+			return $p->Nama_program_studi;
+		}
+	}
+	public function getNamaDosen($kddosen)
+	{
+		# code...
+		$where = array(
+			'Kode_dosen' => $kddosen		
+		);
+		$dosen = $this->m_kues->get_data($where,'tmst_dosen')->result();
+
+		foreach ($dosen as $d) {
+			# code...
+			$get = $d->Nama_dosen;
+		}
+
+		return $get;
+
+	}
 	public function cektablelapmhsdsn($prodi, $ta)
 	{
 		# code...
