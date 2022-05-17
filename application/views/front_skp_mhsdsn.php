@@ -11,7 +11,7 @@
             // echo $this->session->flashdata('success');
             // echo $this->session->flashdata('error');
               ?>
-              <form action="<?php echo base_url() ?>front_lpm/kues_mhsdsn_prosesrekap" name="form1" id="form1" method="post">
+              <form action="<?php echo base_url() ?>front_skp_mhsdsn_cek" name="form1" id="form1" method="post">
                 <div class="form-group">
                 <label for="exampleInputEmail1">Pilih Prodi</label>
                    <select class="form-control" name="prodi" id="prodi">
