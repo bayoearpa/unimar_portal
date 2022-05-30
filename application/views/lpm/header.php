@@ -206,11 +206,6 @@
                     <!-- <li><a href="#"><i class="fa fa-circle-o"></i> Selesai</a></li> -->
                   </ul>
                 </li>
-             
-              
-                
-              </ul>
-         <ul class="treeview-menu">
                 <li class="treeview">
                   <a href="#"><i class="fa fa-circle-o"></i> Mahasiswa > Lemdik
                     <span class="pull-right-container">
