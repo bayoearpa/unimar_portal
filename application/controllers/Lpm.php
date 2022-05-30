@@ -646,6 +646,8 @@ class Lpm extends CI_Controller {
 			$this->kues_mhsdsn_update();
 		}
 	}
+
+
 	public function jajal()
 	{
 		# code...
@@ -664,6 +666,144 @@ class Lpm extends CI_Controller {
 	function logout(){
 		$this->session->sess_destroy();
 		redirect(base_url().'administrasi?pesan=logout');
+	}
+
+	///////////////////////////////////////////////////////MHS -> LEMBAGA ///////////////////////////////////////////////////////////
+	public function kues_mhslem_update()
+	{
+		$data['cektabel'] = $this->m_kues->get_data_all('tbl_kues_lap_mhslem')->num_rows();	
+		$this->load->view('lpm/header');
+		$this->load->view('lpm/kues_mhslem_updatedata',$data);
+		$this->load->view('lpm/footer');
+	}
+	public function kues_mhslem_rekap()
+	{
+		$this->load->view('lpm/header');
+		$this->load->view('lpm/kues_mhslem_rekap');
+		$this->load->view('lpm/footer');
+	}
+	public function cektablelapmhslem($prodi, $ta)
+	{
+		# code...
+		$where = array(
+			'prodi' => $prodi,
+			'ta' => $ta,		
+		);
+
+		$cektabel = $this->m_kues->get_data($where,'tbl_kues_lap_mhslem')->num_rows();
+		return $cektabel;
+
+	}
+
+	public function kues_mhslen_run_update($ta, $prodi)
+	{
+		# code...
+		$cek = $this->cektablelapmhslem($prodi, $ta);
+		if ($cek > 0) {
+			# code...
+			//jika data ada di tabel delete terlebih dahulu
+			$where_del = array(
+			'prodi' => $prodi,
+			'ta' => $ta,		
+			);
+			$this->m_kues->delete_data($where_del,'tbl_kues_lap_mhslem');
+
+			// input data baru ke tabel
+
+
+			//buat array skala skor
+			$skala = array(
+				'STS' => "1",
+				'TS' => "2",
+				'KS' => "3",
+				'S' => "4",
+				'SS' => "5",
+			);
+
+			//input ke tabel
+			$result = array();
+			foreach ($skala as $key => $value) {
+				# code...
+				$result[] = array(
+		        "kd_dosen"  	=> $kddosen,
+		        "prodi"  		=> $prodi,
+		        "jml_makul"  	=> $this->kues_mhsdsn_get_count_makul($kddosen,$ta),
+		        "jml_responden"	=> $this->kues_mhsdsn_get_count_responden($kddosen,$ta),
+		        "skala"			=> $key,
+		        "md_a1"			=> $this->kues_mhsdsn_get_count_item($kddosen,$ta,'md_a1',$value),
+		        "md_a2"			=> $this->kues_mhsdsn_get_count_item($kddosen,$ta,'md_a2',$value),
+		        "md_a3"			=> $this->kues_mhsdsn_get_count_item($kddosen,$ta,'md_a3',$value),
+		        "md_b1"			=> $this->kues_mhsdsn_get_count_item($kddosen,$ta,'md_b1',$value),
+		        "md_b2"			=> $this->kues_mhsdsn_get_count_item($kddosen,$ta,'md_b2',$value),
+		        "md_b3"			=> $this->kues_mhsdsn_get_count_item($kddosen,$ta,'md_b3',$value),
+		        "md_c1"			=> $this->kues_mhsdsn_get_count_item($kddosen,$ta,'md_c1',$value),
+		        "md_c2"			=> $this->kues_mhsdsn_get_count_item($kddosen,$ta,'md_c2',$value),
+		        "md_c3"			=> $this->kues_mhsdsn_get_count_item($kddosen,$ta,'md_c3',$value),
+		        "md_d1"			=> $this->kues_mhsdsn_get_count_item($kddosen,$ta,'md_d1',$value),
+		        "md_d2"			=> $this->kues_mhsdsn_get_count_item($kddosen,$ta,'md_d2',$value),
+		        "md_d3"			=> $this->kues_mhsdsn_get_count_item($kddosen,$ta,'md_d3',$value),
+		        "md_e1"			=> $this->kues_mhsdsn_get_count_item($kddosen,$ta,'md_e1',$value),
+		        "md_e2"			=> $this->kues_mhsdsn_get_count_item($kddosen,$ta,'md_e2',$value),
+		        "md_e3"			=> $this->kues_mhsdsn_get_count_item($kddosen,$ta,'md_e3',$value),
+		        "ta"			=> $ta
+		         );
+			}
+			$res = $this->m_kues->insert_data_batch('tbl_kues_lap_mhsdsn',$result);
+			if($res==true)
+			 {
+				$this->session->set_flashdata('success', "<div class='alert alert-success alert-dismissible'><b>Berhasil, Data berhasil ditambahkan</b></div>"); 
+			 }else{
+				$this->session->set_flashdata('error', "<div class='alert alert-danger alert-dismissible'><b>Error, Data Gagal ditambahkan</b></div>"); 
+			 }
+			$this->kues_mhsdsn_update();
+		} else {
+
+			//buat array skala skor
+			$skala = array(
+				'STS' => "1",
+				'TS' => "2",
+				'KS' => "3",
+				'S' => "4",
+				'SS' => "5",
+			);
+
+			//input ke tabel
+			$result = array();
+			foreach ($skala as $key => $value) {
+				# code...
+				$result[] = array(
+		        "kd_dosen"  	=> $kddosen,
+		        "prodi"  		=> $prodi,
+		        "jml_makul"  	=> $this->kues_mhsdsn_get_count_makul($kddosen,$ta),
+		        "jml_responden"	=> $this->kues_mhsdsn_get_count_responden($kddosen,$ta),
+		        "skala"			=> $key,
+		        "md_a1"			=> $this->kues_mhsdsn_get_count_item($kddosen,$ta,'md_a1',$value),
+		        "md_a2"			=> $this->kues_mhsdsn_get_count_item($kddosen,$ta,'md_a2',$value),
+		        "md_a3"			=> $this->kues_mhsdsn_get_count_item($kddosen,$ta,'md_a3',$value),
+		        "md_b1"			=> $this->kues_mhsdsn_get_count_item($kddosen,$ta,'md_b1',$value),
+		        "md_b2"			=> $this->kues_mhsdsn_get_count_item($kddosen,$ta,'md_b2',$value),
+		        "md_b3"			=> $this->kues_mhsdsn_get_count_item($kddosen,$ta,'md_b3',$value),
+		        "md_c1"			=> $this->kues_mhsdsn_get_count_item($kddosen,$ta,'md_c1',$value),
+		        "md_c2"			=> $this->kues_mhsdsn_get_count_item($kddosen,$ta,'md_c2',$value),
+		        "md_c3"			=> $this->kues_mhsdsn_get_count_item($kddosen,$ta,'md_c3',$value),
+		        "md_d1"			=> $this->kues_mhsdsn_get_count_item($kddosen,$ta,'md_d1',$value),
+		        "md_d2"			=> $this->kues_mhsdsn_get_count_item($kddosen,$ta,'md_d2',$value),
+		        "md_d3"			=> $this->kues_mhsdsn_get_count_item($kddosen,$ta,'md_d3',$value),
+		        "md_e1"			=> $this->kues_mhsdsn_get_count_item($kddosen,$ta,'md_e1',$value),
+		        "md_e2"			=> $this->kues_mhsdsn_get_count_item($kddosen,$ta,'md_e2',$value),
+		        "md_e3"			=> $this->kues_mhsdsn_get_count_item($kddosen,$ta,'md_e3',$value),
+		        "ta"			=> $ta
+		         );
+			}
+			$res = $this->m_kues->insert_data_batch('tbl_kues_lap_mhsdsn',$result);
+			if($res==true)
+			 {
+				$this->session->set_flashdata('success', "<div class='alert alert-success alert-dismissible'><b>Berhasil, Data berhasil ditambahkan</b></div>"); 
+			 }else{
+				$this->session->set_flashdata('error', "<div class='alert alert-danger alert-dismissible'><b>Error, Data Gagal ditambahkan</b></div>"); 
+			 }
+			$this->kues_mhsdsn_update();
+		}
 	}
 
 }
