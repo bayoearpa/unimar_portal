@@ -710,7 +710,7 @@ class Lpm extends CI_Controller {
 		return $send;
 
 	}
-	public function kues_mhsdsn_get_count_item($prodi, $ta, $item, $nilai_item)
+	public function kues_mhslem_get_count_item($prodi, $ta, $item, $nilai_item)
 	{
 		# code...
 		$where = array(
