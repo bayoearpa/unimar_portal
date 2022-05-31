@@ -13,6 +13,16 @@
               ?>
               <form action="<?php echo base_url() ?>lpm/kues_mhslem_prosesupdate" name="form1" id="form1" method="post">
                 <div class="form-group">
+                <label for="exampleInputEmail1">Pilih Fakultas</label>
+                   <select class="form-control" name="fak" id="fak">
+                    <option> </option>
+                    <option value="Fakultas Kemaritiman">Fakultas Kemaritiman</option>
+                    <option value="Fakultas Teknik">Fakultas Teknik </option>
+                    <option value="Fakultas Ekonomi dan Bisnis">Fakultas Ekonomi dan Bisnis </option>
+
+                  </select>
+                </div>
+                <div class="form-group">
                 <label for="exampleInputEmail1">Pilih Prodi</label>
                    <select class="form-control" name="prodi" id="prodi">
                     <option> </option>

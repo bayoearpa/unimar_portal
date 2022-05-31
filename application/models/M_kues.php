@@ -58,9 +58,25 @@ class M_kues extends CI_Model {
 		$query=$this->db->get();
 		return $query;
 	}
+	function get_data_mhslem_count_responden($where){
+		$this->db->select('Count(distinct(tbl_kues_mhslem.nim)) as jml_mhs');
+		$this->db->from('tbl_kues_mhslem');
+		$this->db->where($where);
+		//$this->db->order_by('tbl_catar_validasi.no_reg', "asc");
+		$query=$this->db->get();
+		return $query;
+	}
 	function get_data_mhsdsn_count_item($where,$item){
 		$this->db->select('Count('.$item.') as jml_item');
 		$this->db->from('tbl_kues_mhsdsn');
+		$this->db->where($where);
+		//$this->db->order_by('tbl_catar_validasi.no_reg', "asc");
+		$query=$this->db->get();
+		return $query;
+	}
+	function get_data_mhslem_count_item($where,$item){
+		$this->db->select('Count('.$item.') as jml_item');
+		$this->db->from('tbl_kues_mhslem');
 		$this->db->where($where);
 		//$this->db->order_by('tbl_catar_validasi.no_reg', "asc");
 		$query=$this->db->get();
