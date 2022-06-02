@@ -701,7 +701,7 @@ class Lpm extends CI_Controller {
 			'tbl_kues_mhslem.prodi' => $prodi,
 			'tbl_kues_mhslem.ta' => $ta		
 		);
-		$data = $this->m_kues->get_data_mhsdsn_count_responden($where)->result();
+		$data = $this->m_kues->get_data_mhslem_count_responden($where)->result();
 		foreach ($data as $key) {
 			# code...
 			$send = $key->jml_mhs;
