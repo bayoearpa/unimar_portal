@@ -119,7 +119,7 @@ class M_kues extends CI_Model {
 		$this->db->distinct();
 		$this->db->select('tbl_kues_lap_mhslem.fak AS fak,
 		tbl_kues_lap_mhslem.prodi AS kdprodi,
-		tbl_kues_lap_mhslem.`time` AS tt,
+		tbl_kues_lap_mhslem.time AS tt,
 		tmst_program_studi.Nama_program_studi AS prodi,
 		tbl_kues_lap_mhslem.ta AS ta');
 		$this->db->from('tbl_kues_lap_mhslem');
