@@ -60,13 +60,13 @@
                 <thead>
                 <tr>
                   <th>Tahun Ajaran</th>
+                  <th>Kode Program Studi</th>
                   <th>Program Studi</th>
-                  <th>Tahun ajaran</th>
                   <th>Terakhir Update</th>
                 </tr>
                 </thead>
 
-                <?php if ($cektabel == null) {
+                <?php if ($cekstat == null) {
                   # code...
                  ?>
                 <tbody>
@@ -74,7 +74,15 @@
                 </tbody>
                <?php }else{ ?>
                 <tbody>
-                  
+                  <?php foreach ($cekstat as $key) { ?>
+                    <td><?php echo $key->ta; ?></td>
+                    <td><?php echo $key->kdprodi; ?></td>
+                    <td><?php echo $key->prodi; ?></td>
+                    <td><?php echo $key->tt; ?></td>
+
+                    <?php
+                    # code...
+                  } ?>
                 </tbody>
               <?php } ?>
                <tfoot>
