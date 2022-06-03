@@ -763,7 +763,6 @@ class Lpm extends CI_Controller {
 				# code...
 				$result[] = array(
 				"fak"  			=> $fak,
-		        "kd_dosen"  	=> $kddosen,
 		        "prodi"  		=> $prodi,
 		        "jml_responden"	=> $this->kues_mhslem_get_count_responden($prodi,$ta),
 		        "skala"			=> $key,
@@ -1005,7 +1004,6 @@ class Lpm extends CI_Controller {
 				# code...
 				$result[] = array(
 		       "fak"  			=> $fak,
-		        "kd_dosen"  	=> $kddosen,
 		        "prodi"  		=> $prodi,
 		        "jml_responden"	=> $this->kues_mhslem_get_count_responden($prodi,$ta),
 		        "skala"			=> $key,
