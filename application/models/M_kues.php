@@ -125,7 +125,7 @@ class M_kues extends CI_Model {
 		$this->db->from('tbl_kues_lap_mhslem');
 		$this->db->join('tmst_program_studi','tbl_kues_lap_mhslem.prodi = tmst_program_studi.Kode_program_studi','inner');
 		$this->db->where($where);
-		$this->db->order_by('tbl_kues_lap_mhslem.time', "desc");
+		$this->db->order_by('tbl_kues_lap_mhslem.time', 'desc');
 		$query=$this->db->get();
 		return $query;
 	}
