@@ -13,8 +13,8 @@
               ?>
               <form action="<?php echo base_url() ?>lpm/kues_mhslem_prosesrekap" name="form1" id="form1" method="post">
                 <div class="form-group">
-                <label for="exampleInputEmail1">Pilih Prodi</label>
-                   <select class="form-control" name="prodi" id="prodi">
+                <label for="exampleInputEmail1">Pilih Pernyataan</label>
+                   <select class="form-control" name="pernyataan" id="pernyataan">
                     <option> </option>
                     <?php foreach ($gettanya as $key) {
                       # code...
@@ -24,7 +24,7 @@
                   </select>
                 </div>
                  <div class="form-group">
-                <label for="exampleInputEmail1">Pernyataan</label>
+                <label for="exampleInputEmail1">Plih Prodi</label>
                    <select class="form-control" name="prodi" id="prodi">
                     <option> </option>
 
