@@ -75,11 +75,12 @@
                <?php }else{ ?>
                 <tbody>
                   <?php foreach ($cekstat as $key) { ?>
+                    <tr>
                     <td><?php echo $key->ta; ?></td>
                     <td><?php echo $key->kdprodi; ?></td>
                     <td><?php echo $key->prodi; ?></td>
                     <td><?php echo $key->tt; ?></td>
-
+                    </tr>
                     <?php
                     # code...
                   } ?>
