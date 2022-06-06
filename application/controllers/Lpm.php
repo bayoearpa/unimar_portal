@@ -672,6 +672,9 @@ class Lpm extends CI_Controller {
 	public function kues_mhslem_update()
 	{
 		$data['cektabel'] = $this->m_kues->get_data_all('tbl_kues_lap_mhslem')->num_rows();
+		$where = array(
+			'tbl_kues_lap_mhslem.id_lap_mhslem >' => '0',		
+		);
 		$data['cekstat'] = $this->m_kues->get_data_distinct_mhslem_stats()->result();	
 		$this->load->view('lpm/header');
 		$this->load->view('lpm/kues_mhslem_updatedata',$data);

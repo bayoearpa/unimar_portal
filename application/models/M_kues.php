@@ -115,7 +115,7 @@ class M_kues extends CI_Model {
 		$query=$this->db->get();
 		return $query;
 	}
-	function get_data_distinct_mhslem_stats(){
+	function get_data_distinct_mhslem_stats($where){
 		$this->db->distinct();
 		$this->db->select('tbl_kues_lap_mhslem.fak AS fak,
 		tbl_kues_lap_mhslem.prodi AS kdprodi,
@@ -124,7 +124,7 @@ class M_kues extends CI_Model {
 		tbl_kues_lap_mhslem.ta AS ta');
 		$this->db->from('tbl_kues_lap_mhslem');
 		$this->db->join('tmst_program_studi','tbl_kues_lap_mhslem.prodi = tmst_program_studi.Kode_program_studi','inner');
-		// $this->db->where($where);
+		$this->db->where($where);
 		$this->db->order_by('tbl_kues_lap_mhslem.time', 'desc');
 		$query=$this->db->get();
 		return $query;
