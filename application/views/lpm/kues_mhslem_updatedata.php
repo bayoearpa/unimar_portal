@@ -42,7 +42,7 @@
                 </div>
 
 
-                <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i>Tekan Untuk Mencari</button>
+                <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i>Tekan Untuk Update Data</button>
                 <a href="<?php echo base_url() ?>baak/"><button type="button" class="btn btn-success pull-left"><i class="fa fa-chevron-left"></i>Kembali</button></a>
                 </form>
           </div>

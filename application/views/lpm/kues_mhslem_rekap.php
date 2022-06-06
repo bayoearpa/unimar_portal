@@ -16,6 +16,18 @@
                 <label for="exampleInputEmail1">Pilih Prodi</label>
                    <select class="form-control" name="prodi" id="prodi">
                     <option> </option>
+                    <?php foreach ($gettanya as $key) {
+                      # code...
+                    ?>
+                    <option value="<?php echo $key->id_mhslem_tny ?>"><?php echo $key->tanya ?></option>
+                  <?php } ?>
+                  </select>
+                </div>
+                 <div class="form-group">
+                <label for="exampleInputEmail1">Pernyataan</label>
+                   <select class="form-control" name="prodi" id="prodi">
+                    <option> </option>
+
                     <option value="92401">D3 Ketatalaksanaan Pelayaran Niaga dan Kepelabuhanan</option>
                     <option value="92402">D3 Teknika</option>
                     <option value="92403">D3 Nautika</option>
@@ -24,6 +36,7 @@
                     <option value="21201">S1 Teknik Mesin</option>
                     <option value="13241">S1 Teknik Keselamatan</option>
                     <option value="94205">S1 Perdagangan Internasional</option>
+
                   </select>
                 </div>
                 <div class="form-group">
