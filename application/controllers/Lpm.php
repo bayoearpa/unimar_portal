@@ -1369,13 +1369,13 @@ class Lpm extends CI_Controller {
 			$data['select_dosen'] = $this->m_kues->get_data_distinct_dosen($where)->result();
 
 		} else {
-		$this->session->set_flashdata('error', "<div class='alert alert-danger alert-dismissible'><b>Error, Data tidak ditemukan silakan lakukan update data pada menu Kuesioner>update data atau tekan tombol ini</b><a href='kues_mhsdsn_update'<button type='button' class='btn btn-block btn-primary'>Halaman Update Data</button></a></div>");
+		$this->session->set_flashdata('error', "<div class='alert alert-danger alert-dismissible'><b>Error, Data tidak ditemukan silakan lakukan update data pada menu Kuesioner>update data atau tekan tombol ini</b><a href='kues_mhslem_update'<button type='button' class='btn btn-block btn-primary'>Halaman Update Data</button></a></div>");
 		}
 		$this->load->view('lpm/header');
-		$this->load->view('lpm/kues_mhsdsn_rekap');
-		$this->load->view('lpm/kues_mhsdsn_rekap_cek',$data);
+		$this->load->view('lpm/kues_mhslem_rekap');
+		$this->load->view('lpm/kues_mhslem_rekap_cek',$data);
 		$this->load->view('lpm/footer');
-		$this->load->view('lpm/kues_mhsdsn_rekap_cek_js',$data);
+		$this->load->view('lpm/kues_mhslem_rekap_cek_js',$data);
 	}
 
 }
