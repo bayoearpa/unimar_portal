@@ -127,7 +127,6 @@ body {
       </ol>
     </div>
     <div class="callout callout-info">
-      <a href="<?php echo base_url() ?>permohonanuas"><button type="button" class="btn bg-orange btn-flat margin">Form Pengajuan UAS</button></a>
        <div class="form-group">
       <p><b>Kontak yang dapat dihubungi:</b> </p>
       <table>
@@ -152,9 +151,9 @@ body {
         <!--  <td>085876516196 (Rima)</td>-->
         <!--</tr>-->
       </table>
-    </div>  
+      </div>  
     </div>
-    
+    <a href="<?php echo base_url() ?>permohonanuas"><button type="button" class="btn bg-orange btn-flat margin">Form Pengajuan UAS</button></a>
      <div class="form-group">
       <label for="exampleInputEmail">Masukan NIM anda untuk cek proses kliring</label>
       <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukan NIM anda">
