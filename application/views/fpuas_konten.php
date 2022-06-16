@@ -27,7 +27,13 @@ if ($catar==null) {
                   <td><label for="exampleInputEmail1"><?php echo strtoupper($c->kelas); ?></label></td>
                 </tr>
                 <tr>
-                  <td colspan="3"><button type="button" class="btn btn-block btn-success btn-sm">Edit Data Diri</button></td>
+                  <td colspan="3">
+                    <div class="callout callout-info">
+                      <p>Jika terdapat kesalahan pada data diri dapat melakukan edit pada tombol di bawah ini:</p>
+                      <button type="button" class="btn btn-block btn-success btn-sm">Edit Data Diri</button>
+                    </div>
+                    <button type="button" class="btn btn-block btn-success btn-sm">Edit Data Diri</button>
+                  </td>
                 </tr>
                
               </table>

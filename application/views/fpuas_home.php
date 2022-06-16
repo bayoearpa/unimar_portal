@@ -115,7 +115,7 @@ body {
     ?>
   <form name="form1" id="form1" method="post" enctype="multipart/form-data" action="<?php echo base_url() ?>pencarianpengajuanuas">
    
-    <a href="<?php echo base_url() ?>permohonanuas"><button type="button" class="btn bg-orange btn-flat margin">Form Pengajuan UAS</button></a>
+    
     <div class="callout callout-danger">
       <p>Tata Cara Kliring UAS :</p>
       <ol>
@@ -127,6 +127,7 @@ body {
       </ol>
     </div>
     <div class="callout callout-info">
+      <a href="<?php echo base_url() ?>permohonanuas"><button type="button" class="btn bg-orange btn-flat margin">Form Pengajuan UAS</button></a>
        <div class="form-group">
       <p><b>Kontak yang dapat dihubungi:</b> </p>
       <table>
