@@ -26,6 +26,9 @@ if ($catar==null) {
                   <td><label for="exampleInputEmail1">:</label></td>
                   <td><label for="exampleInputEmail1"><?php echo strtoupper($c->kelas); ?></label></td>
                 </tr>
+                <tr>
+                  <td colspan="3"><button type="button" class="btn btn-block btn-success btn-sm">Edit Data Diri</button></td>
+                </tr>
                
               </table>
                <div class="form-group">
@@ -55,9 +58,9 @@ if ($catar==null) {
                 <!--  <td>2.</td>-->
                 <!--  <td>BAAK</td>-->
                 <!--  <td>-->
-                <!--    <?php echo $baak_ket; ?>-->
+                <!--    <?php //echo $baak_ket; ?>-->
                 <!--  </td>-->
-                <!--  <td><?php echo $baak_label; ?></td>-->
+                <!--  <td><?php //echo $baak_label; ?></td>-->
                 <!--</tr>-->
                 <tr>
                   <td>2.</td>
@@ -100,7 +103,7 @@ if ($catar==null) {
                    <?php } ?>
                   </td>
                  
-                </tr> --> -->
+                </tr> --> 
                  
               </table>
 

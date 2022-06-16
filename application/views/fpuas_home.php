@@ -116,15 +116,18 @@ body {
   <form name="form1" id="form1" method="post" enctype="multipart/form-data" action="<?php echo base_url() ?>pencarianpengajuanuas">
    
     <a href="<?php echo base_url() ?>permohonanuas"><button type="button" class="btn bg-orange btn-flat margin">Form Pengajuan UAS</button></a>
-    <p>Tata Cara Kliring UAS :</p>
-    <ol>
-        <li>Masukan NIM/NRP anda pada form diatas.</li>
-        <li>Jika data tidak ditemukan, klik menu <b>form pengajuan</b> dan isi datanya.</li>
-        <li>setelah selesai input pengajuan, silakan cek kembali pada menu home, lalu masukan NIM/NRP.</li>
-        <li>ketika data telah muncul harap menguhubungi pihak terkait untuk melakukan kliring hinga "ACC".</li>
-        <li>jika terjadi Error pada pengajuan dapat menghubungi IT (nomor tertera di bawah).</li>
-    </ol>
-     <div class="form-group">
+    <div class="callout callout-danger">
+      <p>Tata Cara Kliring UAS :</p>
+      <ol>
+          <li>Masukan NIM/NRP anda pada form diatas.</li>
+          <li>Jika data tidak ditemukan, klik menu <b>form pengajuan</b> dan isi datanya.</li>
+          <li>setelah selesai input pengajuan, silakan cek kembali pada menu home, lalu masukan NIM/NRP.</li>
+          <li>ketika data telah muncul harap menguhubungi pihak terkait untuk melakukan kliring hinga "ACC".</li>
+          <li>jika terjadi Error pada pengajuan dapat menghubungi IT (nomor tertera di bawah).</li>
+      </ol>
+    </div>
+    <div class="callout callout-info">
+       <div class="form-group">
       <p><b>Kontak yang dapat dihubungi:</b> </p>
       <table>
         <tr>
@@ -149,6 +152,8 @@ body {
         <!--</tr>-->
       </table>
     </div>  
+    </div>
+    
      <div class="form-group">
       <label for="exampleInputEmail">Masukan NIM anda untuk cek proses kliring</label>
       <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukan NIM anda">
