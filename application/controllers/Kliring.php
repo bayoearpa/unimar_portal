@@ -204,7 +204,9 @@ class kliring extends CI_Controller {
 			# code...
 			$this->session->set_flashdata('error', "<b>Error, Proses pengajuan anda gagal karena data anda telah ada di database</b>");
 			
-			$this->load->view('fpuas_home');
+		$this->load->view('header');	
+		$this->load->view('fpuas_home');
+		$this->load->view('footer');
 		}else{
 		//////////////////////////// cek periode daftar //////////////////////////////////////////
 			$get_cek_periode = $this->get_statsperiode($nim);
@@ -212,7 +214,9 @@ class kliring extends CI_Controller {
 			if ($get_cek_periode == "0") {
 				# code...
 			$this->session->set_flashdata('error', "<b>Error, Proses pengajuan anda gagal karena bukan jadwal anda untuk mengajukan kliring</b>");
-			$this->load->view('fpuas_home');
+				$this->load->view('header');	
+				$this->load->view('fpuas_home');
+				$this->load->view('footer');
 			}else{
 		////////////////////////// proses insert /////////////////////////////////////////
 		if ($this->form_validation->run() != false) {
@@ -232,9 +236,13 @@ class kliring extends CI_Controller {
 				 $this->session->set_flashdata('success', "<b>Selamat, Pengajuan Anda telah terdaftar silakan cek status anda di menu cek status pengajuan</b>");  
 			 }
 		//after input
-	  	$this->load->view('fpuas_home');
-		}else{
+		  	$this->load->view('header');	
 			$this->load->view('fpuas_home');
+			$this->load->view('footer');
+		}else{
+			$this->load->view('header');	
+			$this->load->view('fpuas_home');
+			$this->load->view('footer');
 		}
 		///////////////////// akhir else periode daftar ////////////////////////////////////////
 		}
@@ -286,9 +294,9 @@ class kliring extends CI_Controller {
         // $data['kd_jenjang'] = $this->cek_nost($kode_jenjang);
     	}
 
-		$this->load->view('fpuas_home');
+		$this->load->view('header');
 		$this->load->view('fpuas_konten',$data);
-		$this->load->view('fpuktsk_footer');
+		$this->load->view('footer');
 	}
 	public function edit_uas_datadiri($nim)
 	{
