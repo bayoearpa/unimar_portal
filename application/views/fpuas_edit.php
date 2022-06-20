@@ -41,6 +41,9 @@
                 <td><label for="exampleInputEmail1">:</label></td>
                 <td><label for="exampleInputEmail1"><input type="text" name="kelas" id="kelas" value="<?php echo strtoupper($c->kelas); ?>"></label></td>
               </tr>
+              <tr>
+                <td colspan="3"><button type="submit" class="btn btn-primary">Cari</button></td>
+              </tr>
               </form>
             </table>
                     <?php }} ?>
