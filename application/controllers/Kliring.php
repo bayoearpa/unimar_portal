@@ -291,8 +291,10 @@ class kliring extends CI_Controller {
 	public function edit_uas_datadiri($nim)
 	{
 		# code...
+		$ta = $this->getTa();
 		$where = array(
 			'tmst_mahasiswa.NIM' => $nim,
+			'tbl_kliring_uas.ta' => $ta,
         );
         $data['catar'] = $this->m_portal->get_data_join_uas_edit_datadiri($where)->result();
 
