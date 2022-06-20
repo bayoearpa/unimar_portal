@@ -312,6 +312,46 @@ class kliring extends CI_Controller {
 		$this->load->view('fpuas_edit',$data);
 		$this->load->view('footer');
 	}
+	public function edit_uas_datadirip()
+	{
+		# code...
+		// $this->form_validation->set_rules('kerapian', 'kerapian', 'required');
+		$this->form_validation->set_rules('smt_now', 'smt_now', 'required');
+		$this->form_validation->set_rules('kelas', 'kelas', 'required');
+		$id = $this->input->post('id_kuas');
+		if ($this->form_validation->run() != false) {
+			$where = array(
+				'id_kuas'  	=> $this->input->post('id_kuas'),
+			);
+			$data = array(
+			'smt_now'     	=> $this->input->post('smt_now'),
+			'kelas'   => $this->input->post('kelas'),
+		   );
+			$res = $this->m_portal->update_data($where,$data,'tbl_kliring_uas');
+		 	if($res==true)
+			 {
+				$this->session->set_flashdata('error', "<b>Error, Edit Proses kliring anda gagal</b>");
+			 }else{
+				 $this->session->set_flashdata('success', "<b>Selamat, Edit Kliring berhasil diproses</b>");  
+			 }
+
+			 //after input
+		  	$this->load->view('header');	
+			$this->load->view('fpuas_home');
+			$this->load->view('footer');
+		}else{
+			$res = $this->m_portal->update_data($where,$data,'tbl_kliring_uas');
+		 	if($res==true)
+			 {
+				$this->session->set_flashdata('error', "<b>Error, Edit Proses kliring anda gagal</b>");
+			 }else{
+				 $this->session->set_flashdata('success', "<b>Selamat, Edit Kliring berhasil diproses</b>");  
+			 }
+		  	$this->load->view('header');	
+			$this->load->view('fpuas_home');
+			$this->load->view('footer');
+		}
+	}
 
 	////////////////////////////////////////////////////////////////////////////////////prada/////////////////////////////////////////
 	public function index_prada()
