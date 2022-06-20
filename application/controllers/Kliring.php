@@ -330,9 +330,9 @@ class kliring extends CI_Controller {
 			$res = $this->m_portal->update_data($where,$data,'tbl_kliring_uas');
 		 	if($res==true)
 			 {
-				$this->session->set_flashdata('error', "<b>Error, Edit Proses kliring anda gagal</b>");
+				$this->session->set_flashdata('error', "<b>Error, Edit Proses Data anda gagal</b>");
 			 }else{
-				 $this->session->set_flashdata('success', "<b>Selamat, Edit Kliring berhasil diproses</b>");  
+				 $this->session->set_flashdata('success', "<b>Selamat, Edit Data berhasil diproses</b>");  
 			 }
 
 			 //after input
@@ -340,13 +340,7 @@ class kliring extends CI_Controller {
 			$this->load->view('fpuas_home');
 			$this->load->view('footer');
 		}else{
-			$res = $this->m_portal->update_data($where,$data,'tbl_kliring_uas');
-		 	if($res==true)
-			 {
-				$this->session->set_flashdata('error', "<b>Error, Edit Proses kliring anda gagal</b>");
-			 }else{
-				 $this->session->set_flashdata('success', "<b>Selamat, Edit Kliring berhasil diproses</b>");  
-			 }
+			$this->session->set_flashdata('error', "<b>Error, Edit Proses Data anda gagal</b>");
 		  	$this->load->view('header');	
 			$this->load->view('fpuas_home');
 			$this->load->view('footer');
