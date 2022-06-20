@@ -16,8 +16,9 @@ class kliring extends CI_Controller {
 
 	public function index()
 	{
+		$this->load->view('header');	
 		$this->load->view('fpuas_home');
-		$this->load->view('fpuktsk_footer');
+		$this->load->view('footer');
 	}
 	public function tanggal($tanggal)
 	{
