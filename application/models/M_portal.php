@@ -110,6 +110,25 @@ tmst_mahasiswa.pindahan');
 
 		
 	}
+	function get_data_join_uas_edit_datadiri($where)
+	{
+		# code...
+		$this->db->select('tmst_mahasiswa.Nama_mahasiswa,
+		tmst_mahasiswa.NIM,
+		tmst_mahasiswa.Kode_program_studi,
+		tbl_kliring_uas.smt_now,
+		tbl_kliring_uas.ta,
+		tbl_kliring_uas.kelas,
+		tmst_program_studi.Nama_program_studi,
+		tbl_kliring_uas.id_kuas');
+		$this->db->from('tmst_mahasiswa');
+		$this->db->join('tbl_kliring_uas','tmst_mahasiswa.NIM = tbl_kliring_uas.nim','inner');
+		$this->db->join('tmst_program_studi','tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi','inner');
+		$this->db->where($where);
+		//$this->db->order_by('tbl_catar_validasi.no_reg', "asc");
+		$query=$this->db->get();
+		return $query;
+	}
 	function get_data_join_uas_where($where){
 		$this->db->select('tbl_kliring_uas.id_kuas,
 tbl_kliring_uas.nim,

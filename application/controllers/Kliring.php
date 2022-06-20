@@ -288,6 +288,18 @@ class kliring extends CI_Controller {
 		$this->load->view('fpuas_konten',$data);
 		$this->load->view('fpuktsk_footer');
 	}
+	public function edit_uas_datadiri($nim)
+	{
+		# code...
+		$where = array(
+			'tmst_mahasiswa.NIM' => $nim,
+        );
+        $data['catar'] = $this->m_portal->get_data_join_uas_edit_datadiri($where)->result();
+
+        $this->load->view('fpuas_home');
+		$this->load->view('fpuas_edit',$data);
+		$this->load->view('fpuktsk_footer');
+	}
 
 	////////////////////////////////////////////////////////////////////////////////////prada////////
 	public function index_prada()
