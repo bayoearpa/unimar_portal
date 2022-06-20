@@ -30,7 +30,7 @@
                 <td><label for="exampleInputEmail1">:</label></td>
                 <td><label for="exampleInputEmail1"><?php echo $nama; ?></label></td>
               </tr>
-              <form  name="form1" id="form1" method="post" enctype="multipart/form-data" action="<?php echo base_url(); ?>permohonanuasp">
+              <form  name="form1" id="form1" method="post" enctype="multipart/form-data" action="<?php echo base_url(); ?>permohonanuas_editp">
               <tr>
                 <td><label for="exampleInputEmail1">Semester</label></td>
                 <td><label for="exampleInputEmail1">:</label></td>
