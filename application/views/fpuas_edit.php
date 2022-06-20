@@ -35,6 +35,7 @@
                 <td><label for="exampleInputEmail1">Semester</label></td>
                 <td><label for="exampleInputEmail1">:</label></td>
                 <td><label for="exampleInputEmail1"><input type="text" name="smt_now" id="smt_now" value="<?php echo $c->smt_now; ?>"></label></td>
+                <input type="text" name="id_kuas" id="id_kuas" value="<?php echo $c->id_kuas; ?>">
               </tr>
               <tr>
                 <td><label for="exampleInputEmail1">Kelas</label></td>
