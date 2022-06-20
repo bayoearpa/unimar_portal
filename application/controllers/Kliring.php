@@ -174,6 +174,7 @@ class kliring extends CI_Controller {
 		// return $queryget;
 
 	}
+	////////////////////////////////////////////////////////////////////UAS///////////////////////////////////////////////////////
 	public function fpuas()
 	{
 		# code...
@@ -298,11 +299,12 @@ class kliring extends CI_Controller {
         );
         $data['catar'] = $this->m_portal->get_data_join_uas_edit_datadiri($where)->result();
 
+		$this->load->view('header');
 		$this->load->view('fpuas_edit',$data);
-		$this->load->view('fpuktsk_footer');
+		$this->load->view('footer');
 	}
 
-	////////////////////////////////////////////////////////////////////////////////////prada////////
+	////////////////////////////////////////////////////////////////////////////////////prada/////////////////////////////////////////
 	public function index_prada()
 	{
 		$this->load->view('header');
