@@ -31,4 +31,4 @@ if ($catar==null) {
         </tr>
         </form>
       </table>
-              <?php } ?>
+              <?php }} ?>
