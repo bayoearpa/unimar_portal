@@ -298,7 +298,6 @@ class kliring extends CI_Controller {
         );
         $data['catar'] = $this->m_portal->get_data_join_uas_edit_datadiri($where)->result();
 
-        $this->load->view('fpuas_home');
 		$this->load->view('fpuas_edit',$data);
 		$this->load->view('fpuktsk_footer');
 	}
