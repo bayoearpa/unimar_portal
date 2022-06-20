@@ -30,7 +30,7 @@ if ($catar==null) {
                   <td colspan="3">
                     <div class="callout callout-info">
                       <p>Jika terdapat kesalahan pada data diri dapat melakukan edit pada tombol di bawah ini:</p>
-                      <button type="button" class="btn btn-block btn-success btn-flat btn-sm" style="width: 35%">Edit Data Diri</button>
+                      <a href="<?php echo base_url() ?>permohonanuas_edit/<?php echo $c->nim; ?>"><button type="button" class="btn btn-block btn-success btn-flat btn-sm" style="width: 35%">Edit Data Diri</button></a>
                     </div>
                   </td>
                 </tr>

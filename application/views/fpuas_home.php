@@ -98,7 +98,7 @@ body {
    <div class="box box-default">
    
             <div class="box-header">
-              <h3 class="box-title">Pengajuan Ujian Akhir Semester</h3>
+              <h3 class="box-title">Pengajuan Kliring Ujian Akhir Semester</h3>
             </div>       
 <div class="box-body">
   <?php 
@@ -120,7 +120,7 @@ body {
       <p>Tata Cara Kliring UAS :</p>
       <ol>
           <li>Masukan NIM/NRP anda pada form diatas.</li>
-          <li>Jika data tidak ditemukan, klik tombol <b>form pengajuan</b> dan isi datanya.</li>
+          <li>Jika data tidak ditemukan, klik tombol <b>Form Pengajuan UAS</b> dan isi datanya.</li>
           <li>setelah selesai input pengajuan, silakan cek kembali pada menu home, lalu masukan NIM/NRP.</li>
           <li>ketika data telah muncul harap menguhubungi pihak terkait untuk melakukan kliring hinga "ACC".</li>
           <li>jika terjadi Error pada pengajuan dapat menghubungi IT (nomor tertera di bawah).</li>

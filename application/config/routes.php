@@ -72,6 +72,8 @@ $route['permohonanujianakhirp'] = 'welcome/fpuktskp';
 $route['uas'] = 'kliring';
 $route['permohonanuas'] = 'kliring/fpuas';
 $route['permohonanuasp'] = 'kliring/fpuasp';
+$route['permohonanuas_edit/(:num)'] = 'kliring/edit_uas_datadiri/$1';
+$route['permohonanuas_editp'] = 'kliring/edit_uas_datadirip';
 $route['pencarianpengajuanuas'] = 'kliring/fpuaskn';
 
 

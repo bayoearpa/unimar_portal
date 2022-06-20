@@ -5,6 +5,8 @@ if ($catar==null) {
 }else{
  foreach($catar as $c){  ?>
               <!-- data diri -->
+              <a href="<?php echo base_url() ?>uas"><button type="button" class="btn bg-olive margin"><i class="fa fa-fw fa-long-arrow-left"></i>Kembali ke Halaman Kliring UAS</button></a>
+   
                <table class="table">
                 <tr>
                   <td width="10%"><label for="exampleInputEmail1">NIM</label></td>
