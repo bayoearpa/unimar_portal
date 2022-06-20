@@ -27,7 +27,7 @@ if ($catar==null) {
                 <tr>
                   <td><label for="exampleInputEmail1">Kelas</label></td>
                   <td><label for="exampleInputEmail1">:</label></td>
-                  <td><label for="exampleInputEmail1"><input type="text" name="kelas" id="kelas" value="<?php echo strtoupper($c->kelas); ?>"></label></td>
+                  <td><label for="exampleInputEmail1"><input type="text" name="kelas" id="kelas" value="<?php echo strtoupper($c->kelas;); ?>"></label></td>
                 </tr>
                 </form>
               </table>
