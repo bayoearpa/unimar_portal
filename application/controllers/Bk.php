@@ -155,7 +155,14 @@ class bk extends CI_Controller {
 							->row();
 		return $result;
 	}
+	public function ajuan_kuas2022()
+	{
+		# code...
+		$this->load->view('bk/header');
+		$this->load->view('bk/ajuan_kuas_2022');
+		$this->load->view('bk/footer');
 
+	}
 	public function ajuan_kuas()
 	{
 		ini_set('max_execution_time', -1); 

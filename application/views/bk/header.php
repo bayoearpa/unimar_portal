@@ -212,7 +212,7 @@
                     </span>
                   </a>
                   <ul class="treeview-menu">
-                    <li><a href="<?php echo base_url() ?>bk/ajuan_kuas"><i class="fa fa-circle-o"></i> Ajuan</a></li>
+                    <li><a href="<?php echo base_url() ?>bk/ajuan_kuas2022"><i class="fa fa-circle-o"></i> Ajuan</a></li>
                     <li><a href="<?php echo base_url() ?>bk/search_uas_nim"><i class="fa fa-circle-o"></i> Kliring by NIM</a></li>
                     <!-- <li><a href="#"><i class="fa fa-circle-o"></i> Selesai</a></li> -->
                   </ul>
