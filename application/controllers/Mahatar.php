@@ -131,7 +131,7 @@ class Mahatar extends CI_Controller {
 					->join('tmst_program_studi', 'tmst_program_studi.kode_program_studi=tmst_mahasiswa.kode_program_studi', 'left')
 					->where('tbl_kliring_uas.ta', $ta)
 					// ->where('tmst_mahasiswa.tanggal_lulus IS NULL', null, false)
-					->where('tmst_mahasiswa.tahun_masuk >=', '2015')
+					->where('tmst_mahasiswa.tahun_masuk >=', '2019')
 					->where('tmst_mahasiswa.tahun_masuk <=', date('Y'));
 		$ajuan
 			->style(['class' => 'table table-bordered table-striped display'])
