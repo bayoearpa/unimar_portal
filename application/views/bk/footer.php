@@ -66,7 +66,7 @@
   $(function () {
     $('#example1').DataTable({
        rowReorder: {
-            selector: 'td:nth-child(2)'
+            selector: 'td:nth-child(6)'
         },
         responsive: true
     })
