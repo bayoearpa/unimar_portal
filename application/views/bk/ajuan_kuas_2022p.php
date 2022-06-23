@@ -35,7 +35,7 @@
                 <tr>
                   <td><?php echo $c->nim; ?></td>
                   <td><?php echo $c->nm_mhs; ?></td>
-                  <td><?php echo $c->prodi ?></td>
+                  <td><?php echo $c->nm_prodi ?></td>
                   <td>
                     <?php
                     if ($c->kd_jenjang == "E") {

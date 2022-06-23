@@ -190,6 +190,7 @@ class bk extends CI_Controller {
 		}
 		
 		$this->load->view('bk/header');
+		$this->load->view('bk/ajuan_kuas_2022');
 		$this->load->view('bk/ajuan_kuas_2022p',$data);
 		$this->load->view('bk/footer');
 	}
