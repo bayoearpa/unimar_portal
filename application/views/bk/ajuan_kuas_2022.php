@@ -25,8 +25,12 @@
                   <label>Tahun Masuk</label>
                   <input type="text" class="form-control autocomplete" id="tahun_masuk" name="tahun_masuk" style="width: 40%;" placeholder="diisi dengan tahun lulus">
                   </div>
+                  <div class="form-group">
+                  <label>kelas</label>
+                  <input type="text" class="form-control autocomplete" id="kelas" name="kelas" style="width: 40%;" placeholder="contoh : A, B, C dst..">
+                  </div>
                     <div class="form-group">
-                      <input type="submit" class="btn btn-block btn-success" id="cek" name="cek" style="width:20%;" value="Cek">
+                      <input type="submit" class="btn btn-block btn-success" id="cari" name="cari" style="width:20%;" value="Cek">
                     </div>
                   </form>
                   
