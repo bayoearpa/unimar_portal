@@ -129,6 +129,32 @@ tmst_mahasiswa.pindahan');
 		$query=$this->db->get();
 		return $query;
 	}
+	function get_data_join_uas_where2022($where)
+	{
+		# code...
+		$this->db->select('tmst_mahasiswa.NIM AS nim,
+		tmst_mahasiswa.Nama_mahasiswa AS nm_mhs,
+		tbl_kliring_uas.id_kuas AS id_kuas,
+		tbl_kliring_uas_bk.id_uas_bk AS id_bk,
+		tbl_kliring_uas_bk.hasil AS hasil_bk,
+		tbl_kliring_uas_mahatar.id_uas_m AS id_m,
+		tbl_kliring_uas_mahatar.hasil AS hasil_m,
+		tbl_kliring_uas_prodi.id_uas_p AS id_p,
+		tbl_kliring_uas_prodi.hasil AS hasil_p,
+		tmst_program_studi.Nama_program_studi AS nm_prodi,
+		tmst_mahasiswa.Kode_jenjang_pendidikan AS kd_jenjang');
+		$this->db->from('tbl_kliring_uas');
+		$this->db->join('tbl_kliring_uas_bk','tbl_kliring_uas.id_kuas = tbl_kliring_uas_bk.id_kuas','left');
+		$this->db->join('tbl_kliring_uas_mahatar','tbl_kliring_uas.id_kuas = tbl_kliring_uas_mahatar.id_kuas','left');
+		$this->db->join('tbl_kliring_uas_prodi','tbl_kliring_uas.id_kuas = tbl_kliring_uas_prodi.id_kuas','left');
+		$this->db->join('tmst_mahasiswa','tbl_kliring_uas.nim = tmst_mahasiswa.NIM','inner');
+		$this->db->join('tmst_program_studi','tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi','inner');
+		$this->db->where($where);
+		//$this->db->order_by('tbl_catar_validasi.no_reg', "asc");
+		$query=$this->db->get();
+		return $query;
+
+	}
 	function get_data_join_uas_where($where){
 		$this->db->select('tbl_kliring_uas.id_kuas,
 tbl_kliring_uas.nim,

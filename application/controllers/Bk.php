@@ -163,6 +163,36 @@ class bk extends CI_Controller {
 		$this->load->view('bk/footer');
 
 	}
+	public function ajuan_kuas2022p()
+	{
+		# code...
+		$ta = $this->getTa();
+		$prodi = $this->input->post('prodi');
+		$tahun_masuk = $this->input->post('tahun_masuk');
+		$kelas = $this->input->post('kelas');
+
+		if ($tahun_masuk==null) {
+			# code...
+			$where = array(
+			'tbl_kliring_uas.ta' => $ta,
+			'tmst_mahasiswa.Kode_program_studi' => $prodi,
+			'tbl_kliring_uas.kelas' => $kelas,		
+			);
+			$data['catar'] = $this->m_portal->get_data_join_uas_where2022($where)->result();
+		}else{
+			$where = array(
+			'tbl_kliring_uas.ta' => $ta,
+			'tmst_mahasiswa.Kode_program_studi' => $prodi,
+			'tmst_mahasiswa.Tahun_masuk' => $tahun_masuk,
+			'tbl_kliring_uas.kelas' => $kelas,		
+			);
+			$data['catar'] = $this->m_portal->get_data_join_uas_where2022($where)->result();
+		}
+		
+		$this->load->view('bk/header');
+		$this->load->view('bk/ajuan_kuas_2022p',$data);
+		$this->load->view('bk/footer');
+	}
 	public function ajuan_kuas()
 	{
 		ini_set('max_execution_time', -1); 
