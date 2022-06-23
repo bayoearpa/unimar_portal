@@ -54,6 +54,7 @@
 <!-- DataTables -->
 <script src="<?php echo base_url() ?>assets/2/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="<?php echo base_url() ?>assets/2/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.js"></script>
 <script>
   var spinner = '<div class="spinner-holder"><div class="lds-dual-ring"></div><br><span style="color:#333; font-size:0.7em">Sedang Memproses...</span></div>';
 
@@ -61,7 +62,12 @@
 
         var spinner_big = '<div class="spinner-holder-big"><div class="lds-dual-ring-big"></div><br><span style="color:#333; font-size:0.7em">Sedang Memproses...</span></div>';
   $(function () {
-    $('#example1').DataTable()
+    $('#example1').DataTable({
+       rowReorder: {
+            selector: 'td:nth-child(2)'
+        },
+        responsive: true
+    })
     $('#example2').DataTable({
       'paging'      : true,
       'lengthChange': false,
