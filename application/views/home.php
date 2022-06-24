@@ -24,6 +24,41 @@
       <div class="row">
 
         <div class="col-md-12">
+           <!-- The time line -->
+          <ul class="timeline">
+            <!-- timeline time label -->
+            <li class="time-label">
+                  <span class="bg-red">
+                    24 Juni. 2022
+                  </span>
+            </li>
+            <!-- /.timeline-label -->
+            <!-- timeline item -->
+            <li>
+              <i class="fa fa-comment bg-blue"></i>
+
+              <div class="timeline-item">
+                <span class="time"><i class="fa fa-clock-o"></i> 15:45</span>
+
+                <h3 class="timeline-header"><a href="#">Pustik</a> Pengumuman!</h3>
+
+                <div class="timeline-body">
+                 Klring uas Periode 2021/2022 Genap akan berlangsung 27 Juni s/d 5 Juli 2022. Berikut jadwal pengisian kliring per fakultas : 
+                 <ul>
+                   <li>Fakultas Teknik 27-28 Juni 2022</li>
+                   <li>Fakultas Kemaritiman 29-30 Juni 2022</li>
+                   <li>Fakultas Ekonomi dan Bisnis 2-5 Juli 2022</li>
+                 </ul>
+
+                 untuk fitur terbaru Taruna/Mahsiswa dapat melakukan Edit data <b>Kelas dan Semester</b> dengan menekan tombol <b>Edit Data Diri</b>, tombol tersebut muncul setelah Taruna/Mahasiswa melakukan cek data pada menu <b>Kliring > Ujian Akhir Semester (UAS)</b>
+                </div>
+                <!-- <div class="timeline-footer">
+                  <a class="btn btn-primary btn-xs">Read more</a>
+                  <a class="btn btn-danger btn-xs">Delete</a>
+                </div> -->
+              </div>
+            </li>
+            <!-- END timeline item -->
           <!-- The time line -->
           <ul class="timeline">
             <!-- timeline time label -->
