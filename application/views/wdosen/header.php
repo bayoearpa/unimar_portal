@@ -27,8 +27,9 @@
   <link rel="stylesheet" href="<?php echo base_url() ?>assets/2/bower_components/bootstrap-daterangepicker/daterangepicker.css">
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="<?php echo base_url() ?>assets/2/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-  <!-- DataTables -->
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets/2/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+ <!-- DataTables -->
+  <!-- <link rel="stylesheet" href="<?php //echo base_url() ?>assets/2/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css"> -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.css"/>
    <!-- Select2 -->
   <link rel="stylesheet" href="<?php echo base_url() ?>assets/2/bower_components/select2/dist/css/select2.min.css">
 

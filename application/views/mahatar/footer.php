@@ -52,8 +52,11 @@
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url() ?>assets/2/dist/js/demo.js"></script>
 <!-- DataTables -->
-<script src="<?php echo base_url() ?>assets/2/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-<script src="<?php echo base_url() ?>assets/2/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<!-- <script src="<?php //echo base_url() ?>assets/2/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="<?php //echo base_url() ?>assets/2/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script> -->
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/rowreorder/1.2.8/js/dataTables.rowReorder.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/responsive/2.3.0/js/dataTables.responsive.min.js"></script>
 <script>
   var spinner = '<div class="spinner-holder"><div class="lds-dual-ring"></div><br><span style="color:#333; font-size:0.7em">Sedang Memproses...</span></div>';
 
