@@ -19,9 +19,9 @@
                   <th>Nama</th>
                   <th>Prodi</th>
                   <th>Jenjang</th>
-                 <!--  <th>Mahatar</th>
+                  <th>Mahatar</th>
                   <th>Prodi</th>
-                  <th>BAAK</th> -->
+                 <!--  <th>BAAK</th> -->
                   <th>BK</th>
                   <th>Hasil</th>
                 </tr>
@@ -91,6 +91,46 @@
                     <?php //} ?>
                     </td> -->
                     <!-- BK -->
+                     <td>
+                    <?php 
+                    switch ($c->hasil_m) {
+                      case '1':
+                        $icon = 'check';
+                        $label = 'success';
+                        break;
+                      case '2':
+                        $icon = 'close';
+                        $label = 'danger';
+                        break;
+                      default:
+                        $icon = 'gear';
+                        $label = 'warning';
+                        break;
+                    }
+
+                    echo $tombol = '<a class="btn btn-'.$label.' btn-sm" href="#"><i class="fa fa-'.$icon.'"></i></a>';
+                    ?>
+                    </td>
+                     <td>
+                    <?php 
+                    switch ($c->hasil_p) {
+                      case '1':
+                        $icon = 'check';
+                        $label = 'success';
+                        break;
+                      case '2':
+                        $icon = 'close';
+                        $label = 'danger';
+                        break;
+                      default:
+                        $icon = 'gear';
+                        $label = 'warning';
+                        break;
+                    }
+
+                    echo $tombol = '<a class="btn btn-'.$label.' btn-sm" href="#"><i class="fa fa-'.$icon.'"></i></a>';
+                    ?>
+                    </td>
                     <td>
                     <?php 
                     switch ($c->hasil_bk) {
@@ -135,9 +175,9 @@
                   <th>Nama</th>
                   <th>Prodi</th>
                   <th>Jenjang</th>
-                 <!--  <th>Mahatar</th>
+                  <th>Mahatar</th>
                   <th>Prodi</th>
-                  <th>BAAK</th> -->
+                 <!--  <th>BAAK</th> -->
                   <th>BK</th>
                   <th>Hasil</th>
                 </tr>

@@ -93,7 +93,7 @@
                     <!-- BK -->
                     <td>
                     <?php 
-                    switch ($c->hasil_bk) {
+                    switch ($c->hasil_m) {
                       case '1':
                         $icon = 'check';
                         $label = 'success';
