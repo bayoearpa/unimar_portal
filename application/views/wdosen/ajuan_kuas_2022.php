@@ -23,7 +23,7 @@
                     </div>
                   <div class="form-group">
                   <label>Tahun Masuk*</label>
-                  <input type="text" class="form-control autocomplete" id="tahun_masuk" name="tahun_masuk" style="width: 40%;" placeholder="diisi dengan tahun lulus">
+                  <input type="text" class="form-control autocomplete" id="tahun_masuk" name="tahun_masuk" style="width: 40%;" placeholder="diisi dengan tahun masuk">
                   </div>
                   <div class="form-group">
                   <label>kelas</label>
