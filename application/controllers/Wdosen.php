@@ -109,9 +109,9 @@ class wdosen extends CI_Controller {
 	public function ajuan_kuas2022()
 	{
 		# code...
-		$this->load->view('bk/header');
-		$this->load->view('bk/ajuan_kuas_2022');
-		$this->load->view('bk/footer');
+		$this->load->view('wdosen/header');
+		$this->load->view('wdosen/ajuan_kuas_2022');
+		$this->load->view('wdosen/footer');
 
 	}
 	public function ajuan_kuas2022p()

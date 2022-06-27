@@ -105,9 +105,9 @@ class Mahatar extends CI_Controller {
 	public function ajuan_kuas2022()
 	{
 		# code...
-		$this->load->view('bk/header');
-		$this->load->view('bk/ajuan_kuas_2022');
-		$this->load->view('bk/footer');
+		$this->load->view('mahatar/header');
+		$this->load->view('mahatar/ajuan_kuas_2022');
+		$this->load->view('mahatar/footer');
 
 	}
 	public function ajuan_kuas2022p()
