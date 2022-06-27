@@ -114,15 +114,15 @@
                    
 
                   <td>
-                    <a class="btn btn-warning btn-sm" href="<?php echo base_url().'bk/kliring_uas/'.$c->id_kuas;?>"><span class="glyphicon glyphicon-pencil"></span> Kliring</a>
+                    <a class="btn btn-warning btn-sm" href="<?php echo base_url().'mahatar/kliring_uas/'.$c->id_kuas;?>"><span class="glyphicon glyphicon-pencil"></span> Kliring</a>
                     <?php
                     $where = array(
                       'id_kuas' => $c->id_kuas      
                       );
-                    $m=$this->m_portal->get_data($where,'tbl_kliring_uas_bk')->row();
+                    $m=$this->m_portal->get_data($where,'tbl_kliring_uas_mahatar')->row();
                     if ($m > "0"){
                      ?>
-                     <a class="btn btn-warning btn-sm" href="<?php echo base_url().'bk/ekliring_uas/'.$c->id_kuas; ?>"><span class="glyphicon glyphicon-pencil"></span> Edit</a>
+                     <a class="btn btn-warning btn-sm" href="<?php echo base_url().'mahatar/ekliring_uas/'.$c->id_kuas; ?>"><span class="glyphicon glyphicon-pencil"></span> Edit</a>
                    <?php } ?>
                   </td>
                   
