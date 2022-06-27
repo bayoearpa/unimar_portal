@@ -136,10 +136,10 @@ class Mahatar extends CI_Controller {
 			$data['catar'] = $this->m_portal->get_data_join_uas_where2022($where)->result();
 		}
 		
-		$this->load->view('bk/header');
-		$this->load->view('bk/ajuan_kuas_2022');
-		$this->load->view('bk/ajuan_kuas_2022p',$data);
-		$this->load->view('bk/footer');
+		$this->load->view('mahatar/header');
+		$this->load->view('mahatar/ajuan_kuas_2022');
+		$this->load->view('mahatar/ajuan_kuas_2022p',$data);
+		$this->load->view('mahatar/footer');
 	}
 	public function ajuan_kuas()
 	{
