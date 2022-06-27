@@ -171,12 +171,12 @@ class bk extends CI_Controller {
 		$tahun_masuk = $this->input->post('tahun_masuk');
 		$kelas = $this->input->post('kelas');
 
-		if ($tahun_masuk==null) {
+		if ($kelas==null) {
 			# code...
 			$where = array(
 			'tbl_kliring_uas.ta' => $ta,
 			'tmst_mahasiswa.Kode_program_studi' => $prodi,
-			'tbl_kliring_uas.kelas' => $kelas,		
+			'tmst_mahasiswa.Tahun_masuk' => $tahun_masuk,	
 			);
 			$data['catar'] = $this->m_portal->get_data_join_uas_where2022($where)->result();
 		}else{
