@@ -6,7 +6,7 @@
                 
                   <div class="box-body">
                   <div class="form-group">
-                      <form method="post" action="<?php echo base_url() ?>bk/ajuan_kuas2022p">
+                      <form method="post" action="<?php echo base_url() ?>wdosen/ajuan_kuas2022p">
                       <label> Pilih Program Studi*
                     </label>
                     <select name="prodi" id="prodi" class="form-control" style="width:50%;">  
