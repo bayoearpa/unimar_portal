@@ -113,6 +113,7 @@
                     </td>
                      <td>
                     <?php 
+                    echo $c->hasil_p;
                     switch ($c->hasil_p) {
                       case '1':
                         $icon = 'check';
