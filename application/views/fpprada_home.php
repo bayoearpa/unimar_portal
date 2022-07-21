@@ -47,6 +47,7 @@
     </div>            
         <button type="submit" class="btn btn-primary">Cari</button>   
     <div class="form-group">
+      <div class="callout callout-danger">
       <ol>
           <li>Lakukan pengejuan Prada dengan klik tombol "Ajukan Prada"</li>
           <li>Setelah proses ajuan selesai, untuk melakukan cek proses ajuan silakan memasukkan nim pada form diatas.</li>
@@ -59,6 +60,7 @@
               <ul>>Prodi (menghubungi prodi masing-masing)</ul>
           </li>
       </ol>
+    </div>
     </div>
         
           <!-- /.konten -->

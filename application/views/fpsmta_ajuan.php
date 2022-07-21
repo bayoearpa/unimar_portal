@@ -29,6 +29,7 @@
     echo validation_errors(); 
     echo $this->session->flashdata('success');
     echo $this->session->flashdata('error');?>
+  <div class="callout callout-danger">
     <p>Tata Cara Pengisian Form Pengajuan Semester Antara :</p>
     <ul>
       <li>Masukkan NIM / NRP anda pada form dibawah ini.</li>
@@ -37,6 +38,7 @@
       <li>Pilihlah mata kuliah yang ingin diulang. </li>
       <li>Setelah semua sudah diisi klik tombol "SIMPAN" untuk menyimpan hasil pengisian form pengajuan</li>
     </ul>
+  </div>
   <form name="form2" id="form2" method="post" enctype="multipart/form-data" action="#">
     <a href="<?php echo base_url() ?>semestera"><button type="button" class="btn bg-olive margin"><i class="fa fa-fw fa-long-arrow-left"></i>Kembali ke Halaman Semster Ajuan</button></a>
 
