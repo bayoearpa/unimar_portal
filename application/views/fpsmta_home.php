@@ -38,6 +38,7 @@
     }
     ?>
      <div class="form-group">
+      <div class="callout callout-danger">
       <p>Tata cara Pengajuan Semester antara:</p>
       <ol>
           <li>Lakukan pengejuan Semster antara dengan klik tombol <b>"Ajukan Semester Antara"</b>.</li>
@@ -51,6 +52,7 @@
               <ul>>Prodi (menghubungi prodi masing-masing)</ul>
           </li>
       </ol>
+    </div>
     </div>
   <form name="form1" id="form1" method="post" enctype="multipart/form-data" action="<?php echo base_url() ?>cek_smta">
     <div class="form-group">
