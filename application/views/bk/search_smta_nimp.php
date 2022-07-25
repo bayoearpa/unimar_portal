@@ -56,14 +56,14 @@
                   </td>
                   <td><?php //echo $mahatar_label; ?></td>
                 </tr> -->
-                <tr>
+               <!--  <tr>
                   <td>1.</td>
                   <td>BAAK</td>
                   <td>
-                    <?php echo $baak_ket; ?>
+                    <?php //echo $baak_ket; ?>
                   </td>
-                  <td><?php echo $baak_label; ?></td>
-                </tr> 
+                  <td><?php //echo $baak_label; ?></td>
+                </tr>  -->
                 <tr>
                   <td>2.</td>
                   <td>Keuangan</td>

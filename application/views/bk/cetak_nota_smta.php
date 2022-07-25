@@ -73,13 +73,13 @@ page-break-after: always;
 </head>
 <body>
 	<table align="center" width="100%">
-		<tr><td align="center"><h3>SEKOLAH TINGGI MARITIM DAN TRANSPOR "AMNI"</h3></td></tr>
-		<tr><td align="center"><h3>( STIMART "AMNI" )</h3></td></tr>
+		<tr><td align="center"><h3>UNIVERSITAS MARITIM AMNI</h3></td></tr>
+		<tr><td align="center"><h3>( UNIMAR AMNI )</h3></td></tr>
 	</table>
 	
 <table border="0" width="100%">
 
-<tr><td colspan="5" align="center" style="border-top-style:dotted;border-bottom-style:dotted;border-width:1px;"><h3>P E R B A I K A N</h3></td></tr>
+<tr><td colspan="5" align="center" style="border-top-style:dotted;border-bottom-style:dotted;border-width:1px;"><h3>S E M E S T E R   A N T A R A</h3></td></tr>
 <tr><td width="30%"><p style="margin:2%;">Tanggal</p></td><td width="2%">:</td><td width="15%"><?php echo date("d-m-Y") ?></td><td></td><td width="30%"></td></tr>
 <tr><td><p>No. Semester Antara</p></td><td>:</td><td><?php echo $id_smta ?></td><td></td></tr>
 <tr><td><p>NRP / NIM</p></td><td>:</td><td><?php echo $nim ?></td><td></td></tr>
