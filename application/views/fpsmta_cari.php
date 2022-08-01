@@ -49,7 +49,7 @@ if ($catar==null) {
                 <?php } ?>
                 </tr>
                 <tr>
-                  <td>Peserta Maks. 10 orang</td>
+                  <td>Peserta Min. 5 orang</td>
                   <td>jika belum di acc harap menghubungi PRODI agar di acc, Perhatikan tabel dibawah untuk melihat kuota terkini</td>
                   <td><?php echo $sudahmasukkuota; ?></td>
                 </tr>
