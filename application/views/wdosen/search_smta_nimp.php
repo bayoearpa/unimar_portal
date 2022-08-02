@@ -1,8 +1,8 @@
  <!-- Main content -->
       <section class="content">
-        <a href="<?php echo base_url() ?>wdosen/ajuan_smta"><button type="button" class="btn btn-success pull-left"><i class="fa fa-chevron-left"></i>Kembali</button></a>
         <div class="box box-default">
           <div class="box-body">
+            <a href="<?php echo base_url() ?>wdosen/ajuan_smta"><button type="button" class="btn btn-success pull-left"><i class="fa fa-chevron-left"></i>Kembali</button></a>
             <?php echo validation_errors(); 
             echo $this->session->flashdata('success');
             echo $this->session->flashdata('error');
