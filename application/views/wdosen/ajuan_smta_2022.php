@@ -18,10 +18,10 @@
                   <th>NIM</th>
                   <th>Nama</th>
                   <th>Prodi</th>
-                  <th>Mahatar</th>
-                  <th>Prodi</th>
+                  <!-- <th>Mahatar</th> -->
+                  <th>Kliring Prodi</th>
                  <!--  <th>BAAK</th> -->
-                  <th>BK</th>
+                  <th>Kliring BK</th>
                   <th>Hasil</th>
                 </tr>
                 </thead>
@@ -164,10 +164,10 @@
                   <th>NIM</th>
                   <th>Nama</th>
                   <th>Prodi</th>
-                  <th>Mahatar</th>
-                  <th>Prodi</th>
+                  <!-- <th>Mahatar</th> -->
+                  <th>Kliring Prodi</th>
                  <!--  <th>BAAK</th> -->
-                  <th>BK</th>
+                  <th>Kliring BK</th>
                   <th>Hasil</th>
                 </tr>
                 </tfoot>
