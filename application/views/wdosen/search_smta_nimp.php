@@ -9,7 +9,6 @@
             echo $this->session->flashdata('error');
             foreach($ku as $k){ 
               ?>
-               <div class="form-group"><a href="<?php echo base_url() ?>wdosen/ajuan_smta"><button type="button" class="btn btn-success pull-left"><i class="fa fa-chevron-left"></i>Kembali</button></a></div>
               <table>
                 <tr>
                   <td><label for="exampleInputEmail1">NIM</label></td>
@@ -29,6 +28,7 @@
                
                 <tr>
                    <td colspan="3">
+                    <a href="<?php echo base_url() ?>wdosen/ajuan_smta"><button type="button" class="btn btn-success pull-left"><i class="fa fa-chevron-left"></i>Kembali</button></a>
                     <a class="btn btn-warning btn-sm" href="<?php echo base_url().'wdosen/kliring_smta/'.$k->id_smta;?>"><span class="glyphicon glyphicon-pencil"></span> Kliring</a>
                     <?php
                     $where = array(
