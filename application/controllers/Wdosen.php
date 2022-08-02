@@ -1049,7 +1049,7 @@ class wdosen extends CI_Controller {
 
 		# code...
 		$this->load->view('wdosen/header');
-		$this->load->view('wdosen/search_smta_nim');
+		// $this->load->view('wdosen/search_smta_nim');
 		$this->load->view('wdosen/search_smta_nimp',$data);
 		$this->load->view('wdosen/footer');
 	}

@@ -144,7 +144,7 @@
                    
 
                   <td>
-                    <a class="btn btn-warning btn-sm" href="<?php echo base_url().'wdosen/search_smta_nim_cari2/'.$c->id_smta;?>"><span class="glyphicon glyphicon-pencil"></span> Kliring</a>
+                    <a class="btn btn-warning btn-sm" href="<?php echo base_url().'wdosen/search_smta_nim_cari2/'.$c->nim;?>"><span class="glyphicon glyphicon-pencil"></span> Kliring</a>
                     <?php
                     $where = array(
                       'id_smta' => $c->id_smta      
