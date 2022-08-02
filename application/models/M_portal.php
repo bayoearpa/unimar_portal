@@ -401,6 +401,31 @@ function get_data_join_makul_smta_with_master_makul ($where){
 		$query=$this->db->get();
 		return $query;
 }
+function get_data_join_smta_select_all($where){
+		// $this->db->distinct();
+		$this->db->select('tbl_kliring_smta.id_smta as id_smta ,
+		tbl_kliring_smta.nim as nim,
+		tbl_kliring_smta.prodi as prodi,
+		tbl_kliring_smta.jml_smt as jml_smt,
+		tbl_kliring_smta.status as status,
+		tbl_kliring_smta.ta as ta,
+		tbl_kliring_smta_bk.id_smta_bk as id_bk,
+		tbl_kliring_smta_prodi.id_smta_prodi as id_prodi,
+		tmst_mahasiswa.Nama_mahasiswa as nama_mhs,
+		tmst_program_studi.Nama_program_studi as nama_prodi,
+		tbl_kliring_smta_bk.hasil as hasil_bk,
+		tbl_kliring_smta_prodi.hasil as hasil_prodi');
+		$this->db->from('tbl_kliring_smta');
+		$this->db->join('tbl_kliring_smta_bk',' tbl_kliring_smta.id_smta = tbl_kliring_smta_bk.id_smta','left');
+		$this->db->join('tbl_kliring_smta_prodi','tbl_kliring_smta.id_smta = tbl_kliring_smta_prodi.id_smta','left');
+		$this->db->join('tmst_mahasiswa','tbl_kliring_smta.nim = tmst_mahasiswa.NIM','inner');
+		$this->db->join('tmst_program_stud','tbl_kliring_smta.prodi = tmst_program_studi.Kode_program_studi','inner');
+		$this->db->where($where);
+		$this->db->order_by('tbl_kliring_smta.id_smta', "desc");
+		$this->db->limit(150);
+		$query=$this->db->get();
+		return $query;
+}
 function get_data_join_count_makul_absen($where){
 	$this->db->select('Count(tbl_kliring_smta_makul.id_smta) as jml_peserta');
 		$this->db->from('tbl_kliring_smta');

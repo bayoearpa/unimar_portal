@@ -239,6 +239,7 @@
                     </span>
                   </a>
                   <ul class="treeview-menu">
+                    <li><a href="<?php echo base_url() ?>wdosen/ajuan_smta"><i class="fa fa-circle-o"></i>Ajuan</a></li>
                     <li><a href="<?php echo base_url() ?>wdosen/search_smta_nim"><i class="fa fa-circle-o"></i>Kliring by NIM</a></li>
                     <li><a href="<?php echo base_url() ?>wdosen/search_smta_pengampu"><i class="fa fa-circle-o"></i>Set Dosen Pengampu</a></li>
                     <!-- <li><a href="<?php //echo base_url() ?>ppk/ajuan_prada"><i class="fa fa-circle-o"></i> Ajuan Prada</a></li> -->

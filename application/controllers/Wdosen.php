@@ -991,6 +991,68 @@ class wdosen extends CI_Controller {
         }
 
 	}
+	public function ajuan_smta()
+	{
+		# code...
+		$userprodi = $this->session->userdata('user');
+		$ta = $this->getTa();
+
+		$where = array(
+			'tbl_kliring_smta.prodi' => $userprodi,
+			'tbl_kliring_smta.ta' => $ta,
+        );
+		$data['select'] = $this->m_portal->get_data_join_smta_select_all($where)->result();
+
+		$this->load->view('wdosen/header');
+		$this->load->view('wdosen/ajuan_smta_2022',$data);
+		$this->load->view('wdosen/footer');
+
+	}
+	public function search_smta_nim_cari2($nim)
+	{
+		# code..
+		$ta = $this->getTa();
+		// $nim = $this->input->post('nim');
+		$wherenim = array(
+			'nim' => $nim,       
+	        );
+		$getMhs = $this->m_portal->get_data($wherenim,'tmst_mahasiswa')->result();
+		foreach ($getMhs as $row) {
+			$prodi = $row->Kode_program_studi;
+		}
+		$where = array(
+			'nim' => $nim,
+			'ta'  => $ta,			       
+	        );
+		$data['ku'] = $this->m_portal->get_data($where,'tbl_kliring_smta')->result();
+		foreach ($data['ku'] as $row) {
+			$id_smta = $row->id_smta;
+		}
+		//get nama
+		$data['nama'] = $this->getNama($nim);
+		//get prodi
+		$data['prodi'] = $this->getProdi($prodi);
+
+
+
+		//// cek status
+		// $data['mahatar_label'] = $this->cekstatus_fpsmta($id_smta,'tbl_kliring_uas_mahatar'); 
+        $data['prodi_label'] = $this->cekstatus_fpsmta($id_smta,'tbl_kliring_smta_prodi'); 
+        $data['baak_label'] = $this->cekstatus_fpsmta($id_smta,'tbl_kliring_smta_baak'); 
+        $data['bk_label'] = $this->cekstatus_fpsmta($id_smta,'tbl_kliring_smta_bk'); 
+        // $data['mahatar_ket'] = $this->get_keterangan_smta($id_smta,'tbl_kliring_smta_mahatar');
+        $data['prodi_ket'] = $this->get_keterangan_smta($id_smta,'tbl_kliring_smta_prodi');
+        $data['baak_ket'] = $this->get_keterangan_smta($id_smta,'tbl_kliring_smta_baak');
+        $data['bk_ket'] = $this->get_keterangan_smta($id_smta,'tbl_kliring_smta_bk');
+
+        $data['cek'] = $this->get_statusakhir_smta($id_smta);
+
+		# code...
+		$this->load->view('wdosen/header');
+		$this->load->view('wdosen/search_smta_nim');
+		$this->load->view('wdosen/search_smta_nimp',$data);
+		$this->load->view('wdosen/footer');
+	}
 	public function search_smta_nim()
 	{
 		# code...
@@ -1002,8 +1064,6 @@ class wdosen extends CI_Controller {
 	{
 		# code..
 		$ta = $this->getTa();
-
-
 		$nim = $this->input->post('nim');
 		$wherenim = array(
 			'nim' => $nim,       
@@ -1321,6 +1381,7 @@ class wdosen extends CI_Controller {
 			$this->search_smta_pengampu();
 		}
 	}
+
 	
 			///////////////////////// PKL //////////////////////////////
 
