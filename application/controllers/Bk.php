@@ -1181,7 +1181,7 @@ class bk extends CI_Controller {
 			}
 
 			//-------------- count
-			$total_adm = $jml_smt * $admin;
+			$total_adm = $admin;
 			$total_sks = $sum_sks * $per_sks;
 			$total = $total_adm + $total_sks ;
 

@@ -89,7 +89,7 @@ page-break-after: always;
  -->
 <tr><td style="border-top-style:dotted;border-bottom-style:dotted;border-width:1px;" colspan="4"><p><b>JENIS PEMBAYARAN<b></p></td><td width="30%" style="border-top-style:dotted;border-bottom-style:dotted;border-width:1px;"><p><b>RINCIAN</b></p></td></tr>
 
-<tr><td><p>Biaya Administrasi</p></td><td>:</td><td><?php echo $jml_smt."&nbsp X &nbsp".$b_adm; ?></td><td></td><td>Rp.<?php echo $tot_adm; ?></td></tr>
+<tr><td><p>Biaya Administrasi</p></td><td>:</td><td><?php echo $b_adm; ?></td><td></td><td>Rp.<?php echo $tot_adm; ?></td></tr>
 
 <tr><td><p>Biaya SKS</p></td><td>:</td><td><?php echo $sum_sks."&nbsp X &nbsp".$per_sks;?></td><td></td><td>Rp. <?php echo $tot_sks; ?></td></tr>
 
