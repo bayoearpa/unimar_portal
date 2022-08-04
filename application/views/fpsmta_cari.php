@@ -37,8 +37,8 @@ if ($catar==null) {
                   <td><b>Hasil</b></td>
                 </tr>
                 <tr>
-                  <td>Maksimal 9 SKS</td>
-                  <?php if ($jml_sks_temp > 9) { ?>
+                  <td>Maksimal 24 SKS</td>
+                  <?php if ($jml_sks_temp > 24) { ?>
                   <td>SKS tidak memenuhi syarat karena lebih dari 9 sks yang ditentukan</td>
                   <td> <a class="btn btn-danger btn-sm" href="#"><i class="fa fa-close"></i></a></td>
                   <?php
