@@ -100,6 +100,7 @@ $route['semestera'] = 'kliring/index_smta';
 $route['ajuan_smta'] = 'kliring/ajuan_smta';
 $route['ajuan_smta2'] = 'kliring/ajuan_smta2';
 $route['ajuan_smta_cek'] = 'kliring/ajuan_smta_cek';
+$route['ajuan_smta_cek_khusus'] = 'kliring/ajuan_smta_cek_khusus';
 $route['proses_smta'] = 'kliring/fpsmtap';
 $route['cek_smta'] = 'kliring/fpsmta_cari';
 $route['tutorial_smta_download'] = 'kliring/tutorial_smta_download';
