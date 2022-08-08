@@ -579,6 +579,14 @@ class kliring extends CI_Controller {
 		$this->load->view('footer');
 
 	}
+	public function ajuan_smta2()
+	{
+		# code...
+		$this->load->view('header');
+		$this->load->view('fpsmta_ajuan_khusus');
+		$this->load->view('footer');
+
+	}
 	public function getmakulfromkurikulum($prodi, $kdkur, $smt)
 	{
 		# code...
@@ -613,6 +621,66 @@ class kliring extends CI_Controller {
 
 		//list kurikulum
 		$kur_kpn	= 'A03012020';
+		$kur_tn 	= 'T2019';
+		$kur_nt 	= 'A01032020';
+		$kur_tra 	= 'TRA2020';
+		$kur_ttl	= 'A01052020';
+		$kur_tm	 	= 'TM2020';
+		$kur_tk 	= 'TK2020';
+		$kur_pi 	= 'A01082020';
+
+		if ($kdprodi == "92401" ) {
+			# code...
+			$data['kdkur'] = $kur_kpn;
+		} else if ($kdprodi == "92402") {
+			# code...
+			$data['kdkur'] = $kur_tn;
+		} else if ($kdprodi == "92403") {
+			# code...
+			$data['kdkur'] = $kur_nt;
+		} else if ($kdprodi == "61201") {
+			# code...
+			$data['kdkur'] = $kur_tra;	
+		} else if ($kdprodi == "21207") {
+			# code...
+			$data['kdkur'] = $kur_ttl;	
+		} else if ($kdprodi == "21201") {
+			# code...
+			$data['kdkur'] = $kur_tm;
+		} else if ($kdprodi == "13241") {
+			# code...
+			$data['kdkur'] = $kur_tk;	
+		} else if ($kdprodi == "94205") {
+			# code...
+			$data['kdkur'] = $kur_pi;	
+		}
+
+		$this->load->view('fpsmta_ajuan_cek',$data);
+
+
+	}
+	public function ajuan_smta_cek_khusus()
+	{
+		# code...
+		$data['kliring'] = $this; 
+
+		$nim = $this->input->post('name');
+		$ta = $this->getTa();
+		$where = array(
+			'NIM' => $nim,
+        );
+
+
+		$data['catar']=$this->m_portal->get_data($where,'tmst_mahasiswa')->result();
+		foreach ($data['catar'] as $key) {
+			# code...
+			$kdprodi = $key->Kode_program_studi;
+			$data['prodi'] = $this->getProdi($kdprodi);
+			$data['kdprodi'] = $kdprodi;
+		}
+
+		//list kurikulum
+		$kur_kpn	= 'C012021';
 		$kur_tn 	= 'T2019';
 		$kur_nt 	= 'A01032020';
 		$kur_tra 	= 'TRA2020';
