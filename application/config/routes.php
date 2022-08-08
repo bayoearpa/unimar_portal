@@ -98,6 +98,7 @@ $route['cek_tpkl'] = 'kliring/fptpkl_cari';
 //kliring Semester antara
 $route['semestera'] = 'kliring/index_smta';
 $route['ajuan_smta'] = 'kliring/ajuan_smta';
+$route['ajuan_smta2'] = 'kliring/ajuan_smta2';
 $route['ajuan_smta_cek'] = 'kliring/ajuan_smta_cek';
 $route['proses_smta'] = 'kliring/fpsmtap';
 $route['cek_smta'] = 'kliring/fpsmta_cari';
