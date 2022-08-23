@@ -275,7 +275,7 @@ class Aset extends CI_Controller {
 		$ruang
 			->style(['class' => 'table table-bordered table-striped display'])
 
-			->column('Kode Ruang', 'kd_ruang', function($data, $row){
+			->column('Kode Ruang', 'kode_ruangan', function($data, $row){
 				return $data;
 			})
 			->column('Nama Ruangan', 'nama_ruang', function($data, $row){
@@ -340,12 +340,14 @@ class Aset extends CI_Controller {
    public function pi_ruang()
 	{
 		# code...
+		$this->form_validation->set_rules('kode_ruangan', 'Nama Ruang Harus diisi', 'required');
 		$this->form_validation->set_rules('nama_ruang', 'Nama Ruang Harus diisi', 'required');
 		$this->form_validation->set_rules('gedung', 'Gedung Harus dipilih', 'required');
 		
 		// $id = $this->input->post('id_uks');
 		if ($this->form_validation->run() != false) {
 			$data = array(
+			'kode_ruangan'  	=> $this->input->post('kode_ruangan'),
 			'nama_ruang'  	=> $this->input->post('nama_ruang'),
 			'id_gedung'  => $this->input->post('gedung'),
 			
@@ -384,6 +386,7 @@ class Aset extends CI_Controller {
 	public function pe_ruang()
 	{
 		# code...
+		$this->form_validation->set_rules('kode_ruangan', 'Nama Ruang Harus diisi', 'required');
 		$this->form_validation->set_rules('nama_ruang', 'Nama Ruang Harus diisi', 'required');
 		$this->form_validation->set_rules('gedung', 'Gedung Harus dipilih', 'required');
 		// $id = $this->input->post('id_uks');
@@ -392,6 +395,7 @@ class Aset extends CI_Controller {
 				'kd_ruang'  	=> $this->input->post('kd_ruang'),
 			);
 			$data = array(
+			'kode_ruangan'  	=> $this->input->post('kode_ruangan'),
 			'nama_ruang'  	=> $this->input->post('nama_ruang'),
 			'id_gedung'  => $this->input->post('gedung'),
 		   );

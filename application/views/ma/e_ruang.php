@@ -14,8 +14,12 @@
               ?>
               <form action="<?php echo base_url() ?>aset/pi_ruang" name="form1" id="form1" method="post">
                 <div class="form-group">
-                <label for="exampleInputEmail1">Nama Ruang:</label>
+                <label for="exampleInputEmail1">Kode Ruang:</label>
                 <input type="hidden" name="kd_ruang" value="<?php echo $c->kd_ruang; ?>">
+                  <input class="form-control" type="text" name="kode_ruangan" id="kode_ruangan" value="<?php echo $c->kode_ruangan; ?>">
+                </div>
+                <div class="form-group">
+                <label for="exampleInputEmail1">Nama Ruang:</label>
                   <input class="form-control" type="text" name="nama_ruang" id="nama_ruang" value="<?php echo $c->nama_ruang; ?>">
                 </div>
                 <div class="form-group">

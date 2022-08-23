@@ -42,7 +42,7 @@ foreach ($qrcode as $q) {
   <tr>
     <td rowspan="2"> <img width="20%" src="<?php echo base_url() ?>assets/1/images/amni-png-cilik.png"></td>
     <!-- <td><center><h2>UNIMAR AMNI</h2></br><p>Universitas Maritim AMNI</p></br><h2>SEMARANG</h2></center></td> -->
-    <td><center><h2>UNIMAR AMNI SEMARANG</h2><br><p>GEDUNG <?php echo $q->nama_gedung ?></p></center></td>
+    <td><center><h2>UNIMAR AMNI SEMARANG</h2></center></td>
     <td rowspan="2">
       <figure>
       <img width="20%" src="<?php echo base_url().'assets/aset/qrcode/'.$q->qrcode;?>">
@@ -51,7 +51,7 @@ foreach ($qrcode as $q) {
     </td>
   </tr>
   <tr>
-    <td><center><?php echo $q->kode_ruangan."  ".$q->nama_ruang."  ".$q->nama_barang."  ".$q->brg_ke." Keterangan :".$q->keterangan; ?></center></td>
+    <td><center><br><p>GEDUNG <?php echo $q->nama_gedung ?></p><?php echo $q->kode_ruangan."  ".$q->nama_ruang."  ".$q->nama_barang."  ".$q->brg_ke." Keterangan :".$q->keterangan; ?></center></td>
   </tr>
 </table>
 <br>
