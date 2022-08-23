@@ -7,11 +7,11 @@
   
 
    figure {
-     border: 4px solid #575D63;
+     /*border: 4px solid #575D63;*/
      margin: 20px;
      padding: 10px;
-     width: 95px;
-     height: 65px;
+     width: 65px;
+     height: 35px;
     width: 25%;
     float: left;
     text-align: center;
