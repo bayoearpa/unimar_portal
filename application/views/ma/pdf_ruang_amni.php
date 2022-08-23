@@ -37,7 +37,7 @@ foreach ($qrcode as $q) {
 ?>
   <tr>
     <td rowspan="2"> <img width="20%" src="<?php echo base_url() ?>assets/1/images/amni-png-cilik.png"></td>
-    <td> <h2>UNIMAR AMNI SEMARANG</h2> </td>
+    <td><center><h2>UNIMAR AMNI</h2></br><p>Universitas Maritim AMNI</p></br><h2>SEMARANG</h2></center></td>
     <td rowspan="2">
       <figure>
       <img width="20%" src="<?php echo base_url().'assets/aset/qrcode/'.$q->qrcode;?>">
