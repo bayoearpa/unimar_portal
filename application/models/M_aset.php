@@ -31,6 +31,7 @@ class M_aset extends CI_Model {
 		$this->db->select('tbl_aset_user.nama,
 		tbl_aset_inventaris.qrcode,
 		tbl_aset_ruang.nama_ruang,
+		tbl_aset_ruang.kode_ruangan,
 		tbl_aset_inventaris.brg_ke,
 		tbl_aset_gedung.nama_gedung,
 		tbl_aset_barang.nama_barang,
