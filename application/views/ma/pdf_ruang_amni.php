@@ -19,6 +19,9 @@
     display: inline-block;
     font-size: 10px;
 }
+table {
+  border-collapse: collapse;
+}
 </style>
 </head>
 <body>
@@ -31,7 +34,7 @@ foreach ($qrcode as $q) {
 ?>
   <tr>
     <td rowspan="2"> <img width="20%" src="<?php echo base_url() ?>assets/1/images/amni-png-cilik.png"></td>
-    <td> <h2>UNIMAR AMNI</h2> </td>
+    <td> <h2>UNIMAR AMNI SEMARANG</h2> </td>
     <td rowspan="2">
       <figure>
       <img width="20%" src="<?php echo base_url().'assets/aset/qrcode/'.$q->qrcode;?>">
