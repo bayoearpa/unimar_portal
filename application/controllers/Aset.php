@@ -977,7 +977,7 @@ public function delete_inventaris($id)
 	function pdf_qr_ruang()
 	{
 		# code...
-		// $id_user = $this->input->post('id_user');
+		$id_user = $this->input->post('id_user');
 		$ruang = $this->input->post('ruang');
 		$where = array(
 			'tbl_aset_inventaris.kd_ruang' => $ruang,
@@ -990,12 +990,24 @@ public function delete_inventaris($id)
 			$nama_ruang = $row->nama_ruang;
 	        
 		}
+
+		if ($id_user == '2') {
+			# code...
+		$this->load->view('ma/pdf_ruang_amni',$data);
+
+		//pdf
+		$pdfFilePath="cetak-".$nama_ruang."-".$nama_user.".pdf";
+		$html=$this->load->view('ma/pdf_ruang_amni',$data, TRUE);
+		$pdf = $this->m_pdf->load();
+		}else{
 		$this->load->view('ma/pdf_ruang',$data);
 
 		//pdf
 		$pdfFilePath="cetak-".$nama_ruang."-".$nama_user.".pdf";
 		$html=$this->load->view('ma/pdf_ruang',$data, TRUE);
 		$pdf = $this->m_pdf->load();
+		}
+
  
         $pdf->AddPage('P');
         $pdf->WriteHTML($html);
