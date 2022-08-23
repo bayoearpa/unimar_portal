@@ -22,6 +22,9 @@
 table {
   border-collapse: collapse;
 }
+table, td, th {
+  border: 1px solid;
+}
 </style>
 </head>
 <body>
@@ -42,7 +45,9 @@ foreach ($qrcode as $q) {
       </figure>
     </td>
   </tr>
-  <tr>Keterangan</tr>
+  <tr>
+    <td><?php echo $q->nama."-".$q->nama_gedung."-".$q->nama_ruang."-".$q->nama_barang."-".$q->brg_ke." Ket :".$q->keterangan; ?></td>
+  </tr>
   <?php 
 }
  ?>
