@@ -31,10 +31,10 @@ foreach ($qrcode as $q) {
 ?>
   <tr>
     <td rowspan="2"> <img width="20%" src="<?php echo base_url() ?>assets/1/images/amni-png-cilik.png"></td>
-    <td> UNIMAR AMNI </td>
+    <td> <h2>UNIMAR AMNI</h2> </td>
     <td rowspan="2">
       <figure>
-      <img src="<?php echo base_url().'assets/aset/qrcode/'.$q->qrcode;?>">
+      <img width="20%"> src="<?php echo base_url().'assets/aset/qrcode/'.$q->qrcode;?>">
       <!-- <figcaption><?php //echo $q->nama."-".$q->nama_gedung."-".$q->nama_ruang."-".$q->nama_barang."-".$q->brg_ke." Ket :".$q->keterangan; ?></figcaption> -->
       </figure>
     </td>
