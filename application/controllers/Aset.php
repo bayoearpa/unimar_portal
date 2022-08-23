@@ -284,9 +284,14 @@ class Aset extends CI_Controller {
 		
 			->column('Action', 'kd_ruang', function($data, $row) use ($mportal){
 
-				$tombol2 = '';
-
+				//$tombol2 = '';
+				$id_user = $this->session->userdata('id_user');
+				if ($id_user == 2) {
+					# code...
+					$tombol2 .= '<a class="btn btn-primary btn-sm" href="'.base_url().'aset/pdf_rekap_ruang_amni/'.$data.'"><span class="fa fa-pdf"></span> PDF</a><a class="btn btn-primary btn-sm" href="'.base_url().'aset/inventaris_ruang/'.$data.'"><span class="glyphicon glyphicon-book"></span> List</a><a class="btn btn-warning btn-sm" href="'.base_url().'aset/e_ruang/'.$data.'"><span class="glyphicon glyphicon-pencil"></span> Edit</a><a class="btn btn-danger btn-sm" href="'.base_url().'aset/d_ruang/'.$data.'"><span class="glyphicon glyphicon-trash"></span> Delete</a>';
+				}else{
 				$tombol2 .= '<a class="btn btn-primary btn-sm" href="'.base_url().'aset/pdf_rekap_ruang/'.$data.'"><span class="fa fa-pdf"></span> PDF</a><a class="btn btn-primary btn-sm" href="'.base_url().'aset/inventaris_ruang/'.$data.'"><span class="glyphicon glyphicon-book"></span> List</a><a class="btn btn-warning btn-sm" href="'.base_url().'aset/e_ruang/'.$data.'"><span class="glyphicon glyphicon-pencil"></span> Edit</a><a class="btn btn-danger btn-sm" href="'.base_url().'aset/d_ruang/'.$data.'"><span class="glyphicon glyphicon-trash"></span> Delete</a>';
+				}
                 return $tombol2;
 			});
 			
@@ -1024,6 +1029,40 @@ public function delete_inventaris($id)
 		//pdf
 		$pdfFilePath="cetak-".$nama_ruang."-".$nama_user.".pdf";
 		$html=$this->load->view('ma/pdf_rekap_ruang',$data, TRUE);
+		$pdf = $this->m_pdf->load();
+ 
+        $pdf->AddPage('P');
+        $pdf->WriteHTML($html);
+        $pdf->Output($pdfFilePath, "D");
+        exit();
+	}
+	function pdf_rekap_ruang_amni($ruang)
+	{
+		# code...
+		// $id_user = $this->input->post('id_user');
+		// $ruang = $this->input->post('ruang');
+		$where = array(
+			'tbl_aset_inventaris.kd_ruang' => $ruang,
+		);
+		$data['rekap'] = $this->m_aset->get_data_join_where_rekap($where)->result();
+		$data['summary'] = $this->m_aset->get_data_join_where_rekap_summary($where)->result();
+
+		foreach ($data['rekap'] as $row) {
+			# code...
+			$nama_user = $row->nama;
+			$nama_ruang = $row->nama_ruang;
+			$nama_gedung = $row->nama_gedung;
+
+			$data['nama_ruang'] = $nama_ruang;
+			$data['nama_gedung'] = $nama_gedung;
+			$data['nama_user'] = $nama_user;
+	        
+		}
+		$this->load->view('ma/pdf_rekap_ruang_amni',$data);
+
+		//pdf
+		$pdfFilePath="cetak-".$nama_ruang."-".$nama_user.".pdf";
+		$html=$this->load->view('ma/pdf_rekap_ruang_amni',$data, TRUE);
 		$pdf = $this->m_pdf->load();
  
         $pdf->AddPage('P');
