@@ -51,7 +51,7 @@ foreach ($qrcode as $q) {
     </td>
   </tr>
   <tr>
-    <td><center><?php echo $q->kode_ruangan."  "$q->nama_ruang."  ".$q->nama_barang."  ".$q->brg_ke." Keterangan :".$q->keterangan; ?></center></td>
+    <td><center><?php echo $q->kode_ruangan."  ".$q->nama_ruang."  ".$q->nama_barang."  ".$q->brg_ke." Keterangan :".$q->keterangan; ?></center></td>
   </tr>
 </table>
 <br>
