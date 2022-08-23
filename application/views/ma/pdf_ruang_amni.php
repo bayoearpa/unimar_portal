@@ -25,6 +25,9 @@ table {
 table, td, th {
   border: 1px solid;
 }
+p {
+   letter-spacing: 2px;
+}
 </style>
 </head>
 <body>
