@@ -30,7 +30,7 @@ foreach ($qrcode as $q) {
 # code...
 ?>
   <tr>
-    <td rowspan="2"> <img width="20%" src="<?php echo base_url() ?>assets/1/images/amni-png.png"></td>
+    <td rowspan="2"> <img width="20%" src="<?php echo base_url() ?>assets/1/images/amni-png-cilik.png"></td>
     <td> UNIMAR AMNI </td>
     <td rowspan="2">
       <figure>
