@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 
-$config['base_url'] = 'https://portal.unimar-amni.ac.id/';
+$config['base_url'] = 'https://portal.unimar-amni.ac.id/v1';
 
 /*
 |--------------------------------------------------------------------------
