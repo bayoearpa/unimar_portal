@@ -152,7 +152,7 @@ class wdosen extends CI_Controller {
 		$userprodi = $this->session->userdata('user');
 
 		$mportal = $this->m_portal;		
-		$ta = '20211';
+		$ta = '20221';
 		$ajuan = $this->datatables->new2();
 		// $ajuan->searchable(['tmst_mahasiswa.nama_mahasiswa', 'tmst_mahasiswa.kode_jenjang_pendidikan', 'tmst_program_studi.nama_program_studi', 'tbl_kliring_uas.nim']);
 		$ajuan->select('tmst_mahasiswa.nama_mahasiswa,
