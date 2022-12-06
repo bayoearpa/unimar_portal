@@ -42,7 +42,7 @@
         <tr>
           <td><b>IT</b></td>
           <td>:</td>
-          <td>082220220573 (Bayu)</td>
+          <td>082220220573 (Bayu) Hubungi jika ada kendala di sistem!</td>
         </tr>
          <tr>
           <td><b>Mahatar</b></td>
