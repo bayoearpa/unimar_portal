@@ -295,6 +295,7 @@ class kliring extends CI_Controller {
     	}
 
 		$this->load->view('header');
+		$this->load->view('fpuas_home',$data);
 		$this->load->view('fpuas_konten',$data);
 		$this->load->view('footer');
 	}
