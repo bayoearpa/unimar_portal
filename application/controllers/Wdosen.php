@@ -183,7 +183,7 @@ class wdosen extends CI_Controller {
 					->where('tbl_kliring_uas.ta', $ta)
 					// ->where('tmst_mahasiswa.tanggal_lulus IS NULL', null, false)
 					->where('tmst_mahasiswa.tahun_masuk >=', '2019')
-					->where('tmst_mahasiswa.tahun_masuk <=', '2021')
+					->where('tmst_mahasiswa.tahun_masuk <=', '2022')
 					->where('tmst_mahasiswa.kode_program_studi', $userprodi);
 		$ajuan
 			->style(['class' => 'table table-bordered table-striped display'])
