@@ -1615,7 +1615,7 @@ class wdosen extends CI_Controller {
         $nim = $row->nim;
 		}
 		$data['nama'] = $this->getNama($nim);
-		$data['dosen'] = $this->m_portal->get_data_all('tbl_kliring_tpkl')->result();
+		$data['dosen'] = $this->m_portal->get_data_all('tmst_dosen')->result();
 		$this->load->view('wdosen/header');
 		$this->load->view('wdosen/kliring_tpkl',$data);
 		$this->load->view('wdosen/footer');
