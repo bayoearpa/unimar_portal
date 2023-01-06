@@ -1568,6 +1568,26 @@ class wdosen extends CI_Controller {
 		$this->load->view('wdosen/ajuan_tpkl',$data);
 		$this->load->view('wdosen/footer');
 	}
+	public function cekdosbing_tpkl($id_tpkl)
+	{
+		# code...
+		$where = array(
+			'id_tpkl' => $id_tpkl,			       
+        );
+		$get_dosbing = $this->m_portal->get_data($where,'tmst_kliring_tpkl_prodi')->result();
+		foreach ($get_dosbing as $row)
+		{
+        $dosbing = $row->dosbing;
+		}
+
+		if ($dosbing == null) {
+			# code...
+			return "Dosen pembimbing belum di set";
+		}else{
+			return $dosbing;
+		}
+		
+	}
 	public function kliring_tpkl($id)
 	{
 		# code...
