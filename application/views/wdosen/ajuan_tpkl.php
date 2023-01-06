@@ -47,7 +47,7 @@
                   'hasil' => "2"     
                   );
                   ?></td>
-                  <td><?php echo $wdosen->getnama($c->nim_tpkl) ?></td>
+                  <td><?php echo $wdosen->getnama($c->nim) ?></td>
                   <td><?php echo $prodi ?></td>
                   <!-- proses kliring -->
                    <td>
