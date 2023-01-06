@@ -1580,7 +1580,7 @@ class wdosen extends CI_Controller {
         $dosbing = $row->dosbing;
 		}
 
-		if ($dosbing == null) {
+		if ($dosbing == "0") {
 			# code...
 			return "Dosen pembimbing belum di set";
 		}else{
