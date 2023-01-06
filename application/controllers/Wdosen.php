@@ -62,6 +62,20 @@ class wdosen extends CI_Controller {
 			return $n->Nama_mahasiswa;
 		}
 	}
+	public function getNamaDosen($kddosen)
+	{
+		# code...
+		//get nama
+		$where = array(
+			'Kode_dosen' => $kddosen,			       
+        );
+		$getNim = $this->m_portal->get_data($where,'tmst_dosen')->result();
+		foreach ($getNim as $n) {
+			# code...
+			//$data['nama'] = $n->Nama_mahasiswa ;
+			return $n->Nama_dosen;
+		}
+	}
 	public function getProdi($prodi)
 	{
 		# code...
@@ -1578,13 +1592,14 @@ class wdosen extends CI_Controller {
 		foreach ($get_dosbing as $row)
 		{
         $dosbing = $row->dosbing;
+
 		}
 
 		if ($dosbing == null) {
 			# code...
 			return "Dosen pembimbing belum di set";
 		}else{
-			return $dosbing;
+			return $this->getNamaDosen($dosbing);
 		}
 		
 	}
