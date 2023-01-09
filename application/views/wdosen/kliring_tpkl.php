@@ -38,9 +38,9 @@
                   <!-- <input type="text" name="dosbing" class="form-control"> -->
                   <select class="select2 form-control" name="dosbing">
                     <option>Pilih</option>
-                    <?php foreach ($dosen as $key) {
+                    <?php foreach ($dosen as $ke) {
                       # code... ?>
-                         <option value="<?php echo $key->Kode_dosen ?>"><?php echo $key->Nama_dosen ?></option>
+                         <option value="<?php echo $ke->Kode_dosen ?>"><?php echo $ke->Nama_dosen ?></option>
                     <?php } ?>
                   </select>
                 </div>
