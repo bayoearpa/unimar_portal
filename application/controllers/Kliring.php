@@ -1141,7 +1141,7 @@ class kliring extends CI_Controller {
 		$nmfile1 = $namagabungan1.".pdf";
 		$nmfile2 = $namagabungan2.".pdf";
         #upload file1
-        $config['upload_path'] = FCPATH.'assets/upload/tpkl/konduite/';
+        $config['upload_path'] = FCPATH.'/assets/upload/tpkl/konduite/';
 		$config['allowed_types'] = 'pdf';
 		$config['max_size']  = '5024';
 		// $config['max_width']  = '1024';
@@ -1161,7 +1161,7 @@ class kliring extends CI_Controller {
         	}
     	}
 
-    	$config2['upload_path'] = FCPATH.'assets/upload/tpkl/sk/';
+    	$config2['upload_path'] = FCPATH.'/assets/upload/tpkl/sk/';
 		$config2['allowed_types'] = 'pdf';
 		$config2['max_size']  = '5024';
 
