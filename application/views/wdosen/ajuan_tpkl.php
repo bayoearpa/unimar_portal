@@ -19,7 +19,7 @@
                 <tr>
                   <th>NIM</th>
                   <th>Nama</th>
-                  <!-- <th>Prodi</th> -->
+                  <th>Prodi</th>
                   <th>Dosen Pembimbing</th>
                   <th>Judul PKL</th>
                   <th>File Konduite</th>
@@ -109,7 +109,7 @@
                 <tr>
                   <th>NIM</th>
                   <th>Nama</th>
-                  <!-- <th>Prodi</th> -->
+                  <th>Prodi</th>
                   <th>Dosen Pembimbing</th>
                   <th>Judul PKL</th>
                   <th>File Konduite</th>
