@@ -474,6 +474,26 @@ function get_data_join_tpkl($where)
 		$query=$this->db->get();
 		return $query;
 }
+function get_data_join_tpkl_all($where)
+{
+	# code...
+		$this->db->select('tbl_kliring_tpkl.id_tpkl AS id_tpkl,
+		tbl_kliring_tpkl.nim AS nim,
+		tbl_kliring_tpkl.judul_pkl AS judul_pkl,
+		tbl_kliring_tpkl.no_telp AS no_telp,
+		tbl_kliring_tpkl.file_konduite AS file_konduite,
+		tbl_kliring_tpkl.file_suratketoff AS file_suratketoff,
+		tbl_kliring_tpkl.tgl_kliring AS tgl_kliring,
+		tmst_mahasiswa.Nama_mahasiswa AS nama,
+		tmst_program_studi.Nama_program_studi AS prodi');
+		$this->db->from('tbl_kliring_tpkl');
+		$this->db->join('tmst_mahasiswa',' tbl_kliring_tpkl.nim = tmst_mahasiswa.NIM','inner');
+		$this->db->join('tmst_program_studi','tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi','inner');
+		$this->db->where($where);
+		//$this->db->order_by('tbl_catar_validasi.no_reg', "asc");
+		$query=$this->db->get();
+		return $query;
+}
 		
 
 		
