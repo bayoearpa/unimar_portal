@@ -468,7 +468,7 @@ function get_data_join_cetak_absensi_pdf($where)
 		$this->db->from('tbl_kliring_tpkl');
 		$this->db->join('tmst_mahasiswa',' tbl_kliring_tpkl.nim = tmst_mahasiswa.NIM','inner');
 		$this->db->join('tmst_program_studi','tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi','inner');
-		$this->db->where($where);
+		// $this->db->where($where);
 		//$this->db->order_by('tbl_catar_validasi.no_reg', "asc");
 		$query=$this->db->get();
 		return $query;
