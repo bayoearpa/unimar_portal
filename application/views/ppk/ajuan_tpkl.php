@@ -56,8 +56,8 @@
                         echo $c->judul_pkl;
                        ?>
                     </td>
-                     <td><a class="btn btn-primary btn-sm" target="_blank" href="<?php echo base_url().'wdosen/filekonduite/'.$c->file_konduite; ?>"><span class="glyphicon glyphicon-eye"></span>Konduite</a></td>
-                     <td><a class="btn btn-primary btn-sm" target="_blank" href="<?php echo base_url().'wdosen/filesk/'.$c->file_suratketoff; ?>"><span class="glyphicon glyphicon-eye"></span>SK Off PKL</a></td>
+                     <td><a class="btn btn-primary btn-sm" target="_blank" href="<?php echo base_url().'ppk/filekonduite/'.$c->file_konduite; ?>"><span class="glyphicon glyphicon-eye"></span>Konduite</a></td>
+                     <td><a class="btn btn-primary btn-sm" target="_blank" href="<?php echo base_url().'ppk/filesk/'.$c->file_suratketoff; ?>"><span class="glyphicon glyphicon-eye"></span>SK Off PKL</a></td>
                     <!-- proses kliring -->
                   <!-- PPK -->
                     <td>

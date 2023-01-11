@@ -19,7 +19,7 @@
                 <tr>
                   <th>NIM</th>
                   <th>Nama</th>
-                  <th>Prodi</th>
+                  <!-- <th>Prodi</th> -->
                   <th>Dosen Pembimbing</th>
                   <th>Judul PKL</th>
                   <th>File Konduite</th>
@@ -47,8 +47,8 @@
                   'hasil' => "2"     
                   );
                   ?></td>
-                  <td><?php echo $wdosen->getnama($c->nim) ?></td>
-                  <td><?php echo $prodi ?></td>
+                  <td><?php echo $c->nama?></td>
+                  <td><?php echo $c->prodi ?></td>
                   <!-- proses kliring -->
                    <td>
                       <?php 
@@ -109,7 +109,7 @@
                 <tr>
                   <th>NIM</th>
                   <th>Nama</th>
-                  <th>Prodi</th>
+                  <!-- <th>Prodi</th> -->
                   <th>Dosen Pembimbing</th>
                   <th>Judul PKL</th>
                   <th>File Konduite</th>

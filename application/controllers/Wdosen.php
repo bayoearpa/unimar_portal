@@ -1553,7 +1553,7 @@ class wdosen extends CI_Controller {
 
 	public function ajuan_tpkl()
 	{
-		$data['catar'] = $this->m_portal->get_data_all('tbl_kliring_tpkl')->result(); 
+		$data['catar'] = $this->m_portal->get_data_join_tpkl()->result(); 
 		if ($data['catar'] == null) {
 			# code...
 		}else{
