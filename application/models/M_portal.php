@@ -454,7 +454,7 @@ function get_data_join_cetak_absensi_pdf($where)
 }
 		
 // =============================================tpkl==========================================================================		
-		function get_data_join_tpkl($where)
+		function get_data_join_tpkl()
 {
 	# code...
 		$this->db->select('tbl_kliring_tpkl.judul_pkl AS id_tpkl,
