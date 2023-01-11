@@ -65,6 +65,20 @@ class ppk extends CI_Controller {
 			return $p->Nama_program_studi;
 		}
 	}
+	public function getNamaDosen($kddosen)
+	{
+		# code...
+		//get nama
+		$where = array(
+			'Kode_dosen' => $kddosen,			       
+        );
+		$getNim = $this->m_portal->get_data($where,'tmst_dosen')->result();
+		foreach ($getNim as $n) {
+			# code...
+			//$data['nama'] = $n->Nama_mahasiswa ;
+			return $n->Nama_dosen;
+		}
+	}
 	public function ajuan()
 	{
 		$data['catar'] = $this->m_portal->get_data_all('tbl_kliring_ujianktsk')->result(); 
