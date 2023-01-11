@@ -477,7 +477,11 @@ class ppk extends CI_Controller {
 		////////////////////////////////////////// Turun PKL //////////////////////////////////////////////////////
 	public function ajuan_tpkl()
 	{
-		$data['catar'] = $this->m_portal->get_data_all('tbl_kliring_tpkl')->result(); 
+		$userprodi = $this->session->userdata('user');
+		$wherexxx = array(
+			'tmst_mahasiswa.kode_program_studi' => $userprodi,			       
+        );
+		$data['catar'] = $this->m_portal->get_data_join_tpkl($wherexxx)->result(); 
 		if ($data['catar'] == null) {
 			# code...
 		}else{

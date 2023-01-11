@@ -44,8 +44,8 @@
                   'hasil' => "2"     
                   );
                   ?></td>
-                  <td><?php echo $ppk->getnama($c->nim_tpkl) ?></td>
-                  <td><?php echo $prodi ?></td>
+                  <td><?php echo $c->nama ?></td>
+                  <td><?php echo $c->prodi ?></td>
                     <td>
                       <?php 
                         echo $ppk->cekdosbing_tpkl($c->id_tpkl);
