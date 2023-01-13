@@ -39,7 +39,7 @@
         echo "<div class='alert alert-danger'>Silahkan login dulu.</div>";
       }else if($_GET['pesan'] == "salahkamar"){
         echo "<div class='alert alert-danger'>Anda Salah kamar.</div>";
-    }
+    }}
     ?>
 <div class="login-box">
   <div class="login-logo">
