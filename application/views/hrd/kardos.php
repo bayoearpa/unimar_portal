@@ -9,7 +9,7 @@
             <!-- /.box-header -->
             <div class="box-body">
               <div class="form-group">
-                <a href=""><button type="button" class="btn btn-block btn-success btn-xs">Tambah Karyawan / Dosen</button></a>
+                <a href=""><button type="button" class="btn btn-block btn-success btn-xs" width="20%">Tambah Karyawan / Dosen</button></a>
               </div>
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
