@@ -36,8 +36,9 @@
       }else if($_GET['pesan'] == "logout"){
         echo "<div class='alert alert-danger'>Anda telah logout.</div>";
       }else if($_GET['pesan'] == "belumlogin"){
-        echo "<div class='alert alert-success'>Silahkan login dulu.</div>";
-      }
+        echo "<div class='alert alert-danger'>Silahkan login dulu.</div>";
+      }else if($_GET['pesan'] == "salahkamar"){
+        echo "<div class='alert alert-danger'>Anda Salah kamar.</div>";
     }
     ?>
 <div class="login-box">

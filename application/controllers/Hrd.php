@@ -8,8 +8,11 @@ class Hrd extends CI_Controller {
 	{
 		parent::__construct();
 		//Do your magic here
-		if($this->session->userdata('status') != "login" && $this->session->userdata('level') != "5" ){
+		if($this->session->userdata('status') != "login"){
 			redirect(base_url().'administrasi?pesan=belumlogin');
+		}elseif ($this->session->userdata('level') != "7") {
+			# code...
+			redirect(base_url().'administrasi?pesan=salahkamar');
 		}
 		$this->load->model('m_portal');
 	}
@@ -27,9 +30,9 @@ class Hrd extends CI_Controller {
 	public function kardos()
 	{
 		$data['kardos'] = $this->m_portal->get_data_all('tbl_master_kardos')->result();
-		$this->load->view('bk/header');
-		$this->load->view('bk/index',$data);
-		$this->load->view('bk/footer');
+		$this->load->view('hrd/header');
+		$this->load->view('hrd/index',$data);
+		$this->load->view('hrd/footer');
 	}
 	public function input_kardos()
 	{

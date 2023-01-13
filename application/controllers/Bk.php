@@ -7,8 +7,11 @@ class bk extends CI_Controller {
 	{
 		parent::__construct();
 		//Do your magic here
-		if($this->session->userdata('status') != "login" && $this->session->userdata('level') != "5" ){
+		if($this->session->userdata('status') != "login"){
 			redirect(base_url().'administrasi?pesan=belumlogin');
+		}elseif ($this->session->userdata('level') != "5") {
+			# code...
+			redirect(base_url().'administrasi?pesan=salahkamar');
 		}
 		$this->load->model('m_portal');
 	}
