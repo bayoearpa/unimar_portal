@@ -8,6 +8,9 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
+              <div class="form-group">
+                <a href=""><button type="button" class="btn btn-block btn-success">Tambah Karyawan / Dosen</button></a>
+              </div>
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
