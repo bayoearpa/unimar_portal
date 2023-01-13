@@ -8,7 +8,7 @@ class Hrd extends CI_Controller {
 	{
 		parent::__construct();
 		//Do your magic here
-		if($this->session->userdata('status') != "login"){
+		if($this->session->userdata('status') != "login" && $this->session->userdata('level') != "5" ){
 			redirect(base_url().'administrasi?pesan=belumlogin');
 		}
 		$this->load->model('m_portal');
@@ -34,9 +34,9 @@ class Hrd extends CI_Controller {
 	public function input_kardos()
 	{
 		$data['jabatan'] = $this->m_portal->get_data_all('tbl_master_jabatan')->result();
-		$this->load->view('bk/header');
-		$this->load->view('bk/input_kardos',$data);
-		$this->load->view('bk/footer');
+		$this->load->view('hrd/header');
+		$this->load->view('hrd/input_kardos',$data);
+		$this->load->view('hrd/footer');
 	}
 	public function edit_kardos($id)
 	{
@@ -45,9 +45,9 @@ class Hrd extends CI_Controller {
         );
 		$data['kardos'] = $this->m_portal->get_data($where,'tbl_master_kardos')->result();
 		$data['jabatan'] = $this->m_portal->get_data_all('tbl_master_jabatan')->result();
-		$this->load->view('bk/header');
-		$this->load->view('bk/input_kardos',$data);
-		$this->load->view('bk/footer');
+		$this->load->view('hrd/header');
+		$this->load->view('hrd/input_kardos',$data);
+		$this->load->view('hrd/footer');
 	}
 
 }

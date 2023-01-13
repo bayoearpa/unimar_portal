@@ -35,6 +35,7 @@ class Administrasi extends CI_Controller {
 					'id_admin'=> $d->id_admin,
 					'user'=> $d->user,
 					'nama'=> $d->nama,
+					'level'=> $d->level,
 					'status' => 'login'
 				);
 				$this->session->set_userdata($session);
