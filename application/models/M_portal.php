@@ -494,8 +494,35 @@ function get_data_join_tpkl_all()
 		$query=$this->db->get();
 		return $query;
 }
-		
-
+		// ============================================================== Karyawan dan dosen ===============================================
+function get_data_join_kardos($where)
+{
+	# code...
+		$this->db->select('tbl_master_kardos.id as id,
+		tbl_master_kardos.niak as niak,
+		tbl_master_kardos.nama as nama,
+		tbl_master_kardos.jenis_kelamin as jenis_kelamin,
+		tbl_master_kardos.tempat_lahir as tempat_lahir,
+		tbl_master_kardos.tanggal_lahir as tanggal_lahir,
+		tbl_master_kardos.telepon as telepon,
+		tbl_master_kardos.agama as agama,
+		tbl_master_kardos.alamat as alamat,
+		tbl_master_kardos.status_nikah as status_nikah,
+		tbl_master_kardos.jabatan as jabatan,
+		tbl_master_kardos.sk_kartep as sk_kartep,
+		tbl_master_kardos.kartep_tmt as kartep_tmt,
+		tbl_master_kardos.sk_dostep as sk_dostep,
+		tbl_master_kardos.dostep_tmt as dostep_tmt,
+		tbl_master_kardos.status as status,
+		tbl_master_jabatan.id_jabatan as id_jabatan,
+		tbl_master_jabatan.jabatan as nama_jabatan');
+		$this->db->from('tbl_master_kardos');
+		$this->db->join('tbl_master_jabatan','tbl_master_kardos.jabatan = tbl_master_jabatan.id_jabatan','inner');
+		$this->db->where($where);
+		//$this->db->order_by('tbl_catar_validasi.no_reg', "asc");
+		$query=$this->db->get();
+		return $query;
+}
 		
 	}
 /* End of file M_portal.php */
