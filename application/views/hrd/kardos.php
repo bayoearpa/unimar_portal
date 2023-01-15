@@ -9,7 +9,7 @@
             <!-- /.box-header -->
             <div class="box-body">
               <div class="form-group col-md-3 col-sm-6 col-xs-12">
-                <a href=""><button type="button" class="btn btn-block btn-success btn-xs">Tambah Karyawan / Dosen</button></a>
+                <a href="<?php echo base_url().'hrd/input_kardos/'?>"><button type="button" class="btn btn-block btn-success btn-xs">Tambah Karyawan / Dosen</button></a>
               </div>
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
