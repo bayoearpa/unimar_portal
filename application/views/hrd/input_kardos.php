@@ -21,6 +21,14 @@
                   <input class="form-control" type="text" name="nama" id="nama" required="">
                 </div>
                 <div class="form-group">
+                <label for="exampleInputEmail1">Tempat Lahir</label>
+                  <input class="form-control" type="text" name="tempat_lahir" id="tempat_lahir" required="">
+                </div>
+                <div class="form-group">
+                <label for="exampleInputEmail1">Tanggal Lahir</label>
+                  <input class="form-control" type="date" name="tanggal_lahir" id="tanggal_lahir" required="">
+                </div>
+                <div class="form-group">
                   <label>Alamat</label>
                   <textarea class="form-control" name="alamat" id="alamat" rows="3" placeholder="Masukkan alamat rumah" required=""></textarea>
                 </div>

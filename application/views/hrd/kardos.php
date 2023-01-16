@@ -39,8 +39,8 @@
                   <td><?php echo $k->jabatan ?></td>
                   <td><?php echo $k->status ?></td>
                   <td>
-                  <!--   <a class="btn btn-warning btn-sm" href="<?php //echo base_url().'hrd/kliring/'.$c->id_uks;?>"><span class="glyphicon glyphicon-pencil"></span> Kliring</a> -->
-                     <a class="btn btn-warning btn-sm" href="<?php echo base_url().'hrd/edit_kardos/'.$c->id; ?>"><span class="glyphicon glyphicon-pencil"></span> Edit</a>
+                    <a class="btn btn-primary btn-sm" href="<?php echo base_url().'hrd/detail_kardos/'.$k->id;?>"><span class="glyphicon glyphicon-pencil"></span> Detail</a>
+                     <a class="btn btn-warning btn-sm" href="<?php echo base_url().'hrd/edit_kardos/'.$k->id; ?>"><span class="glyphicon glyphicon-pencil"></span> Edit</a>
                   </td>
                   
                 </tr>

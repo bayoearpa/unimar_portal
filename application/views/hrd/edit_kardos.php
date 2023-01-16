@@ -23,6 +23,14 @@
                 <label for="exampleInputEmail1">Nama</label>
                   <input class="form-control" type="text" name="nama" id="nama" value="<?php echo $k->nama ?>">
                 </div>
+                 <div class="form-group">
+                <label for="exampleInputEmail1">Tempat Lahir</label>
+                  <input class="form-control" type="text" name="tempat_lahir" id="tempat_lahir" required="" value="<?php echo $k->tempat_lahir ?>">
+                </div>
+                <div class="form-group">
+                <label for="exampleInputEmail1">Tanggal Lahir</label>
+                  <input class="form-control" type="date" name="tanggal_lahir" id="tanggal_lahir" required="" value="<?php echo $k->tanggal_lahir ?>">
+                </div>
                 <div class="form-group">
                   <label>Alamat</label>
                   <textarea class="form-control" name="alamat" id="alamat" rows="3" placeholder="Masukkan alamat rumah"><?php echo $k->alamat ?></textarea>
@@ -61,7 +69,7 @@
                <div class="form-group">
                   <label>Jabatan</label>
                   <select class="form-control" name="jabatan" id="jabatan">
-                      <option selected value="<?php echo $k->jabatan ?>"><?php echo $k->jabatan ?></option>
+                      <option selected value="<?php echo $k->jabatan ?>"><?php echo $k->nama_jabatan ?></option>
                     <?php foreach ($jabatan as $j) {
                       # code...
                     
@@ -100,6 +108,7 @@
                 <button type="submit" class="btn btn-primary">Edit</button>
                 <a href="<?php echo base_url() ?>bk/ajuan"><button type="button" class="btn btn-success pull-left"><i class="fa fa-chevron-left"></i>Kembali</button></a>
                 </form>
+              <?php } ?>
           </div>
           <!-- /.box-body -->
         </div>
