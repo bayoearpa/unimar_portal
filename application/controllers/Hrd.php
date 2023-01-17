@@ -87,7 +87,7 @@ class Hrd extends CI_Controller {
 	public function edit_kardos($id)
 	{
 		$where = array(
-			'id' => $id,			       
+			'tbl_master_kardos.id' => $id,			       
         );
 		$data['kardos'] = $this->m_portal->get_data_join_kardos($where)->result();
 		$data['jabatan'] = $this->m_portal->get_data_all('tbl_master_jabatan')->result();
@@ -98,7 +98,7 @@ class Hrd extends CI_Controller {
 	public function detail_kardos($id)
 	{
 		$where = array(
-			'id' => $id,			       
+			'tbl_master_kardos.id' => $id,			       
         );
 		$data['kardos'] = $this->m_portal->get_data_join_kardos($where)->result();
 		// $data['jabatan'] = $this->m_portal->get_data_all('tbl_master_jabatan')->result();
