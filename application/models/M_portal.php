@@ -517,7 +517,7 @@ function get_data_join_kardos($where)
 		tbl_master_jabatan.id_jabatan as id_jabatan,
 		tbl_master_jabatan.jabatan as nama_jabatan');
 		$this->db->from('tbl_master_kardos');
-		$this->db->join('tbl_master_jabatan','tbl_master_kardos.jabatan = tbl_master_jabatan.id_jabatan','inner');
+		$this->db->join('tbl_master_jabatan','tbl_master_kardos.jabatan = tbl_master_jabatan.id_jabatan','left');
 		$this->db->where($where);
 		//$this->db->order_by('tbl_catar_validasi.no_reg', "asc");
 		$query=$this->db->get();
