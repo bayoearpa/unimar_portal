@@ -92,7 +92,7 @@ class Hrd extends CI_Controller {
 		$data['kardos'] = $this->m_portal->get_data_join_kardos($where)->result();
 		$data['jabatan'] = $this->m_portal->get_data_all('tbl_master_jabatan')->result();
 		$this->load->view('hrd/header');
-		$this->load->view('hrd/input_kardos',$data);
+		$this->load->view('hrd/edit_kardos',$data);
 		$this->load->view('hrd/footer');
 	}
 	public function detail_kardos($id)
