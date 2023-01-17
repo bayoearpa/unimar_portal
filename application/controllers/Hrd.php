@@ -52,6 +52,8 @@ class Hrd extends CI_Controller {
 			$data = array(
 			'niak'  	=> $this->input->post('niak'),
 			'nama'  	=> $this->input->post('nama'),
+			'tempat_lahir'  	=> $this->input->post('tempat_lahir'),
+			'tanggal_lahir'  	=> $this->input->post('tanggal_lahir'),
 			'alamat'  	=> $this->input->post('alamat'),
 			'agama'  		=> $this->input->post('agama'),
 			'telepon'     => $this->input->post('telepon'),
@@ -118,6 +120,8 @@ class Hrd extends CI_Controller {
 			$data = array(
 			'niak'  	=> $this->input->post('niak'),
 			'nama'  	=> $this->input->post('nama'),
+			'tempat_lahir'  	=> $this->input->post('tempat_lahir'),
+			'tanggal_lahir'  	=> $this->input->post('tanggal_lahir'),
 			'alamat'  	=> $this->input->post('alamat'),
 			'agama'  		=> $this->input->post('agama'),
 			'telepon'     => $this->input->post('telepon'),
