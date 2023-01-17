@@ -13,7 +13,7 @@
               # code...
               ?>
 
-              <form action="<?php echo base_url() ?>hrd/input_kardosp" name="form1" id="form1" method="post">
+              <form action="<?php echo base_url() ?>hrd/edit_kardosp" name="form1" id="form1" method="post">
                 <div class="form-group">
                 <label for="exampleInputEmail1">NIAK</label>
                 <input class="form-control" type="hidden" name="id" id="id" value="<?php echo $k->id ?>">
