@@ -1245,6 +1245,7 @@ class Lpm extends CI_Controller {
 		$cek = $this->cektablelapmhsdsn($prodi, $ta);
 
 		//get list kues
+		$data['gettanya'] = $this->m_kues->get_data_all('tbl_kues_mhslem_tanya')->result();
 		$data['list_pert'] = $this->m_kues->get_data_all('tbl_kues_mhsdsn_tanya')->result();
 		//get nama prodi
 		$data['nama_prodi'] = $this->getProdi($prodi);
@@ -1372,7 +1373,7 @@ class Lpm extends CI_Controller {
 		$this->session->set_flashdata('error', "<div class='alert alert-danger alert-dismissible'><b>Error, Data tidak ditemukan silakan lakukan update data pada menu Kuesioner>update data atau tekan tombol ini</b><a href='kues_mhslem_update'<button type='button' class='btn btn-block btn-primary'>Halaman Update Data</button></a></div>");
 		}
 		$this->load->view('lpm/header');
-		$this->load->view('lpm/kues_mhslem_rekap');
+		$this->load->view('lpm/kues_mhslem_rekap',$data);
 		$this->load->view('lpm/kues_mhslem_rekap_cek',$data);
 		$this->load->view('lpm/footer');
 		$this->load->view('lpm/kues_mhslem_rekap_cek_js',$data);
