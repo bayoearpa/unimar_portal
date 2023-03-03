@@ -35,7 +35,7 @@
                 <canvas id="canvas" style="height:500px"></canvas>
                 </div>
               <!-- /chart jajal -->
-              <p>Keterangan:</p>
+             <!--  <p>Keterangan:</p>
               <table class="table table-bordered">
                 <tr>
                   <td><b>Kode Pertanyaan</b></td>
@@ -44,22 +44,22 @@
                   <td><b>Lihat Statistik</b></td>
                 </tr>
                 <?php 
-                foreach ($list_pert as $key) {?>
+                //foreach ($list_pert as $key) {?>
                   <tr>
-                    <td><b><?php echo strtoupper($key->id_mhsdsn); ?></b></td>
-                    <td><?php echo $key->pert_mhsdsn; ?></td>
-                    <td><?php echo $key->tipe; ?></td>
-                    <td><button type="button" class="btn btn-default" data-toggle="modal" data-target="#<?php echo $key->id_mhsdsn ?>">Lihat</button></td>
+                    <td><b><?php //echo strtoupper($key->id_mhsdsn); ?></b></td>
+                    <td><?php //echo $key->pert_mhsdsn; ?></td>
+                    <td><?php //echo $key->tipe; ?></td>
+                    <td><button type="button" class="btn btn-default" data-toggle="modal" data-target="#<?php //echo $key->id_mhsdsn ?>">Lihat</button></td>
                   </tr>
 
                 <?php } ?>
-              </table>
+              </table> -->
 
               </div>
                 <!-- /tab 1 -->
               <!-- /.tab-pane -->
               <div class="tab-pane" id="tab_2">
-               <table class="table table-bordered">
+              <!--  <table class="table table-bordered">
                <tr>
                 <td><b>No Dosen</b></td>
                 <td><b>Nama Dosen</b></td>
@@ -67,15 +67,15 @@
 
                
                </tr>
-               <?php foreach($select_dosen as $k){ ?>
+               <?php //foreach($select_dosen as $k){ ?>
                 <tr>
-                  <td><?php echo $k->kddosen ?></td>
-                  <td><?php echo $k->nama_dosen ?></td>
-                  <td><a href="<?php echo base_url() ?>lpm/kues_mhsdsn_prosesrekap_dosen/<?php echo $k->kddosen ?>/<?php echo $prodi ?>/<?php echo $ta ?>" target="_blank"><button type="button" class="btn btn-block btn-primary btn-sm"><i class="fa fa-fw fa-eye"></i>Lihat Statistik</button></a></td>
+                  <td><?php //echo $k->kddosen ?></td>
+                  <td><?php //echo $k->nama_dosen ?></td>
+                  <td><a href="<?php //echo base_url() ?>lpm/kues_mhsdsn_prosesrekap_dosen/<?php //echo $k->kddosen ?>/<?php //echo $prodi ?>/<?php //echo $ta ?>" target="_blank"><button type="button" class="btn btn-block btn-primary btn-sm"><i class="fa fa-fw fa-eye"></i>Lihat Statistik</button></a></td>
 
                 </tr>
                 <?php } ?>
-             </table>
+             </table> -->
               </div>
               <!-- /.tab-pane -->
               <div class="tab-pane" id="tab_3">

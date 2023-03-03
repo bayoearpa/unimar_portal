@@ -2,7 +2,7 @@
 // var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
 
   var barChartData = {
-    labels : ["MD_A1","MD_A2","MD_A3","MD_B1","MD_B2","MD_B3","MD_C1","MD_C2","MD_C3","MD_D1","MD_D2","MD_D3","MD_E1","MD_E2","MD_E3"],
+    labels : ["Fakultas", "Program studi", "Keuangan", "Sarpras", "PMB", "Akademik", "Mahatar", "Humas", "Perpustakaan", "Laboratorium", "PKL", "Prala", "Diklat umum", "DKP", "Puskom"],
     datasets : [
       {
         fillColor : "rgba(151,187,205,0.5)",
@@ -28,41 +28,41 @@
     });
   }
 
-<?php foreach ($list_pert as $key) {?>
-      /*
-     * DONUT CHART
-     * -----------
-     */
+// <?php foreach ($list_pert as $key) {?>
+//       /*
+//      * DONUT CHART
+//      * -----------
+//      */
 
-    var donutData<?php echo $key->id_mhsdsn ?> = [
-     { label: 'STS', data: <?php echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'1') ?>, color: '#f20b0b' },
-      { label: 'TS', data: <?php echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'2') ?>, color: '#ffad5f' },
-      { label: 'KS', data: <?php echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'3') ?>, color: '#ffd966' },
-      { label: 'S', data: <?php echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'4') ?>, color: '#9af073' },
-      { label: 'SS', data: <?php echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'5') ?>, color: '#89ddfc' }
-    ]
-    $.plot('#donut-chart-<?php echo $key->id_mhsdsn ?>', donutData<?php echo $key->id_mhsdsn; ?>, {
-        series: {
-          pie: { 
-            show: true,
-            radius: 1,
-            label: {
-              show: true,
-              radius: 3/4,
-              formatter: labelFormatter,
-              background: {
-                opacity: 0.5
-              }
-            }
-          }
-        },
-        legend: {
-          show: false
-        }
-      });
+//     var donutData<?php //echo $key->id_mhsdsn ?> = [
+//      { label: 'STS', data: <?php //echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'1') ?>, color: '#f20b0b' },
+//       { label: 'TS', data: <?php //echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'2') ?>, color: '#ffad5f' },
+//       { label: 'KS', data: <?php//echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'3') ?>, color: '#ffd966' },
+//       { label: 'S', data: <?php //echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'4') ?>, color: '#9af073' },
+//       { label: 'SS', data: <?php //echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'5') ?>, color: '#89ddfc' }
+//     ]
+//     $.plot('#donut-chart-<?php //echo $key->id_mhsdsn ?>', donutData<?php //echo $key->id_mhsdsn; ?>, {
+//         series: {
+//           pie: { 
+//             show: true,
+//             radius: 1,
+//             label: {
+//               show: true,
+//               radius: 3/4,
+//               formatter: labelFormatter,
+//               background: {
+//                 opacity: 0.5
+//               }
+//             }
+//           }
+//         },
+//         legend: {
+//           show: false
+//         }
+//       });
 
 
-    <?php } ?>
+//     <?php } ?>
     /*
      * END DONUT CHART
      */
