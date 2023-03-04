@@ -1295,11 +1295,11 @@ class Lpm extends CI_Controller {
 			$new_geta5 = $get_['pernyataan'][$pernyataan] . '_a_5';
 			$new_geta = $get_['pernyataan'][$pernyataan] . 'a';
 
-			$new_geta1 = $this->sumitem_mhslem($pernyataan,'1',$prodi,$ta)*1;
-			$new_geta2 = $this->sumitem_mhslem($pernyataan,'2',$prodi,$ta)*2;
-			$new_geta3 = $this->sumitem_mhslem($pernyataan,'3',$prodi,$ta)*3;
-			$new_geta4 = $this->sumitem_mhslem($pernyataan,'4',$prodi,$ta)*4;
-			$new_geta5 = $this->sumitem_mhslem($pernyataan,'5',$prodi,$ta)*5;
+			$new_geta1 = $this->sumitem_mhslem($pernyataan."a",'1',$prodi,$ta)*1;
+			$new_geta2 = $this->sumitem_mhslem($pernyataan."a",'2',$prodi,$ta)*2;
+			$new_geta3 = $this->sumitem_mhslem($pernyataan."a",'3',$prodi,$ta)*3;
+			$new_geta4 = $this->sumitem_mhslem($pernyataan."a",'4',$prodi,$ta)*4;
+			$new_geta5 = $this->sumitem_mhslem($pernyataan."a",'5',$prodi,$ta)*5;
 
 			$new_geta =$new_geta1+$new_geta2+$new_geta3+$new_geta4+$new_geta5;
 
@@ -1310,11 +1310,11 @@ class Lpm extends CI_Controller {
 			$new_getb5 = $get_['pernyataan'][$pernyataan] . '_b_5';
 			$new_getb = $get_['pernyataan'][$pernyataan] . 'b';
 
-			$new_getb1 = $this->sumitem_mhslem($pernyataan,'1',$prodi,$ta)*1;
-			$new_getb2 = $this->sumitem_mhslem($pernyataan,'2',$prodi,$ta)*2;
-			$new_getb3 = $this->sumitem_mhslem($pernyataan,'3',$prodi,$ta)*3;
-			$new_getb4 = $this->sumitem_mhslem($pernyataan,'4',$prodi,$ta)*4;
-			$new_getb5 = $this->sumitem_mhslem($pernyataan,'5',$prodi,$ta)*5;
+			$new_getb1 = $this->sumitem_mhslem($pernyataan."b",'1',$prodi,$ta)*1;
+			$new_getb2 = $this->sumitem_mhslem($pernyataan."b",'2',$prodi,$ta)*2;
+			$new_getb3 = $this->sumitem_mhslem($pernyataan."b",'3',$prodi,$ta)*3;
+			$new_getb4 = $this->sumitem_mhslem($pernyataan."b",'4',$prodi,$ta)*4;
+			$new_getb5 = $this->sumitem_mhslem($pernyataan."b",'5',$prodi,$ta)*5;
 
 			$new_getb =$new_getb1+$new_getb2+$new_getb3+$new_getb4+$new_getb5;
 
@@ -1325,11 +1325,11 @@ class Lpm extends CI_Controller {
 			$new_getc5 = $get_['pernyataan'][$pernyataan] . '_c_5';
 			$new_getc = $get_['pernyataan'][$pernyataan] . 'c';
 
-			$new_getc1 = $this->sumitem_mhslem($pernyataan,'1',$prodi,$ta)*1;
-			$new_getc2 = $this->sumitem_mhslem($pernyataan,'2',$prodi,$ta)*2;
-			$new_getc3 = $this->sumitem_mhslem($pernyataan,'3',$prodi,$ta)*3;
-			$new_getc4 = $this->sumitem_mhslem($pernyataan,'4',$prodi,$ta)*4;
-			$new_getc5 = $this->sumitem_mhslem($pernyataan,'5',$prodi,$ta)*5;
+			$new_getc1 = $this->sumitem_mhslem($pernyataan."c",'1',$prodi,$ta)*1;
+			$new_getc2 = $this->sumitem_mhslem($pernyataan."c",'2',$prodi,$ta)*2;
+			$new_getc3 = $this->sumitem_mhslem($pernyataan."c",'3',$prodi,$ta)*3;
+			$new_getc4 = $this->sumitem_mhslem($pernyataan."c",'4',$prodi,$ta)*4;
+			$new_getc5 = $this->sumitem_mhslem($pernyataan."c",'5',$prodi,$ta)*5;
 
 			$new_getc =$new_getc1+$new_getc2+$new_getc3+$new_getc4+$new_getc5;
 
@@ -1340,11 +1340,11 @@ class Lpm extends CI_Controller {
 			$new_getd5 = $get_['pernyataan'][$pernyataan] . '_d_5';
 			$new_getd = $get_['pernyataan'][$pernyataan] . 'd';
 
-			$new_getd1 = $this->sumitem_mhslem($pernyataan,'1',$prodi,$ta)*1;
-			$new_getd2 = $this->sumitem_mhslem($pernyataan,'2',$prodi,$ta)*2;
-			$new_getd3 = $this->sumitem_mhslem($pernyataan,'3',$prodi,$ta)*3;
-			$new_getd4 = $this->sumitem_mhslem($pernyataan,'4',$prodi,$ta)*4;
-			$new_getd5 = $this->sumitem_mhslem($pernyataan,'5',$prodi,$ta)*5;
+			$new_getd1 = $this->sumitem_mhslem($pernyataan."d",'1',$prodi,$ta)*1;
+			$new_getd2 = $this->sumitem_mhslem($pernyataan."d",'2',$prodi,$ta)*2;
+			$new_getd3 = $this->sumitem_mhslem($pernyataan."d",'3',$prodi,$ta)*3;
+			$new_getd4 = $this->sumitem_mhslem($pernyataan."d",'4',$prodi,$ta)*4;
+			$new_getd5 = $this->sumitem_mhslem($pernyataan."d",'5',$prodi,$ta)*5;
 
 			$new_getd =$new_getd1+$new_getd2+$new_getd3+$new_getd4+$new_getd5;
 
@@ -1355,11 +1355,11 @@ class Lpm extends CI_Controller {
 			$new_gete5 = $get_['pernyataan'][$pernyataan] . '_e_5';
 			$new_gete = $get_['pernyataan'][$pernyataan] . 'e';
 
-			$new_gete1 = $this->sumitem_mhslem($pernyataan,'1',$prodi,$ta)*1;
-			$new_gete2 = $this->sumitem_mhslem($pernyataan,'2',$prodi,$ta)*2;
-			$new_gete3 = $this->sumitem_mhslem($pernyataan,'3',$prodi,$ta)*3;
-			$new_gete4 = $this->sumitem_mhslem($pernyataan,'4',$prodi,$ta)*4;
-			$new_gete5 = $this->sumitem_mhslem($pernyataan,'5',$prodi,$ta)*5;
+			$new_gete1 = $this->sumitem_mhslem($pernyataan."e",'1',$prodi,$ta)*1;
+			$new_gete2 = $this->sumitem_mhslem($pernyataan."e",'2',$prodi,$ta)*2;
+			$new_gete3 = $this->sumitem_mhslem($pernyataan."e",'3',$prodi,$ta)*3;
+			$new_gete4 = $this->sumitem_mhslem($pernyataan."e",'4',$prodi,$ta)*4;
+			$new_gete5 = $this->sumitem_mhslem($pernyataan."e",'5',$prodi,$ta)*5;
 
 			$new_gete =$new_gete1+$new_gete2+$new_gete3+$new_gete4+$new_gete5;
 
@@ -1370,11 +1370,11 @@ class Lpm extends CI_Controller {
 			$new_getf5 = $get_['pernyataan'][$pernyataan] . '_f_5';
 			$new_getf = $get_['pernyataan'][$pernyataan] . 'f';
 
-			$new_getf1 = $this->sumitem_mhslem($pernyataan,'1',$prodi,$ta)*1;
-			$new_getf2 = $this->sumitem_mhslem($pernyataan,'2',$prodi,$ta)*2;
-			$new_getf3 = $this->sumitem_mhslem($pernyataan,'3',$prodi,$ta)*3;
-			$new_getf4 = $this->sumitem_mhslem($pernyataan,'4',$prodi,$ta)*4;
-			$new_getf5 = $this->sumitem_mhslem($pernyataan,'5',$prodi,$ta)*5;
+			$new_getf1 = $this->sumitem_mhslem($pernyataan."f",'1',$prodi,$ta)*1;
+			$new_getf2 = $this->sumitem_mhslem($pernyataan."f",'2',$prodi,$ta)*2;
+			$new_getf3 = $this->sumitem_mhslem($pernyataan."f",'3',$prodi,$ta)*3;
+			$new_getf4 = $this->sumitem_mhslem($pernyataan."f",'4',$prodi,$ta)*4;
+			$new_getf5 = $this->sumitem_mhslem($pernyataan."f",'5',$prodi,$ta)*5;
 
 			$new_getf =$new_getf1+$new_getf2+$new_getf3+$new_getf4+$new_getf5;
 
@@ -1385,11 +1385,11 @@ class Lpm extends CI_Controller {
 			$new_getg5 = $get_['pernyataan'][$pernyataan] . '_g_5';
 			$new_getg = $get_['pernyataan'][$pernyataan] . 'g';
 
-			$new_getg1 = $this->sumitem_mhslem($pernyataan,'1',$prodi,$ta)*1;
-			$new_getg2 = $this->sumitem_mhslem($pernyataan,'2',$prodi,$ta)*2;
-			$new_getg3 = $this->sumitem_mhslem($pernyataan,'3',$prodi,$ta)*3;
-			$new_getg4 = $this->sumitem_mhslem($pernyataan,'4',$prodi,$ta)*4;
-			$new_getg5 = $this->sumitem_mhslem($pernyataan,'5',$prodi,$ta)*5;
+			$new_getg1 = $this->sumitem_mhslem($pernyataan."g",'1',$prodi,$ta)*1;
+			$new_getg2 = $this->sumitem_mhslem($pernyataan."g",'2',$prodi,$ta)*2;
+			$new_getg3 = $this->sumitem_mhslem($pernyataan."g",'3',$prodi,$ta)*3;
+			$new_getg4 = $this->sumitem_mhslem($pernyataan."g",'4',$prodi,$ta)*4;
+			$new_getg5 = $this->sumitem_mhslem($pernyataan."g",'5',$prodi,$ta)*5;
 
 			$new_getg =$new_getg1+$new_getg2+$new_getg3+$new_getg4+$new_getg5;
 
@@ -1400,11 +1400,11 @@ class Lpm extends CI_Controller {
 			$new_geth5 = $get_['pernyataan'][$pernyataan] . '_h_5';
 			$new_geth = $get_['pernyataan'][$pernyataan] . 'h';
 
-			$new_geth1 = $this->sumitem_mhslem($pernyataan,'1',$prodi,$ta)*1;
-			$new_geth2 = $this->sumitem_mhslem($pernyataan,'2',$prodi,$ta)*2;
-			$new_geth3 = $this->sumitem_mhslem($pernyataan,'3',$prodi,$ta)*3;
-			$new_geth4 = $this->sumitem_mhslem($pernyataan,'4',$prodi,$ta)*4;
-			$new_geth5 = $this->sumitem_mhslem($pernyataan,'5',$prodi,$ta)*5;
+			$new_geth1 = $this->sumitem_mhslem($pernyataan."h",'1',$prodi,$ta)*1;
+			$new_geth2 = $this->sumitem_mhslem($pernyataan."h",'2',$prodi,$ta)*2;
+			$new_geth3 = $this->sumitem_mhslem($pernyataan."h",'3',$prodi,$ta)*3;
+			$new_geth4 = $this->sumitem_mhslem($pernyataan."h",'4',$prodi,$ta)*4;
+			$new_geth5 = $this->sumitem_mhslem($pernyataan."h",'5',$prodi,$ta)*5;
 
 			$new_geth =$new_geth1+$new_geth2+$new_geth3+$new_geth4+$new_geth5;
 
@@ -1415,11 +1415,11 @@ class Lpm extends CI_Controller {
 			$new_geti5 = $get_['pernyataan'][$pernyataan] . '_i_5';
 			$new_geti = $get_['pernyataan'][$pernyataan] . 'i';
 
-			$new_geti1 = $this->sumitem_mhslem($pernyataan,'1',$prodi,$ta)*1;
-			$new_geti2 = $this->sumitem_mhslem($pernyataan,'2',$prodi,$ta)*2;
-			$new_geti3 = $this->sumitem_mhslem($pernyataan,'3',$prodi,$ta)*3;
-			$new_geti4 = $this->sumitem_mhslem($pernyataan,'4',$prodi,$ta)*4;
-			$new_geti5 = $this->sumitem_mhslem($pernyataan,'5',$prodi,$ta)*5;
+			$new_geti1 = $this->sumitem_mhslem($pernyataan."i",'1',$prodi,$ta)*1;
+			$new_geti2 = $this->sumitem_mhslem($pernyataan."i",'2',$prodi,$ta)*2;
+			$new_geti3 = $this->sumitem_mhslem($pernyataan."i",'3',$prodi,$ta)*3;
+			$new_geti4 = $this->sumitem_mhslem($pernyataan."i",'4',$prodi,$ta)*4;
+			$new_geti5 = $this->sumitem_mhslem($pernyataan."i",'5',$prodi,$ta)*5;
 
 			$new_geti =$new_geti1+$new_geti2+$new_geti3+$new_geti4+$new_geti5;
 
@@ -1430,11 +1430,11 @@ class Lpm extends CI_Controller {
 			$new_getj5 = $get_['pernyataan'][$pernyataan] . '_j_5';
 			$new_getj = $get_['pernyataan'][$pernyataan] . 'j';
 
-			$new_getj1 = $this->sumitem_mhslem($pernyataan,'1',$prodi,$ta)*1;
-			$new_getj2 = $this->sumitem_mhslem($pernyataan,'2',$prodi,$ta)*2;
-			$new_getj3 = $this->sumitem_mhslem($pernyataan,'3',$prodi,$ta)*3;
-			$new_getj4 = $this->sumitem_mhslem($pernyataan,'4',$prodi,$ta)*4;
-			$new_getj5 = $this->sumitem_mhslem($pernyataan,'5',$prodi,$ta)*5;
+			$new_getj1 = $this->sumitem_mhslem($pernyataan."j",'1',$prodi,$ta)*1;
+			$new_getj2 = $this->sumitem_mhslem($pernyataan."j",'2',$prodi,$ta)*2;
+			$new_getj3 = $this->sumitem_mhslem($pernyataan."j",'3',$prodi,$ta)*3;
+			$new_getj4 = $this->sumitem_mhslem($pernyataan."j",'4',$prodi,$ta)*4;
+			$new_getj5 = $this->sumitem_mhslem($pernyataan."j",'5',$prodi,$ta)*5;
 
 			$new_getj =$new_getj1+$new_getj2+$new_getj3+$new_getj4+$new_getj5;
 
@@ -1445,11 +1445,11 @@ class Lpm extends CI_Controller {
 			$new_getk5 = $get_['pernyataan'][$pernyataan] . '_k_5';
 			$new_getk = $get_['pernyataan'][$pernyataan] . 'k';
 
-			$new_getk1 = $this->sumitem_mhslem($pernyataan,'1',$prodi,$ta)*1;
-			$new_getk2 = $this->sumitem_mhslem($pernyataan,'2',$prodi,$ta)*2;
-			$new_getk3 = $this->sumitem_mhslem($pernyataan,'3',$prodi,$ta)*3;
-			$new_getk4 = $this->sumitem_mhslem($pernyataan,'4',$prodi,$ta)*4;
-			$new_getk5 = $this->sumitem_mhslem($pernyataan,'5',$prodi,$ta)*5;
+			$new_getk1 = $this->sumitem_mhslem($pernyataan."k",'1',$prodi,$ta)*1;
+			$new_getk2 = $this->sumitem_mhslem($pernyataan."k",'2',$prodi,$ta)*2;
+			$new_getk3 = $this->sumitem_mhslem($pernyataan."k",'3',$prodi,$ta)*3;
+			$new_getk4 = $this->sumitem_mhslem($pernyataan."k",'4',$prodi,$ta)*4;
+			$new_getk5 = $this->sumitem_mhslem($pernyataan."k",'5',$prodi,$ta)*5;
 
 			$new_getk =$new_getk1+$new_getk2+$new_getk3+$new_getk4+$new_getk5;
 
@@ -1460,11 +1460,11 @@ class Lpm extends CI_Controller {
 			$new_getl5 = $get_['pernyataan'][$pernyataan] . '_l_5';
 			$new_getl = $get_['pernyataan'][$pernyataan] . 'l';
 
-			$new_getl1 = $this->sumitem_mhslem($pernyataan,'1',$prodi,$ta)*1;
-			$new_getl2 = $this->sumitem_mhslem($pernyataan,'2',$prodi,$ta)*2;
-			$new_getl3 = $this->sumitem_mhslem($pernyataan,'3',$prodi,$ta)*3;
-			$new_getl4 = $this->sumitem_mhslem($pernyataan,'4',$prodi,$ta)*4;
-			$new_getl5 = $this->sumitem_mhslem($pernyataan,'5',$prodi,$ta)*5;
+			$new_getl1 = $this->sumitem_mhslem($pernyataan."l",'1',$prodi,$ta)*1;
+			$new_getl2 = $this->sumitem_mhslem($pernyataan."l",'2',$prodi,$ta)*2;
+			$new_getl3 = $this->sumitem_mhslem($pernyataan."l",'3',$prodi,$ta)*3;
+			$new_getl4 = $this->sumitem_mhslem($pernyataan."l",'4',$prodi,$ta)*4;
+			$new_getl5 = $this->sumitem_mhslem($pernyataan."l",'5',$prodi,$ta)*5;
 
 			$new_getl =$new_getl1+$new_getl2+$new_getl3+$new_getl4+$new_getl5;
 
@@ -1475,11 +1475,11 @@ class Lpm extends CI_Controller {
 			$new_getm5 = $get_['pernyataan'][$pernyataan] . '_m_5';
 			$new_getm = $get_['pernyataan'][$pernyataan] . 'm';
 
-			$new_getm1 = $this->sumitem_mhslem($pernyataan,'1',$prodi,$ta)*1;
-			$new_getm2 = $this->sumitem_mhslem($pernyataan,'2',$prodi,$ta)*2;
-			$new_getm3 = $this->sumitem_mhslem($pernyataan,'3',$prodi,$ta)*3;
-			$new_getm4 = $this->sumitem_mhslem($pernyataan,'4',$prodi,$ta)*4;
-			$new_getm5 = $this->sumitem_mhslem($pernyataan,'5',$prodi,$ta)*5;
+			$new_getm1 = $this->sumitem_mhslem($pernyataan."m",'1',$prodi,$ta)*1;
+			$new_getm2 = $this->sumitem_mhslem($pernyataan."m",'2',$prodi,$ta)*2;
+			$new_getm3 = $this->sumitem_mhslem($pernyataan."m",'3',$prodi,$ta)*3;
+			$new_getm4 = $this->sumitem_mhslem($pernyataan."m",'4',$prodi,$ta)*4;
+			$new_getm5 = $this->sumitem_mhslem($pernyataan."m",'5',$prodi,$ta)*5;
 
 			$new_getm =$new_getm1+$new_getm2+$new_getm3+$new_getm4+$new_getm5;
 
@@ -1490,11 +1490,11 @@ class Lpm extends CI_Controller {
 			$new_getn5 = $get_['pernyataan'][$pernyataan] . '_n_5';
 			$new_getn = $get_['pernyataan'][$pernyataan] . 'n';
 
-			$new_getn1 = $this->sumitem_mhslem($pernyataan,'1',$prodi,$ta)*1;
-			$new_getn2 = $this->sumitem_mhslem($pernyataan,'2',$prodi,$ta)*2;
-			$new_getn3 = $this->sumitem_mhslem($pernyataan,'3',$prodi,$ta)*3;
-			$new_getn4 = $this->sumitem_mhslem($pernyataan,'4',$prodi,$ta)*4;
-			$new_getn5 = $this->sumitem_mhslem($pernyataan,'5',$prodi,$ta)*5;
+			$new_getn1 = $this->sumitem_mhslem($pernyataan."n",'1',$prodi,$ta)*1;
+			$new_getn2 = $this->sumitem_mhslem($pernyataan."n",'2',$prodi,$ta)*2;
+			$new_getn3 = $this->sumitem_mhslem($pernyataan."n",'3',$prodi,$ta)*3;
+			$new_getn4 = $this->sumitem_mhslem($pernyataan."n",'4',$prodi,$ta)*4;
+			$new_getn5 = $this->sumitem_mhslem($pernyataan."n",'5',$prodi,$ta)*5;
 
 			$new_getn =$new_getn1+$new_getn2+$new_getn3+$new_getn4+$new_getn5;
 
@@ -1505,11 +1505,11 @@ class Lpm extends CI_Controller {
 			$new_geto5 = $get_['pernyataan'][$pernyataan] . '_o_5';
 			$new_geto = $get_['pernyataan'][$pernyataan] . 'o';
 
-			$new_geto1 = $this->sumitem_mhslem($pernyataan,'1',$prodi,$ta)*1;
-			$new_geto2 = $this->sumitem_mhslem($pernyataan,'2',$prodi,$ta)*2;
-			$new_geto3 = $this->sumitem_mhslem($pernyataan,'3',$prodi,$ta)*3;
-			$new_geto4 = $this->sumitem_mhslem($pernyataan,'4',$prodi,$ta)*4;
-			$new_geto5 = $this->sumitem_mhslem($pernyataan,'5',$prodi,$ta)*5;
+			$new_geto1 = $this->sumitem_mhslem($pernyataan."o",'1',$prodi,$ta)*1;
+			$new_geto2 = $this->sumitem_mhslem($pernyataan."o",'2',$prodi,$ta)*2;
+			$new_geto3 = $this->sumitem_mhslem($pernyataan."o",'3',$prodi,$ta)*3;
+			$new_geto4 = $this->sumitem_mhslem($pernyataan."o",'4',$prodi,$ta)*4;
+			$new_geto5 = $this->sumitem_mhslem($pernyataan."o",'5',$prodi,$ta)*5;
 
 			$new_geto =$new_geto1+$new_geto2+$new_geto3+$new_geto4+$new_geto5;
 
