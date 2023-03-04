@@ -28,41 +28,41 @@
     });
   }
 
-// <?php foreach ($list_pert as $key) {?>
-//       /*
-//      * DONUT CHART
-//      * -----------
-//      */
+<?php //foreach ($list_pert as $key) {?>
+      /*
+     * DONUT CHART
+     * -----------
+     */
 
-//     var donutData<?php //echo $key->id_mhsdsn ?> = [
-//      { label: 'STS', data: <?php //echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'1') ?>, color: '#f20b0b' },
-//       { label: 'TS', data: <?php //echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'2') ?>, color: '#ffad5f' },
-//       { label: 'KS', data: <?php//echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'3') ?>, color: '#ffd966' },
-//       { label: 'S', data: <?php //echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'4') ?>, color: '#9af073' },
-//       { label: 'SS', data: <?php //echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'5') ?>, color: '#89ddfc' }
-//     ]
-//     $.plot('#donut-chart-<?php //echo $key->id_mhsdsn ?>', donutData<?php //echo $key->id_mhsdsn; ?>, {
-//         series: {
-//           pie: { 
-//             show: true,
-//             radius: 1,
-//             label: {
-//               show: true,
-//               radius: 3/4,
-//               formatter: labelFormatter,
-//               background: {
-//                 opacity: 0.5
-//               }
-//             }
-//           }
-//         },
-//         legend: {
-//           show: false
-//         }
-//       });
+    var donutData<?php //echo $key->id_mhsdsn ?> = [
+     { label: 'STS', data: <?php //echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'1') ?>, color: '#f20b0b' },
+      { label: 'TS', data: <?php //echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'2') ?>, color: '#ffad5f' },
+      { label: 'KS', data: <?php//echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'3') ?>, color: '#ffd966' },
+      { label: 'S', data: <?php //echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'4') ?>, color: '#9af073' },
+      { label: 'SS', data: <?php //echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'5') ?>, color: '#89ddfc' }
+    ]
+    $.plot('#donut-chart-<?php //echo $key->id_mhsdsn ?>', donutData<?php //echo $key->id_mhsdsn; ?>, {
+        series: {
+          pie: { 
+            show: true,
+            radius: 1,
+            label: {
+              show: true,
+              radius: 3/4,
+              formatter: labelFormatter,
+              background: {
+                opacity: 0.5
+              }
+            }
+          }
+        },
+        legend: {
+          show: false
+        }
+      });
 
 
-//     <?php } ?>
+   <?php //} ?>
     /*
      * END DONUT CHART
      */
