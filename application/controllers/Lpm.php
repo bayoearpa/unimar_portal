@@ -1288,137 +1288,234 @@ class Lpm extends CI_Controller {
 			# code...
 
 			// get item untk get data per prodi
-			$get_.$pernyataan.a_1 = $this->sumitem_mhslem($pernyataan,'1',$prodi,$ta)*1;
-			$get_.$pernyataan.a_2 = $this->sumitem_mhslem($pernyataan,'2',$prodi,$ta)*2;
-			$get_.$pernyataan.a_3 = $this->sumitem_mhslem($pernyataan,'3',$prodi,$ta)*3;
-			$get_.$pernyataan.a_4 = $this->sumitem_mhslem($pernyataan,'4',$prodi,$ta)*4;
-			$get_.$pernyataan.a_5 = $this->sumitem_mhslem($pernyataan,'5',$prodi,$ta)*5;
+			$new_geta1 = $get_['pernyataan'][$pernyataan] . '_a_1';
+			$new_geta2 = $get_['pernyataan'][$pernyataan] . '_a_2';
+			$new_geta3 = $get_['pernyataan'][$pernyataan] . '_a_3';
+			$new_geta4 = $get_['pernyataan'][$pernyataan] . '_a_4';
+			$new_geta5 = $get_['pernyataan'][$pernyataan] . '_a_5';
+			$new_geta = $get_['pernyataan'][$pernyataan] . 'a';
 
-			$get_.$pernyataan.a =$get_.$pernyataan.a_1+$get_.$pernyataan.a_2+$get_.$pernyataan.a_3+$get_.$pernyataan.a_4+$get_.$pernyataan.a_5;
+			$new_geta1 = $this->sumitem_mhslem($pernyataan,'1',$prodi,$ta)*1;
+			$new_geta2 = $this->sumitem_mhslem($pernyataan,'2',$prodi,$ta)*2;
+			$new_geta3 = $this->sumitem_mhslem($pernyataan,'3',$prodi,$ta)*3;
+			$new_geta4 = $this->sumitem_mhslem($pernyataan,'4',$prodi,$ta)*4;
+			$new_geta5 = $this->sumitem_mhslem($pernyataan,'5',$prodi,$ta)*5;
 
-			$get_.$pernyataan.b_1 = $this->sumitem_mhslem($pernyataan,'1',$prodi,$ta)*1;
-			$get_.$pernyataan.b_2 = $this->sumitem_mhslem($pernyataan,'2',$prodi,$ta)*2;
-			$get_.$pernyataan.b_3 = $this->sumitem_mhslem($pernyataan,'3',$prodi,$ta)*3;
-			$get_.$pernyataan.b_4 = $this->sumitem_mhslem($pernyataan,'4',$prodi,$ta)*4;
-			$get_.$pernyataan.b_5 = $this->sumitem_mhslem($pernyataan,'5',$prodi,$ta)*5;
+			$new_geta =$new_geta1+$new_geta2+$new_geta3+$new_geta4+$new_geta5;
 
-			$get_.$pernyataan.b =$get_.$pernyataan.b_1+$get_.$pernyataan.b_2+$get_.$pernyataan.b_3+$get_.$pernyataan.b_4+$get_.$pernyataan.b_5;
+			$new_getb1 = $get_['pernyataan'][$pernyataan] . '_b_1';
+			$new_getb2 = $get_['pernyataan'][$pernyataan] . '_b_2';
+			$new_getb3 = $get_['pernyataan'][$pernyataan] . '_b_3';
+			$new_getb4 = $get_['pernyataan'][$pernyataan] . '_b_4';
+			$new_getb5 = $get_['pernyataan'][$pernyataan] . '_b_5';
+			$new_getb = $get_['pernyataan'][$pernyataan] . 'b';
 
-			$get_.$pernyataan.c_1 = $this->sumitem_mhslem($pernyataan,'1',$prodi,$ta)*1;
-			$get_.$pernyataan.c_2 = $this->sumitem_mhslem($pernyataan,'2',$prodi,$ta)*2;
-			$get_.$pernyataan.c_3 = $this->sumitem_mhslem($pernyataan,'3',$prodi,$ta)*3;
-			$get_.$pernyataan.c_4 = $this->sumitem_mhslem($pernyataan,'4',$prodi,$ta)*4;
-			$get_.$pernyataan.c_5 = $this->sumitem_mhslem($pernyataan,'5',$prodi,$ta)*5;
+			$new_getb1 = $this->sumitem_mhslem($pernyataan,'1',$prodi,$ta)*1;
+			$new_getb2 = $this->sumitem_mhslem($pernyataan,'2',$prodi,$ta)*2;
+			$new_getb3 = $this->sumitem_mhslem($pernyataan,'3',$prodi,$ta)*3;
+			$new_getb4 = $this->sumitem_mhslem($pernyataan,'4',$prodi,$ta)*4;
+			$new_getb5 = $this->sumitem_mhslem($pernyataan,'5',$prodi,$ta)*5;
 
-			$get_.$pernyataan.c =$get_.$pernyataan.c_1+$get_.$pernyataan.c_2+$get_.$pernyataan.c_3+$get_.$pernyataan.c_4+$get_.$pernyataan.c_5;
+			$new_getb =$new_getb1+$new_getb2+$new_getb3+$new_getb4+$new_getb5;
 
-			$get_.$pernyataan.d_1 = $this->sumitem_mhslem($pernyataan,'1',$prodi,$ta)*1;
-			$get_.$pernyataan.d_2 = $this->sumitem_mhslem($pernyataan,'2',$prodi,$ta)*2;
-			$get_.$pernyataan.d_3 = $this->sumitem_mhslem($pernyataan,'3',$prodi,$ta)*3;
-			$get_.$pernyataan.d_4 = $this->sumitem_mhslem($pernyataan,'4',$prodi,$ta)*4;
-			$get_.$pernyataan.d_5 = $this->sumitem_mhslem($pernyataan,'5',$prodi,$ta)*5;
+			$new_getc1 = $get_['pernyataan'][$pernyataan] . '_c_1';
+			$new_getc2 = $get_['pernyataan'][$pernyataan] . '_c_2';
+			$new_getc3 = $get_['pernyataan'][$pernyataan] . '_c_3';
+			$new_getc4 = $get_['pernyataan'][$pernyataan] . '_c_4';
+			$new_getc5 = $get_['pernyataan'][$pernyataan] . '_c_5';
+			$new_getc = $get_['pernyataan'][$pernyataan] . 'c';
 
-			$get_.$pernyataan.d =$get_.$pernyataan.d_1+$get_.$pernyataan.d_2+$get_.$pernyataan.d_3+$get_.$pernyataan.d_4+$get_.$pernyataan.d_5;
+			$new_getc1 = $this->sumitem_mhslem($pernyataan,'1',$prodi,$ta)*1;
+			$new_getc2 = $this->sumitem_mhslem($pernyataan,'2',$prodi,$ta)*2;
+			$new_getc3 = $this->sumitem_mhslem($pernyataan,'3',$prodi,$ta)*3;
+			$new_getc4 = $this->sumitem_mhslem($pernyataan,'4',$prodi,$ta)*4;
+			$new_getc5 = $this->sumitem_mhslem($pernyataan,'5',$prodi,$ta)*5;
 
-			$get_.$pernyataan.e_1 = $this->sumitem_mhslem($pernyataan,'1',$prodi,$ta)*1;
-			$get_.$pernyataan.e_2 = $this->sumitem_mhslem($pernyataan,'2',$prodi,$ta)*2;
-			$get_.$pernyataan.e_3 = $this->sumitem_mhslem($pernyataan,'3',$prodi,$ta)*3;
-			$get_.$pernyataan.e_4 = $this->sumitem_mhslem($pernyataan,'4',$prodi,$ta)*4;
-			$get_.$pernyataan.e_5 = $this->sumitem_mhslem($pernyataan,'5',$prodi,$ta)*5;
+			$new_getc =$new_getc1+$new_getc2+$new_getc3+$new_getc4+$new_getc5;
 
-			$get_.$pernyataan.e =$get_.$pernyataan.e_1+$get_.$pernyataan.e_2+$get_.$pernyataan.e_3+$get_.$pernyataan.e_4+$get_.$pernyataan.e_5;
+			$new_getd1 = $get_['pernyataan'][$pernyataan] . '_d_1';
+			$new_getd2 = $get_['pernyataan'][$pernyataan] . '_d_2';
+			$new_getd3 = $get_['pernyataan'][$pernyataan] . '_d_3';
+			$new_getd4 = $get_['pernyataan'][$pernyataan] . '_d_4';
+			$new_getd5 = $get_['pernyataan'][$pernyataan] . '_d_5';
+			$new_getd = $get_['pernyataan'][$pernyataan] . 'd';
 
-			$get_.$pernyataan.f_1 = $this->sumitem_mhslem($pernyataan,'1',$prodi,$ta)*1;
-			$get_.$pernyataan.f_2 = $this->sumitem_mhslem($pernyataan,'2',$prodi,$ta)*2;
-			$get_.$pernyataan.f_3 = $this->sumitem_mhslem($pernyataan,'3',$prodi,$ta)*3;
-			$get_.$pernyataan.f_4 = $this->sumitem_mhslem($pernyataan,'4',$prodi,$ta)*4;
-			$get_.$pernyataan.f_5 = $this->sumitem_mhslem($pernyataan,'5',$prodi,$ta)*5;
+			$new_getd1 = $this->sumitem_mhslem($pernyataan,'1',$prodi,$ta)*1;
+			$new_getd2 = $this->sumitem_mhslem($pernyataan,'2',$prodi,$ta)*2;
+			$new_getd3 = $this->sumitem_mhslem($pernyataan,'3',$prodi,$ta)*3;
+			$new_getd4 = $this->sumitem_mhslem($pernyataan,'4',$prodi,$ta)*4;
+			$new_getd5 = $this->sumitem_mhslem($pernyataan,'5',$prodi,$ta)*5;
 
-			$get_.$pernyataan.f =$get_.$pernyataan.f_1+$get_.$pernyataan.f_2+$get_.$pernyataan.f_3+$get_.$pernyataan.f_4+$get_.$pernyataan.f_5;
+			$new_getd =$new_getd1+$new_getd2+$new_getd3+$new_getd4+$new_getd5;
 
-			$get_.$pernyataan.g_1 = $this->sumitem_mhslem($pernyataan,'1',$prodi,$ta)*1;
-			$get_.$pernyataan.g_2 = $this->sumitem_mhslem($pernyataan,'2',$prodi,$ta)*2;
-			$get_.$pernyataan.g_3 = $this->sumitem_mhslem($pernyataan,'3',$prodi,$ta)*3;
-			$get_.$pernyataan.g_4 = $this->sumitem_mhslem($pernyataan,'4',$prodi,$ta)*4;
-			$get_.$pernyataan.g_5 = $this->sumitem_mhslem($pernyataan,'5',$prodi,$ta)*5;
+			$new_gete1 = $get_['pernyataan'][$pernyataan] . '_e_1';
+			$new_gete2 = $get_['pernyataan'][$pernyataan] . '_e_2';
+			$new_gete3 = $get_['pernyataan'][$pernyataan] . '_e_3';
+			$new_gete4 = $get_['pernyataan'][$pernyataan] . '_e_4';
+			$new_gete5 = $get_['pernyataan'][$pernyataan] . '_e_5';
+			$new_gete = $get_['pernyataan'][$pernyataan] . 'e';
 
-			$get_.$pernyataan.g =$get_.$pernyataan.g_1+$get_.$pernyataan.g_2+$get_.$pernyataan.g_3+$get_.$pernyataan.g_4+$get_.$pernyataan.g_5;
+			$new_gete1 = $this->sumitem_mhslem($pernyataan,'1',$prodi,$ta)*1;
+			$new_gete2 = $this->sumitem_mhslem($pernyataan,'2',$prodi,$ta)*2;
+			$new_gete3 = $this->sumitem_mhslem($pernyataan,'3',$prodi,$ta)*3;
+			$new_gete4 = $this->sumitem_mhslem($pernyataan,'4',$prodi,$ta)*4;
+			$new_gete5 = $this->sumitem_mhslem($pernyataan,'5',$prodi,$ta)*5;
 
-			$get_.$pernyataan.h_1 = $this->sumitem_mhslem($pernyataan,'1',$prodi,$ta)*1;
-			$get_.$pernyataan.h_2 = $this->sumitem_mhslem($pernyataan,'2',$prodi,$ta)*2;
-			$get_.$pernyataan.h_3 = $this->sumitem_mhslem($pernyataan,'3',$prodi,$ta)*3;
-			$get_.$pernyataan.h_4 = $this->sumitem_mhslem($pernyataan,'4',$prodi,$ta)*4;
-			$get_.$pernyataan.h_5 = $this->sumitem_mhslem($pernyataan,'5',$prodi,$ta)*5;
+			$new_gete =$new_gete1+$new_gete2+$new_gete3+$new_gete4+$new_gete5;
 
-			$get_.$pernyataan.h =$get_.$pernyataan.h_1+$get_.$pernyataan.h_2+$get_.$pernyataan.h_3+$get_.$pernyataan.h_4+$get_.$pernyataan.h_5;
+			$new_getf1 = $get_['pernyataan'][$pernyataan] . '_f_1';
+			$new_getf2 = $get_['pernyataan'][$pernyataan] . '_f_2';
+			$new_getf3 = $get_['pernyataan'][$pernyataan] . '_f_3';
+			$new_getf4 = $get_['pernyataan'][$pernyataan] . '_f_4';
+			$new_getf5 = $get_['pernyataan'][$pernyataan] . '_f_5';
+			$new_getf = $get_['pernyataan'][$pernyataan] . 'f';
 
-			$get_.$pernyataan.i_1 = $this->sumitem_mhslem($pernyataan,'1',$prodi,$ta)*1;
-			$get_.$pernyataan.i_2 = $this->sumitem_mhslem($pernyataan,'2',$prodi,$ta)*2;
-			$get_.$pernyataan.i_3 = $this->sumitem_mhslem($pernyataan,'3',$prodi,$ta)*3;
-			$get_.$pernyataan.i_4 = $this->sumitem_mhslem($pernyataan,'4',$prodi,$ta)*4;
-			$get_.$pernyataan.i_5 = $this->sumitem_mhslem($pernyataan,'5',$prodi,$ta)*5;
+			$new_getf1 = $this->sumitem_mhslem($pernyataan,'1',$prodi,$ta)*1;
+			$new_getf2 = $this->sumitem_mhslem($pernyataan,'2',$prodi,$ta)*2;
+			$new_getf3 = $this->sumitem_mhslem($pernyataan,'3',$prodi,$ta)*3;
+			$new_getf4 = $this->sumitem_mhslem($pernyataan,'4',$prodi,$ta)*4;
+			$new_getf5 = $this->sumitem_mhslem($pernyataan,'5',$prodi,$ta)*5;
 
-			$get_.$pernyataan.i =$get_.$pernyataan.i_1+$get_.$pernyataan.i_2+$get_.$pernyataan.i_3+$get_.$pernyataan.i_4+$get_.$pernyataan.i_5;
+			$new_getf =$new_getf1+$new_getf2+$new_getf3+$new_getf4+$new_getf5;
 
-			$get_.$pernyataan.j_1 = $this->sumitem_mhslem($pernyataan,'1',$prodi,$ta)*1;
-			$get_.$pernyataan.j_2 = $this->sumitem_mhslem($pernyataan,'2',$prodi,$ta)*2;
-			$get_.$pernyataan.j_3 = $this->sumitem_mhslem($pernyataan,'3',$prodi,$ta)*3;
-			$get_.$pernyataan.j_4 = $this->sumitem_mhslem($pernyataan,'4',$prodi,$ta)*4;
-			$get_.$pernyataan.j_5 = $this->sumitem_mhslem($pernyataan,'5',$prodi,$ta)*5;
+			$new_getg1 = $get_['pernyataan'][$pernyataan] . '_g_1';
+			$new_getg2 = $get_['pernyataan'][$pernyataan] . '_g_2';
+			$new_getg3 = $get_['pernyataan'][$pernyataan] . '_g_3';
+			$new_getg4 = $get_['pernyataan'][$pernyataan] . '_g_4';
+			$new_getg5 = $get_['pernyataan'][$pernyataan] . '_g_5';
+			$new_getg = $get_['pernyataan'][$pernyataan] . 'g';
 
-			$get_.$pernyataan.j =$get_.$pernyataan.j_1+$get_.$pernyataan.j_2+$get_.$pernyataan.j_3+$get_.$pernyataan.j_4+$get_.$pernyataan.j_5;
+			$new_getg1 = $this->sumitem_mhslem($pernyataan,'1',$prodi,$ta)*1;
+			$new_getg2 = $this->sumitem_mhslem($pernyataan,'2',$prodi,$ta)*2;
+			$new_getg3 = $this->sumitem_mhslem($pernyataan,'3',$prodi,$ta)*3;
+			$new_getg4 = $this->sumitem_mhslem($pernyataan,'4',$prodi,$ta)*4;
+			$new_getg5 = $this->sumitem_mhslem($pernyataan,'5',$prodi,$ta)*5;
 
-			$get_.$pernyataan.k_1 = $this->sumitem_mhslem($pernyataan,'1',$prodi,$ta)*1;
-			$get_.$pernyataan.k_2 = $this->sumitem_mhslem($pernyataan,'2',$prodi,$ta)*2;
-			$get_.$pernyataan.k_3 = $this->sumitem_mhslem($pernyataan,'3',$prodi,$ta)*3;
-			$get_.$pernyataan.k_4 = $this->sumitem_mhslem($pernyataan,'4',$prodi,$ta)*4;
-			$get_.$pernyataan.k_5 = $this->sumitem_mhslem($pernyataan,'5',$prodi,$ta)*5;
+			$new_getg =$new_getg1+$new_getg2+$new_getg3+$new_getg4+$new_getg5;
 
-			$get_.$pernyataan.k =$get_.$pernyataan.k_1+$get_.$pernyataan.k_2+$get_.$pernyataan.k_3+$get_.$pernyataan.k_4+$get_.$pernyataan.k_5;
+			$new_geth1 = $get_['pernyataan'][$pernyataan] . '_h_1';
+			$new_geth2 = $get_['pernyataan'][$pernyataan] . '_h_2';
+			$new_geth3 = $get_['pernyataan'][$pernyataan] . '_h_3';
+			$new_geth4 = $get_['pernyataan'][$pernyataan] . '_h_4';
+			$new_geth5 = $get_['pernyataan'][$pernyataan] . '_h_5';
+			$new_geth = $get_['pernyataan'][$pernyataan] . 'h';
 
-			$get_.$pernyataan.k_1 = $this->sumitem_mhslem($pernyataan,'1',$prodi,$ta)*1;
-			$get_.$pernyataan.k_2 = $this->sumitem_mhslem($pernyataan,'2',$prodi,$ta)*2;
-			$get_.$pernyataan.k_3 = $this->sumitem_mhslem($pernyataan,'3',$prodi,$ta)*3;
-			$get_.$pernyataan.k_4 = $this->sumitem_mhslem($pernyataan,'4',$prodi,$ta)*4;
-			$get_.$pernyataan.k_5 = $this->sumitem_mhslem($pernyataan,'5',$prodi,$ta)*5;
+			$new_geth1 = $this->sumitem_mhslem($pernyataan,'1',$prodi,$ta)*1;
+			$new_geth2 = $this->sumitem_mhslem($pernyataan,'2',$prodi,$ta)*2;
+			$new_geth3 = $this->sumitem_mhslem($pernyataan,'3',$prodi,$ta)*3;
+			$new_geth4 = $this->sumitem_mhslem($pernyataan,'4',$prodi,$ta)*4;
+			$new_geth5 = $this->sumitem_mhslem($pernyataan,'5',$prodi,$ta)*5;
 
-			$get_.$pernyataan.k =$get_.$pernyataan.k_1+$get_.$pernyataan.k_2+$get_.$pernyataan.k_3+$get_.$pernyataan.k_4+$get_.$pernyataan.k_5;
+			$new_geth =$new_geth1+$new_geth2+$new_geth3+$new_geth4+$new_geth5;
 
-			$get_.$pernyataan.l_1 = $this->sumitem_mhslem($pernyataan,'1',$prodi,$ta)*1;
-			$get_.$pernyataan.l_2 = $this->sumitem_mhslem($pernyataan,'2',$prodi,$ta)*2;
-			$get_.$pernyataan.l_3 = $this->sumitem_mhslem($pernyataan,'3',$prodi,$ta)*3;
-			$get_.$pernyataan.l_4 = $this->sumitem_mhslem($pernyataan,'4',$prodi,$ta)*4;
-			$get_.$pernyataan.l_5 = $this->sumitem_mhslem($pernyataan,'5',$prodi,$ta)*5;
+			$new_geti1 = $get_['pernyataan'][$pernyataan] . '_i_1';
+			$new_geti2 = $get_['pernyataan'][$pernyataan] . '_i_2';
+			$new_geti3 = $get_['pernyataan'][$pernyataan] . '_i_3';
+			$new_geti4 = $get_['pernyataan'][$pernyataan] . '_i_4';
+			$new_geti5 = $get_['pernyataan'][$pernyataan] . '_i_5';
+			$new_geti = $get_['pernyataan'][$pernyataan] . 'i';
 
-			$get_.$pernyataan.l =$get_.$pernyataan.l_1+$get_.$pernyataan.l_2+$get_.$pernyataan.l_3+$get_.$pernyataan.l_4+$get_.$pernyataan.l_5;
+			$new_geti1 = $this->sumitem_mhslem($pernyataan,'1',$prodi,$ta)*1;
+			$new_geti2 = $this->sumitem_mhslem($pernyataan,'2',$prodi,$ta)*2;
+			$new_geti3 = $this->sumitem_mhslem($pernyataan,'3',$prodi,$ta)*3;
+			$new_geti4 = $this->sumitem_mhslem($pernyataan,'4',$prodi,$ta)*4;
+			$new_geti5 = $this->sumitem_mhslem($pernyataan,'5',$prodi,$ta)*5;
 
-			$get_.$pernyataan.m_1 = $this->sumitem_mhslem($pernyataan,'1',$prodi,$ta)*1;
-			$get_.$pernyataan.m_2 = $this->sumitem_mhslem($pernyataan,'2',$prodi,$ta)*2;
-			$get_.$pernyataan.m_3 = $this->sumitem_mhslem($pernyataan,'3',$prodi,$ta)*3;
-			$get_.$pernyataan.m_4 = $this->sumitem_mhslem($pernyataan,'4',$prodi,$ta)*4;
-			$get_.$pernyataan.m_5 = $this->sumitem_mhslem($pernyataan,'5',$prodi,$ta)*5;
+			$new_geti =$new_geti1+$new_geti2+$new_geti3+$new_geti4+$new_geti5;
 
-			$get_.$pernyataan.m =$get_.$pernyataan.m_1+$get_.$pernyataan.m_2+$get_.$pernyataan.m_3+$get_.$pernyataan.m_4+$get_.$pernyataan.m_5;
+			$new_getj1 = $get_['pernyataan'][$pernyataan] . '_j_1';
+			$new_getj2 = $get_['pernyataan'][$pernyataan] . '_j_2';
+			$new_getj3 = $get_['pernyataan'][$pernyataan] . '_j_3';
+			$new_getj4 = $get_['pernyataan'][$pernyataan] . '_j_4';
+			$new_getj5 = $get_['pernyataan'][$pernyataan] . '_j_5';
+			$new_getj = $get_['pernyataan'][$pernyataan] . 'j';
 
-			$get_.$pernyataan.n_1 = $this->sumitem_mhslem($pernyataan,'1',$prodi,$ta)*1;
-			$get_.$pernyataan.n_2 = $this->sumitem_mhslem($pernyataan,'2',$prodi,$ta)*2;
-			$get_.$pernyataan.n_3 = $this->sumitem_mhslem($pernyataan,'3',$prodi,$ta)*3;
-			$get_.$pernyataan.n_4 = $this->sumitem_mhslem($pernyataan,'4',$prodi,$ta)*4;
-			$get_.$pernyataan.n_5 = $this->sumitem_mhslem($pernyataan,'5',$prodi,$ta)*5;
+			$new_getj1 = $this->sumitem_mhslem($pernyataan,'1',$prodi,$ta)*1;
+			$new_getj2 = $this->sumitem_mhslem($pernyataan,'2',$prodi,$ta)*2;
+			$new_getj3 = $this->sumitem_mhslem($pernyataan,'3',$prodi,$ta)*3;
+			$new_getj4 = $this->sumitem_mhslem($pernyataan,'4',$prodi,$ta)*4;
+			$new_getj5 = $this->sumitem_mhslem($pernyataan,'5',$prodi,$ta)*5;
 
-			$get_.$pernyataan.n =$get_.$pernyataan.n_1+$get_.$pernyataan.n_2+$get_.$pernyataan.n_3+$get_.$pernyataan.n_4+$get_.$pernyataan.n_5;
+			$new_getj =$new_getj1+$new_getj2+$new_getj3+$new_getj4+$new_getj5;
 
-			$get_.$pernyataan.o_1 = $this->sumitem_mhslem($pernyataan,'1',$prodi,$ta)*1;
-			$get_.$pernyataan.o_2 = $this->sumitem_mhslem($pernyataan,'2',$prodi,$ta)*2;
-			$get_.$pernyataan.o_3 = $this->sumitem_mhslem($pernyataan,'3',$prodi,$ta)*3;
-			$get_.$pernyataan.o_4 = $this->sumitem_mhslem($pernyataan,'4',$prodi,$ta)*4;
-			$get_.$pernyataan.o_5 = $this->sumitem_mhslem($pernyataan,'5',$prodi,$ta)*5;
+			$new_getk1 = $get_['pernyataan'][$pernyataan] . '_k_1';
+			$new_getk2 = $get_['pernyataan'][$pernyataan] . '_k_2';
+			$new_getk3 = $get_['pernyataan'][$pernyataan] . '_k_3';
+			$new_getk4 = $get_['pernyataan'][$pernyataan] . '_k_4';
+			$new_getk5 = $get_['pernyataan'][$pernyataan] . '_k_5';
+			$new_getk = $get_['pernyataan'][$pernyataan] . 'k';
 
-			$get_.$pernyataan.o =$get_.$pernyataan.o_1+$get_.$pernyataan.o_2+$get_.$pernyataan.o_3+$get_.$pernyataan.o_4+$get_.$pernyataan.o_5;
+			$new_getk1 = $this->sumitem_mhslem($pernyataan,'1',$prodi,$ta)*1;
+			$new_getk2 = $this->sumitem_mhslem($pernyataan,'2',$prodi,$ta)*2;
+			$new_getk3 = $this->sumitem_mhslem($pernyataan,'3',$prodi,$ta)*3;
+			$new_getk4 = $this->sumitem_mhslem($pernyataan,'4',$prodi,$ta)*4;
+			$new_getk5 = $this->sumitem_mhslem($pernyataan,'5',$prodi,$ta)*5;
+
+			$new_getk =$new_getk1+$new_getk2+$new_getk3+$new_getk4+$new_getk5;
+
+			$new_getl1 = $get_['pernyataan'][$pernyataan] . '_l_1';
+			$new_getl2 = $get_['pernyataan'][$pernyataan] . '_l_2';
+			$new_getl3 = $get_['pernyataan'][$pernyataan] . '_l_3';
+			$new_getl4 = $get_['pernyataan'][$pernyataan] . '_l_4';
+			$new_getl5 = $get_['pernyataan'][$pernyataan] . '_l_5';
+			$new_getl = $get_['pernyataan'][$pernyataan] . 'l';
+
+			$new_getl1 = $this->sumitem_mhslem($pernyataan,'1',$prodi,$ta)*1;
+			$new_getl2 = $this->sumitem_mhslem($pernyataan,'2',$prodi,$ta)*2;
+			$new_getl3 = $this->sumitem_mhslem($pernyataan,'3',$prodi,$ta)*3;
+			$new_getl4 = $this->sumitem_mhslem($pernyataan,'4',$prodi,$ta)*4;
+			$new_getl5 = $this->sumitem_mhslem($pernyataan,'5',$prodi,$ta)*5;
+
+			$new_getl =$new_getl1+$new_getl2+$new_getl3+$new_getl4+$new_getl5;
+
+			$new_getm1 = $get_['pernyataan'][$pernyataan] . '_m_1';
+			$new_getm2 = $get_['pernyataan'][$pernyataan] . '_m_2';
+			$new_getm3 = $get_['pernyataan'][$pernyataan] . '_m_3';
+			$new_getm4 = $get_['pernyataan'][$pernyataan] . '_m_4';
+			$new_getm5 = $get_['pernyataan'][$pernyataan] . '_m_5';
+			$new_getm = $get_['pernyataan'][$pernyataan] . 'm';
+
+			$new_getm1 = $this->sumitem_mhslem($pernyataan,'1',$prodi,$ta)*1;
+			$new_getm2 = $this->sumitem_mhslem($pernyataan,'2',$prodi,$ta)*2;
+			$new_getm3 = $this->sumitem_mhslem($pernyataan,'3',$prodi,$ta)*3;
+			$new_getm4 = $this->sumitem_mhslem($pernyataan,'4',$prodi,$ta)*4;
+			$new_getm5 = $this->sumitem_mhslem($pernyataan,'5',$prodi,$ta)*5;
+
+			$new_getm =$new_getm1+$new_getm2+$new_getm3+$new_getm4+$new_getm5;
+
+			$new_getn1 = $get_['pernyataan'][$pernyataan] . '_n_1';
+			$new_getn2 = $get_['pernyataan'][$pernyataan] . '_n_2';
+			$new_getn3 = $get_['pernyataan'][$pernyataan] . '_n_3';
+			$new_getn4 = $get_['pernyataan'][$pernyataan] . '_n_4';
+			$new_getn5 = $get_['pernyataan'][$pernyataan] . '_n_5';
+			$new_getn = $get_['pernyataan'][$pernyataan] . 'n';
+
+			$new_getn1 = $this->sumitem_mhslem($pernyataan,'1',$prodi,$ta)*1;
+			$new_getn2 = $this->sumitem_mhslem($pernyataan,'2',$prodi,$ta)*2;
+			$new_getn3 = $this->sumitem_mhslem($pernyataan,'3',$prodi,$ta)*3;
+			$new_getn4 = $this->sumitem_mhslem($pernyataan,'4',$prodi,$ta)*4;
+			$new_getn5 = $this->sumitem_mhslem($pernyataan,'5',$prodi,$ta)*5;
+
+			$new_getn =$new_getn1+$new_getn2+$new_getn3+$new_getn4+$new_getn5;
+
+			$new_geto1 = $get_['pernyataan'][$pernyataan] . '_o_1';
+			$new_geto2 = $get_['pernyataan'][$pernyataan] . '_o_2';
+			$new_geto3 = $get_['pernyataan'][$pernyataan] . '_o_3';
+			$new_geto4 = $get_['pernyataan'][$pernyataan] . '_o_4';
+			$new_geto5 = $get_['pernyataan'][$pernyataan] . '_o_5';
+			$new_geto = $get_['pernyataan'][$pernyataan] . 'o';
+
+			$new_geto1 = $this->sumitem_mhslem($pernyataan,'1',$prodi,$ta)*1;
+			$new_geto2 = $this->sumitem_mhslem($pernyataan,'2',$prodi,$ta)*2;
+			$new_geto3 = $this->sumitem_mhslem($pernyataan,'3',$prodi,$ta)*3;
+			$new_geto4 = $this->sumitem_mhslem($pernyataan,'4',$prodi,$ta)*4;
+			$new_geto5 = $this->sumitem_mhslem($pernyataan,'5',$prodi,$ta)*5;
+
+			$new_geto =$new_geto1+$new_geto2+$new_geto3+$new_geto4+$new_geto5;
 
 		
 
-			$data['send_item_per_prodi'] = $get_.$pernyataan.a.",".$get_.$pernyataan.b.",".$get_.$pernyataan.c.",".$get_.$pernyataan.d.",".$get_.$pernyataan.e.",".$get_.$pernyataan.f.",".$get_.$pernyataan.g.",".$get_.$pernyataan.h.",".$get_.$pernyataan.i.",".$get_.$pernyataan.j.",".$get_.$pernyataan.k.",".$get_.$pernyataan.l.",".$get_.$pernyataan.m.",".$get_.$pernyataan.n.",".$get_.$pernyataan.o;
+			$data['send_item_per_prodi'] = $new_geta.",".$new_getb.",".$new_getc.",".$new_getd.",".$new_gete.",".$new_getf.",".$new_getg.",".$new_geth.",".$new_geti.",".$new_getj.",".$new_getk.",".$new_getl.",".$new_getm.",".$new_getn.",".$new_geto;
 
 			//get data dosen
 			// $where = array(
