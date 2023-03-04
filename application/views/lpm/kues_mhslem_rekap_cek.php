@@ -35,26 +35,6 @@
                 <canvas id="canvas" style="height:500px"></canvas>
                 </div>
               <!-- /chart jajal -->
-             <!--  <p>Keterangan:</p>
-              <table class="table table-bordered">
-                <tr>
-                  <td><b>Kode Pertanyaan</b></td>
-                  <td><b>Keterangan</b></td>
-                  <td><b>Tipe</b></td>
-                  <td><b>Lihat Statistik</b></td>
-                </tr>
-                <?php 
-                //foreach ($list_pert as $key) {?>
-                  <tr>
-                    <td><b><?php //echo strtoupper($key->id_mhsdsn); ?></b></td>
-                    <td><?php //echo $key->pert_mhsdsn; ?></td>
-                    <td><?php //echo $key->tipe; ?></td>
-                    <td><button type="button" class="btn btn-default" data-toggle="modal" data-target="#<?php //echo $key->id_mhsdsn ?>">Lihat</button></td>
-                  </tr>
-
-                <?php } ?>
-              </table> -->
-
               </div>
                 <!-- /tab 1 -->
               <!-- /.tab-pane -->
