@@ -31,6 +31,7 @@
                <!-- chart jajal -->
                <!-- BAR CHART -->
                 <h1>Rekap per Prodi : <?php echo $nama_prodi; ?></h1>
+                <h3><?php echo $pernyataan; ?></h3>
                 <div class="chart">
                 <canvas id="canvas" style="height:300px"></canvas>
                 </div>

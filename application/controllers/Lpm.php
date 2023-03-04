@@ -1277,6 +1277,16 @@ class Lpm extends CI_Controller {
 		$ta = $this->input->post('ta');
 		$cek = $this->cektablelapmhsdsn($prodi, $ta);
 
+		// get nama pernyataan
+		$wherezx = array(
+			'id_mhslem_tny' => $pernyataan,		
+		);
+
+		$ambiltanya = $this->m_kues->get_data($wherezx,'tbl_kues_mhslem_tanya')->result();
+		foreach ($ambiltanya as $key) {
+			# code...
+			$data['pernyataan'] = $key->tanya;
+		}
 		//get list kues
 		$data['gettanya'] = $this->m_kues->get_data_all('tbl_kues_mhslem_tanya')->result();
 		$data['list_pert'] = $this->m_kues->get_data_all('tbl_kues_mhsdsn_tanya')->result();
