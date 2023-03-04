@@ -39,23 +39,7 @@
                 <!-- /tab 1 -->
               <!-- /.tab-pane -->
               <div class="tab-pane" id="tab_2">
-              <!--  <table class="table table-bordered">
-               <tr>
-                <td><b>No Dosen</b></td>
-                <td><b>Nama Dosen</b></td>
-                <td><b>Kirim Data</b></td>
-
-               
-               </tr>
-               <?php //foreach($select_dosen as $k){ ?>
-                <tr>
-                  <td><?php //echo $k->kddosen ?></td>
-                  <td><?php //echo $k->nama_dosen ?></td>
-                  <td><a href="<?php //echo base_url() ?>lpm/kues_mhsdsn_prosesrekap_dosen/<?php //echo $k->kddosen ?>/<?php //echo $prodi ?>/<?php //echo $ta ?>" target="_blank"><button type="button" class="btn btn-block btn-primary btn-sm"><i class="fa fa-fw fa-eye"></i>Lihat Statistik</button></a></td>
-
-                </tr>
-                <?php } ?>
-             </table> -->
+                <!-- tab 2 -->
               </div>
               <!-- /.tab-pane -->
               <div class="tab-pane" id="tab_3">
@@ -75,18 +59,18 @@
 
             <!-- MODALLL -->
              <?php 
-                foreach ($list_pert as $key) {?>
+               // foreach ($list_pert as $key) {?>
                 <div class="modal fade" id="<?php echo $key->id_mhsdsn ?>">
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title"><?php echo $key->pert_mhsdsn ?></h4>
+                        <h4 class="modal-title"><?php //echo $key->pert_mhsdsn ?></h4>
                       </div>
                       <div class="modal-body">
                          
-                                <div id="donut-chart-<?php echo $key->id_mhsdsn ?>" style="height: 300px;width: 100%;"></div>
+                                <div id="donut-chart-<?php //echo $key->id_mhsdsn ?>" style="height: 300px;width: 100%;"></div>
 
                         <table>
                           <tr>
