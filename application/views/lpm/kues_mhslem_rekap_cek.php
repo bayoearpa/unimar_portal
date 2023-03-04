@@ -106,7 +106,7 @@
                   <!-- /.modal-dialog -->
                 </div>
                 <!-- /.modal -->
-                 <?php } ?>
+                 <?php //} ?>
 
       </section>
       <!-- /.content -->
