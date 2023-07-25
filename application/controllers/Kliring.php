@@ -600,6 +600,26 @@ class kliring extends CI_Controller {
 
 		return $data;
 	}
+	public function ajuan_smta_cek23()
+	{
+		# code...
+		$nim = $this->input->post('name');
+		$ta = $this->getTa();
+		$where = array(
+			'NIM' => $nim,
+        );
+
+        $data['catar']= $this->m_portal->get_datadiri_join_where_nim_smta($where)->result();
+        foreach ($data['catar'] as $key) {
+        	# code...
+        	$data['nama'] = $key->nama;
+        	$data['nim'] = $key->nim;
+        	$data['prodi'] = $key->prodi;
+        }
+
+        $this->load->view('fpsmta_ajuan_cek23',$data);
+
+	}
 	public function ajuan_smta_cek()
 	{
 		# code...

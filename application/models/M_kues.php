@@ -122,6 +122,25 @@ class M_kues extends CI_Model {
 		$query=$this->db->get();
 		return $query;
 	}
+	function get_datadiri_join_where_nim_smta($where){
+		$this->db->select('tran_nilai_semester_mhs.thsmstrnlm,
+		tran_nilai_semester_mhs.Kode_Program_studi as kode_prodi,
+		tran_nilai_semester_mhs.NIM,
+		tran_nilai_semester_mhs.Kode_Mata_kuliah as kode_makul,
+		tran_nilai_semester_mhs.Kode_Kelas,
+		tmst_mahasiswa.Nama_mahasiswa as nama,
+		tmst_program_studi.Nama_program_studi as prodi,
+		tmst_mata_kuliah.Nama_Mata_Kuliah as makul,');
+
+		$this->db->from('tran_nilai_semester_mhs');
+		$this->db->join('tmst_mahasiswa','tran_nilai_semester_mhs.NIM = tmst_mahasiswa.NIM','inner');
+		$this->db->join('tmst_program_studi','tran_nilai_semester_mhs.Kode_program_studi = tmst_program_studi.Kode_program_studi','inner');
+		$this->db->join('tmst_mata_kuliah','tran_nilai_semester_mhs.Kode_Mata_kuliah = tmst_mata_kuliah.Kode_Mata_kuliah','inner');
+		$this->db->where($where);
+		//$this->db->order_by('tbl_catar_validasi.no_reg', "asc");
+		$query=$this->db->get();
+		return $query;
+	}
 	function get_data_distinct_mhslem_stats($where){
 		$this->db->distinct();
 		$this->db->select('tbl_kues_lap_mhslem.fak AS fak,
