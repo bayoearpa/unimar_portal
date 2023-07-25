@@ -42,19 +42,15 @@
                           <tbody><tr>
                             <th style="width: 10px">#</th>
                             <th>Nama Mata Kuliah</th>
-                            <th>SKS</th>
-                            <th style="width: 40px">Label</th>
+                            <th style="width: 40px">SKS</th>
+                            <th style="width: 40px">Tahun Ajaran</th>
                           </tr>
                           <?php foreach($catar as $c){    ?>
                           <tr>
-                            <td>1.</td>
+                            <td><input type="checkbox" name="makul[]" value="<?php  echo $c->kode_makul ?>" class="minimal"></td>
                             <td><?php echo $c->makul; ?></td>
-                            <td>
-                              <div class="progress progress-xs">
-                                <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                              </div>
-                            </td>
-                            <td><span class="badge bg-red">55%</span></td>
+                            <td><?php echo $c->sks; ?></td>
+                            <td><?php echo $c->taa; ?></td>
                           </tr>
                           <?php } ?> 
                         </tbody></table>
