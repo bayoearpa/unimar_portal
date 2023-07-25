@@ -688,7 +688,7 @@ class kliring extends CI_Controller {
 		$nim = $this->input->post('name');
 		$ta = $this->getTa();
 		$where = array(
-			'NIM' => $nim,
+			'tran_nilai_semester_mhs.NIM' => $nim,
         );
 
 
