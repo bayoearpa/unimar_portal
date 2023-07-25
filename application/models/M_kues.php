@@ -125,7 +125,7 @@ class M_kues extends CI_Model {
 	function get_datadiri_join_where_nim_smta($where){
 		$this->db->select('tran_nilai_semester_mhs.thsmstrnlm,
 		tran_nilai_semester_mhs.Kode_Program_studi as kode_prodi,
-		tran_nilai_semester_mhs.NIM,
+		tran_nilai_semester_mhs.NIM as nim,
 		tran_nilai_semester_mhs.Kode_Mata_kuliah as kode_makul,
 		tran_nilai_semester_mhs.Kode_Kelas,
 		tmst_mahasiswa.Nama_mahasiswa as nama,
