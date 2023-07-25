@@ -606,7 +606,7 @@ class kliring extends CI_Controller {
 		$nim = $this->input->post('name');
 		$ta = $this->getTa();
 		$where = array(
-			'NIM' => $nim,
+			'tran_nilai_semester_mhs.NIM' => $nim,
         );
 
         $data['catar']= $this->m_portal->get_datadiri_join_where_nim_smta($where)->result();
@@ -688,7 +688,7 @@ class kliring extends CI_Controller {
 		$nim = $this->input->post('name');
 		$ta = $this->getTa();
 		$where = array(
-			'tran_nilai_semester_mhs.NIM' => $nim,
+			'NIM' => $nim,
         );
 
 
