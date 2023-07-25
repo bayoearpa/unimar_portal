@@ -608,8 +608,11 @@ class kliring extends CI_Controller {
 		$where = array(
 			'tran_nilai_semester_mhs.NIM' => $nim,
         );
+        $where2 = array(
+			'tmst_mahasiswa.NIM' => $nim,
+        );
 
-		$dt = $this->m_portal->get_data_join_nama_en_prodi($where)->result();
+		$dt = $this->m_portal->get_data_join_nama_en_prodi($where2)->result();
 		foreach ($dt as $key) {
         	# code...
         	$data['nama'] = $key->nama;
