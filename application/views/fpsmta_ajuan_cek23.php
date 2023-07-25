@@ -13,7 +13,6 @@
  </script>
 
      <form name="form1" id="form1" method="post" enctype="multipart/form-data" action="<?php echo base_url() ?>proses_smta">
-      <?php foreach($catar as $c){    ?>
                 <div class="col-md-6">
                     <div class="form-group">
                       <label for="exampleInputEmail1">NIM</label>
@@ -34,20 +33,22 @@
                   <div class="col-md-12">
                     <div class="box">
                       <div class="box-header">
-                        <h3 class="box-title">Condensed Full Width Table</h3>
+                        <h3 class="box-title">Pilihlah Mata Kuliah yang akan di daftarkan!</h3>
                       </div>
                       <!-- /.box-header -->
                       <div class="box-body no-padding">
+
                         <table class="table table-condensed">
                           <tbody><tr>
                             <th style="width: 10px">#</th>
-                            <th>Task</th>
-                            <th>Progress</th>
+                            <th>Nama Mata Kuliah</th>
+                            <th>SKS</th>
                             <th style="width: 40px">Label</th>
                           </tr>
+                          <?php foreach($catar as $c){    ?>
                           <tr>
                             <td>1.</td>
-                            <td>Update software</td>
+                            <td><?php echo $c->makul; ?></td>
                             <td>
                               <div class="progress progress-xs">
                                 <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
@@ -55,12 +56,13 @@
                             </td>
                             <td><span class="badge bg-red">55%</span></td>
                           </tr>
+                          <?php } ?> 
                         </tbody></table>
                       </div>
                       <!-- /.box-body -->
                     </div>
                   </div>
-                <?php } ?> 
+                
 
                   </div><!-- /.box-body -->
 

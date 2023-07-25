@@ -609,13 +609,15 @@ class kliring extends CI_Controller {
 			'tran_nilai_semester_mhs.NIM' => $nim,
         );
 
-        $data['catar']= $this->m_portal->get_datadiri_join_where_nim_smta($where)->result();
-        foreach ($data['catar'] as $key) {
+		$dt = $this->m_portal->get_data_join_nama_en_prodi($where)->result();
+		foreach ($dt as $key) {
         	# code...
         	$data['nama'] = $key->nama;
         	$data['nim'] = $key->nim;
         	$data['prodi'] = $key->prodi;
         }
+        $data['catar']= $this->m_portal->get_datadiri_join_where_nim_smta($where)->result();
+       
 
         $this->load->view('fpsmta_ajuan_cek23',$data);
 
