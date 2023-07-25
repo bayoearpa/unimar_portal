@@ -13,6 +13,7 @@
  </script>
 
      <form name="form1" id="form1" method="post" enctype="multipart/form-data" action="<?php echo base_url() ?>proses_smta">
+      <?php foreach($catar as $c){    ?>
                 <div class="col-md-6">
                     <div class="form-group">
                       <label for="exampleInputEmail1">NIM</label>
@@ -29,7 +30,7 @@
                       <input type="hidden" class="form-control" id="prodi" name="prodi" placeholder="Program Studi" value="<?php echo $kode_prodi ?>" style="width:70%;" readonly>
                     </div>             
                 </div>
-                <?php foreach($catar as $c){    ?>
+                
                   <div class="col-md-12">
                     <div class="box">
                       <div class="box-header">
