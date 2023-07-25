@@ -454,14 +454,15 @@ function get_data_join_cetak_absensi_pdf($where)
 		return $query;
 }
 	function get_datadiri_join_where_nim_smta($where){
-		$this->db->select('tran_nilai_semester_mhs.thsmstrnlm,
+		$this->db->select('tran_nilai_semester_mhs.thsmstrnlm as taa,
 		tran_nilai_semester_mhs.Kode_Program_studi as kode_prodi,
-		tran_nilai_semester_mhs.NIM,
+		tran_nilai_semester_mhs.NIM as nim,
 		tran_nilai_semester_mhs.Kode_Mata_kuliah as kode_makul,
 		tran_nilai_semester_mhs.Kode_Kelas,
 		tmst_mahasiswa.Nama_mahasiswa as nama,
 		tmst_program_studi.Nama_program_studi as prodi,
-		tmst_mata_kuliah.Nama_Mata_Kuliah as makul,');
+		tmst_mata_kuliah.Nama_Mata_Kuliah as makul,
+		tmst_mata_kuliah.SKS_mata_kuliah as sks');
 
 		$this->db->from('tran_nilai_semester_mhs');
 		$this->db->join('tmst_mahasiswa','tran_nilai_semester_mhs.NIM = tmst_mahasiswa.NIM','inner');

@@ -41,7 +41,7 @@
                         <table class="table table-condensed">
                           <tbody><tr>
                             <th style="width: 10px">#</th>
-                            <th>Nama Mata Kuliah</th>
+                            <th style="width: 60px">Nama Mata Kuliah</th>
                             <th style="width: 40px">SKS</th>
                             <th style="width: 40px">Tahun Ajaran</th>
                           </tr>
