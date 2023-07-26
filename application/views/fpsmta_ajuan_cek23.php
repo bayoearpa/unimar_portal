@@ -9,7 +9,25 @@
    // $('#myForm')[0].reset();
     });
 }
-  
+  function hitungTahunAjaran() {
+            // Ambil semua checkbox yang tercentang
+            const checkboxes = document.querySelectorAll('input[name="makul[]"]:checked');
+
+            // Buat objek untuk menyimpan tahun ajaran yang diambil
+            const tahunAjaran = {};
+
+            // Loop melalui checkbox yang tercentang dan tambahkan tahun ajaran ke objek
+            checkboxes.forEach((checkbox) => {
+                const tahunAjaranMakul = checkbox.dataset.tahunajaran;
+                tahunAjaran[tahunAjaranMakul] = 1;
+            });
+
+            // Hitung jumlah tahun ajaran yang diambil
+            const jumlahTahunAjaran = Object.keys(tahunAjaran).length;
+
+            // Masukkan jumlah tahun ajaran ke input hidden
+            document.getElementById("jumlah_tahun_ajaran").value = jumlahTahunAjaran;
+        }
  </script>
 
      <form name="form1" id="form1" method="post" enctype="multipart/form-data" action="<?php echo base_url() ?>proses_smta">
@@ -47,7 +65,7 @@
                           </tr>
                           <?php foreach($catar as $c){    ?>
                           <tr>
-                            <td><input type="checkbox" name="makul[]" value="<?php  echo $c->kode_makul ?>" class="minimal"></td>
+                            <td><input type="checkbox" name="makul[]" data-tahunajaran="<?php  echo $c->taa ?>" value="<?php  echo $c->kode_makul ?>" onclick="hitungTahunAjaran()" class="minimal"></td>
                             <td><?php echo $c->makul; ?></td>
                             <td><?php echo $c->sks; ?></td>
                             <td><?php echo $c->taa; ?></td>
@@ -57,12 +75,14 @@
                       </div>
                       <!-- /.box-body -->
                     </div>
+                    <input type="hidden" name="jumlah_tahun_ajaran" id="jumlah_tahun_ajaran" value="">
+                    <div class="box-footer">
+                    <button type="submit" class="btn btn-primary">Simpan</button>
+                  </div>
+                </form>
                   </div>
                 
 
                   </div><!-- /.box-body -->
 
-                  <div class="box-footer">
-                    <button type="submit" class="btn btn-primary">Simpan</button>
-                  </div>
-                </form>
+                  
