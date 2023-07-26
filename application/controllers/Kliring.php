@@ -824,7 +824,7 @@ class kliring extends CI_Controller {
 			$data_smta = array(
 			'nim'     	=> $this->input->post('nim'),	
 			'prodi'   	=> $this->input->post('prodi'),
-			'jumlah_tahun_ajaran'   => $this->input->post('jumlah_tahun_ajaran'),		
+			'jml_smt'   => $this->input->post('jumlah_tahun_ajaran'),		
 			'status' 	=> '1',
 			'ta' 		=> $ta		
 		   );
