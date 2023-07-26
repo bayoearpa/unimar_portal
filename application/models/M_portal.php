@@ -315,7 +315,8 @@ tbl_kliring_prada.judul_k');
 function get_data_join_nama_en_prodi ($where){
 	$this->db->select('tmst_mahasiswa.NIM as nim,
 tmst_mahasiswa.Nama_mahasiswa as nama,
-tmst_program_studi.Nama_program_studi as prodi');
+tmst_program_studi.Nama_program_studi as prodi,
+tmst_program_studi.Kode_program_studi as kode_prodi');
 		$this->db->from('tmst_mahasiswa');
 		$this->db->join('tmst_program_studi','tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi','inner');
 		
