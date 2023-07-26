@@ -77,7 +77,8 @@
                     </div>
                     <input type="hidden" name="jumlah_tahun_ajaran" id="jumlah_tahun_ajaran" value="">
                     <div class="box-footer">
-                    <button type="submit" class="btn btn-primary">Simpan</button>
+                    <input type="submit" class="btn btn-primary" value="Simpan">
+                    <!-- <button type="submit" class="btn btn-primary">Simpan</button> -->
                   </div>
                 </form>
                   </div>
