@@ -618,6 +618,7 @@ class kliring extends CI_Controller {
         	$data['nama'] = $key->nama;
         	$data['nim'] = $key->nim;
         	$data['prodi'] = $key->prodi;
+        	$data['kode_prodi'] = $key->kode_prodi;
         }
         $data['catar']= $this->m_portal->get_datadiri_join_where_nim_smta($where)->result();
        

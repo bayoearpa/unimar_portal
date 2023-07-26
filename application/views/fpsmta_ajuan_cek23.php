@@ -65,7 +65,7 @@
                           </tr>
                           <?php foreach($catar as $c){    ?>
                           <tr>
-                            <td><input type="checkbox" name="makul[]"  value="<?php  echo $c->kode_makul ?>" onclick="hitungTahunAjaran()" class="minimal"></td>
+                            <td><input type="checkbox" name="makul[]" data-tahunajaran="<?php  echo $c->taa ?>" value="<?php  echo $c->kode_makul ?>" onclick="hitungTahunAjaran()" class="minimal"></td>
                             <td><?php echo $c->makul; ?></td>
                             <td><?php echo $c->sks; ?></td>
                             <td><?php echo $c->taa; ?></td>
@@ -77,8 +77,8 @@
                     </div>
                     <input type="hidden" name="jumlah_tahun_ajaran" id="jumlah_tahun_ajaran" value="">
                     <div class="box-footer">
-                    <input type="submit" class="btn btn-primary" value="Simpan">
-                    <!-- <button type="submit" class="btn btn-primary">Simpan</button> -->
+                    <!-- <input type="submit" class="btn btn-primary" value="Simpan"> -->
+                    <button type="submit" class="btn btn-primary">Simpan</button>
                   </div>
                 </form>
                   </div>
