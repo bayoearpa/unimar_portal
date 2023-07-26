@@ -75,7 +75,7 @@
                       </div>
                       <!-- /.box-body -->
                     </div>
-                    <input type="hidden" name="jumlah_tahun_ajaran" id="jumlah_tahun_ajaran" value="">
+                    <input type="text" name="jumlah_tahun_ajaran" id="jumlah_tahun_ajaran" value="">
                     <div class="box-footer">
                     <button type="submit" class="btn btn-primary">Simpan</button>
                   </div>
