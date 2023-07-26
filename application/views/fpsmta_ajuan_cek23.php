@@ -38,7 +38,7 @@
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPassword1">Nama</label>
-                      <input type="text" class="form-control" id="nama" name="nama" placeholder="Nsms" value="<?php echo $nama; ?>" style="width:50%;" readonly>
+                      <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama" value="<?php echo $nama; ?>" style="width:50%;" readonly>
                     </div>
                    
                      <div class="form-group">
@@ -75,7 +75,7 @@
                       </div>
                       <!-- /.box-body -->
                     </div>
-                    <input type="text" name="jumlah_tahun_ajaran" id="jumlah_tahun_ajaran" value="">
+                    <input type="hidden" name="jumlah_tahun_ajaran" id="jumlah_tahun_ajaran" value="">
                     <div class="box-footer">
                     <button type="submit" class="btn btn-primary">Simpan</button>
                   </div>
