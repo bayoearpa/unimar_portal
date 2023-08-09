@@ -146,7 +146,7 @@ class kues extends CI_Controller {
 
 		//get makul per tahun ajaran	
 		$where2 = array(
-		'tran_aktivitas_mengajar_dosen.thsmstrakd' => $getTa,
+		//'tran_aktivitas_mengajar_dosen.thsmstrakd' => $getTa,
 		'tmst_mahasiswa.NIM' => $nim,
 		'tran_aktivitas_mengajar_dosen.Kode_program_studi' => $prodi,
 
