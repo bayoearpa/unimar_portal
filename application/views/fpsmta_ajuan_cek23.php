@@ -59,6 +59,7 @@
                         <table class="table table-condensed">
                           <tbody><tr>
                             <th style="width: 10px">#</th>
+                            <th style="width: 60px">Kode Makul</th>
                             <th style="width: 60px">Nama Mata Kuliah</th>
                             <th style="width: 40px">SKS</th>
                             <th style="width: 40px">Tahun Ajaran</th>
@@ -66,6 +67,7 @@
                           <?php foreach($catar as $c){    ?>
                           <tr>
                             <td><input type="checkbox" name="makul[]" data-tahunajaran="<?php  echo $c->taa ?>" value="<?php  echo $c->kode_makul ?>" onclick="hitungTahunAjaran()" class="minimal"></td>
+                            <td><?php echo $c->kode_makul; ?></td>
                             <td><?php echo $c->makul; ?></td>
                             <td><?php echo $c->sks; ?></td>
                             <td><?php echo $c->taa; ?></td>
