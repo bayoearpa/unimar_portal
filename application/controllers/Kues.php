@@ -187,7 +187,7 @@ class kues extends CI_Controller {
 			'NIM' => $nim,
 			'Kode_mata_kuliah'	=> $kode_matkul	
 		);
-		$ta = $this->m_kues->get_data($where,'tran_nilai_semester_mhs')->result();
+		$ta = $this->m_kues->get_data($wheresss,'tran_nilai_semester_mhs')->result();
 
 		foreach ($ta as $row) {
 			$getTa = $row->thsmstrnlm;
