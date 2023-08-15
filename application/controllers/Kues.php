@@ -163,22 +163,36 @@ class kues extends CI_Controller {
 	public function kues_mhdsn_isi()
 	{
 		# code...
+		// get ta per tahun ajaran
 
-		$where = array(
-			'id_ta' => '1'		
-		);
-		$ta = $this->m_kues->get_data($where,'tbl_ta')->result();
+		// $where = array(
+		// 	'id_ta' => '1'		
+		// );
+		// $ta = $this->m_kues->get_data($where,'tbl_ta')->result();
 
-		foreach ($ta as $row) {
-			$getTa = $row->ta;
-		}
-		$data['ta'] = $getTa;
+		// foreach ($ta as $row) {
+		// 	$getTa = $row->ta;
+		// }
+		// $data['ta'] = $getTa;
+
 
 		//. get from url
 		$nim =  $this->uri->segment(3);
   		$kode_prodi =  $this->uri->segment(4);
   		$kode_matkul =  $this->uri->segment(5);
   		$kode_dosen =  $this->uri->segment(6);
+
+  		//get ta semua tahun ajaran
+  		$wheresss = array(
+			'NIM' => $nim,
+			'Kode_mata_kuliah'	=> $kode_matkul	
+		);
+		$ta = $this->m_kues->get_data($where,'tran_nilai_semester_mhs')->result();
+
+		foreach ($ta as $row) {
+			$getTa = $row->thsmstrnlm;
+		}
+		$data['ta'] = $getTa;
 
   		//get makul per tahun ajaran	
 		$where2 = array(
