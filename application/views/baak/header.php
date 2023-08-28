@@ -257,6 +257,32 @@
                 </li>
               </ul>
         </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-share"></i> <span>Monitoring</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+
+          <ul class="treeview-menu">
+            <li><a href="<?php echo base_url() ?>baak/ajuan_pkl"><i class="fa fa-circle-o"></i> Lulus D3</a></li>
+            <li><a href="<?php echo base_url() ?>baak/ajuan_pkl"><i class="fa fa-circle-o"></i> Lulus UKP PRA</a></li>
+                <!--  <li class="treeview">
+                  <a href="#"><i class="fa fa-circle-o"></i>Lulus D3
+                    <span class="pull-right-container">
+                      <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                  </a>
+                  <ul class="treeview-menu"> -->
+                   <!--  <li><a href="<?php //echo base_url() ?>baak/search_smta_nim"><i class="fa fa-circle-o"></i>Kliring by NIM</a></li>
+                    <li><a href="<?php //echo base_url() ?>baak/search_smta_cetak"><i class="fa fa-circle-o"></i>Rekap absensi</a></li> -->
+                    <!-- <li><a href="<?php //echo base_url() ?>baak/ajuan_pkl"><i class="fa fa-circle-o"></i> Ajuan PKL</a></li> -->
+                    <!-- <li><a href="#"><i class="fa fa-circle-o"></i> Selesai</a></li> -->
+              <!--     </ul>
+                </li> -->
+              </ul>
+        </li>
 
       </ul>
     </section>
