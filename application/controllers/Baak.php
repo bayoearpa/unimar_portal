@@ -1555,8 +1555,9 @@ class baak extends CI_Controller {
             // Ambil data berdasarkan tahun yang dipilih
             $data['items'] = $this->m_portal->get_data_formon_mhsyear($year);
         }
-
+        $this->load->view('baak/header');
         $this->load->view('baak/mon_llsd3', $data);
+        $this->load->view('baak/footer');
 	}
 
 }
