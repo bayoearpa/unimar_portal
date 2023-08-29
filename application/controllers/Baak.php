@@ -1558,6 +1558,7 @@ class baak extends CI_Controller {
         $this->load->view('baak/header');
         $this->load->view('baak/mon_llsd3', $data);
         $this->load->view('baak/footer');
+        $this->load->view('baak/mon_llsd3_js');
 	}
 
 }

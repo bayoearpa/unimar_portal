@@ -27,40 +27,36 @@
                   <th>NIM</th>
                   <th>Nama</th>
                   <th>Prodi</th>
-                  <th>Jenjang</th>
+                  <!-- <th>Jenjang</th>
                   <th>Mahatar</th>
                   <th>D.Wali</th>
                   <th>BAAK</th>
                   <th>BK</th>
                   <th>PPK</th>
-                  <th>Hasil</th>
+                  <th>Hasil</th> -->
                 </tr>
                 </thead>
+                <?php foreach ($items as $i => $value) {
+                  # code...
+                 ?>
                 <tbody>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-
+                <td><?php echo $i->nim; ?></td>
+                <td><?php echo $i->nama; ?></td>
+                <td><?php echo $i->prodi; ?></td>
                 </tbody>
+              <?php } ?>
                 <tfoot>
                 <tr>
                   <th>NIM</th>
                   <th>Nama</th>
                   <th>Prodi</th>
-                  <th>Jenjang</th>
+                 <!--  <th>Jenjang</th>
                   <th>Mahatar</th>
                   <th>D.Wali</th>
                   <th>BAAK</th>
                   <th>BK</th>
                   <th>PPK</th>
-                  <th>Hasil</th>
+                  <th>Hasil</th> -->
                 </tr>
                 </tfoot>
               </table>
@@ -74,20 +70,4 @@
       <!-- /.row -->
     </section>
     <!-- /.content -->
-    <script>
-    $(document).ready(function() {
-        $('#filter-form').submit(function(e) {
-            e.preventDefault();
-            var year = $('#year').val();
-
-            $.ajax({
-                type: 'GET',
-                url: '<?php echo base_url('items/index'); ?>',
-                data: { year: year },
-                success: function(response) {
-                    $('#item-list').html(response); // Ganti isi #item-list dengan hasil AJAX
-                }
-            });
-        });
-    });
-    </script>
+   
