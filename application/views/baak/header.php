@@ -266,7 +266,7 @@
           </a>
 
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url() ?>baak/ajuan_pkl"><i class="fa fa-circle-o"></i> Lulus D3</a></li>
+            <li><a href="<?php echo base_url() ?>baak/mon_llsd3"><i class="fa fa-circle-o"></i> Lulus D3</a></li>
             <li><a href="<?php echo base_url() ?>baak/ajuan_pkl"><i class="fa fa-circle-o"></i> Lulus UKP PRA</a></li>
                 <!--  <li class="treeview">
                   <a href="#"><i class="fa fa-circle-o"></i>Lulus D3

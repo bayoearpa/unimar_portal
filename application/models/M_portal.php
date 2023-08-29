@@ -544,6 +544,29 @@ function get_data_join_kardos($where)
 		$query=$this->db->get();
 		return $query;
 }
+
+///////////////////////////////////////////monitoring//////////////////////////////////////////////////////////
+
+function get_data_formon_mhsall()
+{
+	# code...
+	 // Mengambil data mahasiswa dengan tahun_masuk dari tahun 2018
+        $this->db->select('*');
+        $this->db->from('tmst_mahasiswa');
+        $this->db->where('Tahun_masuk >=', '2018');
+        $query = $this->db->get();
+        return $query->result();
+}
+function get_data_formon_mhsyear($year)
+{
+	# code...
+	 // Mengambil data mahasiswa dengan tahun_masuk sesuai dengan yang dipilih
+        $this->db->select('*');
+        $this->db->from('tmst_mahasiswa');
+        $this->db->where('YEAR(Tanggal_masuk)', $year);
+        $query = $this->db->get();
+        return $query->result();
+}
 		
 	}
 /* End of file M_portal.php */

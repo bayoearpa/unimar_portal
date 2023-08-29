@@ -1541,7 +1541,23 @@ class baak extends CI_Controller {
 		}
 	}
 
+	//////////////////////////////////////////Monitoring///////////////////////////////////////////////////////
 
+	public function mon_llsd3()
+	{
+		# code...
+		 $year = $this->input->get('year'); // Ambil tahun dari input form
+
+        // Jika tahun tidak dipilih, tampilkan data seluruh tahun
+        if (!$year) {
+            $data['items'] = $this->m_portal->get_data_formon_mhsall();
+        } else {
+            // Ambil data berdasarkan tahun yang dipilih
+            $data['items'] = $this->m_portal->get_data_formon_mhsyear($year);
+        }
+
+        $this->load->view('baak/mon_llsd3', $data);
+	}
 
 }
 
