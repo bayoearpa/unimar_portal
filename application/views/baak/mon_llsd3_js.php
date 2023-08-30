@@ -14,5 +14,11 @@
                 }
             });
         });
+        ////datatables
+         $('#example31082023').DataTable({
+                "paging": true, // Enable pagination
+                "pageLength": 10, // Set the number of records per page
+                // Other DataTables options...
+            });
     });
     </script>

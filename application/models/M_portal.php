@@ -547,21 +547,31 @@ function get_data_join_kardos($where)
 
 ///////////////////////////////////////////monitoring//////////////////////////////////////////////////////////
 
-function get_data_formon_mhsall()
+function get_data_formon_mhsall($limit, $offset)
 {
 	# code...
 	 // Mengambil data mahasiswa dengan tahun_masuk dari tahun 2018
         $this->db->select('tmst_mahasiswa.NIM as nim,
-			tmst_mahasiswa.Nama_mahasiswa as nama,
-			tmst_program_studi.Nama_program_studi as prodi,
-			tmst_program_studi.Kode_program_studi as kode_prodi');
-        $this->db->from('tmst_mahasiswa');
-        $this->db->join('tmst_program_studi','tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi','inner');
-        $this->db->where('Tahun_masuk >=', '2018');
-        $this->db->where_in('tmst_mahasiswa.Kode_program_studi', array('92403', '92402'));
-        $this->db->limit(200); // Mengambil 200 data
-        $query = $this->db->get();
-        return $query->result();
+        tmst_mahasiswa.Nama_mahasiswa as nama,
+        tmst_program_studi.Nama_program_studi as prodi,
+        tmst_program_studi.Kode_program_studi as kode_prodi');
+	    $this->db->from('tmst_mahasiswa');
+	    $this->db->join('tmst_program_studi', 'tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi', 'inner');
+	    $this->db->where('Tahun_masuk >=', '2018');
+	    $this->db->where_in('tmst_mahasiswa.Kode_program_studi', array('92403', '92402'));
+	    $this->db->limit($limit, $offset); // Apply pagination
+	    $query = $this->db->get();
+	    return $query->result();
+}
+function count_all_data_formon_mhsall()
+{
+    $this->db->select('COUNT(*) as count');
+    $this->db->from('tmst_mahasiswa');
+    $this->db->where('Tahun_masuk >=', '2018');
+    $this->db->where_in('tmst_mahasiswa.Kode_program_studi', array('92403', '92402'));
+    $query = $this->db->get();
+    $result = $query->row();
+    return $result->count;
 }
 function get_data_formon_mhsyear($year)
 {
