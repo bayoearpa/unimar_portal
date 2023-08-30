@@ -1574,7 +1574,7 @@ class baak extends CI_Controller {
 	public function mon_llsd3data()
 	{
 		# code...
-		$year = $this->input->get('year'); // Ambil tahun dari input form
+	$year = $this->input->get('year'); // Ambil tahun dari input form
     $program_studi = $this->input->get('program_studi'); // Ambil program studi dari input form
 
     // Buat array untuk filter program studi
