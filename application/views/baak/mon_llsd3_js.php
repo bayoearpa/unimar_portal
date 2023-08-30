@@ -10,14 +10,14 @@
                 url: '<?php echo base_url('baak/mon_llsd3data'); ?>',
                 data: { year: year, program_studi: programStudi }, // Send both year and program_studi
                 success: function(response) {
-                    $('#example1 tbody').html(response); // Ganti isi #item-list dengan hasil AJAX
+                    $('#example31082023 tbody').html(response); // Ganti isi #item-list dengan hasil AJAX
                 }
             });
         });
         ////datatables
          $('#example31082023').DataTable({
                 "paging": true, // Enable pagination
-                "pageLength": 10, // Set the number of records per page
+                "pageLength": 20, // Set the number of records per page
                 // Other DataTables options...
             });
     });
