@@ -10,7 +10,7 @@
                 url: '<?php echo base_url('baak/mon_llsd3data'); ?>',
                 data: { year: year, program_studi: programStudi }, // Send both year and program_studi
                 success: function(response) {
-                    $('#example31082023 tbody').html(response); // Ganti isi #item-list dengan hasil AJAX
+                    $('#example31082023').html(response); // Ganti isi #item-list dengan hasil AJAX
                 }
             });
         });
