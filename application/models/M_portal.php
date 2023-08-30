@@ -572,7 +572,7 @@ function get_data_formon_mhsyear($year)
 			tmst_program_studi.Kode_program_studi as kode_prodi');
         $this->db->from('tmst_mahasiswa');
         $this->db->join('tmst_program_studi','tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi','inner');
-        $this->db->where('YEAR(Tanggal_masuk)', $year);
+        $this->db->where('YEAR(tmst_mahasiswa.Tanggal_masuk)', $year);
         $query = $this->db->get();
         return $query->result();
 }
@@ -586,7 +586,7 @@ function get_data_formon_mhsprodi($program_studi)
 			tmst_program_studi.Kode_program_studi as kode_prodi');
         $this->db->from('tmst_mahasiswa');
         $this->db->join('tmst_program_studi','tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi','inner');
-        $this->db->where('Kode_program_studi', $program_studi);
+        $this->db->where('tmst_mahasiswa.Kode_program_studi', $program_studi);
         $query = $this->db->get();
         return $query->result();
 }
@@ -600,8 +600,8 @@ function get_data_formon_mhsyearnprodi($year, $program_studi)
 			tmst_program_studi.Kode_program_studi as kode_prodi');
         $this->db->from('tmst_mahasiswa');
         $this->db->join('tmst_program_studi','tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi','inner');
-        $this->db->where('YEAR(Tanggal_masuk)', $year);
-        $this->db->where('Kode_program_studi', $program_studi);
+        $this->db->where('YEAR(tmst_mahasiswa.Tanggal_masuk)', $year);
+        $this->db->where('tmst_mahasiswa.Kode_program_studi', $program_studi);
         $query = $this->db->get();
         return $query->result();
 }
