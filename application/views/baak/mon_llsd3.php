@@ -36,7 +36,7 @@
                   <th>Hasil</th> -->
                 </tr>
                 </thead>
-                <?php foreach ($items as $i => $value) {
+                <?php foreach ($items as $i) {
                   # code...
                  ?>
                 <tbody>
