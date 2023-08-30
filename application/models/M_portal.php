@@ -589,7 +589,7 @@ function get_data_formon_mhsprodi($program_studi)
         $query = $this->db->get();
         return $query->result();
 }
-function get_data_formon_mhsyearnprodi($year)
+function get_data_formon_mhsyearnprodi($year, $program_studi)
 {
 	# code...
 	 // Mengambil data mahasiswa dengan tahun_masuk sesuai dengan yang dipilih
