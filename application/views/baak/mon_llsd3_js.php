@@ -7,7 +7,7 @@
 
             $.ajax({
                 type: 'GET',
-                url: '<?php echo base_url('baak/mon_llsd3'); ?>',
+                url: '<?php echo base_url('baak/mon_llsd3data'); ?>',
                 ddata: { year: year, program_studi: programStudi }, // Send both year and program_studi
                 success: function(response) {
                     $('#example1').html(response); // Ganti isi #item-list dengan hasil AJAX
