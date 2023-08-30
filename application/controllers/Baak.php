@@ -1546,15 +1546,26 @@ class baak extends CI_Controller {
 	public function mon_llsd3()
 	{
 		# code...
-		 $year = $this->input->get('year'); // Ambil tahun dari input form
 
-        // Jika tahun tidak dipilih, tampilkan data seluruh tahun
-        if (!$year) {
-            $data['items'] = $this->m_portal->get_data_formon_mhsall();
-        } else {
-            // Ambil data berdasarkan tahun yang dipilih
-            $data['items'] = $this->m_portal->get_data_formon_mhsyear($year);
-        }
+
+	$year = $this->input->get('year'); // Ambil tahun dari input form
+    $program_studi = $this->input->get('program_studi'); // Ambil program studi dari input form
+
+    // Buat array untuk filter program studi
+    $program_studi_options = array('92403', '92402'); // Tambahkan program studi lain jika ada
+
+    if (!$year && !$program_studi) {
+        $data['items'] = $this->items_model->get_data_formon_mhsall();
+    } elseif ($year && !$program_studi) {
+        $data['items'] = $this->items_model->get_data_formon_mhsyear($year);
+    } elseif (!$year && $program_studi) {
+        $data['items'] = $this->items_model->get_data_formon_mhsprodi($program_studi);
+    } elseif ($year && $program_studi) {
+        $data['items'] = $this->items_model->get_data_formon_mhsyearnprodi($year, $program_studi);
+    }
+
+    $data['program_studi_options'] = $program_studi_options; // Pass program studi options to view
+		
         $this->load->view('baak/header');
         $this->load->view('baak/mon_llsd3', $data);
         $this->load->view('baak/footer');

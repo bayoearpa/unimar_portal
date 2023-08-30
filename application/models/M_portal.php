@@ -575,6 +575,35 @@ function get_data_formon_mhsyear($year)
         $query = $this->db->get();
         return $query->result();
 }
+function get_data_formon_mhsprodi($program_studi)
+{
+	# code...
+	 // Mengambil data mahasiswa dengan tahun_masuk sesuai dengan yang dipilih
+        $this->db->select('tmst_mahasiswa.NIM as nim,
+			tmst_mahasiswa.Nama_mahasiswa as nama,
+			tmst_program_studi.Nama_program_studi as prodi,
+			tmst_program_studi.Kode_program_studi as kode_prodi');
+        $this->db->from('tmst_mahasiswa');
+        $this->db->join('tmst_program_studi','tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi','inner');
+        $this->db->where('Kode_program_studi', $program_studi);
+        $query = $this->db->get();
+        return $query->result();
+}
+function get_data_formon_mhsyearnprodi($year)
+{
+	# code...
+	 // Mengambil data mahasiswa dengan tahun_masuk sesuai dengan yang dipilih
+        $this->db->select('tmst_mahasiswa.NIM as nim,
+			tmst_mahasiswa.Nama_mahasiswa as nama,
+			tmst_program_studi.Nama_program_studi as prodi,
+			tmst_program_studi.Kode_program_studi as kode_prodi');
+        $this->db->from('tmst_mahasiswa');
+        $this->db->join('tmst_program_studi','tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi','inner');
+        $this->db->where('YEAR(Tanggal_masuk)', $year);
+        $this->db->where('Kode_program_studi', $program_studi);
+        $query = $this->db->get();
+        return $query->result();
+}
 		
 	}
 /* End of file M_portal.php */

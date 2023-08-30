@@ -19,6 +19,13 @@
                     <option value="2019">2018</option>
                     <!-- Tambahkan pilihan tahun sesuai kebutuhan -->
                 </select>
+                <label for="program_studi">Pilih Program Studi:</label>
+                <select id="program_studi" name="program_studi">
+                    <option value="">Semua</option>
+                    <option value="92403">Nautika</option>
+                    <option value="92402">Teknika</option>
+                    <!-- Tambahkan program studi lain jika ada -->
+                </select>
                 <button type="submit">Filter</button>
             </form>
               <table id="example1" class="table table-bordered table-striped">
