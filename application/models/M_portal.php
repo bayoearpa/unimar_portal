@@ -558,6 +558,7 @@ function get_data_formon_mhsall()
         $this->db->from('tmst_mahasiswa');
         $this->db->join('tmst_program_studi','tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi','inner');
         $this->db->where('Tahun_masuk >=', '2018');
+        $this->db->where_in('Kode_program_studi', array('92403', '92402'));
         $query = $this->db->get();
         return $query->result();
 }
