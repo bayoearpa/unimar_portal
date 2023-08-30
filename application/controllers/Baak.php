@@ -1555,13 +1555,13 @@ class baak extends CI_Controller {
     $program_studi_options = array('92403', '92402'); // Tambahkan program studi lain jika ada
 
     if (!$year && !$program_studi) {
-        $data['items'] = $this->items_model->get_data_formon_mhsall();
+        $data['items'] = $this->m_portal->get_data_formon_mhsall();
     } elseif ($year && !$program_studi) {
-        $data['items'] = $this->items_model->get_data_formon_mhsyear($year);
+        $data['items'] = $this->m_portal->get_data_formon_mhsyear($year);
     } elseif (!$year && $program_studi) {
-        $data['items'] = $this->items_model->get_data_formon_mhsprodi($program_studi);
+        $data['items'] = $this->m_portal->get_data_formon_mhsprodi($program_studi);
     } elseif ($year && $program_studi) {
-        $data['items'] = $this->items_model->get_data_formon_mhsyearnprodi($year, $program_studi);
+        $data['items'] = $this->m_portal->get_data_formon_mhsyearnprodi($year, $program_studi);
     }
 
     $data['program_studi_options'] = $program_studi_options; // Pass program studi options to view
