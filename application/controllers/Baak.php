@@ -1591,8 +1591,9 @@ class baak extends CI_Controller {
     }
 
     $data['program_studi_options'] = $program_studi_options; // Pass program studi options to view
+    $this->load->view('baak/mon_llsd3', $data);
 	}
-	$this->load->view('baak/mon_llsd3', $data);
+
 
 }
 
