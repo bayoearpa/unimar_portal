@@ -16,7 +16,6 @@
         });
         ////datatables
          $('#example31082023').DataTable({
-                "serverSide": true
                 "paging": true, // Enable pagination
                 "pageLength": 20, // Set the number of records per page
                 // Other DataTables options...
