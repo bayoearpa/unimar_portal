@@ -18,6 +18,11 @@
          $('#example31082023').DataTable({
                 "paging": true, // Enable pagination
                 "pageLength": 20, // Set the number of records per page
+                'lengthChange': false,
+                  'searching'   : false,
+                  'ordering'    : true,
+                  'info'        : true,
+                  'autoWidth'   : false
                 // Other DataTables options...
             });
     });
