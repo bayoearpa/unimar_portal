@@ -52,7 +52,7 @@
                 <td><?php echo $i->nama; ?></td>
                 <td><?php echo $i->prodi; ?></td>
                   </tr>
-                <?php } ?>
+                  <?php } ?>
                 </tbody>
                 <tfoot>
                 <tr>
