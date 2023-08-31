@@ -28,7 +28,7 @@
                 </select>
                 <button type="submit">Filter</button>
             </form>
-              <table id="example31082023" class="table table-bordered table-striped">
+              <table id="example31082023">
                 <thead>
                 <tr>
                   <th>NIM</th>
