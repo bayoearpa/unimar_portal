@@ -1552,7 +1552,7 @@ class baak extends CI_Controller {
     $page = $this->input->get('page') ? $this->input->get('page') : 1;
 
     // Number of records per page
-    $per_page = 20;
+    $per_page = 200;
 
     // Calculate the offset
     $offset = ($page - 1) * $per_page;
