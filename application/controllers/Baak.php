@@ -1546,40 +1546,40 @@ class baak extends CI_Controller {
 	public function mon_llsd3()
 	{
 		# code...
-	$this->load->library('pagination');
+	// $this->load->library('pagination');
 
-    // Get current page from query string, default to 1 if not set
-    $page = $this->input->get('page') ? $this->input->get('page') : 1;
+ //    // Get current page from query string, default to 1 if not set
+ //    $page = $this->input->get('page') ? $this->input->get('page') : 1;
 
-    // Number of records per page
-    $per_page = 200;
+ //    // Number of records per page
+ //    $per_page = 200;
 
-    // Calculate the offset
-    $offset = ($page - 1) * $per_page;
+ //    // Calculate the offset
+ //    $offset = ($page - 1) * $per_page;
 
     // Call your model method to get the data with pagination
     $data['items'] = $this->m_portal->get_data_formon_mhsall($per_page, $offset);
 
     // Configure pagination
-    $config['base_url'] = base_url('baak/mon_llsd3');
-    $config['total_rows'] = $this->m_portal->count_all_data_formon_mhsall(); // You need to implement this method in your model
-    $config['per_page'] = $per_page;
-    $config['use_page_numbers'] = true;
-    $config['query_string_segment'] = 'page';
-    $config['full_tag_open'] = '<ul class="pagination">';
-    $config['full_tag_close'] = '</ul>';
-    $config['num_tag_open'] = '<li class="page-item">';
-    $config['num_tag_close'] = '</li>';
-    $config['prev_tag_open'] = '<li class="page-item">';
-    $config['prev_tag_close'] = '</li>';
-    $config['next_tag_open'] = '<li class="page-item">';
-    $config['next_tag_close'] = '</li>';
-    $config['first_link'] = 'First';
-    $config['last_link'] = 'Last';
-    $config['prev_link'] = '&laquo;';
-    $config['next_link'] = '&raquo;';
+    // $config['base_url'] = base_url('baak/mon_llsd3');
+    // $config['total_rows'] = $this->m_portal->count_all_data_formon_mhsall(); // You need to implement this method in your model
+    // $config['per_page'] = $per_page;
+    // $config['use_page_numbers'] = true;
+    // $config['query_string_segment'] = 'page';
+    // $config['full_tag_open'] = '<ul class="pagination">';
+    // $config['full_tag_close'] = '</ul>';
+    // $config['num_tag_open'] = '<li class="page-item">';
+    // $config['num_tag_close'] = '</li>';
+    // $config['prev_tag_open'] = '<li class="page-item">';
+    // $config['prev_tag_close'] = '</li>';
+    // $config['next_tag_open'] = '<li class="page-item">';
+    // $config['next_tag_close'] = '</li>';
+    // $config['first_link'] = 'First';
+    // $config['last_link'] = 'Last';
+    // $config['prev_link'] = '&laquo;';
+    // $config['next_link'] = '&raquo;';
 
-    $this->pagination->initialize($config);
+    // $this->pagination->initialize($config);
 
     $data['program_studi_options'] = array('92403', '92402'); // Add other program options if needed
 
