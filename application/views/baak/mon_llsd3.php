@@ -43,17 +43,17 @@
                   <th>Hasil</th> -->
                 </tr>
                 </thead>
-                <?php foreach ($items as $i) {
+                <tbody>
+                  <?php foreach ($items as $i) {
                   # code...
                  ?>
-                <tbody>
                   <tr>
                 <td><?php echo $i->nim; ?></td>
                 <td><?php echo $i->nama; ?></td>
                 <td><?php echo $i->prodi; ?></td>
                   </tr>
+                <?php } ?>
                 </tbody>
-              <?php } ?>
                 <tfoot>
                 <tr>
                   <th>NIM</th>
