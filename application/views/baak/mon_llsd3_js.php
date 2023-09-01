@@ -25,5 +25,44 @@
                 //   'autoWidth'   : false
                 // Other DataTables options...
             });
+
+         // Menampilkan modal saat tombol Edit diklik
+    $('.edit-button').click(function() {
+        var id = $(this).data('id');
+        // Ambil data yang akan diedit dari server dengan AJAX
+        $.ajax({
+            url: 'ambil_data_edit.php', // Gantilah dengan URL yang sesuai
+            type: 'GET',
+            data: { id: id },
+            success: function(data) {
+                // Isi modal dengan data yang diambil
+                var parsedData = JSON.parse(data);
+                $('#editId').val(parsedData.id);
+                $('#editName').val(parsedData.name);
+                // Tambahkan input lain sesuai kebutuhan
+                $('#editModal').modal('show');
+            }
+        });
+    });
+
+    // Menyimpan perubahan dengan AJAX
+    $('#saveEdit').click(function() {
+        $.ajax({
+            url: 'simpan_edit.php', // Gantilah dengan URL yang sesuai
+            type: 'POST',
+            data: $('#editForm').serialize(),
+            success: function(response) {
+                if (response == 'sukses') {
+                    // Tutup modal setelah data berhasil disimpan
+                    $('#editModal').modal('hide');
+                    // Refresh atau perbarui tabel data
+                    // Tambahkan kode refresh tabel di sini
+                } else {
+                    // Tampilkan pesan kesalahan jika perlu
+                    alert('Gagal menyimpan perubahan.');
+                }
+            }
+        });
+    });
     });
     </script>

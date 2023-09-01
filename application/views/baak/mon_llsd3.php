@@ -4,7 +4,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Data Kliring</h3>
+              <h3 class="box-title">Lulus D3</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -52,6 +52,9 @@
                 <td><?php echo $i->nim; ?></td>
                 <td><?php echo $i->nama; ?></td>
                 <td><?php echo $i->prodi; ?></td>
+                <td>
+                    <button class="btn btn-primary edit-button" data-id="<?php echo $i->nim; ?>">Edit</button>
+                </td>
                   </tr>
                   <?php } ?>
                 </tbody>
@@ -82,3 +85,31 @@
     </section>
     <!-- /.content -->
    
+   <!-- Modal Edit -->
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editModalLabel">Edit Data</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Form Edit Data -->
+                <form id="editForm">
+                    <input type="hidden" id="editId" name="id">
+                    <div class="form-group">
+                        <label for="editName">Nama:</label>
+                        <input type="text" class="form-control" id="editName" name="name">
+                    </div>
+                    <!-- Tambahkan input lain sesuai kebutuhan -->
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                <button type="button" class="btn btn-primary" id="saveEdit">Simpan</button>
+            </div>
+        </div>
+    </div>
+</div>
