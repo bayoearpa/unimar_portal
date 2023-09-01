@@ -268,6 +268,11 @@
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url() ?>baak/mon_llsd3"><i class="fa fa-circle-o"></i> Lulus D3</a></li>
             <li><a href="<?php echo base_url() ?>baak/ajuan_pkl"><i class="fa fa-circle-o"></i> Lulus UKP PRA</a></li>
+            <li><a href="<?php echo base_url() ?>baak/ajuan_pkl"><i class="fa fa-circle-o"></i> SB Prala</a></li>
+            <li><a href="<?php echo base_url() ?>baak/ajuan_pkl"><i class="fa fa-circle-o"></i> Onboard</a></li>
+            <li><a href="<?php echo base_url() ?>baak/ajuan_pkl"><i class="fa fa-circle-o"></i> Offbroad</a></li>
+            <li><a href="<?php echo base_url() ?>baak/ajuan_pkl"><i class="fa fa-circle-o"></i>Lulus UKP Pasca ATT III</a></li>
+
                 <!--  <li class="treeview">
                   <a href="#"><i class="fa fa-circle-o"></i>Lulus D3
                     <span class="pull-right-container">

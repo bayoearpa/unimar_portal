@@ -34,6 +34,7 @@
                   <th>NIM</th>
                   <th>Nama</th>
                   <th>Prodi</th>
+                  <th>proses</th>
                   <!-- <th>Jenjang</th>
                   <th>Mahatar</th>
                   <th>D.Wali</th>
@@ -59,7 +60,8 @@
                   <th>NIM</th>
                   <th>Nama</th>
                   <th>Prodi</th>
-                 <!--  <th>Jenjang</th>
+                  <th>Proses</th>
+                 <!-- <th>Jenjang</th>
                   <th>Mahatar</th>
                   <th>D.Wali</th>
                   <th>BAAK</th>
