@@ -116,7 +116,7 @@ $route['front_skp_mhsdsn'] = 'front_lpm';
 $route['front_skp_mhsdsn_cek'] = 'front_lpm/kues_mhsdsn_prosesrekap';
 
 //monitoring
-$route['baak/mon_edit/(:num)'] = 'baak/mon_edit/$1';
+$route['baak/mon_add/(:num)'] = 'baak/mon_add/$1';
 
 // //Mahatar
 // $route['mahatar_prestasi'] = 'welcome/mhtr_prestasi';
