@@ -621,8 +621,19 @@ function get_data_formon_mhsyearnprodi($year, $program_studi)
 function get_data_formon_mhs($id)
     {
         // Gantilah 'nama_tabel' dengan nama tabel yang sesuai dalam database Anda
+	     $this->db->select('tmst_mahasiswa.NIM as nim,
+			tmst_mahasiswa.Nama_mahasiswa as nama,
+			tmst_mahasiswa.Tempat_lahir as tl,
+			tmst_mahasiswa.Tanggal_lahir as tgll,
+			tmst_mahasiswa.Alamat as alamat,
+			tmst_mahasiswa.Jenis_kelamin as jk,
+			tbl_mon.id_mon as id_mon,
+			tbl_mon.d3_no_ijasah as d3_no_ijasah,
+			tbl_mon.d3_tanggal_lulus as d3_tanggal_lulus');
+	     $this->db->from('tmst_mahasiswa');
+	      $this->db->join('tbl_mon','tmst_mahasiswa.NIM = tbl_mon.nim','left');
         $this->db->where('NIM', $id);
-        $query = $this->db->get('tmst_mahasiswa');
+        $query = $this->db->get();
 
         if ($query->num_rows() > 0) {
             return $query->row();

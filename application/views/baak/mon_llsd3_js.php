@@ -38,11 +38,13 @@
         console.log(data); // Cetak nilai data ke konsol
         var parsedData = JSON.parse(data);
         $('#addNim').val(parsedData.nim);
-        $('#addNama').val(parsedData.Nama_mahasiswa);
-        $('#addTmptLahir').val(parsedData.tempat_lahir);
+        $('#addNama').val(parsedData.nama);
+        $('#addTmptLahir').val(parsedData.Tempat_lahir);
         $('#addTglLahir').val(parsedData.tanggal_lahir);
         $('#addAlamat').val(parsedData.alamat);
         $('#addjnsklmn').val(parsedData.jenis_kelamin);
+        $('#addtgllls').val(parsedData.d3_tanggal_lulus);
+        $('#addnoijs').val(parsedData.d3_no_ijasah);
         // Tambahkan input lain sesuai kebutuhan
         $('#editModal').modal('show');
       }
