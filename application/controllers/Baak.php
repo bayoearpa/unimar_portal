@@ -1589,6 +1589,27 @@ class baak extends CI_Controller {
         // Konversi data ke format JSON dan kirimkan ke view
         echo json_encode($data);
 	}
+	public function mon_addp()
+	{
+    // Tangani data yang dikirimkan dari formulir
+    $data = array(
+        'nim' => $this->input->post('nim'),
+        'd3_no_ijasah' => $this->input->post('nj')
+    );
+
+    // Simpan data ke database
+    $res = $this->m_portal->input_data($data,'tbl_mon');
+    // Sesuaikan dengan model dan metode penyimpanan data Anda
+
+    // Setelah berhasil disimpan, beri respons "sukses" ke JavaScript
+    if ($res) {
+        // Jika penyimpanan sukses, beri respons "sukses" ke JavaScript
+        echo 'sukses';
+    } else {
+        // Jika terjadi kesalahan, beri respons "gagal" ke JavaScript
+        echo 'gagal';
+    }
+	}
 
 
 }

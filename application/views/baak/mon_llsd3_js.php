@@ -56,24 +56,37 @@
     });
   });
 
+// Fungsi untuk memuat ulang tabel
+function reloadTable() {
+    $.ajax({
+        type: 'GET',
+        url: '<?php echo base_url('baak/mon_llsd3data'); ?>',
+        data: { year: $('#year').val(), program_studi: $('#program_studi').val() },
+        success: function(response) {
+            $('#example31082023').html(response);
+        }
+    });
+}
+
     // Menyimpan perubahan dengan AJAX
-    $('#saveEdit').click(function() {
+    $('#saveAdd').click(function() {
         $.ajax({
-            url: 'baak/mon_addp', // Gantilah dengan URL yang sesuai
+            url: 'baak/mon_addp', // Sesuaikan dengan URL yang sesuai
             type: 'POST',
-            data: $('#editForm').serialize(),
+            data: $('#addForm').serialize(),
             success: function(response) {
                 if (response == 'sukses') {
-                    // Tutup modal setelah data berhasil disimpan
-                    $('#editModal').modal('hide');
-                    // Refresh atau perbarui tabel data
-                    // Tambahkan kode refresh tabel di sini
+                    // Tutup modal setelah data berhasil ditambahkan
+                    $('#addModal').modal('hide');
+                    // Muat ulang tabel untuk menampilkan data terbaru
+                    reloadTable();
                 } else {
                     // Tampilkan pesan kesalahan jika perlu
-                    alert('Gagal menyimpan perubahan.');
+                    alert('Gagal menambahkan data baru.');
                 }
             }
         });
     });
+    
     });
     </script>
