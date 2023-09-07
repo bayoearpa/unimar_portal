@@ -27,7 +27,7 @@
             });
 
  // Menampilkan modal saat tombol "Edit" diklik
-  $('.edit-button').click(function() {
+  $('.add-button').click(function() {
     var id = $(this).data('id');
     // Ambil data yang akan diedit dari server dengan AJAX
     $.ajax({

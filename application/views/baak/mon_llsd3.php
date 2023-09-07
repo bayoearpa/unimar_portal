@@ -53,7 +53,7 @@
                 <td><?php echo $i->nama; ?></td>
                 <td><?php echo $i->prodi; ?></td>
                 <td>
-                    <button class="btn btn-primary edit-button" data-id="<?php echo $i->nim; ?>">Tambah</button>
+                    <button class="btn btn-primary add-button" data-id="<?php echo $i->nim; ?>">Tambah</button>
                 </td>
                   </tr>
                   <?php } ?>
@@ -86,42 +86,42 @@
     <!-- /.content -->
    
    <!-- Modal Edit -->
-<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title" id="editModalLabel">Form Lulus D3</h3>
+                <h3 class="modal-title" id="addModalLabel">Form Lulus D3</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
                 <!-- Form Edit Data -->
-                <form id="editForm">
+                <form id="addForm">
                     <input type="hidden" id="addNim" name="nim">
                     <div class="form-group">
                         <label for="addNama">Nama:</label>
-                        <input type="text" class="form-control" id="addNama" name="nama">
+                        <input type="text" class="form-control" id="addNama" name="nama" readonly="">
                     </div>
                     <div class="form-group">
                         <label for="addTmptLahir">Tempat Lahir:</label>
-                        <input type="text" class="form-control" id="addTmptLahir" name="tl">
+                        <input type="text" class="form-control" id="addTmptLahir" name="tl" readonly="">
                     </div>
                     <div class="form-group">
                         <label for="addTglLahir">Tanggal Lahir:</label>
-                        <input type="text" class="form-control" id="addTglLahir" name="tgll">
+                        <input type="text" class="form-control" id="addTglLahir" name="tgll" readonly="">
                     </div>
                     <div class="form-group">
                         <label for="addAlamat">Alamat:</label>
-                        <textarea class="form-control" rows="3" id="addAlamat" name="alamat"></textarea>
+                        <textarea class="form-control" rows="3" id="addAlamat" name="alamat" readonly=""></textarea>
                     </div>
                     <div class="form-group">
                         <label for="addjnsklmn">Jenis Kelamin:</label>
-                        <input type="text" class="form-control" id="addjnsklmn" name="jk">
+                        <input type="text" class="form-control" id="addjnsklmn" name="jk" readonly="">
                     </div>
                      <div class="form-group">
                         <label for="addtgllls">Tanggal Lulus:</label>
-                        <input type="text" class="form-control" id="addtgllls" name="tgllls">
+                        <input type="date" class="form-control" id="addtgllls" name="tgllls" readonly="">
                     </div>
                      <div class="form-group">
                         <label for="addnoijs">Nomor Ijasah:</label>
