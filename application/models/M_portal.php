@@ -621,7 +621,7 @@ function get_data_formon_mhsyearnprodi($year, $program_studi)
 function get_data_formon_mhs($id)
     {
         // Gantilah 'nama_tabel' dengan nama tabel yang sesuai dalam database Anda
-        $this->db->where('NRP', $id);
+        $this->db->where('NIM', $id);
         $query = $this->db->get('tmst_mahasiswa');
 
         if ($query->num_rows() > 0) {
