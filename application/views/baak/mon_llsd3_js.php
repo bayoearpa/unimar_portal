@@ -36,8 +36,12 @@
       success: function(data) {
         // Isi modal dengan data yang diambil
         var parsedData = JSON.parse(data);
-        $('#editId').val(parsedData.nim);
-        $('#editName').val(parsedData.nama);
+        $('#addNim').val(parsedData.nim);
+        $('#editNama').val(parsedData.nama_mahasiswa);
+        $('#addTmptLahir').val(parsedData.tempat_lahir);
+        $('#addTglLahir').val(parsedData.tanggal_lahir);
+        $('#addAlamat').val(parsedData.alamat);
+        $('#addjnsklmn').val(parsedData.jenis_kelamin);
         // Tambahkan input lain sesuai kebutuhan
         $('#editModal').modal('show');
       }

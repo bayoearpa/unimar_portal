@@ -98,10 +98,34 @@
             <div class="modal-body">
                 <!-- Form Edit Data -->
                 <form id="editForm">
-                    <input type="hidden" id="editId" name="id">
+                    <input type="hidden" id="addNim" name="nim">
                     <div class="form-group">
                         <label for="editName">Nama:</label>
-                        <input type="text" class="form-control" id="editName" name="name">
+                        <input type="text" class="form-control" id="addNama" name="nama">
+                    </div>
+                    <div class="form-group">
+                        <label for="editName">Tempat Lahir:</label>
+                        <input type="text" class="form-control" id="addTmptLahir" name="tl">
+                    </div>
+                    <div class="form-group">
+                        <label for="editName">Tanggal Lahir:</label>
+                        <input type="text" class="form-control" id="addTglLahir" name="tgll">
+                    </div>
+                    <div class="form-group">
+                        <label for="editName">Alamat:</label>
+                        <textarea class="form-control" rows="3" id="addAlamat" name="alamat"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="editName">Jenis Kelamin:</label>
+                        <input type="text" class="form-control" id="addjnsklmn" name="jk">
+                    </div>
+                     <div class="form-group">
+                        <label for="editName">Tanggal Lulus:</label>
+                        <input type="text" class="form-control" id="addtgllls" name="tgllls">
+                    </div>
+                     <div class="form-group">
+                        <label for="editName">Nomor Ijasah:</label>
+                        <input type="text" class="form-control" id="addnoijs" name="nj">
                     </div>
                     <!-- Tambahkan input lain sesuai kebutuhan -->
                 </form>
