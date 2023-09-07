@@ -37,8 +37,8 @@
             success: function(data) {
                 // Isi modal dengan data yang diambil
                 var parsedData = JSON.parse(data);
-                $('#editId').val(parsedData.id);
-                $('#editName').val(parsedData.name);
+                $('#editId').val(parsedData.nrp);
+                $('#editName').val(parsedData.nama_mahasiswa);
                 // Tambahkan input lain sesuai kebutuhan
                 $('#editModal').modal('show');
             }
