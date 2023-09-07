@@ -554,9 +554,13 @@ function get_data_formon_mhsall($limit, $offset)
         $this->db->select('tmst_mahasiswa.NIM as nim,
         tmst_mahasiswa.Nama_mahasiswa as nama,
         tmst_program_studi.Nama_program_studi as prodi,
-        tmst_program_studi.Kode_program_studi as kode_prodi');
+        tmst_program_studi.Kode_program_studi as kode_prodi,
+        tbl_mon.id_mon as id_mon,
+        tbl_mon.d3_no_ijasah as d3_no_ijasah,
+        tbl_mon.d3_tanggal_lulus as d3_tanggal_lulus');
 	    $this->db->from('tmst_mahasiswa');
 	    $this->db->join('tmst_program_studi', 'tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi', 'inner');
+	    $this->db->join('tbl_mon','tmst_mahasiswa.NIM = tbl_mon.nim','left');
 	    $this->db->where('Tahun_masuk >=', '2018');
 	    $this->db->where_in('tmst_mahasiswa.Kode_program_studi', array('92403', '92402'));
 	    // $this->db->limit($limit, $offset); // Apply pagination
@@ -580,9 +584,13 @@ function get_data_formon_mhsyear($year)
         $this->db->select('tmst_mahasiswa.NIM as nim,
 			tmst_mahasiswa.Nama_mahasiswa as nama,
 			tmst_program_studi.Nama_program_studi as prodi,
-			tmst_program_studi.Kode_program_studi as kode_prodi');
+			tmst_program_studi.Kode_program_studi as kode_prodi
+			tbl_mon.id_mon as id_mon,
+	        tbl_mon.d3_no_ijasah as d3_no_ijasah,
+	        tbl_mon.d3_tanggal_lulus as d3_tanggal_lulus');
         $this->db->from('tmst_mahasiswa');
         $this->db->join('tmst_program_studi','tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi','inner');
+        $this->db->join('tbl_mon','tmst_mahasiswa.NIM = tbl_mon.nim','left');
         $this->db->where('YEAR(tmst_mahasiswa.Tanggal_masuk)', $year);
         $this->db->where_in('tmst_mahasiswa.Kode_program_studi', array('92403', '92402'));
         $query = $this->db->get();
@@ -595,9 +603,13 @@ function get_data_formon_mhsprodi($program_studi)
         $this->db->select('tmst_mahasiswa.NIM as nim,
 			tmst_mahasiswa.Nama_mahasiswa as nama,
 			tmst_program_studi.Nama_program_studi as prodi,
-			tmst_program_studi.Kode_program_studi as kode_prodi');
+			tmst_program_studi.Kode_program_studi as kode_prodi
+			tbl_mon.id_mon as id_mon,
+	        tbl_mon.d3_no_ijasah as d3_no_ijasah,
+	        tbl_mon.d3_tanggal_lulus as d3_tanggal_lulus');
         $this->db->from('tmst_mahasiswa');
         $this->db->join('tmst_program_studi','tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi','inner');
+        $this->db->join('tbl_mon','tmst_mahasiswa.NIM = tbl_mon.nim','left');
         $this->db->where('Tahun_masuk >=', '2018');
         $this->db->where('tmst_mahasiswa.Kode_program_studi', $program_studi);
         $query = $this->db->get();
@@ -610,9 +622,13 @@ function get_data_formon_mhsyearnprodi($year, $program_studi)
         $this->db->select('tmst_mahasiswa.NIM as nim,
 			tmst_mahasiswa.Nama_mahasiswa as nama,
 			tmst_program_studi.Nama_program_studi as prodi,
-			tmst_program_studi.Kode_program_studi as kode_prodi');
+			tmst_program_studi.Kode_program_studi as kode_prodi
+			tbl_mon.id_mon as id_mon,
+	        tbl_mon.d3_no_ijasah as d3_no_ijasah,
+	        tbl_mon.d3_tanggal_lulus as d3_tanggal_lulus');
         $this->db->from('tmst_mahasiswa');
         $this->db->join('tmst_program_studi','tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi','inner');
+        $this->db->join('tbl_mon','tmst_mahasiswa.NIM = tbl_mon.nim','left');
         $this->db->where('YEAR(tmst_mahasiswa.Tanggal_masuk)', $year);
         $this->db->where('tmst_mahasiswa.Kode_program_studi', $program_studi);
         $query = $this->db->get();
