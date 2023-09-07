@@ -100,31 +100,31 @@
                 <form id="editForm">
                     <input type="hidden" id="addNim" name="nim">
                     <div class="form-group">
-                        <label for="editName">Nama:</label>
+                        <label for="addNama">Nama:</label>
                         <input type="text" class="form-control" id="addNama" name="nama">
                     </div>
                     <div class="form-group">
-                        <label for="editName">Tempat Lahir:</label>
+                        <label for="addTmptLahir">Tempat Lahir:</label>
                         <input type="text" class="form-control" id="addTmptLahir" name="tl">
                     </div>
                     <div class="form-group">
-                        <label for="editName">Tanggal Lahir:</label>
+                        <label for="addTglLahir">Tanggal Lahir:</label>
                         <input type="text" class="form-control" id="addTglLahir" name="tgll">
                     </div>
                     <div class="form-group">
-                        <label for="editName">Alamat:</label>
+                        <label for="addAlamat">Alamat:</label>
                         <textarea class="form-control" rows="3" id="addAlamat" name="alamat"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="editName">Jenis Kelamin:</label>
+                        <label for="addjnsklmn">Jenis Kelamin:</label>
                         <input type="text" class="form-control" id="addjnsklmn" name="jk">
                     </div>
                      <div class="form-group">
-                        <label for="editName">Tanggal Lulus:</label>
+                        <label for="addtgllls">Tanggal Lulus:</label>
                         <input type="text" class="form-control" id="addtgllls" name="tgllls">
                     </div>
                      <div class="form-group">
-                        <label for="editName">Nomor Ijasah:</label>
+                        <label for="addnoijs">Nomor Ijasah:</label>
                         <input type="text" class="form-control" id="addnoijs" name="nj">
                     </div>
                     <!-- Tambahkan input lain sesuai kebutuhan -->
