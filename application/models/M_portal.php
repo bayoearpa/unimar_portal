@@ -632,7 +632,7 @@ function get_data_formon_mhs($id)
 			tbl_mon.d3_tanggal_lulus as d3_tanggal_lulus');
 	     $this->db->from('tmst_mahasiswa');
 	      $this->db->join('tbl_mon','tmst_mahasiswa.NIM = tbl_mon.nim','left');
-        $this->db->where('NIM', $id);
+        $this->db->where('tmst_mahasiswa.NIM', $id);
         $query = $this->db->get();
 
         if ($query->num_rows() > 0) {
