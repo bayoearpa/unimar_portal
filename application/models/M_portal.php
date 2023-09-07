@@ -584,7 +584,7 @@ function get_data_formon_mhsyear($year)
         $this->db->select('tmst_mahasiswa.NIM as nim,
 			tmst_mahasiswa.Nama_mahasiswa as nama,
 			tmst_program_studi.Nama_program_studi as prodi,
-			tmst_program_studi.Kode_program_studi as kode_prodi
+			tmst_program_studi.Kode_program_studi as kode_prodi,
 			tbl_mon.id_mon as id_mon,
 	        tbl_mon.d3_no_ijasah as d3_no_ijasah,
 	        tbl_mon.d3_tanggal_lulus as d3_tanggal_lulus');
@@ -603,7 +603,7 @@ function get_data_formon_mhsprodi($program_studi)
         $this->db->select('tmst_mahasiswa.NIM as nim,
 			tmst_mahasiswa.Nama_mahasiswa as nama,
 			tmst_program_studi.Nama_program_studi as prodi,
-			tmst_program_studi.Kode_program_studi as kode_prodi
+			tmst_program_studi.Kode_program_studi as kode_prodi,
 			tbl_mon.id_mon as id_mon,
 	        tbl_mon.d3_no_ijasah as d3_no_ijasah,
 	        tbl_mon.d3_tanggal_lulus as d3_tanggal_lulus');
@@ -622,7 +622,7 @@ function get_data_formon_mhsyearnprodi($year, $program_studi)
         $this->db->select('tmst_mahasiswa.NIM as nim,
 			tmst_mahasiswa.Nama_mahasiswa as nama,
 			tmst_program_studi.Nama_program_studi as prodi,
-			tmst_program_studi.Kode_program_studi as kode_prodi
+			tmst_program_studi.Kode_program_studi as kode_prodi,
 			tbl_mon.id_mon as id_mon,
 	        tbl_mon.d3_no_ijasah as d3_no_ijasah,
 	        tbl_mon.d3_tanggal_lulus as d3_tanggal_lulus');
