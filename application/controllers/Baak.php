@@ -1580,7 +1580,7 @@ class baak extends CI_Controller {
     $this->load->view('baak/mon_llsd3data', $data);
 	}
 
-	public function mon_edit($id)
+	public function mon_add($id)
 	{
 		# code...
 		// Ambil data berdasarkan ID dari model Anda
