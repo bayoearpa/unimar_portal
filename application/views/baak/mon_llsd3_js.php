@@ -51,7 +51,7 @@
         $('#addtgllls').val(parsedData.d3_tanggal_lulus);
         $('#addnoijs').val(parsedData.d3_no_ijasah);
         // Tambahkan input lain sesuai kebutuhan
-        $('#editModal').modal('show');
+        $('#addModal').modal('show');
       }
     });
   });
