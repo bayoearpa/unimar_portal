@@ -26,24 +26,23 @@
                 // Other DataTables options...
             });
 
-         // Menampilkan modal saat tombol Edit diklik
-    $('.edit-button').click(function() {
-        var id = $(this).data('id');
-        // Ambil data yang akan diedit dari server dengan AJAX
-        $.ajax({
-            url: '/baak/mon_add/'+id, // Gantilah dengan URL yang sesuai
-            type: 'GET',
-            // data: { id: id },
-            success: function(data) {
-                // Isi modal dengan data yang diambil
-                var parsedData = JSON.parse(data);
-                $('#editId').val(parsedData.nrp);
-                $('#editName').val(parsedData.nama_mahasiswa);
-                // Tambahkan input lain sesuai kebutuhan
-                $('#editModal').modal('show');
-            }
-        });
+ // Menampilkan modal saat tombol "Edit" diklik
+  $('.edit-button').click(function() {
+    var id = $(this).data('id');
+    // Ambil data yang akan diedit dari server dengan AJAX
+    $.ajax({
+      url: '<?php echo base_url('baak/mon_edit/'); ?>' + id, // Sesuaikan dengan URL yang sesuai
+      type: 'GET',
+      success: function(data) {
+        // Isi modal dengan data yang diambil
+        var parsedData = JSON.parse(data);
+        $('#editId').val(parsedData.nim);
+        $('#editName').val(parsedData.nama);
+        // Tambahkan input lain sesuai kebutuhan
+        $('#editModal').modal('show');
+      }
     });
+  });
 
     // Menyimpan perubahan dengan AJAX
     $('#saveEdit').click(function() {
