@@ -618,7 +618,19 @@ function get_data_formon_mhsyearnprodi($year, $program_studi)
         $query = $this->db->get();
         return $query->result();
 }
+function get_data_formon_mhs($id)
+    {
+        // Gantilah 'nama_tabel' dengan nama tabel yang sesuai dalam database Anda
+        $this->db->where('NRP', $id);
+        $query = $this->db->get('tmst_mahasiswa');
+
+        if ($query->num_rows() > 0) {
+            return $query->row();
+        } else {
+            return null;
+        }
+    }
 		
-	}
+}
 /* End of file M_portal.php */
 /* Location: ./application/models/M_portal.php */

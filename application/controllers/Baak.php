@@ -1612,6 +1612,16 @@ class baak extends CI_Controller {
     $this->load->view('baak/mon_llsd3data', $data);
 	}
 
+	public function mon_edit($id)
+	{
+		# code...
+		// Ambil data berdasarkan ID dari model Anda
+        $data = $this->nama_model_anda->get_data_formon_mhs($id); // Gantilah 'get_data_by_id' dengan metode yang sesuai dalam model Anda
+
+        // Konversi data ke format JSON dan kirimkan ke view
+        echo json_encode($data);
+	}
+
 
 }
 

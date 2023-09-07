@@ -31,7 +31,7 @@
         var id = $(this).data('id');
         // Ambil data yang akan diedit dari server dengan AJAX
         $.ajax({
-            url: 'ambil_data_edit.php', // Gantilah dengan URL yang sesuai
+            url: 'baak/mon_add/'+id, // Gantilah dengan URL yang sesuai
             type: 'GET',
             data: { id: id },
             success: function(data) {
@@ -48,7 +48,7 @@
     // Menyimpan perubahan dengan AJAX
     $('#saveEdit').click(function() {
         $.ajax({
-            url: 'simpan_edit.php', // Gantilah dengan URL yang sesuai
+            url: 'baak/mon_addp', // Gantilah dengan URL yang sesuai
             type: 'POST',
             data: $('#editForm').serialize(),
             success: function(response) {
