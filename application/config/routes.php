@@ -115,6 +115,9 @@ $route['kues_dsnlem'] = 'kues/kues_dsnlem';
 $route['front_skp_mhsdsn'] = 'front_lpm';
 $route['front_skp_mhsdsn_cek'] = 'front_lpm/kues_mhsdsn_prosesrekap';
 
+//monitoring
+$route['baak/mon_edit/(:num)'] = 'baak/mon_edit/$1';
+
 // //Mahatar
 // $route['mahatar_prestasi'] = 'welcome/mhtr_prestasi';
 // $route['mahatar_kegiatan'] = 'welcome/mhtr_kegiatan';
