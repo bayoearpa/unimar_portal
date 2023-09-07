@@ -71,7 +71,7 @@ function reloadTable() {
     // Menyimpan perubahan dengan AJAX
     $('#saveAdd').click(function() {
         $.ajax({
-            url: 'baak/mon_addp', // Sesuaikan dengan URL yang sesuai
+            url: '<?php echo base_url('baak/mon_addp'); ?>', // Sesuaikan dengan URL yang sesuai
             type: 'POST',
             data: $('#addForm').serialize(),
             success: function(response) {
