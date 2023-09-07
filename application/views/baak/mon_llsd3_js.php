@@ -39,10 +39,15 @@
         var parsedData = JSON.parse(data);
         $('#addNim').val(parsedData.nim);
         $('#addNama').val(parsedData.nama);
-        $('#addTmptLahir').val(parsedData.Tempat_lahir);
-        $('#addTglLahir').val(parsedData.tanggal_lahir);
+        $('#addTmptLahir').val(parsedData.tl);
+        $('#addTglLahir').val(parsedData.tgll);
         $('#addAlamat').val(parsedData.alamat);
-        $('#addjnsklmn').val(parsedData.jenis_kelamin);
+            // Set jenis kelamin sesuai dengan data dari database
+            if (parsedData.jk === 'L') {
+                $('#addjnsklmn').val('Laki-laki');
+            } else if (parsedData.jk === 'P') {
+                $('#addjnsklmn').val('Perempuan');
+            }
         $('#addtgllls').val(parsedData.d3_tanggal_lulus);
         $('#addnoijs').val(parsedData.d3_no_ijasah);
         // Tambahkan input lain sesuai kebutuhan
