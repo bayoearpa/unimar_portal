@@ -31,9 +31,9 @@
         var id = $(this).data('id');
         // Ambil data yang akan diedit dari server dengan AJAX
         $.ajax({
-            url: 'baak/mon_add/', // Gantilah dengan URL yang sesuai
+            url: 'baak/mon_add/'+id, // Gantilah dengan URL yang sesuai
             type: 'GET',
-            data: { id: id },
+            // data: { id: id },
             success: function(data) {
                 // Isi modal dengan data yang diambil
                 var parsedData = JSON.parse(data);
