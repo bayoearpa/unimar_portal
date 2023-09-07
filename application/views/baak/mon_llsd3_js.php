@@ -35,9 +35,10 @@
       type: 'GET',
       success: function(data) {
         // Isi modal dengan data yang diambil
+        console.log(data); // Cetak nilai data ke konsol
         var parsedData = JSON.parse(data);
         $('#addNim').val(parsedData.nim);
-        $('#editNama').val(parsedData.nama_mahasiswa);
+        $('#addNama').val(parsedData.nama_mahasiswa);
         $('#addTmptLahir').val(parsedData.tempat_lahir);
         $('#addTglLahir').val(parsedData.tanggal_lahir);
         $('#addAlamat').val(parsedData.alamat);
