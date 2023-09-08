@@ -1603,11 +1603,11 @@ class baak extends CI_Controller {
 
     // Setelah berhasil disimpan, beri respons "sukses" ke JavaScript
     if ($res) {
-        // Jika penyimpanan sukses, beri respons "sukses" ke JavaScript
-        echo 'sukses';
-    } else {
-        // Jika terjadi kesalahan, beri respons "gagal" ke JavaScript
+       // Jika terjadi kesalahan, beri respons "gagal" ke JavaScript
         echo 'gagal';
+    } else {
+         // Jika penyimpanan sukses, beri respons "sukses" ke JavaScript
+        echo 'sukses';
     }
 	}
 
