@@ -96,7 +96,7 @@
     </section>
     <!-- /.content -->
    
-   <!-- Modal Edit -->
+   <!-- Modal Add -->
 <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -144,6 +144,59 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
                 <button type="button" class="btn btn-primary" id="saveAdd">Simpan</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+   <!-- Modal Edit -->
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="editModalLabel">Form Lulus D3</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Form Edit Data -->
+                <form id="editForm">
+                    <input type="hidden" id="editNim" name="nim">
+                    <div class="form-group">
+                        <label for="editNama">Nama:</label>
+                        <input type="text" class="form-control" id="editNama" name="nama" readonly="">
+                    </div>
+                    <div class="form-group">
+                        <label for="editTmptLahir">Tempat Lahir:</label>
+                        <input type="text" class="form-control" id="editTmptLahir" name="tl" readonly="">
+                    </div>
+                    <div class="form-group">
+                        <label for="editTglLahir">Tanggal Lahir:</label>
+                        <input type="text" class="form-control" id="editTglLahir" name="tgll" readonly="">
+                    </div>
+                    <div class="form-group">
+                        <label for="editAlamat">Alamat:</label>
+                        <textarea class="form-control" rows="3" id="editAlamat" name="alamat" readonly=""></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="editjnsklmn">Jenis Kelamin:</label>
+                        <input type="text" class="form-control" id="editjnsklmn" name="jk" readonly="">
+                    </div>
+                     <div class="form-group">
+                        <label for="edittgllls">Tanggal Lulus:</label>
+                        <input type="date" class="form-control" id="edittgllls" name="tgllls" readonly="">
+                    </div>
+                     <div class="form-group">
+                        <label for="editnoijs">Nomor Ijasah:</label>
+                        <input type="text" class="form-control" id="editnoijs" name="nj">
+                    </div>
+                    <!-- Tambahkan input lain sesuai kebutuhan -->
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                <button type="button" class="btn btn-primary" id="saveEdit">Simpan</button>
             </div>
         </div>
     </div>

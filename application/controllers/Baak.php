@@ -1611,6 +1611,28 @@ class baak extends CI_Controller {
     }
 	}
 
+	public function mon_editp()
+	{
+    // Tangani data yang dikirimkan dari formulir
+    $data = array(
+        'nim' => $this->input->post('nim'),
+        'd3_no_ijasah' => $this->input->post('nj')
+    );
+
+    // Simpan data ke database
+    $res = $this->m_portal->input_data($data,'tbl_mon');
+    // Sesuaikan dengan model dan metode penyimpanan data Anda
+
+    // Setelah berhasil disimpan, beri respons "sukses" ke JavaScript
+    if ($res) {
+       // Jika terjadi kesalahan, beri respons "gagal" ke JavaScript
+        echo 'gagal';
+    } else {
+         // Jika penyimpanan sukses, beri respons "sukses" ke JavaScript
+        echo 'sukses';
+    }
+	}
+
 
 }
 
