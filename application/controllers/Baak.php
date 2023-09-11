@@ -1611,6 +1611,16 @@ class baak extends CI_Controller {
     }
 	}
 
+	public function mon_edit($id)
+	{
+		# code...
+		// Ambil data berdasarkan ID dari model Anda
+        $data = $this->m_portal->get_data_formon_mhs($id); // Gantilah 'get_data_by_id' dengan metode yang sesuai dalam model Anda
+
+        // Konversi data ke format JSON dan kirimkan ke view
+        echo json_encode($data);
+	}
+
 	public function mon_editp()
 	{
     // Tangani data yang dikirimkan dari formulir
