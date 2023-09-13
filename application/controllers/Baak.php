@@ -1634,7 +1634,7 @@ class baak extends CI_Controller {
     );
 
     // Simpan data ke database
-    $res = $this->m_portal->input_data($where, $data,'tbl_mon');
+    $res = $this->m_portal->update_data($where, $data,'tbl_mon');
     // Sesuaikan dengan model dan metode penyimpanan data Anda
 
     // Setelah berhasil disimpan, beri respons "sukses" ke JavaScript
