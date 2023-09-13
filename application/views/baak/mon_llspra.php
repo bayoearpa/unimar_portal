@@ -11,6 +11,7 @@
              <form id="filter-form">
                 <label for="year">Pilih Tahun:</label>
                 <select id="year" name="year">
+                    <option value="">Semua</option>
                     <option value="2023">2023</option>
                     <option value="2022">2022</option>
                     <option value="2021">2021</option>
@@ -170,7 +171,7 @@
                 <!-- Form Edit Data -->
                 <form id="editForm">
                     <input type="hidden" id="editNim" name="nim">
-                    <input type="hidden" id="editidmon" name="nid_mon">
+                    <input type="hidden" id="editidmon" name="id_mon">
                     <div class="form-group">
                         <label for="editNama">Nama:</label>
                         <input type="text" class="form-control" id="editNama" name="nama" readonly="">
