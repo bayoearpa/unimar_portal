@@ -1708,7 +1708,7 @@ class baak extends CI_Controller {
 
     $data = array(
         'seafarercode' => $this->input->post('eseafararcode'),
-        'pra_tanggal_lulus' => $pra_tanggal_lulusf,
+        'pra_lulus_ukp' => $pra_tanggal_lulusf,
         'pra_mb_skl' => $pra_mb_sklf,
         'pra_status' => $this->input->post('estatpra')
     );
@@ -1788,9 +1788,9 @@ class baak extends CI_Controller {
 
     $data = array(
         'seafarercode' => $this->input->post('eseafararcode'),
-        'pra_tanggal_lulus' => $pra_tanggal_lulusf,
-        'pra_mb_skl' => $pra_mb_sklf,
-        'pra_status' => $this->input->post('estatpra')
+        'pasca_lulus_ukp' => $pra_tanggal_lulusf,
+        'pasca_mb_skl' => $pra_mb_sklf,
+        'pasca_status' => $this->input->post('estatpra')
     );
 
     // Simpan data ke database
