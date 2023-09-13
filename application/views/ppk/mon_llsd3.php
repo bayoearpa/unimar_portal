@@ -11,6 +11,7 @@
              <form id="filter-form">
                 <label for="year">Pilih Tahun:</label>
                 <select id="year" name="year">
+                    <option value="">Semua</option>
                     <option value="2023">2023</option>
                     <option value="2022">2022</option>
                     <option value="2021">2021</option>
