@@ -1543,6 +1543,7 @@ class baak extends CI_Controller {
 
 	//////////////////////////////////////////Monitoring///////////////////////////////////////////////////////
 
+	// monitoring lulus D3
 	public function mon_llsd3()
 	{
 		# code...
@@ -1624,13 +1625,16 @@ class baak extends CI_Controller {
 	public function mon_editp()
 	{
     // Tangani data yang dikirimkan dari formulir
+	$where = array(
+        'id_mon' => $this->input->post('id_mon'),
+    ); 
     $data = array(
         'nim' => $this->input->post('nim'),
-        'd3_no_ijasah' => $this->input->post('nj')
+        'd3_no_ijasah' => $this->input->post('enj')
     );
 
     // Simpan data ke database
-    $res = $this->m_portal->input_data($data,'tbl_mon');
+    $res = $this->m_portal->input_data($where, $data,'tbl_mon');
     // Sesuaikan dengan model dan metode penyimpanan data Anda
 
     // Setelah berhasil disimpan, beri respons "sukses" ke JavaScript
@@ -1643,6 +1647,203 @@ class baak extends CI_Controller {
     }
 	}
 
+	// monitoring lulus Pra
+
+	public function mon_llspra()
+	{
+		# code...
+    // Call your model method to get the data with pagination
+    $data['items'] = $this->m_portal->get_data_formon_mhsall($per_page, $offset);
+
+    $data['program_studi_options'] = array('92403', '92402'); // Add other program options if needed
+
+    $this->load->view('baak/header');
+    $this->load->view('baak/mon_llspra', $data);
+    $this->load->view('baak/footer');
+    $this->load->view('baak/mon_llspra_js');
+	}
+
+	public function mon_llspradata()
+	{
+		# code...
+	$year = $this->input->get('year'); // Ambil tahun dari input form
+    $program_studi = $this->input->get('program_studi'); // Ambil program studi dari input form
+
+    // Buat array untuk filter program studi
+    $program_studi_options = array('92403', '92402'); // Tambahkan program studi lain jika ada
+
+    if (!$year && !$program_studi) {
+        $data['items'] = $this->m_portal->get_data_formon_mhsall();
+    } elseif ($year && !$program_studi) {
+        $data['items'] = $this->m_portal->get_data_formon_mhsyear($year);
+    } elseif (!$year && $program_studi) {
+        $data['items'] = $this->m_portal->get_data_formon_mhsprodi($program_studi);
+    } elseif ($year && $program_studi) {
+        $data['items'] = $this->m_portal->get_data_formon_mhsyearnprodi($year, $program_studi);
+    }
+
+    $data['program_studi_options'] = $program_studi_options; // Pass program studi options to view
+    $this->load->view('baak/mon_llspradata', $data);
+	}
+	public function mon_praedit($id)
+	{
+		# code...
+		// Ambil data berdasarkan ID dari model Anda
+        $data = $this->m_portal->get_data_formon_mhs($id); // Gantilah 'get_data_by_id' dengan metode yang sesuai dalam model Anda
+
+        // Konversi data ke format JSON dan kirimkan ke view
+        echo json_encode($data);
+	}
+	public function mon_praeditp()
+	{
+    // Tangani data yang dikirimkan dari formulir
+	$where = array(
+        'id_mon' => $this->input->post('id_mon'),
+    ); 
+	$pra_tanggal_lulus = $this->input->post('etgllls');
+	$pra_mb_skl = $this->input->post('embskl');
+
+    $pra_tanggal_lulusf = date('Y-m-d', strtotime($pra_tanggal_lulus)); // Ubah format tanggal
+    $pra_mb_sklf = date('Y-m-d', strtotime($pra_mb_skl)); // Ubah format tanggal
+
+    $data = array(
+        'seafarercode' => $this->input->post('eseafararcode'),
+        'pra_tanggal_lulus' => $pra_tanggal_lulusf,
+        'pra_mb_skl' => $pra_mb_sklf,
+        'pra_status' => $this->input->post('estatpra')
+    );
+
+    // Simpan data ke database
+    $res = $this->m_portal->update_data($where, $data,'tbl_mon');
+    // Sesuaikan dengan model dan metode penyimpanan data Anda
+
+    // Setelah berhasil disimpan, beri respons "sukses" ke JavaScript
+    if ($res) {
+       // Jika terjadi kesalahan, beri respons "gagal" ke JavaScript
+        echo 'gagal';
+    } else {
+         // Jika penyimpanan sukses, beri respons "sukses" ke JavaScript
+        echo 'sukses';
+    }
+	}
+
+	// monitoring lulus Pasca
+
+	public function mon_llspasca()
+	{
+		# code...
+    // Call your model method to get the data with pagination
+    $data['items'] = $this->m_portal->get_data_formon_mhsall($per_page, $offset);
+
+    $data['program_studi_options'] = array('92403', '92402'); // Add other program options if needed
+
+    $this->load->view('baak/header');
+    $this->load->view('baak/mon_llspasca', $data);
+    $this->load->view('baak/footer');
+    $this->load->view('baak/mon_llspasca_js');
+	}
+
+	public function mon_llspascadata()
+	{
+		# code...
+	$year = $this->input->get('year'); // Ambil tahun dari input form
+    $program_studi = $this->input->get('program_studi'); // Ambil program studi dari input form
+
+    // Buat array untuk filter program studi
+    $program_studi_options = array('92403', '92402'); // Tambahkan program studi lain jika ada
+
+    if (!$year && !$program_studi) {
+        $data['items'] = $this->m_portal->get_data_formon_mhsall();
+    } elseif ($year && !$program_studi) {
+        $data['items'] = $this->m_portal->get_data_formon_mhsyear($year);
+    } elseif (!$year && $program_studi) {
+        $data['items'] = $this->m_portal->get_data_formon_mhsprodi($program_studi);
+    } elseif ($year && $program_studi) {
+        $data['items'] = $this->m_portal->get_data_formon_mhsyearnprodi($year, $program_studi);
+    }
+
+    $data['program_studi_options'] = $program_studi_options; // Pass program studi options to view
+    $this->load->view('baak/mon_llspascadata', $data);
+	}
+	public function mon_pascaedit($id)
+	{
+		# code...
+		// Ambil data berdasarkan ID dari model Anda
+        $data = $this->m_portal->get_data_formon_mhs($id); // Gantilah 'get_data_by_id' dengan metode yang sesuai dalam model Anda
+
+        // Konversi data ke format JSON dan kirimkan ke view
+        echo json_encode($data);
+	}
+	public function mon_pascaeditp()
+	{
+    // Tangani data yang dikirimkan dari formulir
+	$where = array(
+        'id_mon' => $this->input->post('id_mon'),
+    ); 
+	$pra_tanggal_lulus = $this->input->post('etgllls');
+	$pra_mb_skl = $this->input->post('embskl');
+
+    $pra_tanggal_lulusf = date('Y-m-d', strtotime($pra_tanggal_lulus)); // Ubah format tanggal
+    $pra_mb_sklf = date('Y-m-d', strtotime($pra_mb_skl)); // Ubah format tanggal
+
+    $data = array(
+        'seafarercode' => $this->input->post('eseafararcode'),
+        'pra_tanggal_lulus' => $pra_tanggal_lulusf,
+        'pra_mb_skl' => $pra_mb_sklf,
+        'pra_status' => $this->input->post('estatpra')
+    );
+
+    // Simpan data ke database
+    $res = $this->m_portal->update_data($where, $data,'tbl_mon');
+    // Sesuaikan dengan model dan metode penyimpanan data Anda
+
+    // Setelah berhasil disimpan, beri respons "sukses" ke JavaScript
+    if ($res) {
+       // Jika terjadi kesalahan, beri respons "gagal" ke JavaScript
+        echo 'gagal';
+    } else {
+         // Jika penyimpanan sukses, beri respons "sukses" ke JavaScript
+        echo 'sukses';
+    }
+	}
+
+	////// monitoring stanby prala
+	public function mon_sbprala()
+	{
+		# code...
+    // Call your model method to get the data with pagination
+    $data['items'] = $this->m_portal->get_data_formon_mhsall_sb($per_page, $offset);
+
+    $data['program_studi_options'] = array('92403', '92402'); // Add other program options if needed
+
+    $this->load->view('baak/header');
+    $this->load->view('baak/mon_sbprala', $data);
+    $this->load->view('baak/footer');
+    $this->load->view('baak/mon_sbprala_js');
+	}
+
+	public function mon_sbpraladata()
+	{
+		# code...
+	$year = $this->input->get('year'); // Ambil tahun dari input form
+    $program_studi = $this->input->get('program_studi'); // Ambil program studi dari input form
+
+    // Buat array untuk filter program studi
+    $program_studi_options = array('92403', '92402'); // Tambahkan program studi lain jika ada
+
+    if (!$year && !$program_studi) {
+        $data['items'] = $this->m_portal->get_data_formon_mhsall_sb();
+    } elseif ($year && !$program_studi) {
+        $data['items'] = $this->m_portal->get_data_formon_mhsyear_sb($year);
+    } elseif (!$year && $program_studi) {
+        $data['items'] = $this->m_portal->get_data_formon_mhsprodi_sb($program_studi);
+    } elseif ($year && $program_studi) {
+        $data['items'] = $this->m_portal->get_data_formon_mhsyearnprodi_sb($year, $program_studi);
+    }
+
+    $data['program_studi_options'] = $program_studi_options; // Pass program studi options to view
+    $this->load->view('baak/mon_sbpraladata', $data);
+	}
 
 }
 

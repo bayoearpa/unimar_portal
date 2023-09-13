@@ -186,11 +186,11 @@
                     </div>
                      <div class="form-group">
                         <label for="edittgllls">Tanggal Lulus:</label>
-                        <input type="date" class="form-control" id="edittgllls" name="tgllls" readonly="">
+                        <input type="date" class="form-control" id="edittgllls" name="etgllls">
                     </div>
                      <div class="form-group">
                         <label for="editnoijs">Nomor Ijasah:</label>
-                        <input type="text" class="form-control" id="editnoijs" name="enj">
+                        <input type="text" class="form-control" id="editnoijs" name="enj" readonly="">
                     </div>
                     <!-- Tambahkan input lain sesuai kebutuhan -->
                 </form>

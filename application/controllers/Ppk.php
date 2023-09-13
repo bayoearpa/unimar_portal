@@ -667,6 +667,290 @@ class ppk extends CI_Controller {
 		}
 	}
 
+	/////////////////////////////////////////// Monitoring/////////////////////////////////////////////////
+	// monitoring lulus D3
+	public function mon_llsd3()
+	{
+		# code...
+    // Call your model method to get the data with pagination
+    $data['items'] = $this->m_portal->get_data_formon_mhsall($per_page, $offset);
+
+    $data['program_studi_options'] = array('92403', '92402'); // Add other program options if needed
+
+    $this->load->view('ppk/header');
+    $this->load->view('ppk/mon_llsd3', $data);
+    $this->load->view('ppk/footer');
+    $this->load->view('ppk/mon_llsd3_js');
+	}
+
+	public function mon_llsd3data()
+	{
+		# code...
+	$year = $this->input->get('year'); // Ambil tahun dari input form
+    $program_studi = $this->input->get('program_studi'); // Ambil program studi dari input form
+
+    // Buat array untuk filter program studi
+    $program_studi_options = array('92403', '92402'); // Tambahkan program studi lain jika ada
+
+    if (!$year && !$program_studi) {
+        $data['items'] = $this->m_portal->get_data_formon_mhsall();
+    } elseif ($year && !$program_studi) {
+        $data['items'] = $this->m_portal->get_data_formon_mhsyear($year);
+    } elseif (!$year && $program_studi) {
+        $data['items'] = $this->m_portal->get_data_formon_mhsprodi($program_studi);
+    } elseif ($year && $program_studi) {
+        $data['items'] = $this->m_portal->get_data_formon_mhsyearnprodi($year, $program_studi);
+    }
+
+    $data['program_studi_options'] = $program_studi_options; // Pass program studi options to view
+    $this->load->view('ppk/mon_llsd3data', $data);
+	}
+
+	public function mon_add($id)
+	{
+		# code...
+		// Ambil data berdasarkan ID dari model Anda
+        $data = $this->m_portal->get_data_formon_mhs($id); // Gantilah 'get_data_by_id' dengan metode yang sesuai dalam model Anda
+
+        // Konversi data ke format JSON dan kirimkan ke view
+        echo json_encode($data);
+	}
+	public function mon_addp()
+	{
+    // Tangani data yang dikirimkan dari formulir
+    $data = array(
+        'nim' => $this->input->post('nim'),
+        'd3_no_ijasah' => $this->input->post('nj')
+    );
+
+    // Simpan data ke database
+    $res = $this->m_portal->input_data($data,'tbl_mon');
+    // Sesuaikan dengan model dan metode penyimpanan data Anda
+
+    // Setelah berhasil disimpan, beri respons "sukses" ke JavaScript
+    if ($res) {
+       // Jika terjadi kesalahan, beri respons "gagal" ke JavaScript
+        echo 'gagal';
+    } else {
+         // Jika penyimpanan sukses, beri respons "sukses" ke JavaScript
+        echo 'sukses';
+    }
+	}
+
+	public function mon_edit($id)
+	{
+		# code...
+		// Ambil data berdasarkan ID dari model Anda
+        $data = $this->m_portal->get_data_formon_mhs($id); // Gantilah 'get_data_by_id' dengan metode yang sesuai dalam model Anda
+
+        // Konversi data ke format JSON dan kirimkan ke view
+        echo json_encode($data);
+	}
+
+	public function mon_editp()
+	{
+    // Tangani data yang dikirimkan dari formulir
+	$where = array(
+        'id_mon' => $this->input->post('id_mon'),
+    ); 
+    $data = array(
+        'nim' => $this->input->post('nim'),
+        'd3_no_ijasah' => $this->input->post('etgllls')
+    );
+
+    // Simpan data ke database
+    $res = $this->m_portal->input_data($where, $data,'tbl_mon');
+    // Sesuaikan dengan model dan metode penyimpanan data Anda
+
+    // Setelah berhasil disimpan, beri respons "sukses" ke JavaScript
+    if ($res) {
+       // Jika terjadi kesalahan, beri respons "gagal" ke JavaScript
+        echo 'gagal';
+    } else {
+         // Jika penyimpanan sukses, beri respons "sukses" ke JavaScript
+        echo 'sukses';
+    }
+	}
+
+	////////////// monitoring onboard
+
+	public function mon_onboard()
+	{
+		# code...
+    // Call your model method to get the data with pagination
+    $data['items'] = $this->m_portal->get_data_formon_mhsall_sb($per_page, $offset);
+
+    $data['program_studi_options'] = array('92403', '92402'); // Add other program options if needed
+
+    $this->load->view('baak/header');
+    $this->load->view('baak/mon_onboard', $data);
+    $this->load->view('baak/footer');
+    $this->load->view('baak/mon_onboard_js');
+	}
+
+	public function mon_onboarddata()
+	{
+		# code...
+	$year = $this->input->get('year'); // Ambil tahun dari input form
+    $program_studi = $this->input->get('program_studi'); // Ambil program studi dari input form
+
+    // Buat array untuk filter program studi
+    $program_studi_options = array('92403', '92402'); // Tambahkan program studi lain jika ada
+
+    if (!$year && !$program_studi) {
+        $data['items'] = $this->m_portal->get_data_formon_mhsall_sb();
+    } elseif ($year && !$program_studi) {
+        $data['items'] = $this->m_portal->get_data_formon_mhsyear_sb($year);
+    } elseif (!$year && $program_studi) {
+        $data['items'] = $this->m_portal->get_data_formon_mhsprodi_sb($program_studi);
+    } elseif ($year && $program_studi) {
+        $data['items'] = $this->m_portal->get_data_formon_mhsyearnprodi_sb($year, $program_studi);
+    }
+
+    $data['program_studi_options'] = $program_studi_options; // Pass program studi options to view
+    $this->load->view('ppk/mon_onboarddata', $data);
+	}
+	public function mon_onboardedit($id)
+	{
+		# code...
+		// Ambil data berdasarkan ID dari model Anda
+        $data = $this->m_portal->get_data_formon_mhs($id); // Gantilah 'get_data_by_id' dengan metode yang sesuai dalam model Anda
+
+        // Konversi data ke format JSON dan kirimkan ke view
+        echo json_encode($data);
+	}
+
+	public function mon_onboardeditp()
+	{
+    // Tangani data yang dikirimkan dari formulir
+	$where = array(
+        'id_mon' => $this->input->post('id_mon'),
+    );
+	$nim = $this->input->post('nim');
+	$status_board = $this->input->post('estatonboard');
+	$nama_kapal = $this->input->post('editnamakapal');
+	$tgl_signon = $this->input->post('etglsignon');
+
+    $tgl_signonf = date('Y-m-d', strtotime($tgl_signon)); // Ubah format tanggal
+    
+
+    // Tangani unggahan file
+        $config['upload_path'] = './assets/monitoring/onboard';
+        $config['allowed_types'] = 'pdf'; // Sesuaikan dengan jenis file yang diizinkan
+        $config['file_name'] = $nim.'_signon'; // Nama file yang diunggah sesuai NIM
+        $this->load->library('upload', $config);
+
+        if ($this->upload->do_upload('editufsignon')) {
+            // Jika unggahan berhasil
+            $upload_data = $this->upload->data();
+            $file_name = $upload_data['file_name'];
+
+            // Simpan data ke database (contoh)
+            $data = array(
+                'status_board' => $status_board,
+                'nama_kapal' => $nama_kapal,
+                'tgl_sign_on' => $tgl_signonf,
+                'upload_file_signon' => $file_name
+            );
+            $this->m_portal->update_data($where,$data,'tbl_mon');
+
+            echo 'sukses';
+        } else {
+            echo 'Gagal mengunggah file.';
+        }
+
+    
+	}
+
+	////////////// monitoring offboard
+
+	public function mon_offboard()
+	{
+		# code...
+    // Call your model method to get the data with pagination
+    $data['items'] = $this->m_portal->get_data_formon_mhsall_ob($per_page, $offset);
+
+    $data['program_studi_options'] = array('92403', '92402'); // Add other program options if needed
+
+    $this->load->view('baak/header');
+    $this->load->view('baak/mon_offboard', $data);
+    $this->load->view('baak/footer');
+    $this->load->view('baak/mon_offboard_js');
+	}
+
+	public function mon_offboarddata()
+	{
+		# code...
+	$year = $this->input->get('year'); // Ambil tahun dari input form
+    $program_studi = $this->input->get('program_studi'); // Ambil program studi dari input form
+
+    // Buat array untuk filter program studi
+    $program_studi_options = array('92403', '92402'); // Tambahkan program studi lain jika ada
+
+    if (!$year && !$program_studi) {
+        $data['items'] = $this->m_portal->get_data_formon_mhsall_ob();
+    } elseif ($year && !$program_studi) {
+        $data['items'] = $this->m_portal->get_data_formon_mhsyear_ob($year);
+    } elseif (!$year && $program_studi) {
+        $data['items'] = $this->m_portal->get_data_formon_mhsprodi_ob($program_studi);
+    } elseif ($year && $program_studi) {
+        $data['items'] = $this->m_portal->get_data_formon_mhsyearnprodi_ob($year, $program_studi);
+    }
+
+    $data['program_studi_options'] = $program_studi_options; // Pass program studi options to view
+    $this->load->view('ppk/mon_offboarddata', $data);
+	}
+	public function mon_offboardedit($id)
+	{
+		# code...
+		// Ambil data berdasarkan ID dari model Anda
+        $data = $this->m_portal->get_data_formon_mhs($id); // Gantilah 'get_data_by_id' dengan metode yang sesuai dalam model Anda
+
+        // Konversi data ke format JSON dan kirimkan ke view
+        echo json_encode($data);
+	}
+
+	public function mon_offboardeditp()
+	{
+    // Tangani data yang dikirimkan dari formulir
+	$where = array(
+        'id_mon' => $this->input->post('id_mon'),
+    );
+	$nim = $this->input->post('nim');
+	$status_board = $this->input->post('estatonboard');
+	$tgl_signoff = $this->input->post('etglsignoff');
+
+    $tgl_signofff = date('Y-m-d', strtotime($tgl_signoff)); // Ubah format tanggal
+    
+
+    // Tangani unggahan file
+        $config['upload_path'] = './assets/monitoring/offboard';
+        $config['allowed_types'] = 'pdf'; // Sesuaikan dengan jenis file yang diizinkan
+        $config['file_name'] = $nim.'_signoff'; // Nama file yang diunggah sesuai NIM
+        $this->load->library('upload', $config);
+
+        if ($this->upload->do_upload('editufsignoff')) {
+            // Jika unggahan berhasil
+            $upload_data = $this->upload->data();
+            $file_name = $upload_data['file_name'];
+
+            // Simpan data ke database (contoh)
+            $data = array(
+                'status_board' => $status_board,
+                'tgl_sign_off' => $tgl_signoff,
+                'upload_file_signoff' => $file_name
+            );
+            $this->m_portal->update_data($where,$data,'tbl_mon');
+
+            echo 'sukses';
+        } else {
+            echo 'Gagal mengunggah file.';
+        }
+
+    
+	}
+
+
 }
 
 /* End of file ppk.php */

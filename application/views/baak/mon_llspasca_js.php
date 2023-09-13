@@ -7,7 +7,7 @@
 
             $.ajax({
                 type: 'GET',
-                url: '<?php echo base_url('baak/mon_llsd3data'); ?>',
+                url: '<?php echo base_url('baak/mon_llspascadata'); ?>',
                 data: { year: year, program_studi: programStudi }, // Send both year and program_studi
                 success: function(response) {
                     $('#example31082023').html(response); // Ganti isi #item-list dengan hasil AJAX
@@ -60,7 +60,7 @@
     var id = $(this).data('id');
     // Ambil data yang akan diedit dari server dengan AJAX
     $.ajax({
-      url: '<?php echo base_url('baak/mon_edit/'); ?>' + id, // Sesuaikan dengan URL yang sesuai
+      url: '<?php echo base_url('baak/mon_pascaedit/'); ?>' + id, // Sesuaikan dengan URL yang sesuai
       type: 'GET',
       success: function(data) {
         // Isi modal dengan data yang diambil
@@ -78,8 +78,15 @@
             } else if (parsedData.jk === 'P') {
                 $('#editjnsklmn').val('Perempuan');
             }
-        $('#edittgllls').val(parsedData.d3_tanggal_lulus);
-        $('#editnoijs').val(parsedData.d3_no_ijasah);
+        $('#edieditseafarercode').val(parsedData.seafarercode);
+        $('#edittglllspasca').val(parsedData.pasca_lulus_ukp);
+        $('#editnoijasah').val(parsedData.pasca_nomor_ijasah);
+        // Mengatur status checkbox sesuai dengan data dari database
+        if (parsedData.pra_status === 'sudah') {
+            $('#editstatprah').prop('checked', true);
+        } else if (parsedData.pra_status === 'belum') {
+            $('#editstatpra').prop('checked', true);
+        }
         // Tambahkan input lain sesuai kebutuhan
         $('#editModal').modal('show');
       }
@@ -89,7 +96,7 @@
 function reloadTable() {
     $.ajax({
         type: 'GET',
-        url: '<?php echo base_url('baak/mon_llsd3data'); ?>',
+        url: '<?php echo base_url('baak/mon_llspradata'); ?>',
         data: { year: $('#year').val(), program_studi: $('#program_studi').val() },
         success: function(response) {
             $('#example31082023').html(response);
@@ -120,7 +127,7 @@ function reloadTable() {
      // Menyimpan perubahan dengan AJAX
     $('#saveEdit').click(function() {
         $.ajax({
-            url: '<?php echo base_url('baak/mon_editp'); ?>', // Sesuaikan dengan URL yang sesuai
+            url: '<?php echo base_url('baak/mon_pascaeditp'); ?>', // Sesuaikan dengan URL yang sesuai
             type: 'POST',
             data: $('#editForm').serialize(),
             success: function(response) {

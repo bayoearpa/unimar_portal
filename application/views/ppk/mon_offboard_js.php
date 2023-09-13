@@ -7,7 +7,7 @@
 
             $.ajax({
                 type: 'GET',
-                url: '<?php echo base_url('baak/mon_llsd3data'); ?>',
+                url: '<?php echo base_url('ppk/mon_offboarddata'); ?>',
                 data: { year: year, program_studi: programStudi }, // Send both year and program_studi
                 success: function(response) {
                     $('#example31082023').html(response); // Ganti isi #item-list dengan hasil AJAX
@@ -55,12 +55,25 @@
       }
     });
   });
+   // Memeriksa apakah input file sudah diisi saat halaman dimuat
+    $('#editufsignoff').on('change', function() {
+                var fileUploadStatus = $('#fileUploadStatus');
+                var editUfSignOff = $(this)[0];
+
+                if (editUfSignOff.files.length > 0) {
+                    var fileName = editUfSignOff.files[0].name;
+                    fileUploadStatus.text('File sudah diunggah: ' + fileName);
+                } else {
+                    fileUploadStatus.text('Belum ada file yang diunggah.');
+                }
+            });
+
 // Menampilkan modal saat tombol "Edit" diklik
   $('.edit-button').click(function() {
     var id = $(this).data('id');
     // Ambil data yang akan diedit dari server dengan AJAX
     $.ajax({
-      url: '<?php echo base_url('baak/mon_edit/'); ?>' + id, // Sesuaikan dengan URL yang sesuai
+      url: '<?php echo base_url('baak/mon_offboardedit/'); ?>' + id, // Sesuaikan dengan URL yang sesuai
       type: 'GET',
       success: function(data) {
         // Isi modal dengan data yang diambil
@@ -78,8 +91,15 @@
             } else if (parsedData.jk === 'P') {
                 $('#editjnsklmn').val('Perempuan');
             }
-        $('#edittgllls').val(parsedData.d3_tanggal_lulus);
-        $('#editnoijs').val(parsedData.d3_no_ijasah);
+        $('#edieditseafarercode').val(parsedData.seafarercode);
+         // Mengatur status checkbox sesuai dengan data dari database
+        if (parsedData.pra_status === 'onboard') {
+            $('#editstatonboard').prop('checked', true);
+        } else if (parsedData.pra_status === 'offboard') {
+            $('#editstatonboard').prop('checked', true);
+        }
+        $('#edittglsignoff').val(parsedData.tgl_sign_off);
+        $('#editufsignoff').val(parsedData.upload_file_signoff);
         // Tambahkan input lain sesuai kebutuhan
         $('#editModal').modal('show');
       }
@@ -89,7 +109,7 @@
 function reloadTable() {
     $.ajax({
         type: 'GET',
-        url: '<?php echo base_url('baak/mon_llsd3data'); ?>',
+        url: '<?php echo base_url('ppk/mon_onboarddata'); ?>',
         data: { year: $('#year').val(), program_studi: $('#program_studi').val() },
         success: function(response) {
             $('#example31082023').html(response);
@@ -118,24 +138,33 @@ function reloadTable() {
     });
 
      // Menyimpan perubahan dengan AJAX
-    $('#saveEdit').click(function() {
-        $.ajax({
-            url: '<?php echo base_url('baak/mon_editp'); ?>', // Sesuaikan dengan URL yang sesuai
-            type: 'POST',
-            data: $('#editForm').serialize(),
-            success: function(response) {
-                if (response == 'sukses') {
-                    // Tutup modal setelah data berhasil ditambahkan
-                    $('#editModal').modal('hide');
-                    // Muat ulang tabel untuk menampilkan data terbaru
-                    reloadTable();
-                } else {
-                    // Tampilkan pesan kesalahan jika perlu
-                    alert('Gagal melakukan edit data baru.');
-                }
-            }
+    $('#editForm').on('submit', function(e) {
+                e.preventDefault();
+                var formData = new FormData(this);
+
+                $.ajax({
+                    url: '<?php echo base_url('ppk/mon_offboardeditp'); ?>', // Ganti dengan URL Controller Anda
+                    type: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function(response) {
+                        console.log(response);
+                        // Handle respons dari server di sini
+                    },
+                    error: function(error) {
+                        console.error(error);
+                    }
+                });
+            });
+     $('.view-file-button').click(function() {
+            var filename = $(this).data('filename');
+            // Gantilah '/uploads/' dengan direktori tempat Anda menyimpan file
+            var fileUrl = './assets/monitoring/offboard' + filename;
+            
+            // Buka tautan ke file di jendela baru
+            window.open(fileUrl, '_blank');
         });
-    });
 
 
     });

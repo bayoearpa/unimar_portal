@@ -7,7 +7,7 @@
 
             $.ajax({
                 type: 'GET',
-                url: '<?php echo base_url('baak/mon_llsd3data'); ?>',
+                url: '<?php echo base_url('ppk/mon_llsd3data'); ?>',
                 data: { year: year, program_studi: programStudi }, // Send both year and program_studi
                 success: function(response) {
                     $('#example31082023').html(response); // Ganti isi #item-list dengan hasil AJAX
@@ -31,7 +31,7 @@
     var id = $(this).data('id');
     // Ambil data yang akan diedit dari server dengan AJAX
     $.ajax({
-      url: '<?php echo base_url('baak/mon_add/'); ?>' + id, // Sesuaikan dengan URL yang sesuai
+      url: '<?php echo base_url('ppk/mon_add/'); ?>' + id, // Sesuaikan dengan URL yang sesuai
       type: 'GET',
       success: function(data) {
         // Isi modal dengan data yang diambil
@@ -60,7 +60,7 @@
     var id = $(this).data('id');
     // Ambil data yang akan diedit dari server dengan AJAX
     $.ajax({
-      url: '<?php echo base_url('baak/mon_edit/'); ?>' + id, // Sesuaikan dengan URL yang sesuai
+      url: '<?php echo base_url('ppk/mon_edit/'); ?>' + id, // Sesuaikan dengan URL yang sesuai
       type: 'GET',
       success: function(data) {
         // Isi modal dengan data yang diambil
@@ -89,7 +89,7 @@
 function reloadTable() {
     $.ajax({
         type: 'GET',
-        url: '<?php echo base_url('baak/mon_llsd3data'); ?>',
+        url: '<?php echo base_url('ppk/mon_llsd3data'); ?>',
         data: { year: $('#year').val(), program_studi: $('#program_studi').val() },
         success: function(response) {
             $('#example31082023').html(response);
@@ -100,7 +100,7 @@ function reloadTable() {
     // Menyimpan perubahan dengan AJAX
     $('#saveAdd').click(function() {
         $.ajax({
-            url: '<?php echo base_url('baak/mon_addp'); ?>', // Sesuaikan dengan URL yang sesuai
+            url: '<?php echo base_url('ppk/mon_addp'); ?>', // Sesuaikan dengan URL yang sesuai
             type: 'POST',
             data: $('#addForm').serialize(),
             success: function(response) {
@@ -120,7 +120,7 @@ function reloadTable() {
      // Menyimpan perubahan dengan AJAX
     $('#saveEdit').click(function() {
         $.ajax({
-            url: '<?php echo base_url('baak/mon_editp'); ?>', // Sesuaikan dengan URL yang sesuai
+            url: '<?php echo base_url('ppk/mon_editp'); ?>', // Sesuaikan dengan URL yang sesuai
             type: 'POST',
             data: $('#editForm').serialize(),
             success: function(response) {

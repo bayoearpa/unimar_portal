@@ -4,7 +4,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Lulus D3</h3>
+              <h3 class="box-title">Onboard</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -34,16 +34,13 @@
                   <th>NIM</th>
                   <th>Nama</th>
                   <th>Prodi</th>
-                  <th>No. Ijasah</th>
-                  <th>Tanggal Lulus</th>
+                  <th>Seafarercode</th>
+                  <th>Status Board</th>
+                  <th>Nama Kapal</th>
+                  <th>Tanggal Sign On</th>
+                   <th>Tanggal Sign Off</th>
+                   <th>File Offboard</th>
                   <th>proses</th>
-                  <!-- <th>Jenjang</th>
-                  <th>Mahatar</th>
-                  <th>D.Wali</th>
-                  <th>BAAK</th>
-                  <th>BK</th>
-                  <th>PPK</th>
-                  <th>Hasil</th> -->
                 </tr>
                 </thead>
                 <tbody>
@@ -54,8 +51,20 @@
                 <td><?php echo $i->nim; ?></td>
                 <td><?php echo $i->nama; ?></td>
                 <td><?php echo $i->prodi; ?></td>
-                <td><?php echo $i->d3_no_ijasah; ?></td>
-                <td><?php echo $i->d3_tanggal_lulus; ?></td>
+                <td><?php echo $i->seafarercode; ?></td>
+                <td><?php echo $i->status_board; ?></td>
+                <td><?php echo $i->nama_kapal; ?></td>
+                <td><?php echo $i->tanggal_sign_on; ?></td>
+                <td><?php echo $i->tanggal_sign_off; ?></td>
+                <td>
+                    <!-- Tombol Lihat File Sign Off -->
+                    <?php if ($i->upload_file_signoff) { ?>
+                        <button class="btn btn-info view-file-button" data-filename="<?php echo $i->upload_file_signoff; ?>">Lihat</button>
+                    <?php } else { ?>
+                        <!-- Tampilkan pesan jika file tidak ada -->
+                        File tidak tersedia
+                    <?php } ?>
+                </td>
                 <td>
                       <!-- Tombol Tambah/Edit -->
                     <?php if ($i->id_mon) { ?>
@@ -68,20 +77,17 @@
                   <?php } ?>
                 </tbody>
                 <tfoot>
-                <tr>
+               <tr>
                   <th>NIM</th>
                   <th>Nama</th>
                   <th>Prodi</th>
-                  <th>No. Ijasah</th>
-                  <th>Tanggal Lulus</th>
+                  <th>Seafarercode</th>
+                  <th>Status Board</th>
+                  <th>Nama Kapal</th>
+                  <th>Tanggal Sign On</th>
+                   <th>Tanggal Sign Off</th>
+                   <th>File Offboard</th>
                   <th>proses</th>
-                 <!-- <th>Jenjang</th>
-                  <th>Mahatar</th>
-                  <th>D.Wali</th>
-                  <th>BAAK</th>
-                  <th>BK</th>
-                  <th>PPK</th>
-                  <th>Hasil</th> -->
                 </tr>
                 </tfoot>
               </table>
@@ -101,7 +107,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title" id="addModalLabel">Form Lulus D3</h3>
+                <h3 class="modal-title" id="addModalLabel">Form Lulus PRA</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -130,13 +136,28 @@
                         <label for="addjnsklmn">Jenis Kelamin:</label>
                         <input type="text" class="form-control" id="addjnsklmn" name="jk" readonly="">
                     </div>
-                     <div class="form-group">
-                        <label for="addtgllls">Tanggal Lulus:</label>
-                        <input type="date" class="form-control" id="addtgllls" name="tgllls" readonly="">
+                    <div class="form-group">
+                        <label for="addseafarercode">Seafarercode:</label>
+                        <input type="text" class="form-control" id="addseafarercode" name="seafarercode">
                     </div>
-                     <div class="form-group">
-                        <label for="addnoijs">Nomor Ijasah:</label>
-                        <input type="text" class="form-control" id="addnoijs" name="nj">
+                    <div class="form-group">
+                        <label for="addtglllspra">Tanggal Lulus Pra:</label>
+                        <input type="date" class="form-control" id="addtglllspra" name="tglllspra">
+                    </div>
+                    <div class="form-group">
+                        <label for="addmbskl">Masa Berlaku SKL:</label>
+                        <input type="date" class="form-control" id="addmbskl" name="mbskl">
+                    </div>
+                    <div class="form-group">
+                        <label for="addstatpra">Status Lulus Pra:</label>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="addstatpra" name="statpra" value="sudah">
+                            <label class="form-check-label" for="addstatpra">Sudah</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="addstatpra" name="statpra" value="belum">
+                            <label class="form-check-label" for="addstatpra">Belum</label>
+                        </div>
                     </div>
                     <!-- Tambahkan input lain sesuai kebutuhan -->
                 </form>
@@ -154,16 +175,16 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title" id="editModalLabel">Form Edit Lulus D3</h3>
+                <h3 class="modal-title" id="editModalLabel">Form Edit Onboard</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
                 <!-- Form Edit Data -->
-                <form id="editForm">
-                    <input type="hidden" id="editidmon" name="id_mon">
+                <form id="editForm" method="post" enctype="multipart/form-data">
                     <input type="hidden" id="editNim" name="nim">
+                    <input type="hidden" id="editidmon" name="nid_mon">
                     <div class="form-group">
                         <label for="editNama">Nama:</label>
                         <input type="text" class="form-control" id="editNama" name="nama" readonly="">
@@ -184,14 +205,43 @@
                         <label for="editjnsklmn">Jenis Kelamin:</label>
                         <input type="text" class="form-control" id="editjnsklmn" name="jk" readonly="">
                     </div>
-                     <div class="form-group">
-                        <label for="edittgllls">Tanggal Lulus:</label>
-                        <input type="date" class="form-control" id="edittgllls" name="tgllls" readonly="">
+                    <div class="form-group">
+                        <label for="editseafarercode">Seafarercode:</label>
+                        <input type="text" class="form-control" id="editseafarercode" name="eseafarercode">
                     </div>
-                     <div class="form-group">
-                        <label for="editnoijs">Nomor Ijasah:</label>
-                        <input type="text" class="form-control" id="editnoijs" name="enj">
+
+                    <!-- onboard/offboard formgroup -->
+
+                    <div class="form-group">
+                        <label for="editstatonboard">Status Onboard/Offboard:</label>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="editstatonboard" name="estatonboard" value="sudah">
+                            <label class="form-check-label" for="editstatonboard">Onboard</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="editstatonboard" name="estatonboard" value="belum">
+                            <label class="form-check-label" for="editstatonboard">Offboard</label>
+                        </div>
                     </div>
+                    <div class="form-group">
+                        <label for="editnamakapal">Nama Kapal:</label>
+                        <input type="text" class="form-control" id="editnamakapal" name="editnamakapal" readonly="">
+                    </div>
+                    <div class="form-group">
+                        <label for="edittglsignon">Tanggal Sign On:</label>
+                        <input type="date" class="form-control" id="edittglsignon" name="etglsignon" readonly="">
+                    </div>
+                    <div class="form-group">
+                        <label for="edittglsignoff">Tanggal Sign Off:</label>
+                        <input type="date" class="form-control" id="edittglsignoff" name="etglsignoff">
+                    </div>
+                    <div class="form-group">
+                        <label for="ediufsignoff">Upload File Sign Off</label>
+                        <input type="file" class="form-control" id="editufsignoff" name="eufsignoff">
+                    </div>
+                    <div id="fileUploadStatus">Belum ada file yang diunggah.</div>
+                    
+                    
                     <!-- Tambahkan input lain sesuai kebutuhan -->
                 </form>
             </div>

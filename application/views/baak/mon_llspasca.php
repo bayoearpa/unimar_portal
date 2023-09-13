@@ -4,7 +4,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Lulus D3</h3>
+              <h3 class="box-title">Lulus PASCA</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -34,16 +34,11 @@
                   <th>NIM</th>
                   <th>Nama</th>
                   <th>Prodi</th>
-                  <th>No. Ijasah</th>
-                  <th>Tanggal Lulus</th>
+                  <th>Seafarercode</th>
+                  <th>Tanggal Lulus Pasca</th>
+                  <th>Nomor Ijasah</th>
+                  <th>Status Ujian</th>
                   <th>proses</th>
-                  <!-- <th>Jenjang</th>
-                  <th>Mahatar</th>
-                  <th>D.Wali</th>
-                  <th>BAAK</th>
-                  <th>BK</th>
-                  <th>PPK</th>
-                  <th>Hasil</th> -->
                 </tr>
                 </thead>
                 <tbody>
@@ -54,8 +49,10 @@
                 <td><?php echo $i->nim; ?></td>
                 <td><?php echo $i->nama; ?></td>
                 <td><?php echo $i->prodi; ?></td>
-                <td><?php echo $i->d3_no_ijasah; ?></td>
-                <td><?php echo $i->d3_tanggal_lulus; ?></td>
+                <td><?php echo $i->seafarercode; ?></td>
+                <td><?php echo $i->pasca_lulus_ukp; ?></td>
+                <td><?php echo $i->pasca_nomor_ijasah; ?></td>
+                <td><?php echo $i->pasca_status; ?></td>
                 <td>
                       <!-- Tombol Tambah/Edit -->
                     <?php if ($i->id_mon) { ?>
@@ -68,20 +65,15 @@
                   <?php } ?>
                 </tbody>
                 <tfoot>
-                <tr>
+               <tr>
                   <th>NIM</th>
                   <th>Nama</th>
                   <th>Prodi</th>
-                  <th>No. Ijasah</th>
-                  <th>Tanggal Lulus</th>
+                  <th>Seafarercode</th>
+                  <th>Tanggal Lulus Pasca</th>
+                  <th>Nomor Ijasah</th>
+                  <th>Status Ujian</th>
                   <th>proses</th>
-                 <!-- <th>Jenjang</th>
-                  <th>Mahatar</th>
-                  <th>D.Wali</th>
-                  <th>BAAK</th>
-                  <th>BK</th>
-                  <th>PPK</th>
-                  <th>Hasil</th> -->
                 </tr>
                 </tfoot>
               </table>
@@ -101,7 +93,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title" id="addModalLabel">Form Lulus D3</h3>
+                <h3 class="modal-title" id="addModalLabel">Form Lulus PRA</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -130,13 +122,28 @@
                         <label for="addjnsklmn">Jenis Kelamin:</label>
                         <input type="text" class="form-control" id="addjnsklmn" name="jk" readonly="">
                     </div>
-                     <div class="form-group">
-                        <label for="addtgllls">Tanggal Lulus:</label>
-                        <input type="date" class="form-control" id="addtgllls" name="tgllls" readonly="">
+                    <div class="form-group">
+                        <label for="addseafarercode">Seafarercode:</label>
+                        <input type="text" class="form-control" id="addseafarercode" name="seafarercode">
                     </div>
-                     <div class="form-group">
-                        <label for="addnoijs">Nomor Ijasah:</label>
-                        <input type="text" class="form-control" id="addnoijs" name="nj">
+                    <div class="form-group">
+                        <label for="addtglllspra">Tanggal Lulus Pra:</label>
+                        <input type="date" class="form-control" id="addtglllspra" name="tglllspra">
+                    </div>
+                    <div class="form-group">
+                        <label for="addmbskl">Masa Berlaku SKL:</label>
+                        <input type="date" class="form-control" id="addmbskl" name="mbskl">
+                    </div>
+                    <div class="form-group">
+                        <label for="addstatpra">Status Lulus Pra:</label>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="addstatpra" name="statpra" value="sudah">
+                            <label class="form-check-label" for="addstatpra">Sudah</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="addstatpra" name="statpra" value="belum">
+                            <label class="form-check-label" for="addstatpra">Belum</label>
+                        </div>
                     </div>
                     <!-- Tambahkan input lain sesuai kebutuhan -->
                 </form>
@@ -154,7 +161,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title" id="editModalLabel">Form Edit Lulus D3</h3>
+                <h3 class="modal-title" id="editModalLabel">Form Edit Lulus PASCA</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -162,8 +169,8 @@
             <div class="modal-body">
                 <!-- Form Edit Data -->
                 <form id="editForm">
-                    <input type="hidden" id="editidmon" name="id_mon">
                     <input type="hidden" id="editNim" name="nim">
+                    <input type="hidden" id="editidmon" name="nid_mon">
                     <div class="form-group">
                         <label for="editNama">Nama:</label>
                         <input type="text" class="form-control" id="editNama" name="nama" readonly="">
@@ -184,13 +191,28 @@
                         <label for="editjnsklmn">Jenis Kelamin:</label>
                         <input type="text" class="form-control" id="editjnsklmn" name="jk" readonly="">
                     </div>
-                     <div class="form-group">
-                        <label for="edittgllls">Tanggal Lulus:</label>
-                        <input type="date" class="form-control" id="edittgllls" name="tgllls" readonly="">
+                    <div class="form-group">
+                        <label for="editseafarercode">Seafarercode:</label>
+                        <input type="text" class="form-control" id="editseafarercode" name="eseafarercode">
                     </div>
-                     <div class="form-group">
-                        <label for="editnoijs">Nomor Ijasah:</label>
-                        <input type="text" class="form-control" id="editnoijs" name="enj">
+                    <div class="form-group">
+                        <label for="edittglllspasca">Tanggal Lulus Pasca:</label>
+                        <input type="date" class="form-control" id="edittglllspasca" name="etglllspasca">
+                    </div>
+                    <div class="form-group">
+                        <label for="editnoijasah">Nomor Ijasah:</label>
+                        <input type="text" class="form-control" id="editnoijasah" name="enoijasah">
+                    </div>
+                    <div class="form-group">
+                        <label for="editstatpasca">Status Lulus Pra:</label>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="editstatpasca" name="estatpasca" value="sudah">
+                            <label class="form-check-label" for="editstatpra">Sudah</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="editstatpasca" name="estatpasca" value="belum">
+                            <label class="form-check-label" for="editstatpra">Belum</label>
+                        </div>
                     </div>
                     <!-- Tambahkan input lain sesuai kebutuhan -->
                 </form>
