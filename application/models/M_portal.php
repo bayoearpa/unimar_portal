@@ -563,7 +563,7 @@ function get_data_formon_mhsall($limit, $offset)
         tbl_mon.pra_status as pra_status,
         tbl_mon.seafarercode as seafarercode,
         tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
-        tbl_mon.pasca_nomor_ijasah as pasca_nomor_ijasah,
+        tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
         tbl_mon.pasca_status as pasca_status');
 	    $this->db->from('tmst_mahasiswa');
 	    $this->db->join('tmst_program_studi', 'tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi', 'inner');
@@ -600,7 +600,7 @@ function get_data_formon_mhsyear($year)
 	        tbl_mon.pra_status as pra_status,
 	        tbl_mon.seafarercode as seafarercode,
 	        tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
-	        tbl_mon.pasca_nomor_ijasah as pasca_nomor_ijasah,
+	        tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
 	        tbl_mon.pasca_status as pasca_status');
         $this->db->from('tmst_mahasiswa');
         $this->db->join('tmst_program_studi','tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi','inner');
@@ -626,7 +626,7 @@ function get_data_formon_mhsprodi($program_studi)
 	        tbl_mon.pra_status as pra_status,
 	        tbl_mon.seafarercode as seafarercode,
 	        tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
-	        tbl_mon.pasca_nomor_ijasah as pasca_nomor_ijasah,
+	        tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
 	        tbl_mon.pasca_status as pasca_status');
         $this->db->from('tmst_mahasiswa');
         $this->db->join('tmst_program_studi','tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi','inner');
@@ -652,7 +652,7 @@ function get_data_formon_mhsyearnprodi($year, $program_studi)
 	        tbl_mon.pra_status as pra_status,
 	        tbl_mon.seafarercode as seafarercode,
 	        tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
-	        tbl_mon.pasca_nomor_ijasah as pasca_nomor_ijasah,
+	        tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
 	        tbl_mon.pasca_status as pasca_status');
         $this->db->from('tmst_mahasiswa');
         $this->db->join('tmst_program_studi','tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi','inner');
@@ -680,7 +680,7 @@ function get_data_formon_mhsall_sb($limit, $offset)
         tbl_mon.pra_status as pra_status,
         tbl_mon.seafarercode as seafarercode,
         tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
-        tbl_mon.pasca_nomor_ijasah as pasca_nomor_ijasah,
+        tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
         tbl_mon.pasca_status as pasca_status,
 	        tbl_mon.status_board,
 	        tbl_mon.nama_kapal,
@@ -724,7 +724,7 @@ function get_data_formon_mhsyear_sb($year)
 	        tbl_mon.pra_status as pra_status,
 	        tbl_mon.seafarercode as seafarercode,
 	        tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
-	        tbl_mon.pasca_nomor_ijasah as pasca_nomor_ijasah,
+	        tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
 	        tbl_mon.pasca_status as pasca_status,
 	        tbl_mon.status_board,
 	        tbl_mon.nama_kapal,
@@ -757,7 +757,7 @@ function get_data_formon_mhsprodi_sb($program_studi)
 	        tbl_mon.pra_status as pra_status,
 	        tbl_mon.seafarercode as seafarercode,
 	        tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
-	        tbl_mon.pasca_nomor_ijasah as pasca_nomor_ijasah,
+	        tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
 	        tbl_mon.pasca_status as pasca_status,
 	        tbl_mon.status_board,
 	        tbl_mon.nama_kapal,
@@ -790,7 +790,7 @@ function get_data_formon_mhsyearnprodi_sb($year, $program_studi)
 	        tbl_mon.pra_status as pra_status,
 	        tbl_mon.seafarercode as seafarercode,
 	        tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
-	        tbl_mon.pasca_nomor_ijasah as pasca_nomor_ijasah,
+	        tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
 	        tbl_mon.pasca_status as pasca_status,
 	        tbl_mon.status_board,
 	        tbl_mon.nama_kapal,
@@ -825,7 +825,7 @@ function get_data_formon_mhsall_ob($limit, $offset)
         tbl_mon.pra_status as pra_status,
         tbl_mon.seafarercode as seafarercode,
         tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
-        tbl_mon.pasca_nomor_ijasah as pasca_nomor_ijasah,
+        tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
         tbl_mon.pasca_status as pasca_status,
 	        tbl_mon.status_board,
 	        tbl_mon.nama_kapal,
@@ -869,7 +869,7 @@ function get_data_formon_mhsyear_ob($year)
 	        tbl_mon.pra_status as pra_status,
 	        tbl_mon.seafarercode as seafarercode,
 	        tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
-	        tbl_mon.pasca_nomor_ijasah as pasca_nomor_ijasah,
+	        tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
 	        tbl_mon.pasca_status as pasca_status,
 	        tbl_mon.status_board,
 	        tbl_mon.nama_kapal,
@@ -902,7 +902,7 @@ function get_data_formon_mhsprodi_ob($program_studi)
 	        tbl_mon.pra_status as pra_status,
 	        tbl_mon.seafarercode as seafarercode,
 	        tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
-	        tbl_mon.pasca_nomor_ijasah as pasca_nomor_ijasah,
+	        tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
 	        tbl_mon.pasca_status as pasca_status,
 	        tbl_mon.status_board,
 	        tbl_mon.nama_kapal,
@@ -935,7 +935,7 @@ function get_data_formon_mhsyearnprodi_ob($year, $program_studi)
 	        tbl_mon.pra_status as pra_status,
 	        tbl_mon.seafarercode as seafarercode,
 	        tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
-	        tbl_mon.pasca_nomor_ijasah as pasca_nomor_ijasah,
+	        tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
 	        tbl_mon.pasca_status as pasca_status,
 	        tbl_mon.status_board,
 	        tbl_mon.nama_kapal,
@@ -970,7 +970,7 @@ function get_data_formon_mhs($id)
 	        tbl_mon.pra_status as pra_status,
 	        tbl_mon.seafarercode as seafarercode,
 	        tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
-	        tbl_mon.pasca_nomor_ijasah as pasca_nomor_ijasah,
+	        tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
 	        tbl_mon.pasca_status as pasca_status,
 	        tbl_mon.status_board,
 	        tbl_mon.nama_kapal,
