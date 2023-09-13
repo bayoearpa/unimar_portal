@@ -92,6 +92,8 @@ function reloadTable() {
         url: '<?php echo base_url('baak/mon_llsd3data'); ?>',
         data: { year: $('#year').val(), program_studi: $('#program_studi').val() },
         success: function(response) {
+            console.log({ year: $('#year').val(), program_studi: $('#program_studi').val() });
+            console.log(response); // Cek respons di konsol
             $('#example31082023').html(response);
         }
     });
