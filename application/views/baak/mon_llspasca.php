@@ -193,7 +193,7 @@
                     </div>
                     <div class="form-group">
                         <label for="editseafarercode">Seafarercode:</label>
-                        <input type="text" class="form-control" id="editseafarercode" name="eseafarercode">
+                        <input type="text" class="form-control" id="editseafarercode" name="eseafarercode" readonly="">
                     </div>
                     <div class="form-group">
                         <label for="edittglllspasca">Tanggal Lulus Pasca:</label>

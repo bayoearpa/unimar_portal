@@ -1780,17 +1780,15 @@ class baak extends CI_Controller {
 	$where = array(
         'id_mon' => $this->input->post('id_mon'),
     ); 
-	$pra_tanggal_lulus = $this->input->post('etgllls');
-	$pra_mb_skl = $this->input->post('embskl');
+	$pra_tanggal_lulus = $this->input->post('etglllspasca');
 
     $pra_tanggal_lulusf = date('Y-m-d', strtotime($pra_tanggal_lulus)); // Ubah format tanggal
-    $pra_mb_sklf = date('Y-m-d', strtotime($pra_mb_skl)); // Ubah format tanggal
 
     $data = array(
         'seafarercode' => $this->input->post('eseafararcode'),
         'pasca_lulus_ukp' => $pra_tanggal_lulusf,
-        'pasca_mb_skl' => $pra_mb_sklf,
-        'pasca_status' => $this->input->post('estatpra')
+        'pasca_no_ijasah' => $this->input->post('enoijasah'),
+        'pasca_status' => $this->input->post('estatpasca')
     );
 
     // Simpan data ke database
