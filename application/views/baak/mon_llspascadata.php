@@ -1,4 +1,4 @@
-<table id="example31082023" class="table table-bordered table-striped">
+ <table id="example31082023" class="table table-bordered table-striped">
                 <thead>
                 <tr>
                   <th>NIM</th>
