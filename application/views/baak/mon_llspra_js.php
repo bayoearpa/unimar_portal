@@ -78,12 +78,12 @@
             } else if (parsedData.jk === 'P') {
                 $('#editjnsklmn').val('Perempuan');
             }
-        $('#edieditseafarercode').val(parsedData.seafarercode);
+        $('#editseafarercode').val(parsedData.seafarercode);
         $('#edittglllspra').val(parsedData.pra_lulus_ukp);
         $('#editmbskl').val(parsedData.pra_mb_skl);
         // Mengatur status checkbox sesuai dengan data dari database
         if (parsedData.pra_status === 'sudah') {
-            $('#editstatprah').prop('checked', true);
+            $('#editstatpra').prop('checked', true);
         } else if (parsedData.pra_status === 'belum') {
             $('#editstatpra').prop('checked', true);
         }
