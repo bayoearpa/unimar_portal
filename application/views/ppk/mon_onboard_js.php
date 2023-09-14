@@ -115,8 +115,53 @@ function reloadTable() {
         data: { year: $('#year').val(), program_studi: $('#program_studi').val() },
         success: function(response) {
             $('#example31082023').html(response);
+
+            connectEditButtonListeners()
         }
     });
+}
+
+// Fungsi untuk menampilkan modal saat tombol "Edit" diklik
+function connectEditButtonListeners() { 
+ // Menampilkan modal saat tombol "Edit" diklik
+  $('.edit-button').click(function() {
+    var id = $(this).data('id');
+    // Ambil data yang akan diedit dari server dengan AJAX
+    $.ajax({
+      url: '<?php echo base_url('baak/mon_onboardedit/'); ?>' + id, // Sesuaikan dengan URL yang sesuai
+      type: 'GET',
+      success: function(data) {
+        // Isi modal dengan data yang diambil
+        console.log(data); // Cetak nilai data ke konsol
+        var parsedData = JSON.parse(data);
+        $('#editidmon').val(parsedData.id_mon);
+        $('#editNim').val(parsedData.nim);
+        $('#editNama').val(parsedData.nama);
+        $('#editTmptLahir').val(parsedData.tl);
+        $('#editTglLahir').val(parsedData.tgll);
+        $('#editAlamat').val(parsedData.alamat);
+            // Set jenis kelamin sesuai dengan data dari database
+            if (parsedData.jk === 'L') {
+                $('#editjnsklmn').val('Laki-laki');
+            } else if (parsedData.jk === 'P') {
+                $('#editjnsklmn').val('Perempuan');
+            }
+        $('#edieditseafarercode').val(parsedData.seafarercode);
+         // Mengatur status checkbox sesuai dengan data dari database
+        if (parsedData.pra_status === 'onboard') {
+            $('#editstatonboard').prop('checked', true);
+        } else if (parsedData.pra_status === 'offboard') {
+            $('#editstatonboard').prop('checked', true);
+        }
+        $('#editnamakapal').val(parsedData.nama_kapal);
+        $('#edittglsignon').val(parsedData.tgl_sign_on);
+        $('#editufsignon').val(parsedData.upload_file_signon);
+       
+        // Tambahkan input lain sesuai kebutuhan
+        $('#editModal').modal('show');
+      }
+    });
+  });
 }
 
     // Menyimpan perubahan dengan AJAX
