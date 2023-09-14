@@ -690,7 +690,7 @@ function get_data_formon_mhsall_sb($limit, $offset)
 	        tbl_mon.upload_file_signoff');
 	    $this->db->from('tmst_mahasiswa');
 	    $this->db->join('tmst_program_studi', 'tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi', 'inner');
-	    $this->db->join('tbl_mon','tmst_mahasiswa.NIM = tbl_mon.nim','left');
+	    $this->db->join('tbl_mon','tmst_mahasiswa.NIM = tbl_mon.nim','inner');
 	    $this->db->where('Tahun_masuk >=', '2018');
 	    $this->db->where('tbl_mon.pra_status >=', 'sudah');
 	    $this->db->where_in('tmst_mahasiswa.Kode_program_studi', array('92403', '92402'));
@@ -734,7 +734,7 @@ function get_data_formon_mhsyear_sb($year)
 	        tbl_mon.upload_file_signoff');
         $this->db->from('tmst_mahasiswa');
         $this->db->join('tmst_program_studi','tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi','inner');
-        $this->db->join('tbl_mon','tmst_mahasiswa.NIM = tbl_mon.nim','left');
+        $this->db->join('tbl_mon','tmst_mahasiswa.NIM = tbl_mon.nim','inner');
         $this->db->where('YEAR(Tanggal_masuk)', $year);
          $this->db->where('tbl_mon.pra_status >=', 'sudah');
         $this->db->where_in('tmst_mahasiswa.Kode_program_studi', array('92403', '92402'));
@@ -767,7 +767,7 @@ function get_data_formon_mhsprodi_sb($program_studi)
 	        tbl_mon.upload_file_signoff');
         $this->db->from('tmst_mahasiswa');
         $this->db->join('tmst_program_studi','tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi','inner');
-        $this->db->join('tbl_mon','tmst_mahasiswa.NIM = tbl_mon.nim','left');
+        $this->db->join('tbl_mon','tmst_mahasiswa.NIM = tbl_mon.nim','inner');
         $this->db->where('tmst_mahasiswa.Tahun_masuk >=', '2018');
         $this->db->where('tbl_mon.pra_status >=', 'sudah');
         $this->db->where('tmst_mahasiswa.Kode_program_studi', $program_studi);
@@ -800,7 +800,7 @@ function get_data_formon_mhsyearnprodi_sb($year, $program_studi)
 	        tbl_mon.upload_file_signoff');
         $this->db->from('tmst_mahasiswa');
         $this->db->join('tmst_program_studi','tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi','inner');
-        $this->db->join('tbl_mon','tmst_mahasiswa.NIM = tbl_mon.nim','left');
+        $this->db->join('tbl_mon','tmst_mahasiswa.NIM = tbl_mon.nim','inner');
         $this->db->where('YEAR(Tanggal_masuk)', $year);
         $this->db->where('tbl_mon.pra_status >=', 'sudah');
         $this->db->where('tmst_mahasiswa.Kode_program_studi', $program_studi);
@@ -835,7 +835,7 @@ function get_data_formon_mhsall_ob($limit, $offset)
 	        tbl_mon.upload_file_signoff');
 	    $this->db->from('tmst_mahasiswa');
 	    $this->db->join('tmst_program_studi', 'tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi', 'inner');
-	    $this->db->join('tbl_mon','tmst_mahasiswa.NIM = tbl_mon.nim','left');
+	    $this->db->join('tbl_mon','tmst_mahasiswa.NIM = tbl_mon.nim','inner');
 	    $this->db->where('Tahun_masuk >=', '2018');
 	    $this->db->where('tbl_mon.status_board >=', 'onboard');
 	    $this->db->where_in('tmst_mahasiswa.Kode_program_studi', array('92403', '92402'));
@@ -879,7 +879,7 @@ function get_data_formon_mhsyear_ob($year)
 	        tbl_mon.upload_file_signoff');
         $this->db->from('tmst_mahasiswa');
         $this->db->join('tmst_program_studi','tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi','inner');
-        $this->db->join('tbl_mon','tmst_mahasiswa.NIM = tbl_mon.nim','left');
+        $this->db->join('tbl_mon','tmst_mahasiswa.NIM = tbl_mon.nim','inner');
         $this->db->where('YEAR(Tanggal_masuk)', $year);
         $this->db->where('tbl_mon.status_board >=', 'onboard');
         $this->db->where_in('tmst_mahasiswa.Kode_program_studi', array('92403', '92402'));
@@ -912,7 +912,7 @@ function get_data_formon_mhsprodi_ob($program_studi)
 	        tbl_mon.upload_file_signoff');
         $this->db->from('tmst_mahasiswa');
         $this->db->join('tmst_program_studi','tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi','inner');
-        $this->db->join('tbl_mon','tmst_mahasiswa.NIM = tbl_mon.nim','left');
+        $this->db->join('tbl_mon','tmst_mahasiswa.NIM = tbl_mon.nim','inner');
         $this->db->where('Tahun_masuk >=', '2018');
         $this->db->where('tbl_mon.status_board >=', 'onboard');
         $this->db->where('tmst_mahasiswa.Kode_program_studi', $program_studi);
@@ -945,7 +945,7 @@ function get_data_formon_mhsyearnprodi_ob($year, $program_studi)
 	        tbl_mon.upload_file_signoff');
         $this->db->from('tmst_mahasiswa');
         $this->db->join('tmst_program_studi','tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi','inner');
-        $this->db->join('tbl_mon','tmst_mahasiswa.NIM = tbl_mon.nim','left');
+        $this->db->join('tbl_mon','tmst_mahasiswa.NIM = tbl_mon.nim','inner');
         $this->db->where('YEAR(Tanggal_masuk)', $year);
         $this->db->where('tbl_mon.status_board >=', 'onboard');
         $this->db->where('tmst_mahasiswa.Kode_program_studi', $program_studi);
