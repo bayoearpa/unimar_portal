@@ -95,8 +95,44 @@ function reloadTable() {
             console.log({ year: $('#year').val(), program_studi: $('#program_studi').val() });
             console.log(response); // Cek respons di konsol
             $('#example31082023').html(response);
+
+            // Setelah memuat ulang tabel, hubungkan kembali event listener untuk tombol "Edit"
+            connectEditButtonListeners();
         }
     });
+}
+// Fungsi untuk menampilkan modal saat tombol "Edit" diklik
+function connectEditButtonListeners() { 
+        // Menampilkan modal saat tombol "Edit" diklik
+  $('.edit-button').click(function() {
+    var id = $(this).data('id');
+    // Ambil data yang akan diedit dari server dengan AJAX
+    $.ajax({
+      url: '<?php echo base_url('baak/mon_edit/'); ?>' + id, // Sesuaikan dengan URL yang sesuai
+      type: 'GET',
+      success: function(data) {
+        // Isi modal dengan data yang diambil
+        console.log(data); // Cetak nilai data ke konsol
+        var parsedData = JSON.parse(data);
+        $('#editidmon').val(parsedData.id_mon);
+        $('#editNim').val(parsedData.nim);
+        $('#editNama').val(parsedData.nama);
+        $('#editTmptLahir').val(parsedData.tl);
+        $('#editTglLahir').val(parsedData.tgll);
+        $('#editAlamat').val(parsedData.alamat);
+            // Set jenis kelamin sesuai dengan data dari database
+            if (parsedData.jk === 'L') {
+                $('#editjnsklmn').val('Laki-laki');
+            } else if (parsedData.jk === 'P') {
+                $('#editjnsklmn').val('Perempuan');
+            }
+        $('#edittgllls').val(parsedData.d3_tanggal_lulus);
+        $('#editnoijs').val(parsedData.d3_no_ijasah);
+        // Tambahkan input lain sesuai kebutuhan
+        $('#editModal').modal('show');
+      }
+    });
+  });
 }
 
     // Menyimpan perubahan dengan AJAX
