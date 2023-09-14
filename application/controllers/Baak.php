@@ -1785,8 +1785,7 @@ class baak extends CI_Controller {
     $pra_tanggal_lulusf = date('Y-m-d', strtotime($pra_tanggal_lulus)); // Ubah format tanggal
 
     $data = array(
-        'seafarercode' => $this->input->post('eseafararcode'),
-        'pasca_lulus_ukp' => $pra_tanggal_lulusf,
+        'pasca_tgl_lulus' => $pra_tanggal_lulusf,
         'pasca_no_ijasah' => $this->input->post('enoijasah'),
         'pasca_status' => $this->input->post('estatpasca')
     );
