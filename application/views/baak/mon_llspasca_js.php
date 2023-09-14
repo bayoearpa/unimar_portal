@@ -78,14 +78,14 @@
             } else if (parsedData.jk === 'P') {
                 $('#editjnsklmn').val('Perempuan');
             }
-        $('#edieditseafarercode').val(parsedData.seafarercode);
+        $('#editseafarercode').val(parsedData.seafarercode);
         $('#edittglllspasca').val(parsedData.pasca_lulus_ukp);
         $('#editnoijasah').val(parsedData.pasca_nomor_ijasah);
         // Mengatur status checkbox sesuai dengan data dari database
-        if (parsedData.pra_status === 'sudah') {
-            $('#editstatprah').prop('checked', true);
-        } else if (parsedData.pra_status === 'belum') {
-            $('#editstatpra').prop('checked', true);
+        if (parsedData.pasca_status === 'sudah') {
+            $('#editstatpasca').prop('checked', true);
+        } else if (parsedData.pasca_status === 'belum') {
+            $('#editstatpasca').prop('checked', true);
         }
         // Tambahkan input lain sesuai kebutuhan
         $('#editModal').modal('show');
@@ -107,7 +107,7 @@ function reloadTable() {
 }
 // Fungsi untuk menampilkan modal saat tombol "Edit" diklik
 function connectEditButtonListeners() { 
-      // Menampilkan modal saat tombol "Edit" diklik
+  // Menampilkan modal saat tombol "Edit" diklik
   $('.edit-button').click(function() {
     var id = $(this).data('id');
     // Ambil data yang akan diedit dari server dengan AJAX
@@ -130,14 +130,14 @@ function connectEditButtonListeners() {
             } else if (parsedData.jk === 'P') {
                 $('#editjnsklmn').val('Perempuan');
             }
-        $('#edieditseafarercode').val(parsedData.seafarercode);
+        $('#editseafarercode').val(parsedData.seafarercode);
         $('#edittglllspasca').val(parsedData.pasca_lulus_ukp);
         $('#editnoijasah').val(parsedData.pasca_nomor_ijasah);
         // Mengatur status checkbox sesuai dengan data dari database
-        if (parsedData.pra_status === 'sudah') {
-            $('#editstatprah').prop('checked', true);
-        } else if (parsedData.pra_status === 'belum') {
-            $('#editstatpra').prop('checked', true);
+        if (parsedData.pasca_status === 'sudah') {
+            $('#editstatpasca').prop('checked', true);
+        } else if (parsedData.pasca_status === 'belum') {
+            $('#editstatpasca').prop('checked', true);
         }
         // Tambahkan input lain sesuai kebutuhan
         $('#editModal').modal('show');
