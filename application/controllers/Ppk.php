@@ -840,7 +840,7 @@ class ppk extends CI_Controller {
         $config['file_name'] = $nim.'_signon'; // Nama file yang diunggah sesuai NIM
         $this->load->library('upload', $config);
 
-        if ($this->upload->do_upload('editufsignon')) {
+        if ($this->upload->do_upload('eufsignon')) {
             // Jika unggahan berhasil
             $upload_data = $this->upload->data();
             $file_name = $upload_data['file_name'];
