@@ -205,14 +205,14 @@
                         <input type="text" class="form-control" id="editnoijasah" name="enoijasah">
                     </div>
                     <div class="form-group">
-                        <label for="editstatpasca">Status Lulus Pra:</label>
+                        <label for="editstatpasca">Status Lulus Pasca:</label>
                         <div class="form-check">
                             <input type="checkbox" class="form-check-input" id="editstatpasca" name="estatpasca" value="sudah">
-                            <label class="form-check-label" for="editstatpra">Sudah</label>
+                            <label class="form-check-label" for="editstatpasca">Sudah</label>
                         </div>
                         <div class="form-check">
                             <input type="checkbox" class="form-check-input" id="editstatpasca" name="estatpasca" value="belum">
-                            <label class="form-check-label" for="editstatpra">Belum</label>
+                            <label class="form-check-label" for="editstatpasca">Belum</label>
                         </div>
                     </div>
                     <!-- Tambahkan input lain sesuai kebutuhan -->
