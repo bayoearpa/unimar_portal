@@ -20,8 +20,8 @@
                 <td><?php echo $i->nama; ?></td>
                 <td><?php echo $i->prodi; ?></td>
                 <td><?php echo $i->seafarercode; ?></td>
-                <td><?php echo $i->pasca_lulus_ukp; ?></td>
-                <td><?php echo $i->pasca_nomor_ijasah; ?></td>
+                <td><?php echo $i->pasca_tgl_lulus; ?></td>
+                <td><?php echo $i->pasca_no_ijasah; ?></td>
                 <td><?php echo $i->pasca_status; ?></td>
                 <td>
                       <!-- Tombol Tambah/Edit -->
