@@ -1778,7 +1778,7 @@ class baak extends CI_Controller {
 	{
     // Tangani data yang dikirimkan dari formulir
 	$where = array(
-        'id_mon' => $this->input->post('id_mon'),
+        'id_mon' => $this->input->post('nid_mon'),
     ); 
 	$pra_tanggal_lulus = $this->input->post('etglllspasca');
 
