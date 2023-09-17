@@ -758,7 +758,7 @@ class ppk extends CI_Controller {
     );
 
     // Simpan data ke database
-    $res = $this->m_portal->update_data($where, $data,'tbl_mon');
+    $res = $this->m_portal->ppk_data($where, $data,'tbl_mon');
     // Sesuaikan dengan model dan metode penyimpanan data Anda
 
     // Setelah berhasil disimpan, beri respons "sukses" ke JavaScript
@@ -781,10 +781,10 @@ class ppk extends CI_Controller {
 
     $data['program_studi_options'] = array('92403', '92402'); // Add other program options if needed
 
-    $this->load->view('baak/header');
-    $this->load->view('baak/mon_onboard', $data);
-    $this->load->view('baak/footer');
-    $this->load->view('baak/mon_onboard_js');
+    $this->load->view('ppk/header');
+    $this->load->view('ppk/mon_onboard', $data);
+    $this->load->view('ppk/footer');
+    $this->load->view('ppk/mon_onboard_js');
 	}
 
 	public function mon_onboarddata()
@@ -871,10 +871,10 @@ class ppk extends CI_Controller {
 
     $data['program_studi_options'] = array('92403', '92402'); // Add other program options if needed
 
-    $this->load->view('baak/header');
-    $this->load->view('baak/mon_offboard', $data);
-    $this->load->view('baak/footer');
-    $this->load->view('baak/mon_offboard_js');
+    $this->load->view('ppk/header');
+    $this->load->view('ppk/mon_offboard', $data);
+    $this->load->view('ppk/footer');
+    $this->load->view('ppk/mon_offboard_js');
 	}
 
 	public function mon_offboarddata()
