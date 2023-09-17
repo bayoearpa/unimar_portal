@@ -200,6 +200,8 @@ function connectEditButtonListeners() {
                         // Handle respons dari server di sini
                     },
                     error: function(error) {
+                          console.error(xhr.responseText);
+                        console.error(status);
                         console.error(error);
                     }
                 });
