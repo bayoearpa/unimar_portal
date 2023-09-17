@@ -184,28 +184,27 @@ function connectEditButtonListeners() {
         });
     });
 
-     // Menyimpan perubahan dengan AJAX
-   $(document).on('click', '#saveEdit', function() {
-                e.preventDefault();
-                var formData = new FormData(this);
+  // Menyimpan perubahan dengan AJAX
+$(document).on('click', '#saveEdit', function() {
+    var formData = new FormData($('#editForm')[0]);
 
-                $.ajax({
-                    url: '<?php echo base_url('ppk/mon_onboardeditp'); ?>', // Ganti dengan URL Controller Anda
-                    type: 'POST',
-                    data: formData,
-                    processData: false,
-                    contentType: false,
-                    success: function(response) {
-                        console.log(response);
-                        // Handle respons dari server di sini
-                    },
-                    error: function(error) {
-                          console.error(xhr.responseText);
-                        console.error(status);
-                        console.error(error);
-                    }
-                });
-            });
+    $.ajax({
+        url: '<?php echo base_url('ppk/mon_onboardeditp'); ?>',
+        type: 'POST',
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function(response) {
+            console.log(response);
+            // Handle respons dari server di sini
+        },
+        error: function(xhr, status, error) {
+            console.error(xhr.responseText);
+            console.error(status);
+            console.error(error);
+        }
+    });
+});
 
 
      $('.view-file-button').click(function() {
