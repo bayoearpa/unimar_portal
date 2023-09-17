@@ -100,7 +100,11 @@
         }
         $('#editnamakapal').val(parsedData.nama_kapal);
         $('#edittglsignon').val(parsedData.tgl_sign_on);
-        $('#editufsignon').val(parsedData.upload_file_signon);
+        if (parsedData.upload_file_signon) {
+            $('#editufsignon_existing').val(parsedData.upload_file_signon);
+        } else {
+            $('#editufsignon_existing').val('');
+        }
        
         // Tambahkan input lain sesuai kebutuhan
         $('#editModal').modal('show');
