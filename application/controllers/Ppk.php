@@ -755,7 +755,7 @@ class ppk extends CI_Controller {
     ); 
     $data = array(
         'nim' => $this->input->post('nim'),
-        'd3_no_ijasah' => $this->input->post('etgllls')
+        'd3_tanggal_lulus' => $this->input->post('etgllls')
     );
 
     // Simpan data ke database
