@@ -11,6 +11,7 @@
              <form id="filter-form">
                 <label for="year">Pilih Tahun:</label>
                 <select id="year" name="year">
+                    <option value="">Semua</option>
                     <option value="2023">2023</option>
                     <option value="2022">2022</option>
                     <option value="2021">2021</option>
@@ -53,7 +54,7 @@
                 <td><?php echo $i->seafarercode; ?></td>
                 <td><?php echo $i->status_board; ?></td>
                 <td><?php echo $i->nama_kapal; ?></td>
-                <td><?php echo $i->tanggal_sign_on; ?></td>
+                <td><?php echo $i->tgl_sign_on; ?></td>
                 <td>
                     <!-- Tombol Lihat File Sign On -->
                     <?php if ($i->upload_file_signon) { ?>
