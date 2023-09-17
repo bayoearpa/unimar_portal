@@ -835,6 +835,7 @@ class ppk extends CI_Controller {
 
     // Tangani unggahan file
         $config['upload_path'] = './assets/monitoring/onboard';
+        $config['max_size'] = 1048;
         $config['allowed_types'] = 'pdf'; // Sesuaikan dengan jenis file yang diizinkan
         $config['file_name'] = $nim.'_signon'; // Nama file yang diunggah sesuai NIM
         $this->load->library('upload', $config);

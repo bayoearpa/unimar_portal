@@ -197,6 +197,10 @@ $(document).on('click', '#saveEdit', function() {
         success: function(response) {
             console.log(response);
             // Handle respons dari server di sini
+            // Tutup modal setelah data berhasil ditambahkan
+                    $('#editModal').modal('hide');
+                    // Muat ulang tabel untuk menampilkan data terbaru
+                    reloadTable();
         },
         error: function(xhr, status, error) {
             console.error(xhr.responseText);
