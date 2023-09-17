@@ -754,7 +754,6 @@ class ppk extends CI_Controller {
         'id_mon' => $this->input->post('id_mon'),
     ); 
     $data = array(
-        'nim' => $this->input->post('nim'),
         'd3_tanggal_lulus' => $this->input->post('etgllls')
     );
 
