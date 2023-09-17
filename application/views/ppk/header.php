@@ -193,9 +193,9 @@
           </a>
 
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url() ?>baak/mon_llsd3"><i class="fa fa-circle-o"></i> Lulus D3</a></li>
-            <li><a href="<?php echo base_url() ?>baak/mon_onboard"><i class="fa fa-circle-o"></i>Onboard</a></li>
-            <li><a href="<?php echo base_url() ?>baak/mon_offboard"><i class="fa fa-circle-o"></i>Offboard</a></li>
+            <li><a href="<?php echo base_url() ?>ppk/mon_llsd3"><i class="fa fa-circle-o"></i> Lulus D3</a></li>
+            <li><a href="<?php echo base_url() ?>ppk/mon_onboard"><i class="fa fa-circle-o"></i>Onboard</a></li>
+            <li><a href="<?php echo base_url() ?>ppk/mon_offboard"><i class="fa fa-circle-o"></i>Offboard</a></li>
 
                 <!--  <li class="treeview">
                   <a href="#"><i class="fa fa-circle-o"></i>Lulus D3
