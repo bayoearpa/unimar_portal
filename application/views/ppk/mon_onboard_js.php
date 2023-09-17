@@ -93,9 +93,9 @@
             }
         $('#editseafarercode').val(parsedData.seafarercode);
          // Mengatur status checkbox sesuai dengan data dari database
-        if (parsedData.pra_status === 'onboard') {
+        if (parsedData.status_board === 'onboard') {
             $('#editstatonboard').prop('checked', true);
-        } else if (parsedData.pra_status === 'offboard') {
+        } else if (parsedData.status_board === 'offboard') {
             $('#editstatonboard').prop('checked', true);
         }
         $('#editnamakapal').val(parsedData.nama_kapal);
