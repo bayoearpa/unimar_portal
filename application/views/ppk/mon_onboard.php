@@ -179,7 +179,7 @@
             </div>
             <div class="modal-body">
                 <!-- Form Edit Data -->
-                <form id="editForm" enctype="multipart/form-data">
+                <form id="editForm" method="post" enctype="multipart/form-data">
                     <input type="hidden" id="editNim" name="nim">
                     <input type="hidden" id="editidmon" name="nid_mon">
                     <div class="form-group">

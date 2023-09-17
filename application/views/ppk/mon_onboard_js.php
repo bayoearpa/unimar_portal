@@ -185,7 +185,7 @@ function connectEditButtonListeners() {
     });
 
      // Menyimpan perubahan dengan AJAX
-    $('#editForm').on('submit', function(e) {
+   $(document).on('click', '#saveEdit', function() {
                 e.preventDefault();
                 var formData = new FormData(this);
 
