@@ -91,7 +91,7 @@
             } else if (parsedData.jk === 'P') {
                 $('#editjnsklmn').val('Perempuan');
             }
-        $('#edieditseafarercode').val(parsedData.seafarercode);
+        $('#editseafarercode').val(parsedData.seafarercode);
          // Mengatur status checkbox sesuai dengan data dari database
         if (parsedData.pra_status === 'onboard') {
             $('#editstatonboard').prop('checked', true);
@@ -146,7 +146,7 @@ function connectEditButtonListeners() {
             } else if (parsedData.jk === 'P') {
                 $('#editjnsklmn').val('Perempuan');
             }
-        $('#edieditseafarercode').val(parsedData.seafarercode);
+        $('#editseafarercode').val(parsedData.seafarercode);
          // Mengatur status checkbox sesuai dengan data dari database
         if (parsedData.pra_status === 'onboard') {
             $('#editstatonboard').prop('checked', true);
