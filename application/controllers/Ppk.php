@@ -1008,6 +1008,29 @@ class ppk extends CI_Controller {
   
 	}
 
+	/////////////// monitoring summary
+	public function mon_summary()
+	{
+		# code...
+		$this->load->view('ppk/header');
+	    $this->load->view('ppk/mon_summary');
+	    $this->load->view('ppk/footer');
+	    $this->load->view('ppk/mon_summary_js');
+	}
+	public function mon_summarydata($programStudi, $tahunMasuk)
+	{
+		# code...
+		$data['countTaruna'] = $this->m_portal->countTaruna($programStudi, $tahunMasuk);
+		$data['lulusUKPPraCount'] = $this->m_portal->countLulusUKPPra($programStudi, $tahunMasuk);
+		$data['standByPralaCount'] = $this->m_portal->countStandByPrala($programStudi, $tahunMasuk);
+		$data['onBoardCount'] = $this->m_portal->countOnBoard($programStudi, $tahunMasuk);
+		$data['offBoardCount'] = $this->m_portal->countOffBoard($programStudi, $tahunMasuk);
+		$data['lulusUKPPascaCount'] = $this->m_portal->countLulusUKPPasca($programStudi, $tahunMasuk);
+		$data['totalD3Count'] = $this->m_portal->countTotalD3($programStudi, $tahunMasuk);
+
+		 echo json_encode($data);
+	}
+
 
 }
 

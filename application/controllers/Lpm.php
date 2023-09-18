@@ -1543,6 +1543,29 @@ class Lpm extends CI_Controller {
 		$this->load->view('lpm/footer');
 		$this->load->view('lpm/kues_mhslem_rekap_cek_js',$data);
 	}
+/////////////////////////////////////////////////////////////////Monitoring/////////////////////////////////////
+	/////////////// monitoring summary
+	public function mon_summary()
+	{
+		# code...
+		$this->load->view('lpm/header');
+	    $this->load->view('lpm/mon_summary');
+	    $this->load->view('lpm/footer');
+	    $this->load->view('lpm/mon_summary_js');
+	}
+	public function mon_summarydata($programStudi, $tahunMasuk)
+	{
+		# code...
+		$data['countTaruna'] = $this->m_portal->countTaruna($programStudi, $tahunMasuk);
+		$data['lulusUKPPraCount'] = $this->m_portal->countLulusUKPPra($programStudi, $tahunMasuk);
+		$data['standByPralaCount'] = $this->m_portal->countStandByPrala($programStudi, $tahunMasuk);
+		$data['onBoardCount'] = $this->m_portal->countOnBoard($programStudi, $tahunMasuk);
+		$data['offBoardCount'] = $this->m_portal->countOffBoard($programStudi, $tahunMasuk);
+		$data['lulusUKPPascaCount'] = $this->m_portal->countLulusUKPPasca($programStudi, $tahunMasuk);
+		$data['totalD3Count'] = $this->m_portal->countTotalD3($programStudi, $tahunMasuk);
+
+		 echo json_encode($data);
+	}
 
 }
 
