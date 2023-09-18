@@ -8,7 +8,8 @@
                   <th>Status Board</th>
                   <th>Nama Kapal</th>
                   <th>Tanggal Sign On</th>
-                  <th>File Sign On</th>
+                   <th>Tanggal Sign Off</th>
+                   <th>File Offboard</th>
                   <th>proses</th>
                 </tr>
                 </thead>
@@ -23,11 +24,12 @@
                 <td><?php echo $i->seafarercode; ?></td>
                 <td><?php echo $i->status_board; ?></td>
                 <td><?php echo $i->nama_kapal; ?></td>
-                <td><?php echo $i->tgl_sign_on; ?></td>
+                <td><?php echo $i->tanggal_sign_on; ?></td>
+                <td><?php echo $i->tanggal_sign_off; ?></td>
                 <td>
-                    <!-- Tombol Lihat File Sign On -->
-                    <?php if ($i->upload_file_signon) { ?>
-                        <button class="btn btn-info view-file-button" data-filename="<?php echo $i->upload_file_signon; ?>">Lihat</button>
+                    <!-- Tombol Lihat File Sign Off -->
+                    <?php if ($i->upload_file_signoff) { ?>
+                        <button class="btn btn-info view-file-button" data-filename="<?php echo $i->upload_file_signoff; ?>">Lihat</button>
                     <?php } else { ?>
                         <!-- Tampilkan pesan jika file tidak ada -->
                         File tidak tersedia
@@ -45,7 +47,7 @@
                   <?php } ?>
                 </tbody>
                 <tfoot>
-              <tr>
+               <tr>
                   <th>NIM</th>
                   <th>Nama</th>
                   <th>Prodi</th>
@@ -53,7 +55,8 @@
                   <th>Status Board</th>
                   <th>Nama Kapal</th>
                   <th>Tanggal Sign On</th>
-                  <th>File Sign On</th>
+                   <th>Tanggal Sign Off</th>
+                   <th>File Offboard</th>
                   <th>proses</th>
                 </tr>
                 </tfoot>

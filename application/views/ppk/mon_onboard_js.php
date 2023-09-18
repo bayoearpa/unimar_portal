@@ -100,6 +100,7 @@
         }
         $('#editnamakapal').val(parsedData.nama_kapal);
         $('#edittglsignon').val(parsedData.tgl_sign_on);
+
         if (parsedData.upload_file_signon) {
             $('#editufsignon_existing').val(parsedData.upload_file_signon);
         } else {
@@ -121,6 +122,7 @@ function reloadTable() {
             $('#example31082023').html(response);
 
             connectEditButtonListeners()
+            connectViewButtonListeners()
         }
     });
 }
@@ -152,20 +154,34 @@ function connectEditButtonListeners() {
             }
         $('#editseafarercode').val(parsedData.seafarercode);
          // Mengatur status checkbox sesuai dengan data dari database
-        if (parsedData.pra_status === 'onboard') {
+        if (parsedData.status_board === 'onboard') {
             $('#editstatonboard').prop('checked', true);
-        } else if (parsedData.pra_status === 'offboard') {
+        } else if (parsedData.status_board === 'offboard') {
             $('#editstatonboard').prop('checked', true);
         }
         $('#editnamakapal').val(parsedData.nama_kapal);
         $('#edittglsignon').val(parsedData.tgl_sign_on);
-        $('#editufsignon').val(parsedData.upload_file_signon);
+        if (parsedData.upload_file_signon) {
+            $('#editufsignon_existing').val(parsedData.upload_file_signon);
+        } else {
+            $('#editufsignon_existing').val('');
+        }
        
         // Tambahkan input lain sesuai kebutuhan
         $('#editModal').modal('show');
       }
     });
   });
+}
+connectViewButtonListeners(){
+     $('.view-file-button').click(function() {
+            var filename = $(this).data('filename');
+            // Gantilah '/uploads/' dengan direktori tempat Anda menyimpan file
+            var fileUrl = './assets/monitoring/onboard' + filename;
+            
+            // Buka tautan ke file di jendela baru
+            window.open(fileUrl, '_blank');
+        });
 }
 
     // Menyimpan perubahan dengan AJAX
@@ -218,7 +234,7 @@ $(document).on('click', '#saveEdit', function() {
      $('.view-file-button').click(function() {
             var filename = $(this).data('filename');
             // Gantilah '/uploads/' dengan direktori tempat Anda menyimpan file
-            var fileUrl = './assets/monitoring/onboard' + filename;
+            var fileUrl = '/assets/monitoring/onboard' + filename;
             
             // Buka tautan ke file di jendela baru
             window.open(fileUrl, '_blank');

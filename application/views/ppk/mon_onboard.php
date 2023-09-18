@@ -229,9 +229,10 @@
                         <label for="edittglsignon">Tanggal Sign On:</label>
                         <input type="date" class="form-control" id="edittglsignon" name="etglsignon">
                     </div>
-                    <div class="form-group">
-                        <label for="ediufsignon">Upload File Sign On</label>
+                   <div class="form-group">
+                        <label for="editufsignon">Upload File Sign On</label>
                         <input type="file" class="form-control" id="editufsignon" name="eufsignon">
+                        <input type="hidden" id="editufsignon_existing" name="eufsignon_existing" value="<?php echo $i->upload_file_signon; ?>">
                     </div>
                     <div id="fileUploadStatus">Belum ada file yang diunggah.</div>
                     
