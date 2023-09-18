@@ -198,26 +198,34 @@ function connectViewButtonListeners() {
         });
     });
 
-     // Menyimpan perubahan dengan AJAX
-    $('#editForm').on('submit', function(e) {
-                e.preventDefault();
-                var formData = new FormData(this);
 
-                $.ajax({
-                    url: '<?php echo base_url('ppk/mon_offboardeditp'); ?>', // Ganti dengan URL Controller Anda
-                    type: 'POST',
-                    data: formData,
-                    processData: false,
-                    contentType: false,
-                    success: function(response) {
-                        console.log(response);
-                        // Handle respons dari server di sini
-                    },
-                    error: function(error) {
-                        console.error(error);
-                    }
-                });
-            });
+ // Menyimpan perubahan dengan AJAX
+$(document).on('click', '#saveEdit', function() {
+    var formData = new FormData($('#editForm')[0]);
+
+    $.ajax({
+        url: '<?php echo base_url('ppk/mon_offboardeditp'); ?>',
+        type: 'POST',
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function(response) {
+            console.log(response);
+            // Handle respons dari server di sini
+            // Tutup modal setelah data berhasil ditambahkan
+                    $('#editModal').modal('hide');
+                    // Muat ulang tabel untuk menampilkan data terbaru
+                    reloadTable();
+        },
+        error: function(xhr, status, error) {
+            console.error(xhr.responseText);
+            console.error(status);
+            console.error(error);
+        }
+    });
+});
+
+
      $('.view-file-button').click(function() {
             var filename = $(this).data('filename');
             // Gantilah '/uploads/' dengan direktori tempat Anda menyimpan file
