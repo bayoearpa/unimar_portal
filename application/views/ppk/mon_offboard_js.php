@@ -101,9 +101,9 @@
 
         // Mengatur radio button "Status UKP Pasca" sesuai dengan data dari database
             if (parsedData.pasca_status === 'sudah') {
-                $('input[name="estatonboard"][value="sudah"]').prop('checked', true);
+                $('input[name="estatonboard"][value="onboard"]').prop('checked', true);
             } else if (parsedData.pasca_status === 'belum') {
-                $('input[name="estatonboard"][value="belum"]').prop('checked', true);
+                $('input[name="estatonboard"][value="offboard"]').prop('checked', true);
             }
         $('#editnamakapal').val(parsedData.nama_kapal);
         $('#edittglsignon').val(parsedData.tgl_sign_on);
@@ -170,9 +170,9 @@ function connectEditButtonListeners() {
 
         // Mengatur radio button "Status UKP Pasca" sesuai dengan data dari database
             if (parsedData.pasca_status === 'sudah') {
-                $('input[name="estatonboard"][value="sudah"]').prop('checked', true);
+                $('input[name="estatonboard"][value="onboard"]').prop('checked', true);
             } else if (parsedData.pasca_status === 'belum') {
-                $('input[name="estatonboard"][value="belum"]').prop('checked', true);
+                $('input[name="estatonboard"][value="offboard"]').prop('checked', true);
             }
         $('#editnamakapal').val(parsedData.nama_kapal);
         $('#edittglsignon').val(parsedData.tgl_sign_on);
