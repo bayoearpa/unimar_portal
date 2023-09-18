@@ -91,13 +91,16 @@
             } else if (parsedData.jk === 'P') {
                 $('#editjnsklmn').val('Perempuan');
             }
-        $('#edieditseafarercode').val(parsedData.seafarercode);
+        $('#editseafarercode').val(parsedData.seafarercode);
          // Mengatur status checkbox sesuai dengan data dari database
-        if (parsedData.pra_status === 'onboard') {
+        if (parsedData.status_board === 'onboard') {
             $('#editstatonboard').prop('checked', true);
-        } else if (parsedData.pra_status === 'offboard') {
+        } else if (parsedData.status_board === 'offboard') {
             $('#editstatonboard').prop('checked', true);
         }
+        $('#editnamakapal').val(parsedData.nama_kapal);
+        $('#edittglsignon').val(parsedData.tgl_sign_on);
+        
         $('#edittglsignoff').val(parsedData.tgl_sign_off);
         $('#editufsignoff').val(parsedData.upload_file_signoff);
         // Tambahkan input lain sesuai kebutuhan
