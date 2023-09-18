@@ -161,6 +161,7 @@ function connectEditButtonListeners() {
         }
         $('#editnamakapal').val(parsedData.nama_kapal);
         $('#edittglsignon').val(parsedData.tgl_sign_on);
+
         if (parsedData.upload_file_signon) {
             $('#editufsignon_existing').val(parsedData.upload_file_signon);
         } else {
@@ -173,7 +174,7 @@ function connectEditButtonListeners() {
     });
   });
 }
-connectViewButtonListeners(){
+function connectViewButtonListeners(){
      $('.view-file-button').click(function() {
             var filename = $(this).data('filename');
             // Gantilah '/uploads/' dengan direktori tempat Anda menyimpan file
