@@ -947,7 +947,7 @@ class ppk extends CI_Controller {
 
     	// Tangani data yang dikirimkan dari formulir
 			$where = array(
-		        'id_mon' => $this->input->post('id_mon'),
+		        'id_mon' => $this->input->post('nid_mon'),
 		    );
 			$nim = $this->input->post('nim');
 			$status_board = $this->input->post('estatonboard');
