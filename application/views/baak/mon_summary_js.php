@@ -15,10 +15,10 @@
                     $('#jml_taruna').text(data.countTaruna);
                     $('#lls_ukp_pra').text(data.countLulusUKPPra);
                     $('#sb_prala').text(data.countStandByPrala);
-                    $('#on-board').text(data.countOnBoard);
-                    $('#off-board').text(data.countOffBoard);
-                    $('#lulus-ukp-pasca').text(data.countLulusUKPPasca);
-                    $('#lulus-d3').text(data.countTotalD3);
+                    $('#onboard').text(data.countOnBoard);
+                    $('#offboard').text(data.countOffBoard);
+                    $('#lls-ukp-pasca').text(data.countLulusUKPPasca);
+                    $('#lls-d3').text(data.countTotalD3);
                 }
             });
         });
