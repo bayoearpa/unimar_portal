@@ -839,8 +839,7 @@ class ppk extends CI_Controller {
             $data = array(
                 'status_board' => $status_board,
                 'nama_kapal' => $nama_kapal,
-                'tgl_sign_on' => $tgl_signonf,
-                'upload_file_signon' => $file_name
+                'tgl_sign_on' => $tgl_signonf
             );
             $proses_edt = $this->m_portal->update_data($where,$data,'tbl_mon');
         if($proses_edt){    
