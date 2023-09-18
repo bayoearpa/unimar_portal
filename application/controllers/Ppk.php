@@ -941,40 +941,71 @@ class ppk extends CI_Controller {
 
 	public function mon_offboardeditp()
 	{
-    // Tangani data yang dikirimkan dari formulir
-	$where = array(
-        'id_mon' => $this->input->post('id_mon'),
-    );
-	$nim = $this->input->post('nim');
-	$status_board = $this->input->post('estatonboard');
-	$tgl_signoff = $this->input->post('etglsignoff');
+		   /// cek file
+    $cekfile = $this->input->post('eufsignon_existing');
+    if ($cekfile > 0) {
 
-    $tgl_signofff = date('Y-m-d', strtotime($tgl_signoff)); // Ubah format tanggal
-    
+    	// Tangani data yang dikirimkan dari formulir
+			$where = array(
+		        'id_mon' => $this->input->post('id_mon'),
+		    );
+			$nim = $this->input->post('nim');
+			$status_board = $this->input->post('estatonboard');
+			$tgl_signoff = $this->input->post('etglsignoff');
 
-    // Tangani unggahan file
-        $config['upload_path'] = './assets/monitoring/offboard';
-        $config['allowed_types'] = 'pdf'; // Sesuaikan dengan jenis file yang diizinkan
-        $config['file_name'] = $nim.'_signoff'; // Nama file yang diunggah sesuai NIM
-        $this->load->library('upload', $config);
+		    $tgl_signofff = date('Y-m-d', strtotime($tgl_signoff)); // Ubah format tanggal
 
-        if ($this->upload->do_upload('editufsignoff')) {
-            // Jika unggahan berhasil
-            $upload_data = $this->upload->data();
-            $file_name = $upload_data['file_name'];
-
-            // Simpan data ke database (contoh)
+    	 // Simpan data ke database (contoh)
             $data = array(
                 'status_board' => $status_board,
-                'tgl_sign_off' => $tgl_signoff,
-                'upload_file_signoff' => $file_name
+                'tgl_sign_off' => $tgl_signoff
             );
-            $this->m_portal->update_data($where,$data,'tbl_mon');
+          $proses_edt = $this->m_portal->update_data($where,$data,'tbl_mon');
 
-            echo 'sukses';
+        if($proses_edt){ 
+            echo 'sukses edit';
         } else {
-            echo 'Gagal mengunggah file.';
+            echo 'Gagal edit.';
         }
+    }else{
+		    	 // Tangani data yang dikirimkan dari formulir
+			$where = array(
+		        'id_mon' => $this->input->post('id_mon'),
+		    );
+			$nim = $this->input->post('nim');
+			$status_board = $this->input->post('estatonboard');
+			$tgl_signoff = $this->input->post('etglsignoff');
+
+		    $tgl_signofff = date('Y-m-d', strtotime($tgl_signoff)); // Ubah format tanggal
+		    
+
+		    // Tangani unggahan file
+		        $config['upload_path'] = './assets/monitoring/offboard';
+		        $config['max_size'] = 1048;
+		        $config['allowed_types'] = 'pdf'; // Sesuaikan dengan jenis file yang diizinkan
+		        $config['file_name'] = $nim.'_signoff'; // Nama file yang diunggah sesuai NIM
+		        $this->load->library('upload', $config);
+
+		        if ($this->upload->do_upload('eufsignoff')) {
+		            // Jika unggahan berhasil
+		            $upload_data = $this->upload->data();
+		            $file_name = $upload_data['file_name'];
+
+		            // Simpan data ke database (contoh)
+		            $data = array(
+		                'status_board' => $status_board,
+		                'tgl_sign_off' => $tgl_signoff,
+		                'upload_file_signoff' => $file_name
+		            );
+		            $this->m_portal->update_data($where,$data,'tbl_mon');
+
+		            echo 'sukses';
+		        } else {
+		            echo 'Gagal mengunggah file.';
+		        }
+
+    }/// end of cek file
+   
 
     
 	}

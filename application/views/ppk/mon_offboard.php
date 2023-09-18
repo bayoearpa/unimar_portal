@@ -11,6 +11,7 @@
              <form id="filter-form">
                 <label for="year">Pilih Tahun:</label>
                 <select id="year" name="year">
+                    <option value="">Semua</option>
                     <option value="2023">2023</option>
                     <option value="2022">2022</option>
                     <option value="2021">2021</option>
@@ -238,6 +239,7 @@
                     <div class="form-group">
                         <label for="ediufsignoff">Upload File Sign Off</label>
                         <input type="file" class="form-control" id="editufsignoff" name="eufsignoff">
+                        <input type="hidden" id="editufsignoff_existing" name="eufsignoff_existing" value="<?php echo $i->upload_file_signoff; ?>">
                     </div>
                     <div id="fileUploadStatus">Belum ada file yang diunggah.</div>
                     
