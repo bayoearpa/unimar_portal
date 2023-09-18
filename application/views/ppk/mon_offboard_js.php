@@ -102,7 +102,13 @@
         $('#edittglsignon').val(parsedData.tgl_sign_on);
 
         $('#edittglsignoff').val(parsedData.tgl_sign_off);
-        $('#editufsignoff').val(parsedData.upload_file_signoff);
+        // $('#editufsignoff').val(parsedData.upload_file_signoff);
+
+         if (parsedData.upload_file_signoff) {
+            $('#editufsignoff_existing').val(parsedData.upload_file_signoff);
+        } else {
+            $('#editufsignoff_existing').val('');
+        }
         // Tambahkan input lain sesuai kebutuhan
         $('#editModal').modal('show');
       }
@@ -156,9 +162,15 @@ function connectEditButtonListeners() {
         }
         $('#editnamakapal').val(parsedData.nama_kapal);
         $('#edittglsignon').val(parsedData.tgl_sign_on);
-        
+
         $('#edittglsignoff').val(parsedData.tgl_sign_off);
-        $('#editufsignoff').val(parsedData.upload_file_signoff);
+        // $('#editufsignoff').val(parsedData.upload_file_signoff);
+
+         if (parsedData.upload_file_signoff) {
+            $('#editufsignoff_existing').val(parsedData.upload_file_signoff);
+        } else {
+            $('#editufsignoff_existing').val('');
+        }
         // Tambahkan input lain sesuai kebutuhan
         $('#editModal').modal('show');
       }
@@ -229,7 +241,7 @@ $(document).on('click', '#saveEdit', function() {
      $('.view-file-button').click(function() {
             var filename = $(this).data('filename');
             // Gantilah '/uploads/' dengan direktori tempat Anda menyimpan file
-            var fileUrl = './assets/monitoring/offboard' + filename;
+            var fileUrl = './assets/monitoring/offboard/' + filename;
             
             // Buka tautan ke file di jendela baru
             window.open(fileUrl, '_blank');
