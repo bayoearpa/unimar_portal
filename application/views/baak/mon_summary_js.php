@@ -1,5 +1,6 @@
 <script>
     $(document).ready(function() {
+        console.log("Document ready!");
         $('#filter-form').submit(function(e) {
             e.preventDefault();
             var year = $('#year').val();
@@ -10,6 +11,7 @@
                 url: '<?php echo base_url('baak/mon_summarydata'); ?>',
                 data: { year: year, program_studi: programStudi },
                 success: function(response) {
+                    console.log("AJAX success!");
                     var data = JSON.parse(response);
                     // Tampilkan hasil perhitungan summary di dalam elemen dengan ID yang sesuai
                     $('#jml_taruna').text(data.countTaruna);
