@@ -4,7 +4,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Onboard</h3>
+              <h3 class="box-title">Offboard</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -176,7 +176,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title" id="editModalLabel">Form Edit Onboard</h3>
+                <h3 class="modal-title" id="editModalLabel">Form Edit Offboard</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
