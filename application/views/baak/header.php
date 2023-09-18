@@ -270,6 +270,7 @@
             <li><a href="<?php echo base_url() ?>baak/mon_llspra"><i class="fa fa-circle-o"></i> Lulus UKP PRA</a></li>
             <li><a href="<?php echo base_url() ?>baak/mon_sbprala"><i class="fa fa-circle-o"></i> SB Prala</a></li>
             <li><a href="<?php echo base_url() ?>baak/mon_llspasca"><i class="fa fa-circle-o"></i>Lulus UKP Pasca</a></li>
+            <li><a href="<?php echo base_url() ?>baak/mon_summary"><i class="fa fa-circle-o"></i>Summary</a></li>
 
                 <!--  <li class="treeview">
                   <a href="#"><i class="fa fa-circle-o"></i>Lulus D3

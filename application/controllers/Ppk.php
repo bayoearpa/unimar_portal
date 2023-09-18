@@ -1004,10 +1004,8 @@ class ppk extends CI_Controller {
 		            echo 'Gagal mengunggah file.';
 		        }
 
-    }/// end of cek file
-   
-
-    
+   		 }/// end of cek file
+  
 	}
 
 

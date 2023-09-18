@@ -989,6 +989,87 @@ function get_data_formon_mhs($id)
             return null;
         }
     }
+
+    ////////----> count summary
+
+     public function countTaruna($programStudi, $tahunMasuk) {
+        // Hitung jumlah taruna berdasarkan program studi dan tahun masuk
+        $this->db->where('Kode_program_studi', $programStudi);
+        $this->db->where('Tahun_masuk', $tahunMasuk);
+        $this->db->from('tmst_mahasiswa');
+        return $this->db->count_all_results();
+    }
+     public function countLulusUKPPra($programStudi, $tahunMasuk) {
+        // Hitung jumlah lulus UKP pra dari tbl_mon berdasarkan program studi dan tahun masuk
+        $this->db->select('COUNT(*) as total');
+        $this->db->from('tbl_mon AS m');
+        $this->db->join('tmst_mahasiswa AS s', 'm.nim = s.NIM', 'inner');
+        $this->db->where('m.pra_status', 'sudah');
+        $this->db->where('s.Kode_program_studi', $programStudi);
+        $this->db->where('s.Tahun_masuk', $tahunMasuk);
+        $query = $this->db->get();
+        return $query->row()->total;
+    }
+
+    public function countStandByPrala($programStudi, $tahunMasuk) {
+        // Hitung jumlah standby prala dari tbl_mon berdasarkan program studi dan tahun masuk
+        $this->db->select('COUNT(*) as total');
+        $this->db->from('tbl_mon AS m');
+        $this->db->join('tmst_mahasiswa AS s', 'm.nim = s.NIM', 'inner');
+        $this->db->where('m.pra_status', 'sudah');
+        $this->db->where('m.status_board', 'standby prala');
+        $this->db->where('s.Kode_program_studi', $programStudi);
+        $this->db->where('s.Tahun_masuk', $tahunMasuk);
+        $query = $this->db->get();
+        return $query->row()->total;
+    }
+
+    public function countOnBoard($programStudi, $tahunMasuk) {
+        // Hitung jumlah on board dari tbl_mon berdasarkan program studi dan tahun masuk
+        $this->db->select('COUNT(*) as total');
+        $this->db->from('tbl_mon AS m');
+        $this->db->join('tmst_mahasiswa AS s', 'm.nim = s.NIM', 'inner');
+        $this->db->where('m.status_board', 'onboard');
+        $this->db->where('s.Kode_program_studi', $programStudi);
+        $this->db->where('s.Tahun_masuk', $tahunMasuk);
+        $query = $this->db->get();
+        return $query->row()->total;
+    }
+
+    public function countOffBoard($programStudi, $tahunMasuk) {
+        // Hitung jumlah off board dari tbl_mon berdasarkan program studi dan tahun masuk
+        $this->db->select('COUNT(*) as total');
+        $this->db->from('tbl_mon AS m');
+        $this->db->join('tmst_mahasiswa AS s', 'm.nim = s.NIM', 'inner');
+        $this->db->where('m.status_board', 'offboard');
+        $this->db->where('s.Kode_program_studi', $programStudi);
+        $this->db->where('s.Tahun_masuk', $tahunMasuk);
+        $query = $this->db->get();
+        return $query->row()->total;
+    }
+
+    public function countLulusUKPPasca($programStudi, $tahunMasuk) {
+        // Hitung jumlah lulus UKP pasca dari tbl_mon berdasarkan program studi dan tahun masuk
+        $this->db->select('COUNT(*) as total');
+        $this->db->from('tbl_mon AS m');
+        $this->db->join('tmst_mahasiswa AS s', 'm.nim = s.NIM', 'inner');
+        $this->db->where('m.pasca_status', 'sudah');
+        $this->db->where('s.Kode_program_studi', $programStudi);
+        $this->db->where('s.Tahun_masuk', $tahunMasuk);
+        $query = $this->db->get();
+        return $query->row()->total;
+    }
+
+    public function countTotalD3($programStudi, $tahunMasuk) {
+        // Hitung jumlah data keseluruhan pada tbl_mon berdasarkan program studi dan tahun masuk
+        $this->db->select('COUNT(*) as total');
+        $this->db->from('tbl_mon AS m');
+        $this->db->join('tmst_mahasiswa AS s', 'm.nim = s.NIM', 'inner');
+        $this->db->where('s.Kode_program_studi', $programStudi);
+        $this->db->where('s.Tahun_masuk', $tahunMasuk);
+        $query = $this->db->get();
+        return $query->row()->total;
+    }
 		
 }
 /* End of file M_portal.php */
