@@ -821,18 +821,46 @@ class ppk extends CI_Controller {
 
 	public function mon_onboardeditp()
 	{
-    // Tangani data yang dikirimkan dari formulir
-	$where = array(
-        'id_mon' => $this->input->post('nid_mon'),
-    );
-	$nim = $this->input->post('nim');
-	$status_board = $this->input->post('estatonboard');
-	$nama_kapal = $this->input->post('editnamakapal');
-	$tgl_signon = $this->input->post('etglsignon');
+       /// cek file
+    $cekfile = $this->input->post('eufsignon_existing');
+    if ($cekfile > 0) {
+    	# code...
+    	 // Tangani data yang dikirimkan dari formulir
+			$where = array(
+		        'id_mon' => $this->input->post('nid_mon'),
+		    );
+			$nim = $this->input->post('nim');
+			$status_board = $this->input->post('estatonboard');
+			$nama_kapal = $this->input->post('editnamakapal');
+			$tgl_signon = $this->input->post('etglsignon');
 
-    $tgl_signonf = date('Y-m-d', strtotime($tgl_signon)); // Ubah format tanggal
+		    $tgl_signonf = date('Y-m-d', strtotime($tgl_signon)); // Ubah format tanggal
+    	// Simpan data ke database (contoh)
+            $data = array(
+                'status_board' => $status_board,
+                'nama_kapal' => $nama_kapal,
+                'tgl_sign_on' => $tgl_signonf,
+                'upload_file_signon' => $file_name
+            );
+            $proses_edt = $this->m_portal->update_data($where,$data,'tbl_mon');
+        if($proses_edt){    
+            echo 'sukses edit';
+        } else {
+            echo 'Gagal edit.';
+        }
+
+    }else{
     
+    	 // Tangani data yang dikirimkan dari formulir
+		$where = array(
+	        'id_mon' => $this->input->post('nid_mon'),
+	    );
+		$nim = $this->input->post('nim');
+		$status_board = $this->input->post('estatonboard');
+		$nama_kapal = $this->input->post('editnamakapal');
+		$tgl_signon = $this->input->post('etglsignon');
 
+	    $tgl_signonf = date('Y-m-d', strtotime($tgl_signon)); // Ubah format tanggal
     // Tangani unggahan file
         $config['upload_path'] = './assets/monitoring/onboard';
         $config['max_size'] = 1048;
@@ -859,6 +887,8 @@ class ppk extends CI_Controller {
             echo 'Gagal mengunggah file.';
         }
 
+        ///else eufsignon_existing == 0
+       }
     
 	}
 
