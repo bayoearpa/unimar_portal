@@ -100,7 +100,7 @@
         }
         $('#editnamakapal').val(parsedData.nama_kapal);
         $('#edittglsignon').val(parsedData.tgl_sign_on);
-        
+
         $('#edittglsignoff').val(parsedData.tgl_sign_off);
         $('#editufsignoff').val(parsedData.upload_file_signoff);
         // Tambahkan input lain sesuai kebutuhan
@@ -112,18 +112,19 @@
 function reloadTable() {
     $.ajax({
         type: 'GET',
-        url: '<?php echo base_url('ppk/mon_onboarddata'); ?>',
+        url: '<?php echo base_url('ppk/mon_offboarddata'); ?>',
         data: { year: $('#year').val(), program_studi: $('#program_studi').val() },
         success: function(response) {
             $('#example31082023').html(response);
 
             connectEditButtonListeners()
+            connectViewButtonListeners()
         }
     });
 }
 // Fungsi untuk menampilkan modal saat tombol "Edit" diklik
 function connectEditButtonListeners() { 
-  // Menampilkan modal saat tombol "Edit" diklik
+ // Menampilkan modal saat tombol "Edit" diklik
   $('.edit-button').click(function() {
     var id = $(this).data('id');
     // Ambil data yang akan diedit dari server dengan AJAX
@@ -146,13 +147,16 @@ function connectEditButtonListeners() {
             } else if (parsedData.jk === 'P') {
                 $('#editjnsklmn').val('Perempuan');
             }
-        $('#edieditseafarercode').val(parsedData.seafarercode);
+        $('#editseafarercode').val(parsedData.seafarercode);
          // Mengatur status checkbox sesuai dengan data dari database
-        if (parsedData.pra_status === 'onboard') {
+        if (parsedData.status_board === 'onboard') {
             $('#editstatonboard').prop('checked', true);
-        } else if (parsedData.pra_status === 'offboard') {
+        } else if (parsedData.status_board === 'offboard') {
             $('#editstatonboard').prop('checked', true);
         }
+        $('#editnamakapal').val(parsedData.nama_kapal);
+        $('#edittglsignon').val(parsedData.tgl_sign_on);
+        
         $('#edittglsignoff').val(parsedData.tgl_sign_off);
         $('#editufsignoff').val(parsedData.upload_file_signoff);
         // Tambahkan input lain sesuai kebutuhan
@@ -160,6 +164,18 @@ function connectEditButtonListeners() {
       }
     });
   });
+}
+
+function connectViewButtonListeners() { 
+    $('.view-file-button').click(function() {
+            var filename = $(this).data('filename');
+            // Gantilah '/uploads/' dengan direktori tempat Anda menyimpan file
+            var fileUrl = './assets/monitoring/offboard' + filename;
+            
+            // Buka tautan ke file di jendela baru
+            window.open(fileUrl, '_blank');
+        });
+
 }
 
     // Menyimpan perubahan dengan AJAX

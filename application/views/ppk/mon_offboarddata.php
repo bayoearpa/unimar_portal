@@ -24,8 +24,8 @@
                 <td><?php echo $i->seafarercode; ?></td>
                 <td><?php echo $i->status_board; ?></td>
                 <td><?php echo $i->nama_kapal; ?></td>
-                <td><?php echo $i->tanggal_sign_on; ?></td>
-                <td><?php echo $i->tanggal_sign_off; ?></td>
+                <td><?php echo $i->tgl_sign_on; ?></td>
+                <td><?php echo $i->tgl_sign_off; ?></td>
                 <td>
                     <!-- Tombol Lihat File Sign Off -->
                     <?php if ($i->upload_file_signoff) { ?>
