@@ -92,12 +92,19 @@
                 $('#editjnsklmn').val('Perempuan');
             }
         $('#editseafarercode').val(parsedData.seafarercode);
-         // Mengatur status checkbox sesuai dengan data dari database
-        if (parsedData.status_board === 'onboard') {
-            $('#editstatonboard').prop('checked', true);
-        } else if (parsedData.status_board === 'offboard') {
-            $('#editstatonboard').prop('checked', true);
-        }
+                 // Mengatur status checkbox sesuai dengan data dari database
+        // if (parsedData.status_board === 'onboard') {
+        //     $('#editstatonboard').prop('checked', true);
+        // } else if (parsedData.status_board === 'offboard') {
+        //     $('#editstatonboard').prop('checked', true);
+        // }
+
+        // Mengatur radio button "Status UKP Pasca" sesuai dengan data dari database
+            if (parsedData.pasca_status === 'sudah') {
+                $('input[name="estatonboard"][value="sudah"]').prop('checked', true);
+            } else if (parsedData.pasca_status === 'belum') {
+                $('input[name="estatonboard"][value="belum"]').prop('checked', true);
+            }
         $('#editnamakapal').val(parsedData.nama_kapal);
         $('#edittglsignon').val(parsedData.tgl_sign_on);
 
@@ -153,12 +160,19 @@ function connectEditButtonListeners() {
                 $('#editjnsklmn').val('Perempuan');
             }
         $('#editseafarercode').val(parsedData.seafarercode);
-         // Mengatur status checkbox sesuai dengan data dari database
-        if (parsedData.status_board === 'onboard') {
-            $('#editstatonboard').prop('checked', true);
-        } else if (parsedData.status_board === 'offboard') {
-            $('#editstatonboard').prop('checked', true);
-        }
+                 // Mengatur status checkbox sesuai dengan data dari database
+        // if (parsedData.status_board === 'onboard') {
+        //     $('#editstatonboard').prop('checked', true);
+        // } else if (parsedData.status_board === 'offboard') {
+        //     $('#editstatonboard').prop('checked', true);
+        // }
+
+        // Mengatur radio button "Status UKP Pasca" sesuai dengan data dari database
+            if (parsedData.pasca_status === 'sudah') {
+                $('input[name="estatonboard"][value="sudah"]').prop('checked', true);
+            } else if (parsedData.pasca_status === 'belum') {
+                $('input[name="estatonboard"][value="belum"]').prop('checked', true);
+            }
         $('#editnamakapal').val(parsedData.nama_kapal);
         $('#edittglsignon').val(parsedData.tgl_sign_on);
 

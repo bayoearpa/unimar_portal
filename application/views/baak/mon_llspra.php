@@ -207,11 +207,11 @@
                     <div class="form-group">
                         <label for="editstatpra">Status Lulus Pra:</label>
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="editstatpra" name="estatpra" value="sudah">
+                            <input type="radio" class="form-check-input" id="editstatpra" name="estatpra" value="sudah">
                             <label class="form-check-label" for="editstatpra">Sudah</label>
                         </div>
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="editstatpra" name="estatpra" value="belum">
+                            <input type="radio" class="form-check-input" id="editstatpra" name="estatpra" value="belum">
                             <label class="form-check-label" for="editstatpra">Belum</label>
                         </div>
                     </div>

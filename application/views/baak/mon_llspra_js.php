@@ -82,11 +82,17 @@
         $('#edittglllspra').val(parsedData.pra_lulus_ukp);
         $('#editmbskl').val(parsedData.pra_mb_skl);
         // Mengatur status checkbox sesuai dengan data dari database
-        if (parsedData.pra_status === 'sudah') {
-            $('#editstatpra').prop('checked', true);
-        } else if (parsedData.pra_status === 'belum') {
-            $('#editstatpra').prop('checked', true);
-        }
+        // if (parsedData.pra_status === 'sudah') {
+        //     $('#editstatpra').prop('checked', true);
+        // } else if (parsedData.pra_status === 'belum') {
+        //     $('#editstatpra').prop('checked', true);
+        // }
+         // Mengatur status Radio sesuai dengan data dari database
+         if (parsedData.pasca_status === 'sudah') {
+                $('input[name="estatpra"][value="sudah"]').prop('checked', true);
+            } else if (parsedData.pasca_status === 'belum') {
+                $('input[name="estatpra"][value="belum"]').prop('checked', true);
+            }
         // Tambahkan input lain sesuai kebutuhan
         $('#editModal').modal('show');
       }

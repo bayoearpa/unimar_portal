@@ -81,12 +81,18 @@
         $('#editseafarercode').val(parsedData.seafarercode);
         $('#edittglllspasca').val(parsedData.pasca_lulus_ukp);
         $('#editnoijasah').val(parsedData.pasca_nomor_ijasah);
-        // Mengatur status checkbox sesuai dengan data dari database
-        if (parsedData.pasca_status === 'sudah') {
-            $('#editstatpasca').prop('checked', true);
-        } else if (parsedData.pasca_status === 'belum') {
-            $('#editstatpasca').prop('checked', true);
-        }
+         // Mengatur status checkbox sesuai dengan data dari database
+        // if (parsedData.pasca_status === 'sudah') {
+        //     $('#editstatpasca').prop('checked', true);
+        // } else if (parsedData.pasca_status === 'belum') {
+        //     $('#editstatpasca').prop('checked', true);
+        // }
+        // Mengatur status Radio sesuai dengan data dari database
+         if (parsedData.pasca_status === 'sudah') {
+                $('input[name="estatpasca"][value="sudah"]').prop('checked', true);
+            } else if (parsedData.pasca_status === 'belum') {
+                $('input[name="estatpasca"][value="belum"]').prop('checked', true);
+            }
         // Tambahkan input lain sesuai kebutuhan
         $('#editModal').modal('show');
       }
@@ -134,11 +140,17 @@ function connectEditButtonListeners() {
         $('#edittglllspasca').val(parsedData.pasca_lulus_ukp);
         $('#editnoijasah').val(parsedData.pasca_nomor_ijasah);
         // Mengatur status checkbox sesuai dengan data dari database
-        if (parsedData.pasca_status === 'sudah') {
-            $('#editstatpasca').prop('checked', true);
-        } else if (parsedData.pasca_status === 'belum') {
-            $('#editstatpasca').prop('checked', true);
-        }
+        // if (parsedData.pasca_status === 'sudah') {
+        //     $('#editstatpasca').prop('checked', true);
+        // } else if (parsedData.pasca_status === 'belum') {
+        //     $('#editstatpasca').prop('checked', true);
+        // }
+        // Mengatur status Radio sesuai dengan data dari database
+         if (parsedData.pasca_status === 'sudah') {
+                $('input[name="estatpasca"][value="sudah"]').prop('checked', true);
+            } else if (parsedData.pasca_status === 'belum') {
+                $('input[name="estatpasca"][value="belum"]').prop('checked', true);
+            }
         // Tambahkan input lain sesuai kebutuhan
         $('#editModal').modal('show');
       }

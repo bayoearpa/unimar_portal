@@ -213,11 +213,11 @@
                     <div class="form-group">
                         <label for="editstatonboard">Status Onboard/Offboard:</label>
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="editstatonboard" name="estatonboard" value="onboard">
+                            <input type="radio" class="form-check-input" id="editstatonboard" name="estatonboard" value="onboard">
                             <label class="form-check-label" for="editstatonboard">Onboard</label>
                         </div>
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="editstatonboard" name="estatonboard" value="offboard">
+                            <input type="radio" class="form-check-input" id="editstatonboard" name="estatonboard" value="offboard">
                             <label class="form-check-label" for="editstatonboard">Offboard</label>
                         </div>
                     </div>
