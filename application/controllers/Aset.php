@@ -257,7 +257,7 @@ class Aset extends CI_Controller {
 		// $ta = '20192';
 		$ruang = $this->datatables->new2();
 		// $ajuan->searchable(['tmst_mahasiswa.nama_mahasiswa', 'tmst_mahasiswa.kode_jenjang_pendidikan', 'tmst_program_studi.nama_program_studi', 'tbl_kliring_uas.nim']);
-		$ruang->select('kd_ruang, nama_ruang, id_gedung'
+		$ruang->select('kd_ruang, kode_ruangan, nama_ruang, id_gedung'
 					  )
 					// ->from('tbl_kliring_uas')
 					// ->join('tbl_kliring_uas_bk', 'tbl_kliring_uas_bk.id_kuas=tbl_kliring_uas.id_kuas')
