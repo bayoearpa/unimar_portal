@@ -12,7 +12,7 @@
             foreach ($catar as $c) {
               # code...
               ?>
-              <form action="<?php echo base_url() ?>aset/pi_ruang" name="form1" id="form1" method="post">
+              <form action="<?php echo base_url() ?>aset/pe_ruang" name="form1" id="form1" method="post">
                 <div class="form-group">
                 <label for="exampleInputEmail1">Kode Ruang:</label>
                 <input type="hidden" name="kd_ruang" value="<?php echo $c->kd_ruang; ?>">

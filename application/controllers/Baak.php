@@ -1653,7 +1653,7 @@ class baak extends CI_Controller {
 	{
 		# code...
     // Call your model method to get the data with pagination
-    $data['items'] = $this->m_portal->get_data_formon_mhsall($per_page, $offset);
+    $data['items'] = $this->m_portal->get_data_formon_mhsall_pra($per_page, $offset);
 
     $data['program_studi_options'] = array('92403', '92402'); // Add other program options if needed
 
@@ -1673,13 +1673,13 @@ class baak extends CI_Controller {
     $program_studi_options = array('92403', '92402'); // Tambahkan program studi lain jika ada
 
     if (!$year && !$program_studi) {
-        $data['items'] = $this->m_portal->get_data_formon_mhsall();
+        $data['items'] = $this->m_portal->get_data_formon_mhsall_pra();
     } elseif ($year && !$program_studi) {
-        $data['items'] = $this->m_portal->get_data_formon_mhsyear($year);
+        $data['items'] = $this->m_portal->get_data_formon_mhsyear_pra($year);
     } elseif (!$year && $program_studi) {
-        $data['items'] = $this->m_portal->get_data_formon_mhsprodi($program_studi);
+        $data['items'] = $this->m_portal->get_data_formon_mhsprodi_pra($program_studi);
     } elseif ($year && $program_studi) {
-        $data['items'] = $this->m_portal->get_data_formon_mhsyearnprodi($year, $program_studi);
+        $data['items'] = $this->m_portal->get_data_formon_mhsyearnprodi_pra($year, $program_studi);
     }
 
     $data['program_studi_options'] = $program_studi_options; // Pass program studi options to view
@@ -1733,7 +1733,7 @@ class baak extends CI_Controller {
 	{
 		# code...
     // Call your model method to get the data with pagination
-    $data['items'] = $this->m_portal->get_data_formon_mhsall($per_page, $offset);
+    $data['items'] = $this->m_portal->get_data_formon_mhsall_pasca($per_page, $offset);
 
     $data['program_studi_options'] = array('92403', '92402'); // Add other program options if needed
 
@@ -1753,13 +1753,13 @@ class baak extends CI_Controller {
     $program_studi_options = array('92403', '92402'); // Tambahkan program studi lain jika ada
 
     if (!$year && !$program_studi) {
-        $data['items'] = $this->m_portal->get_data_formon_mhsall();
+        $data['items'] = $this->m_portal->get_data_formon_mhsall_pasca();
     } elseif ($year && !$program_studi) {
-        $data['items'] = $this->m_portal->get_data_formon_mhsyear($year);
+        $data['items'] = $this->m_portal->get_data_formon_mhsyear_pasca($year);
     } elseif (!$year && $program_studi) {
-        $data['items'] = $this->m_portal->get_data_formon_mhsprodi($program_studi);
+        $data['items'] = $this->m_portal->get_data_formon_mhsprodi_pasca($program_studi);
     } elseif ($year && $program_studi) {
-        $data['items'] = $this->m_portal->get_data_formon_mhsyearnprodi($year, $program_studi);
+        $data['items'] = $this->m_portal->get_data_formon_mhsyearnprodi_pasca($year, $program_studi);
     }
 
     $data['program_studi_options'] = $program_studi_options; // Pass program studi options to view

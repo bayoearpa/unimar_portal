@@ -83,11 +83,11 @@
             <!-- User Account Menu -->
             <li class="dropdown user user-menu">
               <!-- Menu Toggle Button -->
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <a href="<?php echo base_url() ?>mhs" class="dropdown-toggle" data-toggle="dropdown">
                 <!-- The user image in the navbar-->
                
                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                <span class="hidden-xs">Login (coming soon)</span>
+                <span class="hidden-xs">Login</span>
               </a>
             </li>
           </ul>

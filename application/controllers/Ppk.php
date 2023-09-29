@@ -1007,6 +1007,43 @@ class ppk extends CI_Controller {
    		 }/// end of cek file
   
 	}
+	////// monitoring stanby prala
+	public function mon_sbprala()
+	{
+		# code...
+    // Call your model method to get the data with pagination
+    $data['items'] = $this->m_portal->get_data_formon_mhsall_sb($per_page, $offset);
+
+    $data['program_studi_options'] = array('92403', '92402'); // Add other program options if needed
+
+    $this->load->view('ppk/header');
+    $this->load->view('ppk/mon_sbprala', $data);
+    $this->load->view('ppk/footer');
+    $this->load->view('ppk/mon_sbprala_js');
+	}
+
+	public function mon_sbpraladata()
+	{
+		# code...
+	$year = $this->input->get('year'); // Ambil tahun dari input form
+    $program_studi = $this->input->get('program_studi'); // Ambil program studi dari input form
+
+    // Buat array untuk filter program studi
+    $program_studi_options = array('92403', '92402'); // Tambahkan program studi lain jika ada
+
+    if (!$year && !$program_studi) {
+        $data['items'] = $this->m_portal->get_data_formon_mhsall_sb();
+    } elseif ($year && !$program_studi) {
+        $data['items'] = $this->m_portal->get_data_formon_mhsyear_sb($year);
+    } elseif (!$year && $program_studi) {
+        $data['items'] = $this->m_portal->get_data_formon_mhsprodi_sb($program_studi);
+    } elseif ($year && $program_studi) {
+        $data['items'] = $this->m_portal->get_data_formon_mhsyearnprodi_sb($year, $program_studi);
+    }
+
+    $data['program_studi_options'] = $program_studi_options; // Pass program studi options to view
+    $this->load->view('ppk/mon_sbpraladata', $data);
+	}
 
 	/////////////// monitoring summary
 	public function mon_summary()

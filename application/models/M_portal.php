@@ -953,6 +953,296 @@ function get_data_formon_mhsyearnprodi_ob($year, $program_studi)
         return $query->result();
 }
 //////////////////////---------------- end ob
+////////////---------- untuk pasca
+function get_data_formon_mhsall_pasca($limit, $offset)
+{
+	# code...
+	 // Mengambil data mahasiswa dengan tahun_masuk dari tahun 2018
+        $this->db->select('tmst_mahasiswa.NIM as nim,
+        tmst_mahasiswa.Nama_mahasiswa as nama,
+        tmst_program_studi.Nama_program_studi as prodi,
+        tmst_program_studi.Kode_program_studi as kode_prodi,
+        tbl_mon.id_mon as id_mon,
+        tbl_mon.d3_no_ijasah as d3_no_ijasah,
+        tbl_mon.d3_tanggal_lulus as d3_tanggal_lulus,
+        tbl_mon.pra_lulus_ukp as pra_lulus_ukp,
+        tbl_mon.pra_mb_skl as pra_mb_skl,
+        tbl_mon.pra_status as pra_status,
+        tbl_mon.seafarercode as seafarercode,
+        tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
+        tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
+        tbl_mon.pasca_status as pasca_status,
+	        tbl_mon.status_board,
+	        tbl_mon.nama_kapal,
+	        tbl_mon.tgl_sign_on,
+	        tbl_mon.upload_file_signon,
+	        tbl_mon.tgl_sign_off,
+	        tbl_mon.upload_file_signoff');
+	    $this->db->from('tmst_mahasiswa');
+	    $this->db->join('tmst_program_studi', 'tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi', 'inner');
+	    $this->db->join('tbl_mon','tmst_mahasiswa.NIM = tbl_mon.nim','inner');
+	    $this->db->where('Tahun_masuk >=', '2018');
+	    $this->db->where('tbl_mon.status_trb >=', 'sudah');
+	    $this->db->where_in('tmst_mahasiswa.Kode_program_studi', array('92403', '92402'));
+	    // $this->db->limit($limit, $offset); // Apply pagination
+	    $query = $this->db->get();
+	    return $query->result();
+}
+function count_all_data_formon_mhsall_pasca()
+{
+    $this->db->select('COUNT(*) as count');
+    $this->db->from('tmst_mahasiswa');
+    $this->db->where('Tahun_masuk >=', '2018');
+    $this->db->where_in('tmst_mahasiswa.Kode_program_studi', array('92403', '92402'));
+    $query = $this->db->get();
+    $result = $query->row();
+    return $result->count;
+}
+function get_data_formon_mhsyear_pasca($year)
+{
+	# code...
+	 // Mengambil data mahasiswa dengan tahun_masuk sesuai dengan yang dipilih
+        $this->db->select('tmst_mahasiswa.NIM as nim,
+			tmst_mahasiswa.Nama_mahasiswa as nama,
+			tmst_program_studi.Nama_program_studi as prodi,
+			tmst_program_studi.Kode_program_studi as kode_prodi,
+			tbl_mon.id_mon as id_mon,
+	        tbl_mon.d3_no_ijasah as d3_no_ijasah,
+	        tbl_mon.d3_tanggal_lulus as d3_tanggal_lulus,
+	        tbl_mon.pra_lulus_ukp as pra_lulus_ukp,
+	        tbl_mon.pra_mb_skl as pra_mb_skl,
+	        tbl_mon.pra_status as pra_status,
+	        tbl_mon.seafarercode as seafarercode,
+	        tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
+	        tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
+	        tbl_mon.pasca_status as pasca_status,
+	        tbl_mon.status_board,
+	        tbl_mon.nama_kapal,
+	        tbl_mon.tgl_sign_on,
+	        tbl_mon.upload_file_signon,
+	        tbl_mon.tgl_sign_off,
+	        tbl_mon.upload_file_signoff');
+        $this->db->from('tmst_mahasiswa');
+        $this->db->join('tmst_program_studi','tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi','inner');
+        $this->db->join('tbl_mon','tmst_mahasiswa.NIM = tbl_mon.nim','inner');
+        $this->db->where('YEAR(Tanggal_masuk)', $year);
+        $this->db->where('tbl_mon.status_trb >=', 'sudah');
+        $this->db->where_in('tmst_mahasiswa.Kode_program_studi', array('92403', '92402'));
+        $query = $this->db->get();
+        return $query->result();
+}
+function get_data_formon_mhsprodi_pasca($program_studi)
+{
+	# code...
+	 // Mengambil data mahasiswa dengan tahun_masuk sesuai dengan yang dipilih
+        $this->db->select('tmst_mahasiswa.NIM as nim,
+			tmst_mahasiswa.Nama_mahasiswa as nama,
+			tmst_program_studi.Nama_program_studi as prodi,
+			tmst_program_studi.Kode_program_studi as kode_prodi,
+			tbl_mon.id_mon as id_mon,
+	        tbl_mon.d3_no_ijasah as d3_no_ijasah,
+	        tbl_mon.d3_tanggal_lulus as d3_tanggal_lulus,
+	        tbl_mon.pra_lulus_ukp as pra_lulus_ukp,
+	        tbl_mon.pra_mb_skl as pra_mb_skl,
+	        tbl_mon.pra_status as pra_status,
+	        tbl_mon.seafarercode as seafarercode,
+	        tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
+	        tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
+	        tbl_mon.pasca_status as pasca_status,
+	        tbl_mon.status_board,
+	        tbl_mon.nama_kapal,
+	        tbl_mon.tgl_sign_on,
+	        tbl_mon.upload_file_signon,
+	        tbl_mon.tgl_sign_off,
+	        tbl_mon.upload_file_signoff');
+        $this->db->from('tmst_mahasiswa');
+        $this->db->join('tmst_program_studi','tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi','inner');
+        $this->db->join('tbl_mon','tmst_mahasiswa.NIM = tbl_mon.nim','inner');
+        $this->db->where('Tahun_masuk >=', '2018');
+        $this->db->where('tbl_mon.status_trb >=', 'sudah');
+        $this->db->where('tmst_mahasiswa.Kode_program_studi', $program_studi);
+        $query = $this->db->get();
+        return $query->result();
+}
+function get_data_formon_mhsyearnprodi_pasca($year, $program_studi)
+{
+	# code...
+	 // Mengambil data mahasiswa dengan tahun_masuk sesuai dengan yang dipilih
+        $this->db->select('tmst_mahasiswa.NIM as nim,
+			tmst_mahasiswa.Nama_mahasiswa as nama,
+			tmst_program_studi.Nama_program_studi as prodi,
+			tmst_program_studi.Kode_program_studi as kode_prodi,
+			tbl_mon.id_mon as id_mon,
+	        tbl_mon.d3_no_ijasah as d3_no_ijasah,
+	        tbl_mon.d3_tanggal_lulus as d3_tanggal_lulus,
+	        tbl_mon.pra_lulus_ukp as pra_lulus_ukp,
+	        tbl_mon.pra_mb_skl as pra_mb_skl,
+	        tbl_mon.pra_status as pra_status,
+	        tbl_mon.seafarercode as seafarercode,
+	        tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
+	        tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
+	        tbl_mon.pasca_status as pasca_status,
+	        tbl_mon.status_board,
+	        tbl_mon.nama_kapal,
+	        tbl_mon.tgl_sign_on,
+	        tbl_mon.upload_file_signon,
+	        tbl_mon.tgl_sign_off,
+	        tbl_mon.upload_file_signoff');
+        $this->db->from('tmst_mahasiswa');
+        $this->db->join('tmst_program_studi','tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi','inner');
+        $this->db->join('tbl_mon','tmst_mahasiswa.NIM = tbl_mon.nim','inner');
+        $this->db->where('YEAR(Tanggal_masuk)', $year);
+        $this->db->where('tbl_mon.status_trb >=', 'sudah');
+        $this->db->where('tmst_mahasiswa.Kode_program_studi', $program_studi);
+        $query = $this->db->get();
+        return $query->result();
+}
+//////////////////////---------------- end pasca
+////////////---------- untuk pra
+function get_data_formon_mhsall_pasca($limit, $offset)
+{
+	# code...
+	 // Mengambil data mahasiswa dengan tahun_masuk dari tahun 2018
+        $this->db->select('tmst_mahasiswa.NIM as nim,
+        tmst_mahasiswa.Nama_mahasiswa as nama,
+        tmst_program_studi.Nama_program_studi as prodi,
+        tmst_program_studi.Kode_program_studi as kode_prodi,
+        tbl_mon.id_mon as id_mon,
+        tbl_mon.d3_no_ijasah as d3_no_ijasah,
+        tbl_mon.d3_tanggal_lulus as d3_tanggal_lulus,
+        tbl_mon.pra_lulus_ukp as pra_lulus_ukp,
+        tbl_mon.pra_mb_skl as pra_mb_skl,
+        tbl_mon.pra_status as pra_status,
+        tbl_mon.seafarercode as seafarercode,
+        tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
+        tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
+        tbl_mon.pasca_status as pasca_status,
+	        tbl_mon.status_board,
+	        tbl_mon.nama_kapal,
+	        tbl_mon.tgl_sign_on,
+	        tbl_mon.upload_file_signon,
+	        tbl_mon.tgl_sign_off,
+	        tbl_mon.upload_file_signoff');
+	    $this->db->from('tmst_mahasiswa');
+	    $this->db->join('tmst_program_studi', 'tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi', 'inner');
+	    $this->db->join('tbl_mon','tmst_mahasiswa.NIM = tbl_mon.nim','inner');
+	    $this->db->where('Tahun_masuk >=', '2018');
+	    $this->db->where('tbl_mon.status_prada >=', 'sudah');
+	    $this->db->where_in('tmst_mahasiswa.Kode_program_studi', array('92403', '92402'));
+	    // $this->db->limit($limit, $offset); // Apply pagination
+	    $query = $this->db->get();
+	    return $query->result();
+}
+function count_all_data_formon_mhsall_pasca()
+{
+    $this->db->select('COUNT(*) as count');
+    $this->db->from('tmst_mahasiswa');
+    $this->db->where('Tahun_masuk >=', '2018');
+    $this->db->where_in('tmst_mahasiswa.Kode_program_studi', array('92403', '92402'));
+    $query = $this->db->get();
+    $result = $query->row();
+    return $result->count;
+}
+function get_data_formon_mhsyear_pasca($year)
+{
+	# code...
+	 // Mengambil data mahasiswa dengan tahun_masuk sesuai dengan yang dipilih
+        $this->db->select('tmst_mahasiswa.NIM as nim,
+			tmst_mahasiswa.Nama_mahasiswa as nama,
+			tmst_program_studi.Nama_program_studi as prodi,
+			tmst_program_studi.Kode_program_studi as kode_prodi,
+			tbl_mon.id_mon as id_mon,
+	        tbl_mon.d3_no_ijasah as d3_no_ijasah,
+	        tbl_mon.d3_tanggal_lulus as d3_tanggal_lulus,
+	        tbl_mon.pra_lulus_ukp as pra_lulus_ukp,
+	        tbl_mon.pra_mb_skl as pra_mb_skl,
+	        tbl_mon.pra_status as pra_status,
+	        tbl_mon.seafarercode as seafarercode,
+	        tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
+	        tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
+	        tbl_mon.pasca_status as pasca_status,
+	        tbl_mon.status_board,
+	        tbl_mon.nama_kapal,
+	        tbl_mon.tgl_sign_on,
+	        tbl_mon.upload_file_signon,
+	        tbl_mon.tgl_sign_off,
+	        tbl_mon.upload_file_signoff');
+        $this->db->from('tmst_mahasiswa');
+        $this->db->join('tmst_program_studi','tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi','inner');
+        $this->db->join('tbl_mon','tmst_mahasiswa.NIM = tbl_mon.nim','inner');
+        $this->db->where('YEAR(Tanggal_masuk)', $year);
+        $this->db->where('tbl_mon.status_prada >=', 'sudah');
+        $this->db->where_in('tmst_mahasiswa.Kode_program_studi', array('92403', '92402'));
+        $query = $this->db->get();
+        return $query->result();
+}
+function get_data_formon_mhsprodi_pasca($program_studi)
+{
+	# code...
+	 // Mengambil data mahasiswa dengan tahun_masuk sesuai dengan yang dipilih
+        $this->db->select('tmst_mahasiswa.NIM as nim,
+			tmst_mahasiswa.Nama_mahasiswa as nama,
+			tmst_program_studi.Nama_program_studi as prodi,
+			tmst_program_studi.Kode_program_studi as kode_prodi,
+			tbl_mon.id_mon as id_mon,
+	        tbl_mon.d3_no_ijasah as d3_no_ijasah,
+	        tbl_mon.d3_tanggal_lulus as d3_tanggal_lulus,
+	        tbl_mon.pra_lulus_ukp as pra_lulus_ukp,
+	        tbl_mon.pra_mb_skl as pra_mb_skl,
+	        tbl_mon.pra_status as pra_status,
+	        tbl_mon.seafarercode as seafarercode,
+	        tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
+	        tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
+	        tbl_mon.pasca_status as pasca_status,
+	        tbl_mon.status_board,
+	        tbl_mon.nama_kapal,
+	        tbl_mon.tgl_sign_on,
+	        tbl_mon.upload_file_signon,
+	        tbl_mon.tgl_sign_off,
+	        tbl_mon.upload_file_signoff');
+        $this->db->from('tmst_mahasiswa');
+        $this->db->join('tmst_program_studi','tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi','inner');
+        $this->db->join('tbl_mon','tmst_mahasiswa.NIM = tbl_mon.nim','inner');
+        $this->db->where('Tahun_masuk >=', '2018');
+        $this->db->where('tbl_mon.status_prada >=', 'sudah');
+        $this->db->where('tmst_mahasiswa.Kode_program_studi', $program_studi);
+        $query = $this->db->get();
+        return $query->result();
+}
+function get_data_formon_mhsyearnprodi_pasca($year, $program_studi)
+{
+	# code...
+	 // Mengambil data mahasiswa dengan tahun_masuk sesuai dengan yang dipilih
+        $this->db->select('tmst_mahasiswa.NIM as nim,
+			tmst_mahasiswa.Nama_mahasiswa as nama,
+			tmst_program_studi.Nama_program_studi as prodi,
+			tmst_program_studi.Kode_program_studi as kode_prodi,
+			tbl_mon.id_mon as id_mon,
+	        tbl_mon.d3_no_ijasah as d3_no_ijasah,
+	        tbl_mon.d3_tanggal_lulus as d3_tanggal_lulus,
+	        tbl_mon.pra_lulus_ukp as pra_lulus_ukp,
+	        tbl_mon.pra_mb_skl as pra_mb_skl,
+	        tbl_mon.pra_status as pra_status,
+	        tbl_mon.seafarercode as seafarercode,
+	        tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
+	        tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
+	        tbl_mon.pasca_status as pasca_status,
+	        tbl_mon.status_board,
+	        tbl_mon.nama_kapal,
+	        tbl_mon.tgl_sign_on,
+	        tbl_mon.upload_file_signon,
+	        tbl_mon.tgl_sign_off,
+	        tbl_mon.upload_file_signoff');
+        $this->db->from('tmst_mahasiswa');
+        $this->db->join('tmst_program_studi','tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi','inner');
+        $this->db->join('tbl_mon','tmst_mahasiswa.NIM = tbl_mon.nim','inner');
+        $this->db->where('YEAR(Tanggal_masuk)', $year);
+        $this->db->where('tbl_mon.status_prada >=', 'sudah');
+        $this->db->where('tmst_mahasiswa.Kode_program_studi', $program_studi);
+        $query = $this->db->get();
+        return $query->result();
+}
+//////////////////////---------------- end pra
 function get_data_formon_mhs($id)
     {
         // Gantilah 'nama_tabel' dengan nama tabel yang sesuai dalam database Anda
