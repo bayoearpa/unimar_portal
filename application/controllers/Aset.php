@@ -275,7 +275,7 @@ class Aset extends CI_Controller {
 		$ruang
 			->style(['class' => 'table table-bordered table-striped display'])
 
-			->column('Kode Ruang', 'kode_ruangan', function($data, $row){
+			->column('Kode Ruang', 'kd_ruangan', function($data, $row){
 				return $data;
 			})
 			->column('Nama Ruangan', 'nama_ruang', function($data, $row){
