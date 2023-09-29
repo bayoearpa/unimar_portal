@@ -409,13 +409,9 @@ class Aset extends CI_Controller {
 			 }
 
 			 
-			$this->load->view('ma/header');
-			$this->load->view('ma/ruang');
-			$this->load->view('ma/footer');
+			redirect('aset/ruang','refresh');
 		}else{
-		$this->load->view('ma/header');
-		$this->load->view('ma/ruang');
-		$this->load->view('ma/footer');
+		redirect('aset/ruang','refresh');
 		}
 	}
 	//barang
