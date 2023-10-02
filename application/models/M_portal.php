@@ -1099,7 +1099,7 @@ function get_data_formon_mhsyearnprodi_pasca($year, $program_studi)
 }
 //////////////////////---------------- end pasca
 ////////////---------- untuk pra
-function get_data_formon_mhsall_pasca($limit, $offset)
+function get_data_formon_mhsall_pra($limit, $offset)
 {
 	# code...
 	 // Mengambil data mahasiswa dengan tahun_masuk dari tahun 2018
@@ -1133,7 +1133,7 @@ function get_data_formon_mhsall_pasca($limit, $offset)
 	    $query = $this->db->get();
 	    return $query->result();
 }
-function count_all_data_formon_mhsall_pasca()
+function count_all_data_formon_mhsall_pra()
 {
     $this->db->select('COUNT(*) as count');
     $this->db->from('tmst_mahasiswa');
@@ -1143,7 +1143,7 @@ function count_all_data_formon_mhsall_pasca()
     $result = $query->row();
     return $result->count;
 }
-function get_data_formon_mhsyear_pasca($year)
+function get_data_formon_mhsyear_pra($year)
 {
 	# code...
 	 // Mengambil data mahasiswa dengan tahun_masuk sesuai dengan yang dipilih
@@ -1176,7 +1176,7 @@ function get_data_formon_mhsyear_pasca($year)
         $query = $this->db->get();
         return $query->result();
 }
-function get_data_formon_mhsprodi_pasca($program_studi)
+function get_data_formon_mhsprodi_pra($program_studi)
 {
 	# code...
 	 // Mengambil data mahasiswa dengan tahun_masuk sesuai dengan yang dipilih
@@ -1209,7 +1209,7 @@ function get_data_formon_mhsprodi_pasca($program_studi)
         $query = $this->db->get();
         return $query->result();
 }
-function get_data_formon_mhsyearnprodi_pasca($year, $program_studi)
+function get_data_formon_mhsyearnprodi_pra($year, $program_studi)
 {
 	# code...
 	 // Mengambil data mahasiswa dengan tahun_masuk sesuai dengan yang dipilih
