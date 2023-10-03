@@ -668,12 +668,116 @@ class ppk extends CI_Controller {
 	}
 
 	/////////////////////////////////////////// Monitoring/////////////////////////////////////////////////
+
+	// monitoring prada
+	public function mon_prada()
+	{
+		# code...
+    // Call your model method to get the data with pagination
+    $data['items'] = $this->m_portal->get_data_formon_mhsall($per_page, $offset);
+
+    $data['program_studi_options'] = array('92403', '92402'); // Add other program options if needed
+
+    $this->load->view('ppk/header');
+    $this->load->view('ppk/mon_prada', $data);
+    $this->load->view('ppk/footer');
+    $this->load->view('ppk/mon_prada_js');
+	}
+
+	public function mon_pradadata()
+	{
+		# code...
+	$year = $this->input->get('year'); // Ambil tahun dari input form
+    $program_studi = $this->input->get('program_studi'); // Ambil program studi dari input form
+
+    // Buat array untuk filter program studi
+    $program_studi_options = array('92403', '92402'); // Tambahkan program studi lain jika ada
+
+    if (!$year && !$program_studi) {
+        $data['items'] = $this->m_portal->get_data_formon_mhsall();
+    } elseif ($year && !$program_studi) {
+        $data['items'] = $this->m_portal->get_data_formon_mhsyear($year);
+    } elseif (!$year && $program_studi) {
+        $data['items'] = $this->m_portal->get_data_formon_mhsprodi($program_studi);
+    } elseif ($year && $program_studi) {
+        $data['items'] = $this->m_portal->get_data_formon_mhsyearnprodi($year, $program_studi);
+    }
+
+    $data['program_studi_options'] = $program_studi_options; // Pass program studi options to view
+    $this->load->view('ppk/mon_pradadata', $data);
+	}
+
+	public function mon_pradaadd($id)
+	{
+		# code...
+		// Ambil data berdasarkan ID dari model Anda
+        $data = $this->m_portal->get_data_formon_mhs($id); // Gantilah 'get_data_by_id' dengan metode yang sesuai dalam model Anda
+
+        // Konversi data ke format JSON dan kirimkan ke view
+        echo json_encode($data);
+	}
+	public function mon_pradaaddp()
+	{
+    // Tangani data yang dikirimkan dari formulir
+    $data = array(
+        'nim' => $this->input->post('nim'),
+        'status_prada' => $this->input->post('statprada')
+    );
+
+    // Simpan data ke database
+    $res = $this->m_portal->input_data($data,'tbl_mon');
+    // Sesuaikan dengan model dan metode penyimpanan data Anda
+
+    // Setelah berhasil disimpan, beri respons "sukses" ke JavaScript
+    if ($res) {
+       // Jika terjadi kesalahan, beri respons "gagal" ke JavaScript
+        echo 'gagal';
+    } else {
+         // Jika penyimpanan sukses, beri respons "sukses" ke JavaScript
+        echo 'sukses';
+    }
+	}
+
+	public function mon_pradaedit($id)
+	{
+		# code...
+		// Ambil data berdasarkan ID dari model Anda
+        $data = $this->m_portal->get_data_formon_mhs($id); // Gantilah 'get_data_by_id' dengan metode yang sesuai dalam model Anda
+
+        // Konversi data ke format JSON dan kirimkan ke view
+        echo json_encode($data);
+	}
+
+	public function mon_pradaeditp()
+	{
+    // Tangani data yang dikirimkan dari formulir
+	$where = array(
+        'id_mon' => $this->input->post('id_mon'),
+    ); 
+    $data = array(
+        'status_prada' => $this->input->post('estatprada')
+    );
+
+    // Simpan data ke database
+    $res = $this->m_portal->update_data($where, $data,'tbl_mon');
+    // Sesuaikan dengan model dan metode penyimpanan data Anda
+
+    // Setelah berhasil disimpan, beri respons "sukses" ke JavaScript
+    if ($res) {
+       // Jika terjadi kesalahan, beri respons "gagal" ke JavaScript
+        echo 'gagal';
+    } else {
+         // Jika penyimpanan sukses, beri respons "sukses" ke JavaScript
+        echo 'sukses';
+    }
+	}
+	////////////////// end prada
 	// monitoring lulus D3
 	public function mon_llsd3()
 	{
 		# code...
     // Call your model method to get the data with pagination
-    $data['items'] = $this->m_portal->get_data_formon_mhsall($per_page, $offset);
+    $data['items'] = $this->m_portal->get_data_formon_mhsall_d3($per_page, $offset);
 
     $data['program_studi_options'] = array('92403', '92402'); // Add other program options if needed
 
@@ -693,13 +797,13 @@ class ppk extends CI_Controller {
     $program_studi_options = array('92403', '92402'); // Tambahkan program studi lain jika ada
 
     if (!$year && !$program_studi) {
-        $data['items'] = $this->m_portal->get_data_formon_mhsall();
+        $data['items'] = $this->m_portal->get_data_formon_mhsall_d3();
     } elseif ($year && !$program_studi) {
-        $data['items'] = $this->m_portal->get_data_formon_mhsyear($year);
+        $data['items'] = $this->m_portal->get_data_formon_mhsyear_d3($year);
     } elseif (!$year && $program_studi) {
-        $data['items'] = $this->m_portal->get_data_formon_mhsprodi($program_studi);
+        $data['items'] = $this->m_portal->get_data_formon_mhsprodi_d3($program_studi);
     } elseif ($year && $program_studi) {
-        $data['items'] = $this->m_portal->get_data_formon_mhsyearnprodi($year, $program_studi);
+        $data['items'] = $this->m_portal->get_data_formon_mhsyearnprodi_d3($year, $program_studi);
     }
 
     $data['program_studi_options'] = $program_studi_options; // Pass program studi options to view
@@ -770,7 +874,7 @@ class ppk extends CI_Controller {
         echo 'sukses';
     }
 	}
-
+	////////////////// end lulus D3
 	////////////// monitoring onboard
 
 	public function mon_onboard()

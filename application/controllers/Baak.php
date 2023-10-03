@@ -1710,7 +1710,8 @@ class baak extends CI_Controller {
         'seafarercode' => $this->input->post('eseafarercode'),
         'pra_lulus_ukp' => $pra_tanggal_lulusf,
         'pra_mb_skl' => $pra_mb_sklf,
-        'pra_status' => $this->input->post('estatpra')
+        'pra_status' => $this->input->post('estatpra'),
+        'status_sb' => $this->input->post('esb')
     );
 
     // Simpan data ke database

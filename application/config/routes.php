@@ -127,6 +127,9 @@ $route['baak/mon_add/(:num)'] = 'baak/mon_add/$1';
 $route['aset'] = 'aset';
 $route['aset/detail_inventaris/(:num)'] = 'aset/detail_inven/$1';
 
+//mahasiswa
+$route['mahasiswa'] = 'mahasiswa';
+
 //API
 $route['api/kues/mhsdsn'] = 'Rest_api_tbl_kues_mhsdsn/index';
 

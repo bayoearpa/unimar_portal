@@ -4,7 +4,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Lulus PRA</h3>
+              <h3 class="box-title">Prada</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -35,10 +35,7 @@
                   <th>NIM</th>
                   <th>Nama</th>
                   <th>Prodi</th>
-                  <th>Seafarercode</th>
-                  <th>Tanggal Lulus Pra</th>
-                  <th>Masa Berlaku SKL</th>
-                  <th>Status Ujian</th>
+                  <th>Sudah mengikuti Prada</th>
                   <th>proses</th>
                 </tr>
                 </thead>
@@ -49,11 +46,7 @@
                   <tr>
                 <td><?php echo $i->nim; ?></td>
                 <td><?php echo $i->nama; ?></td>
-                <td><?php echo $i->prodi; ?></td>
-                <td><?php echo $i->seafarercode; ?></td>
-                <td><?php echo $i->pra_lulus_ukp; ?></td>
-                <td><?php echo $i->pra_mb_skl; ?></td>
-                <td><?php echo $i->pra_status; ?></td>
+                <td><?php echo $i->status_prada; ?></td>
                 <td>
                       <!-- Tombol Tambah/Edit -->
                     <?php if ($i->id_mon) { ?>
@@ -70,10 +63,7 @@
                   <th>NIM</th>
                   <th>Nama</th>
                   <th>Prodi</th>
-                  <th>Seafarercode</th>
-                  <th>Tanggal Lulus Pra</th>
-                  <th>Masa Berlaku SKL</th>
-                  <th>Status Ujian</th>
+                  <th>Sudah mengikuti Prada</th>
                   <th>proses</th>
                 </tr>
                 </tfoot>
@@ -94,7 +84,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title" id="addModalLabel">Form Lulus PRA</h3>
+                <h3 class="modal-title" id="addModalLabel">Form Lulus D3</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -123,27 +113,15 @@
                         <label for="addjnsklmn">Jenis Kelamin:</label>
                         <input type="text" class="form-control" id="addjnsklmn" name="jk" readonly="">
                     </div>
-                    <div class="form-group">
-                        <label for="addseafarercode">Seafarercode:</label>
-                        <input type="text" class="form-control" id="addseafarercode" name="seafarercode">
-                    </div>
-                    <div class="form-group">
-                        <label for="addtglllspra">Tanggal Lulus Pra:</label>
-                        <input type="date" class="form-control" id="addtglllspra" name="tglllspra">
-                    </div>
-                    <div class="form-group">
-                        <label for="addmbskl">Masa Berlaku SKL:</label>
-                        <input type="date" class="form-control" id="addmbskl" name="mbskl">
-                    </div>
-                    <div class="form-group">
-                        <label for="addstatpra">Status Lulus Pra:</label>
+                      <div class="form-group">
+                        <label for="addstatprada">Status Prada:</label>
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="addstatpra" name="statpra" value="sudah">
+                            <input type="checkbox" class="form-check-input" id="addstatprada" name="statprada" value="sudah">
                             <label class="form-check-label" for="addstatpra">Sudah</label>
                         </div>
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="addstatpra" name="statpra" value="belum">
-                            <label class="form-check-label" for="addstatpra">Belum</label>
+                            <input type="checkbox" class="form-check-input" id="addstatprada" name="statprada" value="belum">
+                            <label class="form-check-label" for="addstatprada">Belum</label>
                         </div>
                     </div>
                     <!-- Tambahkan input lain sesuai kebutuhan -->
@@ -162,7 +140,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title" id="editModalLabel">Form Edit Lulus PRA</h3>
+                <h3 class="modal-title" id="editModalLabel">Form Edit Lulus D3</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -170,8 +148,8 @@
             <div class="modal-body">
                 <!-- Form Edit Data -->
                 <form id="editForm">
-                    <input type="hidden" id="editNim" name="nim">
                     <input type="hidden" id="editidmon" name="id_mon">
+                    <input type="hidden" id="editNim" name="nim">
                     <div class="form-group">
                         <label for="editNama">Nama:</label>
                         <input type="text" class="form-control" id="editNama" name="nama" readonly="">
@@ -192,28 +170,15 @@
                         <label for="editjnsklmn">Jenis Kelamin:</label>
                         <input type="text" class="form-control" id="editjnsklmn" name="jk" readonly="">
                     </div>
-                    <div class="form-group">
-                        <label for="editseafarercode">Seafarercode:</label>
-                        <input type="text" class="form-control" id="editseafarercode" name="eseafarercode">
-                    </div>
-                    <div class="form-group">
-                        <label for="edittglllspra">Tanggal Lulus Pra:</label>
-                        <input type="date" class="form-control" id="edittglllspra" name="etglllspra">
-                    </div>
-                    <div class="form-group">
-                        <label for="editmbskl">Masa Berlaku SKL:</label>
-                        <input type="date" class="form-control" id="editmbskl" name="embskl">
-                        <input type="hidden" class="form-control" id="editsb" name="esb">
-                    </div>
-                    <div class="form-group">
-                        <label for="editstatpra">Status Lulus Pra:</label>
+                     <div class="form-group">
+                        <label for="editstatprada">Status Prada:</label>
                         <div class="form-check">
-                            <input type="radio" class="form-check-input" id="editstatpra" name="estatpra" value="sudah">
+                            <input type="checkbox" class="form-check-input" id="editstatprada" name="estatprada" value="sudah">
                             <label class="form-check-label" for="editstatpra">Sudah</label>
                         </div>
                         <div class="form-check">
-                            <input type="radio" class="form-check-input" id="editstatpra" name="estatpra" value="belum">
-                            <label class="form-check-label" for="editstatpra">Belum</label>
+                            <input type="checkbox" class="form-check-input" id="editstatprada" name="estatprada" value="belum">
+                            <label class="form-check-label" for="editstatprada">Belum</label>
                         </div>
                     </div>
                     <!-- Tambahkan input lain sesuai kebutuhan -->
