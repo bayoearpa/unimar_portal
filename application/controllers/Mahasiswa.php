@@ -19,7 +19,10 @@ class Mahasiswa extends CI_Controller {
 	{
 		$this->load->view('mahasiswa/login');
 	}
-
+	function logout(){
+		$this->session->sess_destroy();
+		redirect(base_url().'mahasiswa?pesan=logout');
+	}
 	public function login()
 	{
 		# code...
@@ -40,6 +43,7 @@ class Mahasiswa extends CI_Controller {
 					'user'=> $d->user,
 					'nama'=> $d->Nama_mahasiswa,
 					'prodi'=> $d->Kode_program_studi,
+					'nprodi'=> $d->Nama_program_studi,
 					'status' => 'login'
 				);
 				$this->session->set_userdata($session);

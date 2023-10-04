@@ -20,9 +20,11 @@ class M_mahasiswa extends CI_Model {
 		$this->db->select('user_mhs.user,
 		user_mhs.pass,
 		tmst_mahasiswa.Nama_mahasiswa,
-		tmst_mahasiswa.Kode_program_studi');
+		tmst_mahasiswa.Kode_program_studi,
+		tmst_program_studi.Nama_program_studi');
 		$this->db->from('user_mhs');
 		$this->db->join('tmst_mahasiswa','user_mhs.user = tmst_mahasiswa.NIM','inner');
+		$this->db->join('tmst_program_studi','tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi','inner');
 		$this->db->where($where);
 		//$this->db->order_by('tbl_catar_validasi.no_reg', "asc");
 		$query=$this->db->get();
