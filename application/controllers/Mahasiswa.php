@@ -45,7 +45,7 @@ class Mahasiswa extends CI_Controller {
 				$this->session->set_userdata($session);
 				redirect(base_url().'mahasiswa/home');
 			}else{
-				redirect(base_url().'administrasi?pesan=gagal');			
+				redirect(base_url().'mahasiswa?pesan=gagal');			
 			}
 		}else{
 			$this->load->view('login');
