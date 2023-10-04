@@ -202,7 +202,10 @@
             <!-- <li><a href="#"><i class="fa fa-circle-o"></i>Summary</a></li> -->
           </ul>
         </li>
-        <li class="treeview">
+        <?php if ($this->session->userdata('prodi') == "92403" && $this->session->userdata('prodi') == "92402" ) {
+          # code...
+          ?>
+           <li class="treeview">
           <a href="#">
             <i class="fa fa-share"></i> <span>Kepelautan</span>
             <span class="pull-right-container">
@@ -220,7 +223,7 @@
             <!-- <li><a href="<?php //echo base_url() ?>baak/mon_summary"><i class="fa fa-circle-o"></i>Summary</a></li> -->
           </ul>
         </li>
-
+       <?php } ?>
       </ul>
     </section>
     <!-- /.sidebar -->

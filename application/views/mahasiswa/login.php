@@ -44,7 +44,7 @@
 <div class="login-box">
   <div class="login-logo">
   <img src="<?php echo base_url() ?>assets/1/images/amni-png.png" width="20%">
-    <a href="<?php echo base_url() ?>mahasiswa">Portal <b>Mahasiswa</b></a>
+    <a href="<?php echo base_url() ?>mahasiswa">Portal <b>Mahasiswa & Taruna</b></a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
