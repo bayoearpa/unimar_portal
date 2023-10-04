@@ -83,7 +83,7 @@
             <!-- User Account Menu -->
             <li class="dropdown user user-menu">
               <!-- Menu Toggle Button -->
-              <a href="<?php echo base_url() ?>mahasiswa" class="dropdown-toggle" data-toggle="dropdown">
+              <a href="<?php echo base_url() ?>mahasiswa">
                 <!-- The user image in the navbar-->
                
                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
