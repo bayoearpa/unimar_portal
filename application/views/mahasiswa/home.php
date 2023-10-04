@@ -159,7 +159,7 @@
       </div>
       <!-- /.row -->
              <!-- roadmap end Nautik Teknik -->
-             <?php }else{ echo "coming soon"}?>
+             <?php }else{ echo "coming soon";}?>
 
             </div>
             <!-- /.box-body -->
