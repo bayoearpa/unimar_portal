@@ -8,9 +8,9 @@ class Mahasiswa extends CI_Controller {
 	{
 		parent::__construct();
 		//Do your magic here
-		if($this->session->userdata('status') != "login"){
-			redirect(base_url().'mahasiswa?pesan=belumlogin');
-		}
+		// if($this->session->userdata('status') != "login"){
+		// 	redirect(base_url().'mahasiswa?pesan=belumlogin');
+		// }
 		$this->load->model('m_mahasiswa');
 		$this->load->library('m_pdf');
 	}

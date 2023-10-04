@@ -44,13 +44,13 @@
 <div class="login-box">
   <div class="login-logo">
   <img src="<?php echo base_url() ?>assets/1/images/amni-png.png" width="20%">
-    <a href="<?php echo base_url() ?>administrasi">Portal <b>Mahasiswa</b></a>
+    <a href="<?php echo base_url() ?>mahasiswa">Portal <b>Mahasiswa</b></a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
     <p class="login-box-msg">Sign in untuk mengakses sistem</p>
 
-    <form action="<?php echo base_url().'mahasiwa/login' ?>" method="post">
+    <form action="<?php echo base_url().'mahasiswa/login' ?>" method="post">
       <div class="form-group has-feedback">
         <input type="text" name="username" id="username" class="form-control" placeholder="Username">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
