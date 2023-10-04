@@ -188,104 +188,35 @@
         <li class="header">MENU UTAMA</li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-share"></i> <span>Kliring</span>
+            <i class="fa fa-share"></i> <span>Kliring(soon)</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
+
           <ul class="treeview-menu">
-                <li class="treeview">
-                  <a href="#"><i class="fa fa-circle-o"></i> Ujian KT / Proposal / Skripsi
-                    <span class="pull-right-container">
-                      <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                  </a>
-                  <ul class="treeview-menu">
-                    <li><a href="<?php echo base_url() ?>baak/ajuan"><i class="fa fa-circle-o"></i> Ajuan</a></li>
-                    <!-- <li><a href="#"><i class="fa fa-circle-o"></i> Selesai</a></li> -->
-                  </ul>
-                </li>
-                <li class="treeview">
-                  <a href="#"><i class="fa fa-circle-o"></i> Ujian Akhir Semester (UAS)
-                    <span class="pull-right-container">
-                      <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                  </a>
-                  <ul class="treeview-menu">
-                    <li><a href="<?php echo base_url() ?>baak/ajuan_kuas"><i class="fa fa-circle-o"></i> Ajuan</a></li>
-                     <li><a href="<?php echo base_url() ?>baak/rekapuas"><i class="fa fa-circle-o"></i>Rekapitulasi</a></li>
-                    <!-- <li><a href="#"><i class="fa fa-circle-o"></i> Selesai</a></li> -->
-                  </ul>
-                </li>
-                <li class="treeview">
-                  <a href="#"><i class="fa fa-circle-o"></i> Prada
-                    <span class="pull-right-container">
-                      <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                  </a>
-                  <ul class="treeview-menu">
-                    <li><a href="<?php echo base_url() ?>baak/ajuan_prada"><i class="fa fa-circle-o"></i> Ajuan</a></li>
-                     <li><a href="<?php echo base_url() ?>baak/rekapuas"><i class="fa fa-circle-o"></i>Rekapitulasi</a></li>
-                    <!-- <li><a href="#"><i class="fa fa-circle-o"></i> Selesai</a></li> -->
-                  </ul>
-                </li>
-                 <li class="treeview">
-                  <a href="#"><i class="fa fa-circle-o"></i>Semester Antara
-                    <span class="pull-right-container">
-                      <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                  </a>
-                  <ul class="treeview-menu">
-                    <li><a href="<?php echo base_url() ?>baak/search_smta_nim"><i class="fa fa-circle-o"></i>Kliring by NIM</a></li>
-                    <li><a href="<?php echo base_url() ?>baak/search_smta_cetak"><i class="fa fa-circle-o"></i>Rekapitulasi</a></li>
-                    <!-- <li><a href="<?php //echo base_url() ?>ppk/ajuan_prada"><i class="fa fa-circle-o"></i> Ajuan Prada</a></li> -->
-                    <!-- <li><a href="#"><i class="fa fa-circle-o"></i> Selesai</a></li> -->
-                  </ul>
-                </li>
-                 <li class="treeview">
-                  <a href="#"><i class="fa fa-circle-o"></i>PKL
-                    <span class="pull-right-container">
-                      <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                  </a>
-                  <ul class="treeview-menu">
-                   <!--  <li><a href="<?php //echo base_url() ?>baak/search_smta_nim"><i class="fa fa-circle-o"></i>Kliring by NIM</a></li>
-                    <li><a href="<?php //echo base_url() ?>baak/search_smta_cetak"><i class="fa fa-circle-o"></i>Rekap absensi</a></li> -->
-                    <li><a href="<?php echo base_url() ?>baak/ajuan_pkl"><i class="fa fa-circle-o"></i> Ajuan PKL</a></li>
-                    <!-- <li><a href="#"><i class="fa fa-circle-o"></i> Selesai</a></li> -->
-                  </ul>
-                </li>
-              </ul>
+            <li><a href="#"><i class="fa fa-circle-o"></i>Ujian Akhir Semester (UAS)</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i>Karya Tulis/Proposal/Skripsi</a></li>
+           <!--  <li><a href="<?php //echo base_url() ?>baak/mon_sbprala"><i class="fa fa-circle-o"></i> SB Prala</a></li> -->
+            <li><a href="#"><i class="fa fa-circle-o"></i>Semester Antara</a></li>
+            <!-- <li><a href="#"><i class="fa fa-circle-o"></i>Summary</a></li> -->
+          </ul>
         </li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-share"></i> <span>Monitoring</span>
+            <i class="fa fa-share"></i> <span>Kepelautan</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
 
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url() ?>baak/mon_llsd3"><i class="fa fa-circle-o"></i> Lulus D3</a></li>
-            <li><a href="<?php echo base_url() ?>baak/mon_llspra"><i class="fa fa-circle-o"></i> Lulus UKP PRA</a></li>
+            <li><a href="<?php echo base_url() ?>baak/mon_llsd3"><i class="fa fa-circle-o"></i>Onboard</a></li>
+            <li><a href="<?php echo base_url() ?>baak/mon_llspra"><i class="fa fa-circle-o"></i>Offboard</a></li>
            <!--  <li><a href="<?php //echo base_url() ?>baak/mon_sbprala"><i class="fa fa-circle-o"></i> SB Prala</a></li> -->
-            <li><a href="<?php echo base_url() ?>baak/mon_llspasca"><i class="fa fa-circle-o"></i>Lulus UKP Pasca</a></li>
-            <li><a href="<?php echo base_url() ?>baak/mon_summary"><i class="fa fa-circle-o"></i>Summary</a></li>
-
-                <!--  <li class="treeview">
-                  <a href="#"><i class="fa fa-circle-o"></i>Lulus D3
-                    <span class="pull-right-container">
-                      <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                  </a>
-                  <ul class="treeview-menu"> -->
-                   <!--  <li><a href="<?php //echo base_url() ?>baak/search_smta_nim"><i class="fa fa-circle-o"></i>Kliring by NIM</a></li>
-                    <li><a href="<?php //echo base_url() ?>baak/search_smta_cetak"><i class="fa fa-circle-o"></i>Rekap absensi</a></li> -->
-                    <!-- <li><a href="<?php //echo base_url() ?>baak/ajuan_pkl"><i class="fa fa-circle-o"></i> Ajuan PKL</a></li> -->
-                    <!-- <li><a href="#"><i class="fa fa-circle-o"></i> Selesai</a></li> -->
-              <!--     </ul>
-                </li> -->
-              </ul>
+            <li><a href="<?php echo base_url() ?>baak/mon_llspasca"><i class="fa fa-circle-o"></i>TRB</a></li>
+            <!-- <li><a href="<?php echo base_url() ?>baak/mon_summary"><i class="fa fa-circle-o"></i>Summary</a></li> -->
+          </ul>
         </li>
 
       </ul>

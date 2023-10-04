@@ -38,7 +38,7 @@ class Mahasiswa extends CI_Controller {
 			if($cek > 0){
 				$session = array(
 					'user'=> $d->user,
-					'nama'=> $d->nama,
+					'nama'=> $d->Nama_mahasiswa,
 					'prodi'=> $d->Kode_program_studi,
 					'status' => 'login'
 				);
