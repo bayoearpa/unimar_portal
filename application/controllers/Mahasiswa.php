@@ -9,16 +9,18 @@ class Mahasiswa extends CI_Controller {
 		parent::__construct();
 		//Do your magic here
 		if($this->session->userdata('status') != "login"){
-			redirect(base_url().'Mahasiswa?pesan=belumlogin');
+			redirect(base_url().'mahasiswa?pesan=belumlogin');
 		}
 		$this->load->model('m_mahasiswa');
 		$this->load->library('m_pdf');
 	}
+
 	public function index()
 	{
 		$this->load->view('mahasiswa/login');
 	}
-		public function login()
+
+	public function login()
 	{
 		# code...
 		$username = $this->input->post('username');
