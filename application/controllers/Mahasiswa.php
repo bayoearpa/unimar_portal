@@ -54,9 +54,9 @@ class Mahasiswa extends CI_Controller {
 	public function home()
 	{
 		# code...
-		$this->load->view('baak/header');
-		$this->load->view('baak/home');
-		$this->load->view('baak/footer');
+		$this->load->view('mahasiswa/header');
+		$this->load->view('mahasiswa/home');
+		$this->load->view('mahasiswa/footer');
 	}
 
 }
