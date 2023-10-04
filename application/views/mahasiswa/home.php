@@ -9,7 +9,7 @@
             <!-- /.box-header -->
             <div class="box-body">
 
-               <?php if ($this->session->userdata('prodi') == "92403" && $this->session->userdata('prodi') == "92402" ) {
+               <?php if ($this->session->userdata('prodi') == "92403" || $this->session->userdata('prodi') == "92402" ) {
                 # code...
                 ?>
              <!-- roadmap start Nautik Teknik -->

@@ -202,7 +202,7 @@
             <!-- <li><a href="#"><i class="fa fa-circle-o"></i>Summary</a></li> -->
           </ul>
         </li>
-        <?php if ($this->session->userdata('prodi') == "92403" && $this->session->userdata('prodi') == "92402" ) {
+        <?php if ($this->session->userdata('prodi') == "92403" || $this->session->userdata('prodi') == "92402" ) {
           # code...
           ?>
            <li class="treeview">
