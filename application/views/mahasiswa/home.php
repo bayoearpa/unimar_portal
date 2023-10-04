@@ -4,11 +4,15 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-             <marquee><h3 class="box-title">Join UNIMAR AMNI SEMARANG to See The World</h3></marquee> 
+             <h3 class="box-title">Roadmap Perkuliahan UNIMAR AMNI Semarang</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-             <!-- roadmap start -->
+
+               <?php if ($this->session->userdata('prodi') == "92403" && $this->session->userdata('prodi') == "92402" ) {
+                # code...
+                ?>
+             <!-- roadmap start Nautik Teknik -->
                    <!-- row -->
       <div class="row">
         <div class="col-md-12">
@@ -16,21 +20,21 @@
           <ul class="timeline">
             <!-- timeline time label -->
             <li class="time-label">
-                  <span class="bg-red">
-                    10 Feb. 2014
+                  <span class="bg-green">
+                    Awal Perkuliahan
                   </span>
             </li>
             <!-- /.timeline-label -->
             <!-- timeline item -->
             <li>
-              <i class="fa fa-envelope bg-blue"></i>
+              <i class="fa fa-user bg-blue"></i>
 
               <div class="timeline-item">
-                <span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
+                <!-- <span class="time"><i class="fa fa-clock-o"></i> 12:05</span> -->
 
-                <h3 class="timeline-header"><a href="#">Support Team</a> sent you an email</h3>
+                <h3 class="timeline-header"><a href="#">Perkuliahan</a></h3>
 
-                <div class="timeline-body">
+                <!-- <div class="timeline-body">
                   Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles,
                   weebly ning heekya handango imeem plugg dopplr jibjab, movity
                   jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle
@@ -39,87 +43,113 @@
                 <div class="timeline-footer">
                   <a class="btn btn-primary btn-xs">Read more</a>
                   <a class="btn btn-danger btn-xs">Delete</a>
-                </div>
+                </div> -->
               </div>
             </li>
             <!-- END timeline item -->
             <!-- timeline item -->
             <li>
-              <i class="fa fa-user bg-aqua"></i>
+              <i class="fa fa-user bg-red"></i>
 
               <div class="timeline-item">
-                <span class="time"><i class="fa fa-clock-o"></i> 5 mins ago</span>
+                <!-- <span class="time"><i class="fa fa-clock-o"></i> 5 mins ago</span> -->
 
-                <h3 class="timeline-header no-border"><a href="#">Sarah Young</a> accepted your friend request</h3>
+                <h3 class="timeline-header no-border"><a href="#">Prada</a></h3>
               </div>
             </li>
             <!-- END timeline item -->
             <!-- timeline item -->
             <li>
-              <i class="fa fa-comments bg-yellow"></i>
+              <i class="fa fa-user bg-yellow"></i>
 
               <div class="timeline-item">
-                <span class="time"><i class="fa fa-clock-o"></i> 27 mins ago</span>
+                <!-- <span class="time"><i class="fa fa-clock-o"></i> 27 mins ago</span> -->
 
-                <h3 class="timeline-header"><a href="#">Jay White</a> commented on your post</h3>
+                <h3 class="timeline-header"><a href="#">Lulus D3</a></h3>
 
-                <div class="timeline-body">
+                <!-- <div class="timeline-body">
                   Take me to your leader!
                   Switzerland is small and neutral!
                   We are more like Germany, ambitious and misunderstood!
                 </div>
                 <div class="timeline-footer">
                   <a class="btn btn-warning btn-flat btn-xs">View comment</a>
-                </div>
+                </div> -->
+              </div>
+            </li>
+            <!-- END timeline item -->
+             <!-- timeline item -->
+            <li>
+              <i class="fa fa-user bg-blue"></i>
+
+              <div class="timeline-item">
+                <h3 class="timeline-header"><a href="#">Ujian Pra</a></h3>
+              </div>
+            </li>
+            <!-- END timeline item -->
+            <!-- timeline item -->
+            <li>
+              <i class="fa fa-user bg-red"></i>
+
+              <div class="timeline-item">
+                <h3 class="timeline-header no-border"><a href="#">Stand By untuk Prala</a></h3>
+              </div>
+            </li>
+            <!-- END timeline item -->
+            <!-- timeline item -->
+            <li>
+              <i class="fa fa-user bg-yellow"></i>
+
+              <div class="timeline-item">
+
+                <h3 class="timeline-header"><a href="#">Onboard</a></h3>
+              </div>
+            </li>
+            <!-- END timeline item -->
+              <!-- timeline item -->
+            <li>
+              <i class="fa fa-user bg-blue"></i>
+
+              <div class="timeline-item">
+                <h3 class="timeline-header"><a href="#">Offboard</a></h3>
+              </div>
+            </li>
+            <!-- END timeline item -->
+            <!-- timeline item -->
+            <li>
+              <i class="fa fa-user bg-red"></i>
+
+              <div class="timeline-item">
+                <h3 class="timeline-header no-border"><a href="#">Ujian Modeling</a></h3>
+              </div>
+            </li>
+            <!-- END timeline item -->
+            <!-- timeline item -->
+            <li>
+              <i class="fa fa-user bg-yellow"></i>
+
+              <div class="timeline-item">
+
+                <h3 class="timeline-header"><a href="#">Ujian TRB</a></h3>
+              </div>
+            </li>
+            <!-- END timeline item -->
+            <!-- timeline item -->
+            <li>
+              <i class="fa fa-user bg-red"></i>
+
+              <div class="timeline-item">
+                <h3 class="timeline-header no-border"><a href="#">Ujian Pasca</a></h3>
               </div>
             </li>
             <!-- END timeline item -->
             <!-- timeline time label -->
             <li class="time-label">
-                  <span class="bg-green">
-                    3 Jan. 2014
+                  <span class="bg-red">
+                    Akhir Perkuliahan
                   </span>
             </li>
             <!-- /.timeline-label -->
-            <!-- timeline item -->
-            <li>
-              <i class="fa fa-camera bg-purple"></i>
-
-              <div class="timeline-item">
-                <span class="time"><i class="fa fa-clock-o"></i> 2 days ago</span>
-
-                <h3 class="timeline-header"><a href="#">Mina Lee</a> uploaded new photos</h3>
-
-                <div class="timeline-body">
-                  <img src="http://placehold.it/150x100" alt="..." class="margin">
-                  <img src="http://placehold.it/150x100" alt="..." class="margin">
-                  <img src="http://placehold.it/150x100" alt="..." class="margin">
-                  <img src="http://placehold.it/150x100" alt="..." class="margin">
-                </div>
-              </div>
-            </li>
-            <!-- END timeline item -->
-            <!-- timeline item -->
-            <li>
-              <i class="fa fa-video-camera bg-maroon"></i>
-
-              <div class="timeline-item">
-                <span class="time"><i class="fa fa-clock-o"></i> 5 days ago</span>
-
-                <h3 class="timeline-header"><a href="#">Mr. Doe</a> shared a video</h3>
-
-                <div class="timeline-body">
-                  <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/tMWkeBIohBs"
-                            frameborder="0" allowfullscreen></iframe>
-                  </div>
-                </div>
-                <div class="timeline-footer">
-                  <a href="#" class="btn btn-xs bg-maroon">See comments</a>
-                </div>
-              </div>
-            </li>
-            <!-- END timeline item -->
             <li>
               <i class="fa fa-clock-o bg-gray"></i>
             </li>
@@ -128,7 +158,9 @@
         <!-- /.col -->
       </div>
       <!-- /.row -->
-             <!-- roadmap end -->
+             <!-- roadmap end Nautik Teknik -->
+             <?php }else{ echo "coming soon"}?>
+
             </div>
             <!-- /.box-body -->
           </div>
