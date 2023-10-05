@@ -69,7 +69,7 @@ class Mahasiswa extends CI_Controller {
 		$where = array(
 				$label => $status			
 			);
-		$data = $this->m_mahasiswa->get_where($where);
+		$data = $this->m_mahasiswa->get_data($where);
 
 		return $data;
 	}

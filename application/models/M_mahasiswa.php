@@ -16,6 +16,10 @@ class M_mahasiswa extends CI_Model {
 		$this->db->where($where);
 		$this->db->update($table,$data);
 	}
+	function delete_data($where,$table){
+		$this->db->where($where);
+		$this->db->delete($table);
+	}
 	function get_data_join_for_login($where){
 		$this->db->select('user_mhs.user,
 		user_mhs.pass,
