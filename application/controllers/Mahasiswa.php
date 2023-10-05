@@ -63,7 +63,7 @@ class Mahasiswa extends CI_Controller {
 		$this->load->view('mahasiswa/home',$data);
 		$this->load->view('mahasiswa/footer');
 	}
-	public function cek_status($label, $status)
+	public function cekstatus($label, $status)
 	{
 		# code...
 		$where = array(
