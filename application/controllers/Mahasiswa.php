@@ -60,7 +60,7 @@ class Mahasiswa extends CI_Controller {
 		# code...
 		$data['mahasiswa'] = $this; 
 		$this->load->view('mahasiswa/header');
-		$this->load->view('mahasiswa/home'$data);
+		$this->load->view('mahasiswa/home',$data);
 		$this->load->view('mahasiswa/footer');
 	}
 	public function cek_status($label, $status)
