@@ -60,7 +60,7 @@
             <!-- END timeline item -->
             <!-- timeline item -->
             <li>
-              <i class="fa fa-user bg-yellow"></i>
+              <i class="fa fa-user bg-red"></i>
 
               <div class="timeline-item">
                 <!-- <span class="time"><i class="fa fa-clock-o"></i> 27 mins ago</span> -->
@@ -80,7 +80,7 @@
             <!-- END timeline item -->
              <!-- timeline item -->
             <li>
-              <i class="fa fa-user bg-blue"></i>
+              <i class="fa fa-user bg-red"></i>
 
               <div class="timeline-item">
                 <h3 class="timeline-header"><a href="#">Ujian Pra</a></h3>
@@ -98,7 +98,7 @@
             <!-- END timeline item -->
             <!-- timeline item -->
             <li>
-              <i class="fa fa-user bg-yellow"></i>
+              <i class="fa fa-user bg-red"></i>
 
               <div class="timeline-item">
 
@@ -108,7 +108,7 @@
             <!-- END timeline item -->
               <!-- timeline item -->
             <li>
-              <i class="fa fa-user bg-blue"></i>
+              <i class="fa fa-user bg-red"></i>
 
               <div class="timeline-item">
                 <h3 class="timeline-header"><a href="#">Offboard</a></h3>
@@ -126,7 +126,7 @@
             <!-- END timeline item -->
             <!-- timeline item -->
             <li>
-              <i class="fa fa-user bg-yellow"></i>
+              <i class="fa fa-user bg-red"></i>
 
               <div class="timeline-item">
 
