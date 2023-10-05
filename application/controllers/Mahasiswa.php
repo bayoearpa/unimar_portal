@@ -58,9 +58,20 @@ class Mahasiswa extends CI_Controller {
 	public function home()
 	{
 		# code...
+		$data['mahasiswa'] = $this; 
 		$this->load->view('mahasiswa/header');
-		$this->load->view('mahasiswa/home');
+		$this->load->view('mahasiswa/home'$data);
 		$this->load->view('mahasiswa/footer');
+	}
+	public function cek_status($label, $status)
+	{
+		# code...
+		$where = array(
+				$label => $status			
+			);
+		$data = $this->m_mahasiswa->get_where($where);
+
+		return $data;
 	}
 
 }

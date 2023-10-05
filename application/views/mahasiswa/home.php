@@ -46,8 +46,13 @@
             <!-- END timeline item -->
             <!-- timeline item -->
             <li>
-              <i class="fa fa-user bg-red"></i>
-
+                <?php 
+                if ($this->mahasiswa->cekstatus("status_prada","sudah") > 0) {
+                  # code...?>
+                  <i class="fa fa-user bg-blue"></i>
+                <?php }else{?>
+                  <i class="fa fa-user bg-red"></i>
+                <?php } ?>
               <div class="timeline-item">
                 <!-- <span class="time"><i class="fa fa-clock-o"></i> 5 mins ago</span> -->
 
@@ -83,7 +88,13 @@
             <!-- END timeline item -->
             <!-- timeline item -->
             <li>
-              <i class="fa fa-user bg-red"></i>
+              <?php 
+                if ($this->mahasiswa->cekstatus("status_d3","sudah") > 0) {
+                  # code...?>
+                  <i class="fa fa-user bg-blue"></i>
+                <?php }else{?>
+                  <i class="fa fa-user bg-red"></i>
+                <?php } ?>
 
               <div class="timeline-item">
                 <!-- <span class="time"><i class="fa fa-clock-o"></i> 27 mins ago</span> -->
@@ -101,7 +112,13 @@
             <!-- END timeline item -->
              <!-- timeline item -->
             <li>
-              <i class="fa fa-user bg-red"></i>
+              <?php 
+                if ($this->mahasiswa->cekstatus("pra_status","sudah") > 0) {
+                  # code...?>
+                  <i class="fa fa-user bg-blue"></i>
+                <?php }else{?>
+                  <i class="fa fa-user bg-red"></i>
+                <?php } ?>
 
               <div class="timeline-item">
                 <h3 class="timeline-header"><a href="#">Ujian Pra Prala</a></h3>
@@ -113,7 +130,13 @@
             <!-- END timeline item -->
             <!-- timeline item -->
             <li>
-              <i class="fa fa-user bg-red"></i>
+              <?php 
+                if ($this->mahasiswa->cekstatus("status_sb","iya") > 0) {
+                  # code...?>
+                  <i class="fa fa-user bg-blue"></i>
+                <?php }else{?>
+                  <i class="fa fa-user bg-red"></i>
+                <?php } ?>
 
               <div class="timeline-item">
                 <h3 class="timeline-header no-border"><a href="#">Stand By untuk Prala</a></h3>
@@ -122,7 +145,13 @@
             <!-- END timeline item -->
             <!-- timeline item -->
             <li>
-              <i class="fa fa-user bg-red"></i>
+             <?php 
+                if ($this->mahasiswa->cekstatus("status_board","onboard") > 0 || $this->mahasiswa->cekstatus("status_board","offboard") > 0) {
+                  # code...?>
+                  <i class="fa fa-user bg-blue"></i>
+                <?php }else{?>
+                  <i class="fa fa-user bg-red"></i>
+                <?php } ?>
 
               <div class="timeline-item">
 
@@ -168,7 +197,13 @@
             <!-- END timeline item -->
               <!-- timeline item -->
             <li>
-              <i class="fa fa-user bg-red"></i>
+              <?php 
+                if ($this->mahasiswa->cekstatus("status_board","offboard") > 0) {
+                  # code...?>
+                  <i class="fa fa-user bg-blue"></i>
+                <?php }else{?>
+                  <i class="fa fa-user bg-red"></i>
+                <?php } ?>
 
               <div class="timeline-item">
                 <h3 class="timeline-header"><a href="#">Offboard</a></h3>
@@ -193,7 +228,13 @@
             <!-- END timeline item -->
             <!-- timeline item -->
             <li>
-              <i class="fa fa-user bg-red"></i>
+              <?php 
+                if ($this->mahasiswa->cekstatus("status_modeling","sudah") > 0) {
+                  # code...?>
+                  <i class="fa fa-user bg-blue"></i>
+                <?php }else{?>
+                  <i class="fa fa-user bg-red"></i>
+                <?php } ?>
 
               <div class="timeline-item">
                 <h3 class="timeline-header no-border"><a href="#">Ujian Modeling</a></h3>
@@ -222,7 +263,13 @@
             <!-- END timeline item -->
             <!-- timeline item -->
             <li>
-              <i class="fa fa-user bg-red"></i>
+              <?php 
+                if ($this->mahasiswa->cekstatus("status_trb","sudah") > 0) {
+                  # code...?>
+                  <i class="fa fa-user bg-blue"></i>
+                <?php }else{?>
+                  <i class="fa fa-user bg-red"></i>
+                <?php } ?>
 
               <div class="timeline-item">
 
