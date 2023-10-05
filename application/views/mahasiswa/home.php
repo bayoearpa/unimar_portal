@@ -91,7 +91,7 @@
                 <h3 class="timeline-header"><a href="#">Lulus D3</a></h3>
 
                 <div class="timeline-body">
-                  Telah selesai menempuh kegiatan perkuliahan D3.
+                  Telah selesai menempuh perkuliahan D3.
                 </div>
                <!--  <div class="timeline-footer">
                   <a class="btn btn-warning btn-flat btn-xs">View comment</a>
@@ -197,6 +197,26 @@
 
               <div class="timeline-item">
                 <h3 class="timeline-header no-border"><a href="#">Ujian Modeling</a></h3>
+                <div class="timeline-body">
+                  <b>Taruna Program Studi Diploma Tiga Teknika dan Program Studi Diploma Tiga Nautika di
+                  lingkungan UNIMAR AMNI yang telah menempuh Prala, selanjutnya wajib melaksanakan
+                  pembimbingan modeling sampai dengan pengujiannya, serta melaksanakan serangkaian ujian
+                  kepelautan. Prosedur yang harus dilakukan oleh taruna selesai Prala adalah sebagai berikut:</b>
+                  <ol>
+                  <li>Melaksanakan laporan turun Prala di Bagian PPK, dengan melampirkan surat sign off dari 
+                  perusahaan, buku saku, conduite nilai Prala, dan melampirkan bukti telah mendaftar atau 
+                  telah mengikuti diklat yang disyaratkan yang telah diferifikasi dari UPT Diklat Kepelautan 
+                  UNIMAR AMNI.</li>
+                  <li>Mengajukan dosen pembimbing modeling kepada Ketua Program Studi masing-masing,
+                  selanjutnya Kepala Subbagian Prala berdasarkan petunjuk dari Ketua Program Studi
+                  masing-masing menerbitkan Surat Pengantar Pembimbingan Modeling.</li>
+                  <li>Melaksanakan pembimbingan modeling dengan membawa Surat Pengantar Pembimbingan
+                  Modeling.</li>
+                  <li>Melaksanakan Ujian Modeling Internal (berdasarkan laporan yang telah diisi dan ditulis
+                  taruna selama Prala di atas kapal) dengan diuji oleh dosen profesi yang ditunjuk oleh 
+                  Ketua Program Studi masing-masing sampai dinyatakan lulus.</li>
+                  </ol>
+                </div>
               </div>
             </li>
             <!-- END timeline item -->
@@ -207,6 +227,26 @@
               <div class="timeline-item">
 
                 <h3 class="timeline-header"><a href="#">Ujian TRB</a></h3>
+                <div class="timeline-body">
+                  <ul>
+                  <li>Ujian Training Record Book (TRB) Internal
+                  Ujian turun prala (TRB) Internal merupakan ujian bagi Taruna Program Studi 
+                  Diploma Tiga Teknika dan Program Studi Diploma Tiga Nautika setelah turun Prala 
+                  (berdasarkan laporan yang telah diisi dan ditulis taruna selama Prala di atas kapal). 
+                  Ujian Modeling Internal dilaksanakan oleh internal UNIMAR AMNI, dengan diuji oleh 
+                  dosen profesi di lingkungan UNIMAR AMNI yang ditunjuk oleh Dekan Kemaritiman 
+                  UNIMAR AMNI Semarang. </li>
+                  <li>Ujian Training Record Book (TRB) di PUKP 5
+                  Ujian Training Record Book (TRB) di PUKP 5 merupakan ujian bagi Taruna 
+                  Program Studi Diploma Tiga Teknika dan Program Studi Diploma Tiga Nautika yang 
+                  menempuh ATT-III/ANT-III dan diselenggarakan di PUKP 5, dengan verifikasi 
+                  dokumen Prala.</li>
+                  <li>Ujian Training Record Book (TRB)
+                  Ujian TRB merupakan ujian bagi Taruna Program Studi Diploma Tiga Teknika 
+                  dan Program Studi Diploma Tiga Nautika yang menempuh ATT-III/ANT-III setelah 
+                  menyelesaikan Ujian Training Record Book (TRB) di PUKP 5.</li>
+                  </ul>
+                </div>
               </div>
             </li>
             <!-- END timeline item -->
