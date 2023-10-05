@@ -47,7 +47,7 @@
             <!-- timeline item -->
             <li>
                 <?php 
-                if ($this->mahasiswa->cekstatus("status_prada","sudah") > 0) {
+                if ($mahasiswa->cekstatus("status_prada","sudah") > 0) {
                   # code...?>
                   <i class="fa fa-user bg-blue"></i>
                 <?php }else{?>
@@ -89,7 +89,7 @@
             <!-- timeline item -->
             <li>
               <?php 
-                if ($this->mahasiswa->cekstatus("status_d3","sudah") > 0) {
+                if ($mahasiswa->cekstatus("status_d3","sudah") > 0) {
                   # code...?>
                   <i class="fa fa-user bg-blue"></i>
                 <?php }else{?>
@@ -113,7 +113,7 @@
              <!-- timeline item -->
             <li>
               <?php 
-                if ($this->mahasiswa->cekstatus("pra_status","sudah") > 0) {
+                if ($mahasiswa->cekstatus("pra_status","sudah") > 0) {
                   # code...?>
                   <i class="fa fa-user bg-blue"></i>
                 <?php }else{?>
@@ -131,7 +131,7 @@
             <!-- timeline item -->
             <li>
               <?php 
-                if ($this->mahasiswa->cekstatus("status_sb","iya") > 0) {
+                if ($mahasiswa->cekstatus("status_sb","iya") > 0) {
                   # code...?>
                   <i class="fa fa-user bg-blue"></i>
                 <?php }else{?>
@@ -146,7 +146,7 @@
             <!-- timeline item -->
             <li>
              <?php 
-                if ($this->mahasiswa->cekstatus("status_board","onboard") > 0 || $this->mahasiswa->cekstatus("status_board","offboard") > 0) {
+                if ($mahasiswa->cekstatus("status_board","onboard") > 0 || $mahasiswa->cekstatus("status_board","offboard") > 0) {
                   # code...?>
                   <i class="fa fa-user bg-blue"></i>
                 <?php }else{?>
@@ -198,7 +198,7 @@
               <!-- timeline item -->
             <li>
               <?php 
-                if ($this->mahasiswa->cekstatus("status_board","offboard") > 0) {
+                if ($mahasiswa->cekstatus("status_board","offboard") > 0) {
                   # code...?>
                   <i class="fa fa-user bg-blue"></i>
                 <?php }else{?>
@@ -229,7 +229,7 @@
             <!-- timeline item -->
             <li>
               <?php 
-                if ($this->mahasiswa->cekstatus("status_modeling","sudah") > 0) {
+                if ($mahasiswa->cekstatus("status_modeling","sudah") > 0) {
                   # code...?>
                   <i class="fa fa-user bg-blue"></i>
                 <?php }else{?>
@@ -264,7 +264,7 @@
             <!-- timeline item -->
             <li>
               <?php 
-                if ($this->mahasiswa->cekstatus("status_trb","sudah") > 0) {
+                if ($mahasiswa->cekstatus("status_trb","sudah") > 0) {
                   # code...?>
                   <i class="fa fa-user bg-blue"></i>
                 <?php }else{?>
@@ -299,7 +299,13 @@
             <!-- END timeline item -->
             <!-- timeline item -->
             <li>
-              <i class="fa fa-user bg-red"></i>
+              <?php 
+                if ($mahasiswa->cekstatus("pasca_status","sudah") > 0) {
+                  # code...?>
+                  <i class="fa fa-user bg-blue"></i>
+                <?php }else{?>
+                  <i class="fa fa-user bg-red"></i>
+                <?php } ?>
 
               <div class="timeline-item">
                 <h3 class="timeline-header no-border"><a href="#">Ujian Pasca Prala</a></h3>
