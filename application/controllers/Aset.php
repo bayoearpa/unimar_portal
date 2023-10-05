@@ -414,6 +414,16 @@ class Aset extends CI_Controller {
 		redirect('aset/ruang','refresh');
 		}
 	}
+	public function d_ruang($kd_ruang)
+	{
+		# code...
+		$where= array(
+			'kd_ruang' => $kd_ruang,		
+			);
+		$this->m_aset->delete_data($where,'tbl_aset_ruang');
+
+		redirect('aset/ruang','refresh');
+	}
 	//barang
 	public function barang()
 	{

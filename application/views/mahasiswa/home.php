@@ -172,6 +172,22 @@
 
               <div class="timeline-item">
                 <h3 class="timeline-header"><a href="#">Offboard</a></h3>
+                <div class="timeline-body">
+                  <ul>
+                  <li>Untuk batas waktu taruna laporan turun Prala adalah maksimal 15 (lima belas) hari 
+                  setelah tanggal sign off dengan melampirkan surat masa layar, surat sign on dan sign off 
+                  dari perusahaan tempat Prala, dan dokumen pendukung lainnya yang digunakan saat
+                  Prala.</li>
+                  <li>Jika dalam waktu yang telah ditetapkan, taruna yang bersangkutan tidak
+                  melaksanakakan sesuai ketentuan yang berlaku, maka taruna yang bersangkutan akan
+                  dikenakan sanksi hukuman dan wajib melaksanakan sanksi hukuman sesuai ketentuan
+                  yang berlaku.Pembimbingan Skripsi dan Karya Tulis serta Pengujian</li>
+                  <li>Apabila dalam batas waktu yang telah ditetapkan tidak ditaati, maka taruna yang
+                  bersangkutan dikenakan sanksi hukuman dan wajib melaksanakan sanksi hukuman
+                  sesuai ketentuan yang berlaku.</li>
+                  </ul>
+                 
+                </div>
               </div>
             </li>
             <!-- END timeline item -->
