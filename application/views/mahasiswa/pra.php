@@ -65,7 +65,7 @@
                 <button type="submit" class="btn btn-primary">Simpan</button>
                 <a href="<?php //echo base_url() ?>baak/ajuan_pkl"><button type="button" class="btn btn-success pull-left"><i class="fa fa-chevron-left"></i>Kembali</button></a>
                 </form>
-              <?php //} ?>
+              <?php } ?>
 
               <?php }else{ ?>
                 <!-- peringatan jika belum boleh mendafatar  -->
