@@ -87,7 +87,7 @@ class Mahasiswa extends CI_Controller {
 		$data['mhs'] = $this->m_mahasiswa->get_data($where, 'tmst_mahasiswa');
 
 		$this->load->view('mahasiswa/header');
-		$this->load->view('mahasiswa/home',$data);
+		$this->load->view('mahasiswa/pra',$data);
 		$this->load->view('mahasiswa/footer');
 	}
 
