@@ -73,6 +73,23 @@ class Mahasiswa extends CI_Controller {
 
 		return $data;
 	}
+	public function pra()
+	{
+		# code...
+		$data['mahasiswa'] = $this;
+
+		$mhs = $this->session->userdata('user');
+
+		$where = array(
+				'NIM' => $mhs			
+			);
+
+		$data['mhs'] = $this->m_mahasiswa->get_data($where, 'tmst_mahasiswa');
+
+		$this->load->view('mahasiswa/header');
+		$this->load->view('mahasiswa/home',$data);
+		$this->load->view('mahasiswa/footer');
+	}
 
 }
 
