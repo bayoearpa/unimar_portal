@@ -214,13 +214,12 @@
           </a>
 
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url() ?>baak/mon_llsd3"><i class="fa fa-circle-o"></i>Ujian Pra</a></li>
-            <li><a href="<?php echo base_url() ?>baak/mon_llsd3"><i class="fa fa-circle-o"></i>Onboard</a></li>
-            <li><a href="<?php echo base_url() ?>baak/mon_llspra"><i class="fa fa-circle-o"></i>Offboard</a></li>
+            <li><a href="<?php echo base_url() ?>mahasiswa/mhs_pra"><i class="fa fa-circle-o"></i>Ujian Pra</a></li>
+            <li><a href="<?php echo base_url() ?>mahasiswa/mhs_onboard"><i class="fa fa-circle-o"></i>Onboard</a></li>
+            <li><a href="<?php echo base_url() ?>mahasiswa/mhs_offboard"><i class="fa fa-circle-o"></i>Offboard</a></li>
            <!--  <li><a href="<?php //echo base_url() ?>baak/mon_sbprala"><i class="fa fa-circle-o"></i> SB Prala</a></li> -->
-            <li><a href="<?php echo base_url() ?>baak/mon_llspasca"><i class="fa fa-circle-o"></i>TRB</a></li>
-            <li><a href="<?php echo base_url() ?>baak/mon_llsd3"><i class="fa fa-circle-o"></i>Ujian Pasca</a></li>
-            <!-- <li><a href="<?php //echo base_url() ?>baak/mon_summary"><i class="fa fa-circle-o"></i>Summary</a></li> -->
+            <li><a href="<?php echo base_url() ?>mahasiswa/mhs_pasca"><i class="fa fa-circle-o"></i>Ujian Pasca</a></li>
+            <li><a href="<?php echo base_url() ?>mahasiswa/mhs_trb"><i class="fa fa-circle-o"></i>Ujian TRB</a></li>
           </ul>
         </li>
        <?php } ?>
