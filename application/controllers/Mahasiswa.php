@@ -96,9 +96,9 @@ class Mahasiswa extends CI_Controller {
 		# code...
 		$data['mahasiswa'] = $this;
 		$mhs = $this->session->userdata('user');
-		$mhsnya = $mhs;
+		$mhsnya = $mhs['user'];
 		$where = array(
-				'tmst_mahasiswa.NIM' => $mhsnya			
+				'tmst_mahasiswa.NIM' => $mhsnya		
 			);
 		$data['mhs_detail'] = $this->m_mahasiswa->get_data_mhs_detail($where);
 		
