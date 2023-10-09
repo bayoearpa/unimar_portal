@@ -63,13 +63,14 @@ class Mahasiswa extends CI_Controller {
 		$this->load->view('mahasiswa/home',$data);
 		$this->load->view('mahasiswa/footer');
 	}
-	public function cekstatus($label, $status)
+	public function cekstatus($label, $status, $nim)
 	{
 		# code...
 		$where = array(
-				$label => $status			
+				$label => $status,
+				'nim' => $nim
 			);
-		$data = $this->m_mahasiswa->get_data($where);
+		$data = $this->m_mahasiswa->get_data($where, 'tbl_mon');
 
 		return $data;
 	}

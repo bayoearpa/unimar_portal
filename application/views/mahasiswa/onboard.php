@@ -6,13 +6,15 @@
             <h3 class="box-title">Form Laporan Onboard</h3>
           </div>
           <div class="box-body">
-             <?php if ($mahasiswa->cekstatus('status_sb','iya') > 0 ) {
+             <?php 
+             foreach($mhs as $c){ 
+              if ($mahasiswa->cekstatus('status_sb','iya', $c->nim) > 0 ) {
               # code... ?>
             <?php 
             // echo validation_errors(); 
             // echo $this->session->flashdata('success');
             // echo $this->session->flashdata('error');
-            foreach($mhs as $c){ 
+            
               ?>
               <table>
                 <tr>
@@ -78,7 +80,7 @@
                 <div class="alert alert-danger alert-dismissible">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                     <h4><i class="icon fa fa-ban"></i> Alert!</h4>
-                    anda belum diizinkan untuk mendafatar Ujian Pra Prala karena belum melakukan PRADA
+                    anda belum diizinkan untuk mengisi form onboard karena belum ujian Pra Prala
                 </div>
             <!-- end peringatan jika belum boleh mendafatar  -->
 
