@@ -6,6 +6,7 @@
             <h3 class="box-title">Form Laporan Onboard</h3>
           </div>
           <div class="box-body">
+            <h1><?php echo $cek_mhs; ?></h1>
              <?php 
              
               if ($mahasiswa->cekstatus('status_sb','iya', $c->nim) > 0 ) {
