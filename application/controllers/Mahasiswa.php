@@ -100,7 +100,7 @@ class Mahasiswa extends CI_Controller {
 		// 		'tmst_mahasiswa.NIM' => $mhs			
 		// 	);
 		$data['mhs_detail'] = $this->m_mahasiswa->get_data_mhs_detail($mhs);
-		$data['cek_mhs'] = $mhs;
+		// $data['cek_mhs'] = $mhs;
 
 		$this->load->view('mahasiswa/header');
 		$this->load->view('mahasiswa/onboard',$data);
