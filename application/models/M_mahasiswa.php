@@ -66,11 +66,16 @@ class M_mahasiswa extends CI_Model {
 	        tbl_mon.status_trb,
 	        tbl_mon.status_sb,
 	        tbl_mon.status_d3');
-	    $this->db->from('tmst_mahasiswa');
-	    $this->db->join('tbl_mon','tmst_mahasiswa.NIM = tbl_mon.nim','left');
+	     $this->db->from('tmst_mahasiswa');
+	      $this->db->join('tbl_mon','tmst_mahasiswa.NIM = tbl_mon.nim','left');
         $this->db->where('tmst_mahasiswa.NIM', $id);
         $query = $this->db->get();
-        return $query->result();
+
+        if ($query->num_rows() > 0) {
+            return $query->row();
+        } else {
+            return null;
+        }
     }
 
 }
