@@ -90,6 +90,21 @@ class Mahasiswa extends CI_Controller {
 		$this->load->view('mahasiswa/pra',$data);
 		$this->load->view('mahasiswa/footer');
 	}
+	public function onboard()
+	{
+		# code...
+		$data['mahasiswa'] = $this;
+		$mhs = $this->session->userdata('user');
+		$where = array(
+				'NIM' => $mhs			
+			);
+		$data['mhs'] = $this->m_mahasiswa->get_data_mhs_detail($where);
+
+		$this->load->view('mahasiswa/header');
+		$this->load->view('mahasiswa/onboard',$data);
+		$this->load->view('mahasiswa/footer');
+
+	}
 
 }
 

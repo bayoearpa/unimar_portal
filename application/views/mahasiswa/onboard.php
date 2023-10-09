@@ -6,37 +6,49 @@
             <h3 class="box-title">Form Laporan Onboard</h3>
           </div>
           <div class="box-body">
+             <?php if ($mahasiswa->cekstatus('status_sb','iya') > 0 ) {
+              # code... ?>
             <?php 
             // echo validation_errors(); 
             // echo $this->session->flashdata('success');
             // echo $this->session->flashdata('error');
-            // foreach($catar as $c){ 
+            foreach($mhs as $c){ 
               ?>
               <table>
                 <tr>
                   <td><label for="exampleInputEmail1">NIM</label></td>
                   <td><label for="exampleInputEmail1">:</label></td>
-                  <td><label for="exampleInputEmail1"><?php //echo $c->nim; ?></label></td>
+                  <td><label for="exampleInputEmail1"><?php echo $c->nim; ?></label></td>
                 </tr>
                 <tr>
                   <td><label for="exampleInputEmail1">Nama</label></td>
                   <td><label for="exampleInputEmail1">:</label></td>
-                  <td><label for="exampleInputEmail1"><?php //echo $nama; ?></label></td>
+                  <td><label for="exampleInputEmail1"><?php echo $c->nama; ?></label></td>
+                </tr>
+                 <tr>
+                  <td><label for="exampleInputEmail1">Tanggal Lahir</label></td>
+                  <td><label for="exampleInputEmail1">:</label></td>
+                  <td><label for="exampleInputEmail1"><?php echo $c->tgll; ?></label></td>
+                </tr>
+                 <tr>
+                  <td><label for="exampleInputEmail1">Alamat</label></td>
+                  <td><label for="exampleInputEmail1">:</label></td>
+                  <td><label for="exampleInputEmail1"><?php echo $c->alamat; ?></label></td>
+                </tr>
+                <tr>
+                  <td><label for="exampleInputEmail1">Jenis Kelamin</label></td>
+                  <td><label for="exampleInputEmail1">:</label></td>
+                  <td><label for="exampleInputEmail1"><?php echo $valjk = ($c->jk == 'L') ? "Laki-laki" : "Perempuan" ; ?></label></td>
+                </tr>
+                <tr>
+                  <td><label for="exampleInputEmail1">Seafarercode</label></td>
+                  <td><label for="exampleInputEmail1">:</label></td>
+                  <td><label for="exampleInputEmail1"><?php echo $c->seafarercode; ?></label></td>
                 </tr>
               </table>
-              <hr>
-              <form action="<?php //echo base_url() ?>baak/kliringp_pkl" name="form1" id="form1" method="post">
-                <input type="hidden" name="id_pkl" id="id_pkl" value="<?php //echo $c->id_pkl; ?>">
-                <div class="form-group">
-                <label for="exampleInputEmail1">Index Prestasi IP :</label>
-                  <input class="form-control" type="text" name="smt1" id="smt1" placeholder="Nilai semester 1">
-                  <input class="form-control" type="text" name="smt2" id="smt2" placeholder="Nilai semester 2">
-                  <input class="form-control" type="text" name="smt3" id="smt3" placeholder="Nilai semester 3">
-                  <input class="form-control" type="text" name="smt4" id="smt4" placeholder="Nilai semester 4">
-                  <input class="form-control" type="text" name="smt5" id="smt5" placeholder="Nilai semester 5">
-                  </div>
-              
-                
+              <hrpo>
+              <form action="<?php echo base_url() ?>mahasiswa/onboardp" name="form1" id="form1" method="post">
+                <input type="hidden" name="id_mon" id="id_mon" value="<?php //echo $c->id_pkl; ?>">
                  <div class="form-group">
                 <label for="exampleInputEmail1">Hasil :</label>
                   <div class="radio">
@@ -58,9 +70,19 @@
                 </div>
 
                 <button type="submit" class="btn btn-primary">Simpan</button>
-                <a href="<?php //echo base_url() ?>baak/ajuan_pkl"><button type="button" class="btn btn-success pull-left"><i class="fa fa-chevron-left"></i>Kembali</button></a>
+                <a href="<?php echo base_url() ?>mahasiswa/onboard"><button type="button" class="btn btn-success pull-left"><i class="fa fa-chevron-left"></i>Kembali</button></a>
                 </form>
-              <?php //} ?>
+              <?php } ?>
+                <?php }else{ ?>
+                <!-- peringatan jika belum boleh mendafatar  -->
+                <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h4><i class="icon fa fa-ban"></i> Alert!</h4>
+                    anda belum diizinkan untuk mendafatar Ujian Pra Prala karena belum melakukan PRADA
+                </div>
+            <!-- end peringatan jika belum boleh mendafatar  -->
+
+              <?php } ?>
           </div>
           <!-- /.box-body -->
         </div>
