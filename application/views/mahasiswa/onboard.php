@@ -7,14 +7,14 @@
           </div>
           <div class="box-body">
              <?php 
-             foreach($mhs as $c){ 
+             
               if ($mahasiswa->cekstatus('status_sb','iya', $c->nim) > 0 ) {
               # code... ?>
             <?php 
             // echo validation_errors(); 
             // echo $this->session->flashdata('success');
             // echo $this->session->flashdata('error');
-            
+            foreach($mhs_detail as $c){ 
               ?>
               <table>
                 <tr>
