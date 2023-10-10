@@ -72,7 +72,7 @@ class M_mahasiswa extends CI_Model {
         $query = $this->db->get();
 
         if ($query->num_rows() > 0) {
-            return $query->row();
+            return $query->result();
         } else {
             return null;
         }
