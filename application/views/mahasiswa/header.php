@@ -215,7 +215,7 @@
 
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url() ?>mahasiswa/pra"><i class="fa fa-circle-o"></i>Ujian Pra</a></li>
-            <li><a href="<?php echo base_url() ?>mahasiswa/onboard"><i class="fa fa-circle-o"></i>Onboard</a></li>
+            <li><a href="<?php echo base_url() ?>mahasiswa/onboard/<?php $this->session->userdata('user')?>"><i class="fa fa-circle-o"></i>Onboard</a></li>
             <li><a href="<?php echo base_url() ?>mahasiswa/offboard"><i class="fa fa-circle-o"></i>Offboard</a></li>
             <li><a href="<?php echo base_url() ?>mahasiswa/pasca"><i class="fa fa-circle-o"></i>Ujian Pasca</a></li>
             <li><a href="<?php echo base_url() ?>mahasiswa/trb"><i class="fa fa-circle-o"></i>Ujian TRB</a></li>
