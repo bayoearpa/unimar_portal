@@ -53,24 +53,26 @@
               <form action="<?php echo base_url() ?>mahasiswa/onboardp" name="form1" id="form1" method="post">
                 <input type="hidden" name="id_mon" id="id_mon" value="<?php //echo $c->id_pkl; ?>">
                  <div class="form-group">
-                <label for="exampleInputEmail1">Hasil :</label>
-                  <div class="radio">
-                    <label>
-                      <input type="radio" name="hasil" id="hasil" value="1">
-                      Telah Memenuhi Syarat
-                    </label>
+
+                   <div class="form-group">
+                        <label for="addtglllspra">Tanggal Lulus Pra:</label>
+                        <input type="date" class="form-control" id="addtglllspra" name="tglllspra">
+                    </div>
+                    <div class="form-group">
+                        <label for="addmbskl">Masa Berlaku SKL:</label>
+                        <input type="date" class="form-control" id="addmbskl" name="mbskl">
+                    </div>
+                     <div class="form-group">
+                        <label for="addmbskl">Nama Perusahaan:</label>
+                        <input type="date" class="form-control" id="nama_perusahaan" name="nama_perusahaan">
+                    </div>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="addstatpra" name="status_board" value="sudah">
+                            <label class="form-check-label" for="addstatpra">Dengan mencentang tombol berikut menandakan anda telah melakukan laporan Onboard kepada PPK UNIMAR AMNI Semarang.</label>
+                        </div>
+                    </div>
                   </div>
-                  <div class="radio">
-                    <label>
-                      <input type="radio" name="hasil" id="hasil" value="2">
-                      Belum Memenuhi Syarat
-                    </label>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label>Keterangan :</label>
-                  <textarea class="form-control" name="keterangan" id="keterangan" rows="3" placeholder="Masukkan Keterangan"></textarea>
-                </div>
 
                 <button type="submit" class="btn btn-primary">Simpan</button>
                 <a href="<?php echo base_url() ?>mahasiswa/onboard"><button type="button" class="btn btn-success pull-left"><i class="fa fa-chevron-left"></i>Kembali</button></a>
