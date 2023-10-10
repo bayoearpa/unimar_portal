@@ -70,7 +70,7 @@ class Mahasiswa extends CI_Controller {
 				$label => $status,
 				'nim' => $nim
 			);
-		$data = $this->m_mahasiswa->get_data($where, 'tbl_mon');
+		$data = $this->m_mahasiswa->get_data($where, 'tbl_mon')->num_rows();
 
 		return $data;
 	}
