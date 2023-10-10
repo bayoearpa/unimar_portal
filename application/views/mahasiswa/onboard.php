@@ -51,21 +51,26 @@
               </table>
               <hrpo>
               <form action="<?php echo base_url() ?>mahasiswa/onboardp" name="form1" id="form1" method="post">
-                <input type="hidden" name="id_mon" id="id_mon" value="<?php //echo $c->id_pkl; ?>">
+                <input type="hidden" name="id_mon" id="id_mon" value="<?php //echo $c->id_mon; ?>">
                  <div class="form-group">
-
                    <div class="form-group">
-                        <label for="addtglllspra">Tanggal Lulus Pra:</label>
-                        <input type="date" class="form-control" id="addtglllspra" name="tglllspra">
+                        <label for="editnamakapal">Nama Perusahaan:</label>
+                        <input type="text" class="form-control" id="editnamakapal" name="editnamakapal">
                     </div>
                     <div class="form-group">
-                        <label for="addmbskl">Masa Berlaku SKL:</label>
-                        <input type="date" class="form-control" id="addmbskl" name="mbskl">
+                        <label for="editnamakapal">Nama Kapal:</label>
+                        <input type="text" class="form-control" id="editnamakapal" name="editnamakapal">
                     </div>
-                     <div class="form-group">
-                        <label for="addmbskl">Nama Perusahaan:</label>
-                        <input type="date" class="form-control" id="nama_perusahaan" name="nama_perusahaan">
+                    <div class="form-group">
+                        <label for="edittglsignon">Tanggal Sign On:</label>
+                        <input type="date" class="form-control" id="edittglsignon" name="etglsignon">
                     </div>
+                   <div class="form-group">
+                        <label for="editufsignon">Upload File Sign On</label>
+                        <input type="file" class="form-control" id="editufsignon" name="eufsignon">
+                        <input type="hidden" id="editufsignon_existing" name="eufsignon_existing" value="<?php echo $i->upload_file_signon; ?>">
+                    </div>
+                    <div id="fileUploadStatus">Belum ada file yang diunggah.</div>
                     <div class="form-group">
                         <div class="form-check">
                             <input type="checkbox" class="form-check-input" id="addstatpra" name="status_board" value="sudah">
