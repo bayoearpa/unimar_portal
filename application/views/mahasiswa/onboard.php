@@ -51,7 +51,7 @@
               <hr>
               <div class="alert alert-warning alert-dismissible">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                    <h4><i class="icon fa fa-alert"></i> Harap diperhatikan!</h4>
+                    <h4><i class="icon fa fa-warning"></i> Harap diperhatikan!</h4>
                     Batas waktu taruna Prala mengirimkan laporan sign on ke kampus melalui email atau
                   link/website yang sudah disiapkan oleh Bagian PPK adalah maksimal 1 (satu) bulan
                   setelah taruna naik kapal.
@@ -88,7 +88,7 @@
                 <button type="submit" class="btn btn-primary">Simpan</button>
                <!--  <a href="<?php //echo base_url() ?>mahasiswa/onboard"><button type="button" class="btn btn-success pull-left"><i class="fa fa-chevron-left"></i>Kembali</button></a> -->
                 </form>
-                
+
 
               <?php } ?>
                 <?php }else{ ?>
