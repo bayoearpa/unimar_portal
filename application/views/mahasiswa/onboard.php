@@ -49,14 +49,13 @@
                 </tr>
               </table>
               <hr>
-              <div class="alert alert-info alert-dismissible">
+              <div class="alert alert-warning alert-dismissible">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                    <h4><i class="icon fa fa-ban"></i> Harap diperhatikan!</h4>
+                    <h4><i class="icon fa fa-alert"></i> Harap diperhatikan!</h4>
                     Batas waktu taruna Prala mengirimkan laporan sign on ke kampus melalui email atau
                   link/website yang sudah disiapkan oleh Bagian PPK adalah maksimal 1 (satu) bulan
                   setelah taruna naik kapal.
                 </div>
-              <li></li>
               <form action="<?php echo base_url() ?>mahasiswa/onboardp" name="form1" id="form1" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="id_mon" id="id_mon" value="<?php echo $c->id_mon; ?>">
                  <div class="form-group">
@@ -66,11 +65,11 @@
                     </div>
                     <div class="form-group">
                         <label for="editnamakapal">Nama Kapal:</label>
-                        <input type="text" class="form-control" id="editnamakapal" name="namakapal" value="<?php echo $c->id_mon; ?>">
+                        <input type="text" class="form-control" id="editnamakapal" name="namakapal" value="<?php echo $c->nama_kapal; ?>">
                     </div>
                     <div class="form-group">
                         <label for="edittglsignon">Tanggal Sign On:</label>
-                        <input type="date" class="form-control" id="edittglsignon" name="tglsignon" value="<?php echo $c->id_mon; ?>">
+                        <input type="date" class="form-control" id="edittglsignon" name="tglsignon" value="<?php echo $c->tgl_sign_on; ?>">
                     </div>
                    <div class="form-group">
                         <label for="editufsignon">Upload File Sign On</label>
@@ -89,6 +88,8 @@
                 <button type="submit" class="btn btn-primary">Simpan</button>
                <!--  <a href="<?php //echo base_url() ?>mahasiswa/onboard"><button type="button" class="btn btn-success pull-left"><i class="fa fa-chevron-left"></i>Kembali</button></a> -->
                 </form>
+                
+
               <?php } ?>
                 <?php }else{ ?>
                 <!-- peringatan jika belum boleh mendafatar  -->

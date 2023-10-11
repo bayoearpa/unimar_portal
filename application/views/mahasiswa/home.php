@@ -9,7 +9,9 @@
             <!-- /.box-header -->
             <div class="box-body">
 
-               <?php if ($this->session->userdata('prodi') == "92403" || $this->session->userdata('prodi') == "92402" ) {
+               <?php
+               $nim = $this->session->userdata('user');
+                if ($this->session->userdata('prodi') == "92403" || $this->session->userdata('prodi') == "92402" ) {
                 # code...
                 ?>
              <!-- roadmap start Nautik Teknik -->
@@ -47,7 +49,7 @@
             <!-- timeline item -->
             <li>
                 <?php 
-                if ($mahasiswa->cekstatus("status_prada","sudah") > 0) {
+                if ($mahasiswa->cekstatus("status_prada","sudah", $nim) > 0) {
                   # code...?>
                   <i class="fa fa-user bg-blue"></i>
                 <?php }else{?>
@@ -89,7 +91,7 @@
             <!-- timeline item -->
             <li>
               <?php 
-                if ($mahasiswa->cekstatus("status_d3","sudah") > 0) {
+                if ($mahasiswa->cekstatus("status_d3","sudah", $nim) > 0) {
                   # code...?>
                   <i class="fa fa-user bg-blue"></i>
                 <?php }else{?>
@@ -113,7 +115,7 @@
              <!-- timeline item -->
             <li>
               <?php 
-                if ($mahasiswa->cekstatus("pra_status","sudah") > 0) {
+                if ($mahasiswa->cekstatus("pra_status","sudah", $nim) > 0) {
                   # code...?>
                   <i class="fa fa-user bg-blue"></i>
                 <?php }else{?>
@@ -131,7 +133,7 @@
             <!-- timeline item -->
             <li>
               <?php 
-                if ($mahasiswa->cekstatus("status_sb","iya") > 0) {
+                if ($mahasiswa->cekstatus("status_sb","iya", $nim) > 0) {
                   # code...?>
                   <i class="fa fa-user bg-blue"></i>
                 <?php }else{?>
@@ -146,7 +148,7 @@
             <!-- timeline item -->
             <li>
              <?php 
-                if ($mahasiswa->cekstatus("status_board","onboard") > 0 || $mahasiswa->cekstatus("status_board","offboard") > 0) {
+                if ($mahasiswa->cekstatus("status_onboard","iya", $nim) > 0) {
                   # code...?>
                   <i class="fa fa-user bg-blue"></i>
                 <?php }else{?>
@@ -198,7 +200,7 @@
               <!-- timeline item -->
             <li>
               <?php 
-                if ($mahasiswa->cekstatus("status_board","offboard") > 0) {
+                if ($mahasiswa->cekstatus("status_offboard","iya", $nim) > 0) {
                   # code...?>
                   <i class="fa fa-user bg-blue"></i>
                 <?php }else{?>
@@ -229,7 +231,7 @@
             <!-- timeline item -->
             <li>
               <?php 
-                if ($mahasiswa->cekstatus("status_modeling","sudah") > 0) {
+                if ($mahasiswa->cekstatus("status_modeling","sudah", $nim) > 0) {
                   # code...?>
                   <i class="fa fa-user bg-blue"></i>
                 <?php }else{?>
@@ -264,7 +266,7 @@
             <!-- timeline item -->
             <li>
               <?php 
-                if ($mahasiswa->cekstatus("status_trb","sudah") > 0) {
+                if ($mahasiswa->cekstatus("status_trb","sudah", $nim) > 0) {
                   # code...?>
                   <i class="fa fa-user bg-blue"></i>
                 <?php }else{?>
@@ -300,7 +302,7 @@
             <!-- timeline item -->
             <li>
               <?php 
-                if ($mahasiswa->cekstatus("pasca_status","sudah") > 0) {
+                if ($mahasiswa->cekstatus("pasca_status","sudah", $nim) > 0) {
                   # code...?>
                   <i class="fa fa-user bg-blue"></i>
                 <?php }else{?>
