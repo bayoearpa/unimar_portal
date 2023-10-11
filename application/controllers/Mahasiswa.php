@@ -100,6 +100,7 @@ class Mahasiswa extends CI_Controller {
 		$this->load->view('mahasiswa/header');
 		$this->load->view('mahasiswa/onboard',$data);
 		$this->load->view('mahasiswa/footer');
+		$this->load->view('mahasiswa/onboard_js',$data);
 
 	}
 

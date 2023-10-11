@@ -208,7 +208,7 @@
           ?>
            <li class="treeview">
           <a href="#">
-            <i class="fa fa-share"></i> <span>Kepelautan</span>
+            <i class="fa fa-ship"></i> <span>Kepelautan</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>

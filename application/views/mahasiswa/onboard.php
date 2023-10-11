@@ -49,37 +49,45 @@
                 </tr>
               </table>
               <hr>
-              <form action="<?php echo base_url() ?>mahasiswa/onboardp" name="form1" id="form1" method="post">
-                <input type="hidden" name="id_mon" id="id_mon" value="<?php //echo $c->id_mon; ?>">
+              <div class="alert alert-info alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h4><i class="icon fa fa-ban"></i> Harap diperhatikan!</h4>
+                    Batas waktu taruna Prala mengirimkan laporan sign on ke kampus melalui email atau
+                  link/website yang sudah disiapkan oleh Bagian PPK adalah maksimal 1 (satu) bulan
+                  setelah taruna naik kapal.
+                </div>
+              <li></li>
+              <form action="<?php echo base_url() ?>mahasiswa/onboardp" name="form1" id="form1" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="id_mon" id="id_mon" value="<?php echo $c->id_mon; ?>">
                  <div class="form-group">
                    <div class="form-group">
                         <label for="editnamakapal">Nama Perusahaan:</label>
-                        <input type="text" class="form-control" id="editnamakapal" name="editnamakapal">
+                        <input type="text" class="form-control" id="editnamakapal" name="namaperusahaan" value="<?php echo $c->nama_perusahaan; ?>">
                     </div>
                     <div class="form-group">
                         <label for="editnamakapal">Nama Kapal:</label>
-                        <input type="text" class="form-control" id="editnamakapal" name="editnamakapal">
+                        <input type="text" class="form-control" id="editnamakapal" name="namakapal" value="<?php echo $c->id_mon; ?>">
                     </div>
                     <div class="form-group">
                         <label for="edittglsignon">Tanggal Sign On:</label>
-                        <input type="date" class="form-control" id="edittglsignon" name="etglsignon">
+                        <input type="date" class="form-control" id="edittglsignon" name="tglsignon" value="<?php echo $c->id_mon; ?>">
                     </div>
                    <div class="form-group">
                         <label for="editufsignon">Upload File Sign On</label>
-                        <input type="file" class="form-control" id="editufsignon" name="eufsignon">
-                        <input type="hidden" id="editufsignon_existing" name="eufsignon_existing" value="<?php echo $i->upload_file_signon; ?>">
+                        <input type="file" class="form-control" id="editufsignon" name="ufsignon">
+                        <input type="hidden" id="editufsignon_existing" name="ufsignon_existing" value="<?php echo $c->upload_file_signon; ?>">
                     </div>
                     <div id="fileUploadStatus">Belum ada file yang diunggah.</div>
                     <div class="form-group">
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="addstatpra" name="status_board" value="sudah">
+                            <input type="checkbox" class="form-check-input" id="addstatpra" name="status_board" value="sudah" required="harus dicentang!" <?php $cek = ($c->status_onboard == "iya") ? "Checked" : "" ; ?>>
                             <label class="form-check-label" for="addstatpra">Dengan mencentang tombol berikut menandakan anda telah melakukan laporan Onboard kepada PPK UNIMAR AMNI Semarang.</label>
                         </div>
                     </div>
                   </div>
 
                 <button type="submit" class="btn btn-primary">Simpan</button>
-                <a href="<?php echo base_url() ?>mahasiswa/onboard"><button type="button" class="btn btn-success pull-left"><i class="fa fa-chevron-left"></i>Kembali</button></a>
+               <!--  <a href="<?php //echo base_url() ?>mahasiswa/onboard"><button type="button" class="btn btn-success pull-left"><i class="fa fa-chevron-left"></i>Kembali</button></a> -->
                 </form>
               <?php } ?>
                 <?php }else{ ?>
