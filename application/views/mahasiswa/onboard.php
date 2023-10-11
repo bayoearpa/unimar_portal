@@ -6,7 +6,6 @@
             <h3 class="box-title">Form Laporan Onboard</h3>
           </div>
           <div class="box-body">
-            <h1><?php //echo $cek_mhs; ?></h1>
              <?php 
              
               if ($mahasiswa->cekstatus('status_sb','iya', $this->session->userdata('user')) > "0" ) {
@@ -17,7 +16,7 @@
             // echo $this->session->flashdata('error');
             foreach($mhs_detail as $c){ 
               ?>
-              <table>
+              <table width="30%">
                 <tr>
                   <td><label for="exampleInputEmail1">NIM</label></td>
                   <td><label for="exampleInputEmail1">:</label></td>
@@ -49,7 +48,7 @@
                   <td><label for="exampleInputEmail1"><?php echo $c->seafarercode; ?></label></td>
                 </tr>
               </table>
-              <hrpo>
+              <hr>
               <form action="<?php echo base_url() ?>mahasiswa/onboardp" name="form1" id="form1" method="post">
                 <input type="hidden" name="id_mon" id="id_mon" value="<?php //echo $c->id_mon; ?>">
                  <div class="form-group">
