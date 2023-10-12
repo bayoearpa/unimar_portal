@@ -96,6 +96,14 @@ class Mahasiswa extends CI_Controller {
 		# code...
 		$data['mahasiswa'] = $this;
 		$data['mhs_detail'] = $this->m_mahasiswa->get_data_mhs_detail($id);
+
+		foreach ($data['mhs_detail'] as $key) {
+			# code...
+			$tglSignOn = $key->tgl_sign_on;
+			$tglLapSignOn = $key->tgl_lap_sign_on;
+
+			$data['selisihHari'} = floor(($tglLapSignOn - $tglSignOn) / (60 * 60 * 24));	
+		}
 		
 		$this->load->view('mahasiswa/header');
 		$this->load->view('mahasiswa/onboard',$data);
