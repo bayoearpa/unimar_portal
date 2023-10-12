@@ -102,7 +102,7 @@ class Mahasiswa extends CI_Controller {
 			$tglSignOn = $key->tgl_sign_on;
 			$tglLapSignOn = $key->tgl_lap_sign_on;
 
-			$data['selisihHari'} = floor(($tglLapSignOn - $tglSignOn) / (60 * 60 * 24));	
+			$data['selisihHari'] = floor(($tglLapSignOn - $tglSignOn) / (60 * 60 * 24));	
 		}
 		
 		$this->load->view('mahasiswa/header');
