@@ -88,6 +88,17 @@
                 <button type="submit" class="btn btn-primary">Simpan</button>
                <!--  <a href="<?php //echo base_url() ?>mahasiswa/onboard"><button type="button" class="btn btn-success pull-left"><i class="fa fa-chevron-left"></i>Kembali</button></a> -->
                 </form>
+                <!-- cek status laporan -->
+                <?php if ($c->tgl_lap_sign_on > "0" && $selisihHari > 30) {
+                  # code... ?>
+                  <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h4><i class="icon fa fa-ban"></i> Alert!</h4>
+                    Anda terditeksi melakukan pelaporan lebih dari 30 Hari silakan menghubungi PPK!
+                </div>
+                <?php } ?>
+                
+                 <!-- .cek status laporan -->
               <?php } ?>
                 <?php }else{ ?>
                 <!-- peringatan jika belum boleh mendafatar  -->
