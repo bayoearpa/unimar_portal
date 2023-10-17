@@ -131,7 +131,7 @@ class Mahasiswa extends CI_Controller {
     	// Simpan data ke database (contoh)
             $data = array(
                 'status_onboard' => $status_board,
-                'nama_perusahaan' => $namaperusahaan
+                'nama_perusahaan' => $namaperusahaan,
                 'nama_kapal' => $nama_kapal,
                 'tgl_sign_on' => $tgl_signonf
             );
