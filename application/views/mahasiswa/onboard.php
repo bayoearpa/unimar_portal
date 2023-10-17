@@ -80,7 +80,7 @@
                     <div id="fileUploadStatus">Belum ada file yang diunggah.</div>
                     <div class="form-group">
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="addstatpra" name="status_onboard" value="sudah" required="harus dicentang!" <?php $cek = ($c->status_onboard == "iya") ? "Checked" : "" ; ?>>
+                            <input type="checkbox" class="form-check-input" id="status_onboard" name="status_onboard" value="iya" required="harus dicentang!" <?php $cek = ($c->status_onboard == "iya") ? "Checked" : "" ; ?>>
                             <label class="form-check-label" for="addstatpra">Dengan mencentang tombol berikut menandakan anda telah melakukan laporan Onboard kepada PPK UNIMAR AMNI Semarang.</label>
                         </div>
                     </div>
@@ -93,7 +93,7 @@
                 <?php if ($c->tgl_lap_sign_on > "0") {
                   # code... ?>
                   <!-- Tombol Lihat File Sign On -->
-                    <?php if ($i->upload_file_signon) { ?>
+                    <?php if ($c->upload_file_signon) { ?>
                         <button class="btn btn-info view-file-button" data-filename="<?php echo $c->upload_file_signon; ?>">Lihat</button>
                     <?php } else { ?>
                         <!-- Tampilkan pesan jika file tidak ada -->
@@ -107,7 +107,7 @@
                 <?php }elseif ($c->tgl_lap_sign_on > "0" && $selisihHari > 30) {
                   # code... ?>
                   <!-- Tombol Lihat File Sign On -->
-                    <?php if ($i->upload_file_signon) { ?>
+                    <?php if ($c->upload_file_signon) { ?>
                         <button class="btn btn-info view-file-button" data-filename="<?php echo $c->upload_file_signon; ?>">Lihat</button>
                     <?php } else { ?>
                         <!-- Tampilkan pesan jika file tidak ada -->

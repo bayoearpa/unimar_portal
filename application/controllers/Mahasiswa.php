@@ -127,6 +127,7 @@ class Mahasiswa extends CI_Controller {
 			$status_onboard = $this->input->post('status_onboard');
 			$nama_kapal = $this->input->post('namakapal');
 			$tgl_signon = $this->input->post('tglsignon');
+			$tgl_lap_signon = date('Y-m-d');
 
 		    $tgl_signonf = date('Y-m-d', strtotime($tgl_signon)); // Ubah format tanggal
     	// Simpan data ke database (contoh)
@@ -134,7 +135,8 @@ class Mahasiswa extends CI_Controller {
                 'status_onboard' => $status_onboard,
                 'nama_perusahaan' => $namaperusahaan,
                 'nama_kapal' => $nama_kapal,
-                'tgl_sign_on' => $tgl_signonf
+                'tgl_sign_on' => $tgl_signonf,
+                'tgl_lap_signon' => $tgl_lap_signon
             );
             $proses_edt = $this->m_mahasiswa->update_data($where,$data,'tbl_mon');
         if($proses_edt){    
@@ -154,6 +156,7 @@ class Mahasiswa extends CI_Controller {
 		$status_onboard = $this->input->post('status_onboard');
 		$nama_kapal = $this->input->post('namakapal');
 		$tgl_signon = $this->input->post('tglsignon');
+		$tgl_lap_signon = date('Y-m-d');
 
 
 	    $tgl_signonf = date('Y-m-d', strtotime($tgl_signon)); // Ubah format tanggal
@@ -175,6 +178,7 @@ class Mahasiswa extends CI_Controller {
                 'nama_perusahaan' => $namaperusahaan,
                 'nama_kapal' => $nama_kapal,
                 'tgl_sign_on' => $tgl_signonf,
+                'tgl_lap_signon' => $tgl_lap_signon,
                 'upload_file_signon' => $file_name
             );
             $this->m_mahasiswa->update_data($where,$data,'tbl_mon');
