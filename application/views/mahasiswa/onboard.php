@@ -58,14 +58,15 @@
                 </div>
               <form action="<?php echo base_url() ?>mahasiswa/onboardp" name="form1" id="form1" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="id_mon" id="id_mon" value="<?php echo $c->id_mon; ?>">
+                <input type="hidden" name="nim" id="nim" value="<?php echo $c->nim; ?>">
                  <div class="form-group">
                    <div class="form-group">
                         <label for="editnamakapal">Nama Perusahaan:</label>
-                        <input type="text" class="form-control" id="editnamakapal" name="namaperusahaan" value="<?php echo $c->nama_perusahaan; ?>">
+                        <input type="text" class="form-control" id="namaperusahaan" name="namaperusahaan" value="<?php echo $c->nama_perusahaan; ?>">
                     </div>
                     <div class="form-group">
                         <label for="editnamakapal">Nama Kapal:</label>
-                        <input type="text" class="form-control" id="editnamakapal" name="namakapal" value="<?php echo $c->nama_kapal; ?>">
+                        <input type="text" class="form-control" id="namakapal" name="namakapal" value="<?php echo $c->nama_kapal; ?>">
                     </div>
                     <div class="form-group">
                         <label for="edittglsignon">Tanggal Sign On:</label>
@@ -79,7 +80,7 @@
                     <div id="fileUploadStatus">Belum ada file yang diunggah.</div>
                     <div class="form-group">
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="addstatpra" name="status_board" value="sudah" required="harus dicentang!" <?php $cek = ($c->status_onboard == "iya") ? "Checked" : "" ; ?>>
+                            <input type="checkbox" class="form-check-input" id="addstatpra" name="status_onboard" value="sudah" required="harus dicentang!" <?php $cek = ($c->status_onboard == "iya") ? "Checked" : "" ; ?>>
                             <label class="form-check-label" for="addstatpra">Dengan mencentang tombol berikut menandakan anda telah melakukan laporan Onboard kepada PPK UNIMAR AMNI Semarang.</label>
                         </div>
                     </div>
@@ -89,13 +90,20 @@
                <!--  <a href="<?php //echo base_url() ?>mahasiswa/onboard"><button type="button" class="btn btn-success pull-left"><i class="fa fa-chevron-left"></i>Kembali</button></a> -->
                 </form>
                 <!-- cek status laporan -->
-                <?php if ($c->tgl_lap_sign_on > "0" && $selisihHari > 30) {
+                <?php if ($c->tgl_lap_sign_on > "0") {
+                  # code... ?>
+                  <div class="alert alert-info alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h4><i class="icon fa fa-ban"></i> Alert!</h4>
+                    Anda telah melakukan pelaporan onboard.
+                  </div>
+                <?php }elseif ($c->tgl_lap_sign_on > "0" && $selisihHari > 30) {
                   # code... ?>
                   <div class="alert alert-danger alert-dismissible">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                     <h4><i class="icon fa fa-ban"></i> Alert!</h4>
                     Anda terditeksi melakukan pelaporan lebih dari 30 Hari silakan menghubungi PPK!
-                </div>
+                   </div>
                 <?php } ?>
                 
                  <!-- .cek status laporan -->

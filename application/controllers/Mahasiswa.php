@@ -111,6 +111,82 @@ class Mahasiswa extends CI_Controller {
 		$this->load->view('mahasiswa/onboard_js',$data);
 
 	}
+	public function onboardp()
+	{
+       /// cek file
+    $cekfile = $this->input->post('ufsignon_existing');
+    if ($cekfile > 0) {
+    	# code...
+    	 // Tangani data yang dikirimkan dari formulir
+			$where = array(
+		        'id_mon' => $this->input->post('id_mon'),
+		    );
+			$nim = $this->input->post('nim');
+			$namaperusahaan = $this->input->post('namaperusahaan');
+			$status_onboard = $this->input->post('status_onboard');
+			$nama_kapal = $this->input->post('namakapal');
+			$tgl_signon = $this->input->post('tglsignon');
+
+		    $tgl_signonf = date('Y-m-d', strtotime($tgl_signon)); // Ubah format tanggal
+    	// Simpan data ke database (contoh)
+            $data = array(
+                'status_onboard' => $status_board,
+                'nama_perusahaan' => $namaperusahaan
+                'nama_kapal' => $nama_kapal,
+                'tgl_sign_on' => $tgl_signonf
+            );
+            $proses_edt = $this->m_portal->update_data($where,$data,'tbl_mon');
+        if($proses_edt){    
+             redirect(base_url().'mahasiswa/onboard/'.$nim);
+        } else {
+             redirect(base_url().'mahasiswa/onboard/'.$nim);
+        }
+
+    }else{
+    
+    	 // Tangani data yang dikirimkan dari formulir
+		$where = array(
+	        'id_mon' => $this->input->post('id_mon'),
+	    );
+		$nim = $this->input->post('nim');
+		$namaperusahaan = $this->input->post('namaperusahaan');
+		$status_onboard = $this->input->post('status_onboard');
+		$nama_kapal = $this->input->post('namakapal');
+		$tgl_signon = $this->input->post('tglsignon');
+
+
+	    $tgl_signonf = date('Y-m-d', strtotime($tgl_signon)); // Ubah format tanggal
+    // Tangani unggahan file
+        $config['upload_path'] = './assets/monitoring/onboard';
+        $config['max_size'] = 1048;
+        $config['allowed_types'] = 'pdf'; // Sesuaikan dengan jenis file yang diizinkan
+        $config['file_name'] = $nim.'_signon'; // Nama file yang diunggah sesuai NIM
+        $this->load->library('upload', $config);
+
+        if ($this->upload->do_upload('ufsignon')) {
+            // Jika unggahan berhasil
+            $upload_data = $this->upload->data();
+            $file_name = $upload_data['file_name'];
+
+            // Simpan data ke database (contoh)
+            $data = array(
+               'status_onboard' => $status_board,
+                'nama_perusahaan' => $namaperusahaan
+                'nama_kapal' => $nama_kapal,
+                'tgl_sign_on' => $tgl_signonf
+                'upload_file_signon' => $file_name
+            );
+            $this->m_portal->update_data($where,$data,'tbl_mon');
+
+            redirect(base_url().'mahasiswa/onboard/'.$nim);
+        } else {
+            redirect(base_url().'mahasiswa/onboard/'.$nim);
+        }
+
+        ///else eufsignon_existing == 0
+       }
+    
+	} 
 
 }
 
