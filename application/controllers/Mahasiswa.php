@@ -115,6 +115,7 @@ class Mahasiswa extends CI_Controller {
 	{
        /// cek file
     $cekfile = $this->input->post('ufsignon_existing');
+    $nimc = $this->input->post('nim');
     if ($cekfile > 0) {
     	# code...
     	 // Tangani data yang dikirimkan dari formulir
@@ -178,9 +179,9 @@ class Mahasiswa extends CI_Controller {
             );
             $this->m_mahasiswa->update_data($where,$data,'tbl_mon');
 
-            redirect(base_url().'mahasiswa/onboard/'.$nim);
+            redirect(base_url().'mahasiswa/onboard/'.$nimc);
         } else {
-            redirect(base_url().'mahasiswa/onboard/'.$nim);
+            redirect(base_url().'mahasiswa/onboard/'.$nimc);
         }
 
         ///else eufsignon_existing == 0
