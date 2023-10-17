@@ -173,7 +173,7 @@ class Mahasiswa extends CI_Controller {
                'status_onboard' => $status_board,
                 'nama_perusahaan' => $namaperusahaan,
                 'nama_kapal' => $nama_kapal,
-                'tgl_sign_on' => $tgl_signonf
+                'tgl_sign_on' => $tgl_signonf,
                 'upload_file_signon' => $file_name
             );
             $this->m_portal->update_data($where,$data,'tbl_mon');
