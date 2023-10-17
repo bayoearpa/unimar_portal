@@ -135,7 +135,7 @@ class Mahasiswa extends CI_Controller {
                 'nama_kapal' => $nama_kapal,
                 'tgl_sign_on' => $tgl_signonf
             );
-            $proses_edt = $this->m_portal->update_data($where,$data,'tbl_mon');
+            $proses_edt = $this->m_mahasiswa->update_data($where,$data,'tbl_mon');
         if($proses_edt){    
              redirect(base_url().'mahasiswa/onboard/'.$nim);
         } else {
@@ -176,7 +176,7 @@ class Mahasiswa extends CI_Controller {
                 'tgl_sign_on' => $tgl_signonf,
                 'upload_file_signon' => $file_name
             );
-            $this->m_portal->update_data($where,$data,'tbl_mon');
+            $this->m_mahasiswa->update_data($where,$data,'tbl_mon');
 
             redirect(base_url().'mahasiswa/onboard/'.$nim);
         } else {
