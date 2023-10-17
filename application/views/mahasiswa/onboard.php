@@ -94,7 +94,7 @@
                   # code... ?>
                   <!-- Tombol Lihat File Sign On -->
                     <?php if ($c->upload_file_signon) { ?>
-                        <button class="btn btn-info view-file-button" data-filename="<?php echo $c->upload_file_signon; ?>">Lihat</button>
+                        <button class="btn btn-succes view-file-button" data-filename="<?php echo $c->upload_file_signon; ?>">Lihat file onboard</button>
                     <?php } else { ?>
                         <!-- Tampilkan pesan jika file tidak ada -->
                         File tidak tersedia
@@ -108,7 +108,7 @@
                   # code... ?>
                   <!-- Tombol Lihat File Sign On -->
                     <?php if ($c->upload_file_signon) { ?>
-                        <button class="btn btn-info view-file-button" data-filename="<?php echo $c->upload_file_signon; ?>">Lihat</button>
+                        <button class="btn btn-succes view-file-button" data-filename="<?php echo $c->upload_file_signon; ?>">Lihat file onboard</button>
                     <?php } else { ?>
                         <!-- Tampilkan pesan jika file tidak ada -->
                         File tidak tersedia
