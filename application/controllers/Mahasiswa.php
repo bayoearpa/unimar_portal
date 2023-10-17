@@ -130,7 +130,7 @@ class Mahasiswa extends CI_Controller {
 		    $tgl_signonf = date('Y-m-d', strtotime($tgl_signon)); // Ubah format tanggal
     	// Simpan data ke database (contoh)
             $data = array(
-                'status_onboard' => $status_board,
+                'status_onboard' => $status_onboard,
                 'nama_perusahaan' => $namaperusahaan,
                 'nama_kapal' => $nama_kapal,
                 'tgl_sign_on' => $tgl_signonf
@@ -170,7 +170,7 @@ class Mahasiswa extends CI_Controller {
 
             // Simpan data ke database (contoh)
             $data = array(
-               'status_onboard' => $status_board,
+               'status_onboard' => $status_onboard,
                 'nama_perusahaan' => $namaperusahaan,
                 'nama_kapal' => $nama_kapal,
                 'tgl_sign_on' => $tgl_signonf,

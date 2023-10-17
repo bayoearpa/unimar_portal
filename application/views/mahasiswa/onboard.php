@@ -92,13 +92,27 @@
                 <!-- cek status laporan -->
                 <?php if ($c->tgl_lap_sign_on > "0") {
                   # code... ?>
+                  <!-- Tombol Lihat File Sign On -->
+                    <?php if ($i->upload_file_signon) { ?>
+                        <button class="btn btn-info view-file-button" data-filename="<?php echo $c->upload_file_signon; ?>">Lihat</button>
+                    <?php } else { ?>
+                        <!-- Tampilkan pesan jika file tidak ada -->
+                        File tidak tersedia
+                    <?php } ?>
                   <div class="alert alert-info alert-dismissible">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                    <h4><i class="icon fa fa-ban"></i> Alert!</h4>
+                    <h4><i class="icon fa fa-thumbs-o-up"></i> Terima Kasih!</h4>
                     Anda telah melakukan pelaporan onboard.
                   </div>
                 <?php }elseif ($c->tgl_lap_sign_on > "0" && $selisihHari > 30) {
                   # code... ?>
+                  <!-- Tombol Lihat File Sign On -->
+                    <?php if ($i->upload_file_signon) { ?>
+                        <button class="btn btn-info view-file-button" data-filename="<?php echo $c->upload_file_signon; ?>">Lihat</button>
+                    <?php } else { ?>
+                        <!-- Tampilkan pesan jika file tidak ada -->
+                        File tidak tersedia
+                    <?php } ?>
                   <div class="alert alert-danger alert-dismissible">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                     <h4><i class="icon fa fa-ban"></i> Alert!</h4>
