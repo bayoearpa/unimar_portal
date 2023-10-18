@@ -681,7 +681,6 @@ function get_data_formon_mhsall_d3($limit, $offset)
         tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
         tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
         tbl_mon.pasca_status as pasca_status,
-	        tbl_mon.status_board,
 	        tbl_mon.nama_kapal,
 	        tbl_mon.tgl_sign_on,
 	        tbl_mon.upload_file_signon,
@@ -725,7 +724,6 @@ function get_data_formon_mhsyear_d3($year)
 	        tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
 	        tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
 	        tbl_mon.pasca_status as pasca_status,
-	        tbl_mon.status_board,
 	        tbl_mon.nama_kapal,
 	        tbl_mon.tgl_sign_on,
 	        tbl_mon.upload_file_signon,
@@ -758,7 +756,6 @@ function get_data_formon_mhsprodi_d3($program_studi)
 	        tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
 	        tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
 	        tbl_mon.pasca_status as pasca_status,
-	        tbl_mon.status_board,
 	        tbl_mon.nama_kapal,
 	        tbl_mon.tgl_sign_on,
 	        tbl_mon.upload_file_signon,
@@ -791,7 +788,6 @@ function get_data_formon_mhsyearnprodi_d3($year, $program_studi)
 	        tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
 	        tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
 	        tbl_mon.pasca_status as pasca_status,
-	        tbl_mon.status_board,
 	        tbl_mon.nama_kapal,
 	        tbl_mon.tgl_sign_on,
 	        tbl_mon.upload_file_signon,
@@ -826,7 +822,6 @@ function get_data_formon_mhsall_sb($limit, $offset)
         tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
         tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
         tbl_mon.pasca_status as pasca_status,
-	        tbl_mon.status_board,
 	        tbl_mon.nama_kapal,
 	        tbl_mon.tgl_sign_on,
 	        tbl_mon.upload_file_signon,
@@ -871,7 +866,6 @@ function get_data_formon_mhsyear_sb($year)
 	        tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
 	        tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
 	        tbl_mon.pasca_status as pasca_status,
-	        tbl_mon.status_board,
 	        tbl_mon.nama_kapal,
 	        tbl_mon.tgl_sign_on,
 	        tbl_mon.upload_file_signon,
@@ -905,7 +899,6 @@ function get_data_formon_mhsprodi_sb($program_studi)
 	        tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
 	        tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
 	        tbl_mon.pasca_status as pasca_status,
-	        tbl_mon.status_board,
 	        tbl_mon.nama_kapal,
 	        tbl_mon.tgl_sign_on,
 	        tbl_mon.upload_file_signon,
@@ -939,7 +932,6 @@ function get_data_formon_mhsyearnprodi_sb($year, $program_studi)
 	        tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
 	        tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
 	        tbl_mon.pasca_status as pasca_status,
-	        tbl_mon.status_board,
 	        tbl_mon.nama_kapal,
 	        tbl_mon.tgl_sign_on,
 	        tbl_mon.upload_file_signon,
@@ -975,7 +967,7 @@ function get_data_formon_mhsall_ob($limit, $offset)
         tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
         tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
         tbl_mon.pasca_status as pasca_status,
-	        tbl_mon.status_board,
+	        tbl_mon.status_onboard,
 	        tbl_mon.nama_kapal,
 	        tbl_mon.tgl_sign_on,
 	        tbl_mon.upload_file_signon,
@@ -985,7 +977,7 @@ function get_data_formon_mhsall_ob($limit, $offset)
 	    $this->db->join('tmst_program_studi', 'tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi', 'inner');
 	    $this->db->join('tbl_mon','tmst_mahasiswa.NIM = tbl_mon.nim','inner');
 	    $this->db->where('Tahun_masuk >=', '2018');
-	    $this->db->where('tbl_mon.status_board >=', 'onboard');
+	    $this->db->where('tbl_mon.status_onboard >=', 'iya');
 	    $this->db->where_in('tmst_mahasiswa.Kode_program_studi', array('92403', '92402'));
 	    // $this->db->limit($limit, $offset); // Apply pagination
 	    $query = $this->db->get();
@@ -1019,7 +1011,7 @@ function get_data_formon_mhsyear_ob($year)
 	        tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
 	        tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
 	        tbl_mon.pasca_status as pasca_status,
-	        tbl_mon.status_board,
+	        tbl_mon.status_onboard,
 	        tbl_mon.nama_kapal,
 	        tbl_mon.tgl_sign_on,
 	        tbl_mon.upload_file_signon,
@@ -1029,7 +1021,7 @@ function get_data_formon_mhsyear_ob($year)
         $this->db->join('tmst_program_studi','tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi','inner');
         $this->db->join('tbl_mon','tmst_mahasiswa.NIM = tbl_mon.nim','inner');
         $this->db->where('YEAR(Tanggal_masuk)', $year);
-        $this->db->where('tbl_mon.status_board >=', 'onboard');
+        $this->db->where('tbl_mon.status_onboard >=', 'iya');
         $this->db->where_in('tmst_mahasiswa.Kode_program_studi', array('92403', '92402'));
         $query = $this->db->get();
         return $query->result();
@@ -1052,7 +1044,7 @@ function get_data_formon_mhsprodi_ob($program_studi)
 	        tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
 	        tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
 	        tbl_mon.pasca_status as pasca_status,
-	        tbl_mon.status_board,
+	        tbl_mon.status_onboard,
 	        tbl_mon.nama_kapal,
 	        tbl_mon.tgl_sign_on,
 	        tbl_mon.upload_file_signon,
@@ -1062,7 +1054,7 @@ function get_data_formon_mhsprodi_ob($program_studi)
         $this->db->join('tmst_program_studi','tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi','inner');
         $this->db->join('tbl_mon','tmst_mahasiswa.NIM = tbl_mon.nim','inner');
         $this->db->where('Tahun_masuk >=', '2018');
-        $this->db->where('tbl_mon.status_board >=', 'onboard');
+        $this->db->where('tbl_mon.status_onboard >=', 'iya');
         $this->db->where('tmst_mahasiswa.Kode_program_studi', $program_studi);
         $query = $this->db->get();
         return $query->result();
@@ -1085,7 +1077,7 @@ function get_data_formon_mhsyearnprodi_ob($year, $program_studi)
 	        tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
 	        tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
 	        tbl_mon.pasca_status as pasca_status,
-	        tbl_mon.status_board,
+	        tbl_mon.status_onboard,
 	        tbl_mon.nama_kapal,
 	        tbl_mon.tgl_sign_on,
 	        tbl_mon.upload_file_signon,
@@ -1095,7 +1087,7 @@ function get_data_formon_mhsyearnprodi_ob($year, $program_studi)
         $this->db->join('tmst_program_studi','tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi','inner');
         $this->db->join('tbl_mon','tmst_mahasiswa.NIM = tbl_mon.nim','inner');
         $this->db->where('YEAR(Tanggal_masuk)', $year);
-        $this->db->where('tbl_mon.status_board >=', 'onboard');
+        $this->db->where('tbl_mon.status_onboard >=', 'iya');
         $this->db->where('tmst_mahasiswa.Kode_program_studi', $program_studi);
         $query = $this->db->get();
         return $query->result();
@@ -1120,7 +1112,6 @@ function get_data_formon_mhsall_pasca($limit, $offset)
         tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
         tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
         tbl_mon.pasca_status as pasca_status,
-	        tbl_mon.status_board,
 	        tbl_mon.nama_kapal,
 	        tbl_mon.tgl_sign_on,
 	        tbl_mon.upload_file_signon,
@@ -1164,7 +1155,6 @@ function get_data_formon_mhsyear_pasca($year)
 	        tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
 	        tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
 	        tbl_mon.pasca_status as pasca_status,
-	        tbl_mon.status_board,
 	        tbl_mon.nama_kapal,
 	        tbl_mon.tgl_sign_on,
 	        tbl_mon.upload_file_signon,
@@ -1197,7 +1187,6 @@ function get_data_formon_mhsprodi_pasca($program_studi)
 	        tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
 	        tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
 	        tbl_mon.pasca_status as pasca_status,
-	        tbl_mon.status_board,
 	        tbl_mon.nama_kapal,
 	        tbl_mon.tgl_sign_on,
 	        tbl_mon.upload_file_signon,
@@ -1230,7 +1219,6 @@ function get_data_formon_mhsyearnprodi_pasca($year, $program_studi)
 	        tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
 	        tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
 	        tbl_mon.pasca_status as pasca_status,
-	        tbl_mon.status_board,
 	        tbl_mon.nama_kapal,
 	        tbl_mon.tgl_sign_on,
 	        tbl_mon.upload_file_signon,
@@ -1265,7 +1253,6 @@ function get_data_formon_mhsall_pra($limit, $offset)
         tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
         tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
         tbl_mon.pasca_status as pasca_status,
-	        tbl_mon.status_board,
 	        tbl_mon.nama_kapal,
 	        tbl_mon.tgl_sign_on,
 	        tbl_mon.upload_file_signon,
@@ -1309,7 +1296,6 @@ function get_data_formon_mhsyear_pra($year)
 	        tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
 	        tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
 	        tbl_mon.pasca_status as pasca_status,
-	        tbl_mon.status_board,
 	        tbl_mon.nama_kapal,
 	        tbl_mon.tgl_sign_on,
 	        tbl_mon.upload_file_signon,
@@ -1342,7 +1328,6 @@ function get_data_formon_mhsprodi_pra($program_studi)
 	        tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
 	        tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
 	        tbl_mon.pasca_status as pasca_status,
-	        tbl_mon.status_board,
 	        tbl_mon.nama_kapal,
 	        tbl_mon.tgl_sign_on,
 	        tbl_mon.upload_file_signon,
@@ -1375,7 +1360,6 @@ function get_data_formon_mhsyearnprodi_pra($year, $program_studi)
 	        tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
 	        tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
 	        tbl_mon.pasca_status as pasca_status,
-	        tbl_mon.status_board,
 	        tbl_mon.nama_kapal,
 	        tbl_mon.tgl_sign_on,
 	        tbl_mon.upload_file_signon,
@@ -1410,7 +1394,6 @@ function get_data_formon_mhs($id)
 	        tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
 	        tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
 	        tbl_mon.pasca_status as pasca_status,
-	        tbl_mon.status_board,
 	        tbl_mon.nama_kapal,
 	        tbl_mon.tgl_sign_on,
 	        tbl_mon.upload_file_signon,
@@ -1466,7 +1449,7 @@ function get_data_formon_mhs($id)
         $this->db->select('COUNT(*) as total');
         $this->db->from('tbl_mon AS m');
         $this->db->join('tmst_mahasiswa AS s', 'm.nim = s.NIM', 'inner');
-        $this->db->where('m.status_board', 'onboard');
+        $this->db->where('m.status_onboard', 'iya');
         $this->db->where('s.Kode_program_studi', $programStudi);
         $this->db->where('s.Tahun_masuk', $tahunMasuk);
         $query = $this->db->get();
@@ -1478,7 +1461,7 @@ function get_data_formon_mhs($id)
         $this->db->select('COUNT(*) as total');
         $this->db->from('tbl_mon AS m');
         $this->db->join('tmst_mahasiswa AS s', 'm.nim = s.NIM', 'inner');
-        $this->db->where('m.status_board', 'offboard');
+        $this->db->where('m.status_offboard', 'iya');
         $this->db->where('s.Kode_program_studi', $programStudi);
         $this->db->where('s.Tahun_masuk', $tahunMasuk);
         $query = $this->db->get();
