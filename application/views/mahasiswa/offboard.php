@@ -100,7 +100,7 @@
                 <?php if ($c->tgl_lap_sign_off > "0") {
                   # code... ?>
                   <!-- Tombol Lihat File Sign On -->
-                    <?php if ($c->upload_file_signoff) { ?>
+                    <?php if ($c->upload_file_signoff > "0") { ?>
                         <button class="btn btn-success view-file-button" data-filename="<?php echo $c->upload_file_signoff; ?>">Lihat file offboard</button>
                     <?php } else { ?>
                         <!-- Tampilkan pesan jika file tidak ada -->
