@@ -97,7 +97,7 @@
                <!--  <a href="<?php //echo base_url() ?>mahasiswa/onboard"><button type="button" class="btn btn-success pull-left"><i class="fa fa-chevron-left"></i>Kembali</button></a> -->
                 </form>
                 <!-- cek status laporan -->
-                <?php if ($c->tgl_lap_sign_off > "0") {
+                <?php if ($c->status_offboard > "none" || $c->status_offboard > "") {
                   # code... ?>
                   <!-- Tombol Lihat File Sign On -->
                     <?php if ($c->upload_file_signoff > "0") { ?>
