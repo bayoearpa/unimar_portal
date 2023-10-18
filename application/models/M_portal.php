@@ -564,6 +564,7 @@ function get_data_formon_mhsall($limit, $offset)
         tbl_mon.seafarercode as seafarercode,
         tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
         tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
+        tbl_mon.status_prada as status_prada,
         tbl_mon.pasca_status as pasca_status');
 	    $this->db->from('tmst_mahasiswa');
 	    $this->db->join('tmst_program_studi', 'tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi', 'inner');
@@ -601,6 +602,7 @@ function get_data_formon_mhsyear($year)
 	        tbl_mon.seafarercode as seafarercode,
 	        tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
 	        tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
+	        tbl_mon.status_prada as status_prada,
 	        tbl_mon.pasca_status as pasca_status');
         $this->db->from('tmst_mahasiswa');
         $this->db->join('tmst_program_studi','tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi','inner');
@@ -627,6 +629,7 @@ function get_data_formon_mhsprodi($program_studi)
 	        tbl_mon.seafarercode as seafarercode,
 	        tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
 	        tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
+	        tbl_mon.status_prada as status_prada,
 	        tbl_mon.pasca_status as pasca_status');
         $this->db->from('tmst_mahasiswa');
         $this->db->join('tmst_program_studi','tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi','inner');
@@ -653,6 +656,7 @@ function get_data_formon_mhsyearnprodi($year, $program_studi)
 	        tbl_mon.seafarercode as seafarercode,
 	        tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
 	        tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
+	        tbl_mon.status_prada as status_prada,
 	        tbl_mon.pasca_status as pasca_status');
         $this->db->from('tmst_mahasiswa');
         $this->db->join('tmst_program_studi','tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi','inner');
