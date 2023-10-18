@@ -83,7 +83,7 @@
                 <div class="alert alert-danger alert-dismissible">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                     <h4><i class="icon fa fa-ban"></i> Alert!</h4>
-                    anda belum diizinkan untuk mengisi form onboard karena belum ujian Pra Prala
+                    anda belum diizinkan untuk mengisi form Laporan TRB karena belum ujian Modeling
                 </div>
             <!-- end peringatan jika belum boleh mendafatar  -->
 

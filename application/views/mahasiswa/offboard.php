@@ -67,7 +67,7 @@
               <div class="alert alert-warning alert-dismissible">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                     <h4><i class="icon fa fa-warning"></i> Harap diperhatikan!</h4>
-                    Batas waktu taruna Prala mengirimkan laporan sign on ke kampus melalui email atau
+                    Batas waktu taruna Prala mengirimkan laporan sign off ke kampus melalui email atau
                   link/website yang sudah disiapkan oleh Bagian PPK adalah maksimal 15 Hari
                   setelah taruna turun kapal.
                 </div>
@@ -97,7 +97,7 @@
                <!--  <a href="<?php //echo base_url() ?>mahasiswa/onboard"><button type="button" class="btn btn-success pull-left"><i class="fa fa-chevron-left"></i>Kembali</button></a> -->
                 </form>
                 <!-- cek status laporan -->
-                <?php if ($c->status_offboard > "iya") {
+                <?php if ($c->status_offboard == "iya") {
                   # code... ?>
                   <!-- Tombol Lihat File Sign On -->
                     <?php if ($c->upload_file_signoff > "0") { ?>
@@ -111,7 +111,7 @@
                     <h4><i class="icon fa fa-thumbs-o-up"></i> Terima Kasih!</h4>
                     Anda telah melakukan pelaporan offboard.
                   </div>
-                <?php }elseif ($c->status_offboard > "iya" && $selisihHari > 15) {
+                <?php }elseif ($c->status_offboard == "iya" && $selisihHari > 15) {
                   # code... ?>
                   <!-- Tombol Lihat File Sign On -->
                     <?php if ($c->upload_file_signoff) { ?>
