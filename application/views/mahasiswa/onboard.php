@@ -80,7 +80,7 @@
                     <div id="fileUploadStatus">Belum ada file yang diunggah.</div>
                     <div class="form-group">
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="status_onboard" name="status_onboard" value="iya" required="harus dicentang!" <?php $cek = ($c->status_onboard == "iya") ? echo "Checked" : "" ; ?>>
+                            <input type="checkbox" class="form-check-input" id="status_onboard" name="status_onboard" value="iya" required="harus dicentang!" <?php echo $cek = ($c->status_onboard == "iya") ? "Checked" : "" ; ?>>
                             <label class="form-check-label" for="addstatpra">Dengan mencentang tombol berikut menandakan anda telah melakukan laporan Onboard kepada PPK UNIMAR AMNI Semarang.</label>
                         </div>
                     </div>
