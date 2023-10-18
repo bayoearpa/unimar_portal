@@ -46,6 +46,7 @@
                   <tr>
                 <td><?php echo $i->nim; ?></td>
                 <td><?php echo $i->nama; ?></td>
+                <td><?php echo $i->prodi; ?></td>
                 <td><?php echo $i->status_prada; ?></td>
                 <td>
                       <!-- Tombol Tambah/Edit -->
