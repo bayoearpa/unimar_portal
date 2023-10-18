@@ -273,7 +273,7 @@ class Mahasiswa extends CI_Controller {
               	'status_offboard' => $status_offboard,
               	'status_onboard' => 'tidak',
                 'tgl_sign_off' => $tgl_signofff,
-                'tgl_lap_sign_off' => $tgl_lap_signoff
+                'tgl_lap_sign_off' => $tgl_lap_signoff,
                 'upload_file_signon' => $file_name
             );
             $this->m_mahasiswa->update_data($where,$data,'tbl_mon');
