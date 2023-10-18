@@ -193,6 +193,178 @@ class Mahasiswa extends CI_Controller {
     
 	} 
 
+	public function offboard($id)
+	{
+		# code...
+		$data['mahasiswa'] = $this;
+		$data['mhs_detail'] = $this->m_mahasiswa->get_data_mhs_detail($id);
+
+		foreach ($data['mhs_detail'] as $key) {
+			# code...
+			$tglSignOff = $key->tgl_sign_off;
+			$tglLapSignOff = $key->tgl_lap_sign_off;
+
+			$data['selisihHari'] = floor(($tglLapSignOff - $tglSignOff) / (60 * 60 * 24));	
+		}
+		
+		$this->load->view('mahasiswa/header');
+		$this->load->view('mahasiswa/offboard',$data);
+		$this->load->view('mahasiswa/footer');
+		$this->load->view('mahasiswa/offboard_js',$data);
+
+	}
+
+	public function offboardp()
+	{
+       /// cek file
+    $cekfile = $this->input->post('ufsignon_existing');
+    $nimc = $this->input->post('nim');
+    if ($cekfile > 0) {
+    	# code...
+    	 // Tangani data yang dikirimkan dari formulir
+			$where = array(
+		        'id_mon' => $this->input->post('id_mon'),
+		    );
+			$nim = $this->input->post('nim');
+			$status_offboard = $this->input->post('status_offboard');
+			$tgl_signoff = $this->input->post('tglsignoff');
+			$tgl_lap_signoff = date('Y-m-d');
+
+		    $tgl_signofff = date('Y-m-d', strtotime($tgl_signon)); // Ubah format tanggal
+    	// Simpan data ke database (contoh)
+            $data = array(
+            	'status_offboard' => $status_offboard,
+            	'status_onboard' => 'tidak',
+                'tgl_sign_off' => $tgl_signofff,
+                'tgl_lap_sign_off' => $tgl_lap_signoff
+            );
+            $proses_edt = $this->m_mahasiswa->update_data($where,$data,'tbl_mon');
+        if($proses_edt){    
+             redirect(base_url().'mahasiswa/offboard/'.$nim);
+        } else {
+             redirect(base_url().'mahasiswa/offboard/'.$nim);
+        }
+
+    }else{
+    
+    	 // Tangani data yang dikirimkan dari formulir
+		$where = array(
+	        'id_mon' => $this->input->post('id_mon'),
+	    );
+		$nim = $this->input->post('nim');
+			$status_offboard = $this->input->post('status_offboard');
+			$tgl_signoff = $this->input->post('tglsignoff');
+			$tgl_lap_signoff = date('Y-m-d');
+
+    // Tangani unggahan file
+        $config['upload_path'] = './assets/monitoring/offboard';
+        $config['max_size'] = 1048;
+        $config['allowed_types'] = 'pdf'; // Sesuaikan dengan jenis file yang diizinkan
+        $config['file_name'] = $nim.'_signoff'; // Nama file yang diunggah sesuai NIM
+        $this->load->library('upload', $config);
+
+        if ($this->upload->do_upload('ufsignoff')) {
+            // Jika unggahan berhasil
+            $upload_data = $this->upload->data();
+            $file_name = $upload_data['file_name'];
+
+            // Simpan data ke database (contoh)
+            $data = array(
+              	'status_offboard' => $status_offboard,
+              	'status_onboard' => 'tidak',
+                'tgl_sign_off' => $tgl_signofff,
+                'tgl_lap_sign_off' => $tgl_lap_signoff
+                'upload_file_signon' => $file_name
+            );
+            $this->m_mahasiswa->update_data($where,$data,'tbl_mon');
+
+            redirect(base_url().'mahasiswa/offboard/'.$nimc);
+        } else {
+            redirect(base_url().'mahasiswa/offboard/'.$nimc);
+        }
+
+        ///else eufsignon_existing == 0
+       }
+    
+	} 
+
+
+	public function trb($id)
+	{
+		# code...
+		$data['mahasiswa'] = $this;
+		$data['mhs_detail'] = $this->m_mahasiswa->get_data_mhs_detail($id);
+		
+		$this->load->view('mahasiswa/header');
+		$this->load->view('mahasiswa/trb',$data);
+		$this->load->view('mahasiswa/footer');
+		$this->load->view('mahasiswa/trb_js',$data);
+
+	}
+
+	public function trbp()
+	{
+       /// cek file
+    $cekfile = $this->input->post('ufsignon_existing');
+    $nimc = $this->input->post('nim');
+    if ($cekfile > 0) {
+    	# code...
+    	 // Tangani data yang dikirimkan dari formulir
+			$where = array(
+		        'id_mon' => $this->input->post('id_mon'),
+		    );
+			$nim = $this->input->post('nim');
+			$status_trb = $this->input->post('status_trb');
+
+    	// Simpan data ke database (contoh)
+            $data = array(
+            	'status_trb' => $status_trb,
+            );
+            $proses_edt = $this->m_mahasiswa->update_data($where,$data,'tbl_mon');
+        if($proses_edt){    
+             redirect(base_url().'mahasiswa/trb/'.$nim);
+        } else {
+             redirect(base_url().'mahasiswa/trb/'.$nim);
+        }
+
+    }else{
+    
+    	 // Tangani data yang dikirimkan dari formulir
+		$where = array(
+	        'id_mon' => $this->input->post('id_mon'),
+	    );
+		$nim = $this->input->post('nim');
+			$status_trb = $this->input->post('status_trb');
+
+    // Tangani unggahan file
+        $config['upload_path'] = './assets/monitoring/trb';
+        $config['max_size'] = 1048;
+        $config['allowed_types'] = 'pdf'; // Sesuaikan dengan jenis file yang diizinkan
+        $config['file_name'] = $nim.'_skltrb'; // Nama file yang diunggah sesuai NIM
+        $this->load->library('upload', $config);
+
+        if ($this->upload->do_upload('ufskltrb')) {
+            // Jika unggahan berhasil
+            $upload_data = $this->upload->data();
+            $file_name = $upload_data['file_name'];
+
+            // Simpan data ke database (contoh)
+            $data = array(
+              	'status_trb' => $status_trb,
+                'upload_file_trb' => $file_name
+            );
+            $this->m_mahasiswa->update_data($where,$data,'tbl_mon');
+
+            redirect(base_url().'mahasiswa/trb/'.$nimc);
+        } else {
+            redirect(base_url().'mahasiswa/trb/'.$nimc);
+        }
+
+        ///else eufsignon_existing == 0
+       }
+    
+	} 
+
 }
 
 /* End of file Mahasiswa.php */

@@ -148,7 +148,7 @@
             <!-- timeline item -->
             <li>
              <?php 
-                if ($mahasiswa->cekstatus("status_onboard","iya", $nim) > 0) {
+                if ($mahasiswa->cekstatus("status_onboard","iya", $nim) > 0 || $mahasiswa->cekstatus("status_onboard","tidak", $nim) > 0 ) {
                   # code...?>
                   <i class="fa fa-user bg-blue"></i>
                 <?php }else{?>
