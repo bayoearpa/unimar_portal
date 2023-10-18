@@ -97,7 +97,7 @@
                <!--  <a href="<?php //echo base_url() ?>mahasiswa/onboard"><button type="button" class="btn btn-success pull-left"><i class="fa fa-chevron-left"></i>Kembali</button></a> -->
                 </form>
                 <!-- cek status laporan -->
-                <?php if ($c->status_offboard > "none" || $c->status_offboard > "") {
+                <?php if ($c->status_offboard > "iya") {
                   # code... ?>
                   <!-- Tombol Lihat File Sign On -->
                     <?php if ($c->upload_file_signoff > "0") { ?>
@@ -111,7 +111,7 @@
                     <h4><i class="icon fa fa-thumbs-o-up"></i> Terima Kasih!</h4>
                     Anda telah melakukan pelaporan offboard.
                   </div>
-                <?php }elseif ($c->tgl_lap_sign_off > "0" && $selisihHari > 15) {
+                <?php }elseif ($c->status_offboard > "iya" && $selisihHari > 15) {
                   # code... ?>
                   <!-- Tombol Lihat File Sign On -->
                     <?php if ($c->upload_file_signoff) { ?>
