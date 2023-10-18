@@ -97,7 +97,7 @@
                <!--  <a href="<?php //echo base_url() ?>mahasiswa/onboard"><button type="button" class="btn btn-success pull-left"><i class="fa fa-chevron-left"></i>Kembali</button></a> -->
                 </form>
                 <!-- cek status laporan -->
-                <?php if ($c->tgl_lap_sign_on > "0") {
+                <?php if ($c->tgl_lap_sign_off > "0") {
                   # code... ?>
                   <!-- Tombol Lihat File Sign On -->
                     <?php if ($c->upload_file_signoff) { ?>
@@ -109,13 +109,13 @@
                   <div class="alert alert-info alert-dismissible">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                     <h4><i class="icon fa fa-thumbs-o-up"></i> Terima Kasih!</h4>
-                    Anda telah melakukan pelaporan onboard.
+                    Anda telah melakukan pelaporan offboard.
                   </div>
                 <?php }elseif ($c->tgl_lap_sign_off > "0" && $selisihHari > 15) {
                   # code... ?>
                   <!-- Tombol Lihat File Sign On -->
                     <?php if ($c->upload_file_signoff) { ?>
-                        <button class="btn btn-success view-file-button" data-filename="<?php echo $c->upload_file_signoff; ?>">Lihat file onboard</button>
+                        <button class="btn btn-success view-file-button" data-filename="<?php echo $c->upload_file_signoff; ?>">Lihat file offboard</button>
                     <?php } else { ?>
                         <!-- Tampilkan pesan jika file tidak ada -->
                         File tidak tersedia
