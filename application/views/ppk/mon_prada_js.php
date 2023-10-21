@@ -124,7 +124,7 @@ function reloadTable() {
      // Menyimpan perubahan dengan AJAX
     $('#saveEdit').click(function() {
         $.ajax({
-            url: '<?php echo base_url('ppk/mon_editp'); ?>', // Sesuaikan dengan URL yang sesuai
+            url: '<?php echo base_url('ppk/mon_pradaeditp'); ?>', // Sesuaikan dengan URL yang sesuai
             type: 'POST',
             data: $('#editForm').serialize(),
             success: function(response) {
