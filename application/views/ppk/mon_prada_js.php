@@ -78,8 +78,12 @@
             } else if (parsedData.jk === 'P') {
                 $('#editjnsklmn').val('Perempuan');
             }
-        $('#edittgllls').val(parsedData.d3_tanggal_lulus);
-        $('#editnoijs').val(parsedData.d3_no_ijasah);
+        // Mengatur radio button "Status UKP Pasca" sesuai dengan data dari database
+            if (parsedData.status_prada === 'sudah') {
+                $('input[name="estatprada"][value="sudah"]').prop('checked', true);
+            } else if (parsedData.status_prada === 'belum') {
+                $('input[name="estatprada"][value="belum"]').prop('checked', true);
+            }
         // Tambahkan input lain sesuai kebutuhan
         $('#editModal').modal('show');
       }
@@ -89,7 +93,7 @@
 function reloadTable() {
     $.ajax({
         type: 'GET',
-        url: '<?php echo base_url('ppk/mon_llsd3data'); ?>',
+        url: '<?php echo base_url('ppk/mon_prada data'); ?>',
         data: { year: $('#year').val(), program_studi: $('#program_studi').val() },
         success: function(response) {
             $('#example31082023').html(response);
