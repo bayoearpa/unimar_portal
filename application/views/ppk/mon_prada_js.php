@@ -37,19 +37,24 @@
         // Isi modal dengan data yang diambil
         console.log(data); // Cetak nilai data ke konsol
         var parsedData = JSON.parse(data);
-        $('#addNim').val(parsedData.nim);
-        $('#addNama').val(parsedData.nama);
-        $('#addTmptLahir').val(parsedData.tl);
-        $('#addTglLahir').val(parsedData.tgll);
-        $('#addAlamat').val(parsedData.alamat);
+         $('#editidmon').val(parsedData.id_mon);
+        $('#editNim').val(parsedData.nim);
+        $('#editNama').val(parsedData.nama);
+        $('#editTmptLahir').val(parsedData.tl);
+        $('#editTglLahir').val(parsedData.tgll);
+        $('#editAlamat').val(parsedData.alamat);
             // Set jenis kelamin sesuai dengan data dari database
             if (parsedData.jk === 'L') {
-                $('#addjnsklmn').val('Laki-laki');
+                $('#editjnsklmn').val('Laki-laki');
             } else if (parsedData.jk === 'P') {
-                $('#addjnsklmn').val('Perempuan');
+                $('#editjnsklmn').val('Perempuan');
             }
-        $('#addtgllls').val(parsedData.d3_tanggal_lulus);
-        $('#addnoijs').val(parsedData.d3_no_ijasah);
+        // Mengatur radio button "Status UKP Pasca" sesuai dengan data dari database
+            if (parsedData.status_prada === 'sudah') {
+                $('input[name="estatprada"][value="sudah"]').prop('checked', true);
+            } else if (parsedData.status_prada === 'belum') {
+                $('input[name="estatprada"][value="belum"]').prop('checked', true);
+            }
         // Tambahkan input lain sesuai kebutuhan
         $('#addModal').modal('show');
       }
@@ -98,6 +103,7 @@ function reloadTable() {
         success: function(response) {
             $('#example31082023').html(response);
              connectEditButtonListeners()
+             connectInsertButtonListeners()
         }
     });
 }
@@ -133,6 +139,42 @@ function connectEditButtonListeners() {
             }
         // Tambahkan input lain sesuai kebutuhan
         $('#editModal').modal('show');
+      }
+    });
+  });
+}
+function connectInsertButtonListeners() { 
+    // Menampilkan modal saat tombol "Tambah" diklik
+  $('.add-button').click(function() {
+    var id = $(this).data('id');
+    // Ambil data yang akan diedit dari server dengan AJAX
+    $.ajax({
+      url: '<?php echo base_url('ppk/mon_add/'); ?>' + id, // Sesuaikan dengan URL yang sesuai
+      type: 'GET',
+      success: function(data) {
+        // Isi modal dengan data yang diambil
+        console.log(data); // Cetak nilai data ke konsol
+        var parsedData = JSON.parse(data);
+         $('#editidmon').val(parsedData.id_mon);
+        $('#editNim').val(parsedData.nim);
+        $('#editNama').val(parsedData.nama);
+        $('#editTmptLahir').val(parsedData.tl);
+        $('#editTglLahir').val(parsedData.tgll);
+        $('#editAlamat').val(parsedData.alamat);
+            // Set jenis kelamin sesuai dengan data dari database
+            if (parsedData.jk === 'L') {
+                $('#editjnsklmn').val('Laki-laki');
+            } else if (parsedData.jk === 'P') {
+                $('#editjnsklmn').val('Perempuan');
+            }
+        // Mengatur radio button "Status UKP Pasca" sesuai dengan data dari database
+            if (parsedData.status_prada === 'sudah') {
+                $('input[name="estatprada"][value="sudah"]').prop('checked', true);
+            } else if (parsedData.status_prada === 'belum') {
+                $('input[name="estatprada"][value="belum"]').prop('checked', true);
+            }
+        // Tambahkan input lain sesuai kebutuhan
+        $('#addModal').modal('show');
       }
     });
   });
