@@ -93,7 +93,7 @@
 function reloadTable() {
     $.ajax({
         type: 'GET',
-        url: '<?php echo base_url('ppk/mon_prada data'); ?>',
+        url: '<?php echo base_url('ppk/mon_pradadata'); ?>',
         data: { year: $('#year').val(), program_studi: $('#program_studi').val() },
         success: function(response) {
             $('#example31082023').html(response);
