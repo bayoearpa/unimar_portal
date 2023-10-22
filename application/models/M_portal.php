@@ -685,6 +685,7 @@ function get_data_formon_mhsall_d3($limit, $offset)
         tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
         tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
         tbl_mon.pasca_status as pasca_status,
+         tbl_mon.pasca_status as status_prada,
 	        tbl_mon.nama_kapal,
 	        tbl_mon.tgl_sign_on,
 	        tbl_mon.upload_file_signon,
