@@ -31,29 +31,29 @@
     var id = $(this).data('id');
     // Ambil data yang akan diedit dari server dengan AJAX
     $.ajax({
-      url: '<?php echo base_url('ppk/mon_add/'); ?>' + id, // Sesuaikan dengan URL yang sesuai
+      url: '<?php echo base_url('ppk/mon_pradaadd/'); ?>' + id, // Sesuaikan dengan URL yang sesuai
       type: 'GET',
       success: function(data) {
         // Isi modal dengan data yang diambil
         console.log(data); // Cetak nilai data ke konsol
         var parsedData = JSON.parse(data);
-         $('#editidmon').val(parsedData.id_mon);
-        $('#editNim').val(parsedData.nim);
-        $('#editNama').val(parsedData.nama);
-        $('#editTmptLahir').val(parsedData.tl);
-        $('#editTglLahir').val(parsedData.tgll);
-        $('#editAlamat').val(parsedData.alamat);
+         $('#addidmon').val(parsedData.id_mon);
+        $('#addNim').val(parsedData.nim);
+        $('#addNama').val(parsedData.nama);
+        $('#addTmptLahir').val(parsedData.tl);
+        $('#addTglLahir').val(parsedData.tgll);
+        $('#addAlamat').val(parsedData.alamat);
             // Set jenis kelamin sesuai dengan data dari database
             if (parsedData.jk === 'L') {
-                $('#editjnsklmn').val('Laki-laki');
+                $('#addjnsklmn').val('Laki-laki');
             } else if (parsedData.jk === 'P') {
-                $('#editjnsklmn').val('Perempuan');
+                $('#addjnsklmn').val('Perempuan');
             }
         // Mengatur radio button "Status UKP Pasca" sesuai dengan data dari database
             if (parsedData.status_prada === 'sudah') {
-                $('input[name="estatprada"][value="sudah"]').prop('checked', true);
+                $('input[name="statprada"][value="sudah"]').prop('checked', true);
             } else if (parsedData.status_prada === 'belum') {
-                $('input[name="estatprada"][value="belum"]').prop('checked', true);
+                $('input[name="statprada"][value="belum"]').prop('checked', true);
             }
         // Tambahkan input lain sesuai kebutuhan
         $('#addModal').modal('show');
@@ -65,7 +65,7 @@
     var id = $(this).data('id');
     // Ambil data yang akan diedit dari server dengan AJAX
     $.ajax({
-      url: '<?php echo base_url('ppk/mon_edit/'); ?>' + id, // Sesuaikan dengan URL yang sesuai
+      url: '<?php echo base_url('ppk/mon_pradaedit/'); ?>' + id, // Sesuaikan dengan URL yang sesuai
       type: 'GET',
       success: function(data) {
         // Isi modal dengan data yang diambil
@@ -113,7 +113,7 @@ function connectEditButtonListeners() {
     var id = $(this).data('id');
     // Ambil data yang akan diedit dari server dengan AJAX
     $.ajax({
-      url: '<?php echo base_url('ppk/mon_edit/'); ?>' + id, // Sesuaikan dengan URL yang sesuai
+      url: '<?php echo base_url('ppk/mon_pradaedit/'); ?>' + id, // Sesuaikan dengan URL yang sesuai
       type: 'GET',
       success: function(data) {
         // Isi modal dengan data yang diambil
@@ -149,7 +149,7 @@ function connectInsertButtonListeners() {
     var id = $(this).data('id');
     // Ambil data yang akan diedit dari server dengan AJAX
     $.ajax({
-      url: '<?php echo base_url('ppk/mon_add/'); ?>' + id, // Sesuaikan dengan URL yang sesuai
+      url: '<?php echo base_url('ppk/mon_pradaadd/'); ?>' + id, // Sesuaikan dengan URL yang sesuai
       type: 'GET',
       success: function(data) {
         // Isi modal dengan data yang diambil
@@ -182,7 +182,7 @@ function connectInsertButtonListeners() {
     // Menyimpan perubahan dengan AJAX
     $('#saveAdd').click(function() {
         $.ajax({
-            url: '<?php echo base_url('ppk/mon_addp'); ?>', // Sesuaikan dengan URL yang sesuai
+            url: '<?php echo base_url('ppk/mon_pradaaddp'); ?>', // Sesuaikan dengan URL yang sesuai
             type: 'POST',
             data: $('#addForm').serialize(),
             success: function(response) {
