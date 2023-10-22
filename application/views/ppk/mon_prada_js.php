@@ -85,9 +85,9 @@
             }
         // Mengatur radio button "Status UKP Pasca" sesuai dengan data dari database
             if (parsedData.status_prada === 'sudah') {
-                $('input[name="estatprada"][value="sudah"]').prop('checked', true);
+                $('input[name="editstatprada"][value="sudah"]').prop('checked', true);
             } else if (parsedData.status_prada === 'belum') {
-                $('input[name="estatprada"][value="belum"]').prop('checked', true);
+                $('input[name="editstatprada"][value="belum"]').prop('checked', true);
             }
         // Tambahkan input lain sesuai kebutuhan
         $('#editModal').modal('show');
