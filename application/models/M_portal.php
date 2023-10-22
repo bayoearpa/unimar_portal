@@ -827,6 +827,7 @@ function get_data_formon_mhsall_sb($limit, $offset)
         tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
         tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
         tbl_mon.pasca_status as pasca_status,
+        tbl_mon.status_onboard as status_onboard,
 	        tbl_mon.nama_kapal,
 	        tbl_mon.tgl_sign_on,
 	        tbl_mon.upload_file_signon,
