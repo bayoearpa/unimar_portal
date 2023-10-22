@@ -213,12 +213,12 @@
                     <div class="form-group">
                         <label for="editstatonboard">Status Onboard:</label>
                         <div class="form-check">
-                            <input type="radio" class="form-check-input" id="editstatonboard" name="estatonboard" value="sudah">
-                            <label class="form-check-label" for="editstatonboard">Sudah</label>
+                            <input type="radio" class="form-check-input" id="editstatonboard" name="estatonboard" value="iya">
+                            <label class="form-check-label" for="editstatonboard">Iya</label>
                         </div>
                         <div class="form-check">
-                            <input type="radio" class="form-check-input" id="editstatonboard" name="estatonboard" value="belum">
-                            <label class="form-check-label" for="editstatonboard">Belum</label>
+                            <input type="radio" class="form-check-input" id="editstatonboard" name="estatonboard" value="tidak">
+                            <label class="form-check-label" for="editstatonboard">Tidak</label>
                         </div>
                     </div>
                     <div class="form-group">

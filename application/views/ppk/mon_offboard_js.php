@@ -100,10 +100,10 @@
         // }
 
         // Mengatur radio button "Status UKP Pasca" sesuai dengan data dari database
-            if (parsedData.pasca_status === 'iya') {
-                $('input[name="estatonboard"][value="iya"]').prop('checked', true);
-            } else if (parsedData.pasca_status === 'tidak') {
-                $('input[name="estatonboard"][value="tidak"]').prop('checked', true);
+            if (parsedData.status_offboard === 'iya') {
+                $('input[name="estatoffboard"][value="iya"]').prop('checked', true);
+            } else if (parsedData.status_offboard === 'tidak') {
+                $('input[name="estatoffboard"][value="tidak"]').prop('checked', true);
             }
         $('#editnamakapal').val(parsedData.nama_kapal);
         $('#edittglsignon').val(parsedData.tgl_sign_on);
@@ -169,10 +169,10 @@ function connectEditButtonListeners() {
         // }
 
         // Mengatur radio button "Status UKP Pasca" sesuai dengan data dari database
-            if (parsedData.pasca_status === 'iya') {
-                $('input[name="estatonboard"][value="iya"]').prop('checked', true);
-            } else if (parsedData.pasca_status === 'tidak') {
-                $('input[name="estatonboard"][value="tidak"]').prop('checked', true);
+            if (parsedData.status_offboard === 'iya') {
+                $('input[name="estatoffboard"][value="iya"]').prop('checked', true);
+            } else if (parsedData.status_offboard === 'tidak') {
+                $('input[name="estatoffboard"][value="tidak"]').prop('checked', true);
             }
         $('#editnamakapal').val(parsedData.nama_kapal);
         $('#edittglsignon').val(parsedData.tgl_sign_on);
