@@ -52,7 +52,7 @@
                 <td><?php echo $i->nama; ?></td>
                 <td><?php echo $i->prodi; ?></td>
                 <td><?php echo $i->seafarercode; ?></td>
-                <td><?php echo $i->status_board; ?></td>
+                <td><?php echo $i->status_onboard; ?></td>
                 <td><?php echo $i->nama_kapal; ?></td>
                 <td><?php echo $i->tgl_sign_on; ?></td>
                 <td>
@@ -211,14 +211,14 @@
                     <!-- onboard/offboard formgroup -->
 
                     <div class="form-group">
-                        <label for="editstatonboard">Status Onboard/Offboard:</label>
+                        <label for="editstatonboard">Status Onboard:</label>
                         <div class="form-check">
-                            <input type="radio" class="form-check-input" id="editstatonboard" name="estatonboard" value="onboard">
-                            <label class="form-check-label" for="editstatonboard">Onboard</label>
+                            <input type="radio" class="form-check-input" id="editstatonboard" name="estatonboard" value="sudah">
+                            <label class="form-check-label" for="editstatonboard">Sudah</label>
                         </div>
                         <div class="form-check">
-                            <input type="radio" class="form-check-input" id="editstatonboard" name="estatonboard" value="offboard">
-                            <label class="form-check-label" for="editstatonboard">Offboard</label>
+                            <input type="radio" class="form-check-input" id="editstatonboard" name="estatonboard" value="belum">
+                            <label class="form-check-label" for="editstatonboard">Belum</label>
                         </div>
                     </div>
                     <div class="form-group">

@@ -21,7 +21,7 @@
                 <td><?php echo $i->nama; ?></td>
                 <td><?php echo $i->prodi; ?></td>
                 <td><?php echo $i->seafarercode; ?></td>
-                <td><?php echo $i->status_board; ?></td>
+                <td><?php echo $i->status_onboard; ?></td>
                 <td><?php echo $i->nama_kapal; ?></td>
                 <td><?php echo $i->tgl_sign_on; ?></td>
                 <td>
