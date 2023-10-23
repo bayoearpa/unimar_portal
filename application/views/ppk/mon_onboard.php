@@ -36,7 +36,7 @@
                   <th>Nama</th>
                   <th>Prodi</th>
                   <th>Seafarercode</th>
-                  <th>Status Board</th>
+                  <th>Status Onboard</th>
                   <th>Nama Kapal</th>
                   <th>Tanggal Sign On</th>
                   <th>File Sign On</th>
@@ -77,11 +77,11 @@
                 </tbody>
                 <tfoot>
               <tr>
-                  <th>NIM</th>
+                 <th>NIM</th>
                   <th>Nama</th>
                   <th>Prodi</th>
                   <th>Seafarercode</th>
-                  <th>Status Board</th>
+                  <th>Status Onboard</th>
                   <th>Nama Kapal</th>
                   <th>Tanggal Sign On</th>
                   <th>File Sign On</th>

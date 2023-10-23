@@ -934,14 +934,14 @@ class ppk extends CI_Controller {
 		        'id_mon' => $this->input->post('nid_mon'),
 		    );
 			$nim = $this->input->post('nim');
-			$status_board = $this->input->post('estatonboard');
+			$status_onboard = $this->input->post('estatonboard');
 			$nama_kapal = $this->input->post('editnamakapal');
 			$tgl_signon = $this->input->post('etglsignon');
 
 		    $tgl_signonf = date('Y-m-d', strtotime($tgl_signon)); // Ubah format tanggal
     	// Simpan data ke database (contoh)
             $data = array(
-                'status_board' => $status_board,
+                'status_onboard' => $status_onboard,
                 'nama_kapal' => $nama_kapal,
                 'tgl_sign_on' => $tgl_signonf
             );
@@ -959,7 +959,7 @@ class ppk extends CI_Controller {
 	        'id_mon' => $this->input->post('nid_mon'),
 	    );
 		$nim = $this->input->post('nim');
-		$status_board = $this->input->post('estatonboard');
+		$status_onboard = $this->input->post('estatonboard');
 		$nama_kapal = $this->input->post('editnamakapal');
 		$tgl_signon = $this->input->post('etglsignon');
 
@@ -978,7 +978,7 @@ class ppk extends CI_Controller {
 
             // Simpan data ke database (contoh)
             $data = array(
-                'status_board' => $status_board,
+                'status_oboard' => $status_onboard,
                 'nama_kapal' => $nama_kapal,
                 'tgl_sign_on' => $tgl_signonf,
                 'upload_file_signon' => $file_name
@@ -1054,14 +1054,14 @@ class ppk extends CI_Controller {
 		        'id_mon' => $this->input->post('nid_mon'),
 		    );
 			$nim = $this->input->post('nim');
-			$status_board = $this->input->post('estatonboard');
+			$status_offboard = $this->input->post('estatoffboard');
 			$tgl_signoff = $this->input->post('etglsignoff');
 
 		    $tgl_signofff = date('Y-m-d', strtotime($tgl_signoff)); // Ubah format tanggal
 
     	 // Simpan data ke database (contoh)
             $data = array(
-                'status_board' => $status_board,
+                'status_offboard' => $status_offboard,
                 'tgl_sign_off' => $tgl_signoff
             );
           $proses_edt = $this->m_portal->update_data($where,$data,'tbl_mon');
@@ -1077,7 +1077,7 @@ class ppk extends CI_Controller {
 		        'id_mon' => $this->input->post('nid_mon'),
 		    );
 			$nim = $this->input->post('nim');
-			$status_board = $this->input->post('estatonboard');
+			$status_offboard = $this->input->post('estatoffboard');
 			$tgl_signoff = $this->input->post('etglsignoff');
 
 		    $tgl_signofff = date('Y-m-d', strtotime($tgl_signoff)); // Ubah format tanggal
@@ -1097,7 +1097,7 @@ class ppk extends CI_Controller {
 
 		            // Simpan data ke database (contoh)
 		            $data = array(
-		                'status_board' => $status_board,
+		                'status_offboard' => $status_offboard,
 		                'tgl_sign_off' => $tgl_signoff,
 		                'upload_file_signoff' => $file_name
 		            );
