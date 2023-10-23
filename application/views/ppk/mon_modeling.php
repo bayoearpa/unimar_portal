@@ -172,14 +172,14 @@
                         <input type="text" class="form-control" id="editjnsklmn" name="jk" readonly="">
                     </div>
                     <div class="form-group">
-                        <label for="editstatonboard">Status Prada:</label>
+                        <label for="editstatonboard">Status Modeling:</label>
                         <div class="form-check">
-                            <input type="radio" class="form-check-input" id="editstatprada" name="estatprada" value="sudah">
-                            <label class="form-check-label" for="editstatonboard">Sudah</label>
+                            <input type="radio" class="form-check-input" id="editstatmodeling" name="estatmodeling" value="sudah">
+                            <label class="form-check-label" for="editstatmodeling">Sudah</label>
                         </div>
                         <div class="form-check">
-                            <input type="radio" class="form-check-input" id="editstatprada" name="estatprada" value="belum">
-                            <label class="form-check-label" for="editstatonboard">Belum</label>
+                            <input type="radio" class="form-check-input" id="editstatmodeling" name="estatmodeling" value="belum">
+                            <label class="form-check-label" for="editstatmodeling">Belum</label>
                         </div>
                     </div>
                     <!-- Tambahkan input lain sesuai kebutuhan -->
