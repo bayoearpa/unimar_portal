@@ -1404,6 +1404,8 @@ function get_data_formon_mhs($id)
 	        tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
 	        tbl_mon.pasca_status as pasca_status,
 	        tbl_mon.pasca_status as status_prada,
+	        tbl_mon.status_onboard as status_onboard,
+	        tbl_mon.status_offboard as status_offboard,
 	        tbl_mon.nama_kapal,
 	        tbl_mon.tgl_sign_on,
 	        tbl_mon.upload_file_signon,
