@@ -1149,6 +1149,8 @@ class ppk extends CI_Controller {
     $this->load->view('ppk/mon_sbpraladata', $data);
 	}
 
+
+
 	/////////////// monitoring summary
 	public function mon_summary()
 	{
@@ -1171,6 +1173,79 @@ class ppk extends CI_Controller {
 
 		 echo json_encode($data);
 	}
+
+	// monitoring modeling
+	public function mon_modeling()
+	{
+		# code...
+    // Call your model method to get the data with pagination
+    $data['items'] = $this->m_portal->get_data_formon_mhsall_off($per_page, $offset);
+
+    $data['program_studi_options'] = array('92403', '92402'); // Add other program options if needed
+
+    $this->load->view('ppk/header');
+    $this->load->view('ppk/mon_modeling', $data);
+    $this->load->view('ppk/footer');
+    $this->load->view('ppk/mon_modeling_js');
+	}
+
+	public function mon_modelingdata()
+	{
+		# code...
+	$year = $this->input->get('year'); // Ambil tahun dari input form
+    $program_studi = $this->input->get('program_studi'); // Ambil program studi dari input form
+
+    // Buat array untuk filter program studi
+    $program_studi_options = array('92403', '92402'); // Tambahkan program studi lain jika ada
+
+    if (!$year && !$program_studi) {
+        $data['items'] = $this->m_portal->get_data_formon_mhsall_off();
+    } elseif ($year && !$program_studi) {
+        $data['items'] = $this->m_portal->get_data_formon_mhsyear_off($year);
+    } elseif (!$year && $program_studi) {
+        $data['items'] = $this->m_portal->get_data_formon_mhsprodi_off($program_studi);
+    } elseif ($year && $program_studi) {
+        $data['items'] = $this->m_portal->get_data_formon_mhsyearnprodi_off($year, $program_studi);
+    }
+
+    $data['program_studi_options'] = $program_studi_options; // Pass program studi options to view
+    $this->load->view('ppk/mon_modelingdata', $data);
+	}
+
+	public function mon_modelingedit($id)
+	{
+		# code...
+		// Ambil data berdasarkan ID dari model Anda
+        $data = $this->m_portal->get_data_formon_mhs($id); // Gantilah 'get_data_by_id' dengan metode yang sesuai dalam model Anda
+
+        // Konversi data ke format JSON dan kirimkan ke view
+        echo json_encode($data);
+	}
+
+	public function mon_modelingeditp()
+	{
+    // Tangani data yang dikirimkan dari formulir
+	$where = array(
+        'id_mon' => $this->input->post('id_mon'),
+    ); 
+    $data = array(
+        'status_modeling' => $this->input->post('estatmodeling')
+    );
+
+    // Simpan data ke database
+    $res = $this->m_portal->update_data($where, $data,'tbl_mon');
+    // Sesuaikan dengan model dan metode penyimpanan data Anda
+
+    // Setelah berhasil disimpan, beri respons "sukses" ke JavaScript
+    if ($res) {
+       // Jika terjadi kesalahan, beri respons "gagal" ke JavaScript
+        echo 'gagal';
+    } else {
+         // Jika penyimpanan sukses, beri respons "sukses" ke JavaScript
+        echo 'sukses';
+    }
+	}
+	////////////////// end prada
 
 
 }
