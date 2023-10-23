@@ -1046,7 +1046,7 @@ class ppk extends CI_Controller {
 	public function mon_offboardeditp()
 	{
 		   /// cek file
-    $cekfile = $this->input->post('eufsignon_existing');
+    $cekfile = $this->input->post('eufsignoff_existing');
     if ($cekfile > 0) {
 
     	// Tangani data yang dikirimkan dari formulir
