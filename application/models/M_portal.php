@@ -1148,6 +1148,7 @@ function count_all_data_formon_mhsall_off()
     $this->db->select('COUNT(*) as count');
     $this->db->from('tmst_mahasiswa');
     $this->db->where('Tahun_masuk >=', '2018');
+	$this->db->where('tbl_mon.status_offboard >=', 'iya');
     $this->db->where_in('tmst_mahasiswa.Kode_program_studi', array('92403', '92402'));
     $query = $this->db->get();
     $result = $query->row();
