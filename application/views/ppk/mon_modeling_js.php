@@ -168,9 +168,9 @@ function connectInsertButtonListeners() {
                 $('#editjnsklmn').val('Perempuan');
             }
         // Mengatur radio button "Status UKP Pasca" sesuai dengan data dari database
-            if (parsedData.status_prada === 'sudah') {
+            if (parsedData.status_modeling === 'sudah') {
                 $('input[name="estatmodeling"][value="sudah"]').prop('checked', true);
-            } else if (parsedData.status_prada === 'belum') {
+            } else if (parsedData.status_modeling === 'belum') {
                 $('input[name="estatmodeling"][value="belum"]').prop('checked', true);
             }
         // Tambahkan input lain sesuai kebutuhan
