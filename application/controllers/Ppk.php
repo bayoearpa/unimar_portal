@@ -1245,7 +1245,117 @@ class ppk extends CI_Controller {
         echo 'sukses';
     }
 	}
-	////////////////// end prada
+	////////////////// end modeling
+
+	////////////// monitoring trb
+
+	public function mon_trb()
+	{
+		# code...
+    // Call your model method to get the data with pagination
+    $data['items'] = $this->m_portal->get_data_formon_mhsall_mod($per_page, $offset);
+
+    $data['program_studi_options'] = array('92403', '92402'); // Add other program options if needed
+
+    $this->load->view('ppk/header');
+    $this->load->view('ppk/mon_trb', $data);
+    $this->load->view('ppk/footer');
+    $this->load->view('ppk/mon_trb_js');
+	}
+
+	public function mon_trbdata()
+	{
+		# code...
+	$year = $this->input->get('year'); // Ambil tahun dari input form
+    $program_studi = $this->input->get('program_studi'); // Ambil program studi dari input form
+
+    // Buat array untuk filter program studi
+    $program_studi_options = array('92403', '92402'); // Tambahkan program studi lain jika ada
+
+    if (!$year && !$program_studi) {
+        $data['items'] = $this->m_portal->get_data_formon_mhsall_mod();
+    } elseif ($year && !$program_studi) {
+        $data['items'] = $this->m_portal->get_data_formon_mhsyear_mod($year);
+    } elseif (!$year && $program_studi) {
+        $data['items'] = $this->m_portal->get_data_formon_mhsprodi_mod($program_studi);
+    } elseif ($year && $program_studi) {
+        $data['items'] = $this->m_portal->get_data_formon_mhsyearnprodi_mod($year, $program_studi);
+    }
+
+    $data['program_studi_options'] = $program_studi_options; // Pass program studi options to view
+    $this->load->view('ppk/mon_trbdata', $data);
+	}
+	public function mon_trbedit($id)
+	{
+		# code...
+		// Ambil data berdasarkan ID dari model Anda
+        $data = $this->m_portal->get_data_formon_mhs($id); // Gantilah 'get_data_by_id' dengan metode yang sesuai dalam model Anda
+
+        // Konversi data ke format JSON dan kirimkan ke view
+        echo json_encode($data);
+	}
+
+	public function mon_trbeditp()
+	{
+		   /// cek file
+    $cekfile = $this->input->post('euftrb_existing');
+    if ($cekfile > 0) {
+
+    	// Tangani data yang dikirimkan dari formulir
+			$where = array(
+		        'id_mon' => $this->input->post('nid_mon'),
+		    );
+			$nim = $this->input->post('nim');
+			$status_trb = $this->input->post('estattrb');
+			
+    	 // Simpan data ke database (contoh)
+            $data = array(
+                'status_trb' => $status_trb,
+            );
+          $proses_edt = $this->m_portal->update_data($where,$data,'tbl_mon');
+
+        if($proses_edt){ 
+            echo 'sukses edit';
+        } else {
+            echo 'Gagal edit.';
+        }
+    }else{
+		    	 // Tangani data yang dikirimkan dari formulir
+			$where = array(
+		        'id_mon' => $this->input->post('nid_mon'),
+		    );
+			$nim = $this->input->post('nim');
+			$status_trb = $this->input->post('estattrb');		    
+
+		    // Tangani unggahan file
+		        $config['upload_path'] = './assets/monitoring/trb';
+		        $config['max_size'] = 1048;
+		        $config['allowed_types'] = 'pdf'; // Sesuaikan dengan jenis file yang diizinkan
+		        $config['file_name'] = $nim.'_trb'; // Nama file yang diunggah sesuai NIM
+		        $this->load->library('upload', $config);
+
+		        if ($this->upload->do_upload('euftrb')) {
+		            // Jika unggahan berhasil
+		            $upload_data = $this->upload->data();
+		            $file_name = $upload_data['file_name'];
+
+		            // Simpan data ke database (contoh)
+		            $data = array(
+		                'status_trb' => $status_trb,
+		                'upload_file_trb' => $file_name
+		            );
+		            $this->m_portal->update_data($where,$data,'tbl_mon');
+
+		            echo 'sukses';
+		        } else {
+		            echo 'Gagal mengunggah file.';
+		        }
+
+   		 }/// end of cek file
+  
+	}////end of trb
+
+
 
 
 }
