@@ -1,4 +1,4 @@
- <table id="example31082023" class="table table-bordered table-striped">
+  <table id="example31082023" class="table table-bordered table-striped">
                 <thead>
                 <tr>
                   <th>NIM</th>
@@ -6,6 +6,7 @@
                   <th>Prodi</th>
                   <th>Seafarercode</th>
                   <th>Status Onboard</th>
+                  <th>Nama Perusahaan</th>
                   <th>Nama Kapal</th>
                   <th>Tanggal Sign On</th>
                   <th>File Sign On</th>
@@ -22,6 +23,7 @@
                 <td><?php echo $i->prodi; ?></td>
                 <td><?php echo $i->seafarercode; ?></td>
                 <td><?php echo $i->status_onboard; ?></td>
+                <td><?php echo $i->nama_perusahaan; ?></td>
                 <td><?php echo $i->nama_kapal; ?></td>
                 <td><?php echo $i->tgl_sign_on; ?></td>
                 <td>
@@ -51,6 +53,7 @@
                   <th>Prodi</th>
                   <th>Seafarercode</th>
                   <th>Status Onboard</th>
+                  <th>Nama Perusahaan</th>
                   <th>Nama Kapal</th>
                   <th>Tanggal Sign On</th>
                   <th>File Sign On</th>

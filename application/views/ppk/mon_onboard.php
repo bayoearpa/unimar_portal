@@ -37,6 +37,7 @@
                   <th>Prodi</th>
                   <th>Seafarercode</th>
                   <th>Status Onboard</th>
+                  <th>Nama Perusahaan</th>
                   <th>Nama Kapal</th>
                   <th>Tanggal Sign On</th>
                   <th>File Sign On</th>
@@ -53,6 +54,7 @@
                 <td><?php echo $i->prodi; ?></td>
                 <td><?php echo $i->seafarercode; ?></td>
                 <td><?php echo $i->status_onboard; ?></td>
+                <td><?php echo $i->nama_perusahaan; ?></td>
                 <td><?php echo $i->nama_kapal; ?></td>
                 <td><?php echo $i->tgl_sign_on; ?></td>
                 <td>
@@ -82,6 +84,7 @@
                   <th>Prodi</th>
                   <th>Seafarercode</th>
                   <th>Status Onboard</th>
+                  <th>Nama Perusahaan</th>
                   <th>Nama Kapal</th>
                   <th>Tanggal Sign On</th>
                   <th>File Sign On</th>
@@ -220,6 +223,10 @@
                             <input type="radio" class="form-check-input" id="editstatonboard" name="estatonboard" value="tidak">
                             <label class="form-check-label" for="editstatonboard">Tidak</label>
                         </div>
+                    </div>
+                     <div class="form-group">
+                        <label for="editnamakapal">Nama Perusahaan:</label>
+                        <input type="text" class="form-control" id="editnamaperusahaan" name="editnamaperusahaan">
                     </div>
                     <div class="form-group">
                         <label for="editnamakapal">Nama Kapal:</label>

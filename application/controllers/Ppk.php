@@ -935,6 +935,7 @@ class ppk extends CI_Controller {
 		    );
 			$nim = $this->input->post('nim');
 			$status_onboard = $this->input->post('estatonboard');
+			$nama_perusahaan = $this->input->post('editnamaperusahaan');
 			$nama_kapal = $this->input->post('editnamakapal');
 			$tgl_signon = $this->input->post('etglsignon');
 
@@ -960,6 +961,7 @@ class ppk extends CI_Controller {
 	    );
 		$nim = $this->input->post('nim');
 		$status_onboard = $this->input->post('estatonboard');
+		$nama_perusahaan = $this->input->post('editnamaperusahaan');
 		$nama_kapal = $this->input->post('editnamakapal');
 		$tgl_signon = $this->input->post('etglsignon');
 

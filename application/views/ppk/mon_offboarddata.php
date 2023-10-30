@@ -6,6 +6,7 @@
                   <th>Prodi</th>
                   <th>Seafarercode</th>
                   <th>Status Offboard</th>
+                  <th>Nama Perusahaan</th>
                   <th>Nama Kapal</th>
                   <th>Tanggal Sign On</th>
                    <th>Tanggal Sign Off</th>
@@ -23,6 +24,7 @@
                 <td><?php echo $i->prodi; ?></td>
                 <td><?php echo $i->seafarercode; ?></td>
                 <td><?php echo $i->status_offboard; ?></td>
+                <td><?php echo $i->nama_perusahaan; ?></td>
                 <td><?php echo $i->nama_kapal; ?></td>
                 <td><?php echo $i->tgl_sign_on; ?></td>
                 <td><?php echo $i->tgl_sign_off; ?></td>
@@ -53,6 +55,7 @@
                   <th>Prodi</th>
                   <th>Seafarercode</th>
                   <th>Status Offboard</th>
+                   <th>Nama Perusahaan</th>
                   <th>Nama Kapal</th>
                   <th>Tanggal Sign On</th>
                    <th>Tanggal Sign Off</th>

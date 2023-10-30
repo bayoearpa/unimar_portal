@@ -105,6 +105,7 @@
             } else if (parsedData.status_offboard === 'tidak') {
                 $('input[name="estatoffboard"][value="tidak"]').prop('checked', true);
             }
+            $('#editnamaperusahaan').val(parsedData.nama_perusahaan);
         $('#editnamakapal').val(parsedData.nama_kapal);
         $('#edittglsignon').val(parsedData.tgl_sign_on);
 
@@ -174,6 +175,7 @@ function connectEditButtonListeners() {
             } else if (parsedData.status_offboard === 'tidak') {
                 $('input[name="estatoffboard"][value="tidak"]').prop('checked', true);
             }
+            $('#editnamaperusahaan').val(parsedData.nama_perusahaan);
         $('#editnamakapal').val(parsedData.nama_kapal);
         $('#edittglsignon').val(parsedData.tgl_sign_on);
 
