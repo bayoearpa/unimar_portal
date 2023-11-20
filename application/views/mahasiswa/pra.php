@@ -70,7 +70,9 @@
                           <th style="width: 10px">pilih</th>
                           <th>Mata Uji</th>
                         </tr>
-                        <?php foreach ($mu as $key) {
+                        <?php
+                        $no=1;
+                         foreach ($mu as $key) {
                           # code... ?>
                         <tr>
                           <td><?php $echo $no++; ?></td>
