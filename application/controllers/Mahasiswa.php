@@ -95,7 +95,7 @@ class Mahasiswa extends CI_Controller {
 				'id_prodiprofesi' => $prodinnya,
 
 			);
-		$data['mu'] = $this->m_mahasiswa->get_data($where, 'tbl_profesi_matauji_fungsi'); 
+		$data['mu'] = $this->m_mahasiswa->get_data($whmu, 'tbl_profesi_matauji_fungsi'); 
 
 		$this->load->view('mahasiswa/header');
 		$this->load->view('mahasiswa/pra',$data);
