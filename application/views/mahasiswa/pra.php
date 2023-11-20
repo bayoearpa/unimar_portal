@@ -8,7 +8,7 @@
           <div class="box-body">
 
             
-            <?php if ($mahasiswa->cekstatus('status_prada','sudah') > 0 ) {
+            <?php if ($mahasiswa->cekstatus('status_prada','sudah', $this->session->userdata('user')) > "0" ) {
               # code... ?>
 
             <?php 
