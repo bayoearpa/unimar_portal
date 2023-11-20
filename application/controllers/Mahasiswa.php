@@ -74,7 +74,7 @@ class Mahasiswa extends CI_Controller {
 
 		return $data;
 	}
-	public function pra()
+	public function pra($id)
 	{
 		# code...
 		$data['mahasiswa'] = $this;
@@ -82,7 +82,7 @@ class Mahasiswa extends CI_Controller {
 		$mhs = $this->session->userdata('user');
 
 		$where = array(
-				'NIM' => $mhs			
+				'NIM' => $id			
 			);
 
 		$data['mhs_detail'] = $this->m_mahasiswa->get_data($where, 'tmst_mahasiswa');
