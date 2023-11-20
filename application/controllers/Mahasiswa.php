@@ -85,7 +85,7 @@ class Mahasiswa extends CI_Controller {
 				'NIM' => $mhs			
 			);
 
-		$data['mhs'] = $this->m_mahasiswa->get_data($where, 'tmst_mahasiswa');
+		$data['mhs_detail'] = $this->m_mahasiswa->get_data($where, 'tmst_mahasiswa');
 		//get mata uji
 		$prodi = $this->session->userdata('prodi');
 		$prodinnya = ($prodi == '92403') ? "1" : "2" ;

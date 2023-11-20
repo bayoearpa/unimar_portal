@@ -15,7 +15,7 @@
             // echo validation_errors(); 
             // echo $this->session->flashdata('success');
             // echo $this->session->flashdata('error');
-            foreach($mhs as $c){ 
+            foreach($mhs_detail as $c){ 
               ?>
               <table width="30%">
                 <tr>
