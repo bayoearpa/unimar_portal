@@ -86,6 +86,16 @@ class Mahasiswa extends CI_Controller {
 			);
 
 		$data['mhs'] = $this->m_mahasiswa->get_data($where, 'tmst_mahasiswa');
+		//get mata uji
+		$prodi = $this->session->userdata('prodi');
+		$prodinnya = ($prodi == '92403') ? "1" : "2" ;
+		$whmu = array(
+				'id_jenisujianprofesi' => '1',
+				'id_metodeujianprofesi' => '3',
+				'id_prodiprofesi' => $prodinnya,
+
+			);
+		$data['mu'] = $this->m_mahasiswa->get_data($where, 'tbl_profesi_matauji_fungsi'); 
 
 		$this->load->view('mahasiswa/header');
 		$this->load->view('mahasiswa/pra',$data);

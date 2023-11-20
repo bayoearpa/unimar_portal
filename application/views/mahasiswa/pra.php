@@ -17,53 +17,70 @@
             // echo $this->session->flashdata('error');
             foreach($mhs as $c){ 
               ?>
-              <table>
+              <table width="30%">
                 <tr>
                   <td><label for="exampleInputEmail1">NIM</label></td>
                   <td><label for="exampleInputEmail1">:</label></td>
-                  <td><label for="exampleInputEmail1"><?php //echo $c->nim; ?></label></td>
+                  <td><label for="exampleInputEmail1"><?php echo $c->nim; ?></label></td>
                 </tr>
                 <tr>
                   <td><label for="exampleInputEmail1">Nama</label></td>
                   <td><label for="exampleInputEmail1">:</label></td>
-                  <td><label for="exampleInputEmail1"><?php //echo $nama; ?></label></td>
+                  <td><label for="exampleInputEmail1"><?php echo $c->nama; ?></label></td>
+                </tr>
+                 <tr>
+                  <td><label for="exampleInputEmail1">Tanggal Lahir</label></td>
+                  <td><label for="exampleInputEmail1">:</label></td>
+                  <td><label for="exampleInputEmail1"><?php echo $c->tgll; ?></label></td>
+                </tr>
+                 <tr>
+                  <td><label for="exampleInputEmail1">Alamat</label></td>
+                  <td><label for="exampleInputEmail1">:</label></td>
+                  <td><label for="exampleInputEmail1"><?php echo $c->alamat; ?></label></td>
+                </tr>
+                <tr>
+                  <td><label for="exampleInputEmail1">Jenis Kelamin</label></td>
+                  <td><label for="exampleInputEmail1">:</label></td>
+                  <td><label for="exampleInputEmail1"><?php echo $valjk = ($c->jk == 'L') ? "Laki-laki" : "Perempuan" ; ?></label></td>
+                </tr>
+                <tr>
+                  <td><label for="exampleInputEmail1">Seafarercode</label></td>
+                  <td><label for="exampleInputEmail1">:</label></td>
+                  <td><label for="exampleInputEmail1"><?php echo $c->seafarercode; ?></label></td>
                 </tr>
               </table>
               <hr>
               <form action="<?php //echo base_url() ?>baak/kliringp_pkl" name="form1" id="form1" method="post">
                 <input type="hidden" name="id_pkl" id="id_pkl" value="<?php //echo $c->id_pkl; ?>">
-                <div class="form-group">
-                <label for="exampleInputEmail1">Index Prestasi IP :</label>
-                  <input class="form-control" type="text" name="smt1" id="smt1" placeholder="Nilai semester 1">
-                  <input class="form-control" type="text" name="smt2" id="smt2" placeholder="Nilai semester 2">
-                  <input class="form-control" type="text" name="smt3" id="smt3" placeholder="Nilai semester 3">
-                  <input class="form-control" type="text" name="smt4" id="smt4" placeholder="Nilai semester 4">
-                  <input class="form-control" type="text" name="smt5" id="smt5" placeholder="Nilai semester 5">
-                  </div>
+               <div class="form-group">
+                        <label for="status">Status (Perdana/Ulang)*:</label>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="status" name="estatoffboard" value="1">
+                            <label class="form-check-label" for="status">Perdana</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="status" name="estatoffboard" value="2">
+                            <label class="form-check-label" for="status">Ulang</label>
+                        </div>
+                    </div>
               
-                
-                 <div class="form-group">
-                <label for="exampleInputEmail1">Hasil :</label>
-                  <div class="radio">
-                    <label>
-                      <input type="radio" name="hasil" id="hasil" value="1">
-                      Telah Memenuhi Syarat
-                    </label>
-                  </div>
-                  <div class="radio">
-                    <label>
-                      <input type="radio" name="hasil" id="hasil" value="2">
-                      Belum Memenuhi Syarat
-                    </label>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label>Keterangan :</label>
-                  <textarea class="form-control" name="keterangan" id="keterangan" rows="3" placeholder="Masukkan Keterangan"></textarea>
-                </div>
-
+                 <table class="table table-striped">
+                        <tbody><tr>
+                          <th style="width: 10px">#</th>
+                          <th style="width: 10px">pilih</th>
+                          <th>Mata Uji</th>
+                        </tr>
+                        <?php foreach ($mu as $key) {
+                          # code... ?>
+                        <tr>
+                          <td><?php $echo $no++; ?></td>
+                          <td><input type="checkbox" name="matauji[]" value="<?php echo $key->id_matauji ?>"></td>
+                          <td><?php echo $key->matauji ?></td>
+                        </tr>
+                      <?php } ?>
+                    </tbody>
+                  </table>
                 <button type="submit" class="btn btn-primary">Simpan</button>
-                <a href="<?php //echo base_url() ?>baak/ajuan_pkl"><button type="button" class="btn btn-success pull-left"><i class="fa fa-chevron-left"></i>Kembali</button></a>
                 </form>
               <?php } ?>
 
