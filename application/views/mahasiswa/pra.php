@@ -75,7 +75,7 @@
                          foreach ($mu as $key) {
                           # code... ?>
                         <tr>
-                          <td><?php $echo $no++; ?></td>
+                          <td><?php echo $no++; ?></td>
                           <td><input type="checkbox" name="matauji[]" value="<?php echo $key->id_matauji ?>"></td>
                           <td><?php echo $key->matauji ?></td>
                         </tr>
