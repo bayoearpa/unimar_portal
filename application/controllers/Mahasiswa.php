@@ -88,7 +88,7 @@ class Mahasiswa extends CI_Controller {
 		$whmu = array(
 				'id_jenisujianprofesi' => '1',
 				'id_metodeujianprofesi' => '3',
-				'id_prodiprofesi' => $prodinnya,
+				// 'id_prodiprofesi' => $prodinnya,
 
 			);
 		$data['mu'] = $this->m_mahasiswa->get_data($whmu,'tbl_profesi_matauji_fungsi'); 

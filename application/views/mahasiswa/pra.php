@@ -71,7 +71,7 @@
                           <th>Mata Uji</th>
                         </tr>
                         <?php
-                        $no=2;
+                        $no=1;
                          foreach ($mu as $key) {
                           # code... ?>
                         <tr>
