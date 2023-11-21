@@ -84,7 +84,7 @@ class Mahasiswa extends CI_Controller {
 		// 	# code...
 		// 	$prodi = $key->kd_prodi;
 		// }
-		$prodi = $this->session->userdata('prodi')
+		$prodi = $this->session->userdata('prodi');
 		$prodinnya = ($prodi == '92403') ? "1" : "2" ;
 		$whmu = array(
 				'id_jenisujianprofesi' => '1',
