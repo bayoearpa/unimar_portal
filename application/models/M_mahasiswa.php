@@ -43,6 +43,8 @@ class M_mahasiswa extends CI_Model {
 			tmst_mahasiswa.Tanggal_lahir as tgll,
 			tmst_mahasiswa.Alamat as alamat,
 			tmst_mahasiswa.Jenis_kelamin as jk,
+			tmst_program_studi.Kode_program_studi as kd_prodi,
+			tmst_program_studi.Nama_program_studi as prodi,
 			tbl_mon.id_mon as id_mon,
 			tbl_mon.d3_no_ijasah as d3_no_ijasah,
 			tbl_mon.d3_tanggal_lulus as d3_tanggal_lulus,
@@ -71,6 +73,7 @@ class M_mahasiswa extends CI_Model {
 	        tbl_mon.status_d3');
 	     $this->db->from('tmst_mahasiswa');
 	      $this->db->join('tbl_mon','tmst_mahasiswa.NIM = tbl_mon.nim','left');
+	      $this->db->join('tmst_program_studi','tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi','inner');
         $this->db->where('tmst_mahasiswa.NIM', $id);
         $query = $this->db->get();
 

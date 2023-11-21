@@ -80,7 +80,10 @@ class Mahasiswa extends CI_Controller {
 		$data['mahasiswa'] = $this;
 		$data['mhs_detail'] = $this->m_mahasiswa->get_data_mhs_detail($id);
 		//get mata uji
-		$prodi = $this->session->userdata('prodi');
+		foreach ($data['mhs_detail'] as $key) {
+			# code...
+			$prodi = $key->kd_prodi;
+		}
 		$prodinnya = ($prodi == '92403') ? "1" : "2" ;
 		$whmu = array(
 				'id_jenisujianprofesi' => '1',
