@@ -50,6 +50,16 @@
                 </tr>
               </table>
               <hr>
+              <!-- cek sudah melakukan pendaftaran sebelumnya  -->
+              <?php if ($ceklog > "0") {
+                # code... ?>
+                <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h4><i class="icon fa fa-ban"></i> Alert!</h4>
+                    Maaf anda sudah melakukan pendaftaran silakan hubungi admin untuk melakukan reset.
+                </div>
+              <?php }else{ ?>
+              <!-- cek sudah melakukan pendaftaran sebelumnya  -->
               <form action="<?php //echo base_url() ?>baak/kliringp_pkl" name="form1" id="form1" method="post">
                 <input type="hidden" name="id_pkl" id="id_pkl" value="<?php //echo $c->id_pkl; ?>">
                <div class="form-group">
@@ -84,7 +94,7 @@
                   </table>
                 <button type="submit" class="btn btn-primary">Simpan</button>
                 </form>
-              <?php } ?>
+              <?php }} ?>
 
               <?php }else{ ?>
                 <!-- peringatan jika belum boleh mendafatar  -->

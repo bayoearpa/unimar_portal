@@ -79,11 +79,29 @@ class Mahasiswa extends CI_Controller {
 		# code...
 		$data['mahasiswa'] = $this;
 		$data['mhs_detail'] = $this->m_mahasiswa->get_data_mhs_detail($id);
+		//get set for month and year
+		$whset = array(
+				'id_set' => '1',
+			);
+		$get_setting = $this->m_mahasiswa->get_data($whmu,'tbl_profesi_set')->result();
+		foreach ($get_setting as $key) {
+			# code...
+			$get_tahun = $key->tahun;
+			$get_bulan = $key->bulan;
+
+			$data['set_tahun'] = $get_tahun;
+			$data['set_bulan'] = $get_bulan;
+		}
+
+		// cek log registrasi 
+		$whcek = array(
+				'seafarercode' => $id,
+				'bulan' => $get_tahun,
+				'tahunn' => $get_bulan,
+			);
+		$data['ceklog'] = $this->m_mahasiswa->get_data($whmu,'tbl_profesi_registrasi_log')->num_rows();
+
 		//get mata uji
-		// foreach ($data['mhs_detail'] as $key) {
-		// 	# code...
-		// 	$prodi = $key->kd_prodi;
-		// }
 		$prodi = $this->session->userdata('prodi');
 		$prodinnya = ($prodi == '92403') ? "1" : "2" ;
 		$whmu = array(
@@ -93,7 +111,6 @@ class Mahasiswa extends CI_Controller {
 
 			);
 		$data['mu'] = $this->m_mahasiswa->get_data($whmu,'tbl_profesi_matauji_fungsi')->result(); 
-
 		$this->load->view('mahasiswa/header');
 		$this->load->view('mahasiswa/pra',$data);
 		$this->load->view('mahasiswa/footer');
