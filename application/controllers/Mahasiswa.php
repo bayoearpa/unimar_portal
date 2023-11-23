@@ -94,8 +94,12 @@ class Mahasiswa extends CI_Controller {
 		}
 
 		// cek log registrasi 
+		foreach ($data['mhs_detail'] as $k) {
+			# code...
+			$seafarercode = $k->seafarercode;
+		}
 		$whcek = array(
-				'seafarercode' => $id,
+				'seafarercode' => $seafarercode,
 				'bulan' => $get_tahun,
 				'tahunn' => $get_bulan,
 			);
