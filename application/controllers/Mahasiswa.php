@@ -101,7 +101,7 @@ class Mahasiswa extends CI_Controller {
 		$whcek = array(
 				'seafarercode' => $seafarercode,
 				'bulan' => $get_tahun,
-				'tahunn' => $get_bulan,
+				'tahun' => $get_bulan,
 			);
 		$data['ceklog'] = $this->m_mahasiswa->get_data($whcek,'tbl_profesi_registrasi_log')->num_rows();
 
