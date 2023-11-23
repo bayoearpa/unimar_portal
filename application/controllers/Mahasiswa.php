@@ -103,7 +103,7 @@ class Mahasiswa extends CI_Controller {
 				'bulan' => $get_tahun,
 				'tahunn' => $get_bulan,
 			);
-		$data['ceklog'] = $this->m_mahasiswa->get_data($whmu,'tbl_profesi_registrasi_log')->num_rows();
+		$data['ceklog'] = $this->m_mahasiswa->get_data($whcek,'tbl_profesi_registrasi_log')->num_rows();
 
 		//get mata uji
 		$prodi = $this->session->userdata('prodi');
