@@ -83,7 +83,7 @@ class Mahasiswa extends CI_Controller {
 		$whset = array(
 				'id_set' => '1',
 			);
-		$get_setting = $this->m_mahasiswa->get_data($whmu,'tbl_profesi_setting')->result();
+		$get_setting = $this->m_mahasiswa->get_data($whset,'tbl_profesi_setting')->result();
 		foreach ($get_setting as $key) {
 			# code...
 			$get_tahun = $key->tahun;
