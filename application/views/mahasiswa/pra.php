@@ -43,10 +43,23 @@
                   <td><label for="exampleInputEmail1">:</label></td>
                   <td><label for="exampleInputEmail1"><?php echo $valjk = ($c->jk == 'L') ? "Laki-laki" : "Perempuan" ; ?></label></td>
                 </tr>
-                <tr>
+                 <tr>
                   <td><label for="exampleInputEmail1">Seafarercode</label></td>
                   <td><label for="exampleInputEmail1">:</label></td>
                   <td><label for="exampleInputEmail1"><?php echo $c->seafarercode; ?></label></td>
+                </tr>
+                <tr>
+                  <td colspan="3"><b><center>Periode</center></b></td>
+                </tr>
+                <tr>
+                  <td><label for="exampleInputEmail1">Bulan</label></td>
+                  <td><label for="exampleInputEmail1">:</label></td>
+                  <td><label for="exampleInputEmail1"><?php echo $set_bulan; ?></label></td>
+                </tr>
+                <tr>
+                  <td><label for="exampleInputEmail1">Tahun</label></td>
+                  <td><label for="exampleInputEmail1">:</label></td>
+                  <td><label for="exampleInputEmail1"><?php echo $set_tahun; ?></label></td>
                 </tr>
               </table>
               <hr>
