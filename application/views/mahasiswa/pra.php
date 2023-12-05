@@ -82,11 +82,11 @@
                <div class="form-group">
                         <label for="status">Status (Perdana/Ulang)*:</label>
                         <div class="form-check">
-                            <input type="radio" class="form-check-input" id="status" name="estatoffboard" value="1">
+                            <input type="radio" class="form-check-input" id="status" name="status" value="1">
                             <label class="form-check-label" for="status">Perdana</label>
                         </div>
                         <div class="form-check">
-                            <input type="radio" class="form-check-input" id="status" name="estatoffboard" value="2">
+                            <input type="radio" class="form-check-input" id="status" name="status" value="2">
                             <label class="form-check-label" for="status">Ulang</label>
                         </div>
                     </div>
