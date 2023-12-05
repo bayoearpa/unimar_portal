@@ -133,7 +133,7 @@ class Mahasiswa extends CI_Controller {
 			'tgl_registrasi' 	=> $tgl_registrasi
 			);
 
-		$res = $this->m_portal->input_data($data_log,'tbl_profesi_registrasi_log');
+		$res = $this->m_mahasiswa->input_data($data_log,'tbl_profesi_registrasi_log');
 
 		/////////////////////////////input to registrasi2///////////////////////////////////////
 		$result = array();
