@@ -119,6 +119,53 @@ class Mahasiswa extends CI_Controller {
 		$this->load->view('mahasiswa/pra',$data);
 		$this->load->view('mahasiswa/footer');
 	}
+	public function profesip()
+	{
+		# code...
+
+		/////////////////////////////// /.input to tbl log/////////////////////////////////////
+
+			$tgl_registrasi = date('Y-m-d');
+			$data_log = array(
+			'seafarercode'     	=> $this->input->post('seafarercode'),	
+			'bulan'   			=> $this->input->post('bulan'),
+			'tahun'   			=> $this->input->post('tahun'),		
+			'tgl_registrasi' 	=> $tgl_registrasi
+
+		$res = $this->m_portal->input_data($data_log,'tbl_profesi_registrasi_log');
+
+		/////////////////////////////input to registrasi2///////////////////////////////////////
+		$result = array();
+		foreach ($_POST['id_matauji'] as $key => $val) {
+			$result[] = array( 
+				'seafarercode'     		=> $this->input->post('seafarercode'),
+				'bulan'   				=> $this->input->post('bulan'),
+				'tahun'   				=> $this->input->post('tahun'),			
+				'id_matauji' 			=> $_POST['makul'][$key],
+				'id_profesi' 			=> $this->input->post('id_profesi'),
+				'id_jenisujianprofesi'	=> $this->input->post('id_jenisujianprofesi'),
+				'status' 				=> $this->input->post('status'),
+				'sudah'					=> "0"
+			);		
+		}		
+		$this->db->insert_batch('tbl_profesi_registrasi2',$result);
+
+		/////////////////////////////./input arry///////////////////////////////////////	
+
+		  // $res = $this->m_portal->input_data($data,'tbl_kliring_smta');
+
+
+		  if($res==true && $result==true)
+			 {
+				$this->session->set_flashdata('error', "<b>Error, Proses pendaftaran UKP anda gagal</b>");
+			 }else{
+				 $this->session->set_flashdata('success', "<b>Selamat, Pendaftaran UKP anda berhasil silakan lakukan pengecekan berkas dan pembayaran</b>");  
+			 }
+	  	$this->load->view('mahasiswa/header');
+		$this->load->view('mahasiswa/pra');
+		$this->load->view('mahasiswa/footer');
+
+	}
 	public function onboard($id)
 	{
 		# code...

@@ -13,8 +13,8 @@
 
             <?php 
             // echo validation_errors(); 
-            // echo $this->session->flashdata('success');
-            // echo $this->session->flashdata('error');
+            echo $this->session->flashdata('success');
+            echo $this->session->flashdata('error');
             foreach($mhs_detail as $c){ 
               ?>
               <table width="30%">
@@ -73,8 +73,12 @@
                 </div>
               <?php }else{ ?>
               <!-- cek sudah melakukan pendaftaran sebelumnya  -->
-              <form action="<?php //echo base_url() ?>baak/kliringp_pkl" name="form1" id="form1" method="post">
-                <input type="hidden" name="id_pkl" id="id_pkl" value="<?php //echo $c->id_pkl; ?>">
+              <form action="<?php echo base_url() ?>mahasiswa/prap" name="form1" id="form1" method="post">
+                <input type="hidden" name="seafarercode" id="seafarercode" value="<?php echo $c->seafarercode; ?>">
+                <input type="hidden" name="bulan" id="bulan" value="<?php echo $c->set_bulan; ?>">
+                <input type="hidden" name="tahun" id="tahun" value="<?php echo $c->set_tahun; ?>">
+                <input type="hidden" name="id_profesi" id="id_profesi" value="<?php echo $valprodi = ($this->session->userdata('prodi') == '92403') ? "1" : "2" ; ?>">
+                <input type="hidden" name="jenis" id="jenis" value="1">
                <div class="form-group">
                         <label for="status">Status (Perdana/Ulang)*:</label>
                         <div class="form-check">
