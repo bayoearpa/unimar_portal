@@ -122,6 +122,7 @@ class Mahasiswa extends CI_Controller {
 	public function profesip()
 	{
 		# code...
+		$user = $this->session->userdata('user');
 
 		/////////////////////////////// /.input to tbl log/////////////////////////////////////
 
@@ -161,7 +162,7 @@ class Mahasiswa extends CI_Controller {
 			 }else{
 				 $this->session->set_flashdata('success', "<b>Selamat, Pendaftaran UKP anda berhasil silakan lakukan pengecekan berkas dan pembayaran</b>");  
 			 }
-	  	redirect(base_url().'mahasiswa/pra');
+	  	redirect(base_url().'mahasiswa/pra/'.$user);
 
 	}
 	public function onboard($id)
