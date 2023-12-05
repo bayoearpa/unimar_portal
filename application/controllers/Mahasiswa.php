@@ -144,7 +144,7 @@ class Mahasiswa extends CI_Controller {
 				'tahun'   				=> $this->input->post('tahun'),			
 				'id_matauji' 			=> $_POST['makul'][$key],
 				'id_profesi' 			=> $this->input->post('id_profesi'),
-				'id_jenisujianprofesi'	=> $this->input->post('id_jenisujianprofesi'),
+				'id_jenisujianprofesi'	=> $this->input->post('jenis'),
 				'status' 				=> $this->input->post('status'),
 				'sudah'					=> "0"
 			);		
