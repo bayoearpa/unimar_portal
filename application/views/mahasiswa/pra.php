@@ -75,8 +75,8 @@
               <!-- cek sudah melakukan pendaftaran sebelumnya  -->
               <form action="<?php echo base_url() ?>mahasiswa/profesip" name="form1" id="form1" method="post">
                 <input type="text" name="seafarercode" id="seafarercode" value="<?php echo $c->seafarercode; ?>">
-                <input type="text" name="bulan" id="bulan" value="<?php echo $c->set_bulan; ?>">
-                <input type="text" name="tahun" id="tahun" value="<?php echo $c->set_tahun; ?>">
+                <input type="text" name="bulan" id="bulan" value="<?php echo $set_bulan; ?>">
+                <input type="text" name="tahun" id="tahun" value="<?php echo $set_tahun; ?>">
                 <input type="text" name="id_profesi" id="id_profesi" value="<?php echo $valprodi = ($this->session->userdata('prodi') == '92403') ? "1" : "2" ; ?>">
                 <input type="text" name="jenis" id="jenis" value="1">
                <div class="form-group">
