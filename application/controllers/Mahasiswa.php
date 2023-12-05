@@ -161,9 +161,7 @@ class Mahasiswa extends CI_Controller {
 			 }else{
 				 $this->session->set_flashdata('success', "<b>Selamat, Pendaftaran UKP anda berhasil silakan lakukan pengecekan berkas dan pembayaran</b>");  
 			 }
-	  	$this->load->view('mahasiswa/header');
-		$this->load->view('mahasiswa/pra');
-		$this->load->view('mahasiswa/footer');
+	  	redirect(base_url().'mahasiswa/pra');
 
 	}
 	public function onboard($id)
