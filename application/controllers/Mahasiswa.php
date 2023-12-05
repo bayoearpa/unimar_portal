@@ -131,6 +131,7 @@ class Mahasiswa extends CI_Controller {
 			'bulan'   			=> $this->input->post('bulan'),
 			'tahun'   			=> $this->input->post('tahun'),		
 			'tgl_registrasi' 	=> $tgl_registrasi
+			);
 
 		$res = $this->m_portal->input_data($data_log,'tbl_profesi_registrasi_log');
 
