@@ -154,7 +154,6 @@ class Mahasiswa extends CI_Controller {
 
 		  // $res = $this->m_portal->input_data($data,'tbl_kliring_smta');
 
-
 		  if($res==true && $result==true)
 			 {
 				$this->session->set_flashdata('error', "<b>Error, Proses pendaftaran UKP anda gagal</b>");
