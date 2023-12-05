@@ -138,12 +138,12 @@ class Mahasiswa extends CI_Controller {
 
 		/////////////////////////////input to registrasi2///////////////////////////////////////
 		$result = array();
-		foreach ($_POST['id_matauji'] as $key => $val) {
+		foreach ($_POST['matauji'] as $key => $val) {
 			$result[] = array( 
 				'seafarercode'     		=> $this->input->post('seafarercode'),
 				'bulan'   				=> $this->input->post('bulan'),
 				'tahun'   				=> $this->input->post('tahun'),			
-				'id_matauji' 			=> $_POST['makul'][$key],
+				'id_matauji' 			=> $_POST['matauji'][$key],
 				'id_profesi' 			=> $this->input->post('id_profesi'),
 				'id_jenisujianprofesi'	=> $this->input->post('jenis'),
 				'status' 				=> $this->input->post('status'),
