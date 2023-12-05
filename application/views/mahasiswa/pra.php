@@ -73,7 +73,7 @@
                 </div>
               <?php }else{ ?>
               <!-- cek sudah melakukan pendaftaran sebelumnya  -->
-              <form action="<?php echo base_url() ?>mahasiswa/prap" name="form1" id="form1" method="post">
+              <form action="<?php echo base_url() ?>mahasiswa/profesip" name="form1" id="form1" method="post">
                 <input type="hidden" name="seafarercode" id="seafarercode" value="<?php echo $c->seafarercode; ?>">
                 <input type="hidden" name="bulan" id="bulan" value="<?php echo $c->set_bulan; ?>">
                 <input type="hidden" name="tahun" id="tahun" value="<?php echo $c->set_tahun; ?>">
