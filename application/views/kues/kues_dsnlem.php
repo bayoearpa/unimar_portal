@@ -25,7 +25,7 @@
         <div class="col-md-12">
 
           <!-- konten -->
-          <center><iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfF-9-brn6DdJyG-YW1FPkzwN6ky-wKEhb1r9lmD3z07q9l2g/viewform?embedded=true" width="100%" height="5199" frameborder="0" marginheight="0" marginwidth="0">Memuat…</iframe></center>
+          <center><iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdhIPdiIRjnylUHzpuyq0UZmgicZKomyjuY6BgEf0lSlXONOQ/viewform?embedded=true" width="100%" height="5267" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe></center>
           
           <!-- /.konten -->
           

@@ -74,11 +74,11 @@
               <?php }else{ ?>
               <!-- cek sudah melakukan pendaftaran sebelumnya  -->
               <form action="<?php echo base_url() ?>mahasiswa/profesip" name="form1" id="form1" method="post">
-                <input type="text" name="seafarercode" id="seafarercode" value="<?php echo $c->seafarercode; ?>">
-                <input type="text" name="bulan" id="bulan" value="<?php echo $set_bulan; ?>">
-                <input type="text" name="tahun" id="tahun" value="<?php echo $set_tahun; ?>">
-                <input type="text" name="id_profesi" id="id_profesi" value="<?php echo $valprodi = ($this->session->userdata('prodi') == '92403') ? "1" : "2" ; ?>">
-                <input type="text" name="jenis" id="jenis" value="1">
+                <input type="hidden" name="seafarercode" id="seafarercode" value="<?php echo $c->seafarercode; ?>">
+                <input type="hidden" name="bulan" id="bulan" value="<?php echo $set_bulan; ?>">
+                <input type="hidden" name="tahun" id="tahun" value="<?php echo $set_tahun; ?>">
+                <input type="hidden" name="id_profesi" id="id_profesi" value="<?php echo $valprodi = ($this->session->userdata('prodi') == '92403') ? "1" : "2" ; ?>">
+                <input type="hidden" name="jenis" id="jenis" value="1">
                <div class="form-group">
                         <label for="status">Status (Perdana/Ulang)*:</label>
                         <div class="form-check">
@@ -111,7 +111,50 @@
                   </table>
                 <button type="submit" class="btn btn-primary">Simpan</button>
                 </form>
-              <?php }} ?>
+              <?php } 
+
+                      if ($cekbayar > "0") {
+                        # code... ?>
+                     
+                         <table class="table table-striped">
+                                <tbody><tr>
+                                  <th style="width: 10px">#</th>
+                                  <th>Proses</th>
+                                  <th>Download Form Pendaftaran UKP</th>
+                                  <th style="width: 40px">Status Pembayaran </th>
+                                </tr>
+                                <tr>
+                                  <td>1.</td>
+                                  <td>Data anda telah selesai divalidasi</td>
+                                  <td>
+                                     <div class="form-group" align="center">
+                                      <a href="<?php echo base_url() ?>mahasiswa/download<?php echo $c->seafarercode ?>"><button type="button" name="submit" class="btn btn-primary">Download</button></a>
+                                    </div>
+                                  </td>
+                                  <td><span class="badge bg-green"><i class="fa fa-check"></i></span></td>
+                                </tr>
+                              </tbody></table>
+                      <?php }else{ ?>
+                           <table class="table table-striped">
+                            <tbody><tr>
+                              <th style="width: 10px">#</th>
+                              <th>Proses</th>
+                              <th>Download Form Pendaftaran UKP</th>
+                              <th style="width: 40px">Status</th>
+                            </tr>
+                            <tr>
+                              <td>1.</td>
+                              <td>Sedang dalam proses validasi</td>
+                              <td>
+                                Maaf anda belum bisa mendownload form pendaftaran anda karena belum divalidasi
+                              </td>
+                              <td><span class="badge bg-red"><i class="fa fa-times"></i></span></td>
+                            </tr>
+                          </tbody></table>
+                      <?php } ?>
+
+
+              <?php } ?>
 
               <?php }else{ ?>
                 <!-- peringatan jika belum boleh mendafatar  -->
