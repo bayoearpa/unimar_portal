@@ -120,6 +120,52 @@ class Mahasiswa extends CI_Controller {
 		$this->load->view('mahasiswa/pra',$data);
 		$this->load->view('mahasiswa/footer');
 	}
+	public function pasca($id)
+	{
+		# code...
+		$data['mahasiswa'] = $this;
+		$data['mhs_detail'] = $this->m_mahasiswa->get_data_mhs_detail($id);
+		//get set for month and year
+		$whset = array(
+				'id_set' => '1',
+			);
+		$get_setting = $this->m_mahasiswa->get_data($whset,'tbl_profesi_setting')->result();
+		foreach ($get_setting as $key) {
+			# code...
+			$get_tahun = $key->tahun;
+			$get_bulan = $key->bulan;
+
+			$data['set_tahun'] = $get_tahun;
+			$data['set_bulan'] = $get_bulan;
+		}
+
+		// cek log registrasi 
+		foreach ($data['mhs_detail'] as $k) {
+			# code...
+			$seafarercode = $k->seafarercode;
+		}
+		$whcek = array(
+				'seafarercode' => $seafarercode,
+				'bulan' => $get_bulan,
+				'tahun' => $get_tahun,
+			);
+		$data['ceklog'] = $this->m_mahasiswa->get_data($whcek,'tbl_profesi_registrasi_log')->num_rows();
+		$data['cekbayar'] = $this->m_mahasiswa->get_data($whcek,'tbl_profesi_pembayaran_2018')->num_rows();
+
+		//get mata uji
+		$prodi = $this->session->userdata('prodi');
+		$prodinnya = ($prodi == '92403') ? "1" : "2" ;
+		$whmu = array(
+				'id_jenisujianprofesi' => '2',
+				'id_metodeujianprofesi' => '3',
+				'id_prodiprofesi' => $prodinnya,
+
+			);
+		$data['mu'] = $this->m_mahasiswa->get_data($whmu,'tbl_profesi_matauji_fungsi')->result(); 
+		$this->load->view('mahasiswa/header');
+		$this->load->view('mahasiswa/pra',$data);
+		$this->load->view('mahasiswa/footer');
+	}
 	public function profesip()
 	{
 		# code...
