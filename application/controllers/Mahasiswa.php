@@ -321,7 +321,16 @@ class Mahasiswa extends CI_Controller {
        }
     
 	} 
+	public function laponboard($id)
+	{
+		# code...
+		$data['mahasiswa'] = $this;
+		$data['mhs_detail'] = $this->m_mahasiswa->get_data_mhs_detail($id);
 
+		$this->load->view('mahasiswa/header');
+		$this->load->view('mahasiswa/laponboard',$data);
+		$this->load->view('mahasiswa/footer');
+	}
 	public function offboard($id)
 	{
 		# code...
