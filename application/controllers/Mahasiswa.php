@@ -104,7 +104,7 @@ class Mahasiswa extends CI_Controller {
 				'tahun' => $get_tahun,
 			);
 		$data['ceklog'] = $this->m_mahasiswa->get_data($whcek,'tbl_profesi_registrasi_log')->num_rows();
-		$data['cekbayar'] = $this->m_mahasiswa->get_data($whcek,'tbl_profesi_pembayaran')->num_rows();
+		$data['cekbayar'] = $this->m_mahasiswa->get_data($whcek,'tbl_profesi_pembayaran_2018')->num_rows();
 
 		//get mata uji
 		$prodi = $this->session->userdata('prodi');
