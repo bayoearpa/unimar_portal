@@ -163,7 +163,7 @@ class Mahasiswa extends CI_Controller {
 			);
 		$data['mu'] = $this->m_mahasiswa->get_data($whmu,'tbl_profesi_matauji_fungsi')->result(); 
 		$this->load->view('mahasiswa/header');
-		$this->load->view('mahasiswa/pra',$data);
+		$this->load->view('mahasiswa/pasca',$data);
 		$this->load->view('mahasiswa/footer');
 	}
 	public function profesip()
