@@ -182,6 +182,10 @@
                             <label class="form-check-label" for="editstatmodeling">Belum</label>
                         </div>
                     </div>
+                     <div class="form-group">
+                        <label for="editKetModeling">Keterangan:</label>
+                        <textarea class="form-control" rows="3" id="editKetModeling" name="ket_modeling"></textarea>
+                    </div>
                     <!-- Tambahkan input lain sesuai kebutuhan -->
                 </form>
             </div>

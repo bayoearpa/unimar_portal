@@ -249,6 +249,11 @@
                         <input type="hidden" id="editufsignoff_existing" name="eufsignoff_existing" value="<?php echo $i->upload_file_signoff; ?>">
                     </div>
                     <div id="fileUploadStatus">Belum ada file yang diunggah.</div>
+
+                     <div class="form-group">
+                        <label for="editKetOffboard">Keterangan:</label>
+                        <textarea class="form-control" rows="3" id="editKetOffboard" name="ket_offboard"></textarea>
+                    </div>
                     
                     
                     <!-- Tambahkan input lain sesuai kebutuhan -->

@@ -1631,6 +1631,7 @@ class baak extends CI_Controller {
     $data = array(
         'nim' => $this->input->post('nim'),
         'd3_no_ijasah' => $this->input->post('enj')
+        'ket_d3' => $this->input->post('ket_d3')
     );
 
     // Simpan data ke database
@@ -1711,7 +1712,8 @@ class baak extends CI_Controller {
         'pra_lulus_ukp' => $pra_tanggal_lulusf,
         'pra_mb_skl' => $pra_mb_sklf,
         'pra_status' => $this->input->post('estatpra'),
-        'status_sb' => $this->input->post('esb')
+        'status_sb' => $this->input->post('esb'),
+        'ket_pra' => $this->input->post('ket_pra')
     );
 
     // Simpan data ke database
@@ -1788,7 +1790,8 @@ class baak extends CI_Controller {
     $data = array(
         'pasca_tgl_lulus' => $pra_tanggal_lulusf,
         'pasca_no_ijasah' => $this->input->post('enoijasah'),
-        'pasca_status' => $this->input->post('estatpasca')
+        'pasca_status' => $this->input->post('estatpasca'),
+        'ket_pasca' => $this->input->post('ket_pasca')
     );
 
     // Simpan data ke database

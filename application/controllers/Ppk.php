@@ -858,7 +858,8 @@ class ppk extends CI_Controller {
         'id_mon' => $this->input->post('id_mon'),
     ); 
     $data = array(
-        'd3_tanggal_lulus' => $this->input->post('etgllls')
+        'd3_tanggal_lulus' => $this->input->post('etgllls'),
+        'ket_d3' => $this->input->post('ket_d3')
     );
 
     // Simpan data ke database
@@ -938,13 +939,15 @@ class ppk extends CI_Controller {
 			$nama_perusahaan = $this->input->post('editnamaperusahaan');
 			$nama_kapal = $this->input->post('editnamakapal');
 			$tgl_signon = $this->input->post('etglsignon');
+			$ket_onboard = $this->input->post('ket_onboard');
 
 		    $tgl_signonf = date('Y-m-d', strtotime($tgl_signon)); // Ubah format tanggal
     	// Simpan data ke database (contoh)
             $data = array(
                 'status_onboard' => $status_onboard,
                 'nama_kapal' => $nama_kapal,
-                'tgl_sign_on' => $tgl_signonf
+                'tgl_sign_on' => $tgl_signonf,
+                'ket_onboard' => $ket_onboard
             );
             $proses_edt = $this->m_portal->update_data($where,$data,'tbl_mon');
         if($proses_edt){    
@@ -964,6 +967,7 @@ class ppk extends CI_Controller {
 		$nama_perusahaan = $this->input->post('editnamaperusahaan');
 		$nama_kapal = $this->input->post('editnamakapal');
 		$tgl_signon = $this->input->post('etglsignon');
+		$ket_onboard = $this->input->post('ket_onboard');
 
 	    $tgl_signonf = date('Y-m-d', strtotime($tgl_signon)); // Ubah format tanggal
     // Tangani unggahan file
@@ -983,6 +987,7 @@ class ppk extends CI_Controller {
                 'status_oboard' => $status_onboard,
                 'nama_kapal' => $nama_kapal,
                 'tgl_sign_on' => $tgl_signonf,
+                'ket_onboard' => $ket_onboard,
                 'upload_file_signon' => $file_name
             );
             $this->m_portal->update_data($where,$data,'tbl_mon');
@@ -1058,13 +1063,15 @@ class ppk extends CI_Controller {
 			$nim = $this->input->post('nim');
 			$status_offboard = $this->input->post('estatoffboard');
 			$tgl_signoff = $this->input->post('etglsignoff');
+			$ket_offboard = $this->input->post('ket_offboard');
 
 		    $tgl_signofff = date('Y-m-d', strtotime($tgl_signoff)); // Ubah format tanggal
 
     	 // Simpan data ke database (contoh)
             $data = array(
                 'status_offboard' => $status_offboard,
-                'tgl_sign_off' => $tgl_signoff
+                'tgl_sign_off' => $tgl_signoff,
+                'ket_offboard' => $ket_offboard
             );
           $proses_edt = $this->m_portal->update_data($where,$data,'tbl_mon');
 
@@ -1081,6 +1088,7 @@ class ppk extends CI_Controller {
 			$nim = $this->input->post('nim');
 			$status_offboard = $this->input->post('estatoffboard');
 			$tgl_signoff = $this->input->post('etglsignoff');
+			$ket_offboard = $this->input->post('ket_offboard');
 
 		    $tgl_signofff = date('Y-m-d', strtotime($tgl_signoff)); // Ubah format tanggal
 		    
@@ -1101,6 +1109,7 @@ class ppk extends CI_Controller {
 		            $data = array(
 		                'status_offboard' => $status_offboard,
 		                'tgl_sign_off' => $tgl_signoff,
+		                'ket_offboard' => $ket_offboard,
 		                'upload_file_signoff' => $file_name
 		            );
 		            $this->m_portal->update_data($where,$data,'tbl_mon');
@@ -1231,7 +1240,8 @@ class ppk extends CI_Controller {
         'id_mon' => $this->input->post('id_mon'),
     ); 
     $data = array(
-        'status_modeling' => $this->input->post('estatmodeling')
+        'status_modeling' => $this->input->post('estatmodeling'),
+        'ket_modeling' => $this->input->post('ket_modeling')
     );
 
     // Simpan data ke database
@@ -1309,10 +1319,12 @@ class ppk extends CI_Controller {
 		    );
 			$nim = $this->input->post('nim');
 			$status_trb = $this->input->post('estattrb');
+			$ket_trb = $this->input->post('ket_trb');
 			
     	 // Simpan data ke database (contoh)
             $data = array(
                 'status_trb' => $status_trb,
+                'ket_trb' => $ket_trb
             );
           $proses_edt = $this->m_portal->update_data($where,$data,'tbl_mon');
 
@@ -1327,7 +1339,8 @@ class ppk extends CI_Controller {
 		        'id_mon' => $this->input->post('nid_mon'),
 		    );
 			$nim = $this->input->post('nim');
-			$status_trb = $this->input->post('estattrb');		    
+			$status_trb = $this->input->post('estattrb');
+			$ket_trb = $this->input->post('ket_trb');		    
 
 		    // Tangani unggahan file
 		        $config['upload_path'] = './assets/monitoring/trb';
@@ -1344,6 +1357,7 @@ class ppk extends CI_Controller {
 		            // Simpan data ke database (contoh)
 		            $data = array(
 		                'status_trb' => $status_trb,
+		                'ket_trb' => $ket_trb,
 		                'upload_file_trb' => $file_name
 		            );
 		            $this->m_portal->update_data($where,$data,'tbl_mon');

@@ -89,6 +89,7 @@
             } else if (parsedData.status_prada === 'belum') {
                 $('input[name="estatprada"][value="belum"]').prop('checked', true);
             }
+        $('#editKetModeling').val(parsedData.ket_modeling);
         // Tambahkan input lain sesuai kebutuhan
         $('#editModal').modal('show');
       }
@@ -137,6 +138,7 @@ function connectEditButtonListeners() {
             } else if (parsedData.status_modeling === 'belum') {
                 $('input[name="estatmodeling"][value="belum"]').prop('checked', true);
             }
+        $('#editKetModeling').val(parsedData.ket_modeling);
         // Tambahkan input lain sesuai kebutuhan
         $('#editModal').modal('show');
       }

@@ -93,6 +93,7 @@
             } else if (parsedData.pasca_status === 'belum') {
                 $('input[name="estatpra"][value="belum"]').prop('checked', true);
             }
+        $('#editKetPra').val(parsedData.ket_pra);
         // Tambahkan input lain sesuai kebutuhan
         $('#editModal').modal('show');
       }
@@ -145,6 +146,7 @@ function connectEditButtonListeners() {
         } else if (parsedData.pra_status === 'belum') {
             $('#editstatpra').prop('checked', true);
         }
+        $('#editKetPra').val(parsedData.ket_pra);
         // Tambahkan input lain sesuai kebutuhan
         $('#editModal').modal('show');
       }

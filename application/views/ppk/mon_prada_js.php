@@ -55,6 +55,7 @@
             } else if (parsedData.status_prada === 'belum') {
                 $('input[name="statprada"][value="belum"]').prop('checked', true);
             }
+        $('#addKetPrada').val(parsedData.ket_prada);
         // Tambahkan input lain sesuai kebutuhan
         $('#addModal').modal('show');
       }
@@ -89,6 +90,7 @@
             } else if (parsedData.status_prada === 'belum') {
                 $('input[name="estatprada"][value="belum"]').prop('checked', true);
             }
+        $('#editKetPrada').val(parsedData.ket_prada);
         // Tambahkan input lain sesuai kebutuhan
         $('#editModal').modal('show');
       }
@@ -137,6 +139,7 @@ function connectEditButtonListeners() {
             } else if (parsedData.status_prada === 'belum') {
                 $('input[name="estatprada"][value="belum"]').prop('checked', true);
             }
+        $('#editKetPrada').val(parsedData.ket_prada);
         // Tambahkan input lain sesuai kebutuhan
         $('#editModal').modal('show');
       }
@@ -173,6 +176,7 @@ function connectInsertButtonListeners() {
             } else if (parsedData.status_prada === 'belum') {
                 $('input[name="estatprada"][value="belum"]').prop('checked', true);
             }
+        $('#addKetPrada').val(parsedData.ket_prada);
         // Tambahkan input lain sesuai kebutuhan
         $('#addModal').modal('show');
       }

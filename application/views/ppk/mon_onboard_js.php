@@ -114,7 +114,7 @@
         } else {
             $('#editufsignon_existing').val('');
         }
-       
+        $('#editKetOnboard').val(parsedData.ket_onboard);
         // Tambahkan input lain sesuai kebutuhan
         $('#editModal').modal('show');
       }
@@ -183,7 +183,7 @@ function connectEditButtonListeners() {
         } else {
             $('#editufsignon_existing').val('');
         }
-       
+       $('#editKetOnboard').val(parsedData.ket_onboard);
         // Tambahkan input lain sesuai kebutuhan
         $('#editModal').modal('show');
       }

@@ -146,6 +146,7 @@
                             <label class="form-check-label" for="addstatpra">Belum</label>
                         </div>
                     </div>
+
                     <!-- Tambahkan input lain sesuai kebutuhan -->
                 </form>
             </div>
@@ -214,6 +215,10 @@
                             <input type="radio" class="form-check-input" id="editstatpasca" name="estatpasca" value="belum">
                             <label class="form-check-label" for="editstatpasca">Belum</label>
                         </div>
+                    </div>
+                     <div class="form-group">
+                        <label for="editAlamat">Alamat:</label>
+                        <textarea class="form-control" rows="3" id="editKetPasca" name="ket_pasca"></textarea>
                     </div>
                     <!-- Tambahkan input lain sesuai kebutuhan -->
                 </form>

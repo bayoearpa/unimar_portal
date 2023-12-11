@@ -80,6 +80,7 @@
             }
         $('#edittgllls').val(parsedData.d3_tanggal_lulus);
         $('#editnoijs').val(parsedData.d3_no_ijasah);
+        $('#editKetD3').val(parsedData.ket_d3);
         // Tambahkan input lain sesuai kebutuhan
         $('#editModal').modal('show');
       }
@@ -128,6 +129,7 @@ function connectEditButtonListeners() {
             }
         $('#edittgllls').val(parsedData.d3_tanggal_lulus);
         $('#editnoijs').val(parsedData.d3_no_ijasah);
+        $('#editKetD3').val(parsedData.ket_d3);
         // Tambahkan input lain sesuai kebutuhan
         $('#editModal').modal('show');
       }

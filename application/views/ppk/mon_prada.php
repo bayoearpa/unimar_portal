@@ -125,6 +125,10 @@
                             <label class="form-check-label" for="addstatprada">Belum</label>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label for="addKetPrada">Keterangan:</label>
+                        <textarea class="form-control" rows="3" id="addKetPrada" name="ket_prada"></textarea>
+                    </div>
                     <!-- Tambahkan input lain sesuai kebutuhan -->
                 </form>
             </div>
@@ -181,6 +185,10 @@
                             <input type="radio" class="form-check-input" id="editstatprada" name="estatprada" value="belum">
                             <label class="form-check-label" for="editstatonboard">Belum</label>
                         </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="editKetPrada">Keterangan:</label>
+                        <textarea class="form-control" rows="3" id="editKetPrada" name="eket_prada"></textarea>
                     </div>
                     <!-- Tambahkan input lain sesuai kebutuhan -->
                 </form>

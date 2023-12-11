@@ -242,6 +242,10 @@
                         <input type="hidden" id="editufsignon_existing" name="eufsignon_existing" value="<?php echo $i->upload_file_signon; ?>">
                     </div>
                     <div id="fileUploadStatus">Belum ada file yang diunggah.</div>
+                    <div class="form-group">
+                        <label for="editKetOnboard">Keterangan:</label>
+                        <textarea class="form-control" rows="3" id="editKetOnboard" name="ket_onboard"></textarea>
+                    </div>
                     
                     
                     <!-- Tambahkan input lain sesuai kebutuhan -->

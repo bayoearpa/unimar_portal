@@ -93,6 +93,7 @@
             } else if (parsedData.pasca_status === 'belum') {
                 $('input[name="estatpasca"][value="belum"]').prop('checked', true);
             }
+        $('#editKetPasca').val(parsedData.ket_pasca);
         // Tambahkan input lain sesuai kebutuhan
         $('#editModal').modal('show');
       }
@@ -151,6 +152,7 @@ function connectEditButtonListeners() {
             } else if (parsedData.pasca_status === 'belum') {
                 $('input[name="estatpasca"][value="belum"]').prop('checked', true);
             }
+        $('#editKetPasca').val(parsedData.ket_pasca);
         // Tambahkan input lain sesuai kebutuhan
         $('#editModal').modal('show');
       }

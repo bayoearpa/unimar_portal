@@ -117,6 +117,7 @@
         } else {
             $('#editufsignoff_existing').val('');
         }
+        $('#editKetOffboard').val(parsedData.ket_offboard);
         // Tambahkan input lain sesuai kebutuhan
         $('#editModal').modal('show');
       }
@@ -187,6 +188,7 @@ function connectEditButtonListeners() {
         } else {
             $('#editufsignoff_existing').val('');
         }
+        $('#editKetOffboard').val(parsedData.ket_offboard);
         // Tambahkan input lain sesuai kebutuhan
         $('#editModal').modal('show');
       }

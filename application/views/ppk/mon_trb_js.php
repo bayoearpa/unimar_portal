@@ -116,6 +116,7 @@
         } else {
             $('#editufsignoff_existing').val('');
         }
+        $('#editKetTrb').val(parsedData.ket_trb);
         // Tambahkan input lain sesuai kebutuhan
         $('#editModal').modal('show');
       }
@@ -185,6 +186,7 @@ function connectEditButtonListeners() {
         } else {
             $('#editufsignoff_existing').val('');
         }
+        $('#editKetTrb').val(parsedData.ket_trb);
         // Tambahkan input lain sesuai kebutuhan
         $('#editModal').modal('show');
       }

@@ -234,7 +234,10 @@
                     </div>
                     <div id="fileUploadStatus">Belum ada file yang diunggah.</div>
                     
-                    
+                    <div class="form-group">
+                        <label for="editKetTrb">Keterangan:</label>
+                        <textarea class="form-control" rows="3" id="editKetTrb" name="ket_trb"></textarea>
+                    </div>
                     <!-- Tambahkan input lain sesuai kebutuhan -->
                 </form>
             </div>

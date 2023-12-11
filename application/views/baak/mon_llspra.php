@@ -216,6 +216,10 @@
                             <label class="form-check-label" for="editstatpra">Belum</label>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label for="editAlamat">Keterangan:</label>
+                        <textarea class="form-control" rows="3" id="editKetPra" name="ket_pra"></textarea>
+                    </div>
                     <!-- Tambahkan input lain sesuai kebutuhan -->
                 </form>
             </div>

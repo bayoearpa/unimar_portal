@@ -1736,7 +1736,15 @@ function get_data_formon_mhs($id)
 	        tbl_mon.tgl_sign_on,
 	        tbl_mon.upload_file_signon,
 	        tbl_mon.tgl_sign_off,
-	        tbl_mon.upload_file_signoff');
+	        tbl_mon.upload_file_signoff,
+	        tbl_mon.ket_d3,
+	        tbl_mon.ket_prada,
+	        tbl_mon.ket_pra,
+	        tbl_mon.ket_onboard,
+	        tbl_mon.ket_offboard,
+	        tbl_mon.ket_tpa,
+	        tbl_mon.ket_modeling,');
+
 	     $this->db->from('tmst_mahasiswa');
 	      $this->db->join('tbl_mon','tmst_mahasiswa.NIM = tbl_mon.nim','left');
         $this->db->where('tmst_mahasiswa.NIM', $id);

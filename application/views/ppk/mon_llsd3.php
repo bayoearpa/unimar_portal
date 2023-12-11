@@ -193,6 +193,10 @@
                         <label for="editnoijs">Nomor Ijasah:</label>
                         <input type="text" class="form-control" id="editnoijs" name="enj" readonly="">
                     </div>
+                    <div class="form-group">
+                        <label for="editKetD3">Keterangan:</label>
+                        <textarea class="form-control" rows="3" id="editKetD3" name="ket_d3"></textarea>
+                    </div>
                     <!-- Tambahkan input lain sesuai kebutuhan -->
                 </form>
             </div>
