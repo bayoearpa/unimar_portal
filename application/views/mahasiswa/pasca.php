@@ -114,6 +114,26 @@
                       <?php } ?>
                     </tbody>
                   </table>
+                  <h3>Komprehensif</h3>
+                  <table class="table table-striped">
+                        <tbody><tr>
+                          <th style="width: 10px">#</th>
+                          <th style="width: 10px">pilih</th>
+                          <th>Mata Uji</th>
+                        </tr>
+                        <?php
+                        $no=1;
+                         foreach ($muk as $key) {
+                          # code... ?>
+                        <tr>
+                          <td><?php echo $no++; ?></td>
+                          <td><input type="checkbox" name="matauji[]" value="<?php echo $key->id_matauji ?>"></td>
+                          <td><?php echo $key->matauji ?></td>
+                        </tr>
+                      <?php } ?>
+                    </tbody>
+                  </table>
+
                 <button type="submit" class="btn btn-primary">Simpan</button>
                 </form>
               <?php } 
@@ -171,7 +191,7 @@
             <!-- end peringatan jika belum boleh mendafatar  -->
 
               <?php } ?>
-             
+
           </div>
           <!-- /.box-body -->
         </div>

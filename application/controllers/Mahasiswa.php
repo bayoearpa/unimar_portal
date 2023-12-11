@@ -161,7 +161,15 @@ class Mahasiswa extends CI_Controller {
 				'id_prodiprofesi' => $prodinnya,
 
 			);
-		$data['mu'] = $this->m_mahasiswa->get_data($whmu,'tbl_profesi_matauji_fungsi')->result(); 
+		$data['mu'] = $this->m_mahasiswa->get_data($whmu,'tbl_profesi_matauji_fungsi')->result();
+
+		$whmuk = array(
+				'id_jenisujianprofesi' => '2',
+				'id_metodeujianprofesi' => '2',
+				'id_prodiprofesi' => $prodinnya,
+
+			);
+		$data['muk'] = $this->m_mahasiswa->get_data($whmuk,'tbl_profesi_matauji_fungsi')->result(); 
 		$this->load->view('mahasiswa/header');
 		$this->load->view('mahasiswa/pasca',$data);
 		$this->load->view('mahasiswa/footer');
