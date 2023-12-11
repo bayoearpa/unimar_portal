@@ -53,6 +53,7 @@
                 <div class="form-group"><button type="submit" class="btn btn-primary">Simpan</button></div>
                   <?php } ?>
               </form>
+             <?php } ?>
             </div>
             <!-- /.box-body -->
           </div>
