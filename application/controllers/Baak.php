@@ -1630,7 +1630,7 @@ class baak extends CI_Controller {
     ); 
     $data = array(
         'nim' => $this->input->post('nim'),
-        'd3_no_ijasah' => $this->input->post('enj')
+        'd3_no_ijasah' => $this->input->post('enj'),
         'ket_d3' => $this->input->post('ket_d3')
     );
 
