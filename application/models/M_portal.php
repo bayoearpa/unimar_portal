@@ -1742,7 +1742,7 @@ function get_data_formon_mhs($id)
 	        tbl_mon.ket_pra,
 	        tbl_mon.ket_onboard,
 	        tbl_mon.ket_offboard,
-	        tbl_mon.ket_tpa,
+	        tbl_mon.ket_trb,
 	        tbl_mon.ket_modeling,');
 
 	     $this->db->from('tmst_mahasiswa');
