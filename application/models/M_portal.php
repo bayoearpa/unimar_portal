@@ -488,7 +488,7 @@ function get_data_join_tpkl($where)
 		tmst_mahasiswa.Nama_mahasiswa AS nama,
 		tmst_program_studi.Nama_program_studi AS prodi');
 		$this->db->from('tbl_kliring_tpkl');
-		$this->db->join('tmst_mahasiswa',' tbl_kliring_tpkl.nim = tmst_mahasiswa.NIM','right');
+		$this->db->join('tmst_mahasiswa',' tbl_kliring_tpkl.nim = tmst_mahasiswa.NIM','left');
 		$this->db->join('tmst_program_studi','tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi','inner');
 		$this->db->where($where);
 		$this->db->order_by('tbl_kliring_tpkl.id_tpkl', "asc");
