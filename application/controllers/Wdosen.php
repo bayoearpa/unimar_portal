@@ -1556,7 +1556,8 @@ class wdosen extends CI_Controller {
 		$userprodi = $this->session->userdata('user');
 		$wherexxx = array(
 			'tmst_mahasiswa.Kode_program_studi' => $userprodi,
-			'tbl_kliring_tpkl.status' => 'aktif'			       
+			'tbl_kliring_tpkl.status' => 'aktif',
+			'tmst_mahasiswa.Tahun_masuk >' => '2018'			       
         );
 		$data['catar'] = $this->m_portal->get_data_join_tpkl($wherexxx)->result(); 
 		if ($data['catar'] == null) {
