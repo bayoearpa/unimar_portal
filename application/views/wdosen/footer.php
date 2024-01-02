@@ -71,7 +71,9 @@
     $('.select2').select2()
     
     //datatables
-    $('#example1').DataTable()
+    $('#example1').DataTable({
+        "order": [[0, "desc"]]
+    });
     $('#example2').DataTable({
       'paging'      : true,
       'lengthChange': false,
