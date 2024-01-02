@@ -491,7 +491,7 @@ function get_data_join_tpkl($where)
 		$this->db->join('tmst_mahasiswa',' tbl_kliring_tpkl.nim = tmst_mahasiswa.NIM','inner');
 		$this->db->join('tmst_program_studi','tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi','inner');
 		$this->db->where($where);
-		$this->db->order_by('tbl_kliring_tpkl.id_tkpl', "desc");
+		$this->db->order_by('tbl_kliring_tpkl.id_tpkl', "desc");
 		$query=$this->db->get();
 		return $query;
 }
