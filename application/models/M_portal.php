@@ -491,7 +491,7 @@ function get_data_join_tpkl($where)
 		$this->db->join('tmst_mahasiswa',' tbl_kliring_tpkl.nim = tmst_mahasiswa.NIM','inner');
 		$this->db->join('tmst_program_studi','tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi','inner');
 		$this->db->where($where);
-		//$this->db->order_by('tbl_catar_validasi.no_reg', "asc");
+		$this->db->order_by('tbl_kliring_tpkl.id_tkpl', "desc");
 		$query=$this->db->get();
 		return $query;
 }
@@ -1746,7 +1746,7 @@ function get_data_formon_mhs($id)
 	        tbl_mon.ket_modeling,');
 
 	     $this->db->from('tmst_mahasiswa');
-	      $this->db->join('tbl_mon','tmst_mahasiswa.NIM = tbl_mon.nim','left');
+	     $this->db->join('tbl_mon','tmst_mahasiswa.NIM = tbl_mon.nim','left');
         $this->db->where('tmst_mahasiswa.NIM', $id);
         $query = $this->db->get();
 
