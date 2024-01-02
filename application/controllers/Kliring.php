@@ -1213,6 +1213,7 @@ class kliring extends CI_Controller {
 			'judul_pkl' 	=> $this->input->post('judul_pkl'),
 			'file_konduite' 	=> $nmfile1,
 			'file_suratketoff' 	=> $nmfile2,
+			'status' 	=> 'aktif'
 		   );
 
 		  $res = $this->m_portal->input_data($data,'tbl_kliring_tpkl');
