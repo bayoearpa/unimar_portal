@@ -1254,8 +1254,8 @@ class kliring extends CI_Controller {
 			$data['judul_pkl'] = $p->judul_pkl;
 		}
 		foreach ($getdatanp as $np) {
-			$data['nama'] = $np->Nama_mahasiswa;
-			$data['prodi'] = $np->Nama_program_studi;
+			$data['nama'] = $np->nama;
+			$data['prodi'] = $np->prodi;
 		}			
 
 			$data['ppk_label'] =$this->cekstatus_fptpkl($id_tpkl,'tbl_kliring_tpkl_ppk');
