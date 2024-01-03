@@ -111,6 +111,40 @@ if ($catar==null) {
                   </td>
                   <td><?php echo $ppk_label; ?></td>
                 </tr>
+                <tr>
+                  <td>3.</td>
+                   <!-- Tombol Lihat File Sign On -->
+                    <?php if ($c->file_konduite) { ?>
+                        <td>File Konduite tersedia</td>
+                        <td> <button class="btn btn-info view-file-button" data-filename="$c->file_konduite; ?>">Lihat</button></td>
+                    <?php } else { ?>
+                        <!-- Tampilkan pesan jika file tidak ada -->
+                        <td>File Konduite tidak tersedia</td>
+                        <td>
+                        <div class="form-group">
+                        <label for="editufsignon">Upload File Konduite</label>
+                        <input type="file" class="form-control" id="file_konduite" name="file_konduite">
+                        </div>
+                        </td>
+                    <?php } ?>
+                </tr>
+                <tr>
+                  <td>4.</td>
+                   <!-- Tombol Lihat File Sign On -->
+                    <?php if ($c->file_suratketoff) { ?>
+                        <td>File Konduite tersedia</td>
+                        <td> <button class="btn btn-info view-file-button" data-filename="$c->file_suratketoff; ?>">Lihat</button></td>
+                    <?php } else { ?>
+                        <!-- Tampilkan pesan jika file tidak ada -->
+                        <td>File Surat Keterangan Off tidak tersedia</td>
+                        <td>
+                        <div class="form-group">
+                        <label for="editufsignon">Upload File Surat Keterangan Off</label>
+                        <input type="file" class="form-control" id="file_suratketoff" name="file_suratketoff">
+                        </div>
+                        </td>
+                    <?php } ?>
+                </tr>
                  <tr>
                    <td colspan="3">
                      <?php 
