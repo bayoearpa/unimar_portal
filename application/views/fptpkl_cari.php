@@ -116,14 +116,15 @@ if ($catar==null) {
                    <!-- Tombol Lihat File Sign On -->
                     <?php if ($c->file_konduite) { ?>
                         <td>File Konduite tersedia</td>
-                        <td> <button class="btn btn-info view-file-button" data-filename="$c->file_konduite; ?>">Lihat</button></td>
+                        <td colspan="2"> <button class="btn btn-info view-file-button" data-filename="$c->file_konduite; ?>">Lihat</button></td>
                     <?php } else { ?>
                         <!-- Tampilkan pesan jika file tidak ada -->
                         <td>File Konduite tidak tersedia</td>
-                        <td>
+                        <td colspan="2">
                         <div class="form-group">
-                        <label for="editufsignon">Upload File Konduite</label>
+                        <label for="file_konduite">Upload File Konduite</label>
                         <input type="file" class="form-control" id="file_konduite" name="file_konduite">
+                        <button class="editfk-button" data-id-tpkl="<?php echo $c->id_tpkl; ?>">Edit File Konduite</button>
                         </div>
                         </td>
                     <?php } ?>
@@ -133,20 +134,21 @@ if ($catar==null) {
                    <!-- Tombol Lihat File Sign On -->
                     <?php if ($c->file_suratketoff) { ?>
                         <td>File Konduite tersedia</td>
-                        <td> <button class="btn btn-info view-file-button" data-filename="$c->file_suratketoff; ?>">Lihat</button></td>
+                        <td colspan="2"> <button class="btn btn-info view-file-button" data-filename="$c->file_suratketoff; ?>">Lihat</button></td>
                     <?php } else { ?>
                         <!-- Tampilkan pesan jika file tidak ada -->
                         <td>File Surat Keterangan Off tidak tersedia</td>
-                        <td>
+                        <td colspan="2">
                         <div class="form-group">
-                        <label for="editufsignon">Upload File Surat Keterangan Off</label>
+                        <label for="file_suratketoff">Upload File Surat Keterangan Off</label>
                         <input type="file" class="form-control" id="file_suratketoff" name="file_suratketoff">
+                        <button class="editsk-button" data-id-tpkl="<?php echo $c->id_tpkl; ?>">Edit File Surat Ket Off</button>
                         </div>
                         </td>
                     <?php } ?>
                 </tr>
                  <tr>
-                   <td colspan="3">
+                   <td colspan="4">
                      <?php 
                       if ($tombol == 1) {
                         # code...
