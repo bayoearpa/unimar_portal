@@ -42,7 +42,7 @@
         });
 
         // Function to handle editing File Konduite
-        function editFileKonduite(idTpkl, nim) {
+        function editFileKonduite(formData) {
             console.log('Editing File Konduite:', idTpkl, 'NIM:', nim);
             $.ajax({
                 url: '<?php echo base_url('edit_file_konduite'); ?>',
@@ -61,7 +61,7 @@
         }
 
         // Function to handle editing File Surat Ket Off
-        function editFileSuratKetOff(idTpkl, nim) {
+        function editFileSuratKetOff(formData) {
             console.log('Editing File Surat Ket Off:', idTpkl, 'NIM:', nim);
             $.ajax({
                 url: '<?php echo base_url('edit_file_sk'); ?>',
