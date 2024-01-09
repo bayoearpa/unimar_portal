@@ -20,8 +20,12 @@
             console.log('Edit File Konduite button clicked');
             var idTpkl = $(this).data('id-tpkl');
             var nim = $(this).data('nim');
+            var formData = new FormData();
+            formData.append('id_tpkl', idTpkl);
+            formData.append('nim', nim);
+            formData.append('file_konduite', $('#file_konduite')[0].files[0]);
             console.log('ID TPKL:', idTpkl, 'NIM:', nim);
-            editFileKonduite(idTpkl, nim);
+            editFileKonduite(formData);
         });
 
         // Edit File Surat Ket Off button click event
@@ -30,8 +34,11 @@
             console.log('Edit File Surat Ket Off button clicked');
             var idTpkl = $(this).data('id-tpkl');
             var nim = $(this).data('nim');
+            formData.append('id_tpkl', idTpkl);
+            formData.append('nim', nim);
+            formData.append('file_suratketoff', $('#file_suratketoff')[0].files[0]);
             console.log('ID TPKL:', idTpkl, 'NIM:', nim);
-            editFileSuratKetOff(idTpkl, nim);
+            editFileSuratKetOff(formData);
         });
 
         // Function to handle editing File Konduite
@@ -42,7 +49,7 @@
                 type: 'POST',
                 enctype: 'multipart/form-data', //
                 dataType: 'json',
-                data: { id_tpkl: idTpkl, nim: nim },
+                data: formData,
                 success: function(response) {
                     console.log('Edit File Konduite Response:', response);
                     // Handle success (redirect or show a success message)
@@ -61,7 +68,7 @@
                 type: 'POST',
                 enctype: 'multipart/form-data', //
                 dataType: 'json',
-                data: { id_tpkl: idTpkl, nim: nim },
+                data: formData,
                 success: function(response) {
                     console.log('Edit File Surat Ket Off Response:', response);
                     // Handle success (redirect or show a success message)
