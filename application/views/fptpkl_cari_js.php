@@ -1,7 +1,8 @@
 <!-- JavaScript code for handling edit buttons -->
 <script>
     $(document).ready(function() {
-        $('.view-filek-button').click(function() {
+        $('.view-filek-button').click(function(e) {
+            e.preventDefault();
             var filename = $(this).data('filename');
             // Gantilah '/uploads/' dengan direktori tempat Anda menyimpan file
             var fileUrl = '/v1/assets/upload/tpkl/konduite/' + filename;
@@ -10,7 +11,8 @@
             window.open(fileUrl, '_blank');
         });
 
-         $('.view-filesk-button').click(function() {
+         $('.view-filesk-button').click(function(e) {
+            e.preventDefault();
             var filename = $(this).data('filename');
             // Gantilah '/uploads/' dengan direktori tempat Anda menyimpan file
             var fileUrl = '/v1/assets/upload/tpkl/sk/' + filename;
@@ -19,7 +21,7 @@
             window.open(fileUrl, '_blank');
         });
         // Edit File Konduite button click event
-        $('.editfk-button').on('click', function() {
+        $('.editfk-button').on('click', function(e) {
             e.preventDefault();
             var idTpkl = $(this).data('id-tpkl'); // Assuming you have a unique identifier for each file
             var nim = $(this).data('nim');
@@ -28,7 +30,7 @@
         });
 
         // Edit File Surat Ket Off button click event
-        $('.editsk-button').on('click', function() {
+        $('.editsk-button').on('click', function(e) {
             e.preventDefault();
             var idTpkl = $(this).data('id-tpkl'); // Assuming you have a unique identifier for each file
             var nim = $(this).data('nim');
