@@ -124,7 +124,7 @@ if ($catar==null) {
                         <div class="form-group">
                         <label for="file_konduite">Upload File Konduite</label>
                         <input type="file" class="form-control" id="file_konduite" name="file_konduite">
-                        <button class="editfk-button" data-id-tpkl="<?php echo $c->id_tpkl; ?>">Edit File Konduite</button>
+                        <button class="editfk-button" data-id-tpkl="<?php echo $c->id_tpkl; ?>" data-nim="<?php echo $c->nim; ?>">Edit File Konduite</button>
                         </div>
                         </td>
                     <?php } ?>
@@ -142,7 +142,7 @@ if ($catar==null) {
                         <div class="form-group">
                         <label for="file_suratketoff">Upload File Surat Keterangan Off</label>
                         <input type="file" class="form-control" id="file_suratketoff" name="file_suratketoff">
-                        <button class="editsk-button" data-id-tpkl="<?php echo $c->id_tpkl; ?>">Edit File Surat Ket Off</button>
+                        <button class="editsk-button" data-id-tpkl="<?php echo $c->id_tpkl; ?>" data-nim="<?php echo $c->nim; ?>">Edit File Surat Ket Off</button>
                         </div>
                         </td>
                     <?php } ?>

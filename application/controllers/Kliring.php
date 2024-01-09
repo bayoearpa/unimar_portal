@@ -1167,9 +1167,9 @@ class kliring extends CI_Controller {
 		$nmfile1 = $namagabungan1.".pdf";
 		$nmfile2 = $namagabungan2.".pdf";
         #upload file1
-        $config['upload_path'] = FCPATH.'/assets/upload/tpkl/konduite/';
+        $config['upload_path'] = './assets/upload/tpkl/konduite/';
 		$config['allowed_types'] = 'pdf';
-		$config['max_size']  = '5024';
+		$config['max_size']  = '1024';
 		// $config['max_width']  = '1024';
 		// $config['max_height']  = '768';
 
@@ -1187,9 +1187,9 @@ class kliring extends CI_Controller {
         	}
     	}
 
-    	$config2['upload_path'] = FCPATH.'/assets/upload/tpkl/sk/';
+    	$config2['upload_path'] = './assets/upload/tpkl/sk/';
 		$config2['allowed_types'] = 'pdf';
-		$config2['max_size']  = '5024';
+		$config2['max_size']  = '1024';
 
 		if($_FILES["file_sk"]["name"]){
         $config2["file_name"] = $nmfile2;
@@ -1375,6 +1375,91 @@ class kliring extends CI_Controller {
         $pdf->Output($pdfFilePath, "D");
         exit();
 	}
+
+	public function editFileKonduite() {
+        $id_tpkl = $this->input->post('id_tpkl');
+        $nim = $this->input->post('nim');
+
+        // Konfigurasi upload file
+        $nama = $this->getNama($nim);
+		$namagabungan1 = judul_seo("konduite_".$nim."_".$nama);
+		$nmfile1 = $namagabungan1.".pdf";
+		
+
+        $config['upload_path']   = './assets/upload/tpkl/konduite/';
+        $config['allowed_types'] = 'pdf'; // Sesuaikan dengan tipe file yang diizinkan
+        $config['max_size']      = 1048; // Sesuaikan dengan batas maksimum file size (dalam kilobita)
+        $config['overwrite']     = TRUE; // Jika ingin menggantikan file lama dengan file baru yang diupload
+        $config['file_name'] 	 = $nmfile1;
+
+        $this->upload->initialize($config);
+
+        // Lakukan proses upload
+        if ($this->upload->do_upload('file_konduite')) {
+            // File berhasil diupload
+            $fileData = $this->upload->data();
+
+            // Lakukan operasi update ke database jika diperlukan
+            $data = array(
+                'file_konduite' => $nmfile1, // Sesuaikan dengan field di database
+                'nim'			   => $nim,
+                // ... tambahkan field lainnya sesuai kebutuhan ...
+            );
+
+            $where = array('id_tpkl' => $id_tpkl);
+            $this->m_portal->update_data($where, $data, 'tbl_kliring_tpkl');
+
+            // Example response (you can customize based on your needs)
+            $response = array('success' => true, 'message' => 'File Konduite edited successfully');
+            echo json_encode($response);
+        } else {
+            // File gagal diupload, handle kesalahan
+            $error = array('error' => $this->upload->display_errors());
+            echo json_encode($error);
+        }
+    }
+
+    public function editFileSuratKetOff() {
+        $id_tpkl = $this->input->post('id_tpkl');
+        $nim = $this->input->post('nim');
+
+        // Konfigurasi upload file
+        $nama = $this->getNama($nim);
+        $namagabungan2 = judul_seo("sk_".$nim."_".$nama);
+		$nmfile2 = $namagabungan2.".pdf";
+
+        $config['upload_path']   = './assets/upload/tpkl/sk/';
+        $config['allowed_types'] = 'pdf'; // Sesuaikan dengan tipe file yang diizinkan
+        $config['max_size']      = 1048; // Sesuaikan dengan batas maksimum file size (dalam kilobita)
+        $config['overwrite']     = TRUE; // Jika ingin menggantikan file lama dengan file baru yang diupload
+        $config['file_name'] 	 = $nmfile2;
+
+        $this->upload->initialize($config);
+
+        // Lakukan proses upload
+        if ($this->upload->do_upload('file_suratketoff')) {
+            // File berhasil diupload
+            $fileData = $this->upload->data();
+
+            // Lakukan operasi update ke database jika diperlukan
+            $data = array(
+                'file_suratketoff' => $nmfile2, // Sesuaikan dengan field di database
+                'nim'			   => $nim,
+                // ... tambahkan field lainnya sesuai kebutuhan ...
+            );
+
+            $where = array('id_tpkl' => $id_tpkl);
+            $this->m_portal->update_data($where, $data, 'tbl_kliring_tpkl');
+
+            // Example response (you can customize based on your needs)
+            $response = array('success' => true, 'message' => 'File Surat Ket Off edited successfully');
+            echo json_encode($response);
+        } else {
+            // File gagal diupload, handle kesalahan
+            $error = array('error' => $this->upload->display_errors());
+            echo json_encode($error);
+        }
+    }
 	
 }
 
