@@ -26,7 +26,8 @@
                   <th>SK off PKL</th>
                   <th>PPK</th>
                   <th>Prodi</th>
-                  <th colspan="2">Proses</th>
+                  <th>Kliring</th>
+                  <th>Selesai</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -126,7 +127,8 @@
                   <th>SK off PKL</th>
                   <th>PPK</th>
                   <th>Prodi</th>
-                  <th colspan="2">Proses</th>
+                  <th>Kliring</th>
+                  <th>Selesai</th>
                 </tr>
                 </tfoot>
               </table>
