@@ -22,8 +22,9 @@
                   <th>Prodi</th>
                   <th>Dosen Pembimbing</th>
                   <th>Alamat Judul PKL</th>
-                  <th>PPK</th>
-                  <th>Prodi</th>
+                  <th>File Konduite</th>
+                  <th>File Suket Off</th>
+                  <th colspan="3">action</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -108,8 +109,9 @@
                   <th>Prodi</th>
                   <th>Dosen Pembimbing</th>
                   <th>Alamat Judul PKL</th>
-                  <th>PPK</th>
-                  <th>Prodi</th>
+                  <th>File Konduite</th>
+                  <th>File Suket Off</th>
+                  <th colspan="3">action</th>
                 </tr>
                 </tfoot>
               </table>
