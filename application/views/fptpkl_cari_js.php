@@ -43,7 +43,7 @@
     });
 
     // Function to handle editing File Konduite
-    function editFileKonduite(formData) { // Removed idTpkl and nim from parameters
+    function editFileKonduite(idTpkl, formData) { // Removed idTpkl and nim from parameters
         console.log('Editing File Konduite:', formData);
         $.ajax({
             url: '<?php echo base_url('edit_file_konduite'); ?>',
@@ -55,7 +55,7 @@
             success: function(response) {
                 console.log('Edit File Konduite Response:', response);
                 // Handle success (redirect or show a success message)
-                refreshTableCells();
+                refreshTableCells(idTpkl);
             },
             error: function(xhr, status, error) {
                 console.error('Edit File Konduite Error:', error);
@@ -64,7 +64,7 @@
     }
 
     // Function to handle editing File Surat Ket Off
-    function editFileSuratKetOff(formData) { // Removed idTpkl and nim from parameters
+    function editFileSuratKetOff(idTpkl, formData) { // Removed idTpkl and nim from parameters
         console.log('Editing File Surat Ket Off:', formData);
         $.ajax({
             url: '<?php echo base_url('edit_file_sk'); ?>',
@@ -76,15 +76,18 @@
             success: function(response) {
                 console.log('Edit File Surat Ket Off Response:', response);
                 // Handle success (redirect or show a success message)
-                refreshTableCells();
+                refreshTableCells(idTpkl);
             },
             error: function(xhr, status, error) {
                 console.error('Edit File Surat Ket Off Error:', error);
             }
         });
     }
-    function refreshTableCells() {
-        var idTpkl = <?php echo json_encode($id_tpkl); ?>;
+    function refreshTableCells(idTpkl) {
+        if (!idTpkl) {
+        console.error('Invalid idTpkl:', idTpkl);
+        return;
+        }
         $.ajax({
             url: '<?php echo base_url('fetch_updated_data_tpkl'); ?>/' + idTpkl,
             type: 'GET',
