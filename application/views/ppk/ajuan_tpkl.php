@@ -31,7 +31,7 @@
                 foreach($catar as $c){ 
                  ?>
                 <tr>
-                  <td><?php echo $c->nim_tpkl; 
+                  <td><?php echo $c->nim; 
                   $where = array(
                   'id_tpkl' => $c->id_tpkl      
                   );
