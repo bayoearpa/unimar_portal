@@ -24,6 +24,9 @@
         formData.append('id_tpkl', idTpkl);
         formData.append('nim', nim);
         formData.append('file_konduite', $('#file_konduite')[0].files[0]);
+
+        formData.append('idTpkl', idTpkl);
+
         console.log('ID TPKL:', idTpkl, 'NIM:', nim);
         editFileKonduite(formData);
     });
@@ -38,12 +41,15 @@
         formData.append('id_tpkl', idTpkl);
         formData.append('nim', nim);
         formData.append('file_suratketoff', $('#file_suratketoff')[0].files[0]);
+
+        formData.append('idTpkl', idTpkl);
+
         console.log('ID TPKL:', idTpkl, 'NIM:', nim);
         editFileSuratKetOff(formData);
     });
 
     // Function to handle editing File Konduite
-    function editFileKonduite(idTpkl, formData) { // Removed idTpkl and nim from parameters
+    function editFileKonduite(formData) { // Removed idTpkl and nim from parameters
         console.log('Editing File Konduite:', formData);
         $.ajax({
             url: '<?php echo base_url('edit_file_konduite'); ?>',
@@ -55,6 +61,7 @@
             success: function(response) {
                 console.log('Edit File Konduite Response:', response);
                 // Handle success (redirect or show a success message)
+                var idTpkl = formData.get('idTpkl');
                 refreshTableCells(idTpkl);
             },
             error: function(xhr, status, error) {
@@ -64,7 +71,7 @@
     }
 
     // Function to handle editing File Surat Ket Off
-    function editFileSuratKetOff(idTpkl, formData) { // Removed idTpkl and nim from parameters
+    function editFileSuratKetOff(formData) { // Removed idTpkl and nim from parameters
         console.log('Editing File Surat Ket Off:', formData);
         $.ajax({
             url: '<?php echo base_url('edit_file_sk'); ?>',
@@ -76,6 +83,7 @@
             success: function(response) {
                 console.log('Edit File Surat Ket Off Response:', response);
                 // Handle success (redirect or show a success message)
+                var idTpkl = formData.get('idTpkl');
                 refreshTableCells(idTpkl);
             },
             error: function(xhr, status, error) {
