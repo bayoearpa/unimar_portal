@@ -523,6 +523,7 @@ class ppk extends CI_Controller {
 		$this->load->view('ppk/header');
 		$this->load->view('ppk/ajuan_tpkl',$data);
 		$this->load->view('ppk/footer');
+		$this->load->view('ppk/ajuan_tpkl_js');
 	}
 	public function cekdosbing_tpkl($id_tpkl)
 	{

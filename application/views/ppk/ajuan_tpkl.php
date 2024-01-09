@@ -59,8 +59,18 @@
                         echo $c->judul_pkl;
                        ?>
                     </td>
-                     <td><a class="btn btn-primary btn-sm" target="_blank" href="<?php echo base_url().'ppk/filekonduite/'.$c->file_konduite; ?>"><span class="glyphicon glyphicon-eye"></span>Konduite</a></td>
-                     <td><a class="btn btn-primary btn-sm" target="_blank" href="<?php echo base_url().'ppk/filesk/'.$c->file_suratketoff; ?>"><span class="glyphicon glyphicon-eye"></span>SK Off PKL</a></td>
+                     <td><?php if ($c->file_konduite) { ?>
+                        <button class="btn btn-success view-filefk-button" data-filename="<?php echo $c->file_konduite; ?>">Lihat</button>
+                    <?php } else { ?>
+                        <!-- Tampilkan pesan jika file tidak ada -->
+                        File tidak tersedia
+                    <?php } ?></td>
+                     <td><?php if ($c->file_suratketoff) { ?>
+                        <button class="btn btn-success view-filesk-button" data-filename="<?php echo $c->file_suratketoff; ?>">Lihat</button>
+                    <?php } else { ?>
+                        <!-- Tampilkan pesan jika file tidak ada -->
+                        File tidak tersedia
+                    <?php } ?></td>
                     <!-- proses kliring -->
                   <!-- PPK -->
                     <td>
