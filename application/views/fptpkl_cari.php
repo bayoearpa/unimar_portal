@@ -116,7 +116,7 @@ if ($catar==null) {
                    <!-- Tombol Lihat File Sign On -->
                     <?php if ($c->file_konduite) { ?>
                         <td>File Konduite tersedia</td>
-                        <td colspan="2"> <button class="btn btn-info view-filek-button" data-filename="$c->file_konduite; ?>">Lihat</button></td>
+                        <td colspan="2"> <button class="btn btn-info view-filek-button" data-filename="<?php echo$c->file_konduite; ?>">Lihat</button></td>
                     <?php } else { ?>
                         <!-- Tampilkan pesan jika file tidak ada -->
                         <td>File Konduite tidak tersedia</td>
@@ -134,7 +134,7 @@ if ($catar==null) {
                    <!-- Tombol Lihat File Sign On -->
                     <?php if ($c->file_suratketoff) { ?>
                         <td>File Konduite tersedia</td>
-                        <td colspan="2"> <button class="btn btn-info view-filesk-button" data-filename="$c->file_suratketoff; ?>">Lihat</button></td>
+                        <td colspan="2"> <button class="btn btn-info view-filesk-button" data-filename="<?php echo $c->file_suratketoff; ?>">Lihat</button></td>
                     <?php } else { ?>
                         <!-- Tampilkan pesan jika file tidak ada -->
                         <td>File Surat Keterangan Off tidak tersedia</td>
