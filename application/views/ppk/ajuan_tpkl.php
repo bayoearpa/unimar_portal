@@ -112,7 +112,7 @@
                      <a class="btn btn-warning btn-sm" href="<?php echo base_url().'ppk/ekliring_tpkl/'.$c->id_tpkl; ?>"><span class="glyphicon glyphicon-pencil"></span> Edit</a>
                    <?php } ?>
                   </td>
-                  <td><button class="btn btn-error" data-filename="<?php echo $c->file_konduite; ?>">Selesai</button></td>
+                  <td><button class="btn btn-danger" data-filename="<?php echo $c->file_konduite; ?>">Selesai</button></td>
                 </tr>
                <?php } ?>
                 </tbody>
