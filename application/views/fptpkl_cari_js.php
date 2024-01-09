@@ -104,6 +104,7 @@
                 // Replace the content of specific <td> elements
                 $('#tr_file_konduite').html($(updatedTdHtml).find('#tr_file_konduite').html());
                 $('#tr_file_suratketoff').html($(updatedTdHtml).find('#tr_file_suratketoff').html());
+                console.log('Refresh Table Cells Response:', updatedTdHtml);
             },
             error: function(xhr, status, error) {
                 console.error('Table Cell Refresh Error:', error);
