@@ -1274,6 +1274,46 @@ class kliring extends CI_Controller {
 		$this->load->view('fptpkl_cari_js');
 
 	}
+	public function fptpkl_cari2($nim)
+	{
+		# code...
+		// $nama = $this->input->post('nama');
+		$where = array(
+			'tbl_kliring_tpkl.nim' => $nim,
+        );
+        $where2 = array(
+			'tmst_mahasiswa.NIM' => $nim,
+        );
+        $data['catar']=$this->m_portal->get_data($where,'tbl_kliring_tpkl')->result();
+        $getdatanp=$this->m_portal->get_data_join_nama_en_prodi($where2)->result();
+		
+		foreach ($data['catar'] as $p) {
+			$data['nim'] = $p->nim;
+			$id_tpkl = $p->id_tpkl;
+			// $data['smt'] = $p->smt;
+			// $data['tgl_permohonan'] = $p->tgl_permohonan;
+			$data['judul_pkl'] = $p->judul_pkl;
+		}
+		foreach ($getdatanp as $np) {
+			$data['nama'] = $np->nama;
+			$data['prodi'] = $np->prodi;
+		}			
+
+			$data['ppk_label'] =$this->cekstatus_fptpkl($id_tpkl,'tbl_kliring_tpkl_ppk');
+			$data['ppk_ket'] = $this->get_keterangan_tpkl($id_tpkl,'tbl_kliring_tpkl_ppk');
+
+			$data['prodi_label'] =$this->cekstatus_fptpkl($id_tpkl,'tbl_kliring_tpkl_prodi');
+			$data['prodi_ket'] = $this->get_keterangan_tpkl($id_tpkl,'tbl_kliring_tpkl_prodi');
+
+		//cek proses kliring all for download file pengajuan
+			$data['tombol'] = $this->cekstatus_fptpkl_all($id_tpkl);
+
+		$this->load->view('header');
+		$this->load->view('fptpkl_cari',$data);
+		$this->load->view('footer');
+		$this->load->view('fptpkl_cari_js');
+
+	}
 	public function cekstatus_fptpkl_all($id_tpkl)
 	{
 		# code...

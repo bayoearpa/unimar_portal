@@ -61,8 +61,9 @@
             success: function(response) {
                 console.log('Edit File Konduite Response:', response);
                 // Handle success (redirect or show a success message)
-                var idTpkl = formData.get('idTpkl');
-                refreshTableCells(idTpkl);
+                var idTpkl = formData.get('nim');
+                // refreshTableCells(idTpkl);
+                window.location.href = '<?php echo base_url('cek_tpkl2'); ?>/' + idTpkl;
             },
             error: function(xhr, status, error) {
                 console.error('Edit File Konduite Error:', error);
@@ -83,8 +84,9 @@
             success: function(response) {
                 console.log('Edit File Surat Ket Off Response:', response);
                 // Handle success (redirect or show a success message)
-                var idTpkl = formData.get('idTpkl');
-                refreshTableCells(idTpkl);
+                var idTpkl = formData.get('nim');
+                // refreshTableCells(idTpkl);
+                window.location.href = '<?php echo base_url('cek_tpkl2'); ?>/' + idTpkl;
             },
             error: function(xhr, status, error) {
                 console.error('Edit File Surat Ket Off Error:', error);
@@ -102,9 +104,10 @@
             dataType: 'html',
             success: function(updatedTdHtml) {
                 // Replace the content of specific <td> elements
+                console.log('Refresh Table Cells Response:', updatedTdHtml);
                 $('#tr_file_konduite').html($(updatedTdHtml).find('#tr_file_konduite').html());
                 $('#tr_file_suratketoff').html($(updatedTdHtml).find('#tr_file_suratketoff').html());
-                console.log('Refresh Table Cells Response:', updatedTdHtml);
+
             },
             error: function(xhr, status, error) {
                 console.error('Table Cell Refresh Error:', error);
