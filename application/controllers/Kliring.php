@@ -1270,6 +1270,7 @@ class kliring extends CI_Controller {
 		$this->load->view('header');
 		$this->load->view('fptpkl_cari',$data);
 		$this->load->view('footer');
+		$this->load->view('fptpkl_cari_js');
 
 	}
 	public function cekstatus_fptpkl_all($id_tpkl)
