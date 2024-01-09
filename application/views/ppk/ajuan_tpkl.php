@@ -21,10 +21,12 @@
                   <th>Nama</th>
                   <th>Prodi</th>
                   <th>Dosen Pembimbing</th>
-                  <th>Alamat Judul PKL</th>
+                  <th>Judul PKL</th>
                   <th>File Konduite</th>
-                  <th>File Suket Off</th>
-                  <th colspan="3">action</th>
+                  <th>SK off PKL</th>
+                  <th>PPK</th>
+                  <th>Prodi</th>
+                  <th>Proses</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -108,10 +110,12 @@
                   <th>Nama</th>
                   <th>Prodi</th>
                   <th>Dosen Pembimbing</th>
-                  <th>Alamat Judul PKL</th>
+                  <th>Judul PKL</th>
                   <th>File Konduite</th>
-                  <th>File Suket Off</th>
-                  <th colspan="3">action</th>
+                  <th>SK off PKL</th>
+                  <th>PPK</th>
+                  <th>Prodi</th>
+                  <th>Proses</th>
                 </tr>
                 </tfoot>
               </table>
