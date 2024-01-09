@@ -12,6 +12,7 @@ class kliring extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->helper('download');
 		$this->load->helper('judul_seo');
+		$this->load->library('upload');
 	}
 
 	public function index()
