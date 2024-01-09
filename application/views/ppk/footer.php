@@ -56,7 +56,9 @@
 <script src="<?php echo base_url() ?>assets/2/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 <script>
   $(function () {
-    $('#example1').DataTable()
+     $('#example1').DataTable({
+        "order": [[0, "desc"]]
+      });
     $('#example2').DataTable({
       'paging'      : true,
       'lengthChange': false,
