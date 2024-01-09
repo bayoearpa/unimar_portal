@@ -20,6 +20,7 @@
         });
         // Edit File Konduite button click event
         $('.editfk-button').on('click', function() {
+            e.preventDefault();
             var idTpkl = $(this).data('id-tpkl'); // Assuming you have a unique identifier for each file
             var nim = $(this).data('nim');
             // Implement logic for editing File Konduite
@@ -28,6 +29,7 @@
 
         // Edit File Surat Ket Off button click event
         $('.editsk-button').on('click', function() {
+            e.preventDefault();
             var idTpkl = $(this).data('id-tpkl'); // Assuming you have a unique identifier for each file
             var nim = $(this).data('nim');
             // Implement logic for editing File Surat Ket Off
