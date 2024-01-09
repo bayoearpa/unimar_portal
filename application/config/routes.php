@@ -94,6 +94,8 @@ $route['tpkl'] = 'kliring/index_tpkl';
 $route['ajuan_tpkl'] = 'kliring/ajuan_tpkl';
 $route['proses_tpkl'] = 'kliring/fptpklp';
 $route['cek_tpkl'] = 'kliring/fptpkl_cari';
+$route['edit_file_konduite'] = 'kliring/editFileKonduite';
+$route['edit_file_sk'] = 'kliring/editFileSuratKetOff';
 
 //kliring Semester antara
 $route['semestera'] = 'kliring/index_smta';
