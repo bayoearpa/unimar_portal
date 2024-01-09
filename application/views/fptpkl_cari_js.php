@@ -1,71 +1,71 @@
-<!-- JavaScript code for handling edit buttons -->
 <script>
     $(document).ready(function() {
         $('.view-filek-button').click(function(e) {
             e.preventDefault();
             var filename = $(this).data('filename');
-            // Gantilah '/uploads/' dengan direktori tempat Anda menyimpan file
             var fileUrl = '/v1/assets/upload/tpkl/konduite/' + filename;
-            
-            // Buka tautan ke file di jendela baru
             window.open(fileUrl, '_blank');
         });
 
-         $('.view-filesk-button').click(function(e) {
+        $('.view-filesk-button').click(function(e) {
             e.preventDefault();
             var filename = $(this).data('filename');
-            // Gantilah '/uploads/' dengan direktori tempat Anda menyimpan file
             var fileUrl = '/v1/assets/upload/tpkl/sk/' + filename;
-            
-            // Buka tautan ke file di jendela baru
             window.open(fileUrl, '_blank');
         });
+
         // Edit File Konduite button click event
         $('.editfk-button').on('click', function(e) {
             e.preventDefault();
-            var idTpkl = $(this).data('id-tpkl'); // Assuming you have a unique identifier for each file
+            console.log('Edit File Konduite button clicked');
+            var idTpkl = $(this).data('id-tpkl');
             var nim = $(this).data('nim');
-            // Implement logic for editing File Konduite
+            console.log('ID TPKL:', idTpkl, 'NIM:', nim);
             editFileKonduite(idTpkl, nim);
         });
 
         // Edit File Surat Ket Off button click event
         $('.editsk-button').on('click', function(e) {
             e.preventDefault();
-            var idTpkl = $(this).data('id-tpkl'); // Assuming you have a unique identifier for each file
+            console.log('Edit File Surat Ket Off button clicked');
+            var idTpkl = $(this).data('id-tpkl');
             var nim = $(this).data('nim');
-            // Implement logic for editing File Surat Ket Off
+            console.log('ID TPKL:', idTpkl, 'NIM:', nim);
             editFileSuratKetOff(idTpkl, nim);
         });
 
         // Function to handle editing File Konduite
         function editFileKonduite(idTpkl, nim) {
-            // Implement logic to edit File Konduite
-            // You can use AJAX to send the data to the server for processing
-            // Example AJAX call:
+            console.log('Editing File Konduite:', idTpkl, 'NIM:', nim);
             $.ajax({
                 url: '<?php echo base_url('edit_file_konduite'); ?>',
                 type: 'POST',
                 dataType: 'json',
                 data: { id_tpkl: idTpkl, nim: nim },
                 success: function(response) {
+                    console.log('Edit File Konduite Response:', response);
                     // Handle success (redirect or show a success message)
+                },
+                error: function(xhr, status, error) {
+                    console.error('Edit File Konduite Error:', error);
                 }
             });
         }
 
         // Function to handle editing File Surat Ket Off
         function editFileSuratKetOff(idTpkl, nim) {
-            // Implement logic to edit File Surat Ket Off
-            // You can use AJAX to send the data to the server for processing
-            // Example AJAX call:
+            console.log('Editing File Surat Ket Off:', idTpkl, 'NIM:', nim);
             $.ajax({
                 url: '<?php echo base_url('edit_file_sk'); ?>',
                 type: 'POST',
                 dataType: 'json',
                 data: { id_tpkl: idTpkl, nim: nim },
                 success: function(response) {
+                    console.log('Edit File Surat Ket Off Response:', response);
                     // Handle success (redirect or show a success message)
+                },
+                error: function(xhr, status, error) {
+                    console.error('Edit File Surat Ket Off Error:', error);
                 }
             });
         }
