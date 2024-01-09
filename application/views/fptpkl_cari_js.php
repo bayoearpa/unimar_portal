@@ -47,7 +47,8 @@
             $.ajax({
                 url: '<?php echo base_url('edit_file_konduite'); ?>',
                 type: 'POST',
-                enctype: 'multipart/form-data', //
+                processData: false,
+                contentType: false,
                 dataType: 'json',
                 data: formData,
                 success: function(response) {
@@ -66,7 +67,8 @@
             $.ajax({
                 url: '<?php echo base_url('edit_file_sk'); ?>',
                 type: 'POST',
-                enctype: 'multipart/form-data', //
+                processData: false,
+                contentType: false,
                 dataType: 'json',
                 data: formData,
                 success: function(response) {
