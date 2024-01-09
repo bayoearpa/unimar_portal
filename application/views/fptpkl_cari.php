@@ -94,7 +94,7 @@ if ($catar==null) {
               </div>
               <!-- /data diri -->
 
-              <table class="table table-bordered">
+              <table class="table table-bordered" id="table_pencarian">
                 <tr>
                   <td>1.</td>
                   <td>Prodi</td>
@@ -111,7 +111,7 @@ if ($catar==null) {
                   </td>
                   <td><?php echo $ppk_label; ?></td>
                 </tr>
-                <tr>
+                <tr id="tr_file_konduite">
                   <td>3.</td>
                    <!-- Tombol Lihat File Sign On -->
                     <?php if ($c->file_konduite) { ?>
@@ -131,7 +131,7 @@ if ($catar==null) {
                         </td>
                     <?php } ?>
                 </tr>
-                <tr>
+                <tr id="td_file_suratketoff">
                   <td>4.</td>
                    <!-- Tombol Lihat File Sign On -->
                     <?php if ($c->file_suratketoff) { ?>

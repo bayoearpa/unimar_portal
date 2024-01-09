@@ -1462,6 +1462,12 @@ class kliring extends CI_Controller {
             echo json_encode($error);
         }
     }
+
+    public function fetch_updated_data_tpkl($id_tpkl) {
+    $where = array('id_tpkl' => $id_tpkl);
+    $data['catar'] = $this->m_portal->get_data($where,'tbl_kliring_tpkl')->result();
+    $this->load->view('fptpkl_cari_refreshtr', $data);
+	}
 	
 }
 

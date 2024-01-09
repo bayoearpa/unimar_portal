@@ -55,6 +55,7 @@
             success: function(response) {
                 console.log('Edit File Konduite Response:', response);
                 // Handle success (redirect or show a success message)
+                refreshTableCells();
             },
             error: function(xhr, status, error) {
                 console.error('Edit File Konduite Error:', error);
@@ -75,9 +76,26 @@
             success: function(response) {
                 console.log('Edit File Surat Ket Off Response:', response);
                 // Handle success (redirect or show a success message)
+                refreshTableCells();
             },
             error: function(xhr, status, error) {
                 console.error('Edit File Surat Ket Off Error:', error);
+            }
+        });
+    }
+    function refreshTableCells() {
+        var idTpkl = <?php echo json_encode($id_tpkl); ?>;
+        $.ajax({
+            url: '<?php echo base_url('fetch_updated_data_tpkl'); ?>/' + idTpkl,
+            type: 'GET',
+            dataType: 'html',
+            success: function(updatedTdHtml) {
+                // Replace the content of specific <td> elements
+                $('#tr_file_konduite').html($(updatedTdHtml).find('#tr_file_konduite').html());
+                $('#tr_file_suratketoff').html($(updatedTdHtml).find('#tr_file_suratketoff').html());
+            },
+            error: function(xhr, status, error) {
+                console.error('Table Cell Refresh Error:', error);
             }
         });
     }
