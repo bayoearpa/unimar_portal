@@ -131,7 +131,7 @@ if ($catar==null) {
                         </td>
                     <?php } ?>
                 </tr>
-                <tr id="td_file_suratketoff">
+                <tr id="tr_file_suratketoff">
                   <td>4.</td>
                    <!-- Tombol Lihat File Sign On -->
                     <?php if ($c->file_suratketoff) { ?>
