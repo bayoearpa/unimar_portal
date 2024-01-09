@@ -4,7 +4,7 @@
         $('.view-filek-button').click(function() {
             var filename = $(this).data('filename');
             // Gantilah '/uploads/' dengan direktori tempat Anda menyimpan file
-            var fileUrl = '/assets/upload/tpkl/konduite/' + filename;
+            var fileUrl = '/v1/assets/upload/tpkl/konduite/' + filename;
             
             // Buka tautan ke file di jendela baru
             window.open(fileUrl, '_blank');
@@ -13,7 +13,7 @@
          $('.view-filesk-button').click(function() {
             var filename = $(this).data('filename');
             // Gantilah '/uploads/' dengan direktori tempat Anda menyimpan file
-            var fileUrl = '/assets/upload/tpkl/sk/' + filename;
+            var fileUrl = '/v1/assets/upload/tpkl/sk/' + filename;
             
             // Buka tautan ke file di jendela baru
             window.open(fileUrl, '_blank');
