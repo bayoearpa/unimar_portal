@@ -40,6 +40,7 @@
             $.ajax({
                 url: '<?php echo base_url('edit_file_konduite'); ?>',
                 type: 'POST',
+                enctype: 'multipart/form-data', //
                 dataType: 'json',
                 data: { id_tpkl: idTpkl, nim: nim },
                 success: function(response) {
@@ -58,6 +59,7 @@
             $.ajax({
                 url: '<?php echo base_url('edit_file_sk'); ?>',
                 type: 'POST',
+                enctype: 'multipart/form-data', //
                 dataType: 'json',
                 data: { id_tpkl: idTpkl, nim: nim },
                 success: function(response) {
