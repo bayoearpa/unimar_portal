@@ -26,7 +26,7 @@
                   <th>SK off PKL</th>
                   <th>PPK</th>
                   <th>Prodi</th>
-                  <th>Proses</th>
+                  <th colspan="2">Proses</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -111,6 +111,7 @@
                      <a class="btn btn-warning btn-sm" href="<?php echo base_url().'ppk/ekliring_tpkl/'.$c->id_tpkl; ?>"><span class="glyphicon glyphicon-pencil"></span> Edit</a>
                    <?php } ?>
                   </td>
+                  <td><button class="btn btn-error" data-filename="<?php echo $c->file_konduite; ?>">Selesai</button></td>
                 </tr>
                <?php } ?>
                 </tbody>
@@ -125,7 +126,7 @@
                   <th>SK off PKL</th>
                   <th>PPK</th>
                   <th>Prodi</th>
-                  <th>Proses</th>
+                  <th colspan="2">Proses</th>
                 </tr>
                 </tfoot>
               </table>
