@@ -121,11 +121,13 @@ if ($catar==null) {
                         <!-- Tampilkan pesan jika file tidak ada -->
                         <td>File Konduite tidak tersedia</td>
                         <td colspan="2">
+                        <form id="formKonduite" method="post" enctype="multipart/form-data">
                         <div class="form-group">
                         <label for="file_konduite">Upload File Konduite</label>
                         <input type="file" class="form-control" id="file_konduite" name="file_konduite">
                         <button class="editfk-button" data-id-tpkl="<?php echo $c->id_tpkl; ?>" data-nim="<?php echo $c->nim; ?>">Edit File Konduite</button>
                         </div>
+                        </form>
                         </td>
                     <?php } ?>
                 </tr>
@@ -139,11 +141,13 @@ if ($catar==null) {
                         <!-- Tampilkan pesan jika file tidak ada -->
                         <td>File Surat Keterangan Off tidak tersedia</td>
                         <td colspan="2">
+                        <form id="formSuratKetOff" method="post" enctype="multipart/form-data">
                         <div class="form-group">
                         <label for="file_suratketoff">Upload File Surat Keterangan Off</label>
                         <input type="file" class="form-control" id="file_suratketoff" name="file_suratketoff">
                         <button class="editsk-button" data-id-tpkl="<?php echo $c->id_tpkl; ?>" data-nim="<?php echo $c->nim; ?>">Edit File Surat Ket Off</button>
                         </div>
+                        </form>
                         </td>
                     <?php } ?>
                 </tr>
