@@ -40,7 +40,7 @@ $('#prosesSelesaiBtn').click(function() {
         success: function(response) {
             console.log('Response:', response);
             // Sembunyikan modal konfirmasi
-            $('#endStatusModal').modal('hide');
+            $('#selesaiModal').modal('hide');
             
             // Refresh tabel
             refreshTable();
