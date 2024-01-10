@@ -112,7 +112,7 @@
                      <a class="btn btn-warning btn-sm" href="<?php echo base_url().'ppk/ekliring_tpkl/'.$c->id_tpkl; ?>"><span class="glyphicon glyphicon-pencil"></span> Edit</a>
                    <?php } ?>
                   </td>
-                  <td><button class="btn btn-danger" data-filename="<?php echo $c->file_konduite; ?>">Selesai</button></td>
+                  <td><button class="btn btn-danger" data-id_tpkl="<?php echo $c->id_tpkl; ?>"  data-nim="<?php echo $c->nim; ?>"  data-nama="<?php echo $c->nama; ?>">Selesai</button></td>
                 </tr>
                <?php } ?>
                 </tbody>
@@ -142,3 +142,28 @@
       <!-- /.row -->
     </section>
     <!-- /.content -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="selesaiModal" tabindex="-1" role="dialog" aria-labelledby="selesaiModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="selesaiModalLabel">Konfirmasi Selesai</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Apa anda yakin ingin Meng nonaktifkan <span id="namaMhs"></span> dengan NIM: <span id="nimMhs"></span>?</p>
+            <form id="selesaiForm">
+              <input type="hidden" name="id_tpkl" id="id_tpkl">
+              <input type="hidden" name="status" value="nonaktif"> <!-- Isi sesuai dengan nilai status yang diperlukan -->
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
+            <button type="button" class="btn btn-danger" id="prosesSelesaiBtn">Iya</button>
+          </div>
+        </div>
+      </div>
+    </div>
