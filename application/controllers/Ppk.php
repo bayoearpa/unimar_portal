@@ -671,8 +671,7 @@ class ppk extends CI_Controller {
 			$this->load->view('ppk/footer');
 		}
 	}
-	public function endstatustpkl()
-	{
+	public function endstatustpkl()	{
 		# code...
 		 // Pastikan metode request adalah POST
     if ($this->input->server('REQUEST_METHOD') === 'POST') {

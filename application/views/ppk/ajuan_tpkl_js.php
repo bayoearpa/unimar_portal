@@ -45,7 +45,7 @@ $('#prosesSelesaiBtn').click(function() {
     var idTpkl = $('#id_tpkl').val();
     // Ganti dengan URL controller dan fungsi yang sesuai untuk mengubah status
     $.ajax({
-        url: '<?php echo base_url("kliring/endstatustpkl"); ?>',
+        url: '<?php echo base_url("ppk/endstatustpkl"); ?>',
         type: 'POST',
         dataType: 'json',
         success: function(response) {
