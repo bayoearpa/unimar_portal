@@ -112,7 +112,7 @@
                      <a class="btn btn-warning btn-sm" href="<?php echo base_url().'ppk/ekliring_tpkl/'.$c->id_tpkl; ?>"><span class="glyphicon glyphicon-pencil"></span> Edit</a>
                    <?php } ?>
                   </td>
-                  <td><button class="btn btn-danger" data-id_tpkl="<?php echo $c->id_tpkl; ?>"  data-nim="<?php echo $c->nim; ?>"  data-nama="<?php echo $c->nama; ?>">Selesai</button></td>
+                  <td><button class="btn btn-danger end-status-btn" data-id_tpkl="<?php echo $c->id_tpkl; ?>"  data-nim="<?php echo $c->nim; ?>"  data-nama="<?php echo $c->nama; ?>">Selesai</button></td>
                 </tr>
                <?php } ?>
                 </tbody>
