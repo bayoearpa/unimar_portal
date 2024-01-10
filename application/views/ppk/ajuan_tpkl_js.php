@@ -15,25 +15,27 @@
     });
 
 
-    $('#example3').DataTable({
+
+    var dataTable = $('#example3').DataTable({
         // Konfigurasi DataTable
         "order": [[0, "desc"]]
-    }).on('init.dt', function () {
-        // Inisialisasi event klik pada tombol Selesai
-        $('.btn-danger').click(function() {
-            var idTpkl = $(this).data('id_tpkl');
-            var nim = $(this).data('nim');
-            var nama = $(this).data('nama');
-
-            // Mengisi data ke dalam modal
-            $('#id_tpkl').val(idTpkl);
-            $('#namaMhs').text(nama);
-            $('#nimMhs').text(nim);
-
-            // Menampilkan modal konfirmasi
-            $('#selesaiModal').modal('show');
-        });
     });
+
+    // Event delegation untuk tombol Selesai
+    $('#example3').on('click', '.btn-danger', function() {
+        var idTpkl = $(this).data('id_tpkl');
+        var nim = $(this).data('nim');
+        var nama = $(this).data('nama');
+
+        // Mengisi data ke dalam modal
+        $('#id_tpkl').val(idTpkl);
+        $('#namaMhs').text(nama);
+        $('#nimMhs').text(nim);
+
+        // Menampilkan modal konfirmasi
+        $('#selesaiModal').modal('show');
+    });
+    
    
 
 
