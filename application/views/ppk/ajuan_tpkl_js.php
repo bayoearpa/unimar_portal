@@ -76,7 +76,7 @@ var table = $('#example3').DataTable({
         url: '<?php echo base_url("ppk/ajuan_tpkl2"); ?>',
         type: 'POST',
         dataType: 'json',
-        dataSrc: 'data.catar', // Adjust this based on your JSON structure
+        dataSrc: 'catar', // Adjust this based on your JSON structure
     },
     // other DataTable configurations
     "order": [[0, "desc"]]
