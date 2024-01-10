@@ -65,10 +65,19 @@ $('#prosesSelesaiBtn').click(function() {
         }
     });
 });
-
+var table = $('#example3').DataTable({
+    ajax: {
+        url: '<?php echo base_url("ppk/ajuan_tpkl2"); ?>',
+        type: 'POST',
+        dataType: 'json',
+        dataSrc: 'data.catar', // Adjust this based on your JSON structure
+    },
+    // other DataTable configurations
+    "order": [[0, "desc"]]
+});
 // Fungsi untuk merefresh tabel (ganti dengan URL yang sesuai)
 function refreshTable() {
-    $('#example3').DataTable().ajax.reload();
+    table.ajax.reload();
 }
   
 });

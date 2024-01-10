@@ -695,6 +695,45 @@ class ppk extends CI_Controller {
     }
 
 	}
+	public function ajuan_tpkl2()
+	{
+	    $wherexxx = array(
+	        'tbl_kliring_tpkl.status' => 'aktif',
+	        'tmst_mahasiswa.Tahun_masuk >' => '2018'			       
+	    );
+
+	    $data['catar'] = $this->m_portal->get_data_join_tpkl($wherexxx)->result();
+
+	    if ($data['catar'] == null) {
+	        // Handle the case when no data is available
+	        $this->output->set_output(json_encode(['success' => false, 'message' => 'No data available.']));
+	        return;
+	    }
+
+	    $nim = $data['catar'][0]->nim; // Assuming you want to use the first row's nim
+	    $where = array(
+	        'NIM' => $nim,			       
+	    );
+
+	    $get_mhs = $this->m_portal->get_data($where, 'tmst_mahasiswa')->result();
+
+	    foreach ($get_mhs as $row) {
+	        $prodi = $row->Kode_program_studi;
+	    }
+
+	    // Process and prepare data for JSON response
+	    $result = [
+	        'success' => true,
+	        'data' => [
+	            'catar' => $data['catar'],
+	            'nama' => $this->getNama($nim),
+	            'prodi' => $this->getProdi($prodi),
+	        ],
+	    ];
+
+	    $this->output->set_output(json_encode($result));
+	}
+
 
 	/////////////////////////////////////////// Monitoring/////////////////////////////////////////////////
 
