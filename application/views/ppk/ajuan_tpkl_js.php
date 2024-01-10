@@ -15,8 +15,9 @@
     });
 
     // Inisialisasi DataTable
-    var table = $('#example1').DataTable({
+    var table = $('#example3').DataTable({
         // Konfigurasi DataTable
+        "order": [[0, "desc"]]
     });
 
     // Event draw.dt akan dipanggil setiap kali DataTable menggambar ulang
