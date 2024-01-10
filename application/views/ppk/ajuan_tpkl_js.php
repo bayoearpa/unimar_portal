@@ -20,7 +20,7 @@
         "order": [[0, "desc"]]
     }).on('init.dt', function () {
         // Inisialisasi event klik pada tombol Selesai
-        $('.end-status-btn').click(function() {
+        $('.btn-danger').click(function() {
             var idTpkl = $(this).data('id_tpkl');
             var nim = $(this).data('nim');
             var nama = $(this).data('nama');
