@@ -25,7 +25,7 @@
     $('#nimMhs').text(nim);
 
     // Menampilkan modal konfirmasi
-    $('#endStatusModal').modal('show');
+    $('#selesaiModal').modal('show');
 });
 
 // Proses ketika tombol Iya pada modal diklik
