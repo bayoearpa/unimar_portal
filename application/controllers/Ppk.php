@@ -686,7 +686,8 @@ class ppk extends CI_Controller {
         $this->m_portal->update_data($where, $data, 'tbl_kliring_tpkl');
 
         // Redirect atau berikan respons sesuai kebutuhan
-        redirect('url_tujuan'); // Ganti 'url_tujuan' dengan URL tujuan setelah proses selesai
+        $response = array('success' => true, 'message' => 'Status berhasil diupdate');
+        header('Content-Type: application/json');// Ganti 'url_tujuan' dengan URL tujuan setelah proses selesai
     } else {
         // Request bukan POST, atur respons sesuai kebutuhan
         show_error('Metode request tidak valid', 400);
