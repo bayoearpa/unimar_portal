@@ -49,12 +49,28 @@ $('#prosesSelesaiBtn').click(function() {
         type: 'POST',
         dataType: 'json',
         success: function(response) {
-            console.log('Response:', response);
-            // Sembunyikan modal konfirmasi
-            $('#selesaiModal').modal('hide');
-            
-            // Refresh tabel
-            refreshTable();
+             console.log('Response:', response);
+
+		    if (response && response.trim() !== "") {
+		        try {
+		            // Try to parse the JSON response
+		            var jsonResponse = JSON.parse(response);
+
+		            // Check for success and refresh the table
+		            if (jsonResponse.success) {
+		                refreshTable();
+		            } else {
+		                console.error('Gagal memperbarui status:', jsonResponse.message);
+		            }
+		        } catch (e) {
+		            console.error('Error parsing JSON response:', e);
+		        }
+		    } else {
+		        console.error('Empty or malformed JSON response');
+		    }
+
+		    // Sembunyikan modal konfirmasi
+		    $('#selesaiModal').modal('hide');
         },
         error: function(xhr, status, error) {
             console.error('Error:', error);
