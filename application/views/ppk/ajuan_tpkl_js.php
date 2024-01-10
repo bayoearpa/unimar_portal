@@ -14,19 +14,29 @@
         window.open(fileUrl, '_blank');
     });
 
-   $('.btn-danger').click(function() {
-    var idTpkl = $(this).data('id_tpkl');
-    var nim = $(this).data('nim');
-    var nama = $(this).data('nama');
+    // Inisialisasi DataTable
+    var table = $('#example1').DataTable({
+        // Konfigurasi DataTable
+    });
 
-    // Mengisi data ke dalam modal
-    $('#id_tpkl').val(idTpkl);
-    $('#namaMhs').text(nama);
-    $('#nimMhs').text(nim);
+    // Event draw.dt akan dipanggil setiap kali DataTable menggambar ulang
+    table.on('draw.dt', function() {
+        // Inisialisasi kembali event klik pada tombol Selesai
+        $('.btn-danger').off('click').on('click', function() {
+            var idTpkl = $(this).data('id_tpkl');
+            var nim = $(this).data('nim');
+            var nama = $(this).data('nama');
 
-    // Menampilkan modal konfirmasi
-    $('#selesaiModal').modal('show');
-});
+            // Mengisi data ke dalam modal
+            $('#id_tpkl').val(idTpkl);
+            $('#namaMhs').text(nama);
+            $('#nimMhs').text(nim);
+
+            // Menampilkan modal konfirmasi
+            $('#selesaiModal').modal('show');
+        });
+    });
+
 
 // Proses ketika tombol Iya pada modal diklik
 $('#prosesSelesaiBtn').click(function() {
@@ -54,6 +64,7 @@ $('#prosesSelesaiBtn').click(function() {
 // Fungsi untuk merefresh tabel (ganti dengan URL yang sesuai)
 function refreshTable() {
     $('#example1').DataTable().ajax.reload();
+    table.ajax.reload(null, false);
 }
   
 });
