@@ -86,7 +86,7 @@ $('#prosesSelesaiBtn').click(function() {
 // Fungsi untuk merefresh tabel (ganti dengan URL yang sesuai)
 function refreshTable() {
     $('#example3').DataTable().ajax.reload();
-    table.ajax.reload(null, false);
+    // table.ajax.reload(null, false);
 }
   
 });
