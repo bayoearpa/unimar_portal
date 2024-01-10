@@ -51,24 +51,24 @@ $('#prosesSelesaiBtn').click(function() {
         data: {id_tpkl: $('#id_tpkl').val()},
         success: function(response) {
              console.log('Response:', response);
+             refreshTable();
+		    // if (response && response.trim() !== "") {
+		    //     try {
+		    //         // Try to parse the JSON response
+		    //         var jsonResponse = JSON.parse(response);
 
-		    if (response && response.trim() !== "") {
-		        try {
-		            // Try to parse the JSON response
-		            var jsonResponse = JSON.parse(response);
-
-		            // Check for success and refresh the table
-		            if (jsonResponse.success) {
-		                refreshTable();
-		            } else {
-		                console.error('Gagal memperbarui status:', jsonResponse.message);
-		            }
-		        } catch (e) {
-		            console.error('Error parsing JSON response:', e);
-		        }
-		    } else {
-		        console.error('Empty or malformed JSON response');
-		    }
+		    //         // Check for success and refresh the table
+		    //         if (jsonResponse.success) {
+		    //             refreshTable();
+		    //         } else {
+		    //             console.error('Gagal memperbarui status:', jsonResponse.message);
+		    //         }
+		    //     } catch (e) {
+		    //         console.error('Error parsing JSON response:', e);
+		    //     }
+		    // } else {
+		    //     console.error('Empty or malformed JSON response');
+		    // }
 
 		    // Sembunyikan modal konfirmasi
 		    $('#selesaiModal').modal('hide');
