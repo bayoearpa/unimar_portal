@@ -51,7 +51,7 @@ $('#prosesSelesaiBtn').click(function() {
         data: {id_tpkl: $('#id_tpkl').val()},
         success: function(response) {
              console.log('Response:', response);
-             refreshTable();
+             window.location.href = '<?php echo base_url('ppk/ajuan_tpkl'); ?>';
 
 		    // Sembunyikan modal konfirmasi
 		    $('#selesaiModal').modal('hide');
@@ -67,27 +67,27 @@ $('#prosesSelesaiBtn').click(function() {
 });
 
 // Destroy DataTable before reinitializing
-if ($.fn.DataTable.isDataTable('#example3')) {
-    $('#example3').DataTable().destroy();
-}
+// if ($.fn.DataTable.isDataTable('#example3')) {
+//     $('#example3').DataTable().destroy();
+// }
 
-var table = $('#example3').DataTable({
-    ajax: {
-        url: '<?php echo base_url("ppk/ajuan_tpkl2"); ?>',
-        type: 'POST',
-        dataType: 'json',
-        dataSrc: 'catar', // Adjust this based on your JSON structure
-    },
-    // other DataTable configurations
-    "order": [[0, "desc"]]
-});
+// var table = $('#example3').DataTable({
+//     ajax: {
+//         url: '<?php //echo base_url("ppk/ajuan_tpkl2"); ?>',
+//         type: 'POST',
+//         dataType: 'json',
+//         dataSrc: 'catar', // Adjust this based on your JSON structure
+//     },
+//     // other DataTable configurations
+//     "order": [[0, "desc"]]
+// });
 
-console.log(table);
+// console.log(table);
 
-// Fungsi untuk merefresh tabel (ganti dengan URL yang sesuai)
-function refreshTable() {
-    table.ajax.reload();
-}
+// // Fungsi untuk merefresh tabel (ganti dengan URL yang sesuai)
+// function refreshTable() {
+//     table.ajax.reload();
+// }
   
 });
 </script>
