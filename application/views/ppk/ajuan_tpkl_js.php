@@ -52,23 +52,6 @@ $('#prosesSelesaiBtn').click(function() {
         success: function(response) {
              console.log('Response:', response);
              refreshTable();
-		    // if (response && response.trim() !== "") {
-		    //     try {
-		    //         // Try to parse the JSON response
-		    //         var jsonResponse = JSON.parse(response);
-
-		    //         // Check for success and refresh the table
-		    //         if (jsonResponse.success) {
-		    //             refreshTable();
-		    //         } else {
-		    //             console.error('Gagal memperbarui status:', jsonResponse.message);
-		    //         }
-		    //     } catch (e) {
-		    //         console.error('Error parsing JSON response:', e);
-		    //     }
-		    // } else {
-		    //     console.error('Empty or malformed JSON response');
-		    // }
 
 		    // Sembunyikan modal konfirmasi
 		    $('#selesaiModal').modal('hide');
@@ -86,7 +69,6 @@ $('#prosesSelesaiBtn').click(function() {
 // Fungsi untuk merefresh tabel (ganti dengan URL yang sesuai)
 function refreshTable() {
     $('#example3').DataTable().ajax.reload();
-    table.ajax.reload();
 }
   
 });
