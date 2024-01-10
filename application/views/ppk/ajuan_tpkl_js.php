@@ -14,7 +14,7 @@
         window.open(fileUrl, '_blank');
     });
 
-   $('.end-status-btn').click(function() {
+   $('.btn-danger').click(function() {
     var idTpkl = $(this).data('id_tpkl');
     var nim = $(this).data('nim');
     var nama = $(this).data('nama');
