@@ -14,25 +14,47 @@
         window.open(fileUrl, '_blank');
     });
 
-     // Set data pada modal ketika tombol Selesai diklik
-	  $('.btn-danger').click(function() {
-	    var id_tpkl = $(this).data('id_tpkl');
-	    var nama = $(this).data('nama');
-	    var nim = $(this).data('nim');
-	    
-	    $('#id_tpkl').val(id_tpkl);
-	    $('#namaMhs').text(nama);
-	    $('#nimMhs').text(nim);
-	    
-	    // Munculkan modal
-	    $('#selesaiModal').modal('show');
-	  });
+   $('.end-status-btn').click(function() {
+    var idTpkl = $(this).data('id_tpkl');
+    var nim = $(this).data('nim');
+    var nama = $(this).data('nama');
 
-	  // Proses ketika tombol Iya pada modal diklik
-	  $('#prosesSelesaiBtn').click(function() {
-	    // Lakukan submit form atau aksi sesuai kebutuhan
-	    $('#selesaiForm').submit(); // Ganti dengan aksi yang sesuai
-	  });
+    // Mengisi data ke dalam modal
+    $('#id_tpkl').val(idTpkl);
+    $('#namaMhs').text(nama);
+    $('#nimMhs').text(nim);
+
+    // Menampilkan modal konfirmasi
+    $('#endStatusModal').modal('show');
+});
+
+// Proses ketika tombol Iya pada modal diklik
+$('#prosesSelesaiBtn').click(function() {
+    // Lakukan AJAX atau submit formulir sesuai kebutuhan
+    var idTpkl = $('#id_tpkl').val();
+    // Ganti dengan URL controller dan fungsi yang sesuai untuk mengubah status
+    $.ajax({
+        url: '<?php echo base_url("kliring/endstatustpkl"); ?>/' + idTpkl,
+        type: 'POST',
+        dataType: 'json',
+        success: function(response) {
+            console.log('Response:', response);
+            // Sembunyikan modal konfirmasi
+            $('#endStatusModal').modal('hide');
+            
+            // Refresh tabel
+            refreshTable();
+        },
+        error: function(xhr, status, error) {
+            console.error('Error:', error);
+        }
+    });
+});
+
+// Fungsi untuk merefresh tabel (ganti dengan URL yang sesuai)
+function refreshTable() {
+    $('#example1').DataTable().ajax.reload();
+}
   
 });
 </script>

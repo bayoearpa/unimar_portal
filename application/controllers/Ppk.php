@@ -671,6 +671,29 @@ class ppk extends CI_Controller {
 			$this->load->view('ppk/footer');
 		}
 	}
+	public function endstatustpkl()
+	{
+		# code...
+		 // Pastikan metode request adalah POST
+    if ($this->input->server('REQUEST_METHOD') === 'POST') {
+        $id_tpkl = $this->input->post('id_tpkl');
+        $status = "nonaktif"; // Sesuaikan dengan input form Anda
+
+        // Lakukan validasi atau proses lainnya jika diperlukan
+
+        // Update status pada tabel tbl_kliring_tpkl
+        $data = array('status' => $status);
+        $where = array('id_tpkl' => $id_tpkl);
+        $this->m_portal->update_data($where, $data, 'tbl_kliring_tpkl');
+
+        // Redirect atau berikan respons sesuai kebutuhan
+        redirect('url_tujuan'); // Ganti 'url_tujuan' dengan URL tujuan setelah proses selesai
+    } else {
+        // Request bukan POST, atur respons sesuai kebutuhan
+        show_error('Metode request tidak valid', 400);
+    }
+
+	}
 
 	/////////////////////////////////////////// Monitoring/////////////////////////////////////////////////
 
