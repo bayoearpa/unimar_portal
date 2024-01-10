@@ -74,6 +74,10 @@ $('#prosesSelesaiBtn').click(function() {
         },
         error: function(xhr, status, error) {
             console.error('Error:', error);
+            // Log the details of the XHR object
+		    console.log('XHR status:', xhr.status);
+		    console.log('XHR response text:', xhr.responseText);
+		    console.log('XHR ready state:', xhr.readyState);
         }
     });
 });
