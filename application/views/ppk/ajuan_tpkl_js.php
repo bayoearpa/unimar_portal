@@ -48,6 +48,7 @@ $('#prosesSelesaiBtn').click(function() {
         url: '<?php echo base_url("ppk/endstatustpkl"); ?>',
         type: 'POST',
         dataType: 'json',
+        data: {id_tpkl: $('#id_tpkl').val()},
         success: function(response) {
              console.log('Response:', response);
 
