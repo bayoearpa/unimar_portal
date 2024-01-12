@@ -61,7 +61,7 @@
                        ?>
                     </td>
                      <td><?php if ($c->file_konduite) { ?>
-                        <button class="btn btn-success view-filek-button" data-filename="<?php echo $c->file_konduite; ?>">Lihat</button>
+                        <button class="btn view-filek-button btn-success " data-filename="<?php echo $c->file_konduite; ?>">Lihat</button>
                     <?php } else { ?>
                         <!-- Tampilkan pesan jika file tidak ada -->
                         File tidak tersedia
