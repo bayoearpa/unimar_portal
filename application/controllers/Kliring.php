@@ -1177,7 +1177,7 @@ class kliring extends CI_Controller {
         if($_FILES["file_k"]["name"]){
         $config["file_name"] = $nmfile1;
         $this->load->library('upload', $config);
-        $this->upload->initialize($config)
+        // $this->upload->initialize($config)
         $konduite = $this->upload->do_upload('file_k');
         if (!$konduite){
             $error = array('error' => $this->upload->display_errors());
