@@ -331,6 +331,12 @@ class Mahasiswa extends CI_Controller {
 		$this->load->view('mahasiswa/laponboard',$data);
 		$this->load->view('mahasiswa/footer');
 	}
+	public function down_format_laporan_bulanan_onboard()
+	{
+		# code...
+		force_download('assets/download/format_laporan_bulanan_onboard.pdf',NULL);
+		redirect(base_url());
+	}
 	public function offboard($id)
 	{
 		# code...
