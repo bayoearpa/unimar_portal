@@ -13,6 +13,7 @@ class Mahasiswa extends CI_Controller {
 		// }
 		$this->load->model('m_mahasiswa');
 		$this->load->library('m_pdf');
+		$this->load->helper('download');
 	}
 
 	public function index()
