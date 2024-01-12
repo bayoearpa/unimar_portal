@@ -14,7 +14,7 @@
               # code... ?>
                 <?php  foreach ($mhs_detail as $c) { ?>
                   <p>Sebelum mengisi form laporan Onboard silakan donwload format yang tersedia dibawah ini:</p>
-                  <a href="<?php echo base_url() ?>mahasiswa/down_format_laporan_bulanan_onboard?>" target="__blank"><button type="button" class="btn btn-primary">Download Panduan Pengisian Ukuran Pakaian</button></a>
+                  <a href="<?php echo base_url() ?>mahasiswa/down_format_laporan_bulanan_onboard" target="__blank"><button type="button" class="btn btn-primary">Download Panduan Pengisian Ukuran Pakaian</button></a>
                  <form action="<?php echo base_url() ?>laponboardp" name="form1" id="form1" method="post" enctype="multipart/form-data">               
                <div class="form-group">
                         <label for="editufsignon">Laporan Onboard Bulan Ke-1 (Upload dalam format .pdf)</label>
