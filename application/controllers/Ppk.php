@@ -493,7 +493,7 @@ class ppk extends CI_Controller {
 	{
 		$wherexxx = array(
 			'tbl_kliring_tpkl.status' => 'aktif',
-			'tmst_mahasiswa.Tahun_masuk >' => '2017'			       
+			'tmst_mahasiswa.Tahun_masuk >' => '2018'			       
         );
 		$data['catar'] = $this->m_portal->get_data_join_tpkl($wherexxx)->result(); 
 		if ($data['catar'] == null) {
