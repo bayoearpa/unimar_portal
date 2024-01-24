@@ -1177,7 +1177,7 @@ class kliring extends CI_Controller {
 		// $config['max_height']  = '768';
 
         if($_FILES["file_k"]["name"]){
-        $this->upload->initialize($config)
+        $this->upload->initialize($config);
         $konduite = $this->upload->do_upload('file_k');
         if (!$konduite){
             $error = array('error' => $this->upload->display_errors());
