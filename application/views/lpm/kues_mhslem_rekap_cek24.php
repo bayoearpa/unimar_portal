@@ -54,30 +54,30 @@
                         <td>Sangat Setuju</td>
                         <td>
                           <div class="progress progress-xs">
-                            <div class="progress-bar progress-bar-danger" style="width: <?php echo $ss_a ?>%"></div>
+                            <div class="progress-bar progress-bar-danger" style="width: <?php echo round($ss_a) ?>%"></div>
                           </div>
                         </td>
-                        <td><span class="badge bg-red"><?php echo $ss_a ?>%</span></td>
+                        <td><span class="badge bg-red"><?php echo round($ss_a) ?>%</span></td>
                       </tr>
                       <tr>
                         <td>2.</td>
                         <td>Setuju</td>
                         <td>
                           <div class="progress progress-xs">
-                            <div class="progress-bar progress-bar-yellow" style="width: <?php echo $s_a ?>%"></div>
+                            <div class="progress-bar progress-bar-yellow" style="width: <?php echo round($s_a) ?>%"></div>
                           </div>
                         </td>
-                        <td><span class="badge bg-yellow"><?php echo $s_a ?>%</span></td>
+                        <td><span class="badge bg-yellow"><?php echo round($s_a) ?>%</span></td>
                       </tr>
                       <tr>
                         <td>3.</td>
                         <td>Kurang Setuju</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
-                            <div class="progress-bar progress-bar-primary" style="width: <?php echo $ks_a ?>%"></div>
+                            <div class="progress-bar progress-bar-primary" style="width: <?php echo round($ks_a) ?>%"></div>
                           </div>
                         </td>
-                        <td><span class="badge bg-light-blue"><?php echo $ks_a ?>%</span></td>
+                        <td><span class="badge bg-light-blue"><?php echo round($ks_a) ?>%</span></td>
                       </tr>
                       <tr>
                         <td>4.</td>
@@ -107,7 +107,7 @@
                 <!-- table chart -->
                 <div class="box">
                   <div class="box-header">
-                    <h3 class="box-title">Fakultas</h3>
+                    <h3 class="box-title">Program Studi</h3>
                   </div>
                   <!-- /.box-header -->
                   <div class="box-body no-padding">
@@ -176,7 +176,7 @@
                 <!-- table chart -->
                 <div class="box">
                   <div class="box-header">
-                    <h3 class="box-title">Fakultas</h3>
+                    <h3 class="box-title">Keuangan</h3>
                   </div>
                   <!-- /.box-header -->
                   <div class="box-body no-padding">
@@ -245,7 +245,7 @@
                 <!-- table chart -->
                 <div class="box">
                   <div class="box-header">
-                    <h3 class="box-title">Fakultas</h3>
+                    <h3 class="box-title">Sarana dan Prasarana</h3>
                   </div>
                   <!-- /.box-header -->
                   <div class="box-body no-padding">
@@ -314,7 +314,7 @@
                 <!-- table chart -->
                 <div class="box">
                   <div class="box-header">
-                    <h3 class="box-title">Fakultas</h3>
+                    <h3 class="box-title">PMB</h3>
                   </div>
                   <!-- /.box-header -->
                   <div class="box-body no-padding">
@@ -383,7 +383,7 @@
                 <!-- table chart -->
                 <div class="box">
                   <div class="box-header">
-                    <h3 class="box-title">Fakultas</h3>
+                    <h3 class="box-title">Akademik</h3>
                   </div>
                   <!-- /.box-header -->
                   <div class="box-body no-padding">
@@ -452,7 +452,7 @@
                 <!-- table chart -->
                 <div class="box">
                   <div class="box-header">
-                    <h3 class="box-title">Fakultas</h3>
+                    <h3 class="box-title">Mahatar</h3>
                   </div>
                   <!-- /.box-header -->
                   <div class="box-body no-padding">
@@ -521,7 +521,7 @@
                 <!-- table chart -->
                 <div class="box">
                   <div class="box-header">
-                    <h3 class="box-title">Fakultas</h3>
+                    <h3 class="box-title">Humas</h3>
                   </div>
                   <!-- /.box-header -->
                   <div class="box-body no-padding">
@@ -590,7 +590,7 @@
                 <!-- table chart -->
                 <div class="box">
                   <div class="box-header">
-                    <h3 class="box-title">Fakultas</h3>
+                    <h3 class="box-title">Perpustakaan</h3>
                   </div>
                   <!-- /.box-header -->
                   <div class="box-body no-padding">
@@ -659,7 +659,7 @@
                 <!-- table chart -->
                 <div class="box">
                   <div class="box-header">
-                    <h3 class="box-title">Fakultas</h3>
+                    <h3 class="box-title">laboratorium</h3>
                   </div>
                   <!-- /.box-header -->
                   <div class="box-body no-padding">
@@ -728,7 +728,7 @@
                 <!-- table chart -->
                 <div class="box">
                   <div class="box-header">
-                    <h3 class="box-title">Fakultas</h3>
+                    <h3 class="box-title">PKL</h3>
                   </div>
                   <!-- /.box-header -->
                   <div class="box-body no-padding">
@@ -797,7 +797,7 @@
                 <!-- table chart -->
                 <div class="box">
                   <div class="box-header">
-                    <h3 class="box-title">Fakultas</h3>
+                    <h3 class="box-title">PRALA</h3>
                   </div>
                   <!-- /.box-header -->
                   <div class="box-body no-padding">
@@ -866,7 +866,7 @@
                 <!-- table chart -->
                 <div class="box">
                   <div class="box-header">
-                    <h3 class="box-title">Fakultas</h3>
+                    <h3 class="box-title">Diklat Umum</h3>
                   </div>
                   <!-- /.box-header -->
                   <div class="box-body no-padding">
@@ -935,7 +935,7 @@
                 <!-- table chart -->
                 <div class="box">
                   <div class="box-header">
-                    <h3 class="box-title">Fakultas</h3>
+                    <h3 class="box-title">DKP</h3>
                   </div>
                   <!-- /.box-header -->
                   <div class="box-body no-padding">
@@ -1004,7 +1004,7 @@
                 <!-- table chart -->
                 <div class="box">
                   <div class="box-header">
-                    <h3 class="box-title">Fakultas</h3>
+                    <h3 class="box-title">PUSTIK</h3>
                   </div>
                   <!-- /.box-header -->
                   <div class="box-body no-padding">
