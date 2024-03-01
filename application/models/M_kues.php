@@ -89,6 +89,14 @@ class M_kues extends CI_Model {
 		$query=$this->db->get();  
 		return $query; 
 	}
+	function get_data_mhslem_sum_item24($where,$item){
+		$this->db->select('tbl_kues_lap_mhslem.'.$item.' as data_item,
+						   tbl_kues_lap_mhslem.jml_responden as jml_res');  
+		$this->db->from('tbl_kues_lap_mhslem');  
+		$this->db->where($where);  
+		$query=$this->db->get();  
+		return $query; 
+	}
 	function get_data_join_where_nim_prodi($where){
 		$this->db->select('tmst_mata_kuliah.Nama_mata_kuliah as matkul,
 		tmst_dosen.Nama_dosen as dosen,

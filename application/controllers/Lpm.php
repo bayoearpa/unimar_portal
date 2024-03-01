@@ -1543,6 +1543,287 @@ class Lpm extends CI_Controller {
 		$this->load->view('lpm/footer');
 		$this->load->view('lpm/kues_mhslem_rekap_cek_js',$data);
 	}
+	///////////////////////////////////////////MHS->LEM ver.2024////////////////////////////////////////////////
+	public function kues_mhslem_rekap24()
+	{
+		$data['gettanya'] = $this->m_kues->get_data_all('tbl_kues_mhslem_tanya')->result();
+		$this->load->view('lpm/header');
+		$this->load->view('lpm/kues_mhslem_rekap24',$data);
+		$this->load->view('lpm/footer');
+	}
+	public function sumitem_mhslem24($item, $skala, $prodi, $ta)
+	{
+		# code...
+		$where = array(
+			'skala' => $skala,
+			'prodi'=> $prodi,
+			'ta' => $ta		
+		);
+		$get_sum = $this->m_kues->get_data_mhslem_sum_item24($where,$item)->result();
+		foreach ($get_sum as $key ) {
+			# code...
+			$echo = ($key->data_item / $key->jml_res)*100;
+		}
+
+		return $echo;
+	}
+	public function kues_mhslem_prosesrekap24()
+	{
+		$data['lpm'] = $this;
+		///cek tabel
+		$pernyataan = $this->input->post('pernyataan');
+		$prodi = $this->input->post('prodi');
+		$ta = $this->input->post('ta');
+		$cek = $this->cektablelapmhslem($prodi, $ta);
+
+		// get nama pernyataan
+		$wherezx = array(
+			'id_mhslem_tny' => $pernyataan,		
+		);
+
+		$ambiltanya = $this->m_kues->get_data($wherezx,'tbl_kues_mhslem_tanya')->result();
+		foreach ($ambiltanya as $key) {
+			# code...
+			$data['pernyataan'] = $key->tanya;
+		}
+		//get list kues
+		$data['gettanya'] = $this->m_kues->get_data_all('tbl_kues_mhslem_tanya')->result();
+		$data['list_pert'] = $this->m_kues->get_data_all('tbl_kues_mhsdsn_tanya')->result();
+		//get nama prodi
+		$data['nama_prodi'] = $this->getProdi($prodi);
+		$data['prodi'] = $prodi;
+		$data['ta'] = $ta;
+		if ($cek > 0) {
+			# code...
+
+			// get item untk get data per prodi
+			$new_geta1 = $get_['pernyataan'][$pernyataan] . '_a_1';
+			$new_geta2 = $get_['pernyataan'][$pernyataan] . '_a_2';
+			$new_geta3 = $get_['pernyataan'][$pernyataan] . '_a_3';
+			$new_geta4 = $get_['pernyataan'][$pernyataan] . '_a_4';
+			$new_geta5 = $get_['pernyataan'][$pernyataan] . '_a_5';
+			$new_geta = $get_['pernyataan'][$pernyataan] . 'a';
+
+			$data['sts_a'] = $this->sumitem_mhslem24($pernyataan."a",'STS',$prodi,$ta);
+			$data['ts_a'] = $this->sumitem_mhslem24($pernyataan."a",'TS',$prodi,$ta);
+			$data['ks_a'] = $this->sumitem_mhslem24($pernyataan."a",'KS',$prodi,$ta);
+			$data['s_a'] = $this->sumitem_mhslem24($pernyataan."a",'S',$prodi,$ta);
+			$data['ss_a'] = $this->sumitem_mhslem24($pernyataan."a",'SS',$prodi,$ta);
+
+
+			$new_getb1 = $get_['pernyataan'][$pernyataan] . '_b_1';
+			$new_getb2 = $get_['pernyataan'][$pernyataan] . '_b_2';
+			$new_getb3 = $get_['pernyataan'][$pernyataan] . '_b_3';
+			$new_getb4 = $get_['pernyataan'][$pernyataan] . '_b_4';
+			$new_getb5 = $get_['pernyataan'][$pernyataan] . '_b_5';
+			$new_getb = $get_['pernyataan'][$pernyataan] . 'b';
+
+			$data['sts_b'] = $this->sumitem_mhslem24($pernyataan."b",'STS',$prodi,$ta);
+			$data['ts_b'] = $this->sumitem_mhslem24($pernyataan."b",'TS',$prodi,$ta);
+			$data['ks_b'] = $this->sumitem_mhslem24($pernyataan."b",'KS',$prodi,$ta);
+			$data['s_b'] = $this->sumitem_mhslem24($pernyataan."b",'S',$prodi,$ta);
+			$data['ss_b'] = $this->sumitem_mhslem24($pernyataan."b",'SS',$prodi,$ta);
+
+
+			$new_getc1 = $get_['pernyataan'][$pernyataan] . '_c_1';
+			$new_getc2 = $get_['pernyataan'][$pernyataan] . '_c_2';
+			$new_getc3 = $get_['pernyataan'][$pernyataan] . '_c_3';
+			$new_getc4 = $get_['pernyataan'][$pernyataan] . '_c_4';
+			$new_getc5 = $get_['pernyataan'][$pernyataan] . '_c_5';
+			$new_getc = $get_['pernyataan'][$pernyataan] . 'c';
+
+			$data['sts_c'] = $this->sumitem_mhslem24($pernyataan."c",'STS',$prodi,$ta);
+			$data['ts_c'] = $this->sumitem_mhslem24($pernyataan."c",'TS',$prodi,$ta);
+			$data['ks_c'] = $this->sumitem_mhslem24($pernyataan."c",'KS',$prodi,$ta);
+			$data['s_c'] = $this->sumitem_mhslem24($pernyataan."c",'S',$prodi,$ta);
+			$data['ss_c'] = $this->sumitem_mhslem24($pernyataan."c",'SS',$prodi,$ta);
+
+
+			$new_getd1 = $get_['pernyataan'][$pernyataan] . '_d_1';
+			$new_getd2 = $get_['pernyataan'][$pernyataan] . '_d_2';
+			$new_getd3 = $get_['pernyataan'][$pernyataan] . '_d_3';
+			$new_getd4 = $get_['pernyataan'][$pernyataan] . '_d_4';
+			$new_getd5 = $get_['pernyataan'][$pernyataan] . '_d_5';
+			$new_getd = $get_['pernyataan'][$pernyataan] . 'd';
+
+			$data['sts_d'] = $this->sumitem_mhslem24($pernyataan."d",'STS',$prodi,$ta);
+			$data['ts_d'] = $this->sumitem_mhslem24($pernyataan."d",'TS',$prodi,$ta);
+			$data['ks_d'] = $this->sumitem_mhslem24($pernyataan."d",'KS',$prodi,$ta);
+			$data['s_d'] = $this->sumitem_mhslem24($pernyataan."d",'S',$prodi,$ta);
+			$data['ss_d'] = $this->sumitem_mhslem24($pernyataan."d",'SS',$prodi,$ta);
+
+
+			$new_gete1 = $get_['pernyataan'][$pernyataan] . '_e_1';
+			$new_gete2 = $get_['pernyataan'][$pernyataan] . '_e_2';
+			$new_gete3 = $get_['pernyataan'][$pernyataan] . '_e_3';
+			$new_gete4 = $get_['pernyataan'][$pernyataan] . '_e_4';
+			$new_gete5 = $get_['pernyataan'][$pernyataan] . '_e_5';
+			$new_gete = $get_['pernyataan'][$pernyataan] . 'e';
+
+			$data['sts_e'] = $this->sumitem_mhslem24($pernyataan."e",'STS',$prodi,$ta);
+			$data['ts_e'] = $this->sumitem_mhslem24($pernyataan."e",'TS',$prodi,$ta);
+			$data['ks_e'] = $this->sumitem_mhslem24($pernyataan."e",'KS',$prodi,$ta);
+			$data['s_e'] = $this->sumitem_mhslem24($pernyataan."e",'S',$prodi,$ta);
+			$data['ss_e'] = $this->sumitem_mhslem24($pernyataan."e",'SS',$prodi,$ta);
+
+
+			$new_getf1 = $get_['pernyataan'][$pernyataan] . '_f_1';
+			$new_getf2 = $get_['pernyataan'][$pernyataan] . '_f_2';
+			$new_getf3 = $get_['pernyataan'][$pernyataan] . '_f_3';
+			$new_getf4 = $get_['pernyataan'][$pernyataan] . '_f_4';
+			$new_getf5 = $get_['pernyataan'][$pernyataan] . '_f_5';
+			$new_getf = $get_['pernyataan'][$pernyataan] . 'f';
+
+			$data['sts_f'] = $this->sumitem_mhslem24($pernyataan."f",'STS',$prodi,$ta);
+			$data['ts_f'] = $this->sumitem_mhslem24($pernyataan."f",'TS',$prodi,$ta);
+			$data['ks_f'] = $this->sumitem_mhslem24($pernyataan."f",'KS',$prodi,$ta);
+			$data['s_f'] = $this->sumitem_mhslem24($pernyataan."f",'S',$prodi,$ta);
+			$data['ss_f'] = $this->sumitem_mhslem24($pernyataan."f",'SS',$prodi,$ta);
+
+
+			$new_getg1 = $get_['pernyataan'][$pernyataan] . '_g_1';
+			$new_getg2 = $get_['pernyataan'][$pernyataan] . '_g_2';
+			$new_getg3 = $get_['pernyataan'][$pernyataan] . '_g_3';
+			$new_getg4 = $get_['pernyataan'][$pernyataan] . '_g_4';
+			$new_getg5 = $get_['pernyataan'][$pernyataan] . '_g_5';
+			$new_getg = $get_['pernyataan'][$pernyataan] . 'g';
+
+			$data['sts_g'] = $this->sumitem_mhslem24($pernyataan."g",'STS',$prodi,$ta);
+			$data['ts_g'] = $this->sumitem_mhslem24($pernyataan."g",'TS',$prodi,$ta);
+			$data['ks_g'] = $this->sumitem_mhslem24($pernyataan."g",'KS',$prodi,$ta);
+			$data['s_g'] = $this->sumitem_mhslem24($pernyataan."g",'S',$prodi,$ta);
+			$data['ss_g'] = $this->sumitem_mhslem24($pernyataan."g",'SS',$prodi,$ta);
+
+
+			$new_geth1 = $get_['pernyataan'][$pernyataan] . '_h_1';
+			$new_geth2 = $get_['pernyataan'][$pernyataan] . '_h_2';
+			$new_geth3 = $get_['pernyataan'][$pernyataan] . '_h_3';
+			$new_geth4 = $get_['pernyataan'][$pernyataan] . '_h_4';
+			$new_geth5 = $get_['pernyataan'][$pernyataan] . '_h_5';
+			$new_geth = $get_['pernyataan'][$pernyataan] . 'h';
+
+			$data['sts_h'] = $this->sumitem_mhslem24($pernyataan."h",'STS',$prodi,$ta);
+			$data['ts_h'] = $this->sumitem_mhslem24($pernyataan."h",'TS',$prodi,$ta);
+			$data['ks_h'] = $this->sumitem_mhslem24($pernyataan."h",'KS',$prodi,$ta);
+			$data['s_h'] = $this->sumitem_mhslem24($pernyataan."h",'S',$prodi,$ta);
+			$data['ss_h'] = $this->sumitem_mhslem24($pernyataan."h",'SS',$prodi,$ta);
+
+
+			$new_geti1 = $get_['pernyataan'][$pernyataan] . '_i_1';
+			$new_geti2 = $get_['pernyataan'][$pernyataan] . '_i_2';
+			$new_geti3 = $get_['pernyataan'][$pernyataan] . '_i_3';
+			$new_geti4 = $get_['pernyataan'][$pernyataan] . '_i_4';
+			$new_geti5 = $get_['pernyataan'][$pernyataan] . '_i_5';
+			$new_geti = $get_['pernyataan'][$pernyataan] . 'i';
+
+			$data['sts_i'] = $this->sumitem_mhslem24($pernyataan."i",'STS',$prodi,$ta);
+			$data['ts_i'] = $this->sumitem_mhslem24($pernyataan."i",'TS',$prodi,$ta);
+			$data['ks_i'] = $this->sumitem_mhslem24($pernyataan."i",'KS',$prodi,$ta);
+			$data['s_i'] = $this->sumitem_mhslem24($pernyataan."i",'S',$prodi,$ta);
+			$data['ss_i'] = $this->sumitem_mhslem24($pernyataan."i",'SS',$prodi,$ta);
+
+			$new_getj1 = $get_['pernyataan'][$pernyataan] . '_j_1';
+			$new_getj2 = $get_['pernyataan'][$pernyataan] . '_j_2';
+			$new_getj3 = $get_['pernyataan'][$pernyataan] . '_j_3';
+			$new_getj4 = $get_['pernyataan'][$pernyataan] . '_j_4';
+			$new_getj5 = $get_['pernyataan'][$pernyataan] . '_j_5';
+			$new_getj = $get_['pernyataan'][$pernyataan] . 'j';
+
+			$data['sts_j'] = $this->sumitem_mhslem24($pernyataan."j",'STS',$prodi,$ta);
+			$data['ts_j'] = $this->sumitem_mhslem24($pernyataan."j",'TS',$prodi,$ta);
+			$data['ks_j'] = $this->sumitem_mhslem24($pernyataan."j",'KS',$prodi,$ta);
+			$data['s_j'] = $this->sumitem_mhslem24($pernyataan."j",'S',$prodi,$ta);
+			$data['ss_j'] = $this->sumitem_mhslem24($pernyataan."j",'SS',$prodi,$ta);
+
+
+			$new_getk1 = $get_['pernyataan'][$pernyataan] . '_k_1';
+			$new_getk2 = $get_['pernyataan'][$pernyataan] . '_k_2';
+			$new_getk3 = $get_['pernyataan'][$pernyataan] . '_k_3';
+			$new_getk4 = $get_['pernyataan'][$pernyataan] . '_k_4';
+			$new_getk5 = $get_['pernyataan'][$pernyataan] . '_k_5';
+			$new_getk = $get_['pernyataan'][$pernyataan] . 'k';
+
+			$data['sts_k'] = $this->sumitem_mhslem24($pernyataan."k",'STS',$prodi,$ta);
+			$data['ts_k'] = $this->sumitem_mhslem24($pernyataan."k",'TS',$prodi,$ta);
+			$data['ks_k'] = $this->sumitem_mhslem24($pernyataan."k",'KS',$prodi,$ta);
+			$data['s_k'] = $this->sumitem_mhslem24($pernyataan."k",'S',$prodi,$ta);
+			$data['ss_k'] = $this->sumitem_mhslem24($pernyataan."k",'SS',$prodi,$ta);
+
+
+			$new_getl1 = $get_['pernyataan'][$pernyataan] . '_l_1';
+			$new_getl2 = $get_['pernyataan'][$pernyataan] . '_l_2';
+			$new_getl3 = $get_['pernyataan'][$pernyataan] . '_l_3';
+			$new_getl4 = $get_['pernyataan'][$pernyataan] . '_l_4';
+			$new_getl5 = $get_['pernyataan'][$pernyataan] . '_l_5';
+			$new_getl = $get_['pernyataan'][$pernyataan] . 'l';
+
+			$data['sts_l'] = $this->sumitem_mhslem24($pernyataan."l",'STS',$prodi,$ta);
+			$data['ts_l'] = $this->sumitem_mhslem24($pernyataan."l",'TS',$prodi,$ta);
+			$data['ks_l'] = $this->sumitem_mhslem24($pernyataan."l",'KS',$prodi,$ta);
+			$data['s_l'] = $this->sumitem_mhslem24($pernyataan."l",'S',$prodi,$ta);
+			$data['ss_l'] = $this->sumitem_mhslem24($pernyataan."l",'SS',$prodi,$ta);
+
+
+			$new_getm1 = $get_['pernyataan'][$pernyataan] . '_m_1';
+			$new_getm2 = $get_['pernyataan'][$pernyataan] . '_m_2';
+			$new_getm3 = $get_['pernyataan'][$pernyataan] . '_m_3';
+			$new_getm4 = $get_['pernyataan'][$pernyataan] . '_m_4';
+			$new_getm5 = $get_['pernyataan'][$pernyataan] . '_m_5';
+			$new_getm = $get_['pernyataan'][$pernyataan] . 'm';
+
+			$data['sts_m'] = $this->sumitem_mhslem24($pernyataan."m",'STS',$prodi,$ta);
+			$data['ts_m'] = $this->sumitem_mhslem24($pernyataan."m",'TS',$prodi,$ta);
+			$data['ks_m'] = $this->sumitem_mhslem24($pernyataan."m",'KS',$prodi,$ta);
+			$data['s_m'] = $this->sumitem_mhslem24($pernyataan."m",'S',$prodi,$ta);
+			$data['ss_m'] = $this->sumitem_mhslem24($pernyataan."m",'SS',$prodi,$ta);
+
+			$new_getn1 = $get_['pernyataan'][$pernyataan] . '_n_1';
+			$new_getn2 = $get_['pernyataan'][$pernyataan] . '_n_2';
+			$new_getn3 = $get_['pernyataan'][$pernyataan] . '_n_3';
+			$new_getn4 = $get_['pernyataan'][$pernyataan] . '_n_4';
+			$new_getn5 = $get_['pernyataan'][$pernyataan] . '_n_5';
+			$new_getn = $get_['pernyataan'][$pernyataan] . 'n';
+
+			$data['sts_n'] = $this->sumitem_mhslem24($pernyataan."n",'STS',$prodi,$ta);
+			$data['ts_n'] = $this->sumitem_mhslem24($pernyataan."n",'TS',$prodi,$ta);
+			$data['ks_n'] = $this->sumitem_mhslem24($pernyataan."n",'KS',$prodi,$ta);
+			$data['s_n'] = $this->sumitem_mhslem24($pernyataan."n",'S',$prodi,$ta);
+			$data['ss_n'] = $this->sumitem_mhslem24($pernyataan."n",'SS',$prodi,$ta);
+
+
+			$new_geto1 = $get_['pernyataan'][$pernyataan] . '_o_1';
+			$new_geto2 = $get_['pernyataan'][$pernyataan] . '_o_2';
+			$new_geto3 = $get_['pernyataan'][$pernyataan] . '_o_3';
+			$new_geto4 = $get_['pernyataan'][$pernyataan] . '_o_4';
+			$new_geto5 = $get_['pernyataan'][$pernyataan] . '_o_5';
+			$new_geto = $get_['pernyataan'][$pernyataan] . 'o';
+
+			$data['sts_o'] = $this->sumitem_mhslem24($pernyataan."o",'STS',$prodi,$ta);
+			$data['ts_o'] = $this->sumitem_mhslem24($pernyataan."o",'TS',$prodi,$ta);
+			$data['ks_o'] = $this->sumitem_mhslem24($pernyataan."o",'KS',$prodi,$ta);
+			$data['s_o'] = $this->sumitem_mhslem24($pernyataan."o",'S',$prodi,$ta);
+			$data['ss_o'] = $this->sumitem_mhslem24($pernyataan."o",'SS',$prodi,$ta);
+
+
+
+			//get data dosen
+			// $where = array(
+			// 'tbl_kues_mhsdsn.prodi' => $prodi,
+			// 'tbl_kues_mhsdsn.ta' => $ta,		
+			// );
+			// $data['select_dosen'] = $this->m_kues->get_data_distinct_dosen($where)->result();
+
+		} else {
+		$this->session->set_flashdata('error', "<div class='alert alert-danger alert-dismissible'><b>Error, Data tidak ditemukan silakan lakukan update data pada menu Kuesioner>update data atau tekan tombol ini</b><a href='kues_mhslem_update'<button type='button' class='btn btn-block btn-primary'>Halaman Update Data</button></a></div>");
+		}
+		$this->load->view('lpm/header');
+		$this->load->view('lpm/kues_mhslem_rekap24',$data);
+		$this->load->view('lpm/kues_mhslem_rekap_cek24',$data);
+		$this->load->view('lpm/footer');
+		// $this->load->view('lpm/kues_mhslem_rekap_cek24_js',$data);
+	}
+
+
 /////////////////////////////////////////////////////////////////Monitoring/////////////////////////////////////
 	/////////////// monitoring summary
 	public function mon_summary()
