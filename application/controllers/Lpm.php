@@ -1559,10 +1559,15 @@ class Lpm extends CI_Controller {
 			'prodi'=> $prodi,
 			'ta' => $ta		
 		);
+		$get_pembagi = $this->m_kues->get_data_mhslem_sum_item($where,$item)->result();
 		$get_sum = $this->m_kues->get_data_mhslem_sum_item24($where,$item)->result();
+		foreach ($get_pembagi as $key ) {
+			# code...
+			$pembagi = $key->sum_item;
+		}
 		foreach ($get_sum as $key ) {
 			# code...
-			$echo = ($key->data_item / $key->jml_res)*100;
+			$echo = ($key->data_item / $pembagi)*100;
 		}
 
 		return $echo;
