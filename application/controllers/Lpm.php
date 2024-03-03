@@ -1559,7 +1559,11 @@ class Lpm extends CI_Controller {
 			'prodi'=> $prodi,
 			'ta' => $ta		
 		);
-		$get_pembagi = $this->m_kues->get_data_mhslem_sum_item($where,$item)->result();
+		$where2 = array(
+			'prodi'=> $prodi,
+			'ta' => $ta		
+		);
+		$get_pembagi = $this->m_kues->get_data_mhslem_sum_item($where2,$item)->result();
 		$get_sum = $this->m_kues->get_data_mhslem_sum_item24($where,$item)->result();
 		foreach ($get_pembagi as $key ) {
 			# code...
