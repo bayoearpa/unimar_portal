@@ -104,8 +104,8 @@ function reloadTable() {
         data: { year: $('#year').val(), program_studi: $('#program_studi').val() },
         success: function(response) {
             $('#example31082023').html(response);
-             connectEditButtonListeners()
-             connectInsertButtonListeners()
+             connectEditButtonListeners();
+             connectInsertButtonListeners();
         }
     });
 }
