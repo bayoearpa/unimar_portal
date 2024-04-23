@@ -74,6 +74,7 @@
                 <li><a href="https://forms.gle/Yz2Nx89qbQLuSDPi7" target="__blank">Upload Data Kegiatan MAHATAR</a></li>
               </ul>
             </li>
+            <li><a href="<?php echo base_url() ?>mahasiswa">Home</a></li>
           </ul>
         </div>
         <!-- /.navbar-collapse -->
