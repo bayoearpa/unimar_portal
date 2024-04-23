@@ -224,5 +224,8 @@ function connectInsertButtonListeners() {
     });
 
 
+connectEditButtonListeners();
+connectInsertButtonListeners();
+
     });
     </script>
