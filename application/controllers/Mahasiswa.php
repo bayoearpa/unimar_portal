@@ -335,7 +335,7 @@ class Mahasiswa extends CI_Controller {
 	public function down_format_laporan_bulanan_onboard()
 	{
 		# code...
-		force_download('assets/download/format_laporan_bulanan_onboard.pdf',NULL);
+		force_download('assets/download/format_laporan_bulanan_onboard24.pdf',NULL);
 		redirect(base_url());
 	}
 	public function offboard($id)
