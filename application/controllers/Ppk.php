@@ -944,6 +944,87 @@ class ppk extends CI_Controller {
     }
 	}
 	////////////////// end lulus D3
+	// monitoring lulus Pra
+
+	public function mon_llspra()
+	{
+		# code...
+    // Call your model method to get the data with pagination
+    $data['items'] = $this->m_portal->get_data_formon_mhsall_pra($per_page, $offset);
+
+    $data['program_studi_options'] = array('92403', '92402'); // Add other program options if needed
+
+    $this->load->view('ppk/header');
+    $this->load->view('ppk/mon_llspra', $data);
+    $this->load->view('ppk/footer');
+    $this->load->view('ppk/mon_llspra_js');
+	}
+
+	public function mon_llspradata()
+	{
+		# code...
+	$year = $this->input->get('year'); // Ambil tahun dari input form
+    $program_studi = $this->input->get('program_studi'); // Ambil program studi dari input form
+
+    // Buat array untuk filter program studi
+    $program_studi_options = array('92403', '92402'); // Tambahkan program studi lain jika ada
+
+    if (!$year && !$program_studi) {
+        $data['items'] = $this->m_portal->get_data_formon_mhsall_pra();
+    } elseif ($year && !$program_studi) {
+        $data['items'] = $this->m_portal->get_data_formon_mhsyear_pra($year);
+    } elseif (!$year && $program_studi) {
+        $data['items'] = $this->m_portal->get_data_formon_mhsprodi_pra($program_studi);
+    } elseif ($year && $program_studi) {
+        $data['items'] = $this->m_portal->get_data_formon_mhsyearnprodi_pra($year, $program_studi);
+    }
+
+    $data['program_studi_options'] = $program_studi_options; // Pass program studi options to view
+    $this->load->view('ppk/mon_llspradata', $data);
+	}
+	public function mon_praedit($id)
+	{
+		# code...
+		// Ambil data berdasarkan ID dari model Anda
+        $data = $this->m_portal->get_data_formon_mhs($id); // Gantilah 'get_data_by_id' dengan metode yang sesuai dalam model Anda
+
+        // Konversi data ke format JSON dan kirimkan ke view
+        echo json_encode($data);
+	}
+	public function mon_praeditp()
+	{
+    // Tangani data yang dikirimkan dari formulir
+	$where = array(
+        'id_mon' => $this->input->post('id_mon'),
+    ); 
+	$pra_tanggal_lulus = $this->input->post('etglllspra');
+	$pra_mb_skl = $this->input->post('embskl');
+
+    $pra_tanggal_lulusf = date('Y-m-d', strtotime($pra_tanggal_lulus)); // Ubah format tanggal
+    $pra_mb_sklf = date('Y-m-d', strtotime($pra_mb_skl)); // Ubah format tanggal
+
+    $data = array(
+        'seafarercode' => $this->input->post('eseafarercode'),
+        'pra_lulus_ukp' => $pra_tanggal_lulusf,
+        'pra_mb_skl' => $pra_mb_sklf,
+        'pra_status' => $this->input->post('estatpra'),
+        'status_sb' => $this->input->post('esb'),
+        'ket_pra' => $this->input->post('ket_pra')
+    );
+
+    // Simpan data ke database
+    $res = $this->m_portal->update_data($where, $data,'tbl_mon');
+    // Sesuaikan dengan model dan metode penyimpanan data Anda
+
+    // Setelah berhasil disimpan, beri respons "sukses" ke JavaScript
+    if ($res) {
+       // Jika terjadi kesalahan, beri respons "gagal" ke JavaScript
+        echo 'gagal';
+    } else {
+         // Jika penyimpanan sukses, beri respons "sukses" ke JavaScript
+        echo 'sukses';
+    }
+	}
 	////////////// monitoring onboard
 
 	public function mon_onboard()
