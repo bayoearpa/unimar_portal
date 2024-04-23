@@ -1,5 +1,6 @@
  <script>
     $(document).ready(function() {
+
         $('#filter-form').submit(function(e) {
             e.preventDefault();
             var year = $('#year').val();
@@ -97,8 +98,6 @@
     });
   });
 // Fungsi untuk memuat ulang tabel
-connectEditButtonListeners();
-connectInsertButtonListeners();
 function reloadTable() {
     $.ajax({
         type: 'GET',
@@ -225,7 +224,7 @@ function connectInsertButtonListeners() {
         });
     });
 
-
-
-    });
+connectEditButtonListeners();
+connectInsertButtonListeners();
+});
     </script>
