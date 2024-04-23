@@ -97,6 +97,8 @@
     });
   });
 // Fungsi untuk memuat ulang tabel
+connectEditButtonListeners();
+connectInsertButtonListeners();
 function reloadTable() {
     $.ajax({
         type: 'GET',
@@ -224,8 +226,6 @@ function connectInsertButtonListeners() {
     });
 
 
-connectEditButtonListeners();
-connectInsertButtonListeners();
 
     });
     </script>
