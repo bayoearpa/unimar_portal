@@ -203,7 +203,7 @@
                     <div class="form-group">
                         <label for="editmbskl">Masa Berlaku SKL:</label>
                         <input type="date" class="form-control" id="editmbskl" name="embskl">
-                        <input type="hidden" class="form-control" id="editsb" name="esb">
+                        <input type="hidden" class="form-control" id="editsb" name="esb" value="iya">
                     </div>
                     <div class="form-group">
                         <label for="editstatpra">Status Lulus Pra:</label>
