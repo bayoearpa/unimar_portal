@@ -266,6 +266,7 @@ class Mahasiswa extends CI_Controller {
                 'nama_perusahaan' => $namaperusahaan,
                 'nama_kapal' => $nama_kapal,
                 'tgl_sign_on' => $tgl_signonf,
+                'status_sb' => 'tidak',
                 'tgl_lap_sign_on' => $tgl_lap_signon
             );
             $proses_edt = $this->m_mahasiswa->update_data($where,$data,'tbl_mon');
@@ -308,6 +309,7 @@ class Mahasiswa extends CI_Controller {
                 'nama_perusahaan' => $namaperusahaan,
                 'nama_kapal' => $nama_kapal,
                 'tgl_sign_on' => $tgl_signonf,
+                'status_sb' => 'tidak',
                 'tgl_lap_sign_on' => $tgl_lap_signon,
                 'upload_file_signon' => $file_name
             );
