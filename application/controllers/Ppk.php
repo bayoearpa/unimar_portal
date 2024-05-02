@@ -1096,7 +1096,8 @@ class ppk extends CI_Controller {
                 'status_onboard' => $status_onboard,
                 'nama_kapal' => $nama_kapal,
                 'tgl_sign_on' => $tgl_signonf,
-                'ket_onboard' => $ket_onboard
+                'ket_onboard' => $ket_onboard,
+                'status_sb' => 'iya'
             );
             $proses_edt = $this->m_portal->update_data($where,$data,'tbl_mon');
         if($proses_edt){    
@@ -1137,7 +1138,8 @@ class ppk extends CI_Controller {
                 'nama_kapal' => $nama_kapal,
                 'tgl_sign_on' => $tgl_signonf,
                 'ket_onboard' => $ket_onboard,
-                'upload_file_signon' => $file_name
+                'upload_file_signon' => $file_name,
+                'status_sb' => 'iya'
             );
             $this->m_portal->update_data($where,$data,'tbl_mon');
 
