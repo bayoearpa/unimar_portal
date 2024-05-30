@@ -107,30 +107,40 @@
                       <div class="modal-body">
                          
                                 <div id="donut-chart-<?php echo $key->id_mhsdsn ?>" style="height: 300px;width: 100%;"></div>
-
-                        <table>
+                        <?php foreach ($list_pert as $key) {?>
+                        <table class="table table-condensed">
+                          <tr>
+                            <td colspan="2">Keterangan</td>
+                            <td>Persentase</td>
+                          </tr>
                           <tr>
                             <td><b>STS :</b></td>
                             <td>Sangat Tidak Setuju</td>
+                            <td><?php echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'1') ?>%</td>
                           </tr>
                           <tr>
                             <td><b>TS :</b></td>
                             <td>Tidak Setuju</td>
+                            <td><?php echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'2') ?>%</td>
                           </tr>
                           <tr>
                             <td><b>KS :</b></td>
                             <td>Kurang Setuju</td>
+                            <td><?php echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'3') ?>%</td>
                           </tr>
                           <tr>
                             <td><b>S :</b></td>
                             <td>Setuju</td>
+                            <td><?php echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'4') ?>%</td>
                           </tr>
                           <tr>
                             <td><b>SS :</b></td>
                             <td>Sangat Setuju</td>
+                            <td><?php echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'5') ?>%</td>
                           </tr>
 
                         </table>
+                        <?php } ?>
                           
                       </div>
                       <div class="modal-footer">
