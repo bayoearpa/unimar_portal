@@ -14,7 +14,7 @@
                     var data = JSON.parse(response);
                     // Tampilkan hasil perhitungan summary di dalam elemen dengan ID yang sesuai
                     $('#jml_taruna').text(data.countTaruna);
-                    $('#lls_ukp_pra').text(data.countLulusUKPPra);
+                    $('#lls_ukp_pra').text(data.lulusUKPPraCount);
                     $('#sb_prala').text(data.countStandByPrala);
                     $('#onboard').text(data.countOnBoard);
                     $('#offboard').text(data.countOffBoard);
