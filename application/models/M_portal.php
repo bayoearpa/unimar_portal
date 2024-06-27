@@ -1769,11 +1769,11 @@ function get_data_formon_mhs($id)
      public function countLulusUKPPra($programStudi, $tahunMasuk) {
         // Hitung jumlah lulus UKP pra dari tbl_mon berdasarkan program studi dan tahun masuk
         $this->db->select('COUNT(*) as total');
-        $this->db->from('tbl_mon AS m');
-        $this->db->join('tmst_mahasiswa AS s', 'm.nim = s.NIM', 'inner');
-        $this->db->where('m.pra_status', 'sudah');
-        $this->db->where('s.Kode_program_studi', $programStudi);
-        $this->db->where('s.Tahun_masuk', $tahunMasuk);
+        $this->db->from('tbl_mon');
+        $this->db->join('tmst_mahasiswa', 'tbl_mon.nim = tmst_mahasiswa.NIM', 'inner');
+        $this->db->where('tbl_mon.pra_status', 'sudah');
+        $this->db->where('tmst_mahasiswa.Kode_program_studi', $programStudi);
+        $this->db->where('tmst_mahasiswa.Tahun_masuk', $tahunMasuk);
         $query = $this->db->get();
         return $query->row()->total;
     }
