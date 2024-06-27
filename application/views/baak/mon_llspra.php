@@ -125,15 +125,15 @@
                     </div>
                     <div class="form-group">
                         <label for="addseafarercode">Seafarercode:</label>
-                        <input type="text" class="form-control" id="addseafarercode" name="seafarercode">
+                        <input type="text" class="form-control" id="addseafarercode" name="seafarercode" readonly="">
                     </div>
                     <div class="form-group">
                         <label for="addtglllspra">Tanggal Lulus Pra:</label>
-                        <input type="date" class="form-control" id="addtglllspra" name="tglllspra">
+                        <input type="date" class="form-control" id="addtglllspra" name="tglllspra" readonly="">
                     </div>
                     <div class="form-group">
                         <label for="addmbskl">Masa Berlaku SKL:</label>
-                        <input type="date" class="form-control" id="addmbskl" name="mbskl">
+                        <input type="date" class="form-control" id="addmbskl" name="mbskl" readonly="">
                     </div>
                     <div class="form-group">
                         <label for="addstatpra">Status Lulus Pra:</label>
@@ -151,7 +151,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                <button type="button" class="btn btn-primary" id="saveAdd">Simpan</button>
+               <!--  <button type="button" class="btn btn-primary" id="saveAdd">Simpan</button> -->
             </div>
         </div>
     </div>
@@ -194,38 +194,38 @@
                     </div>
                     <div class="form-group">
                         <label for="editseafarercode">Seafarercode:</label>
-                        <input type="text" class="form-control" id="editseafarercode" name="eseafarercode">
+                        <input type="text" class="form-control" id="editseafarercode" name="eseafarercode" readonly="">
                     </div>
                     <div class="form-group">
                         <label for="edittglllspra">Tanggal Lulus Pra:</label>
-                        <input type="date" class="form-control" id="edittglllspra" name="etglllspra">
+                        <input type="date" class="form-control" id="edittglllspra" name="etglllspra" readonly="">
                     </div>
                     <div class="form-group">
                         <label for="editmbskl">Masa Berlaku SKL:</label>
-                        <input type="date" class="form-control" id="editmbskl" name="embskl">
+                        <input type="date" class="form-control" id="editmbskl" name="embskl" readonly="">
                         <input type="hidden" class="form-control" id="editsb" name="esb">
                     </div>
                     <div class="form-group">
                         <label for="editstatpra">Status Lulus Pra:</label>
                         <div class="form-check">
-                            <input type="radio" class="form-check-input" id="editstatpra" name="estatpra" value="sudah">
+                            <input type="radio" class="form-check-input" id="editstatpra" name="estatpra" value="sudah" readonly="">
                             <label class="form-check-label" for="editstatpra">Sudah</label>
                         </div>
                         <div class="form-check">
-                            <input type="radio" class="form-check-input" id="editstatpra" name="estatpra" value="belum">
+                            <input type="radio" class="form-check-input" id="editstatpra" name="estatpra" value="belum" readonly="">
                             <label class="form-check-label" for="editstatpra">Belum</label>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="editAlamat">Keterangan:</label>
-                        <textarea class="form-control" rows="3" id="editKetPra" name="ket_pra"></textarea>
+                        <textarea class="form-control" rows="3" id="editKetPra" name="ket_pra" readonly=""></textarea>
                     </div>
                     <!-- Tambahkan input lain sesuai kebutuhan -->
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                <button type="button" class="btn btn-primary" id="saveEdit">Simpan</button>
+                <!-- <button type="button" class="btn btn-primary" id="saveEdit">Simpan</button> -->
             </div>
         </div>
     </div>
