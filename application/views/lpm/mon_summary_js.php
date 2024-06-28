@@ -14,12 +14,12 @@
                     var data = JSON.parse(response);
                     // Tampilkan hasil perhitungan summary di dalam elemen dengan ID yang sesuai
                     $('#jml_taruna').text(data.countTaruna);
-                    $('#lls_ukp_pra').text(data.countLulusUKPPra);
-                    $('#sb_prala').text(data.countStandByPrala);
-                    $('#onboard').text(data.countOnBoard);
-                    $('#offboard').text(data.countOffBoard);
-                    $('#lls_ukp_pasca').text(data.countLulusUKPPasca);
-                    $('#lls_d3').text(data.countTotalD3);
+                    $('#lls_ukp_pra').text(data.lulusUKPPraCount);
+                    $('#sb_prala').text(data.standByPralaCount);
+                    $('#onboard').text(data.onBoardCount);
+                    $('#offboard').text(data.offBoardCount);
+                    $('#lls_ukp_pasca').text(data.lulusUKPPascaCount);
+                    $('#lls_d3').text(data.totalD3Count);
                 }
             });
         } else {
