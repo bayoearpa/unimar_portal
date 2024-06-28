@@ -1723,6 +1723,7 @@ function get_data_formon_mhs($id)
 	        tbl_mon.pra_lulus_ukp as pra_lulus_ukp,
 	        tbl_mon.pra_mb_skl as pra_mb_skl,
 	        tbl_mon.pra_status as pra_status,
+	        tbl_mon.status_d3 as status_d3,
 	        tbl_mon.seafarercode as seafarercode,
 	        tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
 	        tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
