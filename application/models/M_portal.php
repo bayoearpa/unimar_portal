@@ -1784,7 +1784,7 @@ function get_data_formon_mhs($id)
         $this->db->from('tbl_mon AS m');
         $this->db->join('tmst_mahasiswa AS s', 'm.nim = s.NIM', 'inner');
         $this->db->where('m.status_sb', 'iya');
-        //$this->db->where('m.pra_status', 'sudah');
+        $this->db->where('m.pra_status', 'sudah');
         $this->db->where('s.Kode_program_studi', $programStudi);
         $this->db->where('s.Tahun_masuk', $tahunMasuk);
         $query = $this->db->get();
