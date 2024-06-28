@@ -82,7 +82,7 @@
         $('#editnoijs').val(parsedData.d3_no_ijasah);
          if (parsedData.status_d3 === 'sudah') {
                 $('input[name="estatd3"][value="sudah"]').prop('checked', true);
-            } else if (parsedData.pasca_status === 'belum') {
+            } else if (parsedData.status_d3 === 'belum') {
                 $('input[name="estatd3"][value="belum"]').prop('checked', true);
             }
         $('#editKetD3').val(parsedData.ket_d3);
@@ -133,7 +133,7 @@ function connectEditButtonListeners() {
         $('#editnoijs').val(parsedData.d3_no_ijasah);
         if (parsedData.status_d3 === 'sudah') {
                 $('input[name="estatd3"][value="sudah"]').prop('checked', true);
-            } else if (parsedData.pasca_status === 'belum') {
+            } else if (parsedData.status_d3 === 'belum') {
                 $('input[name="estatd3"][value="belum"]').prop('checked', true);
             }
         $('#editKetD3').val(parsedData.ket_d3);
