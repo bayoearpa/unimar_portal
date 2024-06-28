@@ -131,6 +131,11 @@ function connectEditButtonListeners() {
             }
         $('#edittgllls').val(parsedData.d3_tanggal_lulus);
         $('#editnoijs').val(parsedData.d3_no_ijasah);
+        if (parsedData.pasca_status === 'sudah') {
+                $('input[name="estatd3"][value="sudah"]').prop('checked', true);
+            } else if (parsedData.pasca_status === 'belum') {
+                $('input[name="estatd3"][value="belum"]').prop('checked', true);
+            }
         $('#editKetD3').val(parsedData.ket_d3);
         // Tambahkan input lain sesuai kebutuhan
         $('#editModal').modal('show');
