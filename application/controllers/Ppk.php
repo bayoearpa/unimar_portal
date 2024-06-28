@@ -927,6 +927,7 @@ class ppk extends CI_Controller {
     ); 
     $data = array(
         'd3_tanggal_lulus' => $this->input->post('etgllls'),
+        'status_d3' => $this->input->post('estatd3'),
         'ket_d3' => $this->input->post('ket_d3')
     );
 

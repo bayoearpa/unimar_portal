@@ -193,6 +193,17 @@
                         <label for="editnoijs">Nomor Ijasah:</label>
                         <input type="text" class="form-control" id="editnoijs" name="enj" readonly="">
                     </div>
+                     <div class="form-group">
+                        <label for="editstatpra">Status Lulus D3:</label>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="editstatd3" name="estatd3" value="sudah">
+                            <label class="form-check-label" for="editstatd3">Sudah</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="editstatd3" name="estatd3" value="belum">
+                            <label class="form-check-label" for="editstatd3">Belum</label>
+                        </div>
+                    </div>
                     <div class="form-group">
                         <label for="editKetD3">Keterangan:</label>
                         <textarea class="form-control" rows="3" id="editKetD3" name="ket_d3"></textarea>
