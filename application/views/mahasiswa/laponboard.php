@@ -10,7 +10,7 @@
             <div class="box-body">
                <?php 
              
-              if ($mahasiswa->cekstatus('status_sb','iya', $this->session->userdata('user')) > "0" ) {
+              if ($mahasiswa->cekstatus('status_sb','tidak', $this->session->userdata('user')) > "0" ) {
               # code... ?>
                 <?php  foreach ($mhs_detail as $c) { ?>
                   <p>Sebelum mengisi form laporan Onboard silakan donwload format yang tersedia dibawah ini:</p>
