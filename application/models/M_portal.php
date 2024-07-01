@@ -993,7 +993,7 @@ function get_data_formon_mhsall_ob($limit, $offset)
 	    $this->db->join('tmst_program_studi', 'tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi', 'inner');
 	    $this->db->join('tbl_mon','tmst_mahasiswa.NIM = tbl_mon.nim','inner');
 	    $this->db->where('Tahun_masuk >=', '2021');
-	    $this->db->where('tbl_mon.status_onboard >=', 'iya');
+	    $this->db->where('tbl_mon.status_onboard', 'iya');
 	    $this->db->where_in('tmst_mahasiswa.Kode_program_studi', array('92403', '92402'));
 	    // $this->db->limit($limit, $offset); // Apply pagination
 	    $query = $this->db->get();
