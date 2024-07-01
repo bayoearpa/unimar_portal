@@ -679,6 +679,7 @@ function get_data_formon_mhsall_d3($limit, $offset)
         tbl_mon.d3_no_ijasah as d3_no_ijasah,
         tbl_mon.d3_tanggal_lulus as d3_tanggal_lulus,
         tbl_mon.pra_lulus_ukp as pra_lulus_ukp,
+        tbl_mon.status_d3 as status_d3,
         tbl_mon.pra_mb_skl as pra_mb_skl,
         tbl_mon.pra_status as pra_status,
         tbl_mon.seafarercode as seafarercode,
