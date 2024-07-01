@@ -69,7 +69,7 @@
             });
 
 // Menampilkan modal saat tombol "Edit" diklik
-  $('.edit-button').click(function() {
+  $('#example31082023').on('click', '.edit-button', function() {
     var id = $(this).data('id');
     // Ambil data yang akan diedit dari server dengan AJAX
     $.ajax({
