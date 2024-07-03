@@ -248,7 +248,7 @@ $(document).on('click', '#saveEdit', function() {
 });
 
 
-     $('.view-file-button').click(function() {
+    $('#example31082023').on('click', '.view-file-button', function() {
             var filename = $(this).data('filename');
             // Gantilah '/uploads/' dengan direktori tempat Anda menyimpan file
             var fileUrl = '/v1/assets/monitoring/onboard/' + filename;
