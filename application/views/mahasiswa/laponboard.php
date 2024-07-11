@@ -86,7 +86,7 @@
                       </a>
                     </h4>
                   </div>
-                  <div id="collapseFour" class="panel-collapse collapse in" aria-expanded="false" style="">
+                  <div id="collapseFour" class="panel-collapse collapse" aria-expanded="false" style="">
                     <div class="box-body">
                       Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
                       wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
@@ -146,7 +146,7 @@
                       </a>
                     </h4>
                   </div>
-                  <div id="collapseSeven" class="panel-collapse collapse in" aria-expanded="false" style="">
+                  <div id="collapseSeven" class="panel-collapse collapse" aria-expanded="false" style="">
                     <div class="box-body">
                       Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
                       wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
@@ -206,7 +206,7 @@
                       </a>
                     </h4>
                   </div>
-                  <div id="collapseTen" class="panel-collapse collapse in" aria-expanded="false" style="">
+                  <div id="collapseTen" class="panel-collapse collapse" aria-expanded="false" style="">
                     <div class="box-body">
                       Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
                       wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
