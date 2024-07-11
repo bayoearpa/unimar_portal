@@ -22,7 +22,7 @@
                   <div class="box-header with-border">
                     <h4 class="box-title">
                       <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" class="">
-                        Laporan Onboard Bulan Ke-1 (Upload dalam format .pdf)
+                        Laporan Onboard Bulan Ke-1
                       </a>
                     </h4>
                   </div>
@@ -42,7 +42,7 @@
                   <div class="box-header with-border">
                     <h4 class="box-title">
                       <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapsed" aria-expanded="false">
-                        Laporan Onboard Bulan Ke-2 (Upload dalam format .pdf)
+                        Laporan Onboard Bulan Ke-2
                       </a>
                     </h4>
                   </div>
@@ -62,7 +62,7 @@
                   <div class="box-header with-border">
                     <h4 class="box-title">
                       <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" class="collapsed" aria-expanded="false">
-                        Laporan Onboard Bulan Ke-3 (Upload dalam format .pdf)
+                        Laporan Onboard Bulan Ke-3
                       </a>
                     </h4>
                   </div>
@@ -81,12 +81,12 @@
                  <div class="panel box box-primary">
                   <div class="box-header with-border">
                     <h4 class="box-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" class="">
-                        Laporan Onboard Bulan Ke-1 (Upload dalam format .pdf)
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="true" class="">
+                        Laporan Onboard Bulan Ke-4 
                       </a>
                     </h4>
                   </div>
-                  <div id="collapseOne" class="panel-collapse collapse in" aria-expanded="true" style="">
+                  <div id="collapseFour" class="panel-collapse collapse in" aria-expanded="false" style="">
                     <div class="box-body">
                       Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
                       wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
@@ -101,12 +101,12 @@
                 <div class="panel box box-danger">
                   <div class="box-header with-border">
                     <h4 class="box-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapsed" aria-expanded="false">
-                        Laporan Onboard Bulan Ke-2 (Upload dalam format .pdf)
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive" class="collapsed" aria-expanded="false">
+                        Laporan Onboard Bulan Ke-5
                       </a>
                     </h4>
                   </div>
-                  <div id="collapseTwo" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                  <div id="collapseFive" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
                     <div class="box-body">
                       Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
                       wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
@@ -122,11 +122,11 @@
                   <div class="box-header with-border">
                     <h4 class="box-title">
                       <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" class="collapsed" aria-expanded="false">
-                        Laporan Onboard Bulan Ke-3 (Upload dalam format .pdf)
+                        Laporan Onboard Bulan Ke-6 
                       </a>
                     </h4>
                   </div>
-                  <div id="collapseThree" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                  <div id="collapseSix" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
                     <div class="box-body">
                       Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
                       wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
@@ -141,12 +141,12 @@
                  <div class="panel box box-primary">
                   <div class="box-header with-border">
                     <h4 class="box-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" class="">
-                        Laporan Onboard Bulan Ke-1 (Upload dalam format .pdf)
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="true" class="">
+                        Laporan Onboard Bulan Ke-7
                       </a>
                     </h4>
                   </div>
-                  <div id="collapseOne" class="panel-collapse collapse in" aria-expanded="true" style="">
+                  <div id="collapseSeven" class="panel-collapse collapse in" aria-expanded="false" style="">
                     <div class="box-body">
                       Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
                       wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
@@ -161,12 +161,12 @@
                 <div class="panel box box-danger">
                   <div class="box-header with-border">
                     <h4 class="box-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapsed" aria-expanded="false">
-                        Laporan Onboard Bulan Ke-2 (Upload dalam format .pdf)
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseEight" class="collapsed" aria-expanded="false">
+                        Laporan Onboard Bulan Ke-8
                       </a>
                     </h4>
                   </div>
-                  <div id="collapseTwo" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                  <div id="collapseEight" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
                     <div class="box-body">
                       Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
                       wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
@@ -181,12 +181,12 @@
                 <div class="panel box box-success">
                   <div class="box-header with-border">
                     <h4 class="box-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" class="collapsed" aria-expanded="false">
-                        Laporan Onboard Bulan Ke-3 (Upload dalam format .pdf)
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseNine" class="collapsed" aria-expanded="false">
+                        Laporan Onboard Bulan Ke-9
                       </a>
                     </h4>
                   </div>
-                  <div id="collapseThree" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                  <div id="collapseNine" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
                     <div class="box-body">
                       Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
                       wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
@@ -201,12 +201,12 @@
                  <div class="panel box box-primary">
                   <div class="box-header with-border">
                     <h4 class="box-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" class="">
-                        Laporan Onboard Bulan Ke-1 (Upload dalam format .pdf)
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseTen" aria-expanded="true" class="">
+                        Laporan Onboard Bulan Ke-10
                       </a>
                     </h4>
                   </div>
-                  <div id="collapseOne" class="panel-collapse collapse in" aria-expanded="true" style="">
+                  <div id="collapseTen" class="panel-collapse collapse in" aria-expanded="false" style="">
                     <div class="box-body">
                       Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
                       wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
@@ -221,12 +221,12 @@
                 <div class="panel box box-danger">
                   <div class="box-header with-border">
                     <h4 class="box-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapsed" aria-expanded="false">
-                        Laporan Onboard Bulan Ke-2 (Upload dalam format .pdf)
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseEleven" class="collapsed" aria-expanded="false">
+                        Laporan Onboard Bulan Ke-11
                       </a>
                     </h4>
                   </div>
-                  <div id="collapseTwo" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                  <div id="collapseEleven" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
                     <div class="box-body">
                       Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
                       wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
@@ -241,12 +241,12 @@
                 <div class="panel box box-success">
                   <div class="box-header with-border">
                     <h4 class="box-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" class="collapsed" aria-expanded="false">
-                        Laporan Onboard Bulan Ke-3 (Upload dalam format .pdf)
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwelve" class="collapsed" aria-expanded="false">
+                        Laporan Onboard Bulan Ke-12
                       </a>
                     </h4>
                   </div>
-                  <div id="collapseThree" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                  <div id="collapseTwelve" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
                     <div class="box-body">
                       Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
                       wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
