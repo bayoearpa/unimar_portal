@@ -42,7 +42,7 @@
                           <p class="text-muted"><?php if ($c->date_lapon1 == null) {
                               # code...
                             echo "0000-00-00";
-                          }else{ echo $c->date_lapon1} ?></p>
+                          }else{ echo $c->date_lapon1; } ?></p>
 
                           <hr>
 
