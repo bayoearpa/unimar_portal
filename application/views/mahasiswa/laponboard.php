@@ -46,7 +46,7 @@
 
                           <hr>
 
-                          <strong><i class="fa fa-pencil margin-r-5"></i> Status laporan</strong>
+                          <strong><i class="fa fa-pencil margin-r-5"></i> Status laporan *cek dari Bagian PPK</strong>
                           <p>
                             <?php if ($c->sudah_lapon1 == proses) { ?>
                                 <span class="label label-warning">Proses</span>

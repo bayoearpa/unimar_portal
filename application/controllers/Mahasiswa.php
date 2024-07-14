@@ -334,6 +334,19 @@ class Mahasiswa extends CI_Controller {
 		$this->load->view('mahasiswa/laponboard',$data);
 		$this->load->view('mahasiswa/footer');
 	}
+	public function laponboardfile($id)
+	{
+		# code...
+		$nim = $this->session->userdata('user');
+		$data['mahasiswa'] = $this;
+		$data['mhs_detail'] = $this->m_mahasiswa->get_data_mhs_detail($nim);
+		
+		$this->load->view('mahasiswa/header');
+		$this->load->view('mahasiswa/laponboardfile',$data);
+		$this->load->view('mahasiswa/footer');
+		$this->load->view('mahasiswa/trb_js',$data);
+
+	}
 	public function down_format_laporan_bulanan_onboard()
 	{
 		# code...
