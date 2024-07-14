@@ -15,7 +15,7 @@
                 <?php  foreach ($mhs_detail as $c) { ?>
                   <p>Sebelum mengisi form laporan Onboard silakan donwload format yang tersedia dibawah ini:</p>
                   <a href="<?php echo base_url() ?>mahasiswa/down_format_laporan_bulanan_onboard" target="__blank"><button type="button" class="btn btn-primary">Download Format Laporan Onboard</button></a>
-                 <form action="<?php echo base_url() ?>laponboardp" name="form1" id="form1" method="post" enctype="multipart/form-data">               
+                           
 
 
                 <div class="panel box box-primary">
@@ -28,13 +28,35 @@
                   </div>
                   <div id="collapseOne" class="panel-collapse collapse in" aria-expanded="true" style="">
                     <div class="box-body">
-                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                      wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                      eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-                      assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                      nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                      farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                      labore sustainable VHS.
+                
+                          <strong><i class="fa fa-book margin-r-5"></i> Silakan Upload Laporan dibawah ini :</strong>
+
+                          <p class="text-muted">
+                           <a href="<?php echo base_url() ?>mahasiswa/laponboardfile/1" target="__blank"><button type="button" class="btn btn-primary">Upload</button></a>
+                          </p>
+
+                          <hr>
+
+                          <strong><i class="fa fa-map-marker margin-r-5"></i> Tanggal Upload</strong>
+
+                          <p class="text-muted">0000-00-00</p>
+
+                          <hr>
+
+                          <strong><i class="fa fa-pencil margin-r-5"></i> Status laporan</strong>
+                          <p>
+                            <span class="label label-danger">Ditolak</span>
+                            <span class="label label-success">Diterima</span>
+                            <span class="label label-warning">Proses</span>
+
+                          </p>
+
+                          <hr>
+
+                          <strong><i class="fa fa-file-text-o margin-r-5"></i> Notes</strong>
+
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
+         
                     </div>
                   </div>
                 </div>
@@ -261,7 +283,6 @@
 
                
                   <?php } ?>
-              </form>
              <?php } ?>
             </div>
             <!-- /.box-body -->
