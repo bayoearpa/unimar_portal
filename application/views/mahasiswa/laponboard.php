@@ -39,23 +39,30 @@
 
                           <strong><i class="fa fa-map-marker margin-r-5"></i> Tanggal Upload</strong>
 
-                          <p class="text-muted">0000-00-00</p>
+                          <p class="text-muted"><?php if ($c->date_lapon1 == null) {
+                              # code...
+                            echo "0000-00-00";
+                          }else{ echo $c->date_lapon1} ?></p>
 
                           <hr>
 
                           <strong><i class="fa fa-pencil margin-r-5"></i> Status laporan</strong>
                           <p>
-                            <span class="label label-danger">Ditolak</span>
-                            <span class="label label-success">Diterima</span>
-                            <span class="label label-warning">Proses</span>
+                            <?php if ($c->sudah_lapon1 == proses) { ?>
+                                <span class="label label-warning">Proses</span>
 
+                            <?php }elseif ($c->sudah_lapon1 == belum) { ?>
+                             <span class="label label-danger">Ditolak</span>
+                            <?php }else{ ?> 
+                            <span class="label label-success">Diterima</span>
+                            <?php } ?>
                           </p>
 
                           <hr>
 
-                          <strong><i class="fa fa-file-text-o margin-r-5"></i> Notes</strong>
+                          <strong><i class="fa fa-file-text-o margin-r-5"></i> Keterangan dari PPK</strong>
 
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
+                          <p><?php echo $c->keterangan_lapon1; ?></p>
          
                     </div>
                   </div>
