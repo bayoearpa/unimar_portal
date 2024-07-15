@@ -62,16 +62,11 @@
                  <div class="form-group">
                    <div class="form-group">
                         <label for="editufsignon">Upload File laporan onboard ke <?php echo $lapke; ?></label>
-                        <input type="file" class="form-control" id="ufskltrb" name="ufskltrb">
-                        <input type="hidden" id="ufskltrb_existing" name="ufskltrb_existing" value="<?php echo $c->upload_file_trb; ?>">
+                        <input type="file" class="form-control" id="laponboard <?php echo $lapke ?>" name="laponboard <?php echo $lapke ?>">
+                        <input type="hidden" id="laponboard <?php echo $lapke ?>_existing" name="laponboard <?php echo $lapke ?>_existing" value="<?php echo $c->upload_file_trb; ?>">
                     </div>
                     <div id="fileUploadStatus">Belum ada file yang diunggah.</div>
-                    <div class="form-group">
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="status_trb" name="status_trb" value="sudah" required="harus dicentang!" <?php echo $cek = ($c->status_trb == "sudah") ? "Checked" : "" ; ?>>
-                            <label class="form-check-label" for="addstatpra">Dengan mencentang tombol berikut menandakan anda telah melakukan laporan SKL TRB kepada PPK UNIMAR AMNI Semarang.</label>
-                        </div>
-                    </div>
+                   
                   </div>
 
                 <button type="submit" class="btn btn-primary">Simpan</button>
