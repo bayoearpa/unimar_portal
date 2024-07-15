@@ -62,8 +62,8 @@
                  <div class="form-group">
                    <div class="form-group">
                         <label for="editufsignon">Upload File laporan onboard ke <?php echo $lapke; ?></label>
-                        <input type="file" class="form-control" id="laponboard <?php echo $lapke ?>" name="laponboard <?php echo $lapke ?>">
-                        <input type="hidden" id="laponboard <?php echo $lapke ?>_existing" name="laponboard <?php echo $lapke ?>_existing" value="<?php echo $c->upload_file_trb; ?>">
+                        <input type="file" class="form-control" id="laponboard<?php echo $lapke ?>" name="laponboard<?php echo $lapke ?>">
+                        <input type="hidden" id="laponboard<?php echo $lapke ?>_existing" name="laponboard<?php echo $lapke ?>_existing" value="<?php echo $c->upload_file_trb; ?>">
                     </div>
                     <div id="fileUploadStatus">Belum ada file yang diunggah.</div>
                    
