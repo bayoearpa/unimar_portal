@@ -3,7 +3,7 @@
 
         <div class="box box-default">
           <div class="box-header with-border">
-            <h3 class="box-title">Form Laporan TRB</h3>
+            <h3 class="box-title">Form Laporan Onboard</h3>
           </div>
           <div class="box-body">
              <?php 
@@ -61,7 +61,7 @@
                 <input type="hidden" name="nim" id="nim" value="<?php echo $c->nim; ?>">
                  <div class="form-group">
                    <div class="form-group">
-                        <label for="editufsignon">Upload File SKL TRB</label>
+                        <label for="editufsignon">Upload File laporan onboard ke <?php echo $lapke; ?></label>
                         <input type="file" class="form-control" id="ufskltrb" name="ufskltrb">
                         <input type="hidden" id="ufskltrb_existing" name="ufskltrb_existing" value="<?php echo $c->upload_file_trb; ?>">
                     </div>

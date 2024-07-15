@@ -340,6 +340,8 @@ class Mahasiswa extends CI_Controller {
 		$nim = $this->session->userdata('user');
 		$data['mahasiswa'] = $this;
 		$data['mhs_detail'] = $this->m_mahasiswa->get_data_mhs_detail($nim);
+
+		$data['lapke'] = $id;
 		
 		$this->load->view('mahasiswa/header');
 		$this->load->view('mahasiswa/laponboardfile',$data);
