@@ -56,14 +56,16 @@
                   link/website yang sudah disiapkan oleh Bagian PPK adalah maksimal 1 (satu) bulan / 30 Hari
                   setelah taruna naik kapal.
                 </div> -->
-              <form action="<?php echo base_url() ?>mahasiswa/lponboardp" name="form1" id="form1" method="post" enctype="multipart/form-data">
+              <form action="<?php echo base_url() ?>mahasiswa/laponboardp" name="form1" id="form1" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="id_mon" id="id_mon" value="<?php echo $c->id_mon; ?>">
+                <input type="hidden" name="id_lapon" id="id_lapon" value="<?php echo $c->id_lapon; ?>">
+                <input type="hidden" name="lapke" id="lapke" value="<?php echo $lapke; ?>">
                 <input type="hidden" name="nim" id="nim" value="<?php echo $c->nim; ?>">
                  <div class="form-group">
                    <div class="form-group">
                         <label for="editufsignon">Upload File laporan onboard ke <?php echo $lapke; ?></label>
-                        <input type="file" class="form-control" id="laponboard<?php echo $lapke ?>" name="laponboard<?php echo $lapke ?>">
-                        <input type="hidden" id="laponboard<?php echo $lapke ?>_existing" name="laponboard<?php echo $lapke ?>_existing" value="<?php echo $c->upload_file_trb; ?>">
+                        <input type="file" class="form-control" id="lap_onboard<?php echo $lapke ?>" name="lap_onboard<?php echo $lapke ?>">
+                        <input type="hidden" id="lap_onboard<?php echo $lapke ?>_existing" name="lap_onboard<?php echo $lapke ?>_existing" value="lap_onboard<?php echo $lapke ?>">
                     </div>
                     <div id="fileUploadStatus">Belum ada file yang diunggah.</div>
                    

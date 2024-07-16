@@ -349,6 +349,46 @@ class Mahasiswa extends CI_Controller {
 		$this->load->view('mahasiswa/trb_js',$data);
 
 	}
+	public function laponboardp()
+	{
+		# code...
+		// $cekfile = $this->input->post('ufsignon_existing');
+    	$nim = $this->input->post('nim');
+		 // Tangani data yang dikirimkan dari formulir
+
+		$where = array(
+	        'id_lapon' => $this->input->post('id_lapon'),
+	    );
+			$laporanke = $this->input->post('lapke');
+			$date_lapon = date('Y-m-d');
+			$namafile = $nim."-laporan_onboard_ke_"$laporanke;
+			$db_laponboard = "lap_onboard".$laporanke;
+			$db_datelapon = "date_lapon".$laporanke;
+
+
+
+    // Tangani unggahan file
+        $config['upload_path'] = './assets/monitoring/laponboard/'.$laporanke;
+        $config['max_size'] = 1048;
+        $config['allowed_types'] = 'pdf'; // Sesuaikan dengan jenis file yang diizinkan
+        $config['file_name'] = $namafile; // Nama file yang diunggah sesuai NIM
+        $this->load->library('upload', $config);
+
+        if ($this->upload->do_upload('lap_onboard'.$laporanke)) {
+            // Jika unggahan berhasil
+            $upload_data = $this->upload->data();
+            $file_name = $upload_data['file_name'];
+
+            // Simpan data ke database (contoh)
+            $data = array(
+              	$db_laponboard => $namafile,
+                $db_datelapon => $date_lapon
+            );
+            $this->m_mahasiswa->update_data($where,$data,'tbl_lap_onboard');
+
+            redirect(base_url().'mahasiswa/laponboard/'.$nim);
+
+	}
 	public function down_format_laporan_bulanan_onboard()
 	{
 		# code...

@@ -71,7 +71,7 @@ class M_mahasiswa extends CI_Model {
 	        tbl_mon.status_trb,
 	        tbl_mon.status_sb,
 	        tbl_mon.status_d3,
-	        tbl_lap_onboard.id_lapon,
+	        tbl_lap_onboard.id_lapon as id_lapon,
             tbl_lap_onboard.id_mon,
             tbl_lap_onboard.lap_onboard1,
             tbl_lap_onboard.date_lapon1,

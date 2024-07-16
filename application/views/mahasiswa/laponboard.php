@@ -77,13 +77,40 @@
                   </div>
                   <div id="collapseTwo" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
                     <div class="box-body">
-                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                      wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                      eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-                      assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                      nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                      farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                      labore sustainable VHS.
+                       <strong><i class="fa fa-book margin-r-5"></i> Silakan Upload Laporan dibawah ini :</strong>
+
+                          <p class="text-muted">
+                           <a href="<?php echo base_url() ?>mahasiswa/laponboardfile/2" target="__blank"><button type="button" class="btn btn-primary">Upload</button></a>
+                          </p>
+
+                          <hr>
+
+                          <strong><i class="fa fa-map-marker margin-r-5"></i> Tanggal Upload</strong>
+
+                          <p class="text-muted"><?php if ($c->date_lapon2 == null) {
+                              # code...
+                            echo "0000-00-00";
+                          }else{ echo $c->date_lapon2; } ?></p>
+
+                          <hr>
+
+                          <strong><i class="fa fa-pencil margin-r-5"></i> Status laporan *cek dari Bagian PPK</strong>
+                          <p>
+                            <?php if ($c->sudah_lapon2 == proses) { ?>
+                                <span class="label label-warning">Proses</span>
+
+                            <?php }elseif ($c->sudah_lapon2 == belum) { ?>
+                             <span class="label label-danger">Ditolak</span>
+                            <?php }else{ ?> 
+                            <span class="label label-success">Diterima</span>
+                            <?php } ?>
+                          </p>
+
+                          <hr>
+
+                          <strong><i class="fa fa-file-text-o margin-r-5"></i> Keterangan dari PPK</strong>
+
+                          <p><?php echo $c->keterangan_lapon2; ?></p>
                     </div>
                   </div>
                 </div>
@@ -97,13 +124,40 @@
                   </div>
                   <div id="collapseThree" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
                     <div class="box-body">
-                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                      wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                      eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-                      assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                      nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                      farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                      labore sustainable VHS.
+                       <strong><i class="fa fa-book margin-r-5"></i> Silakan Upload Laporan dibawah ini :</strong>
+
+                          <p class="text-muted">
+                           <a href="<?php echo base_url() ?>mahasiswa/laponboardfile/3" target="__blank"><button type="button" class="btn btn-primary">Upload</button></a>
+                          </p>
+
+                          <hr>
+
+                          <strong><i class="fa fa-map-marker margin-r-5"></i> Tanggal Upload</strong>
+
+                          <p class="text-muted"><?php if ($c->date_lapon3 == null) {
+                              # code...
+                            echo "0000-00-00";
+                          }else{ echo $c->date_lapon3; } ?></p>
+
+                          <hr>
+
+                          <strong><i class="fa fa-pencil margin-r-5"></i> Status laporan *cek dari Bagian PPK</strong>
+                          <p>
+                            <?php if ($c->sudah_lapon3 == proses) { ?>
+                                <span class="label label-warning">Proses</span>
+
+                            <?php }elseif ($c->sudah_lapon3 == belum) { ?>
+                             <span class="label label-danger">Ditolak</span>
+                            <?php }else{ ?> 
+                            <span class="label label-success">Diterima</span>
+                            <?php } ?>
+                          </p>
+
+                          <hr>
+
+                          <strong><i class="fa fa-file-text-o margin-r-5"></i> Keterangan dari PPK</strong>
+
+                          <p><?php echo $c->keterangan_lapon3; ?></p>
                     </div>
                   </div>
                 </div>
@@ -117,13 +171,40 @@
                   </div>
                   <div id="collapseFour" class="panel-collapse collapse" aria-expanded="false" style="">
                     <div class="box-body">
-                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                      wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                      eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-                      assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                      nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                      farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                      labore sustainable VHS.
+                        <strong><i class="fa fa-book margin-r-5"></i> Silakan Upload Laporan dibawah ini :</strong>
+
+                          <p class="text-muted">
+                           <a href="<?php echo base_url() ?>mahasiswa/laponboardfile/4" target="__blank"><button type="button" class="btn btn-primary">Upload</button></a>
+                          </p>
+
+                          <hr>
+
+                          <strong><i class="fa fa-map-marker margin-r-5"></i> Tanggal Upload</strong>
+
+                          <p class="text-muted"><?php if ($c->date_lapon4 == null) {
+                              # code...
+                            echo "0000-00-00";
+                          }else{ echo $c->date_lapon4; } ?></p>
+
+                          <hr>
+
+                          <strong><i class="fa fa-pencil margin-r-5"></i> Status laporan *cek dari Bagian PPK</strong>
+                          <p>
+                            <?php if ($c->sudah_lapon4 == proses) { ?>
+                                <span class="label label-warning">Proses</span>
+
+                            <?php }elseif ($c->sudah_lapon4 == belum) { ?>
+                             <span class="label label-danger">Ditolak</span>
+                            <?php }else{ ?> 
+                            <span class="label label-success">Diterima</span>
+                            <?php } ?>
+                          </p>
+
+                          <hr>
+
+                          <strong><i class="fa fa-file-text-o margin-r-5"></i> Keterangan dari PPK</strong>
+
+                          <p><?php echo $c->keterangan_lapon4; ?></p>
                     </div>
                   </div>
                 </div>
@@ -137,13 +218,40 @@
                   </div>
                   <div id="collapseFive" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
                     <div class="box-body">
-                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                      wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                      eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-                      assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                      nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                      farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                      labore sustainable VHS.
+                       <strong><i class="fa fa-book margin-r-5"></i> Silakan Upload Laporan dibawah ini :</strong>
+
+                          <p class="text-muted">
+                           <a href="<?php echo base_url() ?>mahasiswa/laponboardfile/5" target="__blank"><button type="button" class="btn btn-primary">Upload</button></a>
+                          </p>
+
+                          <hr>
+
+                          <strong><i class="fa fa-map-marker margin-r-5"></i> Tanggal Upload</strong>
+
+                          <p class="text-muted"><?php if ($c->date_lapon5 == null) {
+                              # code...
+                            echo "0000-00-00";
+                          }else{ echo $c->date_lapon5; } ?></p>
+
+                          <hr>
+
+                          <strong><i class="fa fa-pencil margin-r-5"></i> Status laporan *cek dari Bagian PPK</strong>
+                          <p>
+                            <?php if ($c->sudah_lapon5 == proses) { ?>
+                                <span class="label label-warning">Proses</span>
+
+                            <?php }elseif ($c->sudah_lapon5 == belum) { ?>
+                             <span class="label label-danger">Ditolak</span>
+                            <?php }else{ ?> 
+                            <span class="label label-success">Diterima</span>
+                            <?php } ?>
+                          </p>
+
+                          <hr>
+
+                          <strong><i class="fa fa-file-text-o margin-r-5"></i> Keterangan dari PPK</strong>
+
+                          <p><?php echo $c->keterangan_lapon5; ?></p>
                     </div>
                   </div>
                 </div>
@@ -157,13 +265,40 @@
                   </div>
                   <div id="collapseSix" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
                     <div class="box-body">
-                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                      wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                      eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-                      assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                      nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                      farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                      labore sustainable VHS.
+                        <strong><i class="fa fa-book margin-r-5"></i> Silakan Upload Laporan dibawah ini :</strong>
+
+                          <p class="text-muted">
+                           <a href="<?php echo base_url() ?>mahasiswa/laponboardfile/6" target="__blank"><button type="button" class="btn btn-primary">Upload</button></a>
+                          </p>
+
+                          <hr>
+
+                          <strong><i class="fa fa-map-marker margin-r-5"></i> Tanggal Upload</strong>
+
+                          <p class="text-muted"><?php if ($c->date_lapon6 == null) {
+                              # code...
+                            echo "0000-00-00";
+                          }else{ echo $c->date_lapon6; } ?></p>
+
+                          <hr>
+
+                          <strong><i class="fa fa-pencil margin-r-5"></i> Status laporan *cek dari Bagian PPK</strong>
+                          <p>
+                            <?php if ($c->sudah_lapon6 == proses) { ?>
+                                <span class="label label-warning">Proses</span>
+
+                            <?php }elseif ($c->sudah_lapon6 == belum) { ?>
+                             <span class="label label-danger">Ditolak</span>
+                            <?php }else{ ?> 
+                            <span class="label label-success">Diterima</span>
+                            <?php } ?>
+                          </p>
+
+                          <hr>
+
+                          <strong><i class="fa fa-file-text-o margin-r-5"></i> Keterangan dari PPK</strong>
+
+                          <p><?php echo $c->keterangan_lapon6; ?></p>
                     </div>
                   </div>
                 </div>
@@ -177,13 +312,40 @@
                   </div>
                   <div id="collapseSeven" class="panel-collapse collapse" aria-expanded="false" style="">
                     <div class="box-body">
-                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                      wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                      eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-                      assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                      nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                      farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                      labore sustainable VHS.
+                        <strong><i class="fa fa-book margin-r-5"></i> Silakan Upload Laporan dibawah ini :</strong>
+
+                          <p class="text-muted">
+                           <a href="<?php echo base_url() ?>mahasiswa/laponboardfile/7" target="__blank"><button type="button" class="btn btn-primary">Upload</button></a>
+                          </p>
+
+                          <hr>
+
+                          <strong><i class="fa fa-map-marker margin-r-5"></i> Tanggal Upload</strong>
+
+                          <p class="text-muted"><?php if ($c->date_lapon7 == null) {
+                              # code...
+                            echo "0000-00-00";
+                          }else{ echo $c->date_lapon7; } ?></p>
+
+                          <hr>
+
+                          <strong><i class="fa fa-pencil margin-r-5"></i> Status laporan *cek dari Bagian PPK</strong>
+                          <p>
+                            <?php if ($c->sudah_lapon7 == proses) { ?>
+                                <span class="label label-warning">Proses</span>
+
+                            <?php }elseif ($c->sudah_lapon7 == belum) { ?>
+                             <span class="label label-danger">Ditolak</span>
+                            <?php }else{ ?> 
+                            <span class="label label-success">Diterima</span>
+                            <?php } ?>
+                          </p>
+
+                          <hr>
+
+                          <strong><i class="fa fa-file-text-o margin-r-5"></i> Keterangan dari PPK</strong>
+
+                          <p><?php echo $c->keterangan_lapon7; ?></p>
                     </div>
                   </div>
                 </div>
@@ -197,13 +359,40 @@
                   </div>
                   <div id="collapseEight" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
                     <div class="box-body">
-                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                      wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                      eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-                      assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                      nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                      farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                      labore sustainable VHS.
+                        <strong><i class="fa fa-book margin-r-5"></i> Silakan Upload Laporan dibawah ini :</strong>
+
+                          <p class="text-muted">
+                           <a href="<?php echo base_url() ?>mahasiswa/laponboardfile/8" target="__blank"><button type="button" class="btn btn-primary">Upload</button></a>
+                          </p>
+
+                          <hr>
+
+                          <strong><i class="fa fa-map-marker margin-r-5"></i> Tanggal Upload</strong>
+
+                          <p class="text-muted"><?php if ($c->date_lapon8 == null) {
+                              # code...
+                            echo "0000-00-00";
+                          }else{ echo $c->date_lapon8; } ?></p>
+
+                          <hr>
+
+                          <strong><i class="fa fa-pencil margin-r-5"></i> Status laporan *cek dari Bagian PPK</strong>
+                          <p>
+                            <?php if ($c->sudah_lapon8 == proses) { ?>
+                                <span class="label label-warning">Proses</span>
+
+                            <?php }elseif ($c->sudah_lapon8 == belum) { ?>
+                             <span class="label label-danger">Ditolak</span>
+                            <?php }else{ ?> 
+                            <span class="label label-success">Diterima</span>
+                            <?php } ?>
+                          </p>
+
+                          <hr>
+
+                          <strong><i class="fa fa-file-text-o margin-r-5"></i> Keterangan dari PPK</strong>
+
+                          <p><?php echo $c->keterangan_lapon8; ?></p>
                     </div>
                   </div>
                 </div>
@@ -217,13 +406,40 @@
                   </div>
                   <div id="collapseNine" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
                     <div class="box-body">
-                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                      wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                      eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-                      assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                      nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                      farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                      labore sustainable VHS.
+                        <strong><i class="fa fa-book margin-r-5"></i> Silakan Upload Laporan dibawah ini :</strong>
+
+                          <p class="text-muted">
+                           <a href="<?php echo base_url() ?>mahasiswa/laponboardfile/9" target="__blank"><button type="button" class="btn btn-primary">Upload</button></a>
+                          </p>
+
+                          <hr>
+
+                          <strong><i class="fa fa-map-marker margin-r-5"></i> Tanggal Upload</strong>
+
+                          <p class="text-muted"><?php if ($c->date_lapon9 == null) {
+                              # code...
+                            echo "0000-00-00";
+                          }else{ echo $c->date_lapon9; } ?></p>
+
+                          <hr>
+
+                          <strong><i class="fa fa-pencil margin-r-5"></i> Status laporan *cek dari Bagian PPK</strong>
+                          <p>
+                            <?php if ($c->sudah_lapon9 == proses) { ?>
+                                <span class="label label-warning">Proses</span>
+
+                            <?php }elseif ($c->sudah_lapon9 == belum) { ?>
+                             <span class="label label-danger">Ditolak</span>
+                            <?php }else{ ?> 
+                            <span class="label label-success">Diterima</span>
+                            <?php } ?>
+                          </p>
+
+                          <hr>
+
+                          <strong><i class="fa fa-file-text-o margin-r-5"></i> Keterangan dari PPK</strong>
+
+                          <p><?php echo $c->keterangan_lapon9; ?></p>
                     </div>
                   </div>
                 </div>
@@ -237,13 +453,40 @@
                   </div>
                   <div id="collapseTen" class="panel-collapse collapse" aria-expanded="false" style="">
                     <div class="box-body">
-                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                      wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                      eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-                      assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                      nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                      farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                      labore sustainable VHS.
+                        <strong><i class="fa fa-book margin-r-5"></i> Silakan Upload Laporan dibawah ini :</strong>
+
+                          <p class="text-muted">
+                           <a href="<?php echo base_url() ?>mahasiswa/laponboardfile/10" target="__blank"><button type="button" class="btn btn-primary">Upload</button></a>
+                          </p>
+
+                          <hr>
+
+                          <strong><i class="fa fa-map-marker margin-r-5"></i> Tanggal Upload</strong>
+
+                          <p class="text-muted"><?php if ($c->date_lapon10 == null) {
+                              # code...
+                            echo "0000-00-00";
+                          }else{ echo $c->date_lapon10; } ?></p>
+
+                          <hr>
+
+                          <strong><i class="fa fa-pencil margin-r-5"></i> Status laporan *cek dari Bagian PPK</strong>
+                          <p>
+                            <?php if ($c->sudah_lapon10 == proses) { ?>
+                                <span class="label label-warning">Proses</span>
+
+                            <?php }elseif ($c->sudah_lapon10 == belum) { ?>
+                             <span class="label label-danger">Ditolak</span>
+                            <?php }else{ ?> 
+                            <span class="label label-success">Diterima</span>
+                            <?php } ?>
+                          </p>
+
+                          <hr>
+
+                          <strong><i class="fa fa-file-text-o margin-r-5"></i> Keterangan dari PPK</strong>
+
+                          <p><?php echo $c->keterangan_lapon10; ?></p>
                     </div>
                   </div>
                 </div>
@@ -257,13 +500,40 @@
                   </div>
                   <div id="collapseEleven" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
                     <div class="box-body">
-                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                      wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                      eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-                      assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                      nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                      farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                      labore sustainable VHS.
+                        <strong><i class="fa fa-book margin-r-5"></i> Silakan Upload Laporan dibawah ini :</strong>
+
+                          <p class="text-muted">
+                           <a href="<?php echo base_url() ?>mahasiswa/laponboardfile/11" target="__blank"><button type="button" class="btn btn-primary">Upload</button></a>
+                          </p>
+
+                          <hr>
+
+                          <strong><i class="fa fa-map-marker margin-r-5"></i> Tanggal Upload</strong>
+
+                          <p class="text-muted"><?php if ($c->date_lapon11 == null) {
+                              # code...
+                            echo "0000-00-00";
+                          }else{ echo $c->date_lapon11; } ?></p>
+
+                          <hr>
+
+                          <strong><i class="fa fa-pencil margin-r-5"></i> Status laporan *cek dari Bagian PPK</strong>
+                          <p>
+                            <?php if ($c->sudah_lapon11 == proses) { ?>
+                                <span class="label label-warning">Proses</span>
+
+                            <?php }elseif ($c->sudah_lapon11 == belum) { ?>
+                             <span class="label label-danger">Ditolak</span>
+                            <?php }else{ ?> 
+                            <span class="label label-success">Diterima</span>
+                            <?php } ?>
+                          </p>
+
+                          <hr>
+
+                          <strong><i class="fa fa-file-text-o margin-r-5"></i> Keterangan dari PPK</strong>
+
+                          <p><?php echo $c->keterangan_lapon11; ?></p>
                     </div>
                   </div>
                 </div>
@@ -277,13 +547,40 @@
                   </div>
                   <div id="collapseTwelve" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
                     <div class="box-body">
-                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                      wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                      eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-                      assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                      nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                      farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                      labore sustainable VHS.
+                        <strong><i class="fa fa-book margin-r-5"></i> Silakan Upload Laporan dibawah ini :</strong>
+
+                          <p class="text-muted">
+                           <a href="<?php echo base_url() ?>mahasiswa/laponboardfile/12" target="__blank"><button type="button" class="btn btn-primary">Upload</button></a>
+                          </p>
+
+                          <hr>
+
+                          <strong><i class="fa fa-map-marker margin-r-5"></i> Tanggal Upload</strong>
+
+                          <p class="text-muted"><?php if ($c->date_lapon12 == null) {
+                              # code...
+                            echo "0000-00-00";
+                          }else{ echo $c->date_lapon12; } ?></p>
+
+                          <hr>
+
+                          <strong><i class="fa fa-pencil margin-r-5"></i> Status laporan *cek dari Bagian PPK</strong>
+                          <p>
+                            <?php if ($c->sudah_lapon12 == proses) { ?>
+                                <span class="label label-warning">Proses</span>
+
+                            <?php }elseif ($c->sudah_lapon12 == belum) { ?>
+                             <span class="label label-danger">Ditolak</span>
+                            <?php }else{ ?> 
+                            <span class="label label-success">Diterima</span>
+                            <?php } ?>
+                          </p>
+
+                          <hr>
+
+                          <strong><i class="fa fa-file-text-o margin-r-5"></i> Keterangan dari PPK</strong>
+
+                          <p><?php echo $c->keterangan_lapon12; ?></p>
                     </div>
                   </div>
                 </div>
