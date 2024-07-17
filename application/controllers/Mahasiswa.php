@@ -361,7 +361,7 @@ class Mahasiswa extends CI_Controller {
 	    );
 			$laporanke = $this->input->post('lapke');
 			$date_lapon = date('Y-m-d');
-			$namafile = $nim."-laporan_onboard_ke_"$laporanke;
+			$namafile = $nim."-laporan_onboard_ke_".$laporanke;
 			$db_laponboard = "lap_onboard".$laporanke;
 			$db_datelapon = "date_lapon".$laporanke;
 
