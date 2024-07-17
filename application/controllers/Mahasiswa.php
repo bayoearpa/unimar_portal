@@ -388,6 +388,7 @@ class Mahasiswa extends CI_Controller {
 
             redirect(base_url().'mahasiswa/laponboard/'.$nim);
 
+			}
 	}
 	public function down_format_laporan_bulanan_onboard()
 	{
