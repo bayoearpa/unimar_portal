@@ -63,6 +63,11 @@
         }
       });
 
+document.getElementById('data-sts').innerText = <?php echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'1') ?> + '%';
+document.getElementById('data-ts').innerText = <?php echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'2') ?> + '%';
+document.getElementById('data-ks').innerText = <?php echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'3') ?> + '%';
+document.getElementById('data-s').innerText = <?php echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'4') ?> + '%';
+document.getElementById('data-ss').innerText = <?php echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'5') ?> + '%';
 
     <?php } ?>
     /*
