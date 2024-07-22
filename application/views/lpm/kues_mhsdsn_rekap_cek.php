@@ -107,7 +107,6 @@
                       <div class="modal-body">
                          
                                 <div id="donut-chart-<?php echo $key->id_mhsdsn ?>" style="height: 300px;width: 100%;"></div>
-                        <?php foreach ($list_pert as $key) {?>
                         <table class="table table-condensed">
                           <tr>
                             <td colspan="2">Keterangan</td>
@@ -133,8 +132,8 @@
                           </tr>
                           <tr>
                             <td><b>S :</b></td>
-                            <td><span id="data-s"></span></td>
                             <td>Setuju</td>
+                            <td><span id="data-s"></span></td>
                             <!-- <td><?php // echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'4') ?>%</td> -->
                           </tr>
                           <tr>
@@ -144,9 +143,7 @@
                             <!-- <td><?php // echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'5') ?>%</td> -->
                           </tr>
 
-                        </table>
-                        <?php } ?>
-                          
+                        </table>                          
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
