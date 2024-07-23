@@ -112,12 +112,12 @@
                             <td colspan="2">Keterangan</td>
                             <td>Persentase</td>
                           </tr>
-                          <tr>
+                          <!-- <tr>
                             <td><b>STS :</b></td>
                             <td>Sangat Tidak Setuju</td>
-                            <td><span id="data-sts"></span></td>
+                            <td><span id="data-sts"></span></td> -->
                             <!-- <td><?php //echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'1') ?>%</td> -->
-                          </tr>
+                          <!-- </tr> -->
                           <tr>
                             <td><b>TS :</b></td>
                             <td>Tidak Setuju</td>

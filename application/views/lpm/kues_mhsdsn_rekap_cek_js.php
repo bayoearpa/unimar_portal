@@ -37,7 +37,7 @@
      */
 
     var donutData<?php echo $key->id_mhsdsn ?> = [
-     { label: 'STS', data: <?php echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'1') ?>, color: '#f20b0b' },
+     // { label: 'STS', data: <?php //echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'1') ?>, color: '#f20b0b' },
       { label: 'TS', data: <?php echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'2') ?>, color: '#ffad5f' },
       { label: 'KS', data: <?php echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'3') ?>, color: '#ffd966' },
       { label: 'S', data: <?php echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'4') ?>, color: '#9af073' },
@@ -63,7 +63,7 @@
         }
       });
 
-document.getElementById('data-sts').innerText = <?php echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'1')) ?> + '%';
+// document.getElementById('data-sts').innerText = <?php //echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'1')) ?> + '%';
 document.getElementById('data-ts').innerText = <?php echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'2')) ?> + '%';
 document.getElementById('data-ks').innerText = <?php echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'3')) ?> + '%';
 document.getElementById('data-s').innerText = <?php echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'4')) ?> + '%';
