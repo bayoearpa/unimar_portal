@@ -119,26 +119,26 @@
                             <!-- <td><?php //echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'1') ?>%</td> -->
                           <!-- </tr> -->
                           <tr>
-                            <td><b>TS :</b></td>
-                            <td>Tidak Setuju</td>
+                            <td><b>K :</b></td>
+                            <td>Kurang</td>
                             <td><span id="data-ts"></span></td>
                             <!-- <td><?php // echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'2') ?>%</td> -->
                           </tr>
                           <tr>
-                            <td><b>KS :</b></td>
-                            <td>Kurang Setuju</td>
+                            <td><b>C :</b></td>
+                            <td>Cukup</td>
                             <td><span id="data-ks"></span></td>
                             <!-- <td><?php // echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'3') ?>%</td> -->
                           </tr>
                           <tr>
-                            <td><b>S :</b></td>
-                            <td>Setuju</td>
+                            <td><b>B :</b></td>
+                            <td>Baik</td>
                             <td><span id="data-s"></span></td>
                             <!-- <td><?php // echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'4') ?>%</td> -->
                           </tr>
                           <tr>
-                            <td><b>SS :</b></td>
-                            <td>Sangat Setuju</td>
+                            <td><b>SB :</b></td>
+                            <td>Sangat Baik</td>
                             <td><span id="data-ss"></span></td>
                             <!-- <td><?php // echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'5') ?>%</td> -->
                           </tr>
