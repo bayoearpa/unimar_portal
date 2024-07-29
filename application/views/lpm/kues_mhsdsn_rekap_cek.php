@@ -49,7 +49,7 @@
                     <td><b><?php echo strtoupper($key->id_mhsdsn); ?></b></td>
                     <td><?php echo $key->pert_mhsdsn; ?></td>
                     <td><?php echo $key->tipe; ?></td>
-                    <td><button type="button" class="btn btn-default" data-toggle="modal" data-target="#<?php echo $key->id_mhsdsn ?>">Lihat</button></td>
+                    <td><button type="button" class="btn btn-default" data-toggle="modal" data-target="#<?php echo $key->id_mhsdsn ?>" onclick="updateModalData('<?php echo $key->id_mhsdsn ?>')">Lihat</button></td>
                   </tr>
 
                 <?php } ?>
