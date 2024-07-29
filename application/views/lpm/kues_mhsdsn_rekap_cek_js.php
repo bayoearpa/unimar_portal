@@ -85,41 +85,6 @@ document.getElementById('data-ss').innerText = <?php echo round($lpm->countitem_
       + Math.round(series.percent) + '%</div>'
   }
       
-
-function generateTable(id) {
-  var tableHtml = `
-    <table class="table table-condensed">
-      <tr>
-        <td colspan="2">Keterangan</td>
-        <td>Persentase</td>
-      </tr>
-      <tr>
-        <td><b>K :</b></td>
-        <td>Kurang</td>
-        <td><span id="data-ts-${id}"></span></td>
-      </tr>
-      <tr>
-        <td><b>C :</b></td>
-        <td>Cukup</td>
-        <td><span id="data-ks-${id}"></span></td>
-      </tr>
-      <tr>
-        <td><b>B :</b></td>
-        <td>Baik</td>
-        <td><span id="data-s-${id}"></span></td>
-      </tr>
-      <tr>
-        <td><b>SB :</b></td>
-        <td>Sangat Baik</td>
-        <td><span id="data-ss-${id}"></span></td>
-      </tr>
-    </table>
-  `;
-  document.getElementById(`modal-body-${id}`).innerHTML = tableHtml;
-  updateModalData(id);
-}
-
-
 // function updateModalData(id) {
 //   console.log("Updating modal data for ID: " + id);
 
