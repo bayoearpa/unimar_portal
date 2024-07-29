@@ -112,38 +112,27 @@
                             <td colspan="2">Keterangan</td>
                             <td>Persentase</td>
                           </tr>
-                          <!-- <tr>
-                            <td><b>STS :</b></td>
-                            <td>Sangat Tidak Setuju</td>
-                            <td><span id="data-sts"></span></td> -->
-                            <!-- <td><?php //echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'1') ?>%</td> -->
-                          <!-- </tr> -->
                           <tr>
                             <td><b>K :</b></td>
                             <td>Kurang</td>
-                            <td><span id="data-ts"></span></td>
-                            <!-- <td><?php // echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'2') ?>%</td> -->
+                            <td><span id="data-ts-<?php echo $key->id_mhsdsn ?>"></span></td>
                           </tr>
                           <tr>
                             <td><b>C :</b></td>
                             <td>Cukup</td>
-                            <td><span id="data-ks"></span></td>
-                            <!-- <td><?php // echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'3') ?>%</td> -->
+                            <td><span id="data-ks-<?php echo $key->id_mhsdsn ?>"></span></td>
                           </tr>
                           <tr>
                             <td><b>B :</b></td>
                             <td>Baik</td>
-                            <td><span id="data-s"></span></td>
-                            <!-- <td><?php // echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'4') ?>%</td> -->
+                            <td><span id="data-s-<?php echo $key->id_mhsdsn ?>"></span></td>
                           </tr>
                           <tr>
                             <td><b>SB :</b></td>
                             <td>Sangat Baik</td>
-                            <td><span id="data-ss"></span></td>
-                            <!-- <td><?php // echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'5') ?>%</td> -->
+                            <td><span id="data-ss-<?php echo $key->id_mhsdsn ?>"></span></td>
                           </tr>
-
-                        </table>                          
+                        </table>           
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
