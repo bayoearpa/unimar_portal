@@ -36,14 +36,14 @@
      * -----------
      */
 
-    var donutData<?php //echo $key->id_mhsdsn ?> = [
+    var donutData<?php echo $key->id_mhsdsn ?> = [
      // { label: 'STS', data: <?php //echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'1') ?>, color: '#f20b0b' },
-      { label: 'K', data: <?php //echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'2') ?>, color: '#ffad5f' },
-      { label: 'C', data: <?php //echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'3') ?>, color: '#ffd966' },
-      { label: 'B', data: <?php //echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'4') ?>, color: '#9af073' },
-      { label: 'SB', data: <?php// echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'5') ?>, color: '#89ddfc' }
+      { label: 'K', data: <?php echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'2') ?>, color: '#ffad5f' },
+      { label: 'C', data: <?php echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'3') ?>, color: '#ffd966' },
+      { label: 'B', data: <?php echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'4') ?>, color: '#9af073' },
+      { label: 'SB', data: <?php echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'5') ?>, color: '#89ddfc' }
     ]
-    $.plot('#donut-chart-<?php //echo $key->id_mhsdsn ?>', donutData<?php //echo $key->id_mhsdsn; ?>, {
+    $.plot('#donut-chart-<?php echo $key->id_mhsdsn ?>', donutData<?php echo $key->id_mhsdsn; ?>, {
         series: {
           pie: { 
             show: true,
