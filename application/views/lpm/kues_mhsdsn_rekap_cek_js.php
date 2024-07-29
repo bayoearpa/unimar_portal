@@ -87,42 +87,48 @@
       
 
 function updateModalData(id) {
+  console.log("Updating modal data for ID: " + id);
+
   var ts = document.getElementById('data-ts-' + id);
   var ks = document.getElementById('data-ks-' + id);
   var s = document.getElementById('data-s-' + id);
   var ss = document.getElementById('data-ss-' + id);
 
-  ts.innerText = calculatePercentage(id, '2') + '%';
-  ks.innerText = calculatePercentage(id, '3') + '%';
-  s.innerText = calculatePercentage(id, '4') + '%';
-  ss.innerText = calculatePercentage(id, '5') + '%';
+  if (ts && ks && s && ss) {
+    ts.innerText = calculatePercentage(id, '2') + '%';
+    ks.innerText = calculatePercentage(id, '3') + '%';
+    s.innerText = calculatePercentage(id, '4') + '%';
+    ss.innerText = calculatePercentage(id, '5') + '%';
 
-  var donutData = [
-    { label: 'TS', data: calculatePercentage(id, '2'), color: '#ffad5f' },
-    { label: 'KS', data: calculatePercentage(id, '3'), color: '#ffd966' },
-    { label: 'S', data: calculatePercentage(id, '4'), color: '#9af073' },
-    { label: 'SS', data: calculatePercentage(id, '5'), color: '#89ddfc' }
-  ];
+    var donutData = [
+      { label: 'TS', data: calculatePercentage(id, '2'), color: '#ffad5f' },
+      { label: 'KS', data: calculatePercentage(id, '3'), color: '#ffd966' },
+      { label: 'S', data: calculatePercentage(id, '4'), color: '#9af073' },
+      { label: 'SS', data: calculatePercentage(id, '5'), color: '#89ddfc' }
+    ];
 
-  $.plot('#donut-chart-' + id, donutData, {
-    series: {
-      pie: { 
-        show: true,
-        radius: 1,
-        label: {
+    $.plot('#donut-chart-' + id, donutData, {
+      series: {
+        pie: { 
           show: true,
-          radius: 3/4,
-          formatter: labelFormatter,
-          background: {
-            opacity: 0.5
+          radius: 1,
+          label: {
+            show: true,
+            radius: 3/4,
+            formatter: labelFormatter,
+            background: {
+              opacity: 0.5
+            }
           }
         }
+      },
+      legend: {
+        show: false
       }
-    },
-    legend: {
-      show: false
-    }
-  });
+    });
+  } else {
+    console.log("Elements not found for ID: " + id);
+  }
 }
 
 function calculatePercentage(id, type) {
