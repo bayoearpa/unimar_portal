@@ -281,7 +281,7 @@ class Mahasiswa extends CI_Controller {
     	 // Tangani data yang dikirimkan dari formulir
 		$where = array(
 	        'id_mon' => $this->input->post('id_mon'),
-	    );
+	    ); 
 		$nim = $this->input->post('nim');
 		$namaperusahaan = $this->input->post('namaperusahaan');
 		$status_onboard = $this->input->post('status_onboard');
