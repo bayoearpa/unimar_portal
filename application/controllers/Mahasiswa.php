@@ -274,7 +274,7 @@ class Mahasiswa extends CI_Controller {
             $data_lapon = array(
             	'id_mon' => $id_mon,
             );
-            $this->m_mahasiswa->insert_data($data_lapon,'tbl_lap_onboard');
+            $this->m_mahasiswa->input_data($data_lapon,'tbl_lap_onboard');
 
         if($proses_edt){    
              redirect(base_url().'mahasiswa/onboard/'.$nim);
@@ -324,7 +324,7 @@ class Mahasiswa extends CI_Controller {
             	'id_mon' => $id_mon,
             );
             $this->m_mahasiswa->update_data($where,$data,'tbl_mon');
-            $this->m_mahasiswa->insert_data($data_lapon,'tbl_lap_onboard');
+            $this->m_mahasiswa->input_data($data_lapon,'tbl_lap_onboard');
 
             redirect(base_url().'mahasiswa/onboard/'.$nimc);
         } else {
