@@ -270,6 +270,12 @@ class Mahasiswa extends CI_Controller {
                 'tgl_lap_sign_on' => $tgl_lap_signon
             );
             $proses_edt = $this->m_mahasiswa->update_data($where,$data,'tbl_mon');
+            $id_mon = $this->input->post('id_mon');
+            $data_lapon = array(
+            	'id_mon' => $id_mon,
+            );
+            $this->m_mahasiswa->insert_data($data_lapon,'tbl_lap_onboard');
+
         if($proses_edt){    
              redirect(base_url().'mahasiswa/onboard/'.$nim);
         } else {
@@ -313,7 +319,12 @@ class Mahasiswa extends CI_Controller {
                 'tgl_lap_sign_on' => $tgl_lap_signon,
                 'upload_file_signon' => $file_name
             );
+            $id_mon = $this->input->post('id_mon');
+            $data_lapon = array(
+            	'id_mon' => $id_mon,
+            );
             $this->m_mahasiswa->update_data($where,$data,'tbl_mon');
+            $this->m_mahasiswa->insert_data($data_lapon,'tbl_lap_onboard');
 
             redirect(base_url().'mahasiswa/onboard/'.$nimc);
         } else {
