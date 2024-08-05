@@ -40,8 +40,7 @@
                   <th>Nama Perusahaan</th>
                   <th>Nama Kapal</th>
                   <th>Tanggal Sign On</th>
-                  <th>File Sign On</th>
-                  <th>proses</th>
+                  <th>Cek Laporan</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -57,15 +56,6 @@
                 <td><?php echo $i->nama_perusahaan; ?></td>
                 <td><?php echo $i->nama_kapal; ?></td>
                 <td><?php echo $i->tgl_sign_on; ?></td>
-                <td>
-                    <!-- Tombol Lihat File Sign On -->
-                    <?php if ($i->upload_file_signon) { ?>
-                        <button class="btn btn-info view-file-button" data-filename="<?php echo $i->upload_file_signon; ?>">Lihat</button>
-                    <?php } else { ?>
-                        <!-- Tampilkan pesan jika file tidak ada -->
-                        File tidak tersedia
-                    <?php } ?>
-                </td>
                 <td>
                       <!-- Tombol Tambah/Edit -->
                     <?php if ($i->id_mon) { ?>
@@ -87,8 +77,7 @@
                   <th>Nama Perusahaan</th>
                   <th>Nama Kapal</th>
                   <th>Tanggal Sign On</th>
-                  <th>File Sign On</th>
-                  <th>proses</th>
+                  <th>Cek Laporan</th>
                 </tr>
                 </tfoot>
               </table>
