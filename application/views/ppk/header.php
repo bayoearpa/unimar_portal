@@ -198,6 +198,7 @@
             <li><a href="<?php echo base_url() ?>ppk/mon_llspra"><i class="fa fa-circle-o"></i> Lulus UKP PRA</a></li>
             <li><a href="<?php echo base_url() ?>ppk/mon_sbprala"><i class="fa fa-circle-o"></i>SB Prala</a></li>
             <li><a href="<?php echo base_url() ?>ppk/mon_onboard"><i class="fa fa-circle-o"></i>Onboard</a></li>
+            <li><a href="<?php echo base_url() ?>ppk/mon_laponboard"><i class="fa fa-circle-o"></i>Lap. Onboard</a></li>
             <li><a href="<?php echo base_url() ?>ppk/mon_offboard"><i class="fa fa-circle-o"></i>Offboard</a></li>
             <li><a href="<?php echo base_url() ?>ppk/mon_modeling"><i class="fa fa-circle-o"></i>Modeling</a></li>
             <li><a href="<?php echo base_url() ?>ppk/mon_trb"><i class="fa fa-circle-o"></i>TRB</a></li>
