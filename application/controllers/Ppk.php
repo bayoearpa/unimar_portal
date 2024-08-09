@@ -1190,6 +1190,63 @@ class ppk extends CI_Controller {
     $data['program_studi_options'] = $program_studi_options; // Pass program studi options to view
     $this->load->view('ppk/mon_laponboarddata', $data);
 	}
+
+	public function mon_laponboardcek()
+	{
+		# code...
+		$id_mon = $this->input->post('id_mon');
+        $data = $this->m_portal->get_data_mhs_detail($id_mon);
+
+        if(!empty($data)) {
+            $output = '<table class="table">';
+            $output .= '<thead><tr><th>Bulan Laporan</th><th>Tanggal Upload</th><th>Lihat File</th></tr></thead>';
+            $output .= '<tbody>';
+            foreach ($data as $row) {
+                $output .= '<tr>';
+                $output .= '<td>Bulan Ke-1</td><td>'.$row->date_lapon1.'</td><td>'.$row->lap_onboard1.'</td>';
+                $output .= '</tr>';
+                 $output .= '<tr>';
+                $output .= '<td>Bulan Ke-1</td><td>'.$row->date_lapon2.'</td><td>'.$row->lap_onboard2.'</td>';
+                $output .= '</tr>';
+                 $output .= '<tr>';
+                $output .= '<td>Bulan Ke-1</td><td>'.$row->date_lapon3.'</td><td>'.$row->lap_onboard3.'</td>';
+                $output .= '</tr>';
+                 $output .= '<tr>';
+                $output .= '<td>Bulan Ke-1</td><td>'.$row->date_lapon4.'</td><td>'.$row->lap_onboard4.'</td>';
+                $output .= '</tr>';
+                 $output .= '<tr>';
+                $output .= '<td>Bulan Ke-1</td><td>'.$row->date_lapon5.'</td><td>'.$row->lap_onboard5.'</td>';
+                $output .= '</tr>';
+                 $output .= '<tr>';
+                $output .= '<td>Bulan Ke-1</td><td>'.$row->date_lapon6.'</td><td>'.$row->lap_onboard6.'</td>';
+                $output .= '</tr>';
+                 $output .= '<tr>';
+                $output .= '<td>Bulan Ke-1</td><td>'.$row->date_lapon7.'</td><td>'.$row->lap_onboard7.'</td>';
+                $output .= '</tr>';
+                 $output .= '<tr>';
+                $output .= '<td>Bulan Ke-1</td><td>'.$row->date_lapon8.'</td><td>'.$row->lap_onboard8.'</td>';
+                $output .= '</tr>';
+                 $output .= '<tr>';
+                $output .= '<td>Bulan Ke-1</td><td>'.$row->date_lapon9.'</td><td>'.$row->lap_onboard9.'</td>';
+                $output .= '</tr>';
+                 $output .= '<tr>';
+                $output .= '<td>Bulan Ke-1</td><td>'.$row->date_lapon10.'</td><td>'.$row->lap_onboard10.'</td>';
+                $output .= '</tr>';
+                 $output .= '<tr>';
+                $output .= '<td>Bulan Ke-1</td><td>'.$row->date_lapon11.'</td><td>'.$row->lap_onboard11.'</td>';
+                $output .= '</tr>';
+                 $output .= '<tr>';
+                $output .= '<td>Bulan Ke-1</td><td>'.$row->date_lapon12.'</td><td>'.$row->lap_onboard12.'</td>';
+                $output .= '</tr>';
+            }
+            $output .= '</tbody>';
+            $output .= '</table>';
+        } else {
+            $output = 'No data found';
+        }
+
+        echo $output;
+	}
 	////////////// monitoring offboard
 
 	public function mon_offboard()

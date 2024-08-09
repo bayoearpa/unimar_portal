@@ -7,7 +7,7 @@
 
             $.ajax({
                 type: 'GET',
-                url: '<?php echo base_url('ppk/mon_onboarddata'); ?>',
+                url: '<?php echo base_url('ppk/mon_laponboarddata'); ?>',
                 data: { year: year, program_studi: programStudi }, // Send both year and program_studi
                 success: function(response) {
                     $('#example31082023').html(response); // Ganti isi #item-list dengan hasil AJAX
@@ -72,54 +72,19 @@
   $('#example31082023').on('click', '.edit-button', function() {
     var id = $(this).data('id');
     // Ambil data yang akan diedit dari server dengan AJAX
-    $.ajax({
-      url: '<?php echo base_url('ppk/mon_onboardedit/'); ?>' + id, // Sesuaikan dengan URL yang sesuai
-      type: 'GET',
-      success: function(data) {
-        // Isi modal dengan data yang diambil
-        console.log(data); // Cetak nilai data ke konsol
-        var parsedData = JSON.parse(data);
-        $('#editidmon').val(parsedData.id_mon);
-        $('#editNim').val(parsedData.nim);
-        $('#editNama').val(parsedData.nama);
-        $('#editTmptLahir').val(parsedData.tl);
-        $('#editTglLahir').val(parsedData.tgll);
-        $('#editAlamat').val(parsedData.alamat);
-            // Set jenis kelamin sesuai dengan data dari database
-            if (parsedData.jk === 'L') {
-                $('#editjnsklmn').val('Laki-laki');
-            } else if (parsedData.jk === 'P') {
-                $('#editjnsklmn').val('Perempuan');
-            }
-        $('#editseafarercode').val(parsedData.seafarercode);
-                 // Mengatur status checkbox sesuai dengan data dari database
-        // if (parsedData.status_board === 'onboard') {
-        //     $('#editstatonboard').prop('checked', true);
-        // } else if (parsedData.status_board === 'offboard') {
-        //     $('#editstatonboard').prop('checked', true);
-        // }
-
-        // Mengatur radio button "Status UKP Pasca" sesuai dengan data dari database
-            if (parsedData.status_onboard === 'iya') {
-                $('input[name="estatonboard"][value="iya"]').prop('checked', true);
-            } else if (parsedData.status_onboard === 'tidak') {
-                $('input[name="estatonboard"][value="tidak"]').prop('checked', true);
-            }
-        $('#editnamaperusahaan').val(parsedData.nama_perusahaan);
-        $('#editnamakapal').val(parsedData.nama_kapal);
-        $('#edittglsignon').val(parsedData.tgl_sign_on);
-
-        if (parsedData.upload_file_signon) {
-            $('#editufsignon_existing').val(parsedData.upload_file_signon);
-        } else {
-            $('#editufsignon_existing').val('');
-        }
-        $('#editKetOnboard').val(parsedData.ket_onboard);
-        // Tambahkan input lain sesuai kebutuhan
+   $.ajax({
+      url: '<?php echo base_url("ppk/mon_laponboardcek"); ?>',
+      type: 'POST',
+      data: {id_mon: id_mon},
+      success: function(data){
+        // Isi konten modal dengan data yang diterima
+        $('#editModal .modal-body').html(data);
+        // Tampilkan modal
         $('#editModal').modal('show');
       }
     });
   });
+
 // Fungsi untuk memuat ulang tabel
 function reloadTable() {
     $.ajax({
