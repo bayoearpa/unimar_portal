@@ -59,7 +59,7 @@
                 <td>
                       <!-- Tombol Tambah/Edit -->
                     <?php if ($i->id_mon) { ?>
-                        <button class="btn btn-primary edit-button" data-id="<?php echo $i->nim; ?>">Edit</button>
+                        <button class="btn btn-primary edit-button" data-id="<?php echo $i->nim; ?>">Detail</button>
                     <?php } else { ?>
                         <button class="btn btn-primary add-button" data-id="<?php echo $i->nim; ?>">Tambah</button>
                     <?php } ?>
@@ -165,7 +165,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title" id="editModalLabel">Form Edit Onboard</h3>
+                <h3 class="modal-title" id="editModalLabel">Laporan Onboard</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
