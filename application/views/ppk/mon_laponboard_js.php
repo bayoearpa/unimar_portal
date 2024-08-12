@@ -75,7 +75,7 @@
    $.ajax({
       url: '<?php echo base_url("ppk/mon_laponboardcek"); ?>',
       type: 'POST',
-      data: {id: id},
+      data: {id_mon: id},
       success: function(data){
         // Isi konten modal dengan data yang diterima
         $('#editModal .modal-body').html(data);
