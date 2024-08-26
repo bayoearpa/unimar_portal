@@ -33,7 +33,7 @@
                    ?></td>
                   <td width="25%">
                     <?php 
-                    if ($jml_peserta >= 5 ) {
+                    if ($jml_peserta >= 0 ) {
                       # code... ?>
                     <a href="<?php echo base_url() ?>baak/cetakabsensisemesterantara/<?php echo $k->kd_makul ?>"><button type="button" class="btn btn-primary pull-left"><i class="fa fa-print" target="__blank"></i>Cetak Lampiran Absensi</button></a>
 
