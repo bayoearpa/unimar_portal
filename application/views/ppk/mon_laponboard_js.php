@@ -213,14 +213,37 @@ $(document).on('click', '#saveEdit', function() {
 });
 
 
-    $('#example31082023').on('click', '.view-file-button', function() {
-            var filename = $(this).data('filename');
-            // Gantilah '/uploads/' dengan direktori tempat Anda menyimpan file
-            var fileUrl = '/v1/assets/monitoring/onboard/' + filename;
+    // $('#example31082023').on('click', '.view-file-button', function() {
+    //         var filename = $(this).data('filename');
+    //         // Gantilah '/uploads/' dengan direktori tempat Anda menyimpan file
+    //         var fileUrl = '/v1/assets/monitoring/onboard/' + filename;
             
-            // Buka tautan ke file di jendela baru
-            window.open(fileUrl, '_blank');
-        });
+    //         // Buka tautan ke file di jendela baru
+    //         window.open(fileUrl, '_blank');
+    //     });
+
+
+    // see the file
+   $('#editModal').on('click', '.view-file-button', function() {
+        var baseUrl = '/v1/assets/monitoring/onboard/';
+
+        // Array untuk menyimpan semua file URL yang akan dibuka
+        var fileUrls = [];
+
+        // Loop untuk mengumpulkan semua file yang akan dibuka (hingga 12 item)
+        for (var i = 1; i <= 12; i++) {
+            var filename = $(this).data('filename' + i);
+            if (filename) {
+                var fileUrl = baseUrl + filename;
+                fileUrls.push(fileUrl);
+            }
+        }
+
+        // Buka semua file dalam tab atau jendela baru
+        for (var i = 0; i < fileUrls.length; i++) {
+            window.open(fileUrls[i], '_blank');
+        }
+    });
 
 
     });
