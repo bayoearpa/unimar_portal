@@ -1199,22 +1199,26 @@ class ppk extends CI_Controller {
         $output = '<table class="table">';
         $output .= '<thead><tr><th>Bulan Laporan</th><th>Tanggal Upload</th><th>Lihat File</th></tr></thead>';
         $output .= '<tbody>';
-        
-        for ($i = 1; $i <= 12; $i++) {
-            $date_field = 'date_lapon' . $i;
-            $file_field = 'lap_onboard' . $i;
 
-            $output .= '<tr>';
-            $output .= '<td>Bulan Ke-' . $i . '</td>';
-            $output .= '<td>' . $row->$date_field . '</td>';
+        // Looping melalui setiap baris data
+        foreach ($data as $row) {
+            // Looping melalui 12 bulan laporan
+            for ($i = 1; $i <= 12; $i++) {
+                $date_field = 'date_lapon' . $i;
+                $file_field = 'lap_onboard' . $i;
 
-            if ($row->$file_field) {
-                $output .= '<td><button class="btn btn-info view-file-button" data-filename="' . $row->$file_field . '">Lihat</button></td>';
-            } else {
-                $output .= '<td>File tidak tersedia</td>';
+                $output .= '<tr>';
+                $output .= '<td>Bulan Ke-' . $i . '</td>';
+                $output .= '<td>' . $row->$date_field . '</td>';
+
+                if ($row->$file_field) {
+                    $output .= '<td><button class="btn btn-info view-file-button" data-filename="' . $row->$file_field . '">Lihat</button></td>';
+                } else {
+                    $output .= '<td>File tidak tersedia</td>';
+                }
+
+                $output .= '</tr>';
             }
-
-            $output .= '</tr>';
         }
 
         $output .= '</tbody>';
@@ -1225,6 +1229,7 @@ class ppk extends CI_Controller {
 
     echo $output;
 }
+
 
 	////////////// monitoring offboard
 
