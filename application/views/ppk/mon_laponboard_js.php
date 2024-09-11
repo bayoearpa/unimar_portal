@@ -223,27 +223,30 @@ $(document).on('click', '#saveEdit', function() {
     //     });
 
 
-    // see the file
-   $('#editModal').on('click', '.view-file-button', function() {
-        var baseUrl = '/v1/assets/monitoring/onboard/';
-
-        // Array untuk menyimpan semua file URL yang akan dibuka
+    // Saat tombol "view-file-button" di klik
+    $('#editModal').on('click', '.view-file-button', function() {
+        var baseUrl = '/v1/assets/monitoring/laponboard/';
         var fileUrls = [];
 
-        // Loop untuk mengumpulkan semua file yang akan dibuka (hingga 12 item)
+        // Loop untuk mengumpulkan file dari 12 bulan
         for (var i = 1; i <= 12; i++) {
+            // Mengambil data-filename untuk setiap bulan pelaporan
             var filename = $(this).data('filename' + i);
+            
+            // Jika filename ada, tambahkan URL ke array fileUrls
             if (filename) {
-                var fileUrl = baseUrl + filename;
+                var fileUrl = baseUrl + i + '/' + filename;
                 fileUrls.push(fileUrl);
             }
         }
 
-        // Buka semua file dalam tab atau jendela baru
+        // Membuka semua URL yang ada di fileUrls di tab baru
         for (var i = 0; i < fileUrls.length; i++) {
             window.open(fileUrls[i], '_blank');
         }
     });
+
+
 
 
     });
