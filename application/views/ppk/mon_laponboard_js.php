@@ -232,6 +232,8 @@ $(document).on('click', '#saveEdit', function() {
         for (var i = 1; i <= 12; i++) {
             // Mengambil data-filename untuk setiap bulan pelaporan
             var filename = $(this).data('filename' + i);
+
+            console.log('Bulan ' + i + ' - Filename: ' + filename);
             
             // Jika filename ada, tambahkan URL ke array fileUrls
             if (filename) {
@@ -246,6 +248,8 @@ $(document).on('click', '#saveEdit', function() {
         }
     });
 
+    // Log file URLs untuk memeriksa apakah file URL terbentuk dengan benar
+        console.log(fileUrls);
 
 
 
