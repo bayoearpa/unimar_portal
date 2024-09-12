@@ -1212,7 +1212,7 @@ class ppk extends CI_Controller {
                 $output .= '<td>' . $row->$date_field . '</td>';
 
                 if ($row->$file_field) {
-                    $output .= '<td><button class="btn btn-info view-file-button" data-filename="' . $row->$file_field . '.pdf">Lihat</button></td>';
+                    $output .= '<td><button class="btn btn-info view-file-button" data-filename' . $i . '="' . $row->$file_field . '.pdf">Lihat</button></td>';
                 } else {
                     $output .= '<td>File tidak tersedia</td>';
                 }
