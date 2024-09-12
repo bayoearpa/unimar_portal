@@ -4,7 +4,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Form Laporan Onboard</h3>
+              <h3 class="box-title">Form Laporan Onboard Per Bulan</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
