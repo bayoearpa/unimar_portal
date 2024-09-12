@@ -1204,8 +1204,8 @@ class ppk extends CI_Controller {
         foreach ($data as $row) {
             // Looping melalui 12 bulan laporan
             for ($i = 1; $i <= 12; $i++) {
-                $date_field = 'date_lapon' . $i;
-                $file_field = 'lap_onboard' . $i;
+                $date_field = 'date_lapon' . $i .'.pdf';
+                $file_field = 'lap_onboard' . $i.'.pdf';
 
                 $output .= '<tr>';
                 $output .= '<td>Bulan Ke-' . $i . '</td>';
