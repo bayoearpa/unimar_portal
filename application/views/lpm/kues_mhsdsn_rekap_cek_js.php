@@ -80,7 +80,7 @@
 
             ?>
 
-    document.getElementById('data-ts-<?php echo $key->id_mhsdsn ?>').innerText = "<?php echo $adjustedPercentages($this->lpm->countitem_persentase_mhsdsn($id_mhsdsn, $prodi, $ta, '2');); ?>%";
+    document.getElementById('data-ts-<?php echo $key->id_mhsdsn ?>').innerText = "<?php echo $adjustedPercentages($this->lpm->countitem_persentase_mhsdsn($id_mhsdsn, $prodi, $ta, '2')); ?>%";
     document.getElementById('data-ks-<?php echo $key->id_mhsdsn ?>').innerText = "<?php echo $adjustedPercentages($this->lpm->countitem_persentase_mhsdsn($id_mhsdsn, $prodi, $ta, '3')); ?>%";
     document.getElementById('data-s-<?php echo $key->id_mhsdsn ?>').innerText = "<?php echo  $adjustedPercentages($this->lpm->countitem_persentase_mhsdsn($id_mhsdsn, $prodi, $ta, '4')); ?>%";
     document.getElementById('data-ss-<?php echo $key->id_mhsdsn ?>').innerText = "<?php echo $adjustedPercentages($this->lpm->countitem_persentase_mhsdsn($id_mhsdsn, $prodi, $ta, '5')); ?>%";
