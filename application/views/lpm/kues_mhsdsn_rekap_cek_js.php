@@ -85,10 +85,10 @@
     document.getElementById('data-s-<?php echo $key->id_mhsdsn ?>').innerText = "<?php echo  $adjustedPercentages($this->lpm->countitem_persentase_mhsdsn($id_mhsdsn, $prodi, $ta, '4')); ?>%";
     document.getElementById('data-ss-<?php echo $key->id_mhsdsn ?>').innerText = "<?php echo $adjustedPercentages($this->lpm->countitem_persentase_mhsdsn($id_mhsdsn, $prodi, $ta, '5')); ?>%";
 
-    console.log("Data TS:", "<?php echo $adjustedPercentages($this->lpm->countitem_persentase_mhsdsn($id_mhsdsn, $prodi, $ta, '2'))); ?>%");
-    console.log("Data KS:", "<?php echo $adjustedPercentages($this->lpm->countitem_persentase_mhsdsn($id_mhsdsn, $prodi, $ta, '3'))); ?>%");
-    console.log("Data S:", "<?php echo $adjustedPercentages($this->lpm->countitem_persentase_mhsdsn($id_mhsdsn, $prodi, $ta, '4'))); ?>%");
-    console.log("Data SS:", "<?php echo $adjustedPercentages($this->lpm->countitem_persentase_mhsdsn($id_mhsdsn, $prodi, $ta, '5'))); ?>%");
+    console.log("Data TS:", "<?php echo $adjustedPercentages($this->lpm->countitem_persentase_mhsdsn($id_mhsdsn, $prodi, $ta, '2')); ?>%");
+    console.log("Data KS:", "<?php echo $adjustedPercentages($this->lpm->countitem_persentase_mhsdsn($id_mhsdsn, $prodi, $ta, '3')); ?>%");
+    console.log("Data S:", "<?php echo $adjustedPercentages($this->lpm->countitem_persentase_mhsdsn($id_mhsdsn, $prodi, $ta, '4')); ?>%");
+    console.log("Data SS:", "<?php echo $adjustedPercentages($this->lpm->countitem_persentase_mhsdsn($id_mhsdsn, $prodi, $ta, '5')); ?>%");
 
 
 
