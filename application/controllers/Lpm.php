@@ -271,6 +271,15 @@ class Lpm extends CI_Controller {
 
 
 			////// tambahan 17-09-2024 agar jumlah bisa 100%
+			 // Hitung persentase untuk tiap kategori
+		        $ts = $this->lpm->countitem_persentase_mhsdsn($id_mhsdsn, $prodi, $ta, '2');
+		        $ks = $this->lpm->countitem_persentase_mhsdsn($id_mhsdsn, $prodi, $ta, '3');
+		        $s = $this->lpm->countitem_persentase_mhsdsn($id_mhsdsn, $prodi, $ta, '4');
+		        $ss = $this->lpm->countitem_persentase_mhsdsn($id_mhsdsn, $prodi, $ta, '5');
+
+		        // Masukkan semua persentase dalam array
+		        $percentages = [$ts, $ks, $s, $ss];
+
 		        // Fungsi untuk menghitung persentase dan menyesuaikan selisih agar total 100%
 		        $adjustedPercentages = $this->adjustPercentages($percentages);
 
