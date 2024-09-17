@@ -64,10 +64,10 @@
       });
 
 // document.getElementById('data-sts').innerText = <?php //echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'1')) ?> + '%';
-document.getElementById('data-ts-<?php echo $key->id_mhsdsn ?>').innerText = <?php echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'2')) ?> + '%';
-document.getElementById('data-ks-<?php echo $key->id_mhsdsn ?>').innerText = <?php echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'3')) ?> + '%';
-document.getElementById('data-s-<?php echo $key->id_mhsdsn ?>').innerText = <?php echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'4')) ?> + '%';
-document.getElementById('data-ss-<?php echo $key->id_mhsdsn ?>').innerText = <?php echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'5')) ?> + '%';
+document.getElementById('data-ts-<?php echo $key->id_mhsdsn ?>').innerText = <?php echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'2') ?> + '%';
+document.getElementById('data-ks-<?php echo $key->id_mhsdsn ?>').innerText = <?php echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'3') ?> + '%';
+document.getElementById('data-s-<?php echo $key->id_mhsdsn ?>').innerText = <?php echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'4') ?> + '%';
+document.getElementById('data-ss-<?php echo $key->id_mhsdsn ?>').innerText = <?php echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'5') ?> + '%';
 
 
     <?php } ?>
