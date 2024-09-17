@@ -68,18 +68,7 @@
 // document.getElementById('data-ks-<?php //echo $key->id_mhsdsn ?>').innerText = <?php //echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'3')) ?> + '%';
 // document.getElementById('data-s-<?php //echo $key->id_mhsdsn ?>').innerText = <?php //echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'4')) ?> + '%';
 // document.getElementById('data-ss-<?php //echo $key->id_mhsdsn ?>').innerText = <?php //echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'5')) ?> + '%';
-            <?php 
- // Hitung persentase untuk tiap kategori
-            $ts = $this->lpm->countitem_persentase_mhsdsn($id_mhsdsn, $prodi, $ta, '2');
-            $ks = $this->lpm->countitem_persentase_mhsdsn($id_mhsdsn, $prodi, $ta, '3');
-            $s = $this->lpm->countitem_persentase_mhsdsn($id_mhsdsn, $prodi, $ta, '4');
-            $ss = $this->lpm->countitem_persentase_mhsdsn($id_mhsdsn, $prodi, $ta, '5');
-
-            // Masukkan semua persentase dalam array
-            $percentages = [$ts, $ks, $s, $ss];
-
-            ?>
-
+           
     document.getElementById('data-ts-<?php echo $key->id_mhsdsn ?>').innerText = "<?php echo $adjustedPercentages($this->lpm->countitem_persentase_mhsdsn($id_mhsdsn, $prodi, $ta, '2')); ?>%";
     document.getElementById('data-ks-<?php echo $key->id_mhsdsn ?>').innerText = "<?php echo $adjustedPercentages($this->lpm->countitem_persentase_mhsdsn($id_mhsdsn, $prodi, $ta, '3')); ?>%";
     document.getElementById('data-s-<?php echo $key->id_mhsdsn ?>').innerText = "<?php echo  $adjustedPercentages($this->lpm->countitem_persentase_mhsdsn($id_mhsdsn, $prodi, $ta, '4')); ?>%";
