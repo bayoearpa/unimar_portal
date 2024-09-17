@@ -71,10 +71,10 @@
 
 <?php 
 // Hitung persentase untuk tiap kategori
-            $ts = $lpm->countitem_persentase_mhsdsn($id_mhsdsn, $prodi, $ta, '2');
-            $ks = $lpm->countitem_persentase_mhsdsn($id_mhsdsn, $prodi, $ta, '3');
-            $s = $lpm->countitem_persentase_mhsdsn($id_mhsdsn, $prodi, $ta, '4');
-            $ss = $lpm->countitem_persentase_mhsdsn($id_mhsdsn, $prodi, $ta, '5');
+            $ts = $lpm->countitem_persentase_mhsdsn($key->$id_mhsdsn, $prodi, $ta, '2');
+            $ks = $lpm->countitem_persentase_mhsdsn($key->$id_mhsdsn, $prodi, $ta, '3');
+            $s = $lpm->countitem_persentase_mhsdsn($key->$id_mhsdsn, $prodi, $ta, '4');
+            $ss = $lpm->countitem_persentase_mhsdsn($key->$id_mhsdsn, $prodi, $ta, '5');
 
             // Masukkan semua persentase dalam array
             $percentages = [$ts, $ks, $s, $ss];
