@@ -269,24 +269,6 @@ class Lpm extends CI_Controller {
 			);
 			$data['select_dosen'] = $this->m_kues->get_data_distinct_dosen($where)->result();
 
-
-			////// tambahan 17-09-2024 agar jumlah bisa 100%
-			 // Hitung persentase untuk tiap kategori
-		        $ts = $this->lpm->countitem_persentase_mhsdsn($id_mhsdsn, $prodi, $ta, '2');
-		        $ks = $this->lpm->countitem_persentase_mhsdsn($id_mhsdsn, $prodi, $ta, '3');
-		        $s = $this->lpm->countitem_persentase_mhsdsn($id_mhsdsn, $prodi, $ta, '4');
-		        $ss = $this->lpm->countitem_persentase_mhsdsn($id_mhsdsn, $prodi, $ta, '5');
-
-		        // Masukkan semua persentase dalam array
-		        $percentages = [$ts, $ks, $s, $ss];
-
-		        // Fungsi untuk menghitung persentase dan menyesuaikan selisih agar total 100%
-		        $adjustedPercentages = $this->adjustPercentages($percentages);
-
-		        // Kirim data ke view
-		        $data['adjustedPercentages'] = $adjustedPercentages;
-
-
 		} else {
 		$this->session->set_flashdata('error', "<div class='alert alert-danger alert-dismissible'><b>Error, Data tidak ditemukan silakan lakukan update data pada menu Kuesioner>update data atau tekan tombol ini</b><a href='kues_mhsdsn_update'<button type='button' class='btn btn-block btn-primary'>Halaman Update Data</button></a></div>");
 		}
