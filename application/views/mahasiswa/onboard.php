@@ -8,7 +8,7 @@
           <div class="box-body">
              <?php 
              
-              if ($mahasiswa->cekstatus('status_sb','iya', $this->session->userdata('user')) > "0" ) {
+              if ($mahasiswa->cekstatus('status_sb','iya', $this->session->userdata('user')) > "0" || $mahasiswa->cekstatus('status_ob','iya', $this->session->userdata('user')) > "0" ) {
               # code... ?>
             <?php 
             // echo validation_errors(); 
