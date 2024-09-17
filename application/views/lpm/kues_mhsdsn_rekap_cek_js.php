@@ -71,8 +71,14 @@
 
     document.getElementById('data-ts-<?php echo $key->id_mhsdsn ?>').innerText = "<?php echo $adjustedPercentages[0]; ?>%";
     document.getElementById('data-ks-<?php echo $key->id_mhsdsn ?>').innerText = "<?php echo $adjustedPercentages[1]; ?>%";
-    document.getElementById('data-s-<?php echo $key->id_mhsdsn ?>').innerText = "<?php echo $adjustedPercentages[2]; ?>%";
+    document.getElementById('data-s-<?php echo $key->id_mhsdsn ?>').innerText = "<?php echo  $adjustedPercentages[2]; ?>%";
     document.getElementById('data-ss-<?php echo $key->id_mhsdsn ?>').innerText = "<?php echo $adjustedPercentages[3]; ?>%";
+
+    console.log("Data TS:", "<?php echo $adjustedPercentages[0]; ?>%");
+    console.log("Data KS:", "<?php echo $adjustedPercentages[1]; ?>%");
+    console.log("Data S:", "<?php echo $adjustedPercentages[2]; ?>%");
+    console.log("Data SS:", "<?php echo $adjustedPercentages[3]; ?>%");
+
 
 
     <?php } ?>
