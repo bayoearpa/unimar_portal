@@ -762,12 +762,12 @@ class ppk extends CI_Controller {
         $data['ppk'] = $this; // Jika diperlukan di dalam view
 
         // Tentukan kondisi 
-        $where = array(
-                'tmst_mahasiswa.NIM' => $nama,
-            );
+        // $where = array(
+        //         'tmst_mahasiswa.NIM' => $nama
+        //     );
 
         // Ambil data dari model
-        $data['results'] = $this->m_portal->get_data_mhs_detail($where);
+        $data['results'] = $this->m_portal->get_data_mhs_detail($nama);
 
         // Load the view with the data, returning the HTML string (no headers or footers)
         $this->load->view('ppk/mon_pencarianp', $data);
