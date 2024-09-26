@@ -767,7 +767,7 @@ class ppk extends CI_Controller {
             );
 
         // Ambil data dari model
-        $data['results'] = $this->m_registrasi->get_data_mhs_detail($where);
+        $data['results'] = $this->m_portal->get_data_mhs_detail($where);
 
         // Load the view with the data, returning the HTML string (no headers or footers)
         $this->load->view('ppk/mon_pencarianp', $data);
