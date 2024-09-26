@@ -14,7 +14,7 @@
 
                     <div class="form-group">
                     <!-- <label> Pilih Program Studi</label> -->
-                    <input class="form-control input-lg" type="text" name="nama" id="nama" placeholder="Masukan Kata Kunci">
+                    <input class="form-control input-lg" type="text" name="nama" id="nama" placeholder="Masukan NRP / NIM untuk mencari">
                     </div>
                     <div class="form-group">
                       <input type="submit" class="btn btn-block btn-success" id="cek" name="cek" style="width:20%;" value="Klik Untuk Mencari">

@@ -1,9 +1,6 @@
 <script type="text/javascript">
     $(document).ready(function() {
     
-  // Panggil fungsi toggleGelombangForm saat halaman dimuat untuk menetapkan status awal
-  document.addEventListener('DOMContentLoaded', toggleGelombangForm);
-
     $('#previewForm').on('submit', function(e){
     e.preventDefault(); // Prevent the form from submitting via the browser
 
