@@ -736,7 +736,15 @@ class ppk extends CI_Controller {
 
 
 	/////////////////////////////////////////// Monitoring/////////////////////////////////////////////////
-
+	// pencarian
+	public function mon_pencarian()
+	{
+		# code...
+		$this->load->view('ppk/header');
+        $this->load->view('ppk/mon_pencarian');        
+        $this->load->view('ppk/footer');
+        $this->load->view('ppk/mon_pencarian_js');
+	}
 	// monitoring prada
 	public function mon_prada()
 	{

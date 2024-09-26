@@ -193,6 +193,7 @@
           </a>
 
           <ul class="treeview-menu">
+            <li><a href="<?php echo base_url() ?>ppk/mon_pencarian"><i class="fa fa-circle-o"></i>Pencarian</a></li>
             <li><a href="<?php echo base_url() ?>ppk/mon_prada"><i class="fa fa-circle-o"></i>Prada</a></li>
             <li><a href="<?php echo base_url() ?>ppk/mon_llsd3"><i class="fa fa-circle-o"></i> Lulus D3</a></li>
             <li><a href="<?php echo base_url() ?>ppk/mon_llspra"><i class="fa fa-circle-o"></i> Lulus UKP PRA</a></li>
