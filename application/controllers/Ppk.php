@@ -736,7 +736,7 @@ class ppk extends CI_Controller {
 
 
 	/////////////////////////////////////////// Monitoring/////////////////////////////////////////////////
-	// pencarian
+	// monitoring pencarian mahasiswa taruna
 	public function mon_pencarian()
 	{
 		# code...
@@ -745,6 +745,33 @@ class ppk extends CI_Controller {
         $this->load->view('ppk/footer');
         $this->load->view('ppk/mon_pencarian_js');
 	}
+	public function getdatamahatar($no)
+    {
+        # code...
+        // Ambil data berdasarkan ID dari model Anda
+        $data = $this->m_registrasi->get_data_mhs_detail($no); // Gantilah 'get_data_by_id' dengan metode yang sesuai dalam model Anda
+
+        // Konversi data ke format JSON dan kirimkan ke view
+        echo json_encode($data);
+    }
+     public function mon_pencarianp()
+    {
+        // Ambil data dari request POST
+        $nama = $this->input->post('nama');
+
+        $data['ppk'] = $this; // Jika diperlukan di dalam view
+
+        // Tentukan kondisi 
+        $where = array(
+                'tmst_mahasiswa.NIM' => $nama,
+            );
+
+        // Ambil data dari model
+        $data['results'] = $this->m_registrasi->get_data_mhs_detail($where);
+
+        // Load the view with the data, returning the HTML string (no headers or footers)
+        $this->load->view('ppk/mon_pencarianp', $data);
+    }
 	// monitoring prada
 	public function mon_prada()
 	{
