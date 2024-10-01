@@ -59,109 +59,160 @@ foreach ($results as $r) {
                  
                   <!-- END timeline item -->
                   <!-- timeline item -->
-                  <li>
-                    <i class="fa fa-user bg-red"></i>
+                   <?php 
+                  if ($ppk->cekstatus("status_d3","sudah", $k->nim) > 0) {
+                    # code...?>
+                   <li>
+                    <i class="fa fa-user bg-green"></i>
 
                     <div class="timeline-item">
                       <h3 class="timeline-header"><a href="#">Lulus D3</a> Sudah menyelesaikan </h3>
-<!-- 
-                      <div class="timeline-body">
-                        Take me to your leader!
-                        Switzerland is small and neutral!
-                        We are more like Germany, ambitious and misunderstood!
-                      </div> -->
                     </div>
                   </li>
-                  <!-- END timeline item -->
-                  <!-- timeline item -->
+                  <?php }else{?>
                   <li>
                     <i class="fa fa-user bg-red"></i>
 
                     <div class="timeline-item">
-                      <h3 class="timeline-header"><a href="#">Ujian Pra Prala</a> Sudah menyelesaikan </h3>
-<!-- 
-                      <div class="timeline-body">
-                        Take me to your leader!
-                        Switzerland is small and neutral!
-                        We are more like Germany, ambitious and misunderstood!
-                      </div> -->
+                      <h3 class="timeline-header"><a href="#">Lulus D3</a> Belum menyelesaikan </h3>
                     </div>
                   </li>
+                  <?php } ?>
+                 
                   <!-- END timeline item -->
                   <!-- timeline item -->
-                  <li>
-                    <i class="fa fa-user bg-red"></i>
-
-                    <div class="timeline-item">
-                      <h3 class="timeline-header"><a href="#">Onboard</a> Sudah menyelesaikan </h3>
-<!-- 
-                      <div class="timeline-body">
-                        Take me to your leader!
-                        Switzerland is small and neutral!
-                        We are more like Germany, ambitious and misunderstood!
-                      </div> -->
-                    </div>
-                  </li>
+                   <?php 
+                    if ($ppk->cekstatus("pra_status","sudah", $k->nim) > 0) {
+                      # code...?>
+                      <li>
+                        <i class="fa fa-user bg-green"></i>
+                        <div class="timeline-item">
+                          <h3 class="timeline-header"><a href="#">Ujian Pra Prala</a> Sudah menyelesaikan </h3>
+                        </div>
+                      </li>
+                    <?php }else{?>
+                      <li>
+                        <i class="fa fa-user bg-red"></i>
+                        <div class="timeline-item">
+                          <h3 class="timeline-header"><a href="#">Ujian Pra Prala</a> belum menyelesaikan </h3>
+                        </div>
+                      </li>
+                    <?php } ?>
+                  
+                  <!-- END timeline item -->
+                   <!-- timeline item -->
+                   <?php 
+                    if ($ppk->cekstatus("status_sb","iya", $k->nim) > 0) {
+                      # code...?>
+                      <li>
+                        <i class="fa fa-user bg-green"></i>
+                        <div class="timeline-item">
+                          <h3 class="timeline-header"><a href="#">Stand By</a> Taruna dalam keadaan stand by di darat</h3>
+                        </div>
+                      </li>
+                    <?php }else{?>
+                       <li>
+                        <i class="fa fa-user bg-red"></i>
+                        <div class="timeline-item">
+                          <h3 class="timeline-header"><a href="#">Stand By</a> Taruna tidak dalam keadaan stand by di darat</h3>
+                        </div>
+                      </li>
+                    <?php } ?>
                   <!-- END timeline item -->
                   <!-- timeline item -->
-                  <li>
-                    <i class="fa fa-user bg-red"></i>
-
+                  <?php 
+                  if ($ppk->cekstatus("status_onboard","iya", $k->nim) > 0 || $mahasiswa->cekstatus("status_onboard","tidak", $nim) > 0 ) {
+                    # code...?>
+                    <li>
+                    <i class="fa fa-user bg-green"></i>
                     <div class="timeline-item">
-                      <h3 class="timeline-header"><a href="#">Offboard</a> Sudah menyelesaikan </h3>
-<!-- 
-                      <div class="timeline-body">
-                        Take me to your leader!
-                        Switzerland is small and neutral!
-                        We are more like Germany, ambitious and misunderstood!
-                      </div> -->
+                      <h3 class="timeline-header"><a href="#">Onboard</a> Sudah/sedang melaksanakan </h3>
                     </div>
                   </li>
+                  <?php }else{?>
+                    <li>
+                    <i class="fa fa-user bg-red"></i>
+                    <div class="timeline-item">
+                      <h3 class="timeline-header"><a href="#">Onboard</a> Belum melaksanakan </h3>
+                    </div>
+                  </li>
+                  <?php } ?>
                   <!-- END timeline item -->
                   <!-- timeline item -->
-                  <li>
+                  <?php 
+                  if ($ppk->cekstatus("status_offboard","iya", $k->nim) > 0) {
+                    # code...?>
+                     <li>
                     <i class="fa fa-user bg-red"></i>
-
                     <div class="timeline-item">
-                      <h3 class="timeline-header"><a href="#">Ujian Modeling</a> Sudah menyelesaikan </h3>
-<!-- 
-                      <div class="timeline-body">
-                        Take me to your leader!
-                        Switzerland is small and neutral!
-                        We are more like Germany, ambitious and misunderstood!
-                      </div> -->
+                      <h3 class="timeline-header"><a href="#">Offboard</a> Sudah/sedang melaksanakan </h3>
                     </div>
                   </li>
+                  <?php }else{?>
+                     <li>
+                    <i class="fa fa-user bg-red"></i>
+                    <div class="timeline-item">
+                      <h3 class="timeline-header"><a href="#">Offboard</a> Belum melaksanakan </h3>
+                    </div>
+                  </li>
+                  <?php } ?>
                   <!-- END timeline item -->
                   <!-- timeline item -->
-                  <li>
-                    <i class="fa fa-user bg-red"></i>
-
+                  <?php 
+                  if ($ppk->cekstatus("status_modeling","sudah", $k->nim) > 0) {
+                    # code...?>
+                   <li>
+                    <i class="fa fa-user bg-green"></i>
                     <div class="timeline-item">
-                      <h3 class="timeline-header"><a href="#">Ujian TRB</a> Sudah menyelesaikan </h3>
-<!-- 
-                      <div class="timeline-body">
-                        Take me to your leader!
-                        Switzerland is small and neutral!
-                        We are more like Germany, ambitious and misunderstood!
-                      </div> -->
+                      <h3 class="timeline-header"><a href="#">Ujian Modeling</a> Sudah melaksanakan </h3>
                     </div>
                   </li>
+                  <?php }else{?>
+                  <li>
+                    <i class="fa fa-user bg-red"></i>
+                    <div class="timeline-item">
+                      <h3 class="timeline-header"><a href="#">Ujian Modeling</a> Belum melaksanakan </h3>
+                    </div>
+                  </li>
+                  <?php } ?>
                   <!-- END timeline item -->
                   <!-- timeline item -->
-                  <li>
-                    <i class="fa fa-user bg-red"></i>
-
+                  <?php 
+                  if ($ppk->cekstatus("status_trb","sudah", $k->nim) > 0) {
+                    # code...?>
+                    <li>
+                    <i class="fa fa-user bg-green"></i>
                     <div class="timeline-item">
-                      <h3 class="timeline-header"><a href="#">Ujian Pasca Prala</a> Sudah menyelesaikan </h3>
-<!-- 
-                      <div class="timeline-body">
-                        Take me to your leader!
-                        Switzerland is small and neutral!
-                        We are more like Germany, ambitious and misunderstood!
-                      </div> -->
+                      <h3 class="timeline-header"><a href="#">Ujian TRB</a> Sudah melaksanakan </h3>
                     </div>
                   </li>
+                  <?php }else{?>
+                   <li>
+                    <i class="fa fa-user bg-red"></i>
+                    <div class="timeline-item">
+                      <h3 class="timeline-header"><a href="#">Ujian TRB</a> Belum Melaksanakan </h3>
+                    </div>
+                  </li>
+                  <?php } ?>
+                  <!-- END timeline item -->
+                  <!-- timeline item -->
+                   <?php 
+                    if ($ppk->cekstatus("pasca_status","sudah", $k->nim) > 0) {
+                      # code...?>
+                       <li>
+                    <i class="fa fa-user bg-green"></i>
+                    <div class="timeline-item">
+                      <h3 class="timeline-header"><a href="#">Ujian Pasca Prala</a> Sudah melaksanakan </h3>
+                    </div>
+                  </li>
+                    <?php }else{?>
+                       <li>
+                    <i class="fa fa-user bg-red"></i>
+                    <div class="timeline-item">
+                      <h3 class="timeline-header"><a href="#">Ujian Pasca Prala</a> Belum melaksanakan </h3>
+                    </div>
+                  </li>
+                    <?php } ?>
                   <!-- END timeline item -->
                   <li>
                     <i class="fa fa-clock-o bg-gray"></i>
