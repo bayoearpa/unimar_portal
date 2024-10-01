@@ -20,43 +20,130 @@
                   <!-- /.timeline-label -->
                   <!-- timeline item -->
                   <li>
-                    <i class="fa fa-envelope bg-blue"></i>
+                    <i class="fa fa-user bg-green"></i>
 
                     <div class="timeline-item">
-                      <h3 class="timeline-header"><a href="#">Support Team</a> sent you an email</h3>
-                      <div class="timeline-body">
+                      <h3 class="timeline-header"><a href="#">Perkuliahan</a> Sudah menyelesaikan perkuliahan D3</h3>
+                     <!--  <div class="timeline-body">
                         Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles,
                         weebly ning heekya handango imeem plugg dopplr jibjab, movity
                         jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle
                         quora plaxo ideeli hulu weebly balihoo...
-                      </div>
+                      </div> -->
                     </div>
                   </li>
                   <!-- END timeline item -->
                   <!-- timeline item -->
                   <li>
-                    <i class="fa fa-user bg-aqua"></i>
+                    <i class="fa fa-user bg-red"></i>
                     <div class="timeline-item">
-                      <h3 class="timeline-header no-border"><a href="#">Sarah Young</a> accepted your friend request
+                      <h3 class="timeline-header no-border"><a href="#">Prada</a>Sudah Melakukan Prada
                       </h3>
                     </div>
                   </li>
                   <!-- END timeline item -->
                   <!-- timeline item -->
                   <li>
-                    <i class="fa fa-comments bg-yellow"></i>
+                    <i class="fa fa-user bg-red"></i>
 
                     <div class="timeline-item">
-                      <h3 class="timeline-header"><a href="#">Jay White</a> commented on your post</h3>
-
+                      <h3 class="timeline-header"><a href="#">Lulus D3</a> Sudah menyelesaikan </h3>
+<!-- 
                       <div class="timeline-body">
                         Take me to your leader!
                         Switzerland is small and neutral!
                         We are more like Germany, ambitious and misunderstood!
-                      </div>
-                      <div class="timeline-footer">
-                        <a class="btn btn-warning btn-flat btn-xs">View comment</a>
-                      </div>
+                      </div> -->
+                    </div>
+                  </li>
+                  <!-- END timeline item -->
+                  <!-- timeline item -->
+                  <li>
+                    <i class="fa fa-user bg-red"></i>
+
+                    <div class="timeline-item">
+                      <h3 class="timeline-header"><a href="#">Ujian Pra Prala</a> Sudah menyelesaikan </h3>
+<!-- 
+                      <div class="timeline-body">
+                        Take me to your leader!
+                        Switzerland is small and neutral!
+                        We are more like Germany, ambitious and misunderstood!
+                      </div> -->
+                    </div>
+                  </li>
+                  <!-- END timeline item -->
+                  <!-- timeline item -->
+                  <li>
+                    <i class="fa fa-user bg-red"></i>
+
+                    <div class="timeline-item">
+                      <h3 class="timeline-header"><a href="#">Onboard</a> Sudah menyelesaikan </h3>
+<!-- 
+                      <div class="timeline-body">
+                        Take me to your leader!
+                        Switzerland is small and neutral!
+                        We are more like Germany, ambitious and misunderstood!
+                      </div> -->
+                    </div>
+                  </li>
+                  <!-- END timeline item -->
+                  <!-- timeline item -->
+                  <li>
+                    <i class="fa fa-user bg-red"></i>
+
+                    <div class="timeline-item">
+                      <h3 class="timeline-header"><a href="#">Offboard</a> Sudah menyelesaikan </h3>
+<!-- 
+                      <div class="timeline-body">
+                        Take me to your leader!
+                        Switzerland is small and neutral!
+                        We are more like Germany, ambitious and misunderstood!
+                      </div> -->
+                    </div>
+                  </li>
+                  <!-- END timeline item -->
+                  <!-- timeline item -->
+                  <li>
+                    <i class="fa fa-user bg-red"></i>
+
+                    <div class="timeline-item">
+                      <h3 class="timeline-header"><a href="#">Ujian Modeling</a> Sudah menyelesaikan </h3>
+<!-- 
+                      <div class="timeline-body">
+                        Take me to your leader!
+                        Switzerland is small and neutral!
+                        We are more like Germany, ambitious and misunderstood!
+                      </div> -->
+                    </div>
+                  </li>
+                  <!-- END timeline item -->
+                  <!-- timeline item -->
+                  <li>
+                    <i class="fa fa-user bg-red"></i>
+
+                    <div class="timeline-item">
+                      <h3 class="timeline-header"><a href="#">Ujian TRB</a> Sudah menyelesaikan </h3>
+<!-- 
+                      <div class="timeline-body">
+                        Take me to your leader!
+                        Switzerland is small and neutral!
+                        We are more like Germany, ambitious and misunderstood!
+                      </div> -->
+                    </div>
+                  </li>
+                  <!-- END timeline item -->
+                  <!-- timeline item -->
+                  <li>
+                    <i class="fa fa-user bg-red"></i>
+
+                    <div class="timeline-item">
+                      <h3 class="timeline-header"><a href="#">Ujian Pasca Prala</a> Sudah menyelesaikan </h3>
+<!-- 
+                      <div class="timeline-body">
+                        Take me to your leader!
+                        Switzerland is small and neutral!
+                        We are more like Germany, ambitious and misunderstood!
+                      </div> -->
                     </div>
                   </li>
                   <!-- END timeline item -->
