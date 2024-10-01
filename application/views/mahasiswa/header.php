@@ -216,9 +216,9 @@
 
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url() ?>mahasiswa/pra/<?php echo $this->session->userdata('user')?>"><i class="fa fa-circle-o"></i>Ujian Pra</a></li>
-            <li><a href="<?php echo base_url() ?>mahasiswa/onboard/<?php echo $this->session->userdata('user')?>"><i class="fa fa-circle-o"></i>Onboard</a></li>
+            <li><a href="<?php echo base_url() ?>mahasiswa/onboard/<?php echo $this->session->userdata('user')?>"><i class="fa fa-circle-o"></i>Sign On</a></li>
             <li><a href="<?php echo base_url() ?>mahasiswa/laponboard/<?php echo $this->session->userdata('user')?>"><i class="fa fa-circle-o"></i>Laporan Onboard</a></li>
-            <li><a href="<?php echo base_url() ?>mahasiswa/offboard/<?php echo $this->session->userdata('user')?>"><i class="fa fa-circle-o"></i>Offboard</a></li>
+            <li><a href="<?php echo base_url() ?>mahasiswa/offboard/<?php echo $this->session->userdata('user')?>"><i class="fa fa-circle-o"></i>Sign Off</a></li>
             <li><a href="<?php echo base_url() ?>mahasiswa/pasca/<?php echo $this->session->userdata('user')?>"><i class="fa fa-circle-o"></i>Ujian Pasca</a></li>
             <li><a href="<?php echo base_url() ?>mahasiswa/trb/<?php echo $this->session->userdata('user')?>"><i class="fa fa-circle-o"></i>Ujian TRB</a></li>
           </ul>

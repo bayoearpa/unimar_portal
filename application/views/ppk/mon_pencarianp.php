@@ -1,7 +1,7 @@
  <div class="col-md-9">
           <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
-              <li class="active"><a href="#activity" data-toggle="tab">Activity</a></li>
+              <li class="active"><a href="#activity" data-toggle="tab">Aktifitas</a></li>
               <li><a href="#timeline" data-toggle="tab">Timeline</a></li>
               <li><a href="#settings" data-toggle="tab">Settings</a></li>
             </ul>
@@ -14,7 +14,7 @@
                   <!-- timeline time label -->
                   <li class="time-label">
                         <span class="bg-red">
-                          Alur
+                          Alur AKtifitas Kepelautan
                         </span>
                   </li>
                   <!-- /.timeline-label -->
