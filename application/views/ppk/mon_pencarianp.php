@@ -1,5 +1,5 @@
  <?php 
-foreach ($results as $r) {
+foreach ($results as $k) {
   # code... ?>
  <div class="col-md-9">
           <div class="nav-tabs-custom">
