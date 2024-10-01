@@ -772,6 +772,17 @@ class ppk extends CI_Controller {
         // Load the view with the data, returning the HTML string (no headers or footers)
         $this->load->view('ppk/mon_pencarianp', $data);
     }
+    public function cekstatus($label, $status, $nim)
+	{
+		# code...
+		$where = array(
+				$label => $status,
+				'nim' => $nim
+			);
+		$data = $this->m_portal->get_data($where, 'tbl_mon')->num_rows();
+
+		return $data;
+	}
 	// monitoring prada
 	public function mon_prada()
 	{

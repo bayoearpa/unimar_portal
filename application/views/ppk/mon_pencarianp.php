@@ -1,3 +1,6 @@
+ <?php 
+foreach ($results as $r) {
+  # code... ?>
  <div class="col-md-9">
           <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
@@ -34,13 +37,26 @@
                   </li>
                   <!-- END timeline item -->
                   <!-- timeline item -->
+                   <?php 
+                    if ($ppk->cekstatus("status_prada","sudah", $k->nim) > 0) {
+                      # code...?>
                   <li>
-                    <i class="fa fa-user bg-red"></i>
+                    <i class="fa fa-user bg-green"></i>
                     <div class="timeline-item">
-                      <h3 class="timeline-header no-border"><a href="#">Prada</a>Sudah Melakukan Prada
+                      <h3 class="timeline-header no-border"><a href="#">Prada</a> Sudah Melakukan Prada
                       </h3>
                     </div>
                   </li>
+                    <?php }else{?>
+                      <li>
+                    <i class="fa fa-user bg-red"></i>
+                    <div class="timeline-item">
+                      <h3 class="timeline-header no-border"><a href="#">Prada</a> Belum Melakukan Prada
+                      </h3>
+                    </div>
+                  </li>
+                    <?php } ?>
+                 
                   <!-- END timeline item -->
                   <!-- timeline item -->
                   <li>
@@ -311,3 +327,5 @@
           <!-- /.nav-tabs-custom -->
         </div>
         <!-- /.col -->
+
+        <?php } ?>
