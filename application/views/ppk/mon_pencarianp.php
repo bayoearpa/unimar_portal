@@ -14,16 +14,18 @@ foreach ($results as $k) {
                 <!-- Post -->
                 <form class="form-horizontal">
                   <div class="form-group">
-                    <label for="inputName" class="control-label">Nim</label>
+                    
 
                     <div class="col-sm-10">
+                      <label for="inputName" class="control-label">Nim</label>
                       <label for="inputName" class="control-label"><?php echo $k->nim ?></label>
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="inputName" class="control-label">Nama</label>
+                    
 
                     <div class="col-sm-10">
+                      <label for="inputName" class="control-label">Nama</label>
                       <label for="inputName" class="control-label"><?php echo $k->nama ?></label>
                     </div>
                   </div>
