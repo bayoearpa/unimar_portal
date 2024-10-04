@@ -12,6 +12,7 @@ foreach ($results as $k) {
             <div class="tab-content">
               <div class="active tab-pane" id="activity">
                 <!-- Post -->
+                <form class="form-horizontal">
                   <div class="form-group">
                     <label for="inputName" class="col-sm-2 control-label">Nim</label>
 
@@ -26,7 +27,7 @@ foreach ($results as $k) {
                       <label for="inputName" class="col-sm-2 control-label"><?php echo $k->Nama_mahasiswa ?></label>
                     </div>
                   </div>
-                             
+                  </form>           
                 <!-- The timeline -->
                 <ul class="timeline timeline-inverse">
                   <!-- timeline time label -->
