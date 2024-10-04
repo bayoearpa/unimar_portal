@@ -12,6 +12,20 @@ foreach ($results as $k) {
             <div class="tab-content">
               <div class="active tab-pane" id="activity">
                 <!-- Post -->
+                  <div class="form-group">
+                    <label for="inputName" class="col-sm-2 control-label">Nim</label>
+
+                    <div class="col-sm-10">
+                      <label for="inputName" class="col-sm-2 control-label"><?php echo $k->nim ?></label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputName" class="col-sm-2 control-label">Nama</label>
+
+                    <div class="col-sm-10">
+                      <label for="inputName" class="col-sm-2 control-label"><?php echo $k->Nama_mahasiswa ?></label>
+                    </div>
+                  </div>
                              
                 <!-- The timeline -->
                 <ul class="timeline timeline-inverse">
