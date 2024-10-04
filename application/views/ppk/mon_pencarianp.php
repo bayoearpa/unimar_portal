@@ -24,7 +24,7 @@ foreach ($results as $k) {
                     <label for="inputName" class="col-sm-2 control-label">Nama</label>
 
                     <div class="col-sm-10">
-                      <label for="inputName" class="col-sm-2 control-label"><?php echo $k->Nama_mahasiswa ?></label>
+                      <label for="inputName" class="col-sm-2 control-label"><?php echo $k->nama ?></label>
                     </div>
                   </div>
                   </form>           
