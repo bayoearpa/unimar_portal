@@ -40,12 +40,6 @@
 
  // Fungsi untuk menghitung persentase dan menyesuaikan selisih agar total 100%
     function adjustPercentages(ts, ks, s, ss) {
-
-    var ts = <?php echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn, $prodi, $ta, '2'), 2); ?>;
-    var ks = <?php echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn, $prodi, $ta, '3'), 2); ?>;
-    var s = <?php echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn, $prodi, $ta, '4'), 2); ?>;
-    var ss = <?php echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn, $prodi, $ta, '5'), 2); ?>;
-    
         // Fungsi untuk membulatkan ke 2 angka desimal
         function roundToTwoDecimals(num) {
             return Math.round(num * 100) / 100;
@@ -133,7 +127,10 @@
         )[3] + '%';
 
 
-
+    var ts = <?php echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn, $prodi, $ta, '2'), 2); ?>;
+    var ks = <?php echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn, $prodi, $ta, '3'), 2); ?>;
+    var s = <?php echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn, $prodi, $ta, '4'), 2); ?>;
+    var ss = <?php echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn, $prodi, $ta, '5'), 2); ?>;
    // Gunakan data yang dikirim dari PHP ke JavaScript
     var adjustedPercentages = adjustPercentages(ts, ks, s, ss);
 
