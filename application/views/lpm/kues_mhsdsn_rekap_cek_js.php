@@ -36,38 +36,78 @@
      * -----------
      */
 
-    var donutData<?php echo $key->id_mhsdsn ?> = [
-     // { label: 'STS', data: <?php //echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'1') ?>, color: '#f20b0b' },
-      { label: 'K', data: <?php echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'2') ?>, color: '#ffad5f' },
-      { label: 'C', data: <?php echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'3') ?>, color: '#ffd966' },
-      { label: 'B', data: <?php echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'4') ?>, color: '#9af073' },
-      { label: 'SB', data: <?php echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'5') ?>, color: '#89ddfc' }
-    ]
-    $.plot('#donut-chart-<?php echo $key->id_mhsdsn ?>', donutData<?php echo $key->id_mhsdsn; ?>, {
-        series: {
-          pie: { 
-            show: true,
-            radius: 1,
-            label: {
-              show: true,
-              radius: 3/4,
-              formatter: labelFormatter,
-              background: {
-                opacity: 0.5
-              }
-            }
-          }
-        },
-        legend: {
-          show: false
-        }
-      });
+    // var donutData<?php //echo $key->id_mhsdsn ?> = [
+    //  // { label: 'STS', data: <?php //echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'1') ?>, color: '#f20b0b' },
+    //   { label: 'K', data: <?php //echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'2') ?>, color: '#ffad5f' },
+    //   { label: 'C', data: <?php //echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'3') ?>, color: '#ffd966' },
+    //   { label: 'B', data: <?php //echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'4') ?>, color: '#9af073' },
+    //   { label: 'SB', data: <?php //echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'5') ?>, color: '#89ddfc' }
+    // ]
+    // $.plot('#donut-chart-<?php //echo $key->id_mhsdsn ?>', donutData<?php //echo $key->id_mhsdsn; ?>, {
+    //     series: {
+    //       pie: { 
+    //         show: true,
+    //         radius: 1,
+    //         label: {
+    //           show: true,
+    //           radius: 3/4,
+    //           formatter: labelFormatter,
+    //           background: {
+    //             opacity: 0.5
+    //           }
+    //         }
+    //       }
+    //     },
+    //     legend: {
+    //       show: false
+    //     }
+    //   });
 
-// document.getElementById('data-sts').innerText = <?php //echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'1')) ?> + '%';
-// document.getElementById('data-ts-<?php //echo $key->id_mhsdsn ?>').innerText = <?php //echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'2')) ?> + '%';
-// document.getElementById('data-ks-<?php //echo $key->id_mhsdsn ?>').innerText = <?php //echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'3')) ?> + '%';
-// document.getElementById('data-s-<?php //echo $key->id_mhsdsn ?>').innerText = <?php //echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'4')) ?> + '%';
-// document.getElementById('data-ss-<?php //echo $key->id_mhsdsn ?>').innerText = <?php //echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'5')) ?> + '%';
+    // Hitung persentase yang telah disesuaikan
+    $adjustedPercentages = [
+        adjustPercentages(
+            round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn, $prodi, $ta, '2'), 2),
+            round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn, $prodi, $ta, '3'), 2),
+            round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn, $prodi, $ta, '4'), 2),
+            round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn, $prodi, $ta, '5'), 2)
+        )
+    ];
+?>
+
+// Update label dengan persentase yang telah disesuaikan
+document.getElementById('data-ts-<?php echo $key->id_mhsdsn ?>').innerText = adjustedPercentages[0] + '%';
+document.getElementById('data-ks-<?php echo $key->id_mhsdsn ?>').innerText = adjustedPercentages[1] + '%';
+document.getElementById('data-s-<?php echo $key->id_mhsdsn ?>').innerText = adjustedPercentages[2] + '%';
+document.getElementById('data-ss-<?php echo $key->id_mhsdsn ?>').innerText = adjustedPercentages[3] + '%';
+
+// Set donut chart data dengan persentase yang sama
+var donutData<?php echo $key->id_mhsdsn ?> = [
+    { label: 'K', data: adjustedPercentages[0], color: '#ffad5f' },
+    { label: 'C', data: adjustedPercentages[1], color: '#ffd966' },
+    { label: 'B', data: adjustedPercentages[2], color: '#9af073' },
+    { label: 'SB', data: adjustedPercentages[3], color: '#89ddfc' }
+];
+
+$.plot('#donut-chart-<?php echo $key->id_mhsdsn ?>', donutData<?php echo $key->id_mhsdsn; ?>, {
+    series: {
+      pie: { 
+        show: true,
+        radius: 1,
+        label: {
+          show: true,
+          radius: 3/4,
+          formatter: labelFormatter,
+          background: {
+            opacity: 0.5
+          }
+        }
+      }
+    },
+    legend: {
+      show: false
+    }
+});
+
 
  // Fungsi untuk menghitung persentase dan menyesuaikan selisih agar total 100%
     function adjustPercentages(ts, ks, s, ss) {
@@ -174,60 +214,6 @@
       + Math.round(series.percent) + '%</div>'
   }
       
-// function updateModalData(id) {
-//   console.log("Updating modal data for ID: " + id);
-
-//   var ts = document.getElementById('data-ts-' + id);
-//   var ks = document.getElementById('data-ks-' + id);
-//   var s = document.getElementById('data-s-' + id);
-//   var ss = document.getElementById('data-ss-' + id);
-
-//   if (ts && ks && s && ss) {
-//     ts.innerText = calculatePercentage(id, '2') + '%';
-//     ks.innerText = calculatePercentage(id, '3') + '%';
-//     s.innerText = calculatePercentage(id, '4') + '%';
-//     ss.innerText = calculatePercentage(id, '5') + '%';
-
-//     var donutData = [
-//       { label: 'TS', data: calculatePercentage(id, '2'), color: '#ffad5f' },
-//       { label: 'KS', data: calculatePercentage(id, '3'), color: '#ffd966' },
-//       { label: 'S', data: calculatePercentage(id, '4'), color: '#9af073' },
-//       { label: 'SS', data: calculatePercentage(id, '5'), color: '#89ddfc' }
-//     ];
-
-//     $.plot('#donut-chart-' + id, donutData, {
-//       series: {
-//         pie: { 
-//           show: true,
-//           radius: 1,
-//           label: {
-//             show: true,
-//             radius: 3/4,
-//             formatter: labelFormatter,
-//             background: {
-//               opacity: 0.5
-//             }
-//           }
-//         }
-//       },
-//       legend: {
-//         show: false
-//       }
-//     });
-//   } else {
-//     console.log("Elements not found for ID: " + id);
-//   }
-// }
-
-// function calculatePercentage(id, type) {
-//   // Implement this function to return the correct percentage based on the id and type
-//   // For example, you could make an AJAX call to get the data from the server
-//   // return data from the server
-//   return Math.round(Math.random() * 100); // placeholder for demonstration
-// }
-
-
-
 
       </script>
 
