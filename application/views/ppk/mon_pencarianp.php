@@ -263,6 +263,27 @@ foreach ($results as $k) {
                        <input type="email" class="form-control" id="inputName" placeholder="Name" value="<?php echo $k->prodi ?>" readonly="">
                     </div>
                   </div>
+                   <div class="form-group">
+                    <label for="inputName" class="col-sm-2 control-label">Nama Perusahaan</label>
+
+                    <div class="col-sm-10">
+                       <input type="email" class="form-control" id="inputName" placeholder="Name" value="<?php echo $k->nama_perusahaan ?>" readonly="">
+                    </div>
+                  </div>
+                   <div class="form-group">
+                    <label for="inputName" class="col-sm-2 control-label">Nama Kapal</label>
+
+                    <div class="col-sm-10">
+                       <input type="email" class="form-control" id="inputName" placeholder="Name" value="<?php echo $k->nama_kapal ?>" readonly="">
+                    </div>
+                  </div>
+                   <div class="form-group">
+                    <label for="inputName" class="col-sm-2 control-label">Tanggal Sign On</label>
+
+                    <div class="col-sm-10">
+                       <input type="email" class="form-control" id="inputName" placeholder="Name" value="<?php echo $k->tgl_sign_on ?>" readonly="">
+                    </div>
+                  </div>
                   <div class="form-group">
                     <label for="inputExperience" class="col-sm-2 control-label">Experience</label>
 
