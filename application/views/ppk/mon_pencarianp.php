@@ -23,6 +23,11 @@ foreach ($results as $k) {
                     <td>:</td>
                     <td><b><?php echo $k->nama ?></b></td>
                   </tr>
+                  <tr>
+                    <td>Program Studi</td>
+                    <td>:</td>
+                    <td><b><?php echo $k->prodi ?></b></td>
+                  </tr>
                 </table> 
                 <br>     
                 <!-- The timeline -->
