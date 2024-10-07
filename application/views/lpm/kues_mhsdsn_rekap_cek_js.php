@@ -64,10 +64,80 @@
       });
 
 // document.getElementById('data-sts').innerText = <?php //echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'1')) ?> + '%';
-document.getElementById('data-ts-<?php echo $key->id_mhsdsn ?>').innerText = <?php echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'2')) ?> + '%';
-document.getElementById('data-ks-<?php echo $key->id_mhsdsn ?>').innerText = <?php echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'3')) ?> + '%';
-document.getElementById('data-s-<?php echo $key->id_mhsdsn ?>').innerText = <?php echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'4')) ?> + '%';
-document.getElementById('data-ss-<?php echo $key->id_mhsdsn ?>').innerText = <?php echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'5')) ?> + '%';
+// document.getElementById('data-ts-<?php //echo $key->id_mhsdsn ?>').innerText = <?php //echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'2')) ?> + '%';
+// document.getElementById('data-ks-<?php //echo $key->id_mhsdsn ?>').innerText = <?php //echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'3')) ?> + '%';
+// document.getElementById('data-s-<?php //echo $key->id_mhsdsn ?>').innerText = <?php //echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'4')) ?> + '%';
+// document.getElementById('data-ss-<?php //echo $key->id_mhsdsn ?>').innerText = <?php //echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'5')) ?> + '%';
+
+// Fungsi untuk menghitung persentase dan menyesuaikan selisih agar total 100%
+    function adjustPercentages(ts, ks, s, ss) {
+        // Fungsi untuk membulatkan ke 2 angka desimal
+        function roundToTwoDecimals(num) {
+            return Math.round(num * 100) / 100;
+        }
+
+        // Membulatkan setiap nilai ke 2 angka desimal
+        let rounded_ts = roundToTwoDecimals(ts);
+        let rounded_ks = roundToTwoDecimals(ks);
+        let rounded_s = roundToTwoDecimals(s);
+        let rounded_ss = roundToTwoDecimals(ss);
+
+        // Hitung total dari persentase yang dibulatkan
+        let total = rounded_ts + rounded_ks + rounded_s + rounded_ss;
+
+        // Hitung selisih dari 100%
+        let difference = roundToTwoDecimals(100 - total);
+
+        // Sesuaikan berdasarkan selisih
+        if (difference !== 0) {
+            if (difference > 0) {
+                // Tambahkan ke nilai persentase yang terkecil
+                if (rounded_ts <= rounded_ks && rounded_ts <= rounded_s && rounded_ts <= rounded_ss) {
+                    rounded_ts += difference;
+                } else if (rounded_ks <= rounded_ts && rounded_ks <= rounded_s && rounded_ks <= rounded_ss) {
+                    rounded_ks += difference;
+                } else if (rounded_s <= rounded_ts && rounded_s <= rounded_ks && rounded_s <= rounded_ss) {
+                    rounded_s += difference;
+                } else {
+                    rounded_ss += difference;
+                }
+            } else {
+                // Kurangkan dari nilai persentase yang terbesar
+                if (rounded_ts >= rounded_ks && rounded_ts >= rounded_s && rounded_ts >= rounded_ss) {
+                    rounded_ts += difference;
+                } else if (rounded_ks >= rounded_ts && rounded_ks >= rounded_s && rounded_ks >= rounded_ss) {
+                    rounded_ks += difference;
+                } else if (rounded_s >= rounded_ts && rounded_s >= rounded_ks && rounded_s >= rounded_ss) {
+                    rounded_s += difference;
+                } else {
+                    rounded_ss += difference;
+                }
+            }
+        }
+
+        // Kembalikan nilai yang sudah disesuaikan
+        return [
+            roundToTwoDecimals(rounded_ts),
+            roundToTwoDecimals(rounded_ks),
+            roundToTwoDecimals(rounded_s),
+            roundToTwoDecimals(rounded_ss)
+        ];
+    }
+
+    // Ambil nilai persentase dari PHP
+    let ts = <?php echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'2'), 2) ?>;
+    let ks = <?php echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'3'), 2) ?>;
+    let s = <?php echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'4'), 2) ?>;
+    let ss = <?php echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'5'), 2) ?>;
+
+    // Hitung persentase yang disesuaikan
+    let adjustedPercentages = adjustPercentages(ts, ks, s, ss);
+
+    // Tampilkan hasil di elemen HTML yang sesuai
+    document.getElementById('data-ts-<?php echo $key->id_mhsdsn ?>').innerText = adjustedPercentages[0] + '%';
+    document.getElementById('data-ks-<?php echo $key->id_mhsdsn ?>').innerText = adjustedPercentages[1] + '%';
+    document.getElementById('data-s-<?php echo $key->id_mhsdsn ?>').innerText = adjustedPercentages[2] + '%';
+    document.getElementById('data-ss-<?php echo $key->id_mhsdsn ?>').innerText = adjustedPercentages[3] + '%';
 
 
     <?php } ?>
