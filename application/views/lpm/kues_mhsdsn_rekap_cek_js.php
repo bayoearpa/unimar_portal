@@ -142,10 +142,10 @@
 
     // Update donut chart dengan persentase yang sudah disesuaikan
     var donutData<?php echo $key->id_mhsdsn ?> = [
-        { label: 'K', data: adjustedPercentages[0], color: '#ffad5f' },
-        { label: 'C', data: adjustedPercentages[1], color: '#ffd966' },
-        { label: 'B', data: adjustedPercentages[2], color: '#9af073' },
-        { label: 'SB', data: adjustedPercentages[3], color: '#89ddfc' }
+        { label: 'K', data: adjustedPercentages[0].toFixed(2), color: '#ffad5f' },
+        { label: 'C', data: adjustedPercentages[1].toFixed(2), color: '#ffd966' },
+        { label: 'B', data: adjustedPercentages[2].toFixed(2), color: '#9af073' },
+        { label: 'SB', data: adjustedPercentages[3].toFixed(2), color: '#89ddfc' }
     ];
 
     $.plot('#donut-chart-<?php echo $key->id_mhsdsn ?>', donutData<?php echo $key->id_mhsdsn; ?>, {
