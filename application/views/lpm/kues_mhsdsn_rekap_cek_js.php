@@ -156,7 +156,7 @@
                 label: {
                     show: true,
                     radius: 3/4,
-                    // formatter: labelFormatter,
+                    formatter: labelFormatter,
                     background: {
                         opacity: 0.5
                     }
@@ -178,12 +178,13 @@
    * Custom Label formatter
    * ----------------------
    */
-  // function labelFormatter(label, series) {
-  //   return '<div style="font-size:13px; text-align:center; padding:2px; color: #fff; font-weight: 600;">'
-  //     + label
-  //     + '<br>'
-  //     + Math.round(series.percent) + '%</div>'
-  // }
+  function labelFormatter(label, series) {
+    return '<div style="font-size:13px; text-align:center; padding:2px; color: #fff; font-weight: 600;">'
+      + label
+      + '<br>'
+      // + Math.round(series.percent) + '%</div>'
+      + series.percent + '%</div>'
+  }
       
 
       </script>
