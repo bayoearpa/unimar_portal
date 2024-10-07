@@ -135,10 +135,10 @@
     var adjustedPercentages = adjustPercentages(ts, ks, s, ss);
 
     // Update nilai persentase di HTML
-    document.getElementById('data-ts-<?php echo $key->id_mhsdsn ?>').innerText = adjustedPercentages[0] + '%';
-    document.getElementById('data-ks-<?php echo $key->id_mhsdsn ?>').innerText = adjustedPercentages[1] + '%';
-    document.getElementById('data-s-<?php echo $key->id_mhsdsn ?>').innerText = adjustedPercentages[2] + '%';
-    document.getElementById('data-ss-<?php echo $key->id_mhsdsn ?>').innerText = adjustedPercentages[3] + '%';
+    document.getElementById('data-ts-<?php echo $key->id_mhsdsn ?>').innerText = adjustedPercentages[0].toFixed(2) + '%';
+    document.getElementById('data-ks-<?php echo $key->id_mhsdsn ?>').innerText = adjustedPercentages[1].toFixed(2) + '%';
+    document.getElementById('data-s-<?php echo $key->id_mhsdsn ?>').innerText = adjustedPercentages[2].toFixed(2) + '%';
+    document.getElementById('data-ss-<?php echo $key->id_mhsdsn ?>').innerText = adjustedPercentages[3].toFixed(2) + '%';
 
     // Update donut chart dengan persentase yang sudah disesuaikan
     var donutData<?php echo $key->id_mhsdsn ?> = [
