@@ -156,7 +156,7 @@
                 label: {
                     show: true,
                     radius: 3/4,
-                    formatter: labelFormatter,
+                    // formatter: labelFormatter,
                     background: {
                         opacity: 0.5
                     }
