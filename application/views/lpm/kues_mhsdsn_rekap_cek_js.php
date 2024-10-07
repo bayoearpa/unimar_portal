@@ -69,7 +69,7 @@
 // document.getElementById('data-s-<?php //echo $key->id_mhsdsn ?>').innerText = <?php //echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'4')) ?> + '%';
 // document.getElementById('data-ss-<?php //echo $key->id_mhsdsn ?>').innerText = <?php //echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'5')) ?> + '%';
 
-// Fungsi untuk menghitung persentase dan menyesuaikan selisih agar total 100%
+ // Fungsi untuk menghitung persentase dan menyesuaikan selisih agar total 100%
     function adjustPercentages(ts, ks, s, ss) {
         // Fungsi untuk membulatkan ke 2 angka desimal
         function roundToTwoDecimals(num) {
@@ -124,20 +124,38 @@
         ];
     }
 
-    // Ambil nilai persentase dari PHP
-    let ts = <?php echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'2'), 2) ?>;
-    let ks = <?php echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'3'), 2) ?>;
-    let s = <?php echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'4'), 2) ?>;
-    let ss = <?php echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'5'), 2) ?>;
+    // Panggil fungsi adjustPercentages secara langsung tanpa deklarasi ulang variabel
+    document.getElementById('data-ts-<?php echo $key->id_mhsdsn ?>').innerText = 
+        adjustPercentages(
+            <?php echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn, $prodi, $ta, '2'), 2); ?>,
+            <?php echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn, $prodi, $ta, '3'), 2); ?>,
+            <?php echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn, $prodi, $ta, '4'), 2); ?>,
+            <?php echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn, $prodi, $ta, '5'), 2); ?>
+        )[0] + '%';
 
-    // Hitung persentase yang disesuaikan
-    let adjustedPercentages = adjustPercentages(ts, ks, s, ss);
+    document.getElementById('data-ks-<?php echo $key->id_mhsdsn ?>').innerText = 
+        adjustPercentages(
+            <?php echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn, $prodi, $ta, '2'), 2); ?>,
+            <?php echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn, $prodi, $ta, '3'), 2); ?>,
+            <?php echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn, $prodi, $ta, '4'), 2); ?>,
+            <?php echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn, $prodi, $ta, '5'), 2); ?>
+        )[1] + '%';
 
-    // Tampilkan hasil di elemen HTML yang sesuai
-    document.getElementById('data-ts-<?php echo $key->id_mhsdsn ?>').innerText = adjustedPercentages[0] + '%';
-    document.getElementById('data-ks-<?php echo $key->id_mhsdsn ?>').innerText = adjustedPercentages[1] + '%';
-    document.getElementById('data-s-<?php echo $key->id_mhsdsn ?>').innerText = adjustedPercentages[2] + '%';
-    document.getElementById('data-ss-<?php echo $key->id_mhsdsn ?>').innerText = adjustedPercentages[3] + '%';
+    document.getElementById('data-s-<?php echo $key->id_mhsdsn ?>').innerText = 
+        adjustPercentages(
+            <?php echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn, $prodi, $ta, '2'), 2); ?>,
+            <?php echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn, $prodi, $ta, '3'), 2); ?>,
+            <?php echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn, $prodi, $ta, '4'), 2); ?>,
+            <?php echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn, $prodi, $ta, '5'), 2); ?>
+        )[2] + '%';
+
+    document.getElementById('data-ss-<?php echo $key->id_mhsdsn ?>').innerText = 
+        adjustPercentages(
+            <?php echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn, $prodi, $ta, '2'), 2); ?>,
+            <?php echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn, $prodi, $ta, '3'), 2); ?>,
+            <?php echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn, $prodi, $ta, '4'), 2); ?>,
+            <?php echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn, $prodi, $ta, '5'), 2); ?>
+        )[3] + '%';
 
 
     <?php } ?>
