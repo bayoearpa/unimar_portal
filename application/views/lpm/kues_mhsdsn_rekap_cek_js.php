@@ -30,7 +30,20 @@
     });
   }
 
-<?php foreach ($list_pert as $key) {?>
+<?php foreach ($list_pert as $key) {
+
+// Hitung persentase yang telah disesuaikan
+   $adjustedPercentages = [
+        adjustPercentages(
+            round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn, $prodi, $ta, '2'), 2),
+            round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn, $prodi, $ta, '3'), 2),
+            round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn, $prodi, $ta, '4'), 2),
+            round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn, $prodi, $ta, '5'), 2)
+        )
+    ];
+
+
+  ?>
       /*
      * DONUT CHART
      * -----------
@@ -63,15 +76,6 @@
     //     }
     //   });
 
-    // Hitung persentase yang telah disesuaikan
-    $adjustedPercentages = [
-        adjustPercentages(
-            round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn, $prodi, $ta, '2'), 2),
-            round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn, $prodi, $ta, '3'), 2),
-            round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn, $prodi, $ta, '4'), 2),
-            round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn, $prodi, $ta, '5'), 2)
-        )
-    ];
 
 // Update label dengan persentase yang telah disesuaikan
 document.getElementById('data-ts-<?php echo $key->id_mhsdsn ?>').innerText = adjustedPercentages[0] + '%';
