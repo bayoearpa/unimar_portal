@@ -72,7 +72,6 @@
             round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn, $prodi, $ta, '5'), 2)
         )
     ];
-?>
 
 // Update label dengan persentase yang telah disesuaikan
 document.getElementById('data-ts-<?php echo $key->id_mhsdsn ?>').innerText = adjustedPercentages[0] + '%';
