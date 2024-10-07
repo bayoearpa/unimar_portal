@@ -30,87 +30,13 @@
     });
   }
 
-<?php foreach ($list_pert as $key) {
-
-// Hitung persentase yang telah disesuaikan
-   $adjustedPercentages = [
-        adjustPercentages(
-            round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn, $prodi, $ta, '2'), 2),
-            round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn, $prodi, $ta, '3'), 2),
-            round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn, $prodi, $ta, '4'), 2),
-            round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn, $prodi, $ta, '5'), 2)
-        )
-    ];
-
-
-  ?>
+<?php foreach ($list_pert as $key) {?>
       /*
      * DONUT CHART
      * -----------
      */
 
-    // var donutData<?php //echo $key->id_mhsdsn ?> = [
-    //  // { label: 'STS', data: <?php //echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'1') ?>, color: '#f20b0b' },
-    //   { label: 'K', data: <?php //echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'2') ?>, color: '#ffad5f' },
-    //   { label: 'C', data: <?php //echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'3') ?>, color: '#ffd966' },
-    //   { label: 'B', data: <?php //echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'4') ?>, color: '#9af073' },
-    //   { label: 'SB', data: <?php //echo $lpm->countitem_persentase_mhsdsn($key->id_mhsdsn,$prodi,$ta,'5') ?>, color: '#89ddfc' }
-    // ]
-    // $.plot('#donut-chart-<?php //echo $key->id_mhsdsn ?>', donutData<?php //echo $key->id_mhsdsn; ?>, {
-    //     series: {
-    //       pie: { 
-    //         show: true,
-    //         radius: 1,
-    //         label: {
-    //           show: true,
-    //           radius: 3/4,
-    //           formatter: labelFormatter,
-    //           background: {
-    //             opacity: 0.5
-    //           }
-    //         }
-    //       }
-    //     },
-    //     legend: {
-    //       show: false
-    //     }
-    //   });
-
-
-// Update label dengan persentase yang telah disesuaikan
-document.getElementById('data-ts-<?php echo $key->id_mhsdsn ?>').innerText = adjustedPercentages[0] + '%';
-document.getElementById('data-ks-<?php echo $key->id_mhsdsn ?>').innerText = adjustedPercentages[1] + '%';
-document.getElementById('data-s-<?php echo $key->id_mhsdsn ?>').innerText = adjustedPercentages[2] + '%';
-document.getElementById('data-ss-<?php echo $key->id_mhsdsn ?>').innerText = adjustedPercentages[3] + '%';
-
-// Set donut chart data dengan persentase yang sama
-var donutData<?php echo $key->id_mhsdsn ?> = [
-    { label: 'K', data: adjustedPercentages[0], color: '#ffad5f' },
-    { label: 'C', data: adjustedPercentages[1], color: '#ffd966' },
-    { label: 'B', data: adjustedPercentages[2], color: '#9af073' },
-    { label: 'SB', data: adjustedPercentages[3], color: '#89ddfc' }
-];
-
-$.plot('#donut-chart-<?php echo $key->id_mhsdsn ?>', donutData<?php echo $key->id_mhsdsn; ?>, {
-    series: {
-      pie: { 
-        show: true,
-        radius: 1,
-        label: {
-          show: true,
-          radius: 3/4,
-          formatter: labelFormatter,
-          background: {
-            opacity: 0.5
-          }
-        }
-      }
-    },
-    legend: {
-      show: false
-    }
-});
-
+   
 
  // Fungsi untuk menghitung persentase dan menyesuaikan selisih agar total 100%
     function adjustPercentages(ts, ks, s, ss) {
@@ -199,6 +125,45 @@ $.plot('#donut-chart-<?php echo $key->id_mhsdsn ?>', donutData<?php echo $key->i
             <?php echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn, $prodi, $ta, '4'), 2); ?>,
             <?php echo round($lpm->countitem_persentase_mhsdsn($key->id_mhsdsn, $prodi, $ta, '5'), 2); ?>
         )[3] + '%';
+
+
+
+   // Gunakan data yang dikirim dari PHP ke JavaScript
+    var adjustedPercentages = adjustPercentages(ts, ks, s, ss);
+
+    // Update nilai persentase di HTML
+    document.getElementById('data-ts-<?php echo $key->id_mhsdsn ?>').innerText = adjustedPercentages[0] + '%';
+    document.getElementById('data-ks-<?php echo $key->id_mhsdsn ?>').innerText = adjustedPercentages[1] + '%';
+    document.getElementById('data-s-<?php echo $key->id_mhsdsn ?>').innerText = adjustedPercentages[2] + '%';
+    document.getElementById('data-ss-<?php echo $key->id_mhsdsn ?>').innerText = adjustedPercentages[3] + '%';
+
+    // Update donut chart dengan persentase yang sudah disesuaikan
+    var donutData<?php echo $key->id_mhsdsn ?> = [
+        { label: 'K', data: adjustedPercentages[0], color: '#ffad5f' },
+        { label: 'C', data: adjustedPercentages[1], color: '#ffd966' },
+        { label: 'B', data: adjustedPercentages[2], color: '#9af073' },
+        { label: 'SB', data: adjustedPercentages[3], color: '#89ddfc' }
+    ];
+
+    $.plot('#donut-chart-<?php echo $key->id_mhsdsn ?>', donutData<?php echo $key->id_mhsdsn; ?>, {
+        series: {
+            pie: {
+                show: true,
+                radius: 1,
+                label: {
+                    show: true,
+                    radius: 3/4,
+                    formatter: labelFormatter,
+                    background: {
+                        opacity: 0.5
+                    }
+                }
+            }
+        },
+        legend: {
+            show: false
+        }
+    });
 
 
     <?php } ?>
