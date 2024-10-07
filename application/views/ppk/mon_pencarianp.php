@@ -286,7 +286,12 @@ foreach ($results as $k) {
                   </div>
                   <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                      <button type="submit" class="btn btn-danger">File Sign On</button>
+                       <?php if ($c->upload_file_signon) { ?>
+                        <button class="btn btn-success view-file-button" data-filename="<?php echo $c->upload_file_signon; ?>">Lihat file Sign On</button>
+                      <?php } else { ?>
+                          <!-- Tampilkan pesan jika file tidak ada -->
+                          File tidak tersedia
+                      <?php } ?>
                     </div>
                   </div>
                 </form>
