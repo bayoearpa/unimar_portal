@@ -16,14 +16,15 @@ foreach ($results as $k) {
                   <tr>
                     <td>NIM</td>
                     <td>:</td>
-                    <td><?php echo $k->nim ?></td>
+                    <td><b><?php echo $k->nim ?></b></td>
                   </tr>
                   <tr>
-                    <td>NIM</td>
+                    <td>Nama</td>
                     <td>:</td>
-                    <td><?php echo $k->nama ?></td>
+                    <td><b><?php echo $k->nama ?></b></td>
                   </tr>
-                </table>      
+                </table> 
+                <br>     
                 <!-- The timeline -->
                 <ul class="timeline timeline-inverse">
                   <!-- timeline time label -->
