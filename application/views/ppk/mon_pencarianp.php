@@ -313,7 +313,7 @@ foreach ($results as $k) {
                 </thead>
                 <tbody>
                 <tr>
-                  <td>Laporan Ke.1<td>
+                  <td>Laporan Ke.1</td>
                   <td>File</td>
                   <td>11-7-2014</td>
                   <td><span class="label label-success">Approved</span></td>
