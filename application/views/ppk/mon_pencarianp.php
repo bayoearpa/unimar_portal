@@ -302,13 +302,16 @@ foreach ($results as $k) {
 
                 <div class="box-body table-responsive no-padding">
               <table class="table table-hover">
-                <tbody><tr>
+                <thead>
+                <tr>
                   <th>Laporan Ke</th>
                   <th>File</th>
                   <th>Tanggal Upload</th>
                   <th>Status</th>
                   <th>Keterangan</th>
                 </tr>
+                </thead>
+                <tbody>
                 <tr>
                   <td>Laporan Ke.1<td>
                   <td>File</td>
