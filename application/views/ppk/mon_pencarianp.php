@@ -320,77 +320,77 @@ foreach ($results as $k) {
                   <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
                 </tr>
                 <tr>
-                  <td>Laporan Ke.2<td>
+                  <td>Laporan Ke.2</td>
                   <td>File</td>
                   <td>11-7-2014</td>
                   <td><span class="label label-success">Approved</span></td>
                   <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
                 </tr>
                 <tr>
-                  <td>Laporan Ke.3<td>
+                  <td>Laporan Ke.3</td>
                   <td>File</td>
                   <td>11-7-2014</td>
                   <td><span class="label label-success">Approved</span></td>
                   <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
                 </tr>
                 <tr>
-                  <td>Laporan Ke.4<td>
+                  <td>Laporan Ke.4</td>
                   <td>File</td>
                   <td>11-7-2014</td>
                   <td><span class="label label-success">Approved</span></td>
                   <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
                 </tr>
                 <tr>
-                  <td>Laporan Ke.5<td>
+                  <td>Laporan Ke.5</td>
                   <td>File</td>
                   <td>11-7-2014</td>
                   <td><span class="label label-success">Approved</span></td>
                   <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
                 </tr>
                 <tr>
-                  <td>Laporan Ke.6<td>
+                  <td>Laporan Ke.6</td>
                   <td>File</td>
                   <td>11-7-2014</td>
                   <td><span class="label label-success">Approved</span></td>
                   <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
                 </tr>
                 <tr>
-                  <td>Laporan Ke.7<td>
+                  <td>Laporan Ke.7</td>
                   <td>File</td>
                   <td>11-7-2014</td>
                   <td><span class="label label-success">Approved</span></td>
                   <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
                 </tr>
                 <tr>
-                  <td>Laporan Ke.8<td>
+                  <td>Laporan Ke.8</td>
                   <td>File</td>
                   <td>11-7-2014</td>
                   <td><span class="label label-success">Approved</span></td>
                   <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
                 </tr>
                 <tr>
-                  <td>Laporan Ke.9<td>
+                  <td>Laporan Ke.9</td>
                   <td>File</td>
                   <td>11-7-2014</td>
                   <td><span class="label label-success">Approved</span></td>
                   <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
                 </tr>
                 <tr>
-                  <td>Laporan Ke.10<td>
+                  <td>Laporan Ke.10</td>
                   <td>File</td>
                   <td>11-7-2014</td>
                   <td><span class="label label-success">Approved</span></td>
                   <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
                 </tr>
                 <tr>
-                  <td>Laporan Ke.11<td>
+                  <td>Laporan Ke.11</td>
                   <td>File</td>
                   <td>11-7-2014</td>
                   <td><span class="label label-success">Approved</span></td>
                   <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
                 </tr>
                 <tr>
-                  <td>Laporan Ke.12<td>
+                  <td>Laporan Ke.12</td>
                   <td>File</td>
                   <td>11-7-2014</td>
                   <td><span class="label label-success">Approved</span></td>
