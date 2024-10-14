@@ -61,8 +61,8 @@
              <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kuesioner<span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="<?php echo base_url() ?>kues_mhdsn">Mahatar ke Dosen</a></li>
-                <li><a href="<?php echo base_url() ?>kues_mhlem">Mahatar ke Lemdik</a></li>
+               <!--  <li><a href="<?php //echo base_url() ?>kues_mhdsn">Mahatar ke Dosen</a></li>
+                <li><a href="<?php //echo base_url() ?>kues_mhlem">Mahatar ke Lemdik</a></li> -->
                 <li><a href="<?php echo base_url() ?>kues_tenlem">Tendik ke Lemdik</a></li>
                 <li><a href="<?php echo base_url() ?>kues_dsnlem">Dosen ke Lemdik</a></li>
               </ul>
