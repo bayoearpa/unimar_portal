@@ -49,19 +49,19 @@
                         <th>Chart</th>
                         <th style="width: 40px">Persentase</th>
                       </tr>
-                      <tr>
+                    <!--   <tr>
                         <td>1.</td>
                         <td>Sangat Baik</td>
                         <td>
                           <div class="progress progress-xs">
-                            <div class="progress-bar progress-bar-success" style="width: <?php echo round($ss_a,2) ?>%"></div>
+                            <div class="progress-bar progress-bar-success" style="width: <?php //echo round($ss_a,2) ?>%"></div>
                           </div>
                         </td>
-                        <td><span class="badge bg-red"><?php echo round($ss_a,2) ?>%</span></td>
-                      </tr>
+                        <td><span class="badge bg-red"><?php //echo round($ss_a,2) ?>%</span></td>
+                      </tr> -->
                       <tr>
-                        <td>2.</td>
-                        <td>Baik</td>
+                        <td>1.</td>
+                        <td>Sangat Baik</td>
                         <td>
                           <div class="progress progress-xs">
                             <div class="progress-bar progress-bar-primary" style="width: <?php echo round($s_a,2) ?>%"></div>
@@ -70,8 +70,8 @@
                         <td><span class="badge bg-yellow"><?php echo round($s_a,2) ?>%</span></td>
                       </tr>
                       <tr>
-                        <td>3.</td>
-                        <td>Cukup</td>
+                        <td>2.</td>
+                        <td>Baik</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
                             <div class="progress-bar progress-bar-yellow" style="width: <?php echo round($ks_a,2) ?>%"></div>
@@ -80,8 +80,8 @@
                         <td><span class="badge bg-light-blue"><?php echo round($ks_a,2) ?>%</span></td>
                       </tr>
                       <tr>
-                        <td>4.</td>
-                        <td>Kurang Baik</td>
+                        <td>3.</td>
+                        <td>Cukup</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
                             <div class="progress-bar progress-bar-danger" style="width: <?php echo round($ts_a,2) ?>%"></div>
@@ -90,8 +90,8 @@
                         <td><span class="badge bg-green"><?php echo round($ts_a,2) ?>%</span></td>
                       </tr>
                       <tr>
-                        <td>5.</td>
-                        <td>Sangat Tidak Baik</td>
+                        <td>4.</td>
+                        <td>Kurang</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
                             <div class="progress-bar progress-bar-danger" style="width: <?php echo round($sts_a,2) ?>%"></div>
@@ -118,19 +118,19 @@
                         <th>Chart</th>
                         <th style="width: 40px">Persentase</th>
                       </tr>
-                      <tr>
+                      <!-- <tr>
                         <td>1.</td>
                         <td>Sangat Baik</td>
                         <td>
                           <div class="progress progress-xs">
-                            <div class="progress-bar progress-bar-success" style="width: <?php echo round($ss_b,2) ?>%"></div>
+                            <div class="progress-bar progress-bar-success" style="width: <?php //echo round($ss_b,2) ?>%"></div>
                           </div>
                         </td>
-                        <td><span class="badge bg-red"><?php echo round($ss_b,2) ?>%</span></td>
-                      </tr>
+                        <td><span class="badge bg-red"><?php //echo round($ss_b,2) ?>%</span></td>
+                      </tr> -->
                       <tr>
-                        <td>2.</td>
-                        <td>Baik</td>
+                        <td>1.</td>
+                        <td>Sangat Baik</td>
                         <td>
                           <div class="progress progress-xs">
                             <div class="progress-bar progress-bar-primary" style="width: <?php echo round($s_b,2) ?>%"></div>
@@ -139,8 +139,8 @@
                         <td><span class="badge bg-yellow"><?php echo round($s_b,2) ?>%</span></td>
                       </tr>
                       <tr>
-                        <td>3.</td>
-                        <td>Cukup</td>
+                        <td>2.</td>
+                        <td>Baik</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
                             <div class="progress-bar progress-bar-yellow" style="width: <?php echo round($ks_b,2) ?>%"></div>
@@ -149,8 +149,8 @@
                         <td><span class="badge bg-light-blue"><?php echo round($ks_b,2) ?>%</span></td>
                       </tr>
                       <tr>
-                        <td>4.</td>
-                        <td>Kurang Baik</td>
+                        <td>3.</td>
+                        <td>Cukup</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
                             <div class="progress-bar progress-bar-danger" style="width: <?php echo round($ts_b,2) ?>%"></div>
@@ -159,8 +159,8 @@
                         <td><span class="badge bg-green"><?php echo round($ts_b,2) ?>%</span></td>
                       </tr>
                       <tr>
-                        <td>5.</td>
-                        <td>Sangat Tidak Baik</td>
+                        <td>4.</td>
+                        <td>Kurang</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
                             <div class="progress-bar progress-bar-danger" style="width: <?php echo round($sts_b,2) ?>%"></div>
@@ -187,19 +187,19 @@
                         <th>Chart</th>
                         <th style="width: 40px">Persentase</th>
                       </tr>
-                      <tr>
+                     <!--  <tr>
                         <td>1.</td>
                         <td>Sangat Baik</td>
                         <td>
                           <div class="progress progress-xs">
-                            <div class="progress-bar progress-bar-success" style="width: <?php echo round($ss_c,2) ?>%"></div>
+                            <div class="progress-bar progress-bar-success" style="width: <?php //echo round($ss_c,2) ?>%"></div>
                           </div>
                         </td>
-                        <td><span class="badge bg-red"><?php echo round($ss_c,2) ?>%</span></td>
-                      </tr>
+                        <td><span class="badge bg-red"><?php //echo round($ss_c,2) ?>%</span></td>
+                      </tr> -->
                       <tr>
-                        <td>2.</td>
-                        <td>Baik</td>
+                        <td>1.</td>
+                        <td>Sangat Baik</td>
                         <td>
                           <div class="progress progress-xs">
                             <div class="progress-bar progress-bar-primary" style="width: <?php echo round($s_c,2) ?>%"></div>
@@ -208,8 +208,8 @@
                         <td><span class="badge bg-yellow"><?php echo round($s_c,2) ?>%</span></td>
                       </tr>
                       <tr>
-                        <td>3.</td>
-                        <td>Cukup</td>
+                        <td>2.</td>
+                        <td>Baik</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
                             <div class="progress-bar progress-bar-yellow" style="width: <?php echo round($ks_c,2) ?>%"></div>
@@ -218,8 +218,8 @@
                         <td><span class="badge bg-light-blue"><?php echo round($ks_c,2) ?>%</span></td>
                       </tr>
                       <tr>
-                        <td>4.</td>
-                        <td>Kurang Baik</td>
+                        <td>3.</td>
+                        <td>Cukup</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
                             <div class="progress-bar progress-bar-danger" style="width: <?php echo round($ts_c,2) ?>%"></div>
@@ -228,8 +228,8 @@
                         <td><span class="badge bg-green"><?php echo round($ts_c,2) ?>%</span></td>
                       </tr>
                       <tr>
-                        <td>5.</td>
-                        <td>Sangat Tidak Baik</td>
+                        <td>4.</td>
+                        <td>Kurang</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
                             <div class="progress-bar progress-bar-danger" style="width: <?php echo round($sts_c,2) ?>%"></div>
@@ -256,19 +256,19 @@
                         <th>Chart</th>
                         <th style="width: 40px">Persentase</th>
                       </tr>
-                      <tr>
+                     <!--  <tr>
                         <td>1.</td>
                         <td>Sangat Baik</td>
                         <td>
                           <div class="progress progress-xs">
-                            <div class="progress-bar progress-bar-success" style="width: <?php echo round($ss_d,2) ?>%"></div>
+                            <div class="progress-bar progress-bar-success" style="width: <?php //echo round($ss_d,2) ?>%"></div>
                           </div>
                         </td>
-                        <td><span class="badge bg-red"><?php echo round($ss_d,2) ?>%</span></td>
-                      </tr>
+                        <td><span class="badge bg-red"><?php //echo round($ss_d,2) ?>%</span></td>
+                      </tr> -->
                       <tr>
-                        <td>2.</td>
-                        <td>Baik</td>
+                        <td>1.</td>
+                        <td>Sangat Baik</td>
                         <td>
                           <div class="progress progress-xs">
                             <div class="progress-bar progress-bar-primary" style="width: <?php echo round($s_d,2) ?>%"></div>
@@ -277,8 +277,8 @@
                         <td><span class="badge bg-yellow"><?php echo round($s_d,2) ?>%</span></td>
                       </tr>
                       <tr>
-                        <td>3.</td>
-                        <td>Cukup</td>
+                        <td>2.</td>
+                        <td>Baik</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
                             <div class="progress-bar progress-bar-yellow" style="width: <?php echo round($ks_d,2) ?>%"></div>
@@ -287,8 +287,8 @@
                         <td><span class="badge bg-light-blue"><?php echo round($ks_d,2) ?>%</span></td>
                       </tr>
                       <tr>
-                        <td>4.</td>
-                        <td>Kurang Baik</td>
+                        <td>3.</td>
+                        <td>Cukup<td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
                             <div class="progress-bar progress-bar-danger" style="width: <?php echo round($ts_d,2) ?>%"></div>
@@ -297,8 +297,8 @@
                         <td><span class="badge bg-green"><?php echo round($ts_d,2) ?>%</span></td>
                       </tr>
                       <tr>
-                        <td>5.</td>
-                        <td>Sangat Tidak Baik</td>
+                        <td>4.</td>
+                        <td>Kurang</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
                             <div class="progress-bar progress-bar-danger" style="width: <?php echo round($sts_d,2) ?>%"></div>
@@ -325,19 +325,19 @@
                         <th>Chart</th>
                         <th style="width: 40px">Persentase</th>
                       </tr>
-                      <tr>
+                      <!-- <tr>
                         <td>1.</td>
                         <td>Sangat Baik</td>
                         <td>
                           <div class="progress progress-xs">
-                            <div class="progress-bar progress-bar-success" style="width: <?php echo round($ss_e,2) ?>%"></div>
+                            <div class="progress-bar progress-bar-success" style="width: <?php //echo round($ss_e,2) ?>%"></div>
                           </div>
                         </td>
-                        <td><span class="badge bg-red"><?php echo round($ss_e,2) ?>%</span></td>
-                      </tr>
+                        <td><span class="badge bg-red"><?php //echo round($ss_e,2) ?>%</span></td>
+                      </tr> -->
                       <tr>
-                        <td>2.</td>
-                        <td>Baik</td>
+                        <td>1.</td>
+                        <td>Sangat Baik</td>
                         <td>
                           <div class="progress progress-xs">
                             <div class="progress-bar progress-bar-primary" style="width: <?php echo round($s_e,2) ?>%"></div>
@@ -346,8 +346,8 @@
                         <td><span class="badge bg-yellow"><?php echo round($s_e,2) ?>%</span></td>
                       </tr>
                       <tr>
-                        <td>3.</td>
-                        <td>Cukup</td>
+                        <td>2.</td>
+                        <td>Baik</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
                             <div class="progress-bar progress-bar-yellow" style="width: <?php echo round($ks_e,2) ?>%"></div>
@@ -356,8 +356,8 @@
                         <td><span class="badge bg-light-blue"><?php echo round($ks_e,2) ?>%</span></td>
                       </tr>
                       <tr>
-                        <td>4.</td>
-                        <td>Kurang Baik</td>
+                        <td>3.</td>
+                        <td>Cukup</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
                             <div class="progress-bar progress-bar-danger" style="width: <?php echo round($ts_e,2) ?>%"></div>
@@ -366,8 +366,8 @@
                         <td><span class="badge bg-green"><?php echo round($ts_e,2) ?>%</span></td>
                       </tr>
                       <tr>
-                        <td>5.</td>
-                        <td>Sangat Tidak Baik</td>
+                        <td>4.</td>
+                        <td>Kurang</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
                             <div class="progress-bar progress-bar-danger" style="width: <?php echo round($sts_e,2) ?>%"></div>
@@ -394,19 +394,19 @@
                         <th>Chart</th>
                         <th style="width: 40px">Persentase</th>
                       </tr>
-                      <tr>
+                      <!-- <tr>
                         <td>1.</td>
                         <td>Sangat Baik</td>
                         <td>
                           <div class="progress progress-xs">
-                            <div class="progress-bar progress-bar-success" style="width: <?php echo round($ss_f,2) ?>%"></div>
+                            <div class="progress-bar progress-bar-success" style="width: <?php //echo round($ss_f,2) ?>%"></div>
                           </div>
                         </td>
-                        <td><span class="badge bg-red"><?php echo round($ss_f,2) ?>%</span></td>
-                      </tr>
+                        <td><span class="badge bg-red"><?php //echo round($ss_f,2) ?>%</span></td>
+                      </tr> -->
                       <tr>
-                        <td>2.</td>
-                        <td>Baik</td>
+                        <td>1.</td>
+                        <td>Sangat Baik</td>
                         <td>
                           <div class="progress progress-xs">
                             <div class="progress-bar progress-bar-primary" style="width: <?php echo round($s_f,2) ?>%"></div>
@@ -415,8 +415,8 @@
                         <td><span class="badge bg-yellow"><?php echo round($s_f,2) ?>%</span></td>
                       </tr>
                       <tr>
-                        <td>3.</td>
-                        <td>Cukup</td>
+                        <td>2.</td>
+                        <td>Baik</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
                             <div class="progress-bar progress-bar-yellow" style="width: <?php echo round($ks_f,2) ?>%"></div>
@@ -425,8 +425,8 @@
                         <td><span class="badge bg-light-blue"><?php echo round($ks_f,2) ?>%</span></td>
                       </tr>
                       <tr>
-                        <td>4.</td>
-                        <td>Kurang Baik</td>
+                        <td>3.</td>
+                        <td>Cukup</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
                             <div class="progress-bar progress-bar-danger" style="width: <?php echo round($ts_f,2) ?>%"></div>
@@ -435,8 +435,8 @@
                         <td><span class="badge bg-green"><?php echo round($ts_f,2) ?>%</span></td>
                       </tr>
                       <tr>
-                        <td>5.</td>
-                        <td>Sangat Tidak Baik</td>
+                        <td>4.</td>
+                        <td>Kurang</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
                             <div class="progress-bar progress-bar-danger" style="width: <?php echo round($sts_f,2) ?>%"></div>
@@ -463,19 +463,19 @@
                         <th>Chart</th>
                         <th style="width: 40px">Persentase</th>
                       </tr>
-                      <tr>
+                     <!--  <tr>
                         <td>1.</td>
                         <td>Sangat Baik</td>
                         <td>
                           <div class="progress progress-xs">
-                            <div class="progress-bar progress-bar-success" style="width: <?php echo round($ss_g,2) ?>%"></div>
+                            <div class="progress-bar progress-bar-success" style="width: <?php //echo round($ss_g,2) ?>%"></div>
                           </div>
                         </td>
-                        <td><span class="badge bg-red"><?php echo round($ss_g,2) ?>%</span></td>
-                      </tr>
+                        <td><span class="badge bg-red"><?php //echo round($ss_g,2) ?>%</span></td>
+                      </tr> -->
                       <tr>
-                        <td>2.</td>
-                        <td>Baik</td>
+                        <td>1.</td>
+                        <td>Sangat Baik</td>
                         <td>
                           <div class="progress progress-xs">
                             <div class="progress-bar progress-bar-primary" style="width: <?php echo round($s_g,2) ?>%"></div>
@@ -484,8 +484,8 @@
                         <td><span class="badge bg-yellow"><?php echo round($s_g,2) ?>%</span></td>
                       </tr>
                       <tr>
-                        <td>3.</td>
-                        <td>Cukup</td>
+                        <td>2.</td>
+                        <td>Baik</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
                             <div class="progress-bar progress-bar-yellow" style="width: <?php echo round($ks_g,2) ?>%"></div>
@@ -494,8 +494,8 @@
                         <td><span class="badge bg-light-blue"><?php echo round($ks_g,2) ?>%</span></td>
                       </tr>
                       <tr>
-                        <td>4.</td>
-                        <td>Kurang Baik</td>
+                        <td>3.</td>
+                        <td>Cukup</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
                             <div class="progress-bar progress-bar-danger" style="width: <?php echo round($ts_g,2) ?>%"></div>
@@ -504,8 +504,8 @@
                         <td><span class="badge bg-green"><?php echo round($ts_g,2) ?>%</span></td>
                       </tr>
                       <tr>
-                        <td>5.</td>
-                        <td>Sangat Tidak Baik</td>
+                        <td>4.</td>
+                        <td>Kurang</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
                             <div class="progress-bar progress-bar-danger" style="width: <?php echo round($sts_g,2) ?>%"></div>
@@ -532,19 +532,19 @@
                         <th>Chart</th>
                         <th style="width: 40px">Persentase</th>
                       </tr>
-                      <tr>
+                      <!-- <tr>
                         <td>1.</td>
                         <td>Sangat Baik</td>
                         <td>
                           <div class="progress progress-xs">
-                            <div class="progress-bar progress-bar-success" style="width: <?php echo round($ss_h,2) ?>%"></div>
+                            <div class="progress-bar progress-bar-success" style="width: <?php //echo round($ss_h,2) ?>%"></div>
                           </div>
                         </td>
-                        <td><span class="badge bg-red"><?php echo round($ss_h,2) ?>%</span></td>
-                      </tr>
+                        <td><span class="badge bg-red"><?php //echo round($ss_h,2) ?>%</span></td>
+                      </tr> -->
                       <tr>
-                        <td>2.</td>
-                        <td>Baik</td>
+                        <td>1.</td>
+                        <td>Sangat Baik</td>
                         <td>
                           <div class="progress progress-xs">
                             <div class="progress-bar progress-bar-primary" style="width: <?php echo round($s_h,2) ?>%"></div>
@@ -553,8 +553,8 @@
                         <td><span class="badge bg-yellow"><?php echo round($s_h,2) ?>%</span></td>
                       </tr>
                       <tr>
-                        <td>3.</td>
-                        <td>Cukup</td>
+                        <td>2.</td>
+                        <td>Baik</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
                             <div class="progress-bar progress-bar-yellow" style="width: <?php echo round($ks_h,2) ?>%"></div>
@@ -563,8 +563,8 @@
                         <td><span class="badge bg-light-blue"><?php echo round($ks_h,2) ?>%</span></td>
                       </tr>
                       <tr>
-                        <td>4.</td>
-                        <td>Kurang Baik</td>
+                        <td>3.</td>
+                        <td>Cukup</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
                             <div class="progress-bar progress-bar-danger" style="width: <?php echo round($ts_h,2) ?>%"></div>
@@ -573,8 +573,8 @@
                         <td><span class="badge bg-green"><?php echo round($ts_h,2) ?>%</span></td>
                       </tr>
                       <tr>
-                        <td>5.</td>
-                        <td>Sangat Tidak Baik</td>
+                        <td>4.</td>
+                        <td>Kurang</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
                             <div class="progress-bar progress-bar-danger" style="width: <?php echo round($sts_h,2) ?>%"></div>
@@ -601,19 +601,19 @@
                         <th>Chart</th>
                         <th style="width: 40px">Persentase</th>
                       </tr>
-                      <tr>
+                     <!--  <tr>
                         <td>1.</td>
                         <td>Sangat Baik</td>
                         <td>
                           <div class="progress progress-xs">
-                            <div class="progress-bar progress-bar-success" style="width: <?php echo round($ss_i,2) ?>%"></div>
+                            <div class="progress-bar progress-bar-success" style="width: <?php //echo round($ss_i,2) ?>%"></div>
                           </div>
                         </td>
-                        <td><span class="badge bg-red"><?php echo round($ss_i,2) ?>%</span></td>
-                      </tr>
+                        <td><span class="badge bg-red"><?php //echo round($ss_i,2) ?>%</span></td>
+                      </tr> -->
                       <tr>
-                        <td>2.</td>
-                        <td>Baik</td>
+                        <td>1.</td>
+                        <td>Sangat Baik</td>
                         <td>
                           <div class="progress progress-xs">
                             <div class="progress-bar progress-bar-primary" style="width: <?php echo round($s_i,2) ?>%"></div>
@@ -622,8 +622,8 @@
                         <td><span class="badge bg-yellow"><?php echo round($s_i,2) ?>%</span></td>
                       </tr>
                       <tr>
-                        <td>3.</td>
-                        <td>Cukup</td>
+                        <td>2.</td>
+                        <td>Baik</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
                             <div class="progress-bar progress-bar-yellow" style="width: <?php echo round($ks_i,2) ?>%"></div>
@@ -632,8 +632,8 @@
                         <td><span class="badge bg-light-blue"><?php echo round($ks_i,2) ?>%</span></td>
                       </tr>
                       <tr>
-                        <td>4.</td>
-                        <td>Kurang Baik</td>
+                        <td>3.</td>
+                        <td>Cukup</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
                             <div class="progress-bar progress-bar-danger" style="width: <?php echo round($ts_i,2) ?>%"></div>
@@ -642,8 +642,8 @@
                         <td><span class="badge bg-green"><?php echo round($ts_i,2) ?>%</span></td>
                       </tr>
                       <tr>
-                        <td>5.</td>
-                        <td>Sangat Tidak Baik</td>
+                        <td>4.</td>
+                        <td>Kurang</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
                             <div class="progress-bar progress-bar-danger" style="width: <?php echo round($sts_i,2) ?>%"></div>
@@ -670,19 +670,19 @@
                         <th>Chart</th>
                         <th style="width: 40px">Persentase</th>
                       </tr>
-                      <tr>
+                      <!-- <tr>
                         <td>1.</td>
                         <td>Sangat Baik</td>
                         <td>
                           <div class="progress progress-xs">
-                            <div class="progress-bar progress-bar-success" style="width: <?php echo round($ss_j,2) ?>%"></div>
+                            <div class="progress-bar progress-bar-success" style="width: <?php //echo round($ss_j,2) ?>%"></div>
                           </div>
                         </td>
-                        <td><span class="badge bg-red"><?php echo round($ss_j,2) ?>%</span></td>
-                      </tr>
+                        <td><span class="badge bg-red"><?php //echo round($ss_j,2) ?>%</span></td>
+                      </tr> -->
                       <tr>
-                        <td>2.</td>
-                        <td>Baik</td>
+                        <td>1.</td>
+                        <td>Sangat Baik</td>
                         <td>
                           <div class="progress progress-xs">
                             <div class="progress-bar progress-bar-primary" style="width: <?php echo round($s_j,2) ?>%"></div>
@@ -691,8 +691,8 @@
                         <td><span class="badge bg-yellow"><?php echo round($s_j,2) ?>%</span></td>
                       </tr>
                       <tr>
-                        <td>3.</td>
-                        <td>Cukup</td>
+                        <td>2.</td>
+                        <td>Baik</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
                             <div class="progress-bar progress-bar-yellow" style="width: <?php echo round($ks_j,2) ?>%"></div>
@@ -701,8 +701,8 @@
                         <td><span class="badge bg-light-blue"><?php echo round($ks_j,2) ?>%</span></td>
                       </tr>
                       <tr>
-                        <td>4.</td>
-                        <td>Kurang Baik</td>
+                        <td>3.</td>
+                        <td>Cukup</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
                             <div class="progress-bar progress-bar-danger" style="width: <?php echo round($ts_j,2) ?>%"></div>
@@ -711,8 +711,8 @@
                         <td><span class="badge bg-green"><?php echo round($ts_j,2) ?>%</span></td>
                       </tr>
                       <tr>
-                        <td>5.</td>
-                        <td>Sangat Tidak Baik</td>
+                        <td>4.</td>
+                        <td>Kurang</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
                             <div class="progress-bar progress-bar-danger" style="width: <?php echo round($sts_j,2) ?>%"></div>
@@ -739,19 +739,19 @@
                         <th>Chart</th>
                         <th style="width: 40px">Persentase</th>
                       </tr>
-                      <tr>
+                     <!--  <tr>
                         <td>1.</td>
                         <td>Sangat Baik</td>
                         <td>
                           <div class="progress progress-xs">
-                            <div class="progress-bar progress-bar-success" style="width: <?php echo round($ss_k,2) ?>%"></div>
+                            <div class="progress-bar progress-bar-success" style="width: <?php //echo round($ss_k,2) ?>%"></div>
                           </div>
                         </td>
-                        <td><span class="badge bg-red"><?php echo round($ss_k,2) ?>%</span></td>
-                      </tr>
+                        <td><span class="badge bg-red"><?php //echo round($ss_k,2) ?>%</span></td>
+                      </tr> -->
                       <tr>
-                        <td>2.</td>
-                        <td>Baik</td>
+                        <td>1.</td>
+                        <td>Sangat Baik</td>
                         <td>
                           <div class="progress progress-xs">
                             <div class="progress-bar progress-bar-primary" style="width: <?php echo round($s_k,2) ?>%"></div>
@@ -760,8 +760,8 @@
                         <td><span class="badge bg-yellow"><?php echo round($s_k,2) ?>%</span></td>
                       </tr>
                       <tr>
-                        <td>3.</td>
-                        <td>Cukup</td>
+                        <td>2.</td>
+                        <td>Baik</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
                             <div class="progress-bar progress-bar-yellow" style="width: <?php echo round($ks_k,2) ?>%"></div>
@@ -770,8 +770,8 @@
                         <td><span class="badge bg-light-blue"><?php echo round($ks_k,2) ?>%</span></td>
                       </tr>
                       <tr>
-                        <td>4.</td>
-                        <td>Kurang Baik</td>
+                        <td>3.</td>
+                        <td>Cukup</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
                             <div class="progress-bar progress-bar-danger" style="width: <?php echo round($ts_k,2) ?>%"></div>
@@ -780,8 +780,8 @@
                         <td><span class="badge bg-green"><?php echo round($ts_k,2) ?>%</span></td>
                       </tr>
                       <tr>
-                        <td>5.</td>
-                        <td>Sangat Tidak Baik</td>
+                        <td>4.</td>
+                        <td>Kurang</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
                             <div class="progress-bar progress-bar-danger" style="width: <?php echo round($sts_k,2) ?>%"></div>
@@ -808,19 +808,19 @@
                         <th>Chart</th>
                         <th style="width: 40px">Persentase</th>
                       </tr>
-                      <tr>
+                     <!--  <tr>
                         <td>1.</td>
                         <td>Sangat Baik</td>
                         <td>
                           <div class="progress progress-xs">
-                            <div class="progress-bar progress-bar-success" style="width: <?php echo round($ss_l,2) ?>%"></div>
+                            <div class="progress-bar progress-bar-success" style="width: <?php //echo round($ss_l,2) ?>%"></div>
                           </div>
                         </td>
-                        <td><span class="badge bg-red"><?php echo round($ss_l,2) ?>%</span></td>
-                      </tr>
+                        <td><span class="badge bg-red"><?php //echo round($ss_l,2) ?>%</span></td>
+                      </tr> -->
                       <tr>
-                        <td>2.</td>
-                        <td>Baik</td>
+                        <td>1.</td>
+                        <td>Sangat Baik</td>
                         <td>
                           <div class="progress progress-xs">
                             <div class="progress-bar progress-bar-primary" style="width: <?php echo round($s_l,2) ?>%"></div>
@@ -829,8 +829,8 @@
                         <td><span class="badge bg-yellow"><?php echo round($s_l,2) ?>%</span></td>
                       </tr>
                       <tr>
-                        <td>3.</td>
-                        <td>Cukup</td>
+                        <td>2.</td>
+                        <td>Baik</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
                             <div class="progress-bar progress-bar-yellow" style="width: <?php echo round($ks_l,2) ?>%"></div>
@@ -839,8 +839,8 @@
                         <td><span class="badge bg-light-blue"><?php echo round($ks_l,2) ?>%</span></td>
                       </tr>
                       <tr>
-                        <td>4.</td>
-                        <td>Kurang Baik</td>
+                        <td>3.</td>
+                        <td>Cukup</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
                             <div class="progress-bar progress-bar-danger" style="width: <?php echo round($ts_l,2) ?>%"></div>
@@ -849,8 +849,8 @@
                         <td><span class="badge bg-green"><?php echo round($ts_l,2) ?>%</span></td>
                       </tr>
                       <tr>
-                        <td>5.</td>
-                        <td>Sangat Tidak Baik</td>
+                        <td>4.</td>
+                        <td>Kurang</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
                             <div class="progress-bar progress-bar-danger" style="width: <?php echo round($sts_l,2) ?>%"></div>
@@ -877,19 +877,19 @@
                         <th>Chart</th>
                         <th style="width: 40px">Persentase</th>
                       </tr>
-                      <tr>
+                     <!--  <tr>
                         <td>1.</td>
                         <td>Sangat Baik</td>
                         <td>
                           <div class="progress progress-xs">
-                            <div class="progress-bar progress-bar-success" style="width: <?php echo round($ss_m,2) ?>%"></div>
+                            <div class="progress-bar progress-bar-success" style="width: <?php //echo round($ss_m,2) ?>%"></div>
                           </div>
                         </td>
-                        <td><span class="badge bg-red"><?php echo round($ss_m,2) ?>%</span></td>
-                      </tr>
+                        <td><span class="badge bg-red"><?php //echo round($ss_m,2) ?>%</span></td>
+                      </tr> -->
                       <tr>
-                        <td>2.</td>
-                        <td>Baik</td>
+                        <td>1.</td>
+                        <td>Sangat Baik</td>
                         <td>
                           <div class="progress progress-xs">
                             <div class="progress-bar progress-bar-primary" style="width: <?php echo round($s_m,2) ?>%"></div>
@@ -898,8 +898,8 @@
                         <td><span class="badge bg-yellow"><?php echo round($s_m,2) ?>%</span></td>
                       </tr>
                       <tr>
-                        <td>3.</td>
-                        <td>Cukup</td>
+                        <td>2.</td>
+                        <td>Baik</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
                             <div class="progress-bar progress-bar-yellow" style="width: <?php echo round($ks_m,2) ?>%"></div>
@@ -908,8 +908,8 @@
                         <td><span class="badge bg-light-blue"><?php echo round($ks_m,2) ?>%</span></td>
                       </tr>
                       <tr>
-                        <td>4.</td>
-                        <td>Kurang Baik</td>
+                        <td>3.</td>
+                        <td>Cukup</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
                             <div class="progress-bar progress-bar-danger" style="width: <?php echo round($ts_m,2) ?>%"></div>
@@ -918,8 +918,8 @@
                         <td><span class="badge bg-green"><?php echo round($ts_m,2) ?>%</span></td>
                       </tr>
                       <tr>
-                        <td>5.</td>
-                        <td>Sangat Tidak Baik</td>
+                        <td>4.</td>
+                        <td>Kurang</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
                             <div class="progress-bar progress-bar-danger" style="width: <?php echo round($sts_m,2) ?>%"></div>
@@ -946,19 +946,19 @@
                         <th>Chart</th>
                         <th style="width: 40px">Persentase</th>
                       </tr>
-                      <tr>
+                      <!-- <tr>
                         <td>1.</td>
                         <td>Sangat Baik</td>
                         <td>
                           <div class="progress progress-xs">
-                            <div class="progress-bar progress-bar-success" style="width: <?php echo round($ss_n,2) ?>%"></div>
+                            <div class="progress-bar progress-bar-success" style="width: <?php //echo round($ss_n,2) ?>%"></div>
                           </div>
                         </td>
-                        <td><span class="badge bg-red"><?php echo round($ss_n,2) ?>%</span></td>
-                      </tr>
+                        <td><span class="badge bg-red"><?php //echo round($ss_n,2) ?>%</span></td>
+                      </tr> -->
                       <tr>
-                        <td>2.</td>
-                        <td>Baik</td>
+                        <td>1.</td>
+                        <td>Sangat Baik</td>
                         <td>
                           <div class="progress progress-xs">
                             <div class="progress-bar progress-bar-primary" style="width: <?php echo round($s_n,2) ?>%"></div>
@@ -967,8 +967,8 @@
                         <td><span class="badge bg-yellow"><?php echo round($s_n,2) ?>%</span></td>
                       </tr>
                       <tr>
-                        <td>3.</td>
-                        <td>Cukup</td>
+                        <td>2.</td>
+                        <td>Baik</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
                             <div class="progress-bar progress-bar-yellow" style="width: <?php echo round($ks_n,2) ?>%"></div>
@@ -977,8 +977,8 @@
                         <td><span class="badge bg-light-blue"><?php echo round($ks_n,2) ?>%</span></td>
                       </tr>
                       <tr>
-                        <td>4.</td>
-                        <td>Kurang Baik</td>
+                        <td>3.</td>
+                        <td>Cukup</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
                             <div class="progress-bar progress-bar-danger" style="width: <?php echo round($ts_n,2) ?>%"></div>
@@ -987,8 +987,8 @@
                         <td><span class="badge bg-green"><?php echo round($ts_n,2) ?>%</span></td>
                       </tr>
                       <tr>
-                        <td>5.</td>
-                        <td>Sangat Tidak Baik</td>
+                        <td>4.</td>
+                        <td>Kurang</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
                             <div class="progress-bar progress-bar-danger" style="width: <?php echo round($sts_n,2) ?>%"></div>
@@ -1015,19 +1015,19 @@
                         <th>Chart</th>
                         <th style="width: 40px">Persentase</th>
                       </tr>
-                      <tr>
+                      <!-- <tr>
                         <td>1.</td>
                         <td>Sangat Baik</td>
                         <td>
                           <div class="progress progress-xs">
-                            <div class="progress-bar progress-bar-success" style="width: <?php echo round($ss_o,2) ?>%"></div>
+                            <div class="progress-bar progress-bar-success" style="width: <?php //echo round($ss_o,2) ?>%"></div>
                           </div>
                         </td>
-                        <td><span class="badge bg-red"><?php echo round($ss_o,2) ?>%</span></td>
-                      </tr>
+                        <td><span class="badge bg-red"><?php //echo round($ss_o,2) ?>%</span></td>
+                      </tr> -->
                       <tr>
-                        <td>2.</td>
-                        <td>Baik</td>
+                        <td>1.</td>
+                        <td>Sangat Baik</td>
                         <td>
                           <div class="progress progress-xs">
                             <div class="progress-bar progress-bar-primary" style="width: <?php echo round($s_o,2) ?>%"></div>
@@ -1036,8 +1036,8 @@
                         <td><span class="badge bg-yellow"><?php echo round($s_o,2) ?>%</span></td>
                       </tr>
                       <tr>
-                        <td>3.</td>
-                        <td>Cukup</td>
+                        <td>2.</td>
+                        <td>Baik</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
                             <div class="progress-bar progress-bar-yellow" style="width: <?php echo round($ks_o,2) ?>%"></div>
@@ -1046,8 +1046,8 @@
                         <td><span class="badge bg-light-blue"><?php echo round($ks_o,2) ?>%</span></td>
                       </tr>
                       <tr>
-                        <td>4.</td>
-                        <td>Kurang Baik</td>
+                        <td>3.</td>
+                        <td>Cukup</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
                             <div class="progress-bar progress-bar-danger" style="width: <?php echo round($ts_o,2) ?>%"></div>
@@ -1056,8 +1056,8 @@
                         <td><span class="badge bg-green"><?php echo round($ts_o,2) ?>%</span></td>
                       </tr>
                       <tr>
-                        <td>5.</td>
-                        <td>Sangat Tidak Baik</td>
+                        <td>4.</td>
+                        <td>Kurang</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
                             <div class="progress-bar progress-bar-danger" style="width: <?php echo round($sts_o,2) ?>%"></div>
