@@ -213,8 +213,8 @@
                     </span>
                   </a>
                   <ul class="treeview-menu">
-                    <li><a href="<?php echo base_url() ?>lpm/kues_mhslem_rekap"><i class="fa fa-circle-o"></i> Rekapitulasi</a></li>
-                     <li><a href="<?php echo base_url() ?>lpm/kues_mhslem_rekap24"><i class="fa fa-circle-o"></i> Rekapitulasi24</a></li>
+                   <!--  <li><a href="<?php //echo base_url() ?>lpm/kues_mhslem_rekap"><i class="fa fa-circle-o"></i> Rekapitulasi</a></li> -->
+                     <li><a href="<?php echo base_url() ?>lpm/kues_mhslem_rekap24"><i class="fa fa-circle-o"></i> Rekapitulasi</a></li>
                     <li><a href="<?php echo base_url() ?>lpm/kues_mhslem_update"><i class="fa fa-circle-o"></i> Update data</a></li>
                     <!-- <li><a href="#"><i class="fa fa-circle-o"></i> Selesai</a></li> -->
                   </ul>
@@ -226,8 +226,8 @@
                     </span>
                   </a>
                   <ul class="treeview-menu">
-                    <li><a href="<?php echo base_url() ?>lpm/kues_mhslem_rekap"><i class="fa fa-circle-o"></i> Rekapitulasi</a></li>
-                    <li><a href="<?php echo base_url() ?>lpm/kues_mhslem_update"><i class="fa fa-circle-o"></i> Update data</a></li>
+                    <li><a href="<?php echo base_url() ?>lpm/kues_dsnlmdk_rekap"><i class="fa fa-circle-o"></i> Rekapitulasi</a></li>
+                    <li><a href="<?php echo base_url() ?>lpm/kues_dsnlmdk_update"><i class="fa fa-circle-o"></i> Update data</a></li>
                     <!-- <li><a href="#"><i class="fa fa-circle-o"></i> Selesai</a></li> -->
                   </ul>
                 </li>
@@ -238,8 +238,8 @@
                     </span>
                   </a>
                   <ul class="treeview-menu">
-                    <li><a href="<?php echo base_url() ?>lpm/kues_mhslem_rekap"><i class="fa fa-circle-o"></i> Rekapitulasi</a></li>
-                    <li><a href="<?php echo base_url() ?>lpm/kues_mhslem_update"><i class="fa fa-circle-o"></i> Update data</a></li>
+                    <li><a href="<?php echo base_url() ?>lpm/kues_tndklmdk_rekap"><i class="fa fa-circle-o"></i> Rekapitulasi</a></li>
+                    <li><a href="<?php echo base_url() ?>lpm/kues_tndklmdk_update"><i class="fa fa-circle-o"></i> Update data</a></li>
                     <!-- <li><a href="#"><i class="fa fa-circle-o"></i> Selesai</a></li> -->
                   </ul>
                 </li>

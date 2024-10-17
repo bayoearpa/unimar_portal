@@ -23,7 +23,7 @@
 
                   </select>
                 </div> -->
-                <div class="form-group">
+              <!--   <div class="form-group">
                 <label for="exampleInputEmail1">Pilih Prodi</label>
                    <select class="form-control" name="prodi" id="prodi">
                     <option> </option>
@@ -36,7 +36,7 @@
                     <option value="13241">S1 Teknik Keselamatan</option>
                     <option value="94205">S1 Perdagangan Internasional</option>
                   </select>
-                </div>
+                </div> -->
                 <div class="form-group">
                 <label for="exampleInputEmail1">Tahun ajaran</label>
                    <input type="text" class="form-control" name="ta" placeholder="contoh : 2021 ganjil = 20211, 2021 genap = 20212">
@@ -72,9 +72,9 @@
                 <tbody>
                   <td colspan="4">Data Belum Ada</td>
                 </tbody>
-               <?php // }else{ ?>
+               <?php //}else{ ?>
                 <tbody>
-                  <?php // foreach ($cekstat as $key) { ?>
+                  <?php //foreach ($cekstat as $key) { ?>
                     <tr>
                     <td><?php //echo $key->ta; ?></td>
                     <td><?php //echo $key->kdprodi; ?></td>
@@ -100,4 +100,4 @@
 
 
       </section>
-      <!-- /.content -->
+      <!-- /.content --> vbbbbbbbp;lllllllllllllllllllllllllllllllllllllyuuuuuuuuuuuuuuu

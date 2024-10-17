@@ -1878,7 +1878,32 @@ class Lpm extends CI_Controller {
 		// $this->load->view('lpm/kues_mhslem_rekap_cek24_js',$data);
 	}
 
-
+////////////////////////////////////////DOSEN KE LEMDIK ///////////////////////////////////////////
+	public function kues_dsnlmdk_update()
+	{
+		// $data['cektabel'] = $this->m_kues->get_data_all('tbl_kues_lap_dsnlmdk')->num_rows();
+		// $where = array(
+		// 	'tbl_kues_lap_dsnlmdk.id_lap_dsnlmdk >' => '0',		
+		// );
+		// $data['cekstat'] = $this->m_kues->get_data_distinct_mhslem_stats($where)->result();	
+		$this->load->view('lpm/header');
+		$this->load->view('lpm/kues_dsnlmdk_updatedata');
+		$this->load->view('lpm/footer');
+	}
+////////////////////////////////////////.DOSEN KE LEMDIK ///////////////////////////////////////////
+//////////////////////////////////////// TENDIK KE LEMDIK ///////////////////////////////////////////
+		public function kues_tndklmdk_update()
+	{
+		// $data['cektabel'] = $this->m_kues->get_data_all('tbl_kues_lap_dsnlmdk')->num_rows();
+		// $where = array(
+		// 	'tbl_kues_lap_dsnlmdk.id_lap_dsnlmdk >' => '0',		
+		// );
+		// $data['cekstat'] = $this->m_kues->get_data_distinct_mhslem_stats($where)->result();	
+		$this->load->view('lpm/header');
+		$this->load->view('lpm/kues_tndklmdk_updatedata');
+		$this->load->view('lpm/footer');
+	}
+////////////////////////////////////////.TENDIK KE LEMDIK ///////////////////////////////////////////	
 /////////////////////////////////////////////////////////////////Monitoring/////////////////////////////////////
 	/////////////// monitoring summary
 	public function mon_summary()
