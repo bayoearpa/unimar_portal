@@ -67,7 +67,7 @@ class M_kues extends CI_Model {
 		return $query;
 	}
 	function get_data_dsnlmdk_count_responden($where){
-		$this->db->select('Count(distinct(tbl_kues_dsnlmdk.ta)) as jml_res');
+		$this->db->select('Count(tbl_kues_dsnlmdk.ta) as jml_res');
 		$this->db->from('tbl_kues_dsnlmdk');
 		$this->db->where($where);
 		//$this->db->order_by('tbl_catar_validasi.no_reg', "asc");
