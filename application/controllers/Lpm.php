@@ -1879,6 +1879,7 @@ class Lpm extends CI_Controller {
 	}
 
 ////////////////////////////////////////DOSEN KE LEMDIK ///////////////////////////////////////////
+	//////////////////////////// PROSES DATA /////////////////////////////////////
 	public function kues_dsnlmdk_update()
 	{
 		// $data['cektabel'] = $this->m_kues->get_data_all('tbl_kues_lap_dsnlmdk')->num_rows();
@@ -2046,8 +2047,187 @@ class Lpm extends CI_Controller {
 			$this->kues_dsnlmdk_update();
 		}
 	}
+
+	/////////////////////////////////// REKAP DATA ///////////////////////////////////
+	public function kues_dsnlmdk_rekap()
+	{
+		$data['gettanya'] = $this->m_kues->get_data_all('tbl_kues_dsnlmdk_tanya')->result();
+		$this->load->view('lpm/header');
+		$this->load->view('lpm/kues_dsnlmdk_rekap',$data);
+		$this->load->view('lpm/footer');
+	}
+	public function sumitem_dsnlmdk($item, $skala, $prodi, $ta)
+	{
+		# code...
+		$where = array(
+			'skala' => $skala,
+			'prodi'=> $prodi,
+			'ta' => $ta		
+		);
+		$where2 = array(
+			'prodi'=> $prodi,
+			'ta' => $ta		
+		);
+		$get_pembagi = $this->m_kues->get_data_dsnlmdk_sum_item($where2,$item)->result();
+		$get_sum = $this->m_kues->get_data_dsnlmdk_sum_item24($where,$item)->result();
+		foreach ($get_pembagi as $key ) {
+			# code...
+			$pembagi = $key->sum_item;
+		}
+		foreach ($get_sum as $key ) {
+			# code...
+			$echo = ($key->data_item / $pembagi)*100;
+		}
+
+		return $echo;
+	}
+	public function kues_dsnlmdk_prosesrekap()
+	{
+		$data['lpm'] = $this;
+		///cek tabel
+		$pernyataan = $this->input->post('pernyataan');
+		$prodi = $this->input->post('prodi');
+		$ta = $this->input->post('ta');
+		$cek = $this->cektablelapddsnlmdk($prodi, $ta);
+
+		// get nama pernyataan
+		$wherezx = array(
+			'id_dsnlmdk' => $pernyataan,		
+		);
+
+		$ambiltanya = $this->m_kues->get_data($wherezx,'tbl_kues_dsnlmdk_tanya')->result();
+		foreach ($ambiltanya as $key) {
+			# code...
+			$data['pernyataan'] = $key->tanya;
+		}
+		//get list kues
+		$data['gettanya'] = $this->m_kues->get_data_all('tbl_kues_dsnlmdk_tanya')->result();
+		$data['list_pert'] = $this->m_kues->get_data_all('tbl_kues_dsnlmdk_tanya')->result();
+		//get nama prodi
+		$data['nama_prodi'] = $this->getProdi($prodi);
+		$data['prodi'] = $prodi;
+		$data['ta'] = $ta;
+		if ($cek > 0) {
+			# code...
+
+			// get item untk get data per prodi
+			// $new_geta1 = $get_['pernyataan'][$pernyataan] . '_a_1';
+			// $new_geta2 = $get_['pernyataan'][$pernyataan] . '_a_2';
+			// $new_geta3 = $get_['pernyataan'][$pernyataan] . '_a_3';
+			// $new_geta4 = $get_['pernyataan'][$pernyataan] . '_a_4';
+			// $new_geta5 = $get_['pernyataan'][$pernyataan] . '_a_5';
+			// $new_geta = $get_['pernyataan'][$pernyataan] . 'a';
+
+			$data['sts_1'] = $this->sumitem_dsnlmdk('dsnlmdk1','STS',$prodi,$ta);
+			$data['ts_1'] = $this->sumitem_dsnlmdk('dsnlmdk1','TS',$prodi,$ta);
+			$data['ks_1'] = $this->sumitem_dsnlmdk('dsnlmdk1','KS',$prodi,$ta);
+			$data['s_1'] = $this->sumitem_dsnlmdk('dsnlmdk1','S',$prodi,$ta);
+			$data['ss_1'] = $this->sumitem_dsnlmdk('dsnlmdk1','SS',$prodi,$ta);
+
+			$data['sts_2'] = $this->sumitem_dsnlmdk('dsnlmdk2','STS',$prodi,$ta);
+			$data['ts_2'] = $this->sumitem_dsnlmdk('dsnlmdk2','TS',$prodi,$ta);
+			$data['ks_2'] = $this->sumitem_dsnlmdk('dsnlmdk2','KS',$prodi,$ta);
+			$data['s_2'] = $this->sumitem_dsnlmdk('dsnlmdk2','S',$prodi,$ta);
+			$data['ss_2'] = $this->sumitem_dsnlmdk('dsnlmdk2','SS',$prodi,$ta);
+
+			$data['sts_3'] = $this->sumitem_dsnlmdk('dsnlmdk3','STS',$prodi,$ta);
+			$data['ts_3'] = $this->sumitem_dsnlmdk('dsnlmdk3','TS',$prodi,$ta);
+			$data['ks_3'] = $this->sumitem_dsnlmdk('dsnlmdk3','KS',$prodi,$ta);
+			$data['s_3'] = $this->sumitem_dsnlmdk('dsnlmdk3','S',$prodi,$ta);
+			$data['ss_3'] = $this->sumitem_dsnlmdk('dsnlmdk3','SS',$prodi,$ta);
+
+			$data['sts_4'] = $this->sumitem_dsnlmdk('dsnlmdk4','STS',$prodi,$ta);
+			$data['ts_4'] = $this->sumitem_dsnlmdk('dsnlmdk4','TS',$prodi,$ta);
+			$data['ks_4'] = $this->sumitem_dsnlmdk('dsnlmdk4','KS',$prodi,$ta);
+			$data['s_4'] = $this->sumitem_dsnlmdk('dsnlmdk4','S',$prodi,$ta);
+			$data['ss_4'] = $this->sumitem_dsnlmdk('dsnlmdk4','SS',$prodi,$ta);
+
+			$data['sts_5'] = $this->sumitem_dsnlmdk('dsnlmdk5','STS',$prodi,$ta);
+			$data['ts_5'] = $this->sumitem_dsnlmdk('dsnlmdk5','TS',$prodi,$ta);
+			$data['ks_5'] = $this->sumitem_dsnlmdk('dsnlmdk5','KS',$prodi,$ta);
+			$data['s_5'] = $this->sumitem_dsnlmdk('dsnlmdk5','S',$prodi,$ta);
+			$data['ss_5'] = $this->sumitem_dsnlmdk('dsnlmdk5','SS',$prodi,$ta);
+
+			$data['sts_6'] = $this->sumitem_dsnlmdk('dsnlmdk6','STS',$prodi,$ta);
+			$data['ts_6'] = $this->sumitem_dsnlmdk('dsnlmdk6','TS',$prodi,$ta);
+			$data['ks_6'] = $this->sumitem_dsnlmdk('dsnlmdk6','KS',$prodi,$ta);
+			$data['s_6'] = $this->sumitem_dsnlmdk('dsnlmdk6','S',$prodi,$ta);
+			$data['ss_6'] = $this->sumitem_dsnlmdk('dsnlmdk6','SS',$prodi,$ta);
+
+			$data['sts_7'] = $this->sumitem_dsnlmdk('dsnlmdk7','STS',$prodi,$ta);
+			$data['ts_7'] = $this->sumitem_dsnlmdk('dsnlmdk7','TS',$prodi,$ta);
+			$data['ks_7'] = $this->sumitem_dsnlmdk('dsnlmdk7','KS',$prodi,$ta);
+			$data['s_7'] = $this->sumitem_dsnlmdk('dsnlmdk7','S',$prodi,$ta);
+			$data['ss_7'] = $this->sumitem_dsnlmdk('dsnlmdk7','SS',$prodi,$ta);
+
+			$data['sts_8'] = $this->sumitem_dsnlmdk('dsnlmdk8','STS',$prodi,$ta);
+			$data['ts_8'] = $this->sumitem_dsnlmdk('dsnlmdk8','TS',$prodi,$ta);
+			$data['ks_8'] = $this->sumitem_dsnlmdk('dsnlmdk8','KS',$prodi,$ta);
+			$data['s_8'] = $this->sumitem_dsnlmdk('dsnlmdk8','S',$prodi,$ta);
+			$data['ss_8'] = $this->sumitem_dsnlmdk('dsnlmdk8','SS',$prodi,$ta);
+
+			$data['sts_9'] = $this->sumitem_dsnlmdk('dsnlmdk9','STS',$prodi,$ta);
+			$data['ts_9'] = $this->sumitem_dsnlmdk('dsnlmdk9','TS',$prodi,$ta);
+			$data['ks_9'] = $this->sumitem_dsnlmdk('dsnlmdk9','KS',$prodi,$ta);
+			$data['s_9'] = $this->sumitem_dsnlmdk('dsnlmdk9','S',$prodi,$ta);
+			$data['ss_9'] = $this->sumitem_dsnlmdk('dsnlmdk9','SS',$prodi,$ta);
+
+			$data['sts_10'] = $this->sumitem_dsnlmdk('dsnlmdk10','STS',$prodi,$ta);
+			$data['ts_10'] = $this->sumitem_dsnlmdk('dsnlmdk10','TS',$prodi,$ta);
+			$data['ks_10'] = $this->sumitem_dsnlmdk('dsnlmdk10','KS',$prodi,$ta);
+			$data['s_10'] = $this->sumitem_dsnlmdk('dsnlmdk10','S',$prodi,$ta);
+			$data['ss_10'] = $this->sumitem_dsnlmdk('dsnlmdk10','SS',$prodi,$ta);
+
+			$data['sts_11'] = $this->sumitem_dsnlmdk('dsnlmdk11','STS',$prodi,$ta);
+			$data['ts_11'] = $this->sumitem_dsnlmdk('dsnlmdk11','TS',$prodi,$ta);
+			$data['ks_11'] = $this->sumitem_dsnlmdk('dsnlmdk11','KS',$prodi,$ta);
+			$data['s_11'] = $this->sumitem_dsnlmdk('dsnlmdk11','S',$prodi,$ta);
+			$data['ss_11'] = $this->sumitem_dsnlmdk('dsnlmdk11','SS',$prodi,$ta);
+
+			$data['sts_12'] = $this->sumitem_dsnlmdk('dsnlmdk12','STS',$prodi,$ta);
+			$data['ts_12'] = $this->sumitem_dsnlmdk('dsnlmdk12','TS',$prodi,$ta);
+			$data['ks_12'] = $this->sumitem_dsnlmdk('dsnlmdk12','KS',$prodi,$ta);
+			$data['s_12'] = $this->sumitem_dsnlmdk('dsnlmdk12','S',$prodi,$ta);
+			$data['ss_12'] = $this->sumitem_dsnlmdk('dsnlmdk12','SS',$prodi,$ta);
+
+			$data['sts_13'] = $this->sumitem_dsnlmdk('dsnlmdk13','STS',$prodi,$ta);
+			$data['ts_13'] = $this->sumitem_dsnlmdk('dsnlmdk13','TS',$prodi,$ta);
+			$data['ks_13'] = $this->sumitem_dsnlmdk('dsnlmdk13','KS',$prodi,$ta);
+			$data['s_13'] = $this->sumitem_dsnlmdk('dsnlmdk13','S',$prodi,$ta);
+			$data['ss_13'] = $this->sumitem_dsnlmdk('dsnlmdk13','SS',$prodi,$ta);
+
+			$data['sts_14'] = $this->sumitem_dsnlmdk('dsnlmdk14','STS',$prodi,$ta);
+			$data['ts_14'] = $this->sumitem_dsnlmdk('dsnlmdk14','TS',$prodi,$ta);
+			$data['ks_14'] = $this->sumitem_dsnlmdk('dsnlmdk14','KS',$prodi,$ta);
+			$data['s_14'] = $this->sumitem_dsnlmdk('dsnlmdk14','S',$prodi,$ta);
+			$data['ss_14'] = $this->sumitem_dsnlmdk('dsnlmdk14','SS',$prodi,$ta);
+
+			$data['sts_15'] = $this->sumitem_dsnlmdk('dsnlmdk15','STS',$prodi,$ta);
+			$data['ts_15'] = $this->sumitem_dsnlmdk('dsnlmdk15','TS',$prodi,$ta);
+			$data['ks_15'] = $this->sumitem_dsnlmdk('dsnlmdk15','KS',$prodi,$ta);
+			$data['s_15'] = $this->sumitem_dsnlmdk('dsnlmdk15','S',$prodi,$ta);
+			$data['ss_15'] = $this->sumitem_dsnlmdk('dsnlmdk15','SS',$prodi,$ta);
+
+			
+			//get data dosen
+			// $where = array(
+			// 'tbl_kues_mhsdsn.prodi' => $prodi,
+			// 'tbl_kues_mhsdsn.ta' => $ta,		
+			// );
+			// $data['select_dosen'] = $this->m_kues->get_data_distinct_dosen($where)->result();
+
+		} else {
+		$this->session->set_flashdata('error', "<div class='alert alert-danger alert-dismissible'><b>Error, Data tidak ditemukan silakan lakukan update data pada menu Kuesioner>update data atau tekan tombol ini</b><a href='kues_dsnlmdk_update'<button type='button' class='btn btn-block btn-primary'>Halaman Update Data</button></a></div>");
+		}
+		$this->load->view('lpm/header');
+		// $this->load->view('lpm/kues_dsnlmdk_rekap24',$data);
+		$this->load->view('lpm/kues_dsnlmdk_rekap_cek',$data);
+		$this->load->view('lpm/footer');
+		// $this->load->view('lpm/kues_mhslem_rekap_cek24_js',$data);
+	}
 ////////////////////////////////////////.DOSEN KE LEMDIK ///////////////////////////////////////////
 //////////////////////////////////////// TENDIK KE LEMDIK ///////////////////////////////////////////
+	/////////////////////// PROSES DATA
 		public function kues_tndklmdk_update()
 	{
 		// $data['cektabel'] = $this->m_kues->get_data_all('tbl_kues_lap_dsnlmdk')->num_rows();
