@@ -2092,7 +2092,7 @@ class Lpm extends CI_Controller {
 	{
 		# code...
 		$where = array(
-			'tbl_kues_tndklmdk.prodi' => $prodi,
+			// 'tbl_kues_tndklmdk.prodi' => $prodi,
 			'tbl_kues_tndklmdk.ta' => $ta		
 		);
 		$data = $this->m_kues->get_data_tndklmdk_count_responden($where)->result();
