@@ -4,7 +4,7 @@
 
         <div class="box box-default">
           <div class="box-header with-border">
-            <h3 class="box-title">Update data Kuesioner Dosen ke Lembaga</h3>
+            <h3 class="box-title">Update data Kuesioner Tendik ke Lembaga</h3>
           </div>
           <div class="box-body">
             <?php 
