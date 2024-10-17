@@ -2304,7 +2304,7 @@ class Lpm extends CI_Controller {
 			# code...
 			//jika data ada di tabel delete terlebih dahulu
 			$where_del = array(
-			'prodi' => $prodi,
+			// 'prodi' => $prodi,
 			'ta' => $ta,		
 			);
 			$this->m_kues->delete_data($where_del,'tbl_kues_lap_tndklmdk');
