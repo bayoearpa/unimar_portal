@@ -30,15 +30,14 @@
                    ?> 
                <!-- chart jajal -->
                <!-- BAR CHART -->
-                <h1>Rekap per Prodi : <?php echo $nama_prodi; ?></h1>
-                <h3><?php echo $pernyataan; ?></h3>
+                <h1>Rekap Dosen Ke Lemdik</h1>
                <!--  <div class="chart">
                 <canvas id="canvas" style="height:300px"></canvas>
                 </div> -->
                 <!-- table chart -->
                 <div class="box">
                   <div class="box-header">
-                    <h3 class="box-title">Fakultas</h3>
+                    <h3 class="box-title">UNIMAR AMNI menyediakan fasilitas dan prasarana yang cukup kepada Dosen dalam melaksanakan tugas Tridharma Perguruan Tinggi</h3>
                   </div>
                   <!-- /.box-header -->
                   <div class="box-body no-padding">
