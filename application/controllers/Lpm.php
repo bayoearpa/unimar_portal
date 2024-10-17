@@ -2049,6 +2049,13 @@ class Lpm extends CI_Controller {
 	}
 
 	/////////////////////////////////// REKAP DATA ///////////////////////////////////
+	function precise_round($value, $precision = 2) {
+	    if (!is_numeric($value)) {
+	        return 0;
+	    }
+	    $multiplier = pow(10, $precision);
+	    return ceil($value * $multiplier) / $multiplier;
+	}
 	public function kues_dsnlmdk_rekap()
 	{
 		$data['gettanya'] = $this->m_kues->get_data_all('tbl_kues_dsnlmdk_tanya')->result();
