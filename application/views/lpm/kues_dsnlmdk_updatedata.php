@@ -83,9 +83,9 @@
                     </tr>
                     <?php
                     # code...
-                  } ?>
+                  //} ?>
                 </tbody>
-              <?php } ?>
+              <?php //} ?>
                <tfoot>
                 <tr>
                   <th>Tahun Ajaran</th>
