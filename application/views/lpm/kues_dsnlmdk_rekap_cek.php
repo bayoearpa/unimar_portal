@@ -53,10 +53,10 @@
                         <td>Sangat Baik</td>
                         <td>
                           <div class="progress progress-xs">
-                            <div class="progress-bar progress-bar-success" style="width: <?php echo round($ss_1,2) ?>%"></div>
+                            <div class="progress-bar progress-bar-success" style="width: <?php echo $lpm->precise_round($ss_1,2) ?>%"></div>
                           </div>
                         </td>
-                        <td><span class="badge bg-red"><?php echo round($ss_1,2) ?>%</span></td>
+                        <td><span class="badge bg-red"><?php echo $lpm->precise_round($ss_1,2) ?>%</span></td>
                       </tr>
                       <tr>
                         <td>2.</td>
@@ -66,37 +66,37 @@
                             <div class="progress-bar progress-bar-primary" style="width: <?php echo round($s_1,2) ?>%"></div>
                           </div>
                         </td>
-                        <td><span class="badge bg-yellow"><?php echo round($s_1,2) ?>%</span></td>
+                        <td><span class="badge bg-yellow"><?php echo $lpm->precise_round($s_1,2) ?>%</span></td>
                       </tr>
                       <tr>
                         <td>3.</td>
                         <td>Cukup</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
-                            <div class="progress-bar progress-bar-yellow" style="width: <?php echo round($ks_1,2) ?>%"></div>
+                            <div class="progress-bar progress-bar-yellow" style="width: <?php echo $lpm->precise_round($ks_1,2) ?>%"></div>
                           </div>
                         </td>
-                        <td><span class="badge bg-light-blue"><?php echo round($ks_1,2) ?>%</span></td>
+                        <td><span class="badge bg-light-blue"><?php echo $lpm->precise_round($ks_1,2) ?>%</span></td>
                       </tr>
                       <tr>
                         <td>4.</td>
                         <td>Kurang</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
-                            <div class="progress-bar progress-bar-danger" style="width: <?php echo round($ts_1,2) ?>%"></div>
+                            <div class="progress-bar progress-bar-danger" style="width: <?php echo $lpm->precise_round($ts_1,2) ?>%"></div>
                           </div>
                         </td>
-                        <td><span class="badge bg-green"><?php echo round($ts_1,2) ?>%</span></td>
+                        <td><span class="badge bg-green"><?php echo $lpm->precise_round($ts_1,2) ?>%</span></td>
                       </tr>
                       <tr>
                         <td>5.</td>
                         <td>Sangat Kurang</td>
                         <td>
                           <div class="progress progress-xs progress-striped active">
-                            <div class="progress-bar progress-bar-danger" style="width: <?php echo round($sts_1,2) ?>%"></div>
+                            <div class="progress-bar progress-bar-danger" style="width: <?php echo $lpm->precise_round($sts_1,2) ?>%"></div>
                           </div>
                         </td>
-                        <td><span class="badge bg-green"><?php echo round($sts_1,2) ?>%</span></td>
+                        <td><span class="badge bg-green"><?php echo $lpm->precise_round($sts_1,2) ?>%</span></td>
                       </tr>
                     </tbody></table>
                   </div>
