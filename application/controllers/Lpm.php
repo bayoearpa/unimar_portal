@@ -2043,7 +2043,7 @@ class Lpm extends CI_Controller {
 			 }else{
 				$this->session->set_flashdata('error', "<div class='alert alert-danger alert-dismissible'><b>Error, Data Gagal ditambahkan</b></div>"); 
 			 }
-			$this->kues_mhslem_update();
+			$this->kues_dsnlmdk_update();
 		}
 	}
 ////////////////////////////////////////.DOSEN KE LEMDIK ///////////////////////////////////////////
