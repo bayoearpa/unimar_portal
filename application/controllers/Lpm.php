@@ -1994,9 +1994,9 @@ class Lpm extends CI_Controller {
 			$res = $this->m_kues->insert_data_batch('tbl_kues_lap_dsnlmdk',$result);
 			if($res==true)
 			 {
-				$this->session->set_flashdata('success', "<div class='alert alert-success alert-dismissible'><b>Berhasil, Data berhasil ditambahkan</b></div>"); 
+				$this->session->set_flashdata('success', "<div class='alert alert-success alert-dismissible'><b>Berhasil, Data Dosen ke Lemdik berhasil ditambahkan</b></div>"); 
 			 }else{
-				$this->session->set_flashdata('error', "<div class='alert alert-danger alert-dismissible'><b>Error, Data Gagal ditambahkan</b></div>"); 
+				$this->session->set_flashdata('error', "<div class='alert alert-danger alert-dismissible'><b>Error, Data Dosen ke Lemdik Gagal ditambahkan</b></div>"); 
 			 }
 			$this->kues_dsnlmdk_update();
 		} else {
@@ -2039,9 +2039,9 @@ class Lpm extends CI_Controller {
 			$res = $this->m_kues->insert_data_batch('tbl_kues_lap_dsnlmdk',$result);
 			if($res==true)
 			 {
-				$this->session->set_flashdata('success', "<div class='alert alert-success alert-dismissible'><b>Berhasil, Data berhasil ditambahkan</b></div>"); 
+				$this->session->set_flashdata('success', "<div class='alert alert-success alert-dismissible'><b>Berhasil, Data Tendik ke Lemdik berhasil ditambahkan</b></div>"); 
 			 }else{
-				$this->session->set_flashdata('error', "<div class='alert alert-danger alert-dismissible'><b>Error, Data Gagal ditambahkan</b></div>"); 
+				$this->session->set_flashdata('error', "<div class='alert alert-danger alert-dismissible'><b>Error, Data Tendik ke Lemdik Gagal ditambahkan</b></div>"); 
 			 }
 			$this->kues_dsnlmdk_update();
 		}
