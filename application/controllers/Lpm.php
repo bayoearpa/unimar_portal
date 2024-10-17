@@ -2224,7 +2224,7 @@ class Lpm extends CI_Controller {
 			// $data['select_dosen'] = $this->m_kues->get_data_distinct_dosen($where)->result();
 
 		} else {
-		$this->session->set_flashdata('error', "<div class='alert alert-danger alert-dismissible'><b>Error, Data tidak ditemukan silakan lakukan update data pada menu Kuesioner>update data atau tekan tombol ini</b><a href='kues_dsnlmdk_update'<button type='button' class='btn btn-block btn-primary'>Halaman Update Data</button></a></div>");
+		$this->session->set_flashdata('error', "<div class='alert alert-danger alert-dismissible'><b>Error, Data Dosen ke Lembaga tidak ditemukan silakan lakukan update data pada menu Kuesioner>update data atau tekan tombol ini</b><a href='kues_dsnlmdk_update'<button type='button' class='btn btn-block btn-primary'>Halaman Update Data</button></a></div>");
 		}
 		$this->load->view('lpm/header');
 		// $this->load->view('lpm/kues_dsnlmdk_rekap24',$data);
@@ -2399,6 +2399,183 @@ class Lpm extends CI_Controller {
 			 }
 			$this->kues_tndklmdk_update();
 		}
+	}
+	/////////////////////////////////// REKAP DATA ///////////////////////////////////
+	public function kues_tndklmdk_rekap()
+	{
+		$data['gettanya'] = $this->m_kues->get_data_all('tbl_kues_tndklmdk_tanya')->result();
+		$this->load->view('lpm/header');
+		$this->load->view('lpm/kues_tndklmdk_rekap',$data);
+		$this->load->view('lpm/footer');
+	}
+	public function sumitem_tndklmdk($item, $skala, $prodi, $ta)
+	{
+		# code...
+		$where = array(
+			'skala' => $skala,
+			// 'prodi'=> $prodi,
+			'ta' => $ta		
+		);
+		$where2 = array(
+			// 'prodi'=> $prodi,
+			'ta' => $ta		
+		);
+		$get_pembagi = $this->m_kues->get_data_tndklmdk_sum_item($where2,$item)->result();
+		$get_sum = $this->m_kues->get_data_tndklmdk_sum_item24($where,$item)->result();
+		foreach ($get_pembagi as $key ) {
+			# code...
+			$pembagi = $key->sum_item;
+		}
+		foreach ($get_sum as $key ) {
+			# code...
+			$echo = ($key->data_item / $pembagi)*100;
+		}
+
+		return $echo;
+	}
+	public function kues_tndklmdk_prosesrekap()
+	{
+		$data['lpm'] = $this;
+		///cek tabel
+		$pernyataan = $this->input->post('pernyataan');
+		$prodi = $this->input->post('prodi');
+		$ta = $this->input->post('ta');
+		$cek = $this->cektablelaptndklmdk($prodi, $ta);
+
+		// get nama pernyataan
+		$wherezx = array(
+			'id_tndklmdk' => $pernyataan,		
+		);
+
+		$ambiltanya = $this->m_kues->get_data($wherezx,'tbl_kues_tndklmdk_tanya')->result();
+		foreach ($ambiltanya as $key) {
+			# code...
+			$data['pernyataan'] = $key->tanya;
+		}
+		//get list kues
+		$data['gettanya'] = $this->m_kues->get_data_all('tbl_kues_tndklmdk_tanya')->result();
+		$data['list_pert'] = $this->m_kues->get_data_all('tbl_kues_tndklmdk_tanya')->result();
+		//get nama prodi
+		$data['nama_prodi'] = $this->getProdi($prodi);
+		$data['prodi'] = $prodi;
+		$data['ta'] = $ta;
+		if ($cek > 0) {
+			# code...
+
+			// get item untk get data per prodi
+			// $new_geta1 = $get_['pernyataan'][$pernyataan] . '_a_1';
+			// $new_geta2 = $get_['pernyataan'][$pernyataan] . '_a_2';
+			// $new_geta3 = $get_['pernyataan'][$pernyataan] . '_a_3';
+			// $new_geta4 = $get_['pernyataan'][$pernyataan] . '_a_4';
+			// $new_geta5 = $get_['pernyataan'][$pernyataan] . '_a_5';
+			// $new_geta = $get_['pernyataan'][$pernyataan] . 'a';
+
+			$data['sts_1'] = $this->sumitem_tndklmdk('tndklmdk1','STS',$prodi,$ta);
+			$data['ts_1'] = $this->sumitem_tndklmdk('tndklmdk1','TS',$prodi,$ta);
+			$data['ks_1'] = $this->sumitem_tndklmdk('tndklmdk1','KS',$prodi,$ta);
+			$data['s_1'] = $this->sumitem_tndklmdk('tndklmdk1','S',$prodi,$ta);
+			$data['ss_1'] = $this->sumitem_tndklmdk('tndklmdk1','SS',$prodi,$ta);
+
+			$data['sts_2'] = $this->sumitem_tndklmdk('tndklmdk2','STS',$prodi,$ta);
+			$data['ts_2'] = $this->sumitem_tndklmdk('tndklmdk2','TS',$prodi,$ta);
+			$data['ks_2'] = $this->sumitem_tndklmdk('tndklmdk2','KS',$prodi,$ta);
+			$data['s_2'] = $this->sumitem_tndklmdk('tndklmdk2','S',$prodi,$ta);
+			$data['ss_2'] = $this->sumitem_tndklmdk('tndklmdk2','SS',$prodi,$ta);
+
+			$data['sts_3'] = $this->sumitem_tndklmdk('tndklmdk3','STS',$prodi,$ta);
+			$data['ts_3'] = $this->sumitem_tndklmdk('tndklmdk3','TS',$prodi,$ta);
+			$data['ks_3'] = $this->sumitem_tndklmdk('tndklmdk3','KS',$prodi,$ta);
+			$data['s_3'] = $this->sumitem_tndklmdk('tndklmdk3','S',$prodi,$ta);
+			$data['ss_3'] = $this->sumitem_tndklmdk('tndklmdk3','SS',$prodi,$ta);
+
+			$data['sts_4'] = $this->sumitem_tndklmdk('tndklmdk4','STS',$prodi,$ta);
+			$data['ts_4'] = $this->sumitem_tndklmdk('tndklmdk4','TS',$prodi,$ta);
+			$data['ks_4'] = $this->sumitem_tndklmdk('tndklmdk4','KS',$prodi,$ta);
+			$data['s_4'] = $this->sumitem_tndklmdk('tndklmdk4','S',$prodi,$ta);
+			$data['ss_4'] = $this->sumitem_tndklmdk('tndklmdk4','SS',$prodi,$ta);
+
+			$data['sts_5'] = $this->sumitem_tndklmdk('tndklmdk5','STS',$prodi,$ta);
+			$data['ts_5'] = $this->sumitem_tndklmdk('tndklmdk5','TS',$prodi,$ta);
+			$data['ks_5'] = $this->sumitem_tndklmdk('tndklmdk5','KS',$prodi,$ta);
+			$data['s_5'] = $this->sumitem_tndklmdk('tndklmdk5','S',$prodi,$ta);
+			$data['ss_5'] = $this->sumitem_tndklmdk('tndklmdk5','SS',$prodi,$ta);
+
+			$data['sts_6'] = $this->sumitem_tndklmdk('tndklmdk6','STS',$prodi,$ta);
+			$data['ts_6'] = $this->sumitem_tndklmdk('tndklmdk6','TS',$prodi,$ta);
+			$data['ks_6'] = $this->sumitem_tndklmdk('tndklmdk6','KS',$prodi,$ta);
+			$data['s_6'] = $this->sumitem_tndklmdk('tndklmdk6','S',$prodi,$ta);
+			$data['ss_6'] = $this->sumitem_tndklmdk('tndklmdk6','SS',$prodi,$ta);
+
+			$data['sts_7'] = $this->sumitem_tndklmdk('tndklmdk7','STS',$prodi,$ta);
+			$data['ts_7'] = $this->sumitem_tndklmdk('tndklmdk7','TS',$prodi,$ta);
+			$data['ks_7'] = $this->sumitem_tndklmdk('tndklmdk7','KS',$prodi,$ta);
+			$data['s_7'] = $this->sumitem_tndklmdk('tndklmdk7','S',$prodi,$ta);
+			$data['ss_7'] = $this->sumitem_tndklmdk('tndklmdk7','SS',$prodi,$ta);
+
+			$data['sts_8'] = $this->sumitem_tndklmdk('tndklmdk8','STS',$prodi,$ta);
+			$data['ts_8'] = $this->sumitem_tndklmdk('tndklmdk8','TS',$prodi,$ta);
+			$data['ks_8'] = $this->sumitem_tndklmdk('tndklmdk8','KS',$prodi,$ta);
+			$data['s_8'] = $this->sumitem_tndklmdk('tndklmdk8','S',$prodi,$ta);
+			$data['ss_8'] = $this->sumitem_tndklmdk('tndklmdk8','SS',$prodi,$ta);
+
+			$data['sts_9'] = $this->sumitem_tndklmdk('tndklmdk9','STS',$prodi,$ta);
+			$data['ts_9'] = $this->sumitem_tndklmdk('tndklmdk9','TS',$prodi,$ta);
+			$data['ks_9'] = $this->sumitem_tndklmdk('tndklmdk9','KS',$prodi,$ta);
+			$data['s_9'] = $this->sumitem_tndklmdk('tndklmdk9','S',$prodi,$ta);
+			$data['ss_9'] = $this->sumitem_tndklmdk('tndklmdk9','SS',$prodi,$ta);
+
+			$data['sts_10'] = $this->sumitem_tndklmdk('tndklmdk10','STS',$prodi,$ta);
+			$data['ts_10'] = $this->sumitem_tndklmdk('tndklmdk10','TS',$prodi,$ta);
+			$data['ks_10'] = $this->sumitem_tndklmdk('tndklmdk10','KS',$prodi,$ta);
+			$data['s_10'] = $this->sumitem_tndklmdk('tndklmdk10','S',$prodi,$ta);
+			$data['ss_10'] = $this->sumitem_tndklmdk('tndklmdk10','SS',$prodi,$ta);
+
+			$data['sts_11'] = $this->sumitem_tndklmdk('tndklmdk11','STS',$prodi,$ta);
+			$data['ts_11'] = $this->sumitem_tndklmdk('tndklmdk11','TS',$prodi,$ta);
+			$data['ks_11'] = $this->sumitem_tndklmdk('tndklmdk11','KS',$prodi,$ta);
+			$data['s_11'] = $this->sumitem_tndklmdk('tndklmdk11','S',$prodi,$ta);
+			$data['ss_11'] = $this->sumitem_tndklmdk('tndklmdk11','SS',$prodi,$ta);
+
+			$data['sts_12'] = $this->sumitem_tndklmdk('tndklmdk12','STS',$prodi,$ta);
+			$data['ts_12'] = $this->sumitem_tndklmdk('tndklmdk12','TS',$prodi,$ta);
+			$data['ks_12'] = $this->sumitem_tndklmdk('tndklmdk12','KS',$prodi,$ta);
+			$data['s_12'] = $this->sumitem_tndklmdk('tndklmdk12','S',$prodi,$ta);
+			$data['ss_12'] = $this->sumitem_tndklmdk('tndklmdk12','SS',$prodi,$ta);
+
+			$data['sts_13'] = $this->sumitem_tndklmdk('tndklmdk13','STS',$prodi,$ta);
+			$data['ts_13'] = $this->sumitem_tndklmdk('tndklmdk13','TS',$prodi,$ta);
+			$data['ks_13'] = $this->sumitem_tndklmdk('tndklmdk13','KS',$prodi,$ta);
+			$data['s_13'] = $this->sumitem_tndklmdk('tndklmdk13','S',$prodi,$ta);
+			$data['ss_13'] = $this->sumitem_tndklmdk('tndklmdk13','SS',$prodi,$ta);
+
+			$data['sts_14'] = $this->sumitem_tndklmdk('tndklmdk14','STS',$prodi,$ta);
+			$data['ts_14'] = $this->sumitem_tndklmdk('tndklmdk14','TS',$prodi,$ta);
+			$data['ks_14'] = $this->sumitem_tndklmdk('tndklmdk14','KS',$prodi,$ta);
+			$data['s_14'] = $this->sumitem_tndklmdk('tndklmdk14','S',$prodi,$ta);
+			$data['ss_14'] = $this->sumitem_tndklmdk('tndklmdk14','SS',$prodi,$ta);
+
+			$data['sts_15'] = $this->sumitem_tndklmdk('tndklmdk15','STS',$prodi,$ta);
+			$data['ts_15'] = $this->sumitem_tndklmdk('tndklmdk15','TS',$prodi,$ta);
+			$data['ks_15'] = $this->sumitem_tndklmdk('tndklmdk15','KS',$prodi,$ta);
+			$data['s_15'] = $this->sumitem_tndklmdk('tndklmdk15','S',$prodi,$ta);
+			$data['ss_15'] = $this->sumitem_tndklmdk('tndklmdk15','SS',$prodi,$ta);
+
+			
+			//get data dosen
+			// $where = array(
+			// 'tbl_kues_mhsdsn.prodi' => $prodi,
+			// 'tbl_kues_mhsdsn.ta' => $ta,		
+			// );
+			// $data['select_dosen'] = $this->m_kues->get_data_distinct_dosen($where)->result();
+
+		} else {
+		$this->session->set_flashdata('error', "<div class='alert alert-danger alert-dismissible'><b>Error, Data Tendik ke Lembaga tidak ditemukan silakan lakukan update data pada menu Kuesioner>update data atau tekan tombol ini</b><a href='kues_tndklmdk_update'<button type='button' class='btn btn-block btn-primary'>Halaman Update Data</button></a></div>");
+		}
+		$this->load->view('lpm/header');
+		// $this->load->view('lpm/kues_dsnlmdk_rekap24',$data);
+		$this->load->view('lpm/kues_tndklmdk_rekap_cek',$data);
+		$this->load->view('lpm/footer');
+		// $this->load->view('lpm/kues_mhslem_rekap_cek24_js',$data);
 	}
 ////////////////////////////////////////.TENDIK KE LEMDIK ///////////////////////////////////////////	
 /////////////////////////////////////////////////////////////////Monitoring/////////////////////////////////////
