@@ -2088,7 +2088,7 @@ class Lpm extends CI_Controller {
 		$pernyataan = $this->input->post('pernyataan');
 		$prodi = $this->input->post('prodi');
 		$ta = $this->input->post('ta');
-		$cek = $this->cektablelapddsnlmdk($prodi, $ta);
+		$cek = $this->cektablelapdsnlmdk($prodi, $ta);
 
 		// get nama pernyataan
 		$wherezx = array(
