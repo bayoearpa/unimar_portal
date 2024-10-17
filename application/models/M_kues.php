@@ -123,7 +123,7 @@ class M_kues extends CI_Model {
 	}
 	function get_data_dsnlmdk_sum_item($where,$item){
 		$this->db->select('Sum(tbl_kues_lap_dsnlmdk.'.$item.') as sum_item');  
-		$this->db->from('tbl_kues_dsnlmdk');  
+		$this->db->from('tbl_kues_lap_dsnlmdk');  
 		$this->db->where($where);  
 		$query=$this->db->get();  
 		return $query; 
