@@ -2393,9 +2393,9 @@ class Lpm extends CI_Controller {
 			$res = $this->m_kues->insert_data_batch('tbl_kues_lap_tndklmdk',$result);
 			if($res==true)
 			 {
-				$this->session->set_flashdata('success', "<div class='alert alert-success alert-dismissible'><b>Berhasil, Data berhasil ditambahkan</b></div>"); 
+				$this->session->set_flashdata('success', "<div class='alert alert-success alert-dismissible'><b>Berhasil, Data Lemdik Ke Lembaga berhasil ditambahkan</b></div>"); 
 			 }else{
-				$this->session->set_flashdata('error', "<div class='alert alert-danger alert-dismissible'><b>Error, Data Gagal ditambahkan</b></div>"); 
+				$this->session->set_flashdata('error', "<div class='alert alert-danger alert-dismissible'><b>Error, Data Lemdik Ke Lembaga Gagal ditambahkan</b></div>"); 
 			 }
 			$this->kues_tndklmdk_update();
 		}

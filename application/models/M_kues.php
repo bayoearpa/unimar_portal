@@ -136,6 +136,21 @@ class M_kues extends CI_Model {
 		$query=$this->db->get();  
 		return $query; 
 	}
+	function get_data_tndklmdk_sum_item($where,$item){
+		$this->db->select('Sum(tbl_kues_lap_tndklmdk.'.$item.') as sum_item');  
+		$this->db->from('tbl_kues_lap_tndklmdk');  
+		$this->db->where($where);  
+		$query=$this->db->get();  
+		return $query; 
+	}
+	function get_data_tndklmdk_sum_item24($where,$item){
+		$this->db->select('tbl_kues_lap_tndklmdk.'.$item.' as data_item,
+						   tbl_kues_lap_tndklmdk.jml_responden as jml_res');  
+		$this->db->from('tbl_kues_lap_tndklmdk');  
+		$this->db->where($where);  
+		$query=$this->db->get();  
+		return $query; 
+	}
 	function get_data_mhslem_sum_item24($where,$item){
 		$this->db->select('tbl_kues_lap_mhslem.'.$item.' as data_item,
 						   tbl_kues_lap_mhslem.jml_responden as jml_res');  
