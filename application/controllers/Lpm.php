@@ -2059,6 +2059,160 @@ class Lpm extends CI_Controller {
 		$this->load->view('lpm/kues_tndklmdk_updatedata');
 		$this->load->view('lpm/footer');
 	}
+		public function cektablelaptndklmdk($prodi, $ta)
+	{
+		# code...
+		$where = array(
+			// 'prodi' => $prodi,
+			'ta' => $ta,		
+		);
+
+		$cektabel = $this->m_kues->get_data($where,'tbl_kues_lap_dsnlmdk')->num_rows();
+		return $cektabel;
+
+	}
+	public function kues_tndklmdk_get_count_item($prodi, $ta, $item, $nilai_item)
+	{
+		# code...
+		$where = array(
+			// 'tbl_kues_tndklmdk.prodi' => $prodi,
+			'tbl_kues_tndklmdk.ta' => $ta,
+			'tbl_kues_tndklmdk.'.$item => $nilai_item,		
+		);
+		$data = $this->m_kues->get_data_tndklmdk_count_item($where, 'tbl_kues_tndklmdk.'.$item)->result();
+		foreach ($data as $key) {
+			# code...
+			$send = $key->jml_item;
+		}
+
+		return $send;
+
+	}
+	public function kues_tndklmdk_get_count_responden($prodi, $ta)
+	{
+		# code...
+		$where = array(
+			'tbl_kues_tndklmdk.prodi' => $prodi,
+			'tbl_kues_tndklmdk.ta' => $ta		
+		);
+		$data = $this->m_kues->get_data_tndklmdk_count_responden($where)->result();
+		foreach ($data as $key) {
+			# code...
+			$send = $key->jml_res;
+		}
+
+		return $send;
+
+	}
+	public function kues_tndklmdk_run_update()
+	{
+		# code...
+		$fak	= $this->input->post('fak');
+		$prodi  = $this->input->post('prodi');
+		$ta 	= $this->input->post('ta');
+
+
+		$cek = $this->cektablelaptndklmdk($prodi, $ta);
+		if ($cek > 0) {
+			# code...
+			//jika data ada di tabel delete terlebih dahulu
+			$where_del = array(
+			'prodi' => $prodi,
+			'ta' => $ta,		
+			);
+			$this->m_kues->delete_data($where_del,'tbl_kues_lap_tndklmdk');
+
+			// input data baru ke tabel
+
+
+			//buat array skala skor
+			$skala = array(
+				'STS' => "1",
+				'TS' => "2",
+				'KS' => "3",
+				'S' => "4",
+				'SS' => "5",
+			);
+
+			//input ke tabel
+			$result = array();
+			foreach ($skala as $key => $value) {
+				# code...
+				$result[] = array(
+		        "jml_responden"	=> $this->kues_tndklmdk_get_count_responden($prodi,$ta),
+		        "skala"			=> $key,
+		        "tndklmdk1"			=> $this->kues_tndklmdk_get_count_item($prodi,$ta,'tndklmdk1',$value),
+		        "tndklmdk2"			=> $this->kues_tndklmdk_get_count_item($prodi,$ta,'tndklmdk2',$value),
+		        "tndklmdk3"			=> $this->kues_tndklmdk_get_count_item($prodi,$ta,'tndklmdk3',$value),
+		        "tndklmdk4"			=> $this->kues_tndklmdk_get_count_item($prodi,$ta,'tndklmdk4',$value),
+		        "tndklmdk5"			=> $this->kues_tndklmdk_get_count_item($prodi,$ta,'tndklmdk5',$value),
+		        "tndklmdk6"			=> $this->kues_tndklmdk_get_count_item($prodi,$ta,'tndklmdk6',$value),
+		        "tndklmdk7"			=> $this->kues_tndklmdk_get_count_item($prodi,$ta,'tndklmdk7',$value),
+		        "tndklmdk8"			=> $this->kues_tndklmdk_get_count_item($prodi,$ta,'tndklmdk8',$value),
+		        "tndklmdk9"			=> $this->kues_tndklmdk_get_count_item($prodi,$ta,'tndklmdk9',$value),
+		        "tndklmdk10"			=> $this->kues_tndklmdk_get_count_item($prodi,$ta,'tndklmdk10',$value),
+		        "tndklmdk11"			=> $this->kues_tndklmdk_get_count_item($prodi,$ta,'tndklmdk11',$value),
+		        "tndklmdk12"			=> $this->kues_tndklmdk_get_count_item($prodi,$ta,'tndklmdk12',$value),
+		        "tndklmdk13"			=> $this->kues_tndklmdk_get_count_item($prodi,$ta,'tndklmdk13',$value),
+		        "tndklmdk14"			=> $this->kues_tndklmdk_get_count_item($prodi,$ta,'tndklmdk14',$value),
+		        "tndklmdk15"			=> $this->kues_tndklmdk_get_count_item($prodi,$ta,'tndklmdk15',$value),
+		        "ta"				=> $ta
+		         );
+			}
+			$res = $this->m_kues->insert_data_batch('tbl_kues_lap_tndklmdk',$result);
+			if($res==true)
+			 {
+				$this->session->set_flashdata('success', "<div class='alert alert-success alert-dismissible'><b>Berhasil, Data berhasil ditambahkan</b></div>"); 
+			 }else{
+				$this->session->set_flashdata('error', "<div class='alert alert-danger alert-dismissible'><b>Error, Data Gagal ditambahkan</b></div>"); 
+			 }
+			$this->kues_tndklmdk_update();
+		} else {
+
+			//buat array skala skor
+			$skala = array(
+				'STS' => "1",
+				'TS' => "2",
+				'KS' => "3",
+				'S' => "4",
+				'SS' => "5",
+			);
+
+			//input ke tabel
+			$result = array();
+			foreach ($skala as $key => $value) {
+				# code...
+				$result[] = array(
+		        		        "jml_responden"	=> $this->kues_tndklmdk_get_count_responden($prodi,$ta),
+		        "skala"			=> $key,
+		        "tndklmdk1"			=> $this->kues_tndklmdk_get_count_item($prodi,$ta,'tndklmdk1',$value),
+		        "tndklmdk2"			=> $this->kues_tndklmdk_get_count_item($prodi,$ta,'tndklmdk2',$value),
+		        "tndklmdk3"			=> $this->kues_tndklmdk_get_count_item($prodi,$ta,'tndklmdk3',$value),
+		        "tndklmdk4"			=> $this->kues_tndklmdk_get_count_item($prodi,$ta,'tndklmdk4',$value),
+		        "tndklmdk5"			=> $this->kues_tndklmdk_get_count_item($prodi,$ta,'tndklmdk5',$value),
+		        "tndklmdk6"			=> $this->kues_tndklmdk_get_count_item($prodi,$ta,'tndklmdk6',$value),
+		        "tndklmdk7"			=> $this->kues_tndklmdk_get_count_item($prodi,$ta,'tndklmdk7',$value),
+		        "tndklmdk8"			=> $this->kues_tndklmdk_get_count_item($prodi,$ta,'tndklmdk8',$value),
+		        "tndklmdk9"			=> $this->kues_tndklmdk_get_count_item($prodi,$ta,'tndklmdk9',$value),
+		        "tndklmdk10"			=> $this->kues_tndklmdk_get_count_item($prodi,$ta,'tndklmdk10',$value),
+		        "tndklmdk11"			=> $this->kues_tndklmdk_get_count_item($prodi,$ta,'tndklmdk11',$value),
+		        "tndklmdk12"			=> $this->kues_tndklmdk_get_count_item($prodi,$ta,'tndklmdk12',$value),
+		        "tndklmdk13"			=> $this->kues_tndklmdk_get_count_item($prodi,$ta,'tndklmdk13',$value),
+		        "tndklmdk14"			=> $this->kues_tndklmdk_get_count_item($prodi,$ta,'tndklmdk14',$value),
+		        "tndklmdk15"			=> $this->kues_tndklmdk_get_count_item($prodi,$ta,'tndklmdk15',$value),
+		        "ta"				=> $ta
+		         );
+			}
+			$res = $this->m_kues->insert_data_batch('tbl_kues_lap_tndklmdk',$result);
+			if($res==true)
+			 {
+				$this->session->set_flashdata('success', "<div class='alert alert-success alert-dismissible'><b>Berhasil, Data berhasil ditambahkan</b></div>"); 
+			 }else{
+				$this->session->set_flashdata('error', "<div class='alert alert-danger alert-dismissible'><b>Error, Data Gagal ditambahkan</b></div>"); 
+			 }
+			$this->kues_tndklmdk_update();
+		}
+	}
 ////////////////////////////////////////.TENDIK KE LEMDIK ///////////////////////////////////////////	
 /////////////////////////////////////////////////////////////////Monitoring/////////////////////////////////////
 	/////////////// monitoring summary
