@@ -12,7 +12,7 @@
             echo $this->session->flashdata('success');
             echo $this->session->flashdata('error');
               ?>
-              <form action="<?php echo base_url() ?>lpm/kues_dsnlmdk_run_update" name="form1" id="form1" method="post">
+              <form action="<?php echo base_url() ?>lpm/kues_tndklmdk_run_update" name="form1" id="form1" method="post">
                 <!-- <div class="form-group">
                 <label for="exampleInputEmail1">Pilih Fakultas</label>
                    <select class="form-control" name="fak" id="fak">
