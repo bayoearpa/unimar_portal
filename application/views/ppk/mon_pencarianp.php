@@ -311,6 +311,10 @@ foreach ($results as $k) {
                   <th>Keterangan</th>
                 </tr>
                 </thead>
+                <?php foreach ($result1 as $key) {
+                  # code...
+                  echo $key->lap_onboard1;
+                } ?>
                 <tbody>
                 <tr>
                   <td>Laporan Ke.1</td>
