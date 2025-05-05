@@ -302,7 +302,6 @@ foreach ($results as $k) {
 
                 <div class="box-body table-responsive no-padding">
                    <?php foreach ($resultsl as $key) {
-                  echo $key->lap_onboard1;
                 ?>
               <table class="table table-hover">
                 <thead>
@@ -326,7 +325,17 @@ foreach ($results as $k) {
                       <?php } ?>
                     </div></td>
                   <td><?php  echo $key->date_lapon1; ?></td>
-                  <td><span class="label label-success">Approved</span></td>
+                  <td> <div class="form-group">
+                        <label for="addstatpra">Status Laporan 1:</label>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="addstatpra" name="sudah_lapon1" value="sudah">
+                            <label class="form-check-label" for="addstatpra">Sudah</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="addstatpra" name="sudah_lapon1" value="belum">
+                            <label class="form-check-label" for="addstatpra">Belum</label>
+                        </div>
+                    </div></td>
                   <td><?php  echo $key->keterangan_lapon1; ?></td>
                 </tr>
                 <tr>
