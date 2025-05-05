@@ -317,84 +317,168 @@ foreach ($results as $k) {
                 <tbody>
                 <tr>
                   <td>Laporan Ke.1</td>
-                  <td>File</td>
+                  <td><div class="col-sm-offset-2 col-sm-10">
+                       <?php if ($key->lap_onboard1) { ?>
+                        <button class="btn btn-success view-file-button" data-filename="<?php echo $key->lap_onboard1; ?>">Lihat file Laporan Onboard 1</button>
+                      <?php } else { ?>
+                          <!-- Tampilkan pesan jika file tidak ada -->
+                          File tidak tersedia
+                      <?php } ?>
+                    </div></td>
                   <td><?php  echo $key->date_lapon1; ?></td>
                   <td><span class="label label-success">Approved</span></td>
                   <td><?php  echo $key->keterangan_lapon1; ?></td>
                 </tr>
                 <tr>
                   <td>Laporan Ke.2</td>
-                  <td>File</td>
+                  <td><div class="col-sm-offset-2 col-sm-10">
+                       <?php if ($key->lap_onboard2) { ?>
+                        <button class="btn btn-success view-file-button" data-filename="<?php echo $key->lap_onboard2; ?>">Lihat file Laporan Onboard 2</button>
+                      <?php } else { ?>
+                          <!-- Tampilkan pesan jika file tidak ada -->
+                          File tidak tersedia
+                      <?php } ?>
+                    </div></td>
                   <td><?php  echo $key->date_lapon2; ?></td>
                   <td><span class="label label-success">Approved</span></td>
                   <td><?php  echo $key->keterangan_lapon2; ?></td>
                 </tr>
                 <tr>
                   <td>Laporan Ke.3</td>
-                  <td>File</td>
+                  <td><div class="col-sm-offset-2 col-sm-10">
+                       <?php if ($key->lap_onboard3) { ?>
+                        <button class="btn btn-success view-file-button" data-filename="<?php echo $key->lap_onboard3; ?>">Lihat file Laporan Onboard 3</button>
+                      <?php } else { ?>
+                          <!-- Tampilkan pesan jika file tidak ada -->
+                          File tidak tersedia
+                      <?php } ?>
+                    </div></td>
                   <td><?php  echo $key->date_lapon3; ?></td>
                   <td><span class="label label-success">Approved</span></td>
                   <td><?php  echo $key->keterangan_lapon3; ?></td>
                 </tr>
                 <tr>
                   <td>Laporan Ke.4</td>
-                  <td>File</td>
+                  <td><div class="col-sm-offset-2 col-sm-10">
+                       <?php if ($key->lap_onboard4) { ?>
+                        <button class="btn btn-success view-file-button" data-filename="<?php echo $key->lap_onboard4; ?>">Lihat file Laporan Onboard 4</button>
+                      <?php } else { ?>
+                          <!-- Tampilkan pesan jika file tidak ada -->
+                          File tidak tersedia
+                      <?php } ?>
+                    </div></td>
                   <td><?php  echo $key->date_lapon4; ?></td>
                   <td><span class="label label-success">Approved</span></td>
                   <td><?php  echo $key->keterangan_lapon4; ?></td>
                 </tr>
                 <tr>
                   <td>Laporan Ke.5</td>
-                  <td>File</td>
+                  <td><div class="col-sm-offset-2 col-sm-10">
+                       <?php if ($key->lap_onboard5) { ?>
+                        <button class="btn btn-success view-file-button" data-filename="<?php echo $key->lap_onboard5; ?>">Lihat file Laporan Onboard 5</button>
+                      <?php } else { ?>
+                          <!-- Tampilkan pesan jika file tidak ada -->
+                          File tidak tersedia
+                      <?php } ?>
+                    </div></td>
                   <td><?php  echo $key->date_lapon5; ?></td>
                   <td><span class="label label-success">Approved</span></td>
                   <td><?php  echo $key->keterangan_lapon5; ?></td>
                 </tr>
                 <tr>
                   <td>Laporan Ke.6</td>
-                  <td>File</td>
+                  <td><div class="col-sm-offset-2 col-sm-10">
+                       <?php if ($key->lap_onboard6) { ?>
+                        <button class="btn btn-success view-file-button" data-filename="<?php echo $key->lap_onboard6; ?>">Lihat file Laporan Onboard 6</button>
+                      <?php } else { ?>
+                          <!-- Tampilkan pesan jika file tidak ada -->
+                          File tidak tersedia
+                      <?php } ?>
+                    </div></td>
                   <td><?php  echo $key->date_lapon6; ?></td>
                   <td><span class="label label-success">Approved</span></td>
                   <td><?php  echo $key->keterangan_lapon6; ?></td>
                 </tr>
                 <tr>
                   <td>Laporan Ke.7</td>
-                  <td>File</td>
+                  <td><div class="col-sm-offset-2 col-sm-10">
+                       <?php if ($key->lap_onboard7) { ?>
+                        <button class="btn btn-success view-file-button" data-filename="<?php echo $key->lap_onboard7; ?>">Lihat file Laporan Onboard 7</button>
+                      <?php } else { ?>
+                          <!-- Tampilkan pesan jika file tidak ada -->
+                          File tidak tersedia
+                      <?php } ?>
+                    </div></td>
                   <td><?php  echo $key->date_lapon7; ?></td>
                   <td><span class="label label-success">Approved</span></td>
                   <td><?php  echo $key->keterangan_lapon7; ?></td>
                 </tr>
                 <tr>
                   <td>Laporan Ke.8</td>
-                  <td>File</td>
+                  <td><div class="col-sm-offset-2 col-sm-10">
+                       <?php if ($key->lap_onboard8) { ?>
+                        <button class="btn btn-success view-file-button" data-filename="<?php echo $key->lap_onboard8; ?>">Lihat file Laporan Onboard 8</button>
+                      <?php } else { ?>
+                          <!-- Tampilkan pesan jika file tidak ada -->
+                          File tidak tersedia
+                      <?php } ?>
+                    </div></td>
                   <td><?php  echo $key->date_lapon8; ?></td>
                   <td><span class="label label-success">Approved</span></td>
                   <td><?php  echo $key->keterangan_lapon8; ?></td>
                 </tr>
                 <tr>
                   <td>Laporan Ke.9</td>
-                  <td>File</td>
+                  <td><div class="col-sm-offset-2 col-sm-10">
+                       <?php if ($key->lap_onboard9) { ?>
+                        <button class="btn btn-success view-file-button" data-filename="<?php echo $key->lap_onboard9; ?>">Lihat file Laporan Onboard 9</button>
+                      <?php } else { ?>
+                          <!-- Tampilkan pesan jika file tidak ada -->
+                          File tidak tersedia
+                      <?php } ?>
+                    </div></td>
                   <td><?php  echo $key->date_lapon9; ?></td>
                   <td><span class="label label-success">Approved</span></td>
                   <td><?php  echo $key->keterangan_lapon9; ?></td>
                 </tr>
                 <tr>
                   <td>Laporan Ke.10</td>
-                  <td>File</td>
+                  <td><div class="col-sm-offset-2 col-sm-10">
+                       <?php if ($key->lap_onboard10) { ?>
+                        <button class="btn btn-success view-file-button" data-filename="<?php echo $key->lap_onboard10; ?>">Lihat file Laporan Onboard 10</button>
+                      <?php } else { ?>
+                          <!-- Tampilkan pesan jika file tidak ada -->
+                          File tidak tersedia
+                      <?php } ?>
+                    </div></td>
                   <td><?php  echo $key->date_lapon10; ?></td>
                   <td><span class="label label-success">Approved</span></td>
                   <td><?php  echo $key->keterangan_lapon10; ?></td>
                 </tr>
                 <tr>
                   <td>Laporan Ke.11</td>
-                  <td>File</td>
+                  <td><div class="col-sm-offset-2 col-sm-10">
+                       <?php if ($key->lap_onboard11) { ?>
+                        <button class="btn btn-success view-file-button" data-filename="<?php echo $key->lap_onboard11; ?>">Lihat file Laporan Onboard 11</button>
+                      <?php } else { ?>
+                          <!-- Tampilkan pesan jika file tidak ada -->
+                          File tidak tersedia
+                      <?php } ?>
+                    </div></td>
                   <td><?php  echo $key->date_lapon11; ?></td>
                   <td><span class="label label-success">Approved</span></td>
                   <td><?php  echo $key->keterangan_lapon11; ?></td>
                 </tr>
                 <tr>
                   <td>Laporan Ke.12</td>
-                  <td>File</td>
+                  <td><div class="col-sm-offset-2 col-sm-10">
+                       <?php if ($key->lap_onboard12) { ?>
+                        <button class="btn btn-success view-file-button" data-filename="<?php echo $key->lap_onboard12; ?>">Lihat file Laporan Onboard 12</button>
+                      <?php } else { ?>
+                          <!-- Tampilkan pesan jika file tidak ada -->
+                          File tidak tersedia
+                      <?php } ?>
+                    </div></td>
                   <td><?php  echo $key->date_lapon12; ?></td>
                   <td><span class="label label-success">Approved</span></td>
                   <td><?php  echo $key->keterangan_lapon12; ?></td>
