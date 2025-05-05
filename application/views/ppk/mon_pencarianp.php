@@ -302,9 +302,8 @@ foreach ($results as $k) {
 
                 <div class="box-body table-responsive no-padding">
                    <?php foreach ($resultsl as $key) {
-                  # code...
                   echo $key->lap_onboard1;
-                } ?>
+                ?>
               <table class="table table-hover">
                 <thead>
                 <tr>
@@ -319,88 +318,89 @@ foreach ($results as $k) {
                 <tr>
                   <td>Laporan Ke.1</td>
                   <td>File</td>
-                  <td>11-7-2014</td>
+                  <td><?php  echo $key->date_lapon1; ?></td>
                   <td><span class="label label-success">Approved</span></td>
-                  <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                  <td><?php  echo $key->keterangan_lapon1; ?></td>
                 </tr>
                 <tr>
                   <td>Laporan Ke.2</td>
                   <td>File</td>
-                  <td>11-7-2014</td>
+                  <td><?php  echo $key->date_lapon2; ?></td>
                   <td><span class="label label-success">Approved</span></td>
-                  <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                  <td><?php  echo $key->keterangan_lapon2; ?></td>
                 </tr>
                 <tr>
                   <td>Laporan Ke.3</td>
                   <td>File</td>
-                  <td>11-7-2014</td>
+                  <td><?php  echo $key->date_lapon3; ?></td>
                   <td><span class="label label-success">Approved</span></td>
-                  <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                  <td><?php  echo $key->keterangan_lapon3; ?></td>
                 </tr>
                 <tr>
                   <td>Laporan Ke.4</td>
                   <td>File</td>
-                  <td>11-7-2014</td>
+                  <td><?php  echo $key->date_lapon4; ?></td>
                   <td><span class="label label-success">Approved</span></td>
-                  <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                  <td><?php  echo $key->keterangan_lapon4; ?></td>
                 </tr>
                 <tr>
                   <td>Laporan Ke.5</td>
                   <td>File</td>
-                  <td>11-7-2014</td>
+                  <td><?php  echo $key->date_lapon5; ?></td>
                   <td><span class="label label-success">Approved</span></td>
-                  <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                  <td><?php  echo $key->keterangan_lapon5; ?></td>
                 </tr>
                 <tr>
                   <td>Laporan Ke.6</td>
                   <td>File</td>
-                  <td>11-7-2014</td>
+                  <td><?php  echo $key->date_lapon6; ?></td>
                   <td><span class="label label-success">Approved</span></td>
-                  <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                  <td><?php  echo $key->keterangan_lapon6; ?></td>
                 </tr>
                 <tr>
                   <td>Laporan Ke.7</td>
                   <td>File</td>
-                  <td>11-7-2014</td>
+                  <td><?php  echo $key->date_lapon7; ?></td>
                   <td><span class="label label-success">Approved</span></td>
-                  <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                  <td><?php  echo $key->keterangan_lapon7; ?></td>
                 </tr>
                 <tr>
                   <td>Laporan Ke.8</td>
                   <td>File</td>
-                  <td>11-7-2014</td>
+                  <td><?php  echo $key->date_lapon8; ?></td>
                   <td><span class="label label-success">Approved</span></td>
-                  <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                  <td><?php  echo $key->keterangan_lapon8; ?></td>
                 </tr>
                 <tr>
                   <td>Laporan Ke.9</td>
                   <td>File</td>
-                  <td>11-7-2014</td>
+                  <td><?php  echo $key->date_lapon9; ?></td>
                   <td><span class="label label-success">Approved</span></td>
-                  <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                  <td><?php  echo $key->keterangan_lapon9; ?></td>
                 </tr>
                 <tr>
                   <td>Laporan Ke.10</td>
                   <td>File</td>
-                  <td>11-7-2014</td>
+                  <td><?php  echo $key->date_lapon10; ?></td>
                   <td><span class="label label-success">Approved</span></td>
-                  <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                  <td><?php  echo $key->keterangan_lapon10; ?></td>
                 </tr>
                 <tr>
                   <td>Laporan Ke.11</td>
                   <td>File</td>
-                  <td>11-7-2014</td>
+                  <td><?php  echo $key->date_lapon11; ?></td>
                   <td><span class="label label-success">Approved</span></td>
-                  <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                  <td><?php  echo $key->keterangan_lapon11; ?></td>
                 </tr>
                 <tr>
                   <td>Laporan Ke.12</td>
                   <td>File</td>
-                  <td>11-7-2014</td>
+                  <td><?php  echo $key->date_lapon12; ?></td>
                   <td><span class="label label-success">Approved</span></td>
-                  <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                  <td><?php  echo $key->keterangan_lapon12; ?></td>
                 </tr>
-              </tbody></table>
+              </tbody></table> 
+            <?php } ?>
             </div>
             
               </div>
