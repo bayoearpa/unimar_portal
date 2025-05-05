@@ -348,7 +348,16 @@ foreach ($results as $k) {
                       <?php } ?>
                     </div></td>
                   <td><?php  echo $key->date_lapon2; ?></td>
-                  <td><span class="label label-success">Approved</span></td>
+                  <td><div class="form-group">
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="addstatpra" name="sudah_lapon2" value="sudah">
+                            <label class="form-check-label" for="addstatpra">Sudah</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="addstatpra" name="sudah_lapon2" value="belum">
+                            <label class="form-check-label" for="addstatpra">Belum</label>
+                        </div>
+                    </div></td>
                   <td><?php  echo $key->keterangan_lapon2; ?></td>
                 </tr>
                 <tr>
@@ -362,7 +371,16 @@ foreach ($results as $k) {
                       <?php } ?>
                     </div></td>
                   <td><?php  echo $key->date_lapon3; ?></td>
-                  <td><span class="label label-success">Approved</span></td>
+                  <td><div class="form-group">
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="addstatpra" name="sudah_lapon3" value="sudah">
+                            <label class="form-check-label" for="addstatpra">Sudah</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="addstatpra" name="sudah_lapon3" value="belum">
+                            <label class="form-check-label" for="addstatpra">Belum</label>
+                        </div>
+                    </div></td>
                   <td><?php  echo $key->keterangan_lapon3; ?></td>
                 </tr>
                 <tr>
@@ -376,7 +394,16 @@ foreach ($results as $k) {
                       <?php } ?>
                     </div></td>
                   <td><?php  echo $key->date_lapon4; ?></td>
-                  <td><span class="label label-success">Approved</span></td>
+                  <td><div class="form-group">
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="addstatpra" name="sudah_lapon4" value="sudah">
+                            <label class="form-check-label" for="addstatpra">Sudah</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="addstatpra" name="sudah_lapon4" value="belum">
+                            <label class="form-check-label" for="addstatpra">Belum</label>
+                        </div>
+                    </div></td>
                   <td><?php  echo $key->keterangan_lapon4; ?></td>
                 </tr>
                 <tr>
@@ -390,7 +417,16 @@ foreach ($results as $k) {
                       <?php } ?>
                     </div></td>
                   <td><?php  echo $key->date_lapon5; ?></td>
-                  <td><span class="label label-success">Approved</span></td>
+                  <td><div class="form-group">
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="addstatpra" name="sudah_lapon5" value="sudah">
+                            <label class="form-check-label" for="addstatpra">Sudah</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="addstatpra" name="sudah_lapon5" value="belum">
+                            <label class="form-check-label" for="addstatpra">Belum</label>
+                        </div>
+                    </div></td>
                   <td><?php  echo $key->keterangan_lapon5; ?></td>
                 </tr>
                 <tr>
@@ -404,7 +440,16 @@ foreach ($results as $k) {
                       <?php } ?>
                     </div></td>
                   <td><?php  echo $key->date_lapon6; ?></td>
-                  <td><span class="label label-success">Approved</span></td>
+                  <td><div class="form-group">
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="addstatpra" name="sudah_lapon6" value="sudah">
+                            <label class="form-check-label" for="addstatpra">Sudah</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="addstatpra" name="sudah_lapon6" value="belum">
+                            <label class="form-check-label" for="addstatpra">Belum</label>
+                        </div>
+                    </div></td>
                   <td><?php  echo $key->keterangan_lapon6; ?></td>
                 </tr>
                 <tr>
@@ -418,7 +463,16 @@ foreach ($results as $k) {
                       <?php } ?>
                     </div></td>
                   <td><?php  echo $key->date_lapon7; ?></td>
-                  <td><span class="label label-success">Approved</span></td>
+                  <td><div class="form-group">
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="addstatpra" name="sudah_lapon7" value="sudah">
+                            <label class="form-check-label" for="addstatpra">Sudah</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="addstatpra" name="sudah_lapon7" value="belum">
+                            <label class="form-check-label" for="addstatpra">Belum</label>
+                        </div>
+                    </div></td>
                   <td><?php  echo $key->keterangan_lapon7; ?></td>
                 </tr>
                 <tr>
@@ -432,7 +486,16 @@ foreach ($results as $k) {
                       <?php } ?>
                     </div></td>
                   <td><?php  echo $key->date_lapon8; ?></td>
-                  <td><span class="label label-success">Approved</span></td>
+                  <td><div class="form-group">
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="addstatpra" name="sudah_lapon8" value="sudah">
+                            <label class="form-check-label" for="addstatpra">Sudah</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="addstatpra" name="sudah_lapon8" value="belum">
+                            <label class="form-check-label" for="addstatpra">Belum</label>
+                        </div>
+                    </div></td>
                   <td><?php  echo $key->keterangan_lapon8; ?></td>
                 </tr>
                 <tr>
@@ -446,7 +509,16 @@ foreach ($results as $k) {
                       <?php } ?>
                     </div></td>
                   <td><?php  echo $key->date_lapon9; ?></td>
-                  <td><span class="label label-success">Approved</span></td>
+                  <td><div class="form-group">
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="addstatpra" name="sudah_lapon9" value="sudah">
+                            <label class="form-check-label" for="addstatpra">Sudah</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="addstatpra" name="sudah_lapon9" value="belum">
+                            <label class="form-check-label" for="addstatpra">Belum</label>
+                        </div>
+                    </div></td>
                   <td><?php  echo $key->keterangan_lapon9; ?></td>
                 </tr>
                 <tr>
@@ -460,7 +532,16 @@ foreach ($results as $k) {
                       <?php } ?>
                     </div></td>
                   <td><?php  echo $key->date_lapon10; ?></td>
-                  <td><span class="label label-success">Approved</span></td>
+                  <td><div class="form-group">
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="addstatpra" name="sudah_lapon10" value="sudah">
+                            <label class="form-check-label" for="addstatpra">Sudah</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="addstatpra" name="sudah_lapon10" value="belum">
+                            <label class="form-check-label" for="addstatpra">Belum</label>
+                        </div>
+                    </div></td>
                   <td><?php  echo $key->keterangan_lapon10; ?></td>
                 </tr>
                 <tr>
@@ -474,7 +555,16 @@ foreach ($results as $k) {
                       <?php } ?>
                     </div></td>
                   <td><?php  echo $key->date_lapon11; ?></td>
-                  <td><span class="label label-success">Approved</span></td>
+                  <td><div class="form-group">
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="addstatpra" name="sudah_lapon11" value="sudah">
+                            <label class="form-check-label" for="addstatpra">Sudah</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="addstatpra" name="sudah_lapon11" value="belum">
+                            <label class="form-check-label" for="addstatpra">Belum</label>
+                        </div>
+                    </div></td>
                   <td><?php  echo $key->keterangan_lapon11; ?></td>
                 </tr>
                 <tr>
@@ -488,7 +578,16 @@ foreach ($results as $k) {
                       <?php } ?>
                     </div></td>
                   <td><?php  echo $key->date_lapon12; ?></td>
-                  <td><span class="label label-success">Approved</span></td>
+                  <td><div class="form-group">
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="addstatpra" name="sudah_lapon12" value="sudah">
+                            <label class="form-check-label" for="addstatpra">Sudah</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="addstatpra" name="sudah_lapon12" value="belum">
+                            <label class="form-check-label" for="addstatpra">Belum</label>
+                        </div>
+                    </div></td>
                   <td><?php  echo $key->keterangan_lapon12; ?></td>
                 </tr>
               </tbody></table> 
