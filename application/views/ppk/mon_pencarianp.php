@@ -301,6 +301,10 @@ foreach ($results as $k) {
               <div class="tab-pane" id="laponboard">
 
                 <div class="box-body table-responsive no-padding">
+                   <?php foreach ($result1 as $key) {
+                  # code...
+                  echo $key->lap_onboard1;
+                } ?>
               <table class="table table-hover">
                 <thead>
                 <tr>
@@ -311,10 +315,6 @@ foreach ($results as $k) {
                   <th>Keterangan</th>
                 </tr>
                 </thead>
-                <?php foreach ($result1 as $key) {
-                  # code...
-                  echo $key->lap_onboard1;
-                } ?>
                 <tbody>
                 <tr>
                   <td>Laporan Ke.1</td>
