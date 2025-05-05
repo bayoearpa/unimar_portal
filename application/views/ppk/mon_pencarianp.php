@@ -326,13 +326,12 @@ foreach ($results as $k) {
                     </div></td>
                   <td><?php  echo $key->date_lapon1; ?></td>
                   <td> <div class="form-group">
-                        <label for="addstatpra">Status Laporan 1:</label>
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="addstatpra" name="sudah_lapon1" value="sudah">
+                            <input type="radio" class="form-check-input" id="addstatpra" name="sudah_lapon1" value="sudah">
                             <label class="form-check-label" for="addstatpra">Sudah</label>
                         </div>
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="addstatpra" name="sudah_lapon1" value="belum">
+                            <input type="radio" class="form-check-input" id="addstatpra" name="sudah_lapon1" value="belum">
                             <label class="form-check-label" for="addstatpra">Belum</label>
                         </div>
                     </div></td>
