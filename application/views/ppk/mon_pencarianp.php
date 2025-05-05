@@ -301,7 +301,7 @@ foreach ($results as $k) {
               <div class="tab-pane" id="laponboard">
 
                 <div class="box-body table-responsive no-padding">
-                   <?php foreach ($result1 as $key) {
+                   <?php foreach ($results1 as $key) {
                   # code...
                   echo $key->lap_onboard1;
                 } ?>
