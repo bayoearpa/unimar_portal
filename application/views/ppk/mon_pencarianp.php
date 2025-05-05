@@ -335,7 +335,8 @@ foreach ($results as $k) {
                             <label class="form-check-label" for="addstatpra">Belum</label>
                         </div>
                     </div></td>
-                  <td><?php  echo $key->keterangan_lapon1; ?></td>
+                  <td>
+                    <textarea class="form-control" name="keterangan_lapon1" id="keterangan_lapon1" rows="3" placeholder="Masukkan Keterangan"><?php  echo $key->keterangan_lapon1; ?></textarea></td>
                 </tr>
                 <tr>
                   <td>Laporan Ke.2</td>
@@ -358,7 +359,7 @@ foreach ($results as $k) {
                             <label class="form-check-label" for="addstatpra">Belum</label>
                         </div>
                     </div></td>
-                  <td><?php  echo $key->keterangan_lapon2; ?></td>
+                  <td><textarea class="form-control" name="keterangan_lapon2" id="keterangan_lapon2" rows="3" placeholder="Masukkan Keterangan"><?php  echo $key->keterangan_lapon2; ?></textarea></td></td>
                 </tr>
                 <tr>
                   <td>Laporan Ke.3</td>
@@ -381,7 +382,7 @@ foreach ($results as $k) {
                             <label class="form-check-label" for="addstatpra">Belum</label>
                         </div>
                     </div></td>
-                  <td><?php  echo $key->keterangan_lapon3; ?></td>
+                  <td><textarea class="form-control" name="keterangan_lapon4" id="keterangan_lapon4" rows="3" placeholder="Masukkan Keterangan"><?php  echo $key->keterangan_lapon4; ?></textarea></td></td>
                 </tr>
                 <tr>
                   <td>Laporan Ke.4</td>
@@ -404,7 +405,7 @@ foreach ($results as $k) {
                             <label class="form-check-label" for="addstatpra">Belum</label>
                         </div>
                     </div></td>
-                  <td><?php  echo $key->keterangan_lapon4; ?></td>
+                  <td><textarea class="form-control" name="keterangan_lapon4" id="keterangan_lapon4" rows="3" placeholder="Masukkan Keterangan"><?php  echo $key->keterangan_lapon4; ?></textarea></td></td>
                 </tr>
                 <tr>
                   <td>Laporan Ke.5</td>
@@ -427,7 +428,7 @@ foreach ($results as $k) {
                             <label class="form-check-label" for="addstatpra">Belum</label>
                         </div>
                     </div></td>
-                  <td><?php  echo $key->keterangan_lapon5; ?></td>
+                  <td><textarea class="form-control" name="keterangan_lapon5" id="keterangan_lapon5" rows="3" placeholder="Masukkan Keterangan"><?php  echo $key->keterangan_lapon5; ?></textarea></td></td>
                 </tr>
                 <tr>
                   <td>Laporan Ke.6</td>
@@ -450,7 +451,7 @@ foreach ($results as $k) {
                             <label class="form-check-label" for="addstatpra">Belum</label>
                         </div>
                     </div></td>
-                  <td><?php  echo $key->keterangan_lapon6; ?></td>
+                  <td><textarea class="form-control" name="keterangan_lapon6" id="keterangan_lapon6" rows="3" placeholder="Masukkan Keterangan"><?php  echo $key->keterangan_lapon6; ?></textarea></td></td>
                 </tr>
                 <tr>
                   <td>Laporan Ke.7</td>
@@ -473,7 +474,7 @@ foreach ($results as $k) {
                             <label class="form-check-label" for="addstatpra">Belum</label>
                         </div>
                     </div></td>
-                  <td><?php  echo $key->keterangan_lapon7; ?></td>
+                  <td><textarea class="form-control" name="keterangan_lapon7" id="keterangan_lapon7" rows="3" placeholder="Masukkan Keterangan"><?php  echo $key->keterangan_lapon7; ?></textarea></td></td>
                 </tr>
                 <tr>
                   <td>Laporan Ke.8</td>
@@ -496,7 +497,7 @@ foreach ($results as $k) {
                             <label class="form-check-label" for="addstatpra">Belum</label>
                         </div>
                     </div></td>
-                  <td><?php  echo $key->keterangan_lapon8; ?></td>
+                  <td><textarea class="form-control" name="keterangan_lapon8" id="keterangan_lapon8" rows="3" placeholder="Masukkan Keterangan"><?php  echo $key->keterangan_lapon8; ?></textarea></td></td>
                 </tr>
                 <tr>
                   <td>Laporan Ke.9</td>
@@ -519,7 +520,7 @@ foreach ($results as $k) {
                             <label class="form-check-label" for="addstatpra">Belum</label>
                         </div>
                     </div></td>
-                  <td><?php  echo $key->keterangan_lapon9; ?></td>
+                  <td><textarea class="form-control" name="keterangan_lapon9" id="keterangan_lapon9" rows="3" placeholder="Masukkan Keterangan"><?php  echo $key->keterangan_lapon9; ?></textarea></td></td>
                 </tr>
                 <tr>
                   <td>Laporan Ke.10</td>
@@ -542,7 +543,7 @@ foreach ($results as $k) {
                             <label class="form-check-label" for="addstatpra">Belum</label>
                         </div>
                     </div></td>
-                  <td><?php  echo $key->keterangan_lapon10; ?></td>
+                  <td><textarea class="form-control" name="keterangan_lapon10" id="keterangan_lapon10" rows="3" placeholder="Masukkan Keterangan"><?php  echo $key->keterangan_lapon10; ?></textarea></td></td>
                 </tr>
                 <tr>
                   <td>Laporan Ke.11</td>
@@ -565,7 +566,7 @@ foreach ($results as $k) {
                             <label class="form-check-label" for="addstatpra">Belum</label>
                         </div>
                     </div></td>
-                  <td><?php  echo $key->keterangan_lapon11; ?></td>
+                  <td><textarea class="form-control" name="keterangan_lapon11" id="keterangan_lapon11" rows="3" placeholder="Masukkan Keterangan"><?php  echo $key->keterangan_lapon11; ?></textarea></td></td>
                 </tr>
                 <tr>
                   <td>Laporan Ke.12</td>
@@ -588,7 +589,7 @@ foreach ($results as $k) {
                             <label class="form-check-label" for="addstatpra">Belum</label>
                         </div>
                     </div></td>
-                  <td><?php  echo $key->keterangan_lapon12; ?></td>
+                  <td><textarea class="form-control" name="keterangan_lapon12" id="keterangan_lapon12" rows="3" placeholder="Masukkan Keterangan"><?php  echo $key->keterangan_lapon12; ?></textarea></td></td>
                 </tr>
               </tbody></table> 
             <?php } ?>
