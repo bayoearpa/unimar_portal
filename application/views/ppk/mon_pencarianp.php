@@ -287,7 +287,7 @@ foreach ($results as $k) {
                   <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
                        <?php if ($k->upload_file_signon) { ?>
-                        <button class="btn btn-success view-file-button" data-filename="<?php echo $k->upload_file_signon; ?>">Lihat file Sign On</button>
+                        <button class="btn btn-success view-filesignon-button" data-filename="<?php echo $k->upload_file_signon; ?>">Lihat file Sign On</button>
                       <?php } else { ?>
                           <!-- Tampilkan pesan jika file tidak ada -->
                           File tidak tersedia
@@ -299,7 +299,7 @@ foreach ($results as $k) {
               <!-- /.tab-pane -->
 
               <div class="tab-pane" id="laponboard">
-
+                <form id="formLaporanOnboard">
                 <div class="box-body table-responsive no-padding">
                    <?php foreach ($resultsl as $key) {
                 ?>
@@ -318,7 +318,7 @@ foreach ($results as $k) {
                   <td>Laporan Ke.1</td>
                   <td><div class="col-sm-offset-2 col-sm-10">
                        <?php if ($key->lap_onboard1) { ?>
-                        <button class="btn btn-success view-file-button" data-filename="<?php echo $key->lap_onboard1; ?>">Lihat file Laporan Onboard 1</button>
+                        <button class="btn btn-success view-filelapon1-button" data-filename="<?php echo $key->lap_onboard1; ?>">Lihat file Laporan Onboard 1</button>
                       <?php } else { ?>
                           <!-- Tampilkan pesan jika file tidak ada -->
                           File tidak tersedia
@@ -342,7 +342,7 @@ foreach ($results as $k) {
                   <td>Laporan Ke.2</td>
                   <td><div class="col-sm-offset-2 col-sm-10">
                        <?php if ($key->lap_onboard2) { ?>
-                        <button class="btn btn-success view-file-button" data-filename="<?php echo $key->lap_onboard2; ?>">Lihat file Laporan Onboard 2</button>
+                        <button class="btn btn-success view-filelapon2-button" data-filename="<?php echo $key->lap_onboard2; ?>">Lihat file Laporan Onboard 2</button>
                       <?php } else { ?>
                           <!-- Tampilkan pesan jika file tidak ada -->
                           File tidak tersedia
@@ -365,7 +365,7 @@ foreach ($results as $k) {
                   <td>Laporan Ke.3</td>
                   <td><div class="col-sm-offset-2 col-sm-10">
                        <?php if ($key->lap_onboard3) { ?>
-                        <button class="btn btn-success view-file-button" data-filename="<?php echo $key->lap_onboard3; ?>">Lihat file Laporan Onboard 3</button>
+                        <button class="btn btn-success view-filelapon3-button" data-filename="<?php echo $key->lap_onboard3; ?>">Lihat file Laporan Onboard 3</button>
                       <?php } else { ?>
                           <!-- Tampilkan pesan jika file tidak ada -->
                           File tidak tersedia
@@ -388,7 +388,7 @@ foreach ($results as $k) {
                   <td>Laporan Ke.4</td>
                   <td><div class="col-sm-offset-2 col-sm-10">
                        <?php if ($key->lap_onboard4) { ?>
-                        <button class="btn btn-success view-file-button" data-filename="<?php echo $key->lap_onboard4; ?>">Lihat file Laporan Onboard 4</button>
+                        <button class="btn btn-success view-filelapon4-button" data-filename="<?php echo $key->lap_onboard4; ?>">Lihat file Laporan Onboard 4</button>
                       <?php } else { ?>
                           <!-- Tampilkan pesan jika file tidak ada -->
                           File tidak tersedia
@@ -411,7 +411,7 @@ foreach ($results as $k) {
                   <td>Laporan Ke.5</td>
                   <td><div class="col-sm-offset-2 col-sm-10">
                        <?php if ($key->lap_onboard5) { ?>
-                        <button class="btn btn-success view-file-button" data-filename="<?php echo $key->lap_onboard5; ?>">Lihat file Laporan Onboard 5</button>
+                        <button class="btn btn-success view-filelapon5-button" data-filename="<?php echo $key->lap_onboard5; ?>">Lihat file Laporan Onboard 5</button>
                       <?php } else { ?>
                           <!-- Tampilkan pesan jika file tidak ada -->
                           File tidak tersedia
@@ -434,7 +434,7 @@ foreach ($results as $k) {
                   <td>Laporan Ke.6</td>
                   <td><div class="col-sm-offset-2 col-sm-10">
                        <?php if ($key->lap_onboard6) { ?>
-                        <button class="btn btn-success view-file-button" data-filename="<?php echo $key->lap_onboard6; ?>">Lihat file Laporan Onboard 6</button>
+                        <button class="btn btn-success view-filelapon6-button" data-filename="<?php echo $key->lap_onboard6; ?>">Lihat file Laporan Onboard 6</button>
                       <?php } else { ?>
                           <!-- Tampilkan pesan jika file tidak ada -->
                           File tidak tersedia
@@ -457,7 +457,7 @@ foreach ($results as $k) {
                   <td>Laporan Ke.7</td>
                   <td><div class="col-sm-offset-2 col-sm-10">
                        <?php if ($key->lap_onboard7) { ?>
-                        <button class="btn btn-success view-file-button" data-filename="<?php echo $key->lap_onboard7; ?>">Lihat file Laporan Onboard 7</button>
+                        <button class="btn btn-success view-filelapon7-button" data-filename="<?php echo $key->lap_onboard7; ?>">Lihat file Laporan Onboard 7</button>
                       <?php } else { ?>
                           <!-- Tampilkan pesan jika file tidak ada -->
                           File tidak tersedia
@@ -480,7 +480,7 @@ foreach ($results as $k) {
                   <td>Laporan Ke.8</td>
                   <td><div class="col-sm-offset-2 col-sm-10">
                        <?php if ($key->lap_onboard8) { ?>
-                        <button class="btn btn-success view-file-button" data-filename="<?php echo $key->lap_onboard8; ?>">Lihat file Laporan Onboard 8</button>
+                        <button class="btn btn-success view-filelapon8-button" data-filename="<?php echo $key->lap_onboard8; ?>">Lihat file Laporan Onboard 8</button>
                       <?php } else { ?>
                           <!-- Tampilkan pesan jika file tidak ada -->
                           File tidak tersedia
@@ -503,7 +503,7 @@ foreach ($results as $k) {
                   <td>Laporan Ke.9</td>
                   <td><div class="col-sm-offset-2 col-sm-10">
                        <?php if ($key->lap_onboard9) { ?>
-                        <button class="btn btn-success view-file-button" data-filename="<?php echo $key->lap_onboard9; ?>">Lihat file Laporan Onboard 9</button>
+                        <button class="btn btn-success view-filelapon9-button" data-filename="<?php echo $key->lap_onboard9; ?>">Lihat file Laporan Onboard 9</button>
                       <?php } else { ?>
                           <!-- Tampilkan pesan jika file tidak ada -->
                           File tidak tersedia
@@ -526,7 +526,7 @@ foreach ($results as $k) {
                   <td>Laporan Ke.10</td>
                   <td><div class="col-sm-offset-2 col-sm-10">
                        <?php if ($key->lap_onboard10) { ?>
-                        <button class="btn btn-success view-file-button" data-filename="<?php echo $key->lap_onboard10; ?>">Lihat file Laporan Onboard 10</button>
+                        <button class="btn btn-success view-filelapon10-button" data-filename="<?php echo $key->lap_onboard10; ?>">Lihat file Laporan Onboard 10</button>
                       <?php } else { ?>
                           <!-- Tampilkan pesan jika file tidak ada -->
                           File tidak tersedia
@@ -549,7 +549,7 @@ foreach ($results as $k) {
                   <td>Laporan Ke.11</td>
                   <td><div class="col-sm-offset-2 col-sm-10">
                        <?php if ($key->lap_onboard11) { ?>
-                        <button class="btn btn-success view-file-button" data-filename="<?php echo $key->lap_onboard11; ?>">Lihat file Laporan Onboard 11</button>
+                        <button class="btn btn-success view-filelapon11-button" data-filename="<?php echo $key->lap_onboard11; ?>">Lihat file Laporan Onboard 11</button>
                       <?php } else { ?>
                           <!-- Tampilkan pesan jika file tidak ada -->
                           File tidak tersedia
@@ -572,7 +572,7 @@ foreach ($results as $k) {
                   <td>Laporan Ke.12</td>
                   <td><div class="col-sm-offset-2 col-sm-10">
                        <?php if ($key->lap_onboard12) { ?>
-                        <button class="btn btn-success view-file-button" data-filename="<?php echo $key->lap_onboard12; ?>">Lihat file Laporan Onboard 12</button>
+                        <button class="btn btn-success view-filelapon12-button" data-filename="<?php echo $key->lap_onboard12; ?>">Lihat file Laporan Onboard 12</button>
                       <?php } else { ?>
                           <!-- Tampilkan pesan jika file tidak ada -->
                           File tidak tersedia
@@ -591,7 +591,10 @@ foreach ($results as $k) {
                     </div></td>
                   <td><textarea class="form-control" name="keterangan_lapon12" id="keterangan_lapon12" rows="3" placeholder="Masukkan Keterangan"><?php  echo $key->keterangan_lapon12; ?></textarea></td></td>
                 </tr>
-              </tbody></table> 
+              </tbody></table>
+              <button type="submit" class="btn btn-primary">Simpan</button> 
+              <div id="notifikasi" class="mt-2"></div>
+              </form>
             <?php } ?>
             </div>
             
