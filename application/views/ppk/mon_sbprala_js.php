@@ -21,7 +21,7 @@
                 'lengthChange': true,
                   'searching'   : true,
                   'ordering'    : true,
-                //   'info'        : true,
+                  'info'        : true,
                 //   'autoWidth'   : false
                 // Other DataTables options...
             });
