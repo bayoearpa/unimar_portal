@@ -954,7 +954,7 @@ function get_data_formon_mhsyearnprodi_sb($year, $program_studi)
         $this->db->from('tmst_mahasiswa');
         $this->db->join('tmst_program_studi','tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi','inner');
         $this->db->join('tbl_mon','tmst_mahasiswa.NIM = tbl_mon.nim','inner');
-        $this->db->where('tmst_mahasiswa.Tahun_masuk)', $year);
+        $this->db->where('tmst_mahasiswa.Tahun_masuk', $year);
         $this->db->where('tbl_mon.pra_status >=', 'sudah');
         $this->db->where('tbl_mon.status_sb', 'iya');
         $this->db->where('tmst_mahasiswa.Kode_program_studi', $program_studi);
