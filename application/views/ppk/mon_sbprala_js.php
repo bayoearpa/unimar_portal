@@ -89,7 +89,7 @@
 function reloadTable() {
     $.ajax({
         type: 'GET',
-        url: '<?php echo base_url('baak/mon_llsd3data'); ?>',
+        url: '<?php echo base_url('baak/mon_sbpraladata'); ?>',
         data: { year: $('#year').val(), program_studi: $('#program_studi').val() },
         success: function(response) {
             $('#example31082023').html(response);
