@@ -1276,6 +1276,20 @@ class ppk extends CI_Controller {
 
     echo $output;
 }
+public function mon_laporanupdate() {
+    $id = $this->input->post('id_laporan');
+    $data = [];
+
+    for ($i = 1; $i <= 11; $i++) {
+        $data["status_lapon$i"] = $this->input->post("status_lapon$i");
+        $data["keterangan_lapon$i"] = $this->input->post("keterangan_lapon$i");
+    }
+
+    $this->db->where('id_laporan', $id);
+    $this->db->update('tbl_laporan', $data);
+
+    echo json_encode(['status' => 'success']);
+}
 
 
 	////////////// monitoring offboard
