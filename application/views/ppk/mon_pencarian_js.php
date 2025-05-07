@@ -105,5 +105,21 @@
     });
   });
 
+    $('#formLaporanOnboard').on('submit', function(e) {
+    e.preventDefault(); // Mencegah reload halaman
+
+    $.ajax({
+      url: '<?= base_url('ppk/mon_laporanupdate') ?>',
+      type: 'POST',
+      data: $(this).serialize(),
+      success: function(response) {
+        $('#notifikasi').html('<div class="alert alert-success">Data berhasil diperbarui.</div>');
+      },
+      error: function(xhr, status, error) {
+        $('#notifikasi').html('<div class="alert alert-danger">Terjadi kesalahan: ' + error + '</div>');
+      }
+    });
+  });
+
   });
 </script>

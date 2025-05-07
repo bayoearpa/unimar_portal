@@ -1,30 +1,65 @@
  <script>
     $(document).ready(function() {
-        $('#filter-form').submit(function(e) {
-            e.preventDefault();
-            var year = $('#year').val();
-            var programStudi = $('#program_studi').val();
+        // Inisialisasi awal DataTables
+    $('#example31082023').DataTable({
+        responsive: true,
+        paging: true,
+        searching: true,
+        language: {
+            search: "Cari:",
+            lengthMenu: "Tampilkan _MENU_ data",
+            info: "Menampilkan _START_ sampai _END_ dari _TOTAL_ data",
+            paginate: {
+                next: "Berikutnya",
+                previous: "Sebelumnya"
+            }
+        }
+    });
 
-            $.ajax({
-                type: 'GET',
-                url: '<?php echo base_url('baak/mon_sbpraladata'); ?>',
-                data: { year: year, program_studi: programStudi }, // Send both year and program_studi
-                success: function(response) {
-                    $('#example31082023').html(response); // Ganti isi #item-list dengan hasil AJAX
+    // Submit filter
+    $('#filter-form').submit(function(e) {
+        e.preventDefault();
+
+        var year = $('#year').val();
+        var programStudi = $('#program_studi').val();
+
+        $.ajax({
+            type: 'GET',
+            url: '<?= base_url('baak/mon_sbpraladata'); ?>',
+            data: {
+                year: year,
+                program_studi: programStudi
+            },
+            success: function(response) {
+                // Destroy dan replace DataTables
+                if ($.fn.DataTable.isDataTable('#example31082023')) {
+                    $('#example31082023').DataTable().destroy();
                 }
-            });
+
+                $('#tabel-container').html(response);
+
+                // Re-init DataTables
+                $('#example31082023').DataTable({
+                    responsive: true,
+                    paging: true,
+                    searching: true,
+                    language: {
+                        search: "Cari:",
+                        lengthMenu: "Tampilkan _MENU_ data",
+                        info: "Menampilkan _START_ sampai _END_ dari _TOTAL_ data",
+                        paginate: {
+                            next: "Berikutnya",
+                            previous: "Sebelumnya"
+                        }
+                    }
+                });
+            },
+            error: function(xhr, status, error) {
+                alert('Gagal memuat data');
+                console.log(error);
+            }
         });
-        ////datatables
-         $('#example31082023').DataTable({
-                "paging": true, // Enable pagination
-                "pageLength": 20, // Set the number of records per page
-                'lengthChange': true,
-                  'searching'   : true,
-                  'ordering'    : true,
-                  'info'        : true,
-                //   'autoWidth'   : false
-                // Other DataTables options...
-            });
+    });
 
  // Menampilkan modal saat tombol "Tambah" diklik
   $('.add-button').click(function() {
