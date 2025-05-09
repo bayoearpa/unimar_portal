@@ -27,48 +27,44 @@
                 <button type="submit">Filter</button>
             </form>
               <table id="example31082023" class="table table-bordered table-striped">
-                <thead>
-                <tr>
-                  <th>Keterangan</th>
-                  <th>Jumlah</th>
-                </tr>
-                </thead>
-                <tbody>
+              <tbody>
                   <tr>
-                <td>JUMLAH TARUNA</td>
-                <td id="jml_taruna">0</td>
+                    <td>JUMLAH TARUNA</td>
+                    <td id="jml_taruna">0</td>
+                    <td><button type="button" class="btn btn-info btn-sm detail-btn" data-type="taruna">Lihat</button></td>
                   </tr>
                   <tr>
-                <td>LULUS UKP PRA</td>
-                <td id="lls_ukp_pra">0</td>
+                    <td>LULUS UKP PRA</td>
+                    <td id="lls_ukp_pra">0</td>
+                    <td><button type="button" class="btn btn-info btn-sm detail-btn" data-type="ukp_pra">Lihat</button></td>
                   </tr>
                   <tr>
-                <td>STAND BY PRALA</td>
-                <td id="sb_prala">0</td>
+                    <td>STAND BY PRALA</td>
+                    <td id="sb_prala">0</td>
+                    <td><button type="button" class="btn btn-info btn-sm detail-btn" data-type="sb_prala">Lihat</button></td>
                   </tr>
                   <tr>
-                <td>ON BOARD</td>
-                <td id="onboard">0</td>
+                    <td>ON BOARD</td>
+                    <td id="onboard">0</td>
+                    <td><button type="button" class="btn btn-info btn-sm detail-btn" data-type="onboard">Lihat</button></td>
                   </tr>
                   <tr>
-                <td>OFF BOARD</td>
-                <td id="offboard">0</td>
+                    <td>OFF BOARD</td>
+                    <td id="offboard">0</td>
+                    <td><button type="button" class="btn btn-info btn-sm detail-btn" data-type="offboard">Lihat</button></td>
                   </tr>
                   <tr>
-                <td>LULUS UKP PASCA</td>
-                <td id="lls_ukp_pasca">0</td>
+                    <td>LULUS UKP PASCA</td>
+                    <td id="lls_ukp_pasca">0</td>
+                    <td><button type="button" class="btn btn-info btn-sm detail-btn" data-type="ukp_pasca">Lihat</button></td>
                   </tr>
                   <tr>
-                <td>LULUS D3</td>
-                <td id="lls_d3">0</td>
+                    <td>LULUS D3</td>
+                    <td id="lls_d3">0</td>
+                    <td><button type="button" class="btn btn-info btn-sm detail-btn" data-type="d3">Lihat</button></td>
                   </tr>
                 </tbody>
-                <tfoot>
-               <tr>
-                  <th>Keterangan</th>
-                  <th>Jumlah</th>
-                </tr>
-                </tfoot>
+
               </table>
             </div>
             <!-- /.box-body -->
