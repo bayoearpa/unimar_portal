@@ -28,42 +28,42 @@
             </form>
               <table id="example31082023" class="table table-bordered table-striped">
               <tbody>
-                  <tr>
-                    <td>JUMLAH TARUNA</td>
-                    <td id="jml_taruna">0</td>
-                    <td><button type="button" class="btn btn-info btn-sm detail-btn" data-type="taruna">Lihat</button></td>
-                  </tr>
-                  <tr>
-                    <td>LULUS UKP PRA</td>
-                    <td id="lls_ukp_pra">0</td>
-                    <td><button type="button" class="btn btn-info btn-sm detail-btn" data-type="ukp_pra">Lihat</button></td>
-                  </tr>
-                  <tr>
-                    <td>STAND BY PRALA</td>
-                    <td id="sb_prala">0</td>
-                    <td><button type="button" class="btn btn-info btn-sm detail-btn" data-type="sb_prala">Lihat</button></td>
-                  </tr>
-                  <tr>
-                    <td>ON BOARD</td>
-                    <td id="onboard">0</td>
-                    <td><button type="button" class="btn btn-info btn-sm detail-btn" data-type="onboard">Lihat</button></td>
-                  </tr>
-                  <tr>
-                    <td>OFF BOARD</td>
-                    <td id="offboard">0</td>
-                    <td><button type="button" class="btn btn-info btn-sm detail-btn" data-type="offboard">Lihat</button></td>
-                  </tr>
-                  <tr>
-                    <td>LULUS UKP PASCA</td>
-                    <td id="lls_ukp_pasca">0</td>
-                    <td><button type="button" class="btn btn-info btn-sm detail-btn" data-type="ukp_pasca">Lihat</button></td>
-                  </tr>
-                  <tr>
-                    <td>LULUS D3</td>
-                    <td id="lls_d3">0</td>
-                    <td><button type="button" class="btn btn-info btn-sm detail-btn" data-type="d3">Lihat</button></td>
-                  </tr>
-                </tbody>
+                <tr>
+                  <td>JUMLAH TARUNA</td>
+                  <td id="jml_taruna">0</td>
+                  <td><button type="button" class="btn btn-info btn-sm detail-btn" data-type="taruna">Lihat</button></td>
+                </tr>
+                <tr>
+                  <td>LULUS UKP PRA</td>
+                  <td id="lls_ukp_pra">0</td>
+                  <td><button type="button" class="btn btn-info btn-sm detail-btn" data-type="ukp_pra">Lihat</button></td>
+                </tr>
+                <tr>
+                  <td>STAND BY PRALA</td>
+                  <td id="sb_prala">0</td>
+                  <td><button type="button" class="btn btn-info btn-sm detail-btn" data-type="sb_prala">Lihat</button></td>
+                </tr>
+                <tr>
+                  <td>ON BOARD</td>
+                  <td id="onboard">0</td>
+                  <td><button type="button" class="btn btn-info btn-sm detail-btn" data-type="onboard">Lihat</button></td>
+                </tr>
+                <tr>
+                  <td>OFF BOARD</td>
+                  <td id="offboard">0</td>
+                  <td><button type="button" class="btn btn-info btn-sm detail-btn" data-type="offboard">Lihat</button></td>
+                </tr>
+                <tr>
+                  <td>LULUS UKP PASCA</td>
+                  <td id="lls_ukp_pasca">0</td>
+                  <td><button type="button" class="btn btn-info btn-sm detail-btn" data-type="ukp_pasca">Lihat</button></td>
+                </tr>
+                <tr>
+                  <td>LULUS D3</td>
+                  <td id="lls_d3">0</td>
+                  <td><button type="button" class="btn btn-info btn-sm detail-btn" data-type="d3">Lihat</button></td>
+                </tr>
+              </tbody>
 
               </table>
             </div>
@@ -76,5 +76,23 @@
       <!-- /.row -->
     </section>
     <!-- /.content -->
+<!-- modal detai
+ -->
+
+    <div class="modal fade" id="detailModal" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="detailModalLabel">Detail Data</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Tutup">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="detail-content">
+        <!-- Data detail akan dimuat di sini -->
+      </div>
+    </div>
+  </div>
+</div>
    
   
