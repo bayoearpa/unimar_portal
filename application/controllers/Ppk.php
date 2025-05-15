@@ -1515,7 +1515,7 @@ public function mon_laporanupdate() {
     }
 
     // Tampilkan view yang menampilkan tabel detail
-    $this->load->view('baak/mon_summary_detail', $data);
+    $this->load->view('ppk/mon_summary_detail', $data);
 }
 
 
