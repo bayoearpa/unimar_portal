@@ -1996,7 +1996,8 @@ function get_data_formon_mhs($id)
     //get summary
     public function getTaruna($prodi, $tahun)
     {
-        $this->db->select('NIM as nim, Nama_mahasiswa as nama, Kode_program_studi as prodi');
+    	$this->db->query("SET @rownum = 0");
+        $this->db->select('(@rownum := @rownum + 1) AS no_urut, NIM as nim, Nama_mahasiswa as nama, Kode_program_studi as prodi');
         $this->db->where('Kode_program_studi', $prodi);
         $this->db->where('Tahun_masuk', $tahun);
         return $this->db->get('tmst_mahasiswa')->result();
@@ -2004,7 +2005,8 @@ function get_data_formon_mhs($id)
 
     public function getLulusUKPPra($prodi, $tahun)
     {
-        $this->db->select('tmst_mahasiswa.NIM as nim, tmst_mahasiswa.Nama_mahasiswa as nama, tmst_mahasiswa.Kode_program_studi as prodi');
+    	$this->db->query("SET @rownum = 0");
+        $this->db->select('(@rownum := @rownum + 1) AS no_urut, tmst_mahasiswa.NIM as nim, tmst_mahasiswa.Nama_mahasiswa as nama, tmst_mahasiswa.Kode_program_studi as prodi');
         $this->db->from('tbl_mon');
         $this->db->join('tmst_mahasiswa', 'tbl_mon.nim = tmst_mahasiswa.NIM', 'inner');
         $this->db->where('tbl_mon.pra_status', 'sudah');
@@ -2015,8 +2017,8 @@ function get_data_formon_mhs($id)
 
     public function getStandByPrala($prodi, $tahun)
     {
-        
-        $this->db->select('s.NIM as nim, s.Nama_mahasiswa as nama, s.Kode_program_studi as prodi');
+        $this->db->query("SET @rownum = 0");
+        $this->db->select('(@rownum := @rownum + 1) AS no_urut, s.NIM as nim, s.Nama_mahasiswa as nama, s.Kode_program_studi as prodi');
         $this->db->from('tbl_mon AS m');
         $this->db->join('tmst_mahasiswa AS s', 'm.nim = s.NIM', 'inner');
         $this->db->where('m.status_sb', 'iya');
@@ -2028,7 +2030,8 @@ function get_data_formon_mhs($id)
 
     public function getOnBoard($prodi, $tahun)
     {
-        $this->db->select('s.NIM as nim, s.Nama_mahasiswa as nama, s.Kode_program_studi as prodi');
+    	$this->db->query("SET @rownum = 0");
+        $this->db->select('(@rownum := @rownum + 1) AS no_urut, s.NIM as nim, s.Nama_mahasiswa as nama, s.Kode_program_studi as prodi');
         $this->db->from('tbl_mon AS m');
         $this->db->join('tmst_mahasiswa AS s', 'm.nim = s.NIM', 'inner');
         $this->db->where('m.status_onboard', 'iya');
@@ -2039,7 +2042,8 @@ function get_data_formon_mhs($id)
 
     public function getOffBoard($prodi, $tahun)
     {
-        $this->db->select('s.NIM as nim, s.Nama_mahasiswa as nama, s.Kode_program_studi as prodi');
+    	$this->db->query("SET @rownum = 0");
+        $this->db->select('(@rownum := @rownum + 1) AS no_urut, s.NIM as nim, s.Nama_mahasiswa as nama, s.Kode_program_studi as prodi');
         $this->db->from('tbl_mon AS m');
         $this->db->join('tmst_mahasiswa AS s', 'm.nim = s.NIM', 'inner');
         $this->db->where('m.status_offboard', 'iya');
@@ -2050,7 +2054,8 @@ function get_data_formon_mhs($id)
 
     public function getLulusUKPPasca($prodi, $tahun)
     {
-        $this->db->select('s.NIM as nim, s.Nama_mahasiswa as nama, s.Kode_program_studi as prodi');
+    	$this->db->query("SET @rownum = 0");
+        $this->db->select('(@rownum := @rownum + 1) AS no_urut, s.NIM as nim, s.Nama_mahasiswa as nama, s.Kode_program_studi as prodi');
         $this->db->from('tbl_mon AS m');
         $this->db->join('tmst_mahasiswa AS s', 'm.nim = s.NIM', 'inner');
         $this->db->where('m.pasca_status', 'sudah');
@@ -2061,7 +2066,8 @@ function get_data_formon_mhs($id)
 
     public function getTotalD3($prodi, $tahun)
     {
-        $this->db->select('s.NIM as nim, s.Nama_mahasiswa as nama, s.Kode_program_studi as prodi');
+    	$this->db->query("SET @rownum = 0");
+        $this->db->select('(@rownum := @rownum + 1) AS no_urut, s.NIM as nim, s.Nama_mahasiswa as nama, s.Kode_program_studi as prodi');
         $this->db->from('tbl_mon AS m');
         $this->db->join('tmst_mahasiswa AS s', 'm.nim = s.NIM', 'inner');
         $this->db->where('m.status_d3', 'sudah');

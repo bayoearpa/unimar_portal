@@ -1,6 +1,7 @@
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
+      <th>No.</th>
       <th>NIM</th>
       <th>Nama</th>
       <th>Prodi</th>
@@ -11,6 +12,7 @@
   <tbody>
     <?php foreach ($items as $i): ?>
     <tr>
+      <td><?php echo $i->no_urut; ?></td>
       <td><?php echo $i->nim; ?></td>
       <td><?php echo $i->nama; ?></td>
       <td><?php echo $i->prodi; ?></td>
