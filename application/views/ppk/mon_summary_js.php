@@ -8,7 +8,7 @@
     if (year !== '' && programStudi !== '') {
       $.ajax({
         type: 'GET',
-        url: '<?php echo base_url('baak/mon_summarydata'); ?>/' + programStudi + '/' + year,
+        url: '<?php echo base_url('ppk/mon_summarydata'); ?>/' + programStudi + '/' + year,
         success: function (response) {
           var data = JSON.parse(response);
           $('#jml_taruna').text(data.countTaruna);
