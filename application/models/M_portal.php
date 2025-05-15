@@ -1996,7 +1996,7 @@ function get_data_formon_mhs($id)
     //get summary
     public function getTaruna($prodi, $tahun)
     {
-        $this->db->select('NIM, Nama_mahasiswa, Kode_program_studi as total');
+        $this->db->select('NIM as nim, Nama_mahasiswa as nama, Kode_program_studi as prodi');
         $this->db->where('Kode_program_studi', $prodi);
         $this->db->where('Tahun_masuk', $tahun);
         return $this->db->get('tmst_mahasiswa')->result();
