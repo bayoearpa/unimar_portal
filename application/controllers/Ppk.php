@@ -1474,6 +1474,50 @@ public function mon_laporanupdate() {
 
 		 echo json_encode($data);
 	}
+	public function mon_summary_get_detail_data()
+{
+    $type = $this->input->get('type');
+    $year = $this->input->get('year');
+    $programStudi = $this->input->get('program_studi');
+
+    // Validasi sederhana
+    if (empty($type) || empty($year) || empty($programStudi)) {
+        echo "<p>Data tidak valid.</p>";
+        return;
+    }
+
+    // Panggil model sesuai dengan tipe
+    switch ($type) {
+        case 'taruna':
+            $data['items'] = $this->m_portal->getTaruna($programStudi, $year);
+            break;
+        case 'ukp_pra':
+            $data['items'] = $this->m_portal->getLulusUKPPra($programStudi, $year);
+            break;
+        case 'sb_prala':
+            $data['items'] = $this->m_portal->getStandByPrala($programStudi, $year);
+            break;
+        case 'onboard':
+            $data['items'] = $this->m_portal->getOnBoard($programStudi, $year);
+            break;
+        case 'offboard':
+            $data['items'] = $this->m_portal->getOffBoard($programStudi, $year);
+            break;
+        case 'ukp_pasca':
+            $data['items'] = $this->m_portal->getLulusUKPPasca($programStudi, $year);
+            break;
+        case 'd3':
+            $data['items'] = $this->m_portal->getTotalD3($programStudi, $year);
+            break;
+        default:
+            echo "<p>Jenis data tidak dikenali.</p>";
+            return;
+    }
+
+    // Tampilkan view yang menampilkan tabel detail
+    $this->load->view('baak/mon_summary_detail', $data);
+}
+
 
 	// monitoring modeling
 	public function mon_modeling()

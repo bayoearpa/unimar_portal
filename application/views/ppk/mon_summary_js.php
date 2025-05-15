@@ -33,7 +33,7 @@
 
     if (year !== '' && programStudi !== '') {
       $.ajax({
-        url: '<?php echo base_url("baak/get_detail_data"); ?>',
+        url: '<?php echo base_url("baak/mon_summary_get_detail_data"); ?>',
         type: 'GET',
         data: {
           type: type,

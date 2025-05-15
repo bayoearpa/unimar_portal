@@ -1992,6 +1992,76 @@ function get_data_formon_mhs($id)
         $query = $this->db->get();
         return $query->row()->total;
     }
+
+    //get summary
+    public function getTaruna($prodi, $tahun)
+    {
+        $this->db->where('Kode_program_studi', $prodi);
+        $this->db->where('Tahun_masuk', $tahun);
+        return $this->db->get('tmst_mahasiswa')->result();
+    }
+
+    public function getLulusUKPPra($prodi, $tahun)
+    {
+        $this->db->from('tbl_mon');
+        $this->db->join('tmst_mahasiswa', 'tbl_mon.nim = tmst_mahasiswa.NIM', 'inner');
+        $this->db->where('tbl_mon.pra_status', 'sudah');
+        $this->db->where('tmst_mahasiswa.Kode_program_studi', $prodi);
+        $this->db->where('tmst_mahasiswa.Tahun_masuk', $tahun);
+        return $this->db->get()->result();
+    }
+
+    public function getStandByPrala($prodi, $tahun)
+    {
+        
+        $this->db->from('tbl_mon AS m');
+        $this->db->join('tmst_mahasiswa AS s', 'm.nim = s.NIM', 'inner');
+        $this->db->where('m.status_sb', 'iya');
+        $this->db->where('m.pra_status', 'sudah');
+        $this->db->where('s.Kode_program_studi', $prodi);
+        $this->db->where('s.Tahun_masuk', $tahun);
+        return $this->db->get()->result();
+    }
+
+    public function getOnBoard($prodi, $tahun)
+    {
+        $this->db->from('tbl_mon AS m');
+        $this->db->join('tmst_mahasiswa AS s', 'm.nim = s.NIM', 'inner');
+        $this->db->where('m.status_onboard', 'iya');
+        $this->db->where('s.Kode_program_studi', $prodi);
+        $this->db->where('s.Tahun_masuk', $tahun);
+        return $this->db->get()->result();
+    }
+
+    public function getOffBoard($prodi, $tahun)
+    {
+        $this->db->from('tbl_mon AS m');
+        $this->db->join('tmst_mahasiswa AS s', 'm.nim = s.NIM', 'inner');
+        $this->db->where('m.status_offboard', 'iya');
+        $this->db->where('s.Kode_program_studi', $prodi);
+        $this->db->where('s.Tahun_masuk', $tahun);
+        return $this->db->get()->result();
+    }
+
+    public function getLulusUKPPasca($prodi, $tahun)
+    {
+        $this->db->from('tbl_mon AS m');
+        $this->db->join('tmst_mahasiswa AS s', 'm.nim = s.NIM', 'inner');
+        $this->db->where('m.pasca_status', 'sudah');
+        $this->db->where('s.Kode_program_studi', $prodi);
+        $this->db->where('s.Tahun_masuk', $tahun);
+        return $this->db->get()->result();
+    }
+
+    public function getTotalD3($prodi, $tahun)
+    {
+        $this->db->from('tbl_mon AS m');
+        $this->db->join('tmst_mahasiswa AS s', 'm.nim = s.NIM', 'inner');
+        $this->db->where('m.status_d3', 'sudah');
+        $this->db->where('s.Kode_program_studi', $prodi);
+        $this->db->where('s.Tahun_masuk', $tahun);
+        return $this->db->get()->result();
+    }
 		
 }
 /* End of file M_portal.php */
