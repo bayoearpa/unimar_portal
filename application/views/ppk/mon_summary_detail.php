@@ -15,7 +15,7 @@
       <td><?php echo $i->no_urut; ?></td>
       <td><?php echo $i->nim; ?></td>
       <td><?php echo $i->nama; ?></td>
-      <td><?php echo $i->prodi; ?></td>
+      <td><?php echo $i->nm_prodi; ?></td>
 <!--       <td><?php //echo $i->d3_no_ijasah; ?></td>
       <td><?php //echo $i->d3_tanggal_lulus; ?></td> -->
     </tr>
