@@ -271,10 +271,19 @@ class Mahasiswa extends CI_Controller {
             );
             $proses_edt = $this->m_mahasiswa->update_data($where,$data,'tbl_mon');
             $id_mon = $this->input->post('id_mon');
+
+            // cek lapon
+            $cek_lapon = $this->m_mahasiswa->get_data($where, 'tbl_lap_onboard')->num_rows();
+            if ($cek_lapon > 0) {
+            	# code...
+            }else{
             $data_lapon = array(
             	'id_mon' => $id_mon,
             );
             $this->m_mahasiswa->input_data($data_lapon,'tbl_lap_onboard');
+            }
+
+            
 
         if($proses_edt){    
              redirect(base_url().'mahasiswa/onboard/'.$nim);
@@ -320,11 +329,19 @@ class Mahasiswa extends CI_Controller {
                 'upload_file_signon' => $file_name
             );
             $id_mon = $this->input->post('id_mon');
+            $this->m_mahasiswa->update_data($where,$data,'tbl_mon');
+            
+
+            // cek lapon
+            $cek_lapon = $this->m_mahasiswa->get_data($where, 'tbl_lap_onboard')->num_rows();
+            if ($cek_lapon > 0) {
+            	# code...
+            }else{
             $data_lapon = array(
             	'id_mon' => $id_mon,
             );
-            $this->m_mahasiswa->update_data($where,$data,'tbl_mon');
             $this->m_mahasiswa->input_data($data_lapon,'tbl_lap_onboard');
+            }
 
             redirect(base_url().'mahasiswa/onboard/'.$nimc);
         } else {
