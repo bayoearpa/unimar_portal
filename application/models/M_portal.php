@@ -2002,7 +2002,7 @@ function get_data_formon_mhs($id)
         $this->db->join('tmst_program_studi', 'tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi', 'inner');
         $this->db->where('Kode_program_studi', $prodi);
         $this->db->where('Tahun_masuk', $tahun);
-        return $this->db->get('tmst_mahasiswa')->result();
+        return $this->db->get()->result();
     }
 
     public function getLulusUKPPra($prodi, $tahun)
