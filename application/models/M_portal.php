@@ -1997,7 +1997,7 @@ function get_data_formon_mhs($id)
     public function getTaruna($prodi, $tahun)
     {
     	$this->db->query("SET @rownum = 0");
-        $this->db->select('(@rownum := @rownum + 1) AS no_urut, NIM as nim, Nama_mahasiswa as nama, Kode_program_studi as prodi, tmst_program_studi.Nama_program_studi as nm_prodi');
+        $this->db->select('(@rownum := @rownum + 1) AS no_urut, tmst_mahasiswa.NIM as nim, tmst_mahasiswa.Nama_mahasiswa as nama, tmst_mahasiswa.Kode_program_studi as prodi, tmst_program_studi.Nama_program_studi as nm_prodi');
         $this->db->from('tmst_mahasiswa');
         $this->db->join('tmst_program_studi', 'tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi', 'inner');
         $this->db->where('tmst_mahasiswa.Kode_program_studi', $prodi);
