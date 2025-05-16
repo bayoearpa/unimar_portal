@@ -2000,8 +2000,8 @@ function get_data_formon_mhs($id)
         $this->db->select('(@rownum := @rownum + 1) AS no_urut, NIM as nim, Nama_mahasiswa as nama, Kode_program_studi as prodi, tmst_program_studi.Nama_program_studi as nm_prodi');
         $this->db->from('tmst_mahasiswa');
         $this->db->join('tmst_program_studi', 'tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi', 'inner');
-        $this->db->where('Kode_program_studi', $prodi);
-        $this->db->where('Tahun_masuk', $tahun);
+        $this->db->where('tmst_mahasiswa.Kode_program_studi', $prodi);
+        $this->db->where('tmst_mahasiswa.Tahun_masuk', $tahun);
         return $this->db->get()->result();
     }
 
