@@ -318,7 +318,7 @@ foreach ($results as $k) {
                   <td>Laporan Ke.1</td>
                   <td><div class="col-sm-offset-2 col-sm-10">
                        <?php if ($key->lap_onboard1) { ?>
-                        <button class="btn btn-success view-filelapon1-button" data-filename="<?php echo $key->lap_onboard1; ?>">Lihat file Laporan Onboard 1</button>
+                        <a href="#" class="btn btn-info btn-sm view-filelapon1-button" data-filename="<?php echo $key->lap_onboard1; ?>">Lihat file Laporan Onboard bulan 1</a>
                       <?php } else { ?>
                           <!-- Tampilkan pesan jika file tidak ada -->
                           File tidak tersedia
@@ -342,7 +342,7 @@ foreach ($results as $k) {
                   <td>Laporan Ke.2</td>
                   <td><div class="col-sm-offset-2 col-sm-10">
                        <?php if ($key->lap_onboard2) { ?>
-                        <button class="btn btn-success view-filelapon2-button" data-filename="<?php echo $key->lap_onboard2; ?>">Lihat file Laporan Onboard 2</button>
+                        <a href="#" class="btn btn-info btn-sm view-filelapon2-button" data-filename="<?php echo $key->lap_onboard2; ?>">Lihat file Laporan Onboard Bulan 2</a>
                       <?php } else { ?>
                           <!-- Tampilkan pesan jika file tidak ada -->
                           File tidak tersedia
@@ -365,7 +365,7 @@ foreach ($results as $k) {
                   <td>Laporan Ke.3</td>
                   <td><div class="col-sm-offset-2 col-sm-10">
                        <?php if ($key->lap_onboard3) { ?>
-                        <button class="btn btn-success view-filelapon3-button" data-filename="<?php echo $key->lap_onboard3; ?>">Lihat file Laporan Onboard 3</button>
+                        <a href="#" class="btn btn-info btn-sm view-filelapon3-button" data-filename="<?php echo $key->lap_onboard3; ?>">Lihat file Laporan Onboard Bulan 3</a>
                       <?php } else { ?>
                           <!-- Tampilkan pesan jika file tidak ada -->
                           File tidak tersedia
@@ -388,7 +388,7 @@ foreach ($results as $k) {
                   <td>Laporan Ke.4</td>
                   <td><div class="col-sm-offset-2 col-sm-10">
                        <?php if ($key->lap_onboard4) { ?>
-                        <button class="btn btn-success view-filelapon4-button" data-filename="<?php echo $key->lap_onboard4; ?>">Lihat file Laporan Onboard 4</button>
+                        <a href="#" class="btn btn-info btn-sm view-filelapon4-button" data-filename="<?php echo $key->lap_onboard4; ?>">Lihat file Laporan Onboard Bulan 4 </a>
                       <?php } else { ?>
                           <!-- Tampilkan pesan jika file tidak ada -->
                           File tidak tersedia
@@ -411,7 +411,7 @@ foreach ($results as $k) {
                   <td>Laporan Ke.5</td>
                   <td><div class="col-sm-offset-2 col-sm-10">
                        <?php if ($key->lap_onboard5) { ?>
-                        <button class="btn btn-success view-filelapon5-button" data-filename="<?php echo $key->lap_onboard5; ?>">Lihat file Laporan Onboard 5</button>
+                        <a href="#" class="btn btn-info btn-sm view-filelapon5-button" data-filename="<?php echo $key->lap_onboard5; ?>">Lihat file Laporan Onboard Bulan 5</a>
                       <?php } else { ?>
                           <!-- Tampilkan pesan jika file tidak ada -->
                           File tidak tersedia
@@ -434,7 +434,7 @@ foreach ($results as $k) {
                   <td>Laporan Ke.6</td>
                   <td><div class="col-sm-offset-2 col-sm-10">
                        <?php if ($key->lap_onboard6) { ?>
-                        <button class="btn btn-success view-filelapon6-button" data-filename="<?php echo $key->lap_onboard6; ?>">Lihat file Laporan Onboard 6</button>
+                       <a href="#" class="btn btn-info btn-sm view-filelapon6-button" data-filename="<?php echo $key->lap_onboard6; ?>">Lihat file Laporan Onboard Bulan 6</a>
                       <?php } else { ?>
                           <!-- Tampilkan pesan jika file tidak ada -->
                           File tidak tersedia
@@ -457,7 +457,7 @@ foreach ($results as $k) {
                   <td>Laporan Ke.7</td>
                   <td><div class="col-sm-offset-2 col-sm-10">
                        <?php if ($key->lap_onboard7) { ?>
-                        <button class="btn btn-success view-filelapon7-button" data-filename="<?php echo $key->lap_onboard7; ?>">Lihat file Laporan Onboard 7</button>
+                        <a href="#" class="btn btn-info btn-sm view-filelapon7-button" data-filename="<?php echo $key->lap_onboard7; ?>">Lihat file Laporan Onboard Bulan 7</a>
                       <?php } else { ?>
                           <!-- Tampilkan pesan jika file tidak ada -->
                           File tidak tersedia
@@ -480,7 +480,7 @@ foreach ($results as $k) {
                   <td>Laporan Ke.8</td>
                   <td><div class="col-sm-offset-2 col-sm-10">
                        <?php if ($key->lap_onboard8) { ?>
-                        <button class="btn btn-success view-filelapon8-button" data-filename="<?php echo $key->lap_onboard8; ?>">Lihat file Laporan Onboard 8</button>
+                        <a href="#" class="btn btn-info btn-sm view-filelapon8-button" data-filename="<?php echo $key->lap_onboard8; ?>">Lihat file Laporan Onboard Bulan 8</a>
                       <?php } else { ?>
                           <!-- Tampilkan pesan jika file tidak ada -->
                           File tidak tersedia
@@ -503,7 +503,7 @@ foreach ($results as $k) {
                   <td>Laporan Ke.9</td>
                   <td><div class="col-sm-offset-2 col-sm-10">
                        <?php if ($key->lap_onboard9) { ?>
-                        <button class="btn btn-success view-filelapon9-button" data-filename="<?php echo $key->lap_onboard9; ?>">Lihat file Laporan Onboard 9</button>
+                       <a href="#" class="btn btn-info btn-sm view-filelapon9-button" data-filename="<?php echo $key->lap_onboard9; ?>">Lihat file Laporan Onboard Bulan 9</a>
                       <?php } else { ?>
                           <!-- Tampilkan pesan jika file tidak ada -->
                           File tidak tersedia
@@ -526,7 +526,7 @@ foreach ($results as $k) {
                   <td>Laporan Ke.10</td>
                   <td><div class="col-sm-offset-2 col-sm-10">
                        <?php if ($key->lap_onboard10) { ?>
-                        <button class="btn btn-success view-filelapon10-button" data-filename="<?php echo $key->lap_onboard10; ?>">Lihat file Laporan Onboard 10</button>
+                        <a href="#" class="btn btn-info btn-sm view-filelapon10-button" data-filename="<?php echo $key->lap_onboard10; ?>">Lihat file Laporan Onboard Bulan 10</a>
                       <?php } else { ?>
                           <!-- Tampilkan pesan jika file tidak ada -->
                           File tidak tersedia
@@ -549,7 +549,7 @@ foreach ($results as $k) {
                   <td>Laporan Ke.11</td>
                   <td><div class="col-sm-offset-2 col-sm-10">
                        <?php if ($key->lap_onboard11) { ?>
-                        <button class="btn btn-success view-filelapon11-button" data-filename="<?php echo $key->lap_onboard11; ?>">Lihat file Laporan Onboard 11</button>
+                       <a href="#" class="btn btn-info btn-sm view-filelapon11-button" data-filename="<?php echo $key->lap_onboard11; ?>">Lihat file Laporan Onboard Bulan 11</a>
                       <?php } else { ?>
                           <!-- Tampilkan pesan jika file tidak ada -->
                           File tidak tersedia
@@ -572,7 +572,7 @@ foreach ($results as $k) {
                   <td>Laporan Ke.12</td>
                   <td><div class="col-sm-offset-2 col-sm-10">
                        <?php if ($key->lap_onboard12) { ?>
-                        <button class="btn btn-success view-filelapon12-button" data-filename="<?php echo $key->lap_onboard12; ?>">Lihat file Laporan Onboard 12</button>
+                        <a href="#" class="btn btn-info btn-sm view-filelapon12-button" data-filename="<?php echo $key->lap_onboard12; ?>">Lihat file Laporan Onboard Bulan 12</a>
                       <?php } else { ?>
                           <!-- Tampilkan pesan jika file tidak ada -->
                           File tidak tersedia
