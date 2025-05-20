@@ -5,7 +5,7 @@
 $(document).on('click', '.view-filesignon-button', function(e) {
     e.preventDefault();
     var filename = $(this).data('filename');
-    var fileUrl = '/v1/assets/upload/onboard/' + filename;
+    var fileUrl = '/v1/assets/monitoring/onboard/' + filename;
     window.open(fileUrl, '_blank');
 });
 
