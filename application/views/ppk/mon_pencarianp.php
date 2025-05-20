@@ -327,6 +327,8 @@ foreach ($results as $k) {
                   <td><?php  echo $key->date_lapon1; ?></td>
                   <td> <div class="form-group">
                         <div class="form-check">
+                          <!-- id lapon disini -->
+                          <input type="hidden" name="id_lapon" id="id_lapon" value="<?php  echo $key->id_lapon; ?>">
                             <input type="radio" class="form-check-input" id="sudah_lapon1" name="sudah_lapon1" value="sudah">
                             <label class="form-check-label" for="addstatpra">Sudah</label>
                         </div>

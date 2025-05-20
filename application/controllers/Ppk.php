@@ -1277,16 +1277,16 @@ class ppk extends CI_Controller {
     echo $output;
 }
 public function mon_laporanupdate() {
-    $id = $this->input->post('id_laporan');
+    $id = $this->input->post('id_lapon');
     $data = [];
 
-    for ($i = 1; $i <= 11; $i++) {
-        $data["status_lapon$i"] = $this->input->post("status_lapon$i");
+    for ($i = 1; $i <= 12; $i++) {
+        $data["sudah_lapon$i"] = $this->input->post("sudah_lapon$i");
         $data["keterangan_lapon$i"] = $this->input->post("keterangan_lapon$i");
     }
 
-    $this->db->where('id_laporan', $id);
-    $this->db->update('tbl_laporan', $data);
+    $this->db->where('id_lapon', $id);
+    $this->db->update('tbl_lap_onboard', $data);
 
     echo json_encode(['status' => 'success']);
 }
