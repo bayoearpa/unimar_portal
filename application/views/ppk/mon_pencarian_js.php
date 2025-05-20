@@ -45,7 +45,7 @@ for (let i = 1; i <= 12; i++) {
 
         // Kirim data form secara AJAX ke server
       $.ajax({
-        url: '<?= base_url('ppk/mon_laporanupdate') ?>', // Endpoint tujuan (di controller PPK, fungsi 'mon_laporanupdate')
+        url: '<?php base_url('ppk/mon_laporanupdate') ?>', // Endpoint tujuan (di controller PPK, fungsi 'mon_laporanupdate')
         type: 'POST', // Metode HTTP POST
         data: $(this).serialize(), // Mengambil semua input form dan mengubahnya menjadi string query (name=value&...)
         
@@ -61,7 +61,7 @@ for (let i = 1; i <= 12; i++) {
       });
     });
 
-    
+
   });
 
 </script>
