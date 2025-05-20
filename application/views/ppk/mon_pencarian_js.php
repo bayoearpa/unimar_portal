@@ -9,31 +9,13 @@ $(document).on('click', '.view-filesignon-button', function(e) {
     window.open(fileUrl, '_blank');
 });
 
-// File laporan onboard 1–12
-$(document).on('click', '[class^="view-filelapon"]', function(e) {
+ // file lapon 1-12
+$(document).on('click', '.view-filelapon1-button', function(e) {
     e.preventDefault();
-
     var filename = $(this).data('filename');
-
-    // Tangkap angka laporan dari class
-    var classes = $(this).attr('class').split(' ');
-    var nomorLaporan = null;
-
-    classes.forEach(function(cls) {
-        var match = cls.match(/^view-filelapon(\d+)-button$/);
-        if (match) {
-            nomorLaporan = match[1];
-        }
-    });
-
-    if (nomorLaporan && filename) {
-        var fileUrl = '/v1/assets/monitoring/laponboard/' + nomorLaporan + '/' + filename;
-        window.open(fileUrl, '_blank');
-    } else {
-        alert('File tidak tersedia atau nama file tidak valid.');
-    }
+    var fileUrl = '/v1/assets/monitoring/laponboard/1/' + filename;
+    window.open(fileUrl, '_blank');
 });
-
 
     $('#previewForm').on('submit', function(e){
     e.preventDefault(); // Prevent the form from submitting via the browser
