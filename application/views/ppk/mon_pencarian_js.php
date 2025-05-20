@@ -41,28 +41,24 @@ for (let i = 1; i <= 12; i++) {
   });
 
     $(document).on('click', '#saveEdit', function(e) {
-    // $('#formLaporanOnboard').on('submit', function(e) {
-    e.preventDefault(); // Mencegah reload halaman
-     var formData = new FormData($('#formLaporanOnboard')[0]);
+    e.preventDefault();
 
-        // Kirim data form secara AJAX ke server
-      $.ajax({
-        url: '<?= base_url('ppk/mon_laporanupdate') ?>', // Endpoint tujuan (di controller PPK, fungsi 'mon_laporanupdate')
-        type: 'POST', // Metode HTTP POST
-        // data: $(this).serialize(), // Mengambil semua input form dan mengubahnya menjadi string query (name=value&...)
+    var formData = new FormData($('#formLaporanOnboard')[0]);
+
+    $.ajax({
+        url: '<?= base_url('ppk/mon_laporanupdate') ?>', // ✅ Sudah benar
+        type: 'POST',
         data: formData,
-        
+        contentType: false,
+        processData: false,
         success: function(response) {
-          // Jika berhasil, tampilkan pesan sukses di elemen dengan id 'notifikasi'
-          $('#notifikasi').html('<div class="alert alert-success">Data berhasil diperbarui.</div>');
+            $('#notifikasi').html('<div class="alert alert-success">Data berhasil diperbarui.</div>');
         },
-        
         error: function(xhr, status, error) {
-          // Jika terjadi error, tampilkan pesan error
-          $('#notifikasi').html('<div class="alert alert-danger">Terjadi kesalahan: ' + error + '</div>');
+            $('#notifikasi').html('<div class="alert alert-danger">Terjadi kesalahan: ' + error + '</div>');
         }
-      });
     });
+});
 
 
   });
