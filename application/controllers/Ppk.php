@@ -1289,7 +1289,7 @@ public function mon_laporanupdate() {
 		        'id_lapon' => $this->input->post('nid_lapon'),
 	);
     // $this->db->where('id_lapon', $id);
-    $this->db->update_data($where,$data,'tbl_lap_onboard');
+    $this->m_portal->update_data($where,$data,'tbl_lap_onboard');
 
     echo json_encode(['status' => 'success']);
 }
