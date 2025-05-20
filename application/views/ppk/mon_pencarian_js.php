@@ -13,7 +13,7 @@ $(document).on('click', '.view-filesignon-button', function(e) {
 $(document).on('click', '.view-filelapon1-button', function(e) {
     e.preventDefault();
     var filename = $(this).data('filename');
-    var fileUrl = '/v1/assets/monitoring/laponboard/1/' + filename;
+    var fileUrl = '/v1/assets/monitoring/laponboard/1/' + filename + '.pdf';
     window.open(fileUrl, '_blank');
 });
 
