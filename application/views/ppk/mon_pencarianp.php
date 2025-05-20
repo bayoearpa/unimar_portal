@@ -299,7 +299,7 @@ foreach ($results as $k) {
               <!-- /.tab-pane -->
 
               <div class="tab-pane" id="laponboard">
-                <form id="formLaporanOnboard">
+                <form id="formLaporanOnboard" method="post">
                 <div class="box-body table-responsive no-padding">
                    <?php foreach ($resultsl as $key) {
                 ?>
