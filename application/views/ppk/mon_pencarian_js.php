@@ -43,16 +43,22 @@ for (let i = 1; i <= 12; i++) {
     $('#formLaporanOnboard').on('submit', function(e) {
     e.preventDefault(); // Mencegah reload halaman
 
-    $.ajax({
-      url: '<?= base_url('ppk/mon_laporanupdate') ?>',
-      type: 'POST',
-      data: $(this).serialize(),
-      success: function(response) {
-        $('#notifikasi').html('<div class="alert alert-success">Data berhasil diperbarui.</div>');
-      },
-      error: function(xhr, status, error) {
-        $('#notifikasi').html('<div class="alert alert-danger">Terjadi kesalahan: ' + error + '</div>');
-      }
+        // Kirim data form secara AJAX ke server
+      $.ajax({
+        url: '<?= base_url('ppk/mon_laporanupdate') ?>', // Endpoint tujuan (di controller PPK, fungsi 'mon_laporanupdate')
+        type: 'POST', // Metode HTTP POST
+        data: $(this).serialize(), // Mengambil semua input form dan mengubahnya menjadi string query (name=value&...)
+        
+        success: function(response) {
+          // Jika berhasil, tampilkan pesan sukses di elemen dengan id 'notifikasi'
+          $('#notifikasi').html('<div class="alert alert-success">Data berhasil diperbarui.</div>');
+        },
+        
+        error: function(xhr, status, error) {
+          // Jika terjadi error, tampilkan pesan error
+          $('#notifikasi').html('<div class="alert alert-danger">Terjadi kesalahan: ' + error + '</div>');
+        }
+      });
     });
   });
 
