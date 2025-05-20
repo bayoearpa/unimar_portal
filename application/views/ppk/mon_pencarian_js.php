@@ -10,12 +10,22 @@ $(document).on('click', '.view-filesignon-button', function(e) {
 });
 
  // file lapon 1-12
-$(document).on('click', '.view-filelapon1-button', function(e) {
-    e.preventDefault();
-    var filename = $(this).data('filename');
-    var fileUrl = '/v1/assets/monitoring/laponboard/1/' + filename + '.pdf';
-    window.open(fileUrl, '_blank');
-});
+// $(document).on('click', '.view-filelapon1-button', function(e) {
+//     e.preventDefault();
+//     var filename = $(this).data('filename');
+//     var fileUrl = '/v1/assets/monitoring/laponboard/1/' + filename + '.pdf';
+//     window.open(fileUrl, '_blank');
+// });
+for (let i = 1; i <= 12; i++) {
+    $(document).on('click', '.view-filelapon' + i + '-button', function(e) {
+        e.preventDefault();
+        var filename = $(this).data('filename');
+        var fileUrl = '/v1/assets/monitoring/laponboard/' + i + '/' + filename + '.pdf';
+        window.open(fileUrl, '_blank');
+    });
+}
+
+
 
     $('#previewForm').on('submit', function(e){
     e.preventDefault(); // Prevent the form from submitting via the browser
