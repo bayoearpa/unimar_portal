@@ -287,7 +287,7 @@ foreach ($results as $k) {
                   <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
                        <?php if ($k->upload_file_signon) { ?>
-                        <a href="#" class="btn btn-info btn-sm view-filesignon-button" data-filename="<?php echo $k->upload_file_signon; ?>">Lihat file Sign On</a>
+                        <a href="#" class="btn btn-info view-filesignon-button" data-filename="<?php echo $k->upload_file_signon; ?>">Lihat file Sign On</a>
                       <?php } else { ?>
                           <!-- Tampilkan pesan jika file tidak ada -->
                           File tidak tersedia
