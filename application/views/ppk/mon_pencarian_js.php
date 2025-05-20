@@ -27,7 +27,7 @@ $(document).on('click', '[class^="view-filelapon"]', function(e) {
     });
 
     if (nomorLaporan && filename) {
-        var fileUrl = '/v1/assets/upload/laponboard/' + nomorLaporan + '/' + filename;
+        var fileUrl = '/v1/assets/monitoring/laponboard/' + nomorLaporan + '/' + filename;
         window.open(fileUrl, '_blank');
     } else {
         alert('File tidak tersedia atau nama file tidak valid.');
