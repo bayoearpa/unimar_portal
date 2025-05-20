@@ -49,8 +49,8 @@ for (let i = 1; i <= 12; i++) {
       $.ajax({
         url: '<?php base_url('ppk/mon_laporanupdate') ?>', // Endpoint tujuan (di controller PPK, fungsi 'mon_laporanupdate')
         type: 'POST', // Metode HTTP POST
-        // data: $(this).serialize(), // Mengambil semua input form dan mengubahnya menjadi string query (name=value&...)
-        data: formData,
+        data: $(this).serialize(), // Mengambil semua input form dan mengubahnya menjadi string query (name=value&...)
+        // data: formData,
         
         success: function(response) {
           // Jika berhasil, tampilkan pesan sukses di elemen dengan id 'notifikasi'
