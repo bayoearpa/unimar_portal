@@ -40,14 +40,17 @@ for (let i = 1; i <= 12; i++) {
     });
   });
 
-    $('#formLaporanOnboard').on('submit', function(e) {
+    $(document).on('click', '#saveEdit', function() {
+    // $('#formLaporanOnboard').on('submit', function(e) {
     e.preventDefault(); // Mencegah reload halaman
+     var formData = new FormData($('#formLaporanOnboard')[0]);
 
         // Kirim data form secara AJAX ke server
       $.ajax({
         url: '<?php base_url('ppk/mon_laporanupdate') ?>', // Endpoint tujuan (di controller PPK, fungsi 'mon_laporanupdate')
         type: 'POST', // Metode HTTP POST
-        data: $(this).serialize(), // Mengambil semua input form dan mengubahnya menjadi string query (name=value&...)
+        // data: $(this).serialize(), // Mengambil semua input form dan mengubahnya menjadi string query (name=value&...)
+        data: formData,
         
         success: function(response) {
           // Jika berhasil, tampilkan pesan sukses di elemen dengan id 'notifikasi'

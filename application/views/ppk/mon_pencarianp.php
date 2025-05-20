@@ -594,7 +594,8 @@ foreach ($results as $k) {
                   <td><textarea class="form-control" name="keterangan_lapon12" id="keterangan_lapon12" rows="3" placeholder="Masukkan Keterangan"><?php  echo $key->keterangan_lapon12; ?></textarea></td></td>
                 </tr>
               </tbody></table>
-              <button type="submit" class="btn btn-primary">Simpan</button> 
+              <button type="button" class="btn btn-primary" id="saveEdit">Simpan</button>
+              <!-- <button type="submit" class="btn btn-primary">Simpan</button>  -->
               <div id="notifikasi" class="mt-2"></div>
               </form>
             <?php } ?>
