@@ -1286,7 +1286,7 @@ public function mon_laporanupdate() {
     }
 
     $where = array(
-		        'id_lapon' => $this->input->post('nid_lapon'),
+		        'id_lapon' => $this->input->post('id_lapon'),
 	);
     // $this->db->where('id_lapon', $id);
     $this->m_portal->update_data($where,$data,'tbl_lap_onboard');
