@@ -187,15 +187,18 @@ function connectViewButtonListeners(){
     });
 
   // Menyimpan perubahan dengan AJAX
-$(document).on('click', '#saveEdit', function() {
-    var formData = new FormData($('#editForm')[0]);
+
+$(document).on('click', '#saveEdit', function(e) {
+    e.preventDefault();
+
+    var formData = new FormData($('#formLaporanOnboard')[0]);
 
     $.ajax({
-        url: '<?php echo base_url('ppk/mon_onboardeditp'); ?>',
+        url: '<?= base_url('ppk/mon_laporanupdate') ?>', // ✅ Sudah benar
         type: 'POST',
         data: formData,
-        processData: false,
         contentType: false,
+        processData: false,
         success: function(response) {
             console.log(response);
             // Handle respons dari server di sini
@@ -211,6 +214,7 @@ $(document).on('click', '#saveEdit', function() {
         }
     });
 });
+
 
 
     // $('#example31082023').on('click', '.view-file-button', function() {

@@ -1332,7 +1332,7 @@ class ppk extends CI_Controller {
 
         $output .= '</tbody>';
         $output .= '</table>';
-        $output .= '<div class="text-right"><button type="button" class="btn btn-primary" id="saveEdit">Simpan</button></div>';
+        $output .= '<div class="text-right"><button type="button" class="btn btn-primary" id="saveEdit">Simpan Validasi Laporan Onboard</button></div>';
         $output .= '</form>';
     } else {
         $output = 'Data tidak ditemukan.';
