@@ -1305,7 +1305,7 @@ class ppk extends CI_Controller {
                 $output .= '<td>' . $row->$date_field . '</td>';
 
                 if ($row->$file_field) {
-                    $file_url = base_url('assets/file_laporanonboard/' . $row->$file_field . '.pdf');
+                    $file_url = base_url('/v1/assets/monitoring/laponboard/'.$i.'/' . $row->$file_field . '.pdf');
                     $output .= '<td><a href="' . $file_url . '" target="_blank" class="btn btn-sm btn-info">Lihat</a></td>';
                 } else {
                     $output .= '<td><span class="text-danger">File tidak tersedia</span></td>';
