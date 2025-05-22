@@ -1238,31 +1238,93 @@ class ppk extends CI_Controller {
     $this->load->view('ppk/mon_laponboarddata', $data);
 	}
 
+// 	public function mon_laponboardcek() {
+//     $id_mon = $this->input->post('id_mon');
+//     $data = $this->m_portal->get_data_mhs_detail($id_mon);
+
+//     if(!empty($data)) {
+//         $output = '<table class="table">';
+//         $output .= '<thead><tr><th>Bulan Laporan</th><th>Tanggal Upload</th><th>Lihat File</th></tr></thead>';
+//         $output .= '<tbody>';
+
+//         // Looping melalui setiap baris data
+//         foreach ($data as $row) {
+//             // Looping melalui 12 bulan laporan
+//             for ($i = 1; $i <= 12; $i++) {
+//                 $date_field = 'date_lapon' . $i;
+//                 $file_field = 'lap_onboard' . $i;
+
+//                 $output .= '<tr>';
+//                 $output .= '<td>Bulan Ke-' . $i . '</td>';
+//                 $output .= '<td>' . $row->$date_field . '</td>';
+
+//                 if ($row->$file_field) {
+//                     $output .= '<td><button class="btn btn-info view-file-button" data-filename' . $i . '="' . $row->$file_field . '.pdf">Lihat</button></td>';
+//                 } else {
+//                     $output .= '<td>File tidak tersedia</td>';
+//                 }
+
+//                 $output .= '</tr>';
+//             }
+//         }
+
+//         $output .= '</tbody>';
+//         $output .= '</table>';
+//     } else {
+//         $output = 'No data found';
+//     }
+
+//     echo $output;
+// }
 	public function mon_laponboardcek() {
     $id_mon = $this->input->post('id_mon');
     $data = $this->m_portal->get_data_mhs_detail($id_mon);
 
-    if(!empty($data)) {
-        $output = '<table class="table">';
-        $output .= '<thead><tr><th>Bulan Laporan</th><th>Tanggal Upload</th><th>Lihat File</th></tr></thead>';
+    if (!empty($data)) {
+        $output = '<form id="formLaporanOnboard">';
+        $output .= '<input type="hidden" name="id_lapon" value="' . $data[0]->id_lapon . '">';
+        $output .= '<table class="table table-bordered">';
+        $output .= '<thead><tr>
+                      <th>Bulan Laporan</th>
+                      <th>Tanggal Upload</th>
+                      <th>Lihat File</th>
+                      <th>Status</th>
+                      <th>Keterangan</th>
+                    </tr></thead>';
         $output .= '<tbody>';
 
-        // Looping melalui setiap baris data
         foreach ($data as $row) {
-            // Looping melalui 12 bulan laporan
             for ($i = 1; $i <= 12; $i++) {
                 $date_field = 'date_lapon' . $i;
                 $file_field = 'lap_onboard' . $i;
+                $status_field = 'sudah_lapon' . $i;
+                $ket_field = 'keterangan_lapon' . $i;
 
                 $output .= '<tr>';
                 $output .= '<td>Bulan Ke-' . $i . '</td>';
-                $output .= '<td>' . $row->$date_field . '</td>';
+                $output .= '<td><input type="date" class="form-control" name="' . $date_field . '" value="' . $row->$date_field . '"></td>';
 
                 if ($row->$file_field) {
-                    $output .= '<td><button class="btn btn-info view-file-button" data-filename' . $i . '="' . $row->$file_field . '.pdf">Lihat</button></td>';
+                    $file_url = base_url('assets/file_laporanonboard/' . $row->$file_field . '.pdf');
+                    $output .= '<td><a href="' . $file_url . '" target="_blank" class="btn btn-sm btn-info">Lihat</a></td>';
                 } else {
-                    $output .= '<td>File tidak tersedia</td>';
+                    $output .= '<td><span class="text-danger">File tidak tersedia</span></td>';
                 }
+
+                // Radio Button Status
+                $output .= '<td>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="' . $status_field . '" value="sudah" ' . ($row->$status_field === 'sudah' ? 'checked' : '') . '> Sudah
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="' . $status_field . '" value="belum" ' . ($row->$status_field === 'belum' ? 'checked' : '') . '> Belum
+                    </div>
+                </td>';
+
+                // Textarea Keterangan
+                $output .= '<td>
+                    <textarea class="form-control" name="' . $ket_field . '" rows="2" placeholder="Masukkan keterangan">' . $row->$ket_field . '</textarea>
+                </td>';
 
                 $output .= '</tr>';
             }
@@ -1270,12 +1332,15 @@ class ppk extends CI_Controller {
 
         $output .= '</tbody>';
         $output .= '</table>';
+        $output .= '<div class="text-right"><button type="button" class="btn btn-primary" id="saveEdit">Simpan</button></div>';
+        $output .= '</form>';
     } else {
-        $output = 'No data found';
+        $output = 'Data tidak ditemukan.';
     }
 
     echo $output;
 }
+
 public function mon_laporanupdate() {
     // $id = $this->input->post('id_lapon');
     $data = [];
