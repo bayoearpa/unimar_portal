@@ -1302,7 +1302,7 @@ class ppk extends CI_Controller {
 
                 $output .= '<tr>';
                 $output .= '<td>Bulan Ke-' . $i . '</td>';
-                $output .= '<td>' . $date_field . '</td>';
+                $output .= '<td>' . $row->$date_field . '</td>';
 
                 if ($row->$file_field) {
                     $file_url = base_url('assets/file_laporanonboard/' . $row->$file_field . '.pdf');
