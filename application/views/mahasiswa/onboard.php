@@ -73,7 +73,25 @@
                         <input type="date" class="form-control" id="edittglsignon" name="tglsignon" value="<?php echo $c->tgl_sign_on; ?>">
                     </div>
                    <div class="form-group">
-                        <label for="editufsignon">Upload File Sign On</label>
+                        <label for="editufsignon">Upload File Sign On (file harus dengan format .pdf)</label>
+                        <input type="file" class="form-control" id="editufsignon" name="ufsignon">
+                        <input type="hidden" id="editufsignon_existing" name="ufsignon_existing" value="<?php echo $c->upload_file_signon; ?>">
+                    </div>
+                    <div id="fileUploadStatus">Belum ada file yang diunggah.</div>
+                    <div class="form-group">
+                        <label for="editufsignon">Kru List (file harus dengan format .pdf)</label>
+                        <input type="file" class="form-control" id="editufsignon" name="ufsignon">
+                        <input type="hidden" id="editufsignon_existing" name="ufsignon_existing" value="<?php echo $c->upload_file_signon; ?>">
+                    </div>
+                    <div id="fileUploadStatus">Belum ada file yang diunggah.</div>
+                    <div class="form-group">
+                        <label for="editufsignon">Ship Particular (file harus dengan format .pdf)</label>
+                        <input type="file" class="form-control" id="editufsignon" name="ufsignon">
+                        <input type="hidden" id="editufsignon_existing" name="ufsignon_existing" value="<?php echo $c->upload_file_signon; ?>">
+                    </div>
+                    <div id="fileUploadStatus">Belum ada file yang diunggah.</div>
+                    <div class="form-group">
+                        <label for="editufsignon">Swafoto dengan nama kapal / No. IMO (file harus dengan format .jpg)</label>
                         <input type="file" class="form-control" id="editufsignon" name="ufsignon">
                         <input type="hidden" id="editufsignon_existing" name="ufsignon_existing" value="<?php echo $c->upload_file_signon; ?>">
                     </div>
