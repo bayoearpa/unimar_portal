@@ -57,10 +57,10 @@
                   setelah taruna naik kapal.
                 </div> -->
               <form action="<?php echo base_url() ?>mahasiswa/laponboardp" name="form1" id="form1" method="post" enctype="multipart/form-data">
-                <input type="hidden" name="id_mon" id="id_mon" value="<?php echo $c->id_mon; ?>">
-                <input type="hidden" name="id_lapon" id="id_lapon" value="<?php echo $c->id_lapon; ?>">
-                <input type="hidden" name="lapke" id="lapke" value="<?php echo $lapke; ?>">
-                <input type="hidden" name="nim" id="nim" value="<?php echo $c->nim; ?>">
+                <input type="text" name="id_mon" id="id_mon" value="<?php echo $c->id_mon; ?>">
+                <input type="text" name="id_lapon" id="id_lapon" value="<?php echo $c->id_lapon; ?>">
+                <input type="text" name="lapke" id="lapke" value="<?php echo $lapke; ?>">
+                <input type="text" name="nim" id="nim" value="<?php echo $c->nim; ?>">
                  <div class="form-group">
                    <div class="form-group">
                         <label for="editufsignon">Upload File laporan onboard ke <?php echo $lapke; ?></label>
