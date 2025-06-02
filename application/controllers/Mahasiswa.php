@@ -389,40 +389,43 @@ class Mahasiswa extends CI_Controller {
 	    );
 			$laporanke = $this->input->post('lapke');
 			$date_lapon = date('Y-m-d');
-			// $namafile = $nim."-laporan_onboard_ke_".$laporanke;
+			$namafile = $nim."-laporan_onboard_ke_".$laporanke;
 			$db_laponboard = "lap_onboard".$laporanke;
 			$db_datelapon = "date_lapon".$laporanke;
 
-
-			$namafile = $nim."-laporan_onboard_ke_".$laporanke;
 			$upload_path = './assets/monitoring/laponboard/'.$laporanke;
 			$full_file_path = $upload_path . '/' . $namafile . '.pdf';
+		// Hapus file lama jika ada
+		if (file_exists($full_file_path)) {
+		    unlink($full_file_path);
+		}
 
-			// Hapus file lama jika ada
-			if (file_exists($full_file_path)) {
-			    unlink($full_file_path);
-			}
 
-			$config['upload_path'] = $upload_path;
-			$config['max_size'] = 1048;
-			$config['allowed_types'] = 'pdf';
-			$config['file_name'] = $namafile;
-			$config['overwrite'] = TRUE; // agar tidak menambah _1, _2
+    // Tangani unggahan file
+        $config['upload_path'] = './assets/monitoring/laponboard/'.$laporanke;
+        $config['max_size'] = 1048;
+        $config['allowed_types'] = 'pdf'; // Sesuaikan dengan jenis file yang diizinkan
+        $config['file_name'] = $namafile; // Nama file yang diunggah sesuai NIM
+        $config['overwrite'] = TRUE; // agar tidak menambah _1, _2
+        $this->load->library('upload', $config);
 
-			$this->load->library('upload', $config);
+        if ($this->upload->do_upload('lap_onboard'.$laporanke)) {
+            // Jika unggahan berhasil
+            $upload_data = $this->upload->data();
+            $file_name = $upload_data['file_name'];
 
-			if ($this->upload->do_upload('lap_onboard'.$laporanke)) {
-			    $upload_data = $this->upload->data();
+            // Simpan data ke database (contoh)
+            $data = array(
+              	$db_laponboard => $namafile,
+                $db_datelapon => $date_lapon
+            );
+            $this->m_mahasiswa->update_data($where,$data,'tbl_lap_onboard');
 
-			    $data = array(
-			        $db_laponboard => $namafile,
-			        $db_datelapon => $date_lapon
-			    );
-			    $this->m_mahasiswa->update_data($where, $data, 'tbl_lap_onboard');
-			    redirect(base_url().'mahasiswa/laponboard/'.$nim);
+            redirect(base_url().'mahasiswa/laponboard/'.$nim);
+
 			}
 	}
-	
+
 	public function down_format_laporan_bulanan_onboard()
 	{
 		# code...
