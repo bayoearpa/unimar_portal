@@ -395,10 +395,11 @@ class Mahasiswa extends CI_Controller {
 
 			$upload_path = './assets/monitoring/laponboard/'.$laporanke;
 			$full_file_path = $upload_path . '/' . $namafile . '.pdf';
-		// Hapus file lama jika ada
-		if (file_exists($full_file_path)) {
-		    unlink($full_file_path);
-		}
+		
+		// // Hapus file lama jika ada
+		// if (file_exists($full_file_path)) {
+		//     unlink($full_file_path);
+		// }
 
 
     // Tangani unggahan file
