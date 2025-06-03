@@ -454,7 +454,7 @@ class Mahasiswa extends CI_Controller {
 
 	}
 
-	public function offboardp()
+	public function offboardp_old()
 	{
        /// cek file
     $cekfile = $this->input->post('ufsignon_existing');
@@ -526,6 +526,62 @@ class Mahasiswa extends CI_Controller {
         ///else eufsignon_existing == 0
        }
     
+	}
+		public function offboardp()
+	{
+	    $nim = $this->input->post('nim');
+	    $cekfile = $this->input->post('ufsignon_existing');
+	    $id_mon = $this->input->post('id_mon');
+	    $status_offboard = $this->input->post('status_offboard');
+	    $tgl_signoff = $this->input->post('tglsignoff');
+	    $tgl_signofff = date('Y-m-d', strtotime($tgl_signoff));
+	    $tgl_lap_signoff = date('Y-m-d');
+
+	    $where = ['id_mon' => $id_mon];
+
+	    $data = [
+	        'status_offboard' => $status_offboard,
+	        'status_onboard' => 'tidak',
+	        'tgl_sign_off' => $tgl_signofff,
+	        'tgl_lap_sign_off' => $tgl_lap_signoff
+	    ];
+
+	    if ($cekfile > 0) {
+	        $this->m_mahasiswa->update_data($where, $data, 'tbl_mon');
+	        redirect(base_url() . 'mahasiswa/offboard/' . $nim);
+	        return;
+	    }
+
+	    $this->load->library('upload');
+
+	    // Atur upload file
+	    $upload_path = './assets/monitoring/offboard/';
+	    $uploads = [
+	        'ufsignoff' => ['field' => 'upload_file_signon', 'filename' => $nim . '-signoff', 'type' => 'pdf'],
+	        'krulist'   => ['field' => 'upload_file_krulist', 'filename' => $nim . '-krulist', 'type' => 'pdf'],
+	        'shippart'  => ['field' => 'upload_file_shippart', 'filename' => $nim . '-shippart', 'type' => 'pdf'],
+	        'swafoto'   => ['field' => 'upload_file_swafoto', 'filename' => $nim . '-swafoto', 'type' => 'jpg|jpeg']
+	    ];
+
+	    foreach ($uploads as $form_name => $file_info) {
+	        $config = [
+	            'upload_path'   => $upload_path,
+	            'allowed_types' => $file_info['type'],
+	            'max_size'      => 1048,
+	            'file_name'     => $file_info['filename'],
+	            'overwrite'     => true
+	        ];
+
+	        $this->upload->initialize($config);
+
+	        if ($this->upload->do_upload($form_name)) {
+	            $upload_data = $this->upload->data();
+	            $data[$file_info['field']] = $upload_data['file_name'];
+	        }
+	    }
+
+	    $this->m_mahasiswa->update_data($where, $data, 'tbl_mon');
+	    redirect(base_url() . 'mahasiswa/offboard/' . $nim);
 	} 
 
 
