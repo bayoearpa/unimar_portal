@@ -98,7 +98,7 @@
                     </div>
                     <div id="fileUploadStatus">Belum ada file yang diunggah.</div>
                     <div class="form-group">
-                        <label for="editufsignon">Swafoto dengan nama kapal / No. IMO (file harus dengan format .jpg)</label>
+                        <label for="editufsignon">Swafoto dengan background nama kapal / No. IMO (file harus dengan format .jpg)</label>
                         <input type="file" class="form-control" id="editufsignon" name="ufsignon">
                         <input type="hidden" id="editufsignon_existing" name="ufsignon_existing" value="<?php echo $c->upload_file_signon; ?>">
                     </div>
