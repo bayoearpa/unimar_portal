@@ -80,19 +80,19 @@
                         <input type="date" class="form-control" id="edittglsignon" name="tglsignoff" value="<?php echo $c->tgl_sign_off; ?>">
                     </div>
                    <div class="form-group">
-                        <label for="editufsignon">Upload File Sign Off (file harus dengan format .pdf)</label>
+                        <label for="editufsignon">Upload File Sign Off (file harus dengan format .pdf dan Maks. 1 MB)</label>
                         <input type="file" class="form-control" id="editufsignon" name="ufsignoff">
                         <input type="hidden" id="editufsignon_existing" name="ufsignon_existing" value="<?php echo $c->upload_file_signoff; ?>">
                     </div>
                     <div id="fileUploadStatus">Belum ada file yang diunggah.</div>
                      <div class="form-group">
-                        <label for="editufsignon">Kru List (file harus dengan format .pdf)</label>
+                        <label for="editufsignon">Kru List (file harus dengan format .pdf dan Maks. 1 MB)</label>
                         <input type="file" class="form-control" id="editufsignon" name="ufsignon">
                         <input type="hidden" id="editufsignon_existing" name="ufsignon_existing" value="<?php echo $c->upload_file_signon; ?>">
                     </div>
                     <div id="fileUploadStatus">Belum ada file yang diunggah.</div>
                     <div class="form-group">
-                        <label for="editufsignon">Ship Particular (file harus dengan format .pdf)</label>
+                        <label for="editufsignon">Ship Particular (file harus dengan format .pdf dan Maks. 1 MB)</label>
                         <input type="file" class="form-control" id="editufsignon" name="ufsignon">
                         <input type="hidden" id="editufsignon_existing" name="ufsignon_existing" value="<?php echo $c->upload_file_signon; ?>">
                     </div>

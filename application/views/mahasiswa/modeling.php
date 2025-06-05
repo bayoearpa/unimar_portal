@@ -3,7 +3,7 @@
 
         <div class="box box-default">
           <div class="box-header with-border">
-            <h3 class="box-title">Form Laporan TRB</h3>
+            <h3 class="box-title">Form Laporan Ujian Modeling</h3>
           </div>
           <div class="box-body">
              <?php 
@@ -56,20 +56,20 @@
                   link/website yang sudah disiapkan oleh Bagian PPK adalah maksimal 1 (satu) bulan / 30 Hari
                   setelah taruna naik kapal.
                 </div> -->
-              <form action="<?php echo base_url() ?>mahasiswa/trbp" name="form1" id="form1" method="post" enctype="multipart/form-data">
+              <form action="<?php echo base_url() ?>mahasiswa/modelingp" name="form1" id="form1" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="id_mon" id="id_mon" value="<?php echo $c->id_mon; ?>">
                 <input type="hidden" name="nim" id="nim" value="<?php echo $c->nim; ?>">
                  <div class="form-group">
                    <div class="form-group">
-                        <label for="editufsignon">Upload File SKL TRB (file harus dengan format .pdf dan Maks. 1 MB)</label>
-                        <input type="file" class="form-control" id="ufskltrb" name="ufskltrb">
-                        <input type="hidden" id="ufskltrb_existing" name="ufskltrb_existing" value="<?php echo $c->upload_file_trb; ?>">
+                        <label for="editufsignon">Upload File Berita acara turun Prala (file harus dengan format .pdf dan Maks. 1 MB)</label>
+                        <input type="file" class="form-control" id="ufsklmdl" name="ufsklmdl">
+                        <input type="hidden" id="ufsklmdl_existing" name="ufsklmdl_existing" value="<?php echo $c->upload_file_batrnprala; ?>">
                     </div>
                     <div id="fileUploadStatus">Belum ada file yang diunggah.</div>
                     <div class="form-group">
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="status_trb" name="status_trb" value="sudah" required="harus dicentang!" <?php echo $cek = ($c->status_trb == "sudah") ? "Checked" : "" ; ?>>
-                            <label class="form-check-label" for="addstatpra">Dengan mencentang tombol berikut menandakan anda telah melakukan laporan SKL TRB kepada PPK UNIMAR AMNI Semarang.</label>
+                            <input type="checkbox" class="form-check-input" id="status_modeling" name="status_modeling" value="sudah" required="harus dicentang!" <?php echo $cek = ($c->status_modeling == "sudah") ? "Checked" : "" ; ?>>
+                            <label class="form-check-label" for="addstatpra">Dengan mencentang tombol berikut menandakan anda telah melakukan laporan Ujian Modeling kepada PPK UNIMAR AMNI Semarang.</label>
                         </div>
                     </div>
                   </div>
@@ -83,7 +83,7 @@
                 <div class="alert alert-danger alert-dismissible">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                     <h4><i class="icon fa fa-ban"></i> Alert!</h4>
-                    anda belum diizinkan untuk mengisi form Laporan TRB karena belum ujian Modeling
+                    anda belum diizinkan untuk mengisi form Laporan Modeling karena belum Lulus PASCA
                 </div>
             <!-- end peringatan jika belum boleh mendafatar  -->
 

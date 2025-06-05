@@ -220,6 +220,7 @@
             <li><a href="<?php echo base_url() ?>mahasiswa/laponboard/<?php echo $this->session->userdata('user')?>"><i class="fa fa-circle-o"></i>Laporan Onboard</a></li>
             <li><a href="<?php echo base_url() ?>mahasiswa/offboard/<?php echo $this->session->userdata('user')?>"><i class="fa fa-circle-o"></i>Sign Off</a></li>
             <li><a href="<?php echo base_url() ?>mahasiswa/pasca/<?php echo $this->session->userdata('user')?>"><i class="fa fa-circle-o"></i>Ujian Pasca</a></li>
+             <li><a href="<?php echo base_url() ?>mahasiswa/modeling/<?php echo $this->session->userdata('user')?>"><i class="fa fa-circle-o"></i>Ujian Modeling</a></li>
             <li><a href="<?php echo base_url() ?>mahasiswa/trb/<?php echo $this->session->userdata('user')?>"><i class="fa fa-circle-o"></i>Ujian TRB</a></li>
           </ul>
         </li>

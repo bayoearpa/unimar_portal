@@ -661,6 +661,82 @@ class Mahasiswa extends CI_Controller {
     
 	} 
 
+	public function modeling($id)
+	{
+		# code...
+		$data['mahasiswa'] = $this;
+		$data['mhs_detail'] = $this->m_mahasiswa->get_data_mhs_detail($id);
+		
+		$this->load->view('mahasiswa/header');
+		$this->load->view('mahasiswa/modeling',$data);
+		$this->load->view('mahasiswa/footer');
+		$this->load->view('mahasiswa/modeling_js',$data);
+
+	}
+
+	public function modelingp()
+	{
+       /// cek file
+    $cekfile = $this->input->post('ufsklmdl_existing');
+    $nimc = $this->input->post('nim');
+    if ($cekfile > 0) {
+    	# code...
+    	 // Tangani data yang dikirimkan dari formulir
+			$where = array(
+		        'id_mon' => $this->input->post('id_mon'),
+		    );
+			$nim = $this->input->post('nim');
+			$status_modeling = $this->input->post('status_modeling');
+
+    	// Simpan data ke database (contoh)
+            $data = array(
+            	'status_modeling' => $status_modeling,
+            );
+            $proses_edt = $this->m_mahasiswa->update_data($where,$data,'tbl_mon');
+        if($proses_edt){    
+             redirect(base_url().'mahasiswa/modeling/'.$nim);
+        } else {
+             redirect(base_url().'mahasiswa/modeling/'.$nim);
+        }
+
+    }else{
+    
+    	 // Tangani data yang dikirimkan dari formulir
+		$where = array(
+	        'id_mon' => $this->input->post('id_mon'),
+	    );
+		$nim = $this->input->post('nim');
+			$status_trb = $this->input->post('status_modeling');
+
+    // Tangani unggahan file
+        $config['upload_path'] = './assets/monitoring/modeling';
+        $config['max_size'] = 1048;
+        $config['allowed_types'] = 'pdf'; // Sesuaikan dengan jenis file yang diizinkan
+        $config['file_name'] = $nim.'_batrnprala'; // Nama file yang diunggah sesuai NIM
+        $this->load->library('upload', $config);
+
+        if ($this->upload->do_upload('ufsklmdl')) {
+            // Jika unggahan berhasil
+            $upload_data = $this->upload->data();
+            $file_name = $upload_data['file_name'];
+
+            // Simpan data ke database (contoh)
+            $data = array(
+              	'status_modeling' => $status_modeling,
+                'upload_file_batrnprala' => $file_name
+            );
+            $this->m_mahasiswa->update_data($where,$data,'tbl_mon');
+
+            redirect(base_url().'mahasiswa/modeling/'.$nimc);
+        } else {
+            redirect(base_url().'mahasiswa/modeling/'.$nimc);
+        }
+
+        ///else eufsignon_existing == 0
+       }
+    
+	} 
+
 }
 
 /* End of file Mahasiswa.php */

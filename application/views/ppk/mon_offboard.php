@@ -42,6 +42,10 @@
                   <th>Tanggal Sign On</th>
                    <th>Tanggal Sign Off</th>
                    <th>File Offboard</th>
+                   <th>File Kru List</th>
+                   <th>File Ship Part</th>
+                   <th>File Swafoto</th>
+
                   <th>proses</th>
                 </tr>
                 </thead>
@@ -63,6 +67,33 @@
                     <!-- Tombol Lihat File Sign Off -->
                     <?php if ($i->upload_file_signoff) { ?>
                         <button class="btn btn-info view-file-button" data-filename="<?php echo $i->upload_file_signoff; ?>">Lihat</button>
+                    <?php } else { ?>
+                        <!-- Tampilkan pesan jika file tidak ada -->
+                        File tidak tersedia
+                    <?php } ?>
+                </td>
+                <td>
+                    <!-- Tombol Lihat File Sign Off -->
+                    <?php if ($i->upload_file_krulist) { ?>
+                        <button class="btn btn-info view-file-button" data-filename="<?php echo $i->upload_file_krulist; ?>">Lihat</button>
+                    <?php } else { ?>
+                        <!-- Tampilkan pesan jika file tidak ada -->
+                        File tidak tersedia
+                    <?php } ?>
+                </td>
+                <td>
+                    <!-- Tombol Lihat File Sign Off -->
+                    <?php if ($i->upload_file_shippart) { ?>
+                        <button class="btn btn-info view-file-button" data-filename="<?php echo $i->upload_file_shippart; ?>">Lihat</button>
+                    <?php } else { ?>
+                        <!-- Tampilkan pesan jika file tidak ada -->
+                        File tidak tersedia
+                    <?php } ?>
+                </td>
+                <td>
+                    <!-- Tombol Lihat File Sign Off -->
+                    <?php if ($i->upload_file_swafoto) { ?>
+                        <button class="btn btn-info view-file-button" data-filename="<?php echo $i->upload_file_swafoto; ?>">Lihat</button>
                     <?php } else { ?>
                         <!-- Tampilkan pesan jika file tidak ada -->
                         File tidak tersedia
@@ -91,6 +122,9 @@
                   <th>Tanggal Sign On</th>
                    <th>Tanggal Sign Off</th>
                    <th>File Offboard</th>
+                   <th>File Kru List</th>
+                   <th>File Ship Part</th>
+                   <th>File Swafoto</th>
                   <th>proses</th>
                 </tr>
                 </tfoot>

@@ -988,7 +988,10 @@ function get_data_formon_mhsall_ob($limit, $offset)
 	        tbl_mon.tgl_sign_on,
 	        tbl_mon.upload_file_signon,
 	        tbl_mon.tgl_sign_off,
-	        tbl_mon.upload_file_signoff');
+	        tbl_mon.upload_file_signoff,
+	        upload_file_krulist,
+	        upload_file_shippart,
+	        upload_file_swafoto');
 	    $this->db->from('tmst_mahasiswa');
 	    $this->db->join('tmst_program_studi', 'tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi', 'inner');
 	    $this->db->join('tbl_mon','tmst_mahasiswa.NIM = tbl_mon.nim','inner');
