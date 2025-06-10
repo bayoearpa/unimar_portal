@@ -55,6 +55,34 @@
       }
     });
   });
+   $('.val-button').click(function() {
+    var id = $(this).data('id');
+    // Ambil data yang akan diedit dari server dengan AJAX
+    $.ajax({
+      url: '<?php echo base_url('baak/mon_add/'); ?>' + id, // Sesuaikan dengan URL yang sesuai
+      type: 'GET',
+      success: function(data) {
+        // Isi modal dengan data yang diambil
+        console.log(data); // Cetak nilai data ke konsol
+        var parsedData = JSON.parse(data);
+        $('#addNim').val(parsedData.nim);
+        $('#addNama').val(parsedData.nama);
+        $('#addTmptLahir').val(parsedData.tl);
+        $('#addTglLahir').val(parsedData.tgll);
+        $('#addAlamat').val(parsedData.alamat);
+            // Set jenis kelamin sesuai dengan data dari database
+            if (parsedData.jk === 'L') {
+                $('#addjnsklmn').val('Laki-laki');
+            } else if (parsedData.jk === 'P') {
+                $('#addjnsklmn').val('Perempuan');
+            }
+        $('#addtgllls').val(parsedData.d3_tanggal_lulus);
+        $('#addnoijs').val(parsedData.d3_no_ijasah);
+        // Tambahkan input lain sesuai kebutuhan
+        $('#valModal').modal('show');
+      }
+    });
+  });
    // Memeriksa apakah input file sudah diisi saat halaman dimuat
     $('#editufsignon').on('change', function() {
                 var fileUploadStatus = $('#fileUploadStatus');
