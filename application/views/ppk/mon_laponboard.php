@@ -276,27 +276,27 @@
                     <input type="hidden" id="editidmon" name="nid_mon">
                     <div class="form-group">
                         <label for="editNama">Nama:</label>
-                        <input type="text" class="form-control" id="editNama" name="nama" readonly="">
+                        <input type="text" class="form-control" id="valNama" name="nama" readonly="">
                     </div>
                     <div class="form-group">
                         <label for="editTmptLahir">Tempat Lahir:</label>
-                        <input type="text" class="form-control" id="editTmptLahir" name="tl" readonly="">
+                        <input type="text" class="form-control" id="valTmptLahir" name="tl" readonly="">
                     </div>
                     <div class="form-group">
                         <label for="editTglLahir">Tanggal Lahir:</label>
-                        <input type="text" class="form-control" id="editTglLahir" name="tgll" readonly="">
+                        <input type="text" class="form-control" id="valTglLahir" name="tgll" readonly="">
                     </div>
                     <div class="form-group">
                         <label for="editAlamat">Alamat:</label>
-                        <textarea class="form-control" rows="3" id="editAlamat" name="alamat" readonly=""></textarea>
+                        <textarea class="form-control" rows="3" id="valAlamat" name="alamat" readonly=""></textarea>
                     </div>
                     <div class="form-group">
                         <label for="editjnsklmn">Jenis Kelamin:</label>
-                        <input type="text" class="form-control" id="editjnsklmn" name="jk" readonly="">
+                        <input type="text" class="form-control" id="valjnsklmn" name="jk" readonly="">
                     </div>
                     <div class="form-group">
                         <label for="editseafarercode">Seafarercode:</label>
-                        <input type="text" class="form-control" id="editseafarercode" name="eseafarercode" readonly="">
+                        <input type="text" class="form-control" id="valseafarercode" name="eseafarercode" readonly="">
                     </div>
 
                     <!-- onboard/offboard formgroup -->
@@ -304,35 +304,35 @@
                     <div class="form-group">
                         <label for="editstatonboard">Status Onboard:</label>
                         <div class="form-check">
-                            <input type="radio" class="form-check-input" id="editstatonboard" name="estatonboard" value="iya">
-                            <label class="form-check-label" for="editstatonboard">Iya</label>
+                            <input type="radio" class="form-check-input" id="valstatonboard" name="estatonboard" value="iya">
+                            <label class="form-check-label" for="valstatonboard">Iya</label>
                         </div>
                         <div class="form-check">
-                            <input type="radio" class="form-check-input" id="editstatonboard" name="estatonboard" value="tidak">
-                            <label class="form-check-label" for="editstatonboard">Tidak</label>
+                            <input type="radio" class="form-check-input" id="valstatonboard" name="estatonboard" value="tidak">
+                            <label class="form-check-label" for="valstatonboard">Tidak</label>
                         </div>
                     </div>
                      <div class="form-group">
                         <label for="editnamakapal">Nama Perusahaan:</label>
-                        <input type="text" class="form-control" id="editnamaperusahaan" name="editnamaperusahaan">
+                        <input type="text" class="form-control" id="valnamaperusahaan" name="valnamaperusahaan">
                     </div>
                     <div class="form-group">
                         <label for="editnamakapal">Nama Kapal:</label>
-                        <input type="text" class="form-control" id="editnamakapal" name="editnamakapal">
+                        <input type="text" class="form-control" id="valnamakapal" name="valnamakapal">
                     </div>
                     <div class="form-group">
                         <label for="edittglsignon">Tanggal Sign On:</label>
-                        <input type="date" class="form-control" id="edittglsignon" name="etglsignon">
+                        <input type="date" class="form-control" id="valtglsignon" name="etglsignon">
                     </div>
                    <div class="form-group">
                         <label for="editufsignon">Upload File Sign On</label>
-                        <input type="file" class="form-control" id="editufsignon" name="eufsignon">
-                        <input type="hidden" id="editufsignon_existing" name="eufsignon_existing" value="<?php echo $i->upload_file_signon; ?>">
+                        <input type="file" class="form-control" id="valufsignon" name="eufsignon">
+                        <input type="hidden" id="valufsignon_existing" name="eufsignon_existing" value="<?php echo $i->upload_file_signon; ?>">
                     </div>
                     <div id="fileUploadStatus">Belum ada file yang diunggah.</div>
                     <div class="form-group">
-                        <label for="editKetOnboard">Keterangan:</label>
-                        <textarea class="form-control" rows="3" id="editKetOnboard" name="ket_onboard"></textarea>
+                        <label for="valKetOnboard">Keterangan:</label>
+                        <textarea class="form-control" rows="3" id="valKetOnboard" name="ket_onboard"></textarea>
                     </div>
                     
                     

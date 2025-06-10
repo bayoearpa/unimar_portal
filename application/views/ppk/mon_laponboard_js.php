@@ -65,19 +65,19 @@
         // Isi modal dengan data yang diambil
         console.log(data); // Cetak nilai data ke konsol
         var parsedData = JSON.parse(data);
-        $('#addNim').val(parsedData.nim);
-        $('#addNama').val(parsedData.nama);
-        $('#addTmptLahir').val(parsedData.tl);
-        $('#addTglLahir').val(parsedData.tgll);
-        $('#addAlamat').val(parsedData.alamat);
+        $('#valNim').val(parsedData.nim);
+        $('#valNama').val(parsedData.nama);
+        $('#valTmptLahir').val(parsedData.tl);
+        $('#valTglLahir').val(parsedData.tgll);
+        $('#valAlamat').val(parsedData.alamat);
             // Set jenis kelamin sesuai dengan data dari database
             if (parsedData.jk === 'L') {
-                $('#addjnsklmn').val('Laki-laki');
+                $('#valjnsklmn').val('Laki-laki');
             } else if (parsedData.jk === 'P') {
-                $('#addjnsklmn').val('Perempuan');
+                $('#valjnsklmn').val('Perempuan');
             }
-        $('#addtgllls').val(parsedData.d3_tanggal_lulus);
-        $('#addnoijs').val(parsedData.d3_no_ijasah);
+        $('#valtgllls').val(parsedData.d3_tanggal_lulus);
+        $('#valnoijs').val(parsedData.d3_no_ijasah);
         // Tambahkan input lain sesuai kebutuhan
         $('#valModal').modal('show');
       }
