@@ -1890,6 +1890,7 @@ function get_data_formon_mhs($id)
 	        tbl_mon.status_modeling as status_modeling,
 	        tbl_mon.status_trb as status_trb,
 	        tbl_mon.nama_kapal,
+	        tbl_mon.nama_perusahaan,
 	        tbl_mon.tgl_sign_on,
 	        tbl_mon.upload_file_signon,
 	        tbl_mon.tgl_sign_off,
