@@ -299,19 +299,7 @@
                         <input type="text" class="form-control" id="valseafarercode" name="eseafarercode" readonly="">
                     </div>
 
-                    <!-- onboard/offboard formgroup -->
-
-                    <div class="form-group">
-                        <label for="editstatonboard">Status Onboard:</label>
-                        <div class="form-check">
-                            <input type="radio" class="form-check-input" id="valstatonboard" name="estatonboard" value="iya">
-                            <label class="form-check-label" for="valstatonboard">Iya</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="radio" class="form-check-input" id="valstatonboard" name="estatonboard" value="tidak">
-                            <label class="form-check-label" for="valstatonboard">Tidak</label>
-                        </div>
-                    </div>
+                    
                      <div class="form-group">
                         <label for="editnamakapal">Nama Perusahaan:</label>
                         <input type="text" class="form-control" id="valnamaperusahaan" name="valnamaperusahaan">
@@ -324,15 +312,19 @@
                         <label for="edittglsignon">Tanggal Sign On:</label>
                         <input type="date" class="form-control" id="valtglsignon" name="etglsignon">
                     </div>
-                   <div class="form-group">
-                        <label for="editufsignon">Upload File Sign On</label>
-                        <input type="file" class="form-control" id="valufsignon" name="eufsignon">
-                        <input type="hidden" id="valufsignon_existing" name="eufsignon_existing" value="<?php echo $i->upload_file_signon; ?>">
-                    </div>
-                    <div id="fileUploadStatus">Belum ada file yang diunggah.</div>
+
+                    <!-- onboard/offboard formgroup -->
+
                     <div class="form-group">
-                        <label for="valKetOnboard">Keterangan:</label>
-                        <textarea class="form-control" rows="3" id="valKetOnboard" name="ket_onboard"></textarea>
+                        <label for="editstatonboard">Status Laporan Onboard (di validasi ketika sudah semua laporan onboardnya):</label>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="valstatonboard" name="vstatlapon" value="sudah">
+                            <label class="form-check-label" for="valstatonboard">Sudah</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="valstatonboard" name="vstatlapon" value="belum">
+                            <label class="form-check-label" for="valstatonboard">Belum</label>
+                        </div>
                     </div>
                     
                     

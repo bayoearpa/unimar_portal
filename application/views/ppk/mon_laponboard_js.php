@@ -76,8 +76,16 @@
             } else if (parsedData.jk === 'P') {
                 $('#valjnsklmn').val('Perempuan');
             }
-        $('#valtgllls').val(parsedData.d3_tanggal_lulus);
-        $('#valnoijs').val(parsedData.d3_no_ijasah);
+
+        $('#valseafarercode').val(parsedData.seafarercode);
+        $('#valnamaperusahaan').val(parsedData.nama_perusahaan);
+        $('#valnamakapal').val(parsedData.nama_kapal);
+         // Mengatur radio button "Status UKP Pasca" sesuai dengan data dari database
+           if (parsedData.status_lapon === 'sudah') {
+                $('input[name="vstatlapon"][value="sudah"]').prop('checked', true);
+            } else if (parsedData.status_lapon === 'belum') {
+                $('input[name="vstatlapon"][value="belum"]').prop('checked', true);
+            }
         // Tambahkan input lain sesuai kebutuhan
         $('#valModal').modal('show');
       }
