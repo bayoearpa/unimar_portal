@@ -540,7 +540,7 @@ class Mahasiswa extends CI_Controller {
     $where = ['id_mon' => $id_mon];
 
     // Ambil data lama
-    $old = $this->m_mahasiswa->get_data_where('tbl_mon', $where)->row();
+    $old = $this->m_mahasiswa->get_data($where, 'tbl_mon')->row();
 
     $data = [
         'status_offboard' => $status_offboard,
