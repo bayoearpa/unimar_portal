@@ -437,7 +437,7 @@ class Mahasiswa extends CI_Controller {
 	{
 		# code...
 		$data['mahasiswa'] = $this;
-		$data['mhs_detail'] = $this->m_mahasiswa->get_data_mhs_detail($id);
+		$data['mhs_detail'] = $this->m_mahasiswa->get_data_mhs_detail2($id);
 
 		foreach ($data['mhs_detail'] as $key) {
 			# code...
