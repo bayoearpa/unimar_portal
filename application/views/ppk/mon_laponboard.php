@@ -271,7 +271,7 @@
             </div>
             <div class="modal-body">
                 <!-- Form Edit Data -->
-                <form id="editForm" method="post" enctype="multipart/form-data">
+                <form id="valForm" method="post" enctype="multipart/form-data">
                     <input type="hidden" id="editNim" name="nim">
                     <input type="hidden" id="editidmon" name="nid_mon">
                     <div class="form-group">
@@ -302,15 +302,15 @@
                     
                      <div class="form-group">
                         <label for="editnamakapal">Nama Perusahaan:</label>
-                        <input type="text" class="form-control" id="valnamaperusahaan" name="valnamaperusahaan">
+                        <input type="text" class="form-control" id="valnamaperusahaan" name="valnamaperusahaan" readonly="">
                     </div>
                     <div class="form-group">
                         <label for="editnamakapal">Nama Kapal:</label>
-                        <input type="text" class="form-control" id="valnamakapal" name="valnamakapal">
+                        <input type="text" class="form-control" id="valnamakapal" name="valnamakapal" readonly="">
                     </div>
                     <div class="form-group">
                         <label for="edittglsignon">Tanggal Sign On:</label>
-                        <input type="date" class="form-control" id="valtglsignon" name="etglsignon">
+                        <input type="date" class="form-control" id="valtglsignon" name="etglsignon" readonly="">
                     </div>
 
                     <!-- onboard/offboard formgroup -->
@@ -326,6 +326,10 @@
                             <label class="form-check-label" for="valstatonboard">Belum</label>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label for="editKetOnboard">Keterangan:</label>
+                        <textarea class="form-control" rows="3" id="valKetLapon" name="vket_lapon"></textarea>
+                    </div>
                     
                     
                     <!-- Tambahkan input lain sesuai kebutuhan -->
@@ -333,7 +337,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                <button type="button" class="btn btn-primary" id="saveEdit">Simpan</button>
+                <button type="button" class="btn btn-primary" id="saveValEdit">Simpan</button>
             </div>
         </div>
     </div>

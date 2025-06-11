@@ -1156,6 +1156,8 @@ function get_data_mhs_detail($id)
 	        tbl_mon.status_trb,
 	        tbl_mon.status_sb,
 	        tbl_mon.status_d3,
+	        tbl_mon.status_lapon,
+	        tbl_mon.ket_lapon,
 	        tbl_lap_onboard.id_lapon as id_lapon,
             tbl_lap_onboard.id_mon as lap_on_id_mon,
             tbl_lap_onboard.lap_onboard1,

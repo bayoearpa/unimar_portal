@@ -59,7 +59,7 @@
     var id = $(this).data('id');
     // Ambil data yang akan diedit dari server dengan AJAX
     $.ajax({
-      url: '<?php echo base_url('baak/mon_add/'); ?>' + id, // Sesuaikan dengan URL yang sesuai
+      url: '<?php echo base_url('ppk/mon_add/'); ?>' + id, // Sesuaikan dengan URL yang sesuai
       type: 'GET',
       success: function(data) {
         // Isi modal dengan data yang diambil
@@ -227,7 +227,7 @@ function connectViewButtonListeners(){
 $(document).on('click', '#saveEdit', function(e) {
     e.preventDefault();
 
-    var formData = new FormData($('#formLaporanOnboard')[0]);
+    var formData = new FormData($('#valForm')[0]);
 
     $.ajax({
         url: '<?= base_url('ppk/mon_laporanupdate') ?>', // ✅ Sudah benar
@@ -250,6 +250,26 @@ $(document).on('click', '#saveEdit', function(e) {
         }
     });
 });
+
+ // Menyimpan perubahan dengan AJAX
+    $('#saveValEdit').click(function() {
+        $.ajax({
+            url: '<?php echo base_url('ppk/mon_addp'); ?>', // Sesuaikan dengan URL yang sesuai
+            type: 'POST',
+            data: $('#valForm').serialize(),
+            success: function(response) {
+                if (response == 'sukses') {
+                    // Tutup modal setelah data berhasil ditambahkan
+                    $('#valModal').modal('hide');
+                    // Muat ulang tabel untuk menampilkan data terbaru
+                    reloadTable();
+                } else {
+                    // Tampilkan pesan kesalahan jika perlu
+                    alert('Gagal menambahkan data baru.');
+                }
+            }
+        });
+    });
 
 
 

@@ -1358,6 +1358,30 @@ public function mon_laporanupdate() {
 
     echo json_encode(['status' => 'success']);
 }
+public function mon_vallapon()
+	{
+    // Tangani data yang dikirimkan dari formulir
+	$where = array(
+        'id_mon' => $this->input->post('id_mon'),
+    ); 
+    $data = array(
+        'status_lapon' => $this->input->post('vstatlapon'),
+        'ket_lapon' => $this->input->post('vket_lapon')
+    );
+
+    // Simpan data ke database
+    $res = $this->m_portal->update_data($where, $data,'tbl_mon');
+    // Sesuaikan dengan model dan metode penyimpanan data Anda
+
+    // Setelah berhasil disimpan, beri respons "sukses" ke JavaScript
+    if ($res) {
+       // Jika terjadi kesalahan, beri respons "gagal" ke JavaScript
+        echo 'gagal';
+    } else {
+         // Jika penyimpanan sukses, beri respons "sukses" ke JavaScript
+        echo 'sukses';
+    }
+	}
 
 
 	////////////// monitoring offboard
