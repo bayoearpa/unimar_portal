@@ -554,7 +554,7 @@ class Mahasiswa extends CI_Controller {
     // Atur upload file
     $upload_path = './assets/monitoring/offboard/';
     $uploads = [
-        'ufsignoff' => ['field' => 'upload_file_signon', 'filename' => $nim . '-signoff', 'type' => 'pdf'],
+        'ufsignoff' => ['field' => 'upload_file_signoff', 'filename' => $nim . '-signoff', 'type' => 'pdf'],
         'ufkrulist'   => ['field' => 'upload_file_krulist', 'filename' => $nim . '-krulist', 'type' => 'pdf'],
         'ufshippart'  => ['field' => 'upload_file_shippart', 'filename' => $nim . '-shippart', 'type' => 'pdf'],
         'ufswafoto'   => ['field' => 'upload_file_swafoto', 'filename' => $nim . '-swafoto', 'type' => 'jpg|jpeg']
