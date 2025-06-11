@@ -87,20 +87,20 @@
                     <div id="fileUploadStatus">Belum ada file yang diunggah.</div>
                      <div class="form-group">
                         <label for="editufsignon">Kru List (file harus dengan format .pdf dan Maks. 1 MB)</label>
-                        <input type="file" class="form-control" id="editufsignon" name="ufsignon">
-                        <input type="hidden" id="editufsignon_existing" name="ufsignon_existing" value="<?php echo $c->upload_file_signon; ?>">
+                        <input type="file" class="form-control" id="editufkrulist" name="ufkrulist">
+                        <input type="hidden" id="editufkrulist_existing" name="ufkrulist_existing" value="<?php echo $c->upload_file_krulist; ?>">
                     </div>
                     <div id="fileUploadStatus">Belum ada file yang diunggah.</div>
                     <div class="form-group">
                         <label for="editufsignon">Ship Particular (file harus dengan format .pdf dan Maks. 1 MB)</label>
-                        <input type="file" class="form-control" id="editufsignon" name="ufsignon">
-                        <input type="hidden" id="editufsignon_existing" name="ufsignon_existing" value="<?php echo $c->upload_file_signon; ?>">
+                        <input type="file" class="form-control" id="editufshippart" name="ufshippart">
+                        <input type="hidden" id="editufshippart_existing" name="ufshippart_existing" value="<?php echo $c->upload_file_shippart; ?>">
                     </div>
                     <div id="fileUploadStatus">Belum ada file yang diunggah.</div>
                     <div class="form-group">
                         <label for="editufsignon">Swafoto dengan background nama kapal / No. IMO (file harus dengan format .jpg)</label>
-                        <input type="file" class="form-control" id="editufsignon" name="ufsignon">
-                        <input type="hidden" id="editufsignon_existing" name="ufsignon_existing" value="<?php echo $c->upload_file_signon; ?>">
+                        <input type="file" class="form-control" id="editufswafoto" name="ufswafoto">
+                        <input type="hidden" id="editufswafoto_existing" name="ufswafoto_existing" value="<?php echo $c->upload_file_swafoto; ?>">
                     </div>
                     <div id="fileUploadStatus">Belum ada file yang diunggah.</div>
                     <div class="form-group">

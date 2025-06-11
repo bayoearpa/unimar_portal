@@ -528,61 +528,68 @@ class Mahasiswa extends CI_Controller {
     
 	}
 	public function offboardp()
-	{
-	    $nim = $this->input->post('nim');
-	    $cekfile = $this->input->post('ufsignoff_existing');
-	    $id_mon = $this->input->post('id_mon');
-	    $status_offboard = $this->input->post('status_offboard');
-	    $tgl_signoff = $this->input->post('tglsignoff');
-	    $tgl_signofff = date('Y-m-d', strtotime($tgl_signoff));
-	    $tgl_lap_signoff = date('Y-m-d');
+{
+    $nim = $this->input->post('nim');
+    $cekfile = $this->input->post('ufsignoff_existing');
+    $id_mon = $this->input->post('id_mon');
+    $status_offboard = $this->input->post('status_offboard');
+    $tgl_signoff = $this->input->post('tglsignoff');
+    $tgl_signofff = date('Y-m-d', strtotime($tgl_signoff));
+    $tgl_lap_signoff = date('Y-m-d');
 
-	    $where = ['id_mon' => $id_mon];
+    $where = ['id_mon' => $id_mon];
 
-	    $data = [
-	        'status_offboard' => $status_offboard,
-	        'status_onboard' => 'tidak',
-	        'tgl_sign_off' => $tgl_signofff,
-	        'tgl_lap_sign_off' => $tgl_lap_signoff
-	    ];
+    // Ambil data lama
+    $old = $this->m_mahasiswa->get_data_where('tbl_mon', $where)->row();
 
-	    if ($cekfile > 0) {
-	        $this->m_mahasiswa->update_data($where, $data, 'tbl_mon');
-	        redirect(base_url() . 'mahasiswa/offboard/' . $nim);
-	        return;
-	    }
+    $data = [
+        'status_offboard' => $status_offboard,
+        'status_onboard' => 'tidak',
+        'tgl_sign_off' => $tgl_signofff,
+        'tgl_lap_sign_off' => $tgl_lap_signoff
+    ];
 
-	    $this->load->library('upload');
+    $this->load->library('upload');
 
-	    // Atur upload file
-	    $upload_path = './assets/monitoring/offboard/';
-	    $uploads = [
-	        'ufsignoff' => ['field' => 'upload_file_signon', 'filename' => $nim . '-signoff', 'type' => 'pdf'],
-	        'krulist'   => ['field' => 'upload_file_krulist', 'filename' => $nim . '-krulist', 'type' => 'pdf'],
-	        'shippart'  => ['field' => 'upload_file_shippart', 'filename' => $nim . '-shippart', 'type' => 'pdf'],
-	        'swafoto'   => ['field' => 'upload_file_swafoto', 'filename' => $nim . '-swafoto', 'type' => 'jpg|jpeg']
-	    ];
+    // Atur upload file
+    $upload_path = './assets/monitoring/offboard/';
+    $uploads = [
+        'ufsignoff' => ['field' => 'upload_file_signon', 'filename' => $nim . '-signoff', 'type' => 'pdf'],
+        'ufkrulist'   => ['field' => 'upload_file_krulist', 'filename' => $nim . '-krulist', 'type' => 'pdf'],
+        'ufshippart'  => ['field' => 'upload_file_shippart', 'filename' => $nim . '-shippart', 'type' => 'pdf'],
+        'ufswafoto'   => ['field' => 'upload_file_swafoto', 'filename' => $nim . '-swafoto', 'type' => 'jpg|jpeg']
+    ];
 
-	    foreach ($uploads as $form_name => $file_info) {
-	        $config = [
-	            'upload_path'   => $upload_path,
-	            'allowed_types' => $file_info['type'],
-	            'max_size'      => 1048,
-	            'file_name'     => $file_info['filename'],
-	            'overwrite'     => true
-	        ];
+    foreach ($uploads as $form_name => $file_info) {
+        $config = [
+            'upload_path'   => $upload_path,
+            'allowed_types' => $file_info['type'],
+            'max_size'      => 1048,
+            'file_name'     => $file_info['filename'],
+            'overwrite'     => true
+        ];
 
-	        $this->upload->initialize($config);
+        $this->upload->initialize($config);
 
-	        if ($this->upload->do_upload($form_name)) {
-	            $upload_data = $this->upload->data();
-	            $data[$file_info['field']] = $upload_data['file_name'];
-	        }
-	    }
+        if ($this->upload->do_upload($form_name)) {
+            // Jika file baru diupload
+            $upload_data = $this->upload->data();
+            $data[$file_info['field']] = $upload_data['file_name'];
+        } else {
+            // Jika tidak upload baru, cek file lama ada secara fisik
+            if (!empty($old->{$file_info['field']})) {
+                $old_file_path = $upload_path . $old->{$file_info['field']};
+                if (file_exists($old_file_path)) {
+                    $data[$file_info['field']] = $old->{$file_info['field']};
+                }
+            }
+        }
+    }
 
-	    $this->m_mahasiswa->update_data($where, $data, 'tbl_mon');
-	    redirect(base_url() . 'mahasiswa/offboard/' . $nim);
-	} 
+    $this->m_mahasiswa->update_data($where, $data, 'tbl_mon');
+    redirect(base_url() . 'mahasiswa/offboard/' . $nim);
+}
+
 
 
 	public function trb($id)
