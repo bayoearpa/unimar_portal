@@ -81,8 +81,8 @@
                     </div>
                    <div class="form-group">
                         <label for="editufsignon">Upload File Sign Off (file harus dengan format .pdf dan Maks. 1 MB)</label>
-                        <input type="file" class="form-control" id="editufsignon" name="ufsignoff">
-                        <input type="hidden" id="editufsignon_existing" name="ufsignon_existing" value="<?php echo $c->upload_file_signoff; ?>">
+                        <input type="file" class="form-control" id="editufsignoff" name="ufsignoff">
+                        <input type="hidden" id="editufsignon_existing" name="ufsignoff_existing" value="<?php echo $c->upload_file_signoff; ?>">
                     </div>
                     <div id="fileUploadStatus">Belum ada file yang diunggah.</div>
                      <div class="form-group">

@@ -527,10 +527,10 @@ class Mahasiswa extends CI_Controller {
        }
     
 	}
-		public function offboardp()
+	public function offboardp()
 	{
 	    $nim = $this->input->post('nim');
-	    $cekfile = $this->input->post('ufsignon_existing');
+	    $cekfile = $this->input->post('ufsignoff_existing');
 	    $id_mon = $this->input->post('id_mon');
 	    $status_offboard = $this->input->post('status_offboard');
 	    $tgl_signoff = $this->input->post('tglsignoff');
