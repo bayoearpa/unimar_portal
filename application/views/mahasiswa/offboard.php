@@ -120,9 +120,24 @@
                   <!-- Tombol Lihat File Sign On -->
                     <?php if ($c->upload_file_signoff > "0") { ?>
                         <button class="btn btn-success view-file-button-signoff" data-filename="<?php echo $c->upload_file_signoff; ?>">Lihat file offboard</button>
+                    <?php } else { ?>
+                        <!-- Tampilkan pesan jika file tidak ada -->
+                        File tidak tersedia
+                    <?php } ?>
+                     <?php if ($c->upload_file_krulist > "0") { ?>
                          <button class="btn btn-success view-file-button-krulist" data-filename="<?php echo $c->upload_file_krulist; ?>">Lihat file Kru List</button>
+                    <?php } else { ?>
+                        <!-- Tampilkan pesan jika file tidak ada -->
+                        File tidak tersedia
+                    <?php } ?>
+                    <?php if ($c->upload_file_shippart > "0") { ?>
                         <button class="btn btn-success view-file-button-shippart" data-filename="<?php echo $c->upload_file_shippart; ?>">Lihat file Ship Particular</button>
-                        <button class="btn btn-success view-file-button-swafoto" data-filename="<?php echo $c->upload_file_swafoto; ?>">Lihat file Swafoto</button>
+                    <?php } else { ?>
+                        <!-- Tampilkan pesan jika file tidak ada -->
+                        File tidak tersedia
+                    <?php } ?>
+                    <?php if ($c->upload_file_swafoto > "0") { ?>
+                       <button class="btn btn-success view-file-button-swafoto" data-filename="<?php echo $c->upload_file_swafoto; ?>">Lihat file Swafoto</button>
                     <?php } else { ?>
                         <!-- Tampilkan pesan jika file tidak ada -->
                         File tidak tersedia
@@ -135,11 +150,26 @@
                 <?php }elseif ($c->status_offboard == "iya" && $selisihHari > 15) {
                   # code... ?>
                   <!-- Tombol Lihat File Sign On -->
-                    <?php if ($c->upload_file_signoff) { ?>
+                    <?php if ($c->upload_file_signoff > "0") { ?>
                         <button class="btn btn-success view-file-button-signoff" data-filename="<?php echo $c->upload_file_signoff; ?>">Lihat file offboard</button>
+                    <?php } else { ?>
+                        <!-- Tampilkan pesan jika file tidak ada -->
+                        File tidak tersedia
+                    <?php } ?>
+                     <?php if ($c->upload_file_krulist > "0") { ?>
                          <button class="btn btn-success view-file-button-krulist" data-filename="<?php echo $c->upload_file_krulist; ?>">Lihat file Kru List</button>
+                    <?php } else { ?>
+                        <!-- Tampilkan pesan jika file tidak ada -->
+                        File tidak tersedia
+                    <?php } ?>
+                    <?php if ($c->upload_file_shippart > "0") { ?>
                         <button class="btn btn-success view-file-button-shippart" data-filename="<?php echo $c->upload_file_shippart; ?>">Lihat file Ship Particular</button>
-                        <button class="btn btn-success view-file-button-swafoto" data-filename="<?php echo $c->upload_file_swafoto; ?>">Lihat file Swafoto</button>
+                    <?php } else { ?>
+                        <!-- Tampilkan pesan jika file tidak ada -->
+                        File tidak tersedia
+                    <?php } ?>
+                    <?php if ($c->upload_file_swafoto > "0") { ?>
+                       <button class="btn btn-success view-file-button-swafoto" data-filename="<?php echo $c->upload_file_swafoto; ?>">Lihat file Swafoto</button>
                     <?php } else { ?>
                         <!-- Tampilkan pesan jika file tidak ada -->
                         File tidak tersedia
