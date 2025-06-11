@@ -121,7 +121,7 @@
                     <?php if ($c->upload_file_signoff > "0") { ?>
                         <button class="btn btn-success view-file-button-signoff" data-filename="<?php echo $c->upload_file_signoff; ?>">Lihat file offboard</button>
                          <button class="btn btn-success view-file-button-krulist" data-filename="<?php echo $c->upload_file_krulist; ?>">Lihat file Kru List</button>
-                        <button class="btn btn-success view-file-button-shippart" data-filename="<?php echo $c->upload_file_shipart; ?>">Lihat file Ship Particular</button>
+                        <button class="btn btn-success view-file-button-shippart" data-filename="<?php echo $c->upload_file_shippart; ?>">Lihat file Ship Particular</button>
                         <button class="btn btn-success view-file-button-swafoto" data-filename="<?php echo $c->upload_file_swafoto; ?>">Lihat file Swafoto</button>
                     <?php } else { ?>
                         <!-- Tampilkan pesan jika file tidak ada -->
@@ -138,7 +138,7 @@
                     <?php if ($c->upload_file_signoff) { ?>
                         <button class="btn btn-success view-file-button-signoff" data-filename="<?php echo $c->upload_file_signoff; ?>">Lihat file offboard</button>
                          <button class="btn btn-success view-file-button-krulist" data-filename="<?php echo $c->upload_file_krulist; ?>">Lihat file Kru List</button>
-                        <button class="btn btn-success view-file-button-shippart" data-filename="<?php echo $c->upload_file_shipart; ?>">Lihat file Ship Particular</button>
+                        <button class="btn btn-success view-file-button-shippart" data-filename="<?php echo $c->upload_file_shippart; ?>">Lihat file Ship Particular</button>
                         <button class="btn btn-success view-file-button-swafoto" data-filename="<?php echo $c->upload_file_swafoto; ?>">Lihat file Swafoto</button>
                     <?php } else { ?>
                         <!-- Tampilkan pesan jika file tidak ada -->
