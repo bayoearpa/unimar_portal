@@ -137,7 +137,7 @@
                   <!-- Tombol Lihat File Sign On -->
                     <?php if ($c->upload_file_signoff) { ?>
                         <button class="btn btn-success view-file-button" data-filename="<?php echo $c->upload_file_signoff; ?>">Lihat file offboard</button>
-                         <button class="btn btn-success view-file-button" data-filename="<?php echo $c->upload_file_krulist; ?>">Lihat file Kru List</button>
+                         <button class="btn btn-success view-file-button2" data-filename="<?php echo $c->upload_file_krulist; ?>">Lihat file Kru List</button>
                         <button class="btn btn-success view-file-button" data-filename="<?php echo $c->upload_file_shipart; ?>">Lihat file Ship Particular</button>
                         <button class="btn btn-success view-file-button" data-filename="<?php echo $c->upload_file_swafoto; ?>">Lihat file Swafoto</button>
                     <?php } else { ?>
