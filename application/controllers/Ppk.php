@@ -1390,7 +1390,7 @@ public function mon_vallapon()
 	{
 		# code...
     // Call your model method to get the data with pagination
-    $data['items'] = $this->m_portal->get_data_formon_mhsall_ob($per_page, $offset);
+    $data['items'] = $this->m_portal->get_data_formon_mhsall_lapon($per_page, $offset);
 
     $data['program_studi_options'] = array('92403', '92402'); // Add other program options if needed
 

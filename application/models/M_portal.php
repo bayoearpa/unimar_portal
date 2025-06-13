@@ -1274,6 +1274,46 @@ function get_data_mhs_detail($id)
             return null;
         }
     }
+
+function get_data_formon_mhsall_lapon($limit, $offset)
+{
+	# code...
+	 // Mengambil data mahasiswa dengan tahun_masuk dari tahun 2018
+        $this->db->select('tmst_mahasiswa.NIM as nim,
+        tmst_mahasiswa.Nama_mahasiswa as nama,
+        tmst_program_studi.Nama_program_studi as prodi,
+        tmst_program_studi.Kode_program_studi as kode_prodi,
+        tbl_mon.id_mon as id_mon,
+        tbl_mon.d3_no_ijasah as d3_no_ijasah,
+        tbl_mon.d3_tanggal_lulus as d3_tanggal_lulus,
+        tbl_mon.pra_lulus_ukp as pra_lulus_ukp,
+        tbl_mon.pra_mb_skl as pra_mb_skl,
+        tbl_mon.pra_status as pra_status,
+        tbl_mon.seafarercode as seafarercode,
+        tbl_mon.pasca_tgl_lulus as pasca_tgl_lulus,
+        tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
+        tbl_mon.pasca_status as pasca_status,
+	        tbl_mon.status_onboard,
+	        tbl_mon.status_offboard,
+	        tbl_mon.nama_perusahaan,
+	        tbl_mon.nama_kapal,
+	        tbl_mon.tgl_sign_on,
+	        tbl_mon.upload_file_signon,
+	        tbl_mon.tgl_sign_off,
+	        tbl_mon.upload_file_signoff,
+	        upload_file_krulist,
+	        upload_file_shippart,
+	        upload_file_swafoto');
+	    $this->db->from('tmst_mahasiswa');
+	    $this->db->join('tmst_program_studi', 'tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi', 'inner');
+	    $this->db->join('tbl_mon','tmst_mahasiswa.NIM = tbl_mon.nim','inner');
+	    $this->db->where('Tahun_masuk >=', '2021');
+	    $this->db->where('tbl_mon.status_lapon', 'sudah');
+	    $this->db->where_in('tmst_mahasiswa.Kode_program_studi', array('92403', '92402'));
+	    // $this->db->limit($limit, $offset); // Apply pagination
+	    $query = $this->db->get();
+	    return $query->result();
+}
 ////////////////////////--------------- end lap onboard
 ////////////---------- untuk offboard
 function get_data_formon_mhsall_off($limit, $offset)
