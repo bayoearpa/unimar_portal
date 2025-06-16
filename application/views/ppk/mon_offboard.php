@@ -41,11 +41,7 @@
                   <th>Nama Kapal</th>
                   <th>Tanggal Sign On</th>
                    <th>Tanggal Sign Off</th>
-                   <th>File Offboard</th>
-                   <th>File Kru List</th>
-                   <th>File Ship Part</th>
-                   <th>File Swafoto</th>
-
+                   <th>File Pendukung</th>
                   <th>proses</th>
                 </tr>
                 </thead>
@@ -66,34 +62,30 @@
                 <td>
                     <!-- Tombol Lihat File Sign Off -->
                     <?php if ($i->upload_file_signoff) { ?>
-                        <button class="btn btn-info view-file-button" data-filename="<?php echo $i->upload_file_signoff; ?>">Lihat</button>
+                        <button class="btn btn-info view-file-button" data-filename="<?php echo $i->upload_file_signoff; ?>"><i class="fa fa-fw fa-file-pdf-o"></i></button>
                     <?php } else { ?>
                         <!-- Tampilkan pesan jika file tidak ada -->
                         File tidak tersedia
                     <?php } ?>
-                </td>
-                <td>
-                    <!-- Tombol Lihat File Sign Off -->
+
+                     <!-- Tombol Lihat File kru list-->
                     <?php if ($i->upload_file_krulist) { ?>
-                        <button class="btn btn-info view-file-button" data-filename="<?php echo $i->upload_file_krulist; ?>">Lihat</button>
+                        <button class="btn btn-info view-file-button" data-filename="<?php echo $i->upload_file_krulist; ?>"><i class="fa fa-fw fa-group"></i></button>
                     <?php } else { ?>
                         <!-- Tampilkan pesan jika file tidak ada -->
                         File tidak tersedia
                     <?php } ?>
-                </td>
-                <td>
-                    <!-- Tombol Lihat File Sign Off -->
+
+                     <!-- Tombol Lihat File ship part -->
                     <?php if ($i->upload_file_shippart) { ?>
-                        <button class="btn btn-info view-file-button" data-filename="<?php echo $i->upload_file_shippart; ?>">Lihat</button>
+                        <button class="btn btn-info view-file-button" data-filename="<?php echo $i->upload_file_shippart; ?>"><i class="fa fa-fw fa-ship"></i></button>
                     <?php } else { ?>
                         <!-- Tampilkan pesan jika file tidak ada -->
                         File tidak tersedia
                     <?php } ?>
-                </td>
-                <td>
-                    <!-- Tombol Lihat File Sign Off -->
+                     <!-- Tombol Lihat File swafoto -->
                     <?php if ($i->upload_file_swafoto) { ?>
-                        <button class="btn btn-info view-file-button" data-filename="<?php echo $i->upload_file_swafoto; ?>">Lihat</button>
+                        <button class="btn btn-info view-file-button" data-filename="<?php echo $i->upload_file_swafoto; ?>"><i class="fa fa-fw fa-file-picture-o"></i></button>
                     <?php } else { ?>
                         <!-- Tampilkan pesan jika file tidak ada -->
                         File tidak tersedia
@@ -112,19 +104,16 @@
                 </tbody>
                 <tfoot>
                <tr>
-                   <th>NIM</th>
+             <th>NIM</th>
                   <th>Nama</th>
                   <th>Prodi</th>
                   <th>Seafarercode</th>
                   <th>Status Offboard</th>
-                   <th>Nama Perusahaan</th>
+                  <th>Nama Perusahaan</th>
                   <th>Nama Kapal</th>
                   <th>Tanggal Sign On</th>
                    <th>Tanggal Sign Off</th>
-                   <th>File Offboard</th>
-                   <th>File Kru List</th>
-                   <th>File Ship Part</th>
-                   <th>File Swafoto</th>
+                   <th>File Pendukung</th>
                   <th>proses</th>
                 </tr>
                 </tfoot>
