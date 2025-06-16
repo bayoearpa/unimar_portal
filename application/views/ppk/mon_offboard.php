@@ -62,7 +62,7 @@
                 <td>
                     <!-- Tombol Lihat File Sign Off -->
                     <?php if ($i->upload_file_signoff) { ?>
-                        <button class="btn btn-info view-file-button" data-filename="<?php echo $i->upload_file_signoff; ?>"><i class="fa fa-fw fa-file-pdf-o"></i></button>
+                        <button class="btn btn-info view-file-button" alt="Surat Sign Off" data-filename="<?php echo $i->upload_file_signoff; ?>"><i class="fa fa-fw fa-file-pdf-o"></i></button>
                     <?php } else { ?>
                         <!-- Tampilkan pesan jika file tidak ada -->
                         File tidak tersedia
@@ -70,7 +70,7 @@
 
                      <!-- Tombol Lihat File kru list-->
                     <?php if ($i->upload_file_krulist) { ?>
-                        <button class="btn btn-info view-file-button" data-filename="<?php echo $i->upload_file_krulist; ?>"><i class="fa fa-fw fa-group"></i></button>
+                        <button class="btn btn-warning view-file-button" alt="Kru List" data-filename="<?php echo $i->upload_file_krulist; ?>"><i class="fa fa-fw fa-group"></i></button>
                     <?php } else { ?>
                         <!-- Tampilkan pesan jika file tidak ada -->
                         File tidak tersedia
@@ -78,14 +78,14 @@
 
                      <!-- Tombol Lihat File ship part -->
                     <?php if ($i->upload_file_shippart) { ?>
-                        <button class="btn btn-info view-file-button" data-filename="<?php echo $i->upload_file_shippart; ?>"><i class="fa fa-fw fa-ship"></i></button>
+                        <button class="btn btn-danger view-file-button" alt="Ship Particular" data-filename="<?php echo $i->upload_file_shippart; ?>"><i class="fa fa-fw fa-ship"></i></button>
                     <?php } else { ?>
                         <!-- Tampilkan pesan jika file tidak ada -->
                         File tidak tersedia
                     <?php } ?>
                      <!-- Tombol Lihat File swafoto -->
                     <?php if ($i->upload_file_swafoto) { ?>
-                        <button class="btn btn-info view-file-button" data-filename="<?php echo $i->upload_file_swafoto; ?>"><i class="fa fa-fw fa-file-picture-o"></i></button>
+                        <button class="btn btn-success view-file-button" alt="Swafoto" data-filename="<?php echo $i->upload_file_swafoto; ?>"><i class="fa fa-fw fa-file-picture-o"></i></button>
                     <?php } else { ?>
                         <!-- Tampilkan pesan jika file tidak ada -->
                         File tidak tersedia
