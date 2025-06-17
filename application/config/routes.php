@@ -134,6 +134,9 @@ $route['aset/detail_inventaris/(:num)'] = 'aset/detail_inven/$1';
 //mahasiswa
 $route['mahasiswa'] = 'mahasiswa';
 
+//cron
+$route['cron'] = 'cron';
+
 //API
 $route['api/kues/mhsdsn'] = 'Rest_api_tbl_kues_mhsdsn/index';
 
