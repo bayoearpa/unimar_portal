@@ -75,6 +75,54 @@ class Mahasiswa extends CI_Controller {
 
 		return $data;
 	}
+
+	////////////////// Tes Kompetensi Bahasa Inggris ////////////////////////////////////////////////
+	public function cekstatus_tkbi_periode($waktu, $status, $nim)
+	{
+		# code...
+		$where = array(
+				'swaktu_pelaksanaan' => $waktu,
+				'status' => $status,
+				'nim' => $nim
+			);
+		$data = $this->m_mahasiswa->get_data($where, 'diklat_tkbi_kelas')->num_rows();
+
+		return $data;
+	}
+	public function cekstatus_tkbi_double($nim)
+	{
+		# code...
+		$where = array(
+				'nim' => $nim
+			);
+		$data = $this->m_mahasiswa->get_data($where, 'diklat_tkbi')->num_rows();
+
+		return $data;
+	}
+	public function tkbi($id)
+	{
+		# code...
+		$data['mahasiswa'] = $this;
+		$data['mhs_detail'] = $this->m_mahasiswa->get_data_mhs_detail($id);
+
+
+		$nim = $id ;
+		$waktu = date('Y-m-d');
+		$status = "sudah";
+		//cek periode kelas
+		$data['cek_periode'] = $this->cekstatus_tkbi_periode($waktu, $status, $nim);
+		$data['cekstatus_double'] = $this->cekstatus_tkbi_double($nim);
+
+
+		
+		$this->load->view('mahasiswa/header');
+		$this->load->view('mahasiswa/tkbi',$data);
+		$this->load->view('mahasiswa/footer');
+		// $this->load->view('mahasiswa/onboard_js',$data);
+
+	}
+
+	////////////////// .Tes Kompetensi Bahasa Inggris ////////////////////////////////////////////////
 	public function pra($id)
 	{
 		# code...
