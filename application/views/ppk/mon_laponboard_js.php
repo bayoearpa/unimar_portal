@@ -227,7 +227,7 @@ function connectViewButtonListeners(){
 $(document).on('click', '#saveEdit', function(e) {
     e.preventDefault();
 
-    var formData = new FormData($('#valForm')[0]);
+    var formData = new FormData($('#formLaporanOnboard')[0]);
 
     $.ajax({
         url: '<?= base_url('ppk/mon_laporanupdate') ?>', // ✅ Sudah benar
