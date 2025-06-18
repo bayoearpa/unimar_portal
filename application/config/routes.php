@@ -136,6 +136,8 @@ $route['mahasiswa'] = 'mahasiswa';
 
 //cron
 $route['cron'] = 'cron';
+$route['cron/(:any)'] = 'cron/$1';
+$route['cron/(:any)/(:any)'] = 'cron/$1/$2';
 
 //API
 $route['api/kues/mhsdsn'] = 'Rest_api_tbl_kues_mhsdsn/index';
