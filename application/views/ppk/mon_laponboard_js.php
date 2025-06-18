@@ -55,7 +55,8 @@
       }
     });
   });
-   $('.val-button').click(function() {
+  
+  $(document).on('click', '.val-button', function() {
     var id = $(this).data('id');
     // Ambil data yang akan diedit dari server dengan AJAX
     $.ajax({
