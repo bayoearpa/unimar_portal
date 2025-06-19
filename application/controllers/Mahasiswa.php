@@ -137,8 +137,8 @@ class Mahasiswa extends CI_Controller {
 		$get_detail = $this->m_mahasiswa->get_data($whereb,'diklat_tkbi_peserta')->result();
 		foreach ($get_detail as $key) {
 			# code...
-			$data['metode_bayar'] = $key->metode_bayar;
-			$id_tkbi = $key->metode_bayar;
+			$data['model_bayar'] = $key->model_bayar;
+			$id_tkbi = $key->id_tkbi;
 		}
 		$data['cekstatus_bayar'] = $this->cekstatus_tkbi_bayar($id_tkbi);
 
