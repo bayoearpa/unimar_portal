@@ -103,6 +103,15 @@ class Mahasiswa extends CI_Controller {
 		$data['mahasiswa'] = $this;
 		$data['mhs_detail'] = $this->m_mahasiswa->get_data_mhs_detail($id);
 
+		//get kelas
+		$where = array(
+				'status' => 'belum'
+			);
+		$get_id_kelas = $this->m_mahasiswa->get_data($where,'diklat_tkbi_kelas')->result();
+		foreach ($get_id_kelas as $key) {
+			# code...
+			$data['id_kelas'] = $key->id_tkbi_kelas;
+		}
 
 		$nim = $id ;
 		$waktu = date('Y-m-d');
