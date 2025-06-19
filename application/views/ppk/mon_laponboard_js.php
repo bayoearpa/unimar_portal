@@ -66,6 +66,7 @@
         // Isi modal dengan data yang diambil
         console.log(data); // Cetak nilai data ke konsol
         var parsedData = JSON.parse(data);
+        $('#validmon').val(parsedData.id_mon);
         $('#valNim').val(parsedData.nim);
         $('#valNama').val(parsedData.nama);
         $('#valTmptLahir').val(parsedData.tl);

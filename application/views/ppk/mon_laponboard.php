@@ -273,7 +273,7 @@
                 <!-- Form Edit Data -->
                 <form id="valForm" method="post" enctype="multipart/form-data">
                     <input type="hidden" id="editNim" name="nim">
-                    <input type="hidden" id="editidmon" name="nid_mon">
+                    <input type="hidden" id="validmon" name="id_mon">
                     <div class="form-group">
                         <label for="editNama">Nama:</label>
                         <input type="text" class="form-control" id="valNama" name="nama" readonly="">
