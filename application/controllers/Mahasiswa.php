@@ -145,7 +145,7 @@ class Mahasiswa extends CI_Controller {
                 'kode_akses' => $kode_akses,
                 'model_bayar' => $model_bayar
             );
-            $proses = $this->m_mahasiswa->insert_data($data,'diklat_tkbi_peserta');
+            $proses = $this->m_mahasiswa->input_data($data,'diklat_tkbi_peserta');
 
             if($proses){    
 	             redirect(base_url().'mahasiswa/tkbi/'.$nim);
