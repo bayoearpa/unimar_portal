@@ -255,7 +255,7 @@ $(document).on('click', '#saveEdit', function(e) {
  // Menyimpan perubahan dengan AJAX
     $('#saveValEdit').click(function() {
         $.ajax({
-            url: '<?php echo base_url('ppk/mon_addp'); ?>', // Sesuaikan dengan URL yang sesuai
+            url: '<?php echo base_url('ppk/mon_vallapon'); ?>', // Sesuaikan dengan URL yang sesuai
             type: 'POST',
             data: $('#valForm').serialize(),
             success: function(response) {
