@@ -6,7 +6,9 @@
             <h3 class="box-title">Registration of English Achievement</h3>
           </div>
           <div class="box-body">
-
+            <?php  
+            foreach($mhs_detail as $c){ 
+              ?>
              <table width="30%">
                 <tr>
                   <td><label for="exampleInputEmail1">NIM</label></td>
@@ -35,7 +37,7 @@
                 </tr>
               </table>
               <hr>
-
+            <?php } ?>
 
              <?php 
              
@@ -72,11 +74,11 @@
                      <div class="form-group">
                         <label for="editstatonboard">Pilih Model Pembayaran:</label>
                         <div class="form-check">
-                            <input type="radio" class="form-check-input" id="tf_btn" name="tf_btn" value="tf_btn">
+                            <input type="radio" class="form-check-input" id="model_bayar" name="model_bayar" value="tf_btn">
                             <label class="form-check-label" for="valstatonboard">Transfer BTN</label>
                         </div>
                         <div class="form-check">
-                            <input type="radio" class="form-check-input" id="qris" name="qris" value="qris">
+                            <input type="radio" class="form-check-input" id="model_bayar" name="model_bayar" value="qris">
                             <label class="form-check-label" for="valstatonboard">QRIS</label>
                         </div>
                     </div>
