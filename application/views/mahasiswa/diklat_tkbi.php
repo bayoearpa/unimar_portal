@@ -9,7 +9,7 @@
             <?php  
             foreach($mhs_detail as $c){ 
               ?>
-             <table width="30%">
+             <table width="50%">
                 <tr>
                   <td><label for="exampleInputEmail1">NIM</label></td>
                   <td><label for="exampleInputEmail1">:</label></td>
@@ -69,7 +69,7 @@
                     </div>
                     <div class="form-group">
                         <label for="editnamakapal">No Whatsapp : (Pastikan No. WA masih aktif)</label>
-                        <input type="text" class="form-control" id="no_wa" name="no_wa">
+                        <input type="number" class="form-control" id="no_wa" name="no_wa">
                     </div>
                      <div class="form-group">
                         <label for="editstatonboard">Pilih Model Pembayaran:</label>

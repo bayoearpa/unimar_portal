@@ -128,6 +128,33 @@ class Mahasiswa extends CI_Controller {
 		// $this->load->view('mahasiswa/onboard_js',$data);
 
 	}
+	public function tkbip()
+	{
+		# code...
+
+			$nim = $this->input->post('nim');
+			$email = $this->input->post('email');
+			$no_wa = $this->input->post('no_wa');
+			$kode_akses = "amni";
+			$model_bayar = $this->input->post('model_bayar');
+			
+    		// Simpan data ke database (contoh)
+            $data = array(
+                'nim' => $nim,
+                'email' => $email,
+                'no_wa' => $no_wa,
+                'kode_akses' => $kode_akses,
+                'model_bayar' => $model_bayar
+            );
+            $proses = $this->m_mahasiswa->insert_data($data,'diklat_tkbi_peserta');
+
+            if($proses){    
+	             redirect(base_url().'mahasiswa/tkbi/'.$nim);
+	        } else {
+	             redirect(base_url().'mahasiswa/tkbi/'.$nim);
+	        }
+
+	}
 
 	////////////////// .Tes Kompetensi Bahasa Inggris ////////////////////////////////////////////////
 	public function pra($id)
