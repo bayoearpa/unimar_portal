@@ -8,18 +8,18 @@
           <div class="box-body">
              <?php 
              
-              if ($cek_periode > "0") {
+              if ($cekstatus_double > "0") {
               # code... ?>
-                <!-- peringatan jika belum boleh mendafatar  -->
+                <!-- peringatan jika sudah pernah Mendaftar  -->
                 <div class="alert alert-danger alert-dismissible">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                     <h4><i class="icon fa fa-ban"></i> Alert!</h4>
-                    Periode Pendaftaran English Achievement belum dibuka 
+                    Anda Sudah Mendaftar 
                 </div>
-            <!-- end peringatan jika belum boleh mendafatar  -->
-
-
-            <?php 
+            <!-- end peringatan jika sudah pernah Mendaftar  -->
+          <?php }elseif ($cek_periode > "0") {
+            # code... ?>
+             <?php 
             // echo validation_errors(); 
             // echo $this->session->flashdata('success');
             // echo $this->session->flashdata('error');
@@ -102,14 +102,18 @@
                 
                  <!-- .cek status laporan -->
               <?php } ?>
+
+
+         <?php } ?>
+          
                 <?php }else{ ?>
-                <!-- peringatan jika belum boleh mendafatar  -->
+                <!-- peringatan jika periode belum dibuka  -->
                 <div class="alert alert-danger alert-dismissible">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                     <h4><i class="icon fa fa-ban"></i> Alert!</h4>
-                    anda belum diizinkan untuk mengisi form onboard karena belum ujian Pra Prala
+                    Periode Pendafataran English Achievement belum dibuka
                 </div>
-            <!-- end peringatan jika belum boleh mendafatar  -->
+            <!-- end peringatan jika periode belum dibuka  -->
 
               <?php } ?>
           </div>

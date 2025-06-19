@@ -77,13 +77,11 @@ class Mahasiswa extends CI_Controller {
 	}
 
 	////////////////// Tes Kompetensi Bahasa Inggris ////////////////////////////////////////////////
-	public function cekstatus_tkbi_periode($waktu, $status, $nim)
+	public function cekstatus_tkbi_periode($status)
 	{
 		# code...
 		$where = array(
-				'swaktu_pelaksanaan' => $waktu,
 				'status' => $status,
-				'nim' => $nim
 			);
 		$data = $this->m_mahasiswa->get_data($where, 'diklat_tkbi_kelas')->num_rows();
 
@@ -108,9 +106,9 @@ class Mahasiswa extends CI_Controller {
 
 		$nim = $id ;
 		$waktu = date('Y-m-d');
-		$status = "sudah";
+		$status = "belum";
 		//cek periode kelas
-		$data['cek_periode'] = $this->cekstatus_tkbi_periode($waktu, $status, $nim);
+		$data['cek_periode'] = $this->cekstatus_tkbi_periode($status);
 		$data['cekstatus_double'] = $this->cekstatus_tkbi_double($nim);
 
 

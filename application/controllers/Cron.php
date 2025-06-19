@@ -10,6 +10,10 @@ class Cron extends CI_Controller {
     }
 
     // Jalur akses: https://domainmu.com/cron/update_status_kelas/RAHASIA123
+    
+    // pasang di cron jobs nya 
+    // wget -q -O - https://portal.unimar-amni.ac.id/v1/cron/update_status_tkbi_kelas/RAHASIA180 > /dev/null 2>&1
+
     public function update_status_tkbi_kelas($token = null)
     {
         // Token rahasia untuk keamanan
