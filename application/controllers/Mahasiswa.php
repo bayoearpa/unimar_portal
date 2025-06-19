@@ -136,14 +136,15 @@ class Mahasiswa extends CI_Controller {
 			$no_wa = $this->input->post('no_wa');
 			$kode_akses = "amni";
 			$model_bayar = $this->input->post('model_bayar');
-			
+			$id_tkbi_kelas = $this->input->post('id_kelas'); 			
     		// Simpan data ke database (contoh)
             $data = array(
                 'nim' => $nim,
                 'email' => $email,
                 'no_wa' => $no_wa,
                 'kode_akses' => $kode_akses,
-                'model_bayar' => $model_bayar
+                'model_bayar' => $model_bayar,
+                'id_tkbi_kelas' => $id_tkbi_kelas
             );
             $proses = $this->m_mahasiswa->input_data($data,'diklat_tkbi_peserta');
 

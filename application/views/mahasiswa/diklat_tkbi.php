@@ -43,13 +43,18 @@
              
               if ($cekstatus_double > "0") {
               # code... ?>
+
+
                 <!-- peringatan jika sudah pernah Mendaftar  -->
-                <div class="alert alert-danger alert-dismissible">
+                <div class="alert alert-success alert-dismissible">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                     <h4><i class="icon fa fa-ban"></i> Alert!</h4>
-                    Anda Sudah Mendaftar 
+                    Anda Sudah Mendaftar English Achievement
                 </div>
-            <!-- end peringatan jika sudah pernah Mendaftar  -->
+                <!-- end peringatan jika sudah pernah Mendaftar  -->
+
+
+
           <?php }elseif ($cek_periode > "0") {
             # code... ?>
              <?php 
