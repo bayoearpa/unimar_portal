@@ -131,7 +131,6 @@ class Mahasiswa extends CI_Controller {
 		$data['cekstatus_double'] = $this->cekstatus_tkbi_double($nim);
 
 		//pembayaran
-		$data['cekstatus_bayar'] = $this->cekstatus_tkbi_bayar($nim);
 		$whereb = array(
 				'nim' => $nim
 			);
@@ -139,8 +138,9 @@ class Mahasiswa extends CI_Controller {
 		foreach ($get_detail as $key) {
 			# code...
 			$data['metode_bayar'] = $key->metode_bayar;
+			$id_tkbi = $key->metode_bayar;
 		}
-
+		$data['cekstatus_bayar'] = $this->cekstatus_tkbi_bayar($id_tkbi);
 
 		
 		$this->load->view('mahasiswa/header');
