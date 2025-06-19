@@ -93,7 +93,7 @@ class Mahasiswa extends CI_Controller {
 		$where = array(
 				'nim' => $nim
 			);
-		$data = $this->m_mahasiswa->get_data($where, 'diklat_tkbi')->num_rows();
+		$data = $this->m_mahasiswa->get_data($where, 'diklat_tkbi_peserta')->num_rows();
 
 		return $data;
 	}
