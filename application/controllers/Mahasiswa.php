@@ -131,7 +131,6 @@ class Mahasiswa extends CI_Controller {
 	public function tkbip()
 	{
 		# code...
-
 			$nim = $this->input->post('nim');
 			$email = $this->input->post('email');
 			$no_wa = $this->input->post('no_wa');
@@ -153,7 +152,6 @@ class Mahasiswa extends CI_Controller {
 	        } else {
 	             redirect(base_url().'mahasiswa/tkbi/'.$nim);
 	        }
-
 	}
 
 	////////////////// .Tes Kompetensi Bahasa Inggris ////////////////////////////////////////////////
