@@ -97,6 +97,16 @@ class Mahasiswa extends CI_Controller {
 
 		return $data;
 	}
+	public function cekstatus_tkbi_bayar($nim)
+	{
+		# code...
+		$where = array(
+				'nim' => $nim
+			);
+		$data = $this->m_mahasiswa->get_data($where, 'diklat_tkbi_pembayaran')->num_rows();
+
+		return $data;
+	}
 	public function tkbi($id)
 	{
 		# code...
@@ -119,6 +129,17 @@ class Mahasiswa extends CI_Controller {
 		//cek periode kelas
 		$data['cek_periode'] = $this->cekstatus_tkbi_periode($status);
 		$data['cekstatus_double'] = $this->cekstatus_tkbi_double($nim);
+
+		//pembayaran
+		$data['cekstatus_bayar'] = $this->cekstatus_tkbi_bayar($nim);
+		$whereb = array(
+				'nim' => $nim
+			);
+		$get_detail = $this->m_mahasiswa->get_data($whereb,'diklat_tkbi_peserta')->result();
+		foreach ($get_detail as $key) {
+			# code...
+			$data['metode_bayar'] = $key->metode_bayar;
+		}
 
 
 		

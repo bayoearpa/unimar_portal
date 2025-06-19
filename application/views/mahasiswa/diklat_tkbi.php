@@ -44,15 +44,31 @@
               if ($cekstatus_double > "0") {
               # code... ?>
 
+                <?php if ($cekstatus_bayar > "0") {
+                  # code...
+                  echo "nanti disini ada tabel";
+                }else{ 
 
-                <!-- peringatan jika sudah pernah Mendaftar  -->
-                <div class="alert alert-success alert-dismissible">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                    <h4><i class="icon fa fa-ban"></i> Alert!</h4>
-                    Anda Sudah Mendaftar English Achievement
-                </div>
-                <!-- end peringatan jika sudah pernah Mendaftar  -->
+                  // cek model pembayaran
+                  if ($model_bayar == 'tf_btn') {
+                    # code... ?>
+                     <!-- peringatan jika sudah pernah Mendaftar dan harus membayar  -->
+                    <div class="alert alert-success alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <h4><i class="icon fa fa-ban"></i> Alert!</h4>
+                        Pengisian anda Berhasil!, Lakukan Pembayaran agar nama anda terdaftar mengikuti English Achievement
+                    </div>
+                    <!-- end peringatan jika sudah pernah Mendaftar dan harus membayar  -->
+                    <div class="form-group">
+                        <label for="editufsignon">Upload Bukti Bayar (file harus dengan format .pdf dan Maks. 1 MB)</label>
+                        <input type="file" class="form-control" id="bukti_bayar" name="bukti_bayar">
+                       <!--  <input type="hidden" id="editufsignon_existing" name="ufsignon_existing" value="<?php //echo $c->upload_file_signon; ?>"> -->
+                    </div>
+                    <div id="fileUploadStatus">Belum ada file yang diunggah.</div>
+                <?php  }
 
+
+                 } ?>
 
 
           <?php }elseif ($cek_periode > "0") {
