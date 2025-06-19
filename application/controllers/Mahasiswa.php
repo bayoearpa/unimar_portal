@@ -101,7 +101,7 @@ class Mahasiswa extends CI_Controller {
 	{
 		# code...
 		$where = array(
-				'nim' => $nim
+				'id_tkbi' => $nim
 			);
 		$data = $this->m_mahasiswa->get_data($where, 'diklat_tkbi_pembayaran')->num_rows();
 
