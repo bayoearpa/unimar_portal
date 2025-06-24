@@ -1,25 +1,30 @@
 <script type="text/javascript">
 
 $(document).ready(function() {
-	// Menyimpan perubahan dengan AJAX
-    $('#saveBuktiBayar').click(function() {
+    $('#saveBuktiBayar').click(function(e) {
+        e.preventDefault(); // Hindari reload
+
+        var formData = new FormData($('#buktiBayarForm')[0]);
+
         $.ajax({
-            url: '<?php echo base_url('mahasiswa/tkbip_bayar'); ?>', // Sesuaikan dengan URL yang sesuai
+            url: '<?php echo base_url('mahasiswa/tkbip_bayar'); ?>',
             type: 'POST',
-            data: $('#buktiBayarForm').serialize(),
+            data: formData,
+            contentType: false, // penting!
+            processData: false, // penting!
             success: function(response) {
-                if (response == 'sukses') {
-                    // Tutup modal setelah data berhasil ditambahkan
-                    // $('#valModal').modal('hide');
-                    // Muat ulang tabel untuk menampilkan data terbaru
-                    // reloadTable();
+                if (response.trim() === 'sukses') {
                     alert('Berhasil menambahkan data baru.');
                 } else {
-                    // Tampilkan pesan kesalahan jika perlu
-                    alert('Gagal menambahkan data baru.');
+                    alert('Gagal menambahkan data baru: ' + response);
                 }
+            },
+            error: function(xhr, status, error) {
+                console.error('AJAX Error:', error);
+                alert('Terjadi kesalahan: ' + error);
             }
         });
     });
 });
+
 </script>
