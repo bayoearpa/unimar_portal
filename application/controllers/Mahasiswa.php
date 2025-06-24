@@ -221,7 +221,7 @@ class Mahasiswa extends CI_Controller {
         } else {
             redirect(base_url().'mahasiswa/diklat_tkbi/'.$get_nim);
         }
-
+    }
 
 
 	////////////////// .Tes Kompetensi Bahasa Inggris ////////////////////////////////////////////////
