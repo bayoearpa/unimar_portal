@@ -139,6 +139,7 @@ class Mahasiswa extends CI_Controller {
 			# code...
 			$data['model_bayar'] = $key->model_bayar;
 			$id_tkbi = $key->id_tkbi;
+			$data['id_tkbix'] = $id_tkbi; 
 		}
 		$data['cekstatus_bayar'] = $this->cekstatus_tkbi_bayar($id_tkbi);
 
@@ -175,6 +176,53 @@ class Mahasiswa extends CI_Controller {
 	             redirect(base_url().'mahasiswa/tkbi/'.$nim);
 	        }
 	}
+	public function tkbip_bayar()
+	{
+		# code...
+		$id_tkbi = $this->input->post('id_tkbi');
+
+    // Tangani unggahan file
+        $config['upload_path'] = './assets/upload/tkbi/bukti_bayar';
+        $config['max_size'] = 1048;
+        $config['overwrite'] = true;
+        $config['allowed_types'] = 'pdf'; // Sesuaikan dengan jenis file yang diizinkan
+        $config['file_name'] = $nim.'_bukti_bayar'; // Nama file yang diunggah sesuai NIM
+        $this->load->library('upload', $config);
+
+        if ($this->upload->do_upload('bukti_bayar')) {
+            // Jika unggahan berhasil
+            $upload_data = $this->upload->data();
+            $file_name = $upload_data['file_name'];
+
+            // Simpan data ke database (contoh)
+            $data = array(
+              	'id_tkbi' => $id_tkbi,
+                'bukti_bayar' => $file_name
+            );
+            $this->m_mahasiswa->input_data($data,'diklat_tkbi_pembayaran');
+
+            //notifikasi
+            $get_nim = $this->input->post('nim');
+            $get_nama = $this->input->post('nama');
+            $notifikasi = $get_nama." dengan NIM/NRP".$get_nim." telah melakukan pembayaran English Achievement";
+            $link = "bau/tkbival/".$id_tkbi;
+            $bagian = "keuangan";
+            $status = "belum";
+
+            $datax = array(
+              	'notifikasi' => $notifikasi,
+                'link' => $link,
+                'bagian' => $bagian,
+                'status_notif' => $status,
+            );
+            $this->m_mahasiswa->input_data($datax,'tbl_notifikasi');
+
+            redirect(base_url().'mahasiswa/diklat_tkbi/'.$get_nim);
+        } else {
+            redirect(base_url().'mahasiswa/diklat_tkbi/'.$get_nim);
+        }
+
+
 
 	////////////////// .Tes Kompetensi Bahasa Inggris ////////////////////////////////////////////////
 	public function pra($id)

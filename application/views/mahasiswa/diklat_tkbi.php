@@ -13,12 +13,12 @@
                 <tr>
                   <td><label for="exampleInputEmail1">NIM</label></td>
                   <td><label for="exampleInputEmail1">:</label></td>
-                  <td><label for="exampleInputEmail1"><?php echo $c->nim; ?></label></td>
+                  <td><label for="exampleInputEmail1"><?php echo $c->nim;$nim_kirim = $c->nim; ?></label></td>
                 </tr>
                 <tr>
                   <td><label for="exampleInputEmail1">Nama</label></td>
                   <td><label for="exampleInputEmail1">:</label></td>
-                  <td><label for="exampleInputEmail1"><?php echo $c->nama; ?></label></td>
+                  <td><label for="exampleInputEmail1"><?php echo $c->nama;$nama_kirim = $c->nama; ?></label></td>
                 </tr>
                  <tr>
                   <td><label for="exampleInputEmail1">Tanggal Lahir</label></td>
@@ -59,12 +59,18 @@
                         Pengisian anda Berhasil!, Lakukan Pembayaran agar nama anda terdaftar mengikuti English Achievement
                     </div>
                     <!-- end peringatan jika sudah pernah Mendaftar dan harus membayar  -->
+                    <form id="buktiBayarForm" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="editufsignon">Upload Bukti Bayar (file harus dengan format .pdf dan Maks. 1 MB)</label>
+                        <input type="hidden" name="nim" id="nim" value="<?php echo $nim_kirim; ?>">
+                        <input type="hidden" name="nama" id="nama" value="<?php echo $nama_kirim; ?>">
+                        <input type="hidden" name="id_tkbix" id="id_tkbix" value="<?php echo $id_tkbix; ?>">
                         <input type="file" class="form-control" id="bukti_bayar" name="bukti_bayar">
                        <!--  <input type="hidden" id="editufsignon_existing" name="ufsignon_existing" value="<?php //echo $c->upload_file_signon; ?>"> -->
                     </div>
                     <div id="fileUploadStatus">Belum ada file yang diunggah.</div>
+
+                    <button type="button" class="btn btn-primary" id="saveBuktiBayar">Simpan</button>
                 <?php  }
 
 
