@@ -73,6 +73,7 @@
                     <div id="fileUploadStatus">Belum ada file yang diunggah.</div>
 
                     <button type="button" class="btn btn-primary" id="saveBuktiBayar">Simpan</button>
+                  </form>
                 <?php  }
 
 
