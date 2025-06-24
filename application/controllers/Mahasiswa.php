@@ -180,13 +180,15 @@ class Mahasiswa extends CI_Controller {
 	{
 		# code...
 		$id_tkbi = $this->input->post('id_tkbi');
+		$get_nim = $this->input->post('nim');
+        $get_nama = $this->input->post('nama');
 
     // Tangani unggahan file
         $config['upload_path'] = './assets/upload/tkbi/bukti_bayar';
         $config['max_size'] = 1048;
         $config['overwrite'] = true;
         $config['allowed_types'] = 'pdf'; // Sesuaikan dengan jenis file yang diizinkan
-        $config['file_name'] = $nim.'_bukti_bayar'; // Nama file yang diunggah sesuai NIM
+        $config['file_name'] = $get_nim.'_bukti_bayar'; // Nama file yang diunggah sesuai NIM
         $this->load->library('upload', $config);
 
         if ($this->upload->do_upload('bukti_bayar')) {
@@ -202,9 +204,8 @@ class Mahasiswa extends CI_Controller {
             $this->m_mahasiswa->input_data($data,'diklat_tkbi_pembayaran');
 
             //notifikasi
-            $get_nim = $this->input->post('nim');
-            $get_nama = $this->input->post('nama');
-            $notifikasi = $get_nama." dengan NIM/NRP".$get_nim." telah melakukan pembayaran English Achievement";
+            
+            $notifikasi = $get_nama." dengan NIM/NRP ".$get_nim." telah melakukan pembayaran English Achievement";
             $link = "bau/tkbival/".$id_tkbi;
             $bagian = "keuangan";
             $status = "belum";
