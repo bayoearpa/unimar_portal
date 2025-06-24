@@ -179,7 +179,7 @@ class Mahasiswa extends CI_Controller {
 	public function tkbip_bayar()
 	{
 		# code...
-		$id_tkbi = $this->input->post('id_tkbi');
+		$id_tkbi = $this->input->post('id_tkbix');
 		$get_nim = $this->input->post('nim');
         $get_nama = $this->input->post('nama');
 
