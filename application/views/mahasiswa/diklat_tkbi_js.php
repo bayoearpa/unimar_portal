@@ -2,7 +2,7 @@
 
 $(document).ready(function() {
 	// Menyimpan perubahan dengan AJAX
-    $('#saveValEdit').click(function() {
+    $('#saveBuktiBayar').click(function() {
         $.ajax({
             url: '<?php echo base_url('mahasiswa/tkbip_bayar'); ?>', // Sesuaikan dengan URL yang sesuai
             type: 'POST',
