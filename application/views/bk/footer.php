@@ -82,7 +82,7 @@
 </script>
 <script>
 $(document).ready(function() {
-    $.getJSON("<?= base_url('notifikasi/get_keuangan_notif') ?>", function(data) {
+    $.getJSON("<?= base_url('bk/get_keuangan_notif') ?>", function(data) {
         $('#notifCount').text(data.length);
         $('#notifTextCount').text(data.length);
 
@@ -90,7 +90,7 @@ $(document).ready(function() {
         data.forEach(function(item) {
             notifHtml += `
                 <li>
-                    <a href="<?= base_url('notifikasi/set_notif_read/') ?>${item.id}?redirect=${item.link}">
+                    <a href="<?= base_url('bk/set_notif_read/') ?>${item.id}?redirect=${item.link}">
                         <i class="fa fa-info text-blue"></i> ${item.notifikasi}
                     </a>
                 </li>`;
