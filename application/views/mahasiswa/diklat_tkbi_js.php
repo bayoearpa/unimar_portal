@@ -15,7 +15,7 @@ $(document).ready(function() {
             success: function(response) {
 			    if (response.trim() === 'sukses') {
 			        alert('Berhasil menambahkan data baru.');
-			        window.location.href = '<?php echo base_url("mahasiswa/diklat_tkbi/"); ?>' + $('#nim').val();
+			        window.location.href = '<?php echo base_url("mahasiswa/tkbi/"); ?>' + $('#nim').val();
 			    } else {
 			        alert('Gagal menambahkan data baru: ' + response);
 			    }

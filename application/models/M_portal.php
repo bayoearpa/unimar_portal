@@ -2133,6 +2133,20 @@ function get_data_formon_mhs($id)
         $this->db->where('s.Tahun_masuk', $tahun);
         return $this->db->get()->result();
     }
+
+    ///////////////////////////////////// notifikasi 2025 ////////////////////////////////////////////////
+    public function get_keuangan_notif() {
+        return $this->db->where('bagian', 'keuangan')
+                        ->where('status_notif', 'belum')
+                        ->order_by('id', 'desc')
+                        ->get('tbl_notifikasi')
+                        ->result();
+    }
+
+    public function update_status($id) {
+        return $this->db->where('id', $id)->update('tbl_notifikasi', ['status_notif' => 'sudah']);
+    }
+    ///////////////////////////////////// ./notifikasi 2025 ////////////////////////////////////////////////
 		
 }
 /* End of file M_portal.php */

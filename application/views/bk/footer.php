@@ -80,6 +80,26 @@
     })
   })
 </script>
+<script>
+$(document).ready(function() {
+    $.getJSON("<?= base_url('notifikasi/get_keuangan_notif') ?>", function(data) {
+        $('#notifCount').text(data.length);
+        $('#notifTextCount').text(data.length);
+
+        let notifHtml = '';
+        data.forEach(function(item) {
+            notifHtml += `
+                <li>
+                    <a href="<?= base_url('notifikasi/set_notif_read/') ?>${item.id}?redirect=${item.link}">
+                        <i class="fa fa-info text-blue"></i> ${item.notifikasi}
+                    </a>
+                </li>`;
+        });
+
+        $('#notifList').html(notifHtml);
+    });
+});
+</script>
 <?php $nm_datatabel = (isset($nama_datatabel)) ? $nama_datatabel : '' ?>
 <?php echo (isset($jquerynya_datatabel)) ? $jquerynya_datatabel->jquery($nm_datatabel) : '' ?>
 </body>

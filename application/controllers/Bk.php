@@ -79,6 +79,17 @@ class bk extends CI_Controller {
 			return $p->Nama_program_studi;
 		}
 	}
+	/////////////////////////////////// notifikasi ////////////////////////////////////////////////////////
+	public function get_keuangan_notif() {
+        $result = $this->m_portal->get_keuangan_notif();
+        echo json_encode($result);
+    }
+
+    public function set_notif_read($id) {
+        $this->m_portal->update_status($id);
+        redirect($this->input->get('redirect')); // redirect ke halaman tujuan
+    }
+	/////////////////////////////////// ./notifikasi ////////////////////////////////////////////////////////
 	public function ajuan()
 	{
 		$data['catar'] = $this->m_portal->get_data_all('tbl_kliring_ujianktsk')->result();
