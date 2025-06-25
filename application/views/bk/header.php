@@ -99,6 +99,18 @@
             transform: rotate(360deg);
           }
         }
+
+
+        .dropdown-menu-notifikasi {
+          min-width: 350px !important; /* Ubah nilai sesuai kebutuhan */
+          max-width: 500px;
+          word-wrap: break-word;
+          white-space: normal;
+        }
+        .dropdown-menu-notifikasi .menu {
+          max-height: 300px;
+          overflow-y: auto;
+        }
   </style>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
@@ -127,7 +139,7 @@
                   <i class="fa fa-bell-o"></i>
                   <span class="label label-warning" id="notifCount">0</span>
               </a>
-              <ul class="dropdown-menu">
+              <ul class="dropdown-menu dropdown-menu-notifikasi">
                   <li class="header">Anda memiliki <span id="notifTextCount">0</span> notifikasi</li>
                   <li>
                       <ul class="menu" id="notifList">
