@@ -13,11 +13,12 @@ $(document).ready(function() {
             contentType: false, // penting!
             processData: false, // penting!
             success: function(response) {
-                if (response.trim() === 'sukses') {
-                    alert('Berhasil menambahkan data baru.');
-                } else {
-                    alert('Gagal menambahkan data baru: ' + response);
-                }
+			    if (response.trim() === 'sukses') {
+			        alert('Berhasil menambahkan data baru.');
+			        window.location.href = '<?php echo base_url("mahasiswa/diklat_tkbi/"); ?>' + $('#nim').val();
+			    } else {
+			        alert('Gagal menambahkan data baru: ' + response);
+			    }
             },
             error: function(xhr, status, error) {
                 console.error('AJAX Error:', error);

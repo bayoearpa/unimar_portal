@@ -220,9 +220,11 @@ class Mahasiswa extends CI_Controller {
             );
             $this->m_mahasiswa->input_data($datax,'tbl_notifikasi');
 
-            redirect(base_url().'mahasiswa/diklat_tkbi/'.$get_nim);
+            // redirect(base_url().'mahasiswa/diklat_tkbi/'.$get_nim);
+            echo 'sukses'; // ✅ Ganti dari redirect
         } else {
-            redirect(base_url().'mahasiswa/diklat_tkbi/'.$get_nim);
+            // redirect(base_url().'mahasiswa/diklat_tkbi/'.$get_nim);
+            echo $this->upload->display_errors(); // ✅ Tampilkan error upload (jika ada)
         }
     }
 
