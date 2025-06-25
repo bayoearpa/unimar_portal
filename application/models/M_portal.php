@@ -2138,7 +2138,7 @@ function get_data_formon_mhs($id)
     public function get_keuangan_notif() {
         return $this->db->where('bagian', 'keuangan')
                         ->where('status_notif', 'belum')
-                        ->order_by('id', 'desc')
+                        ->order_by('id_notifikasi', 'desc')
                         ->get('tbl_notifikasi')
                         ->result();
     }
