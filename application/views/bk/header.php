@@ -111,6 +111,13 @@
           max-height: 300px;
           overflow-y: auto;
         }
+        .dropdown-menu-notifikasi .menu li a {
+          white-space: normal !important; /* Biarkan teks turun ke baris baru */
+          word-wrap: break-word;          /* Pecah kata jika terlalu panjang */
+          line-height: 1.4em;             /* Supaya lebih rapi */
+          padding: 10px;                  /* Biar lebih lega */
+        }
+
   </style>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
