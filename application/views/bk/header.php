@@ -103,7 +103,7 @@
 
         .dropdown-menu-notifikasi {
           min-width: 350px !important; /* Ubah nilai sesuai kebutuhan */
-          max-width: 500px;
+          max-width: 1000px;
           word-wrap: break-word;
           white-space: normal;
         }
