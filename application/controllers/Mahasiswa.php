@@ -199,7 +199,9 @@ class Mahasiswa extends CI_Controller {
             // Simpan data ke database (contoh)
             $data = array(
               	'id_tkbi' => $id_tkbi,
-                'bukti_bayar' => $file_name
+                'bukti_bayar' => $file_name,
+                'bayar' => '290000',
+                'status_bayar' => 'belum'
             );
             $this->m_mahasiswa->input_data($data,'diklat_tkbi_pembayaran');
 
