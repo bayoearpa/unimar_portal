@@ -90,7 +90,7 @@ $(document).ready(function() {
         data.forEach(function(item) {
             notifHtml += `
                 <li>
-                    <a href="<?= base_url('bk/set_notif_read/') ?>${item.id}?redirect=${item.link}">
+                    <a href="<?= base_url() ?>${item.link}">
                         <i class="fa fa-info text-blue"></i> ${item.notifikasi}
                     </a>
                 </li>`;
