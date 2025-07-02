@@ -70,7 +70,7 @@
                 </tr>
               </tbody></table>
 
-                <?php }else{ 
+                <?php }}else{ 
 
                   // cek model pembayaran
                   if ($model_bayar == 'tf_btn') {
