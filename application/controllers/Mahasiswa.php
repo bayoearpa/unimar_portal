@@ -143,6 +143,17 @@ class Mahasiswa extends CI_Controller {
 		}
 		$data['cekstatus_bayar'] = $this->cekstatus_tkbi_bayar($id_tkbi);
 
+		//get pembayaran detail
+		$wherec = array(
+			'id_tkbi' => $id_tkbi
+		);
+		$get_detail2 = $this->m_mahasiswa->get_data($whereb,'diklat_tkbi_pembayaran')->result();
+		foreach ($get_detail2 as $key) {
+			# code...
+			$data['bukti_bayar'] = $key->bukti_bayar;
+			$data['status_bayar'] = $key->status_bayar;
+		}
+
 		
 		$this->load->view('mahasiswa/header');
 		$this->load->view('mahasiswa/diklat_tkbi',$data);

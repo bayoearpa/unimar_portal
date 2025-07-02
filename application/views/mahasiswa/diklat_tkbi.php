@@ -44,10 +44,33 @@
               if ($cekstatus_double > "0") {
               # code... ?>
 
-                <?php if ($cekstatus_bayar > "0") {
-                  # code...
-                  echo "nanti disini ada tabel";
-                }else{ 
+                <?php if ($cekstatus_bayar > "0") { ?>
+                 
+                  <table class="table table-hover">
+                <tbody><tr>
+                  <th>NIM</th>
+                  <th>Bukti Bayar</th>
+                  <th>Status</th>
+                </tr>
+                <tr>
+                  <td><?php echo $nim_kirim; ?></td>
+                  <td>
+                     <?php if ($c->bukti_bayar) { ?>
+                      <button class="btn btn-success view-file-button" data-filename="<?php echo $c->bukti_bayar; ?>">Lihat Bukti Bayar</button>
+                      <?php } else { ?>
+                      <!-- Tampilkan pesan jika file tidak ada -->
+                      File tidak tersedia
+                      <?php } ?>
+                  </td>
+                  <td><?php if ($status_bayar == "sudah") {
+                    # code...?>
+                    <span class="label label-success">Sudah Terverifikasi</span></td>
+                  <?php }else{ ?>
+                    <span class="label label-danger">Belum Terverifikasi</span></td>
+                </tr>
+              </tbody></table>
+
+                <?php }else{ 
 
                   // cek model pembayaran
                   if ($model_bayar == 'tf_btn') {

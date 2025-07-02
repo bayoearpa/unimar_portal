@@ -1380,6 +1380,39 @@ class bk extends CI_Controller {
 	}
 
 
+	////////////////////////////////////////tkbi//////////////////////////////////////////////////////
+	function tkbi($id)
+    {
+        # code...
+        $where = array(
+            'tbl_catar_2025.no' => $id       
+        );
+        $data['catar'] = $this->m_registrasi->get_data($where,'tbl_catar_2025')->result();
+
+        foreach ($data['catar'] as $key) {
+            # code...
+            $jalur = $key->jalur;
+            $prodi = $key->prodi;
+        }
+        $data['nominal'] = $this->getBiaya($jalur);
+        $data['nmprodi'] = $this->getProdi($prodi);
+        // $data['catar'] = $this->m_registrasi->get_data_join_where($where)->result();
+
+        // $this->db->select('aktif');
+        // $this->db->from('tbl_catar_2021_validasi');
+        // $this->db->where($where);
+        // $data['aktif'] =  $this->db->get()->result()->row('aktif');
+
+        // $data['catar'] = $this->m_registrasi->get_data($where,'tbl_catar_2021')->result();
+        $this->load->view('bau/header');
+        $this->load->view('bau/daful',$data);
+        $this->load->view('bau/footer');
+        $this->load->view('bau/footer_js');
+        $this->load->view('bau/daful_js');
+    }
+	////////////////////////////////////////.tkbi//////////////////////////////////////////////////////
+
+
 
 }
 
