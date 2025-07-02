@@ -55,8 +55,8 @@
                 <tr>
                   <td><?php echo $nim_kirim; ?></td>
                   <td>
-                     <?php if ($c->bukti_bayar) { ?>
-                      <button class="btn btn-success view-file-button" data-filename="<?php echo $c->bukti_bayar; ?>">Lihat Bukti Bayar</button>
+                     <?php if ($bukti_bayar) { ?>
+                      <button class="btn btn-success view-file-button" data-filename="<?php echo $bukti_bayar; ?>">Lihat Bukti Bayar</button>
                       <?php } else { ?>
                       <!-- Tampilkan pesan jika file tidak ada -->
                       File tidak tersedia
