@@ -147,7 +147,7 @@ class Mahasiswa extends CI_Controller {
 		$wherec = array(
 			'id_tkbi' => $id_tkbi
 		);
-		$get_detail2 = $this->m_mahasiswa->get_data($whereb,'diklat_tkbi_pembayaran')->result();
+		$get_detail2 = $this->m_mahasiswa->get_data($wherec,'diklat_tkbi_pembayaran')->result();
 		foreach ($get_detail2 as $key) {
 			# code...
 			$data['bukti_bayar'] = $key->bukti_bayar;
