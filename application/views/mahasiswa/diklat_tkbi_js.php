@@ -31,7 +31,7 @@ $(document).ready(function() {
             e.preventDefault();
             var filename = $(this).data('filename');
             // Gantilah '/uploads/' dengan direktori tempat Anda menyimpan file
-            var fileUrl = '/assets/upload/tkbi/bukti_bayar' + filename;
+            var fileUrl = '/assets/upload/tkbi/bukti_bayar/' + filename;
             
             // Buka tautan ke file di jendela baru
             window.open(fileUrl, '_blank');
