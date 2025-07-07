@@ -4,7 +4,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Prada</h3>
+              <h3 class="box-title">Modeling</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
