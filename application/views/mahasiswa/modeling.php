@@ -8,7 +8,7 @@
           <div class="box-body">
              <?php 
              
-              if ($mahasiswa->cekstatus('status_offboard','sudah', $this->session->userdata('user')) > "0" ) {
+              if ($mahasiswa->cekstatus('status_offboard','iya', $this->session->userdata('user')) > "0" ) {
               # code... ?>
             <?php 
             // echo validation_errors(); 
@@ -83,7 +83,7 @@
                 <div class="alert alert-danger alert-dismissible">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                     <h4><i class="icon fa fa-ban"></i> Alert!</h4>
-                    anda belum diizinkan untuk mengisi form Laporan Modeling karena belum Lulus PASCA
+                    anda belum diizinkan untuk mengisi form Laporan Modeling karena belum Selesai Laporan Offboard
                 </div>
             <!-- end peringatan jika belum boleh mendafatar  -->
 
