@@ -36,6 +36,7 @@
                   <th>Nama</th>
                   <th>Prodi</th>
                   <th>Sudah mengikuti Modeling</th>
+                  <th>File Berita acara turun Prala</th>
                   <th>proses</th>
                 </tr>
                 </thead>
@@ -48,6 +49,17 @@
                 <td><?php echo $i->nama; ?></td>
                 <td><?php echo $i->prodi; ?></td>
                 <td><?php echo $i->status_modeling; ?></td>
+                <td>
+                    <td>
+                    <!-- Tombol Lihat File Sign On -->
+                    <?php if ($i->upload_file_batrnprala) { ?>
+                        <button class="btn btn-info view-file-button" data-filename="<?php echo $i->upload_file_batrnprala; ?>">Lihat</button>
+                    <?php } else { ?>
+                        <!-- Tampilkan pesan jika file tidak ada -->
+                        File tidak tersedia
+                    <?php } ?>
+                </td>
+                </td>
                 <td>
                       <!-- Tombol Tambah/Edit -->
                     <?php if ($i->id_mon) { ?>
@@ -65,6 +77,7 @@
                   <th>Nama</th>
                   <th>Prodi</th>
                   <th>Sudah mengikuti Modeling</th>
+                  <th>File Berita acara turun Prala</th>
                   <th>proses</th>
                 </tr>
                 </tfoot>
