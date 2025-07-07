@@ -75,6 +75,12 @@
                   </div>
 
                 <button type="submit" class="btn btn-primary">Simpan</button>
+                 <?php if ($c->upload_file_batrnprala  > "0") { ?>
+                        <button class="btn btn-success view-file-button-signoff" data-filename="<?php echo $c->upload_file_batrnprala; ?>">Lihat file offboard</button>
+                    <?php } else { ?>
+                        <!-- Tampilkan pesan jika file tidak ada -->
+                        File tidak tersedia
+                    <?php } ?>
                <!--  <a href="<?php //echo base_url() ?>mahasiswa/onboard"><button type="button" class="btn btn-success pull-left"><i class="fa fa-chevron-left"></i>Kembali</button></a> -->
                 </form>
               <?php } ?>
