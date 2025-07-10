@@ -1335,6 +1335,7 @@ function get_data_formon_mhsall_off($limit, $offset)
         tbl_mon.pasca_no_ijasah as pasca_no_ijasah,
         tbl_mon.pasca_status as pasca_status,
         tbl_mon.status_modeling as status_modeling,
+        tbl_mon.upload_file_batrnprala as upload_file_batrnprala,
 	        tbl_mon.status_onboard,
 	        tbl_mon.status_offboard,
 	        tbl_mon.nama_perusahaan,
