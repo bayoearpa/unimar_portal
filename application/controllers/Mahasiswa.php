@@ -884,6 +884,7 @@ class Mahasiswa extends CI_Controller {
     // Tangani unggahan file
         $config['upload_path'] = './assets/monitoring/modeling';
         $config['max_size'] = 1048;
+        $config['overwrite'] = true;
         $config['allowed_types'] = 'pdf'; // Sesuaikan dengan jenis file yang diizinkan
         $config['file_name'] = $nim.'_batrnprala'; // Nama file yang diunggah sesuai NIM
         $this->load->library('upload', $config);
