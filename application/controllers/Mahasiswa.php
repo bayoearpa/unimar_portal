@@ -879,7 +879,7 @@ class Mahasiswa extends CI_Controller {
 	        'id_mon' => $this->input->post('id_mon'),
 	    );
 		$nim = $this->input->post('nim');
-			$status_trb = $this->input->post('status_modeling');
+		$status_modeling = $this->input->post('status_modeling');
 
     // Tangani unggahan file
         $config['upload_path'] = './assets/monitoring/modeling';
