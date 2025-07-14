@@ -1591,13 +1591,11 @@ class bk extends CI_Controller {
                 'status_bayar' => 'sudah'
             );
             $proses_bayar = $this->m_mahasiswa->input_data($data,'diklat_tkbi_pembayaran');
-            if ($proses_bayar) {
-            	# code...
-            	echo 'sukses';
-            }else {
-            // redirect(base_url().'mahasiswa/diklat_tkbi/'.$get_nim);
-            echo $this->upload->display_errors(); // ✅ Tampilkan error upload (jika ada)
-        	}
+           if ($proses_bayar) {
+	            echo 'sukses';
+	        } else {
+	            echo 'gagal input data';
+	        }
 
         }else{
         	$where = array(
@@ -1608,12 +1606,10 @@ class bk extends CI_Controller {
             );
 			$proses_bayar = $this->m_mahasiswa->update_data($where,$data,'diklat_tkbi_pembayaran');
 			if ($proses_bayar) {
-            	# code...
-            	echo 'sukses';
-            }else {
-            // redirect(base_url().'mahasiswa/diklat_tkbi/'.$get_nim);
-            echo $this->upload->display_errors(); // ✅ Tampilkan error upload (jika ada)
-        	}
+	            echo 'sukses';
+	        } else {
+	            echo 'gagal input data';
+	        }
         }  
     }
      public function tkbi_cetak($id)
