@@ -1443,10 +1443,10 @@ class bk extends CI_Controller {
 	public function tkbi2()
 	{
 		# code...
-		$this->load->view('bau/header');
-        $this->load->view('bau/tkbi2');
-        $this->load->view('bau/footer');
-        $this->load->view('bau/footer_js');
+		$this->load->view('bk/header');
+        $this->load->view('bk/tkbi2');
+        $this->load->view('bk/footer');
+        $this->load->view('bk/footer_js');
 
 	}
     public function tkbi2_cari()
