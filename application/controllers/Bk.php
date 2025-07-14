@@ -1614,8 +1614,9 @@ class bk extends CI_Controller {
             // redirect(base_url().'mahasiswa/diklat_tkbi/'.$get_nim);
             echo $this->upload->display_errors(); // ✅ Tampilkan error upload (jika ada)
         	}
-        }
-        public function tkbi_cetak($id)
+        }  
+    }
+     public function tkbi_cetak($id)
         {
         	# code...
 			$mhs = $this->m_mahasiswa->get_data_mhs_detail($id);
@@ -1638,9 +1639,6 @@ class bk extends CI_Controller {
 			$this->load->view('bk/cetak_nota_tkbi',$data);	
 
         }
-
-   
-    }
 	////////////////////////////////////////.tkbi//////////////////////////////////////////////////////
 
 	
