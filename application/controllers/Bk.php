@@ -1500,6 +1500,7 @@ class bk extends CI_Controller {
 
 		
 		$this->load->view('bk/header');
+		$this->load->view('bk/tkbi2');
 		$this->load->view('bk/tkbi2_detail',$data);
 		$this->load->view('bk/footer');
 		$this->load->view('bk/tkbi2_detail_js');
