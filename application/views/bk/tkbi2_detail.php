@@ -112,9 +112,16 @@
             foreach($mhs_detail as $c){ 
               ?>
              
-              <form action="<?php echo base_url() ?>mahasiswa/tkbip" name="form1" id="form1" method="post" enctype="multipart/form-data">
-                <input type="hidden" name="id_kelas" id="id_kelas" value="<?php echo $id_kelas; ?>">
-                <input type="hidden" name="nim" id="nim" value="<?php echo $c->nim; ?>">
+             <!-- peringatan jika belum daftar  -->
+                <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h4><i class="icon fa fa-ban"></i> Alert!</h4>
+                    Silakan Mengisi Form Pendaftaran Tes Kompetensi Bahasa Inggris Di Portal
+                </div>
+            <!-- end peringatan jika belum daftar  -->
+             <!--  <form action="<?php //echo base_url() ?>mahasiswa/tkbip" name="form1" id="form1" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="id_kelas" id="id_kelas" value="<?php //echo $id_kelas; ?>">
+                <input type="hidden" name="nim" id="nim" value="<?php //echo $c->nim; ?>">
                  <div class="form-group">
                    <div class="form-group">
                         <label for="editnamakapal">email (Pastikan email aktif):</label>
@@ -138,7 +145,7 @@
                   </div>
 
                 <button type="submit" class="btn btn-primary">Simpan</button>
-                </form>
+                </form> -->
                 
                  <!-- .cek status laporan -->
 
