@@ -15,7 +15,7 @@ $(document).ready(function() {
             success: function(response) {
 			    if (response.trim() === 'sukses') {
 			        alert('Berhasil menambahkan data baru.');
-			        window.location.href = '<?php echo base_url("bk/tkbi_cari/"); ?>' + $('#nim').val();
+			        window.location.href = '<?php echo base_url("bk/tkbi2_cari2/"); ?>' + $('#nim').val();
 			    } else {
 			        alert('Gagal menambahkan data baru: ' + response);
 			    }

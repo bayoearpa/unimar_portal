@@ -1507,6 +1507,117 @@ class bk extends CI_Controller {
 
 
     }
+    public function tkbi2_cari2($id)
+    {
+    	# code...
+
+		$data['bk'] = $this;
+		$data['mhs_detail'] = $this->m_mahasiswa->get_data_mhs_detail($id);
+
+		//get kelas
+		$where = array(
+				'status' => 'belum'
+			);
+		$get_id_kelas = $this->m_mahasiswa->get_data($where,'diklat_tkbi_kelas')->result();
+		foreach ($get_id_kelas as $key) {
+			# code...
+			$data['id_kelas'] = $key->id_tkbi_kelas;
+		}
+
+		$nim = $id ;
+		$waktu = date('Y-m-d');
+		$status = "belum";
+		//cek periode kelas
+		$data['cek_periode'] = $this->cekstatus_tkbi_periode($status);
+		$data['cekstatus_double'] = $this->cekstatus_tkbi_double($nim);
+
+		//pembayaran
+		$whereb = array(
+				'nim' => $nim
+			);
+		$get_detail = $this->m_mahasiswa->get_data($whereb,'diklat_tkbi_peserta')->result();
+		foreach ($get_detail as $key) {
+			# code...
+			$data['model_bayar'] = $key->model_bayar;
+			$id_tkbi = $key->id_tkbi;
+			$data['id_tkbix'] = $id_tkbi; 
+		}
+		$data['cekstatus_bayar'] = $this->cekstatus_tkbi_bayar($id_tkbi);
+
+		//get pembayaran detail
+		$wherec = array(
+			'id_tkbi' => $id_tkbi
+		);
+		$get_detail2 = $this->m_mahasiswa->get_data($wherec,'diklat_tkbi_pembayaran')->result();
+		foreach ($get_detail2 as $key) {
+			# code...
+			$data['bukti_bayar'] = $key->bukti_bayar;
+			$data['status_bayar'] = $key->status_bayar;
+		}
+
+		
+		$this->load->view('bk/header');
+		$this->load->view('bk/tkbi2');
+		$this->load->view('bk/tkbi2_detail',$data);
+		$this->load->view('bk/footer');
+		$this->load->view('bk/tkbi2_detail_js');
+
+
+    }
+    public function tkbip_bayar()
+	{
+		# code...
+		$id_tkbi = $this->input->post('id_tkbix');
+		$get_nim = $this->input->post('nim');
+        $get_nama = $this->input->post('nama');
+        $model_bayar = $this->input->post('model_bayar');
+
+        //get pembayaran detail
+		$wherec = array(
+			'id_tkbi' => $id_tkbi
+		);
+		$get_detail2 = $this->m_mahasiswa->get_data($wherec,'diklat_tkbi_pembayaran')->result();
+		foreach ($get_detail2 as $key) {
+			# code...
+			$id_tkbi_bayar = $key->id_tkbi_bayar;
+		}
+
+
+        if ($model_bayar == 'loket') {
+        	# code...
+        	$data = array(
+              	'id_tkbi' => $id_tkbi,
+                'bayar' => '290000',
+                'status_bayar' => 'sudah'
+            );
+            $proses_bayar = $this->m_mahasiswa->input_data($data,'diklat_tkbi_pembayaran');
+            if ($proses_bayar) {
+            	# code...
+            	echo 'sukses';
+            }else {
+            // redirect(base_url().'mahasiswa/diklat_tkbi/'.$get_nim);
+            echo $this->upload->display_errors(); // ✅ Tampilkan error upload (jika ada)
+        	}
+
+        }else{
+        	$where = array(
+				'id_tkbi_bayar' => $id_tkbi_bayar
+			);
+			$data = array(
+                'status_bayar' => 'sudah'
+            );
+			$proses_bayar = $this->m_mahasiswa->update_data($where,$data,'diklat_tkbi_pembayaran');
+			if ($proses_bayar) {
+            	# code...
+            	echo 'sukses';
+            }else {
+            // redirect(base_url().'mahasiswa/diklat_tkbi/'.$get_nim);
+            echo $this->upload->display_errors(); // ✅ Tampilkan error upload (jika ada)
+        	}
+        }
+
+   
+    }
 	////////////////////////////////////////.tkbi//////////////////////////////////////////////////////
 
 	
