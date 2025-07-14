@@ -1499,10 +1499,10 @@ class bk extends CI_Controller {
 		}
 
 		
-		$this->load->view('mahasiswa/header');
-		$this->load->view('mahasiswa/tkbi2_detail',$data);
-		$this->load->view('mahasiswa/footer');
-		$this->load->view('mahasiswa/tkbi2_detail_js');
+		$this->load->view('bk/header');
+		$this->load->view('bk/tkbi2_detail',$data);
+		$this->load->view('bk/footer');
+		$this->load->view('bk/tkbi2_detail_js');
 
 
     }
