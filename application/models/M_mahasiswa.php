@@ -16,6 +16,13 @@ class M_mahasiswa extends CI_Model {
 		$this->db->where($where);
 		$this->db->update($table,$data);
 	}
+	function input_data2($data,$table){
+		return $this->db->insert($table,$data);
+	}
+	function update_data2($where,$data,$table){
+		$this->db->where($where);
+		return $this->db->update($table,$data);
+	}
 	function delete_data($where,$table){
 		$this->db->where($where);
 		$this->db->delete($table);

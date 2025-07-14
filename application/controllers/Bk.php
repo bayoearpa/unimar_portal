@@ -1590,7 +1590,7 @@ class bk extends CI_Controller {
                 'bayar' => '290000',
                 'status_bayar' => 'sudah'
             );
-            $proses_bayar = $this->m_mahasiswa->input_data($data,'diklat_tkbi_pembayaran');
+            $proses_bayar = $this->m_mahasiswa->input_data2($data,'diklat_tkbi_pembayaran');
            if ($proses_bayar) {
 	            echo 'sukses';
 	        } else {
@@ -1604,7 +1604,7 @@ class bk extends CI_Controller {
 			$data = array(
                 'status_bayar' => 'sudah'
             );
-			$proses_bayar = $this->m_mahasiswa->update_data($where,$data,'diklat_tkbi_pembayaran');
+			$proses_bayar = $this->m_mahasiswa->update_data2($where,$data,'diklat_tkbi_pembayaran');
 			if ($proses_bayar) {
 	            echo 'sukses';
 	        } else {
