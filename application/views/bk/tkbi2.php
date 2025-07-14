@@ -10,7 +10,7 @@
             echo $this->session->flashdata('success');
             echo $this->session->flashdata('error');
               ?>
-              <form action="<?php echo base_url() ?>bk/search_smta_nim_cari" name="form1" id="form1" method="post">
+              <form action="<?php echo base_url() ?>bk/tkbi2_cari" name="form1" id="form1" method="post">
                 <div class="form-group">
                 <label for="exampleInputEmail1">Masukan NRP/NIM untuk mencari Mahasiswa atau Taruna :</label>
                  <input type="text" name="nim" id="nim" class="form-control">

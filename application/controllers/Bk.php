@@ -1451,6 +1451,8 @@ class bk extends CI_Controller {
     public function tkbi2_cari()
     {
     	# code...
+    	$id = $this->input->post('nim');
+
 		$data['bk'] = $this;
 		$data['mhs_detail'] = $this->m_mahasiswa->get_data_mhs_detail($id);
 
@@ -1497,9 +1499,9 @@ class bk extends CI_Controller {
 
 		
 		$this->load->view('mahasiswa/header');
-		$this->load->view('mahasiswa/tkbi2',$data);
+		$this->load->view('mahasiswa/tkbi2_detail',$data);
 		$this->load->view('mahasiswa/footer');
-		$this->load->view('mahasiswa/tkbi2_js');
+		$this->load->view('mahasiswa/tkbi2_detail_js');
 
 
     }
