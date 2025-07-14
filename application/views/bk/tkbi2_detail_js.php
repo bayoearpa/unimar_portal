@@ -16,6 +16,7 @@ $(document).ready(function() {
 			    if (response.trim() === 'sukses') {
 			        alert('Berhasil menambahkan data baru.');
 			        window.location.href = '<?php echo base_url("bk/tkbi2_cari2/"); ?>' + $('#nim').val();
+                    window.open('<?php echo base_url("bk/tkbi2_cari2_cetak/"); ?>' + $('#nim').val(), '_blank'); // buka tab baru sekarang
 			    } else {
 			        alert('Gagal menambahkan data baru: ' + response);
 			    }

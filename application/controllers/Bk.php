@@ -1615,6 +1615,29 @@ class bk extends CI_Controller {
             echo $this->upload->display_errors(); // ✅ Tampilkan error upload (jika ada)
         	}
         }
+        public function tkbi_cetak($id)
+        {
+        	# code...
+			$mhs = $this->m_mahasiswa->get_data_mhs_detail($id);
+
+			foreach ($mhs as $key) {
+				# code...
+				$data['nim'] = $key->nim;
+				$data['nama'] = $key->nama;
+				$data['prodi'] = $key->prodi;
+			}
+			$wherec = array(
+			'id_tkbi' => $id_tkbi
+				);
+				$get_detail2 = $this->m_mahasiswa->get_data($wherec,'diklat_tkbi_pembayaran')->result();
+				foreach ($get_detail2 as $key) {
+					# code...
+					$data['bayar'] = $key->bayar;
+				}
+
+			$this->load->view('bk/cetak_nota_tkbi',$data);	
+
+        }
 
    
     }
