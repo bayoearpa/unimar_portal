@@ -14,6 +14,7 @@ class bk extends CI_Controller {
 			redirect(base_url().'administrasi?pesan=salahkamar');
 		}
 		$this->load->model('m_portal');
+		$this->load->model('m_mahasiswa');
 	}
 
 	public function index()
