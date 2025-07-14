@@ -1608,7 +1608,7 @@ class bk extends CI_Controller {
 			if ($proses_bayar) {
 	            echo 'sukses';
 	        } else {
-	            echo 'gagal input data';
+	            echo 'gagal edit data';
 	        }
         }  
     }
