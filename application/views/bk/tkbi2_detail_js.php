@@ -5,6 +5,7 @@ $(document).ready(function() {
         e.preventDefault(); // Hindari reload
 
         var formData = new FormData($('#buktiBayarForm')[0]);
+        var nim = $('#nim').val(); // simpan nilai nim sebelum AJAX
 
         $.ajax({
             url: '<?php echo base_url('bk/tkbip_bayar'); ?>',
@@ -15,8 +16,8 @@ $(document).ready(function() {
             success: function(response) {
 			    if (response.trim() === 'sukses') {
 			        alert('Berhasil menambahkan data baru.');
-			        window.location.href = '<?php echo base_url("bk/tkbi2_cari2/"); ?>' + $('#nim').val();
-                    window.open('<?php echo base_url("bk/tkbi2_cari2_cetak/"); ?>' + $('#nim').val(), '_blank'); // buka tab baru sekarang
+			     window.location.href = '<?php echo base_url("bk/tkbi2_cari2/"); ?>' + nim;
+                window.open('<?php echo base_url("bk/tkbi2_cari2_cetak/"); ?>' + nim, '_blank');
 			    } else {
 			        alert('Gagal menambahkan data baru: ' + response);
 			    }
