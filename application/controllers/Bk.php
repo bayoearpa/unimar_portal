@@ -1410,6 +1410,100 @@ class bk extends CI_Controller {
         $this->load->view('bau/footer_js');
         $this->load->view('bau/daful_js');
     }
+    public function cekstatus_tkbi_periode($status)
+	{
+		# code...
+		$where = array(
+				'status' => $status,
+			);
+		$data = $this->m_mahasiswa->get_data($where, 'diklat_tkbi_kelas')->num_rows();
+
+		return $data;
+	}
+	public function cekstatus_tkbi_double($nim)
+	{
+		# code...
+		$where = array(
+				'nim' => $nim
+			);
+		$data = $this->m_mahasiswa->get_data($where, 'diklat_tkbi_peserta')->num_rows();
+
+		return $data;
+	}
+	public function cekstatus_tkbi_bayar($nim)
+	{
+		# code...
+		$where = array(
+				'id_tkbi' => $nim
+			);
+		$data = $this->m_mahasiswa->get_data($where, 'diklat_tkbi_pembayaran')->num_rows();
+
+		return $data;
+	}
+	public function tkbi2()
+	{
+		# code...
+		$this->load->view('bau/header');
+        $this->load->view('bau/tkbi2');
+        $this->load->view('bau/footer');
+        $this->load->view('bau/footer_js');
+
+	}
+    public function tkbi2_cari()
+    {
+    	# code...
+		$data['bk'] = $this;
+		$data['mhs_detail'] = $this->m_mahasiswa->get_data_mhs_detail($id);
+
+		//get kelas
+		$where = array(
+				'status' => 'belum'
+			);
+		$get_id_kelas = $this->m_mahasiswa->get_data($where,'diklat_tkbi_kelas')->result();
+		foreach ($get_id_kelas as $key) {
+			# code...
+			$data['id_kelas'] = $key->id_tkbi_kelas;
+		}
+
+		$nim = $id ;
+		$waktu = date('Y-m-d');
+		$status = "belum";
+		//cek periode kelas
+		$data['cek_periode'] = $this->cekstatus_tkbi_periode($status);
+		$data['cekstatus_double'] = $this->cekstatus_tkbi_double($nim);
+
+		//pembayaran
+		$whereb = array(
+				'nim' => $nim
+			);
+		$get_detail = $this->m_mahasiswa->get_data($whereb,'diklat_tkbi_peserta')->result();
+		foreach ($get_detail as $key) {
+			# code...
+			$data['model_bayar'] = $key->model_bayar;
+			$id_tkbi = $key->id_tkbi;
+			$data['id_tkbix'] = $id_tkbi; 
+		}
+		$data['cekstatus_bayar'] = $this->cekstatus_tkbi_bayar($id_tkbi);
+
+		//get pembayaran detail
+		$wherec = array(
+			'id_tkbi' => $id_tkbi
+		);
+		$get_detail2 = $this->m_mahasiswa->get_data($wherec,'diklat_tkbi_pembayaran')->result();
+		foreach ($get_detail2 as $key) {
+			# code...
+			$data['bukti_bayar'] = $key->bukti_bayar;
+			$data['status_bayar'] = $key->status_bayar;
+		}
+
+		
+		$this->load->view('mahasiswa/header');
+		$this->load->view('mahasiswa/tkbi2',$data);
+		$this->load->view('mahasiswa/footer');
+		$this->load->view('mahasiswa/tkbi2_js');
+
+
+    }
 	////////////////////////////////////////.tkbi//////////////////////////////////////////////////////
 
 	
