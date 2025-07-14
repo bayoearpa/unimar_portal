@@ -57,6 +57,14 @@
                   <td>
                      <?php if ($bukti_bayar) { ?>
                       <button class="btn btn-success view-file-button" data-filename="<?php echo $bukti_bayar; ?>">Lihat Bukti Bayar</button>
+                      <form id="buktiBayarForm" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <input type="hidden" name="id_tkbix" id="id_tkbix" value="<?php echo $id_tkbix; ?>">
+                        <input type="hidden" name="status_bayar" id="status_bayar" value="sudah">
+                    </div>
+
+                    <button type="button" class="btn btn-primary" id="saveBuktiBayar">Bayar</button>
+                  </form>
                       <?php } else { ?>
                       <!-- Tampilkan pesan jika file tidak ada -->
                       File tidak tersedia
@@ -73,7 +81,7 @@
                 <?php }}else{ 
 
                   // cek model pembayaran
-                  if ($model_bayar == 'tf_btn') {
+                  if ($model_bayar == 'loket') {
                     # code... ?>
                      <!-- peringatan jika sudah pernah Mendaftar dan harus membayar  -->
                     <div class="alert alert-success alert-dismissible">
@@ -82,22 +90,35 @@
                         Pengisian anda Berhasil!, Lakukan Pembayaran agar nama anda terdaftar mengikuti English Achievement
                     </div>
                     <!-- end peringatan jika sudah pernah Mendaftar dan harus membayar  -->
-                     <p align="center">Untuk Pembayaran dapat di Transfer ke Bank BTN dengan nomor rekening <b>0011501300000163 an. UNIMAR AMNI</b> biaya yang harus anda bayar sebesar:</p>
+                     <p align="center">Untuk Pembayaran dapat di Transfer ke Bank BTN dengan nomor rekening <b>0838810730 an. UNIMAR AMNI</b> biaya yang harus anda bayar sebesar:</p>
                     <h2 align="center">Rp. 290.000,-</h2>
                     <form id="buktiBayarForm" method="post" enctype="multipart/form-data">
                     <div class="form-group">
-                        <label for="editufsignon">Upload Bukti Bayar (file harus dengan format .pdf dan Maks. 1 MB)</label>
+                        <!-- <label for="editufsignon">Upload Bukti Bayar (file harus dengan format .pdf dan Maks. 1 MB)</label> -->
                         <input type="hidden" name="nim" id="nim" value="<?php echo $nim_kirim; ?>">
                         <input type="hidden" name="nama" id="nama" value="<?php echo $nama_kirim; ?>">
                         <input type="hidden" name="id_tkbix" id="id_tkbix" value="<?php echo $id_tkbix; ?>">
-                        <input type="file" class="form-control" id="bukti_bayar" name="bukti_bayar">
+                        <input type="hidden" name="status_bayar" id="status_bayar" value="sudah">
+                        <!-- <input type="file" class="form-control" id="bukti_bayar" name="bukti_bayar"> -->
                        <!--  <input type="hidden" id="editufsignon_existing" name="ufsignon_existing" value="<?php //echo $c->upload_file_signon; ?>"> -->
                     </div>
                     <div id="fileUploadStatus">Belum ada file yang diunggah.</div>
 
-                    <button type="button" class="btn btn-primary" id="saveBuktiBayar">Simpan</button>
+                    <button type="button" class="btn btn-primary" id="saveBuktiBayar">Bayar</button>
                   </form>
-                <?php  }
+                <?php  }else{ ?>
+
+                    <form id="buktiBayarForm" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <input type="hidden" name="id_tkbix" id="id_tkbix" value="<?php echo $id_tkbix; ?>">
+                        <input type="hidden" name="status_bayar" id="status_bayar" value="sudah">
+                    </div>
+
+                    <button type="button" class="btn btn-primary" id="saveBuktiBayar">Bayar</button>
+                  </form>
+
+
+                <?php }
 
 
                  } ?>

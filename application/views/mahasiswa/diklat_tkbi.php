@@ -73,7 +73,7 @@
                 <?php }}else{ 
 
                   // cek model pembayaran
-                  if ($model_bayar == 'tf_btn') {
+                  if ($model_bayar == 'tf_bni') {
                     # code... ?>
                      <!-- peringatan jika sudah pernah Mendaftar dan harus membayar  -->
                     <div class="alert alert-success alert-dismissible">
@@ -82,7 +82,7 @@
                         Pengisian anda Berhasil!, Lakukan Pembayaran agar nama anda terdaftar mengikuti English Achievement
                     </div>
                     <!-- end peringatan jika sudah pernah Mendaftar dan harus membayar  -->
-                     <p align="center">Untuk Pembayaran dapat di Transfer ke Bank BTN dengan nomor rekening <b>0011501300000163 an. UNIMAR AMNI</b> biaya yang harus anda bayar sebesar:</p>
+                     <p align="center">Untuk Pembayaran dapat di Transfer ke Bank BTN dengan nomor rekening <b>0838810730 an. UNIMAR AMNI</b> biaya yang harus anda bayar sebesar:</p>
                     <h2 align="center">Rp. 290.000,-</h2>
                     <form id="buktiBayarForm" method="post" enctype="multipart/form-data">
                     <div class="form-group">
@@ -97,7 +97,15 @@
 
                     <button type="button" class="btn btn-primary" id="saveBuktiBayar">Simpan</button>
                   </form>
-                <?php  }
+                <?php  }else{ ?>
+                   <!-- peringatan jika bayar langsung  -->
+                <div class="alert alert-warning alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h4><i class="icon fa fa-ban"></i> Alert!</h4>
+                    Tunggu Pembayaran anda sedang di proses
+                </div>
+                  <!-- end peringatan jika bayar langsung  -->
+               <?php }
 
 
                  } ?>
@@ -127,13 +135,17 @@
                      <div class="form-group">
                         <label for="editstatonboard">Pilih Model Pembayaran:</label>
                         <div class="form-check">
-                            <input type="radio" class="form-check-input" id="model_bayar" name="model_bayar" value="tf_btn">
-                            <label class="form-check-label" for="valstatonboard">Transfer BTN</label>
+                            <input type="radio" class="form-check-input" id="model_bayar" name="model_bayar" value="tf_bni">
+                            <label class="form-check-label" for="valstatonboard">Transfer BNI</label>
                         </div>
                         <div class="form-check">
+                            <input type="radio" class="form-check-input" id="model_bayar" name="model_bayar" value="loket">
+                            <label class="form-check-label" for="valstatonboard">Langsung di Loket</label>
+                        </div>
+                      <!--   <div class="form-check">
                             <input type="radio" class="form-check-input" id="model_bayar" name="model_bayar" value="qris">
                             <label class="form-check-label" for="valstatonboard">QRIS</label>
-                        </div>
+                        </div> -->
                     </div>
                   </div>
 
