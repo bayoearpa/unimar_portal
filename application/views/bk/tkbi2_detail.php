@@ -59,10 +59,10 @@
                       <button class="btn btn-success view-file-button" data-filename="<?php echo $bukti_bayar; ?>">Lihat Bukti Bayar</button>
                       <form id="buktiBayarForm" method="post" enctype="multipart/form-data">
                     <div class="form-group">
-                        <input type="text" name="id_tkbix" id="id_tkbix" value="<?php echo $id_tkbix; ?>">
-                        <input type="text" name="nim" id="nim" value="<?php echo $nim_kirim; ?>">
-                         <input type="text" name="model_bayar" id="model_bayar" value="<?php echo $model_bayar; ?>">
-                        <input type="text" name="status_bayar" id="status_bayar" value="sudah">
+                        <input type="hidden" name="id_tkbix" id="id_tkbix" value="<?php echo $id_tkbix; ?>">
+                        <input type="hidden" name="nim" id="nim" value="<?php echo $nim_kirim; ?>">
+                         <input type="hidden" name="model_bayar" id="model_bayar" value="<?php echo $model_bayar; ?>">
+                        <input type="hidden" name="status_bayar" id="status_bayar" value="sudah">
                     </div>
 
                     <button type="button" class="btn btn-primary" id="saveBuktiBayar">Bayar</button>
@@ -96,15 +96,12 @@
                     <h2 align="center">Rp. 290.000,-</h2>
                     <form id="buktiBayarForm" method="post" enctype="multipart/form-data">
                     <div class="form-group">
-                        <!-- <label for="editufsignon">Upload Bukti Bayar (file harus dengan format .pdf dan Maks. 1 MB)</label> -->
                         <input type="hidden" name="nim" id="nim" value="<?php echo $nim_kirim; ?>">
                         <input type="hidden" name="nama" id="nama" value="<?php echo $nama_kirim; ?>">
                         <input type="hidden" name="id_tkbix" id="id_tkbix" value="<?php echo $id_tkbix; ?>">
                         <input type="hidden" name="status_bayar" id="status_bayar" value="sudah">
                         <input type="hidden" name="model_bayar" id="model_bayar" value="<?php echo $model_bayar; ?>">
 
-                        <!-- <input type="file" class="form-control" id="bukti_bayar" name="bukti_bayar"> -->
-                       <!--  <input type="hidden" id="editufsignon_existing" name="ufsignon_existing" value="<?php //echo $c->upload_file_signon; ?>"> -->
                     </div>
                     <div id="fileUploadStatus">Belum ada file yang diunggah.</div>
 
@@ -132,9 +129,6 @@
           <?php }elseif ($cek_periode > "0") {
             # code... ?>
              <?php 
-            // echo validation_errors(); 
-            // echo $this->session->flashdata('success');
-            // echo $this->session->flashdata('error');
             foreach($mhs_detail as $c){ 
               ?>
              
@@ -144,39 +138,6 @@
                     <h4><i class="icon fa fa-ban"></i> Alert!</h4>
                     Silakan Mengisi Form Pendaftaran Tes Kompetensi Bahasa Inggris Di Portal
                 </div>
-            <!-- end peringatan jika belum daftar  -->
-             <!--  <form action="<?php //echo base_url() ?>mahasiswa/tkbip" name="form1" id="form1" method="post" enctype="multipart/form-data">
-                <input type="hidden" name="id_kelas" id="id_kelas" value="<?php //echo $id_kelas; ?>">
-                <input type="hidden" name="nim" id="nim" value="<?php //echo $c->nim; ?>">
-                 <div class="form-group">
-                   <div class="form-group">
-                        <label for="editnamakapal">email (Pastikan email aktif):</label>
-                        <input type="email" class="form-control" id="email" name="email">
-                    </div>
-                    <div class="form-group">
-                        <label for="editnamakapal">No Whatsapp : (Pastikan No. WA masih aktif)</label>
-                        <input type="number" class="form-control" id="no_wa" name="no_wa">
-                    </div>
-                     <div class="form-group">
-                        <label for="editstatonboard">Pilih Model Pembayaran:</label>
-                        <div class="form-check">
-                            <input type="radio" class="form-check-input" id="model_bayar" name="model_bayar" value="tf_btn">
-                            <label class="form-check-label" for="valstatonboard">Transfer BTN</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="radio" class="form-check-input" id="model_bayar" name="model_bayar" value="qris">
-                            <label class="form-check-label" for="valstatonboard">QRIS</label>
-                        </div>
-                    </div>
-                  </div>
-
-                <button type="submit" class="btn btn-primary">Simpan</button>
-                </form> -->
-                
-                 <!-- .cek status laporan -->
-
-
-
          <?php } ?>
           
                 <?php }else{ ?>
