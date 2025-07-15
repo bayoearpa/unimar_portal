@@ -5,7 +5,8 @@ $(document).ready(function() {
         e.preventDefault(); // Hindari reload
 
         var formData = new FormData($('#buktiBayarForm')[0]);
-        var nim = $('[name="nim"]').val(); // lebih aman daripada $('#nim').val()
+        var nim = $('#nim').val(); // simpan nilai nim sebelum AJAX
+        // var nim = $('[name="nim"]').val(); // lebih aman daripada $('#nim').val()
 
         if (!nim) {
             alert('NIM tidak ditemukan.');
