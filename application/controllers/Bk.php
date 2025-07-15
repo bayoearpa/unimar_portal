@@ -1623,6 +1623,14 @@ class bk extends CI_Controller {
 				$data['nama'] = $key->nama;
 				$data['prodi'] = $key->prodi;
 			}
+			$wheren = array(
+			'nim' => $id
+				);
+				$get_detail2 = $this->m_mahasiswa->get_data($wheren,'diklat_tkbi_peserta')->result();
+				foreach ($get_detail2 as $key) {
+					# code...
+					$id_tkbi = $key->id_tkbi;
+				}
 			$wherec = array(
 			'id_tkbi' => $id_tkbi
 				);
