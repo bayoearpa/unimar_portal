@@ -56,6 +56,8 @@ class Administrasi extends CI_Controller {
 						redirect(base_url().'lpm/');
 					}elseif ($d->level=='7'){
 						redirect(base_url().'hrd/');
+					}elseif ($d->level=='69'){
+						redirect(base_url().'superadmin/');
 					}
 			}else{
 				redirect(base_url().'administrasi?pesan=gagal');			

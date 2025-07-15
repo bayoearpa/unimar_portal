@@ -9,6 +9,9 @@ class Lpm extends CI_Controller {
 		//Do your magic here
 		if($this->session->userdata('status') != "login"){
 			redirect(base_url().'administrasi?pesan=belumlogin');
+		}elseif ($this->session->userdata('level') != "6") {
+			# code...
+			redirect(base_url().'administrasi?pesan=salahkamar');
 		}
 		$this->load->model('m_kues');
 		$this->load->library('m_pdf');
