@@ -5,8 +5,12 @@ $(document).ready(function() {
         e.preventDefault(); // Hindari reload
 
         var formData = new FormData($('#buktiBayarForm')[0]);
-        var nim = $('#nim').val(); // simpan nilai nim sebelum AJAX
+        var nim = $('[name="nim"]').val(); // lebih aman daripada $('#nim').val()
 
+        if (!nim) {
+            alert('NIM tidak ditemukan.');
+            return;
+        }
         $.ajax({
             url: '<?php echo base_url('bk/tkbip_bayar'); ?>',
             type: 'POST',
