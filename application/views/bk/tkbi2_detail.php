@@ -59,10 +59,10 @@
                       <button class="btn btn-success view-file-button" data-filename="<?php echo $bukti_bayar; ?>">Lihat Bukti Bayar</button>
                       <form id="buktiBayarForm" method="post" enctype="multipart/form-data">
                     <div class="form-group">
-                        <input type="hidden" name="id_tkbix" id="id_tkbix" value="<?php echo $id_tkbix; ?>">
-                        <input type="hidden" name="nim" id="nim" value="<?php echo $nim_kirim; ?>">
-                         <input type="hidden" name="model_bayar" id="model_bayar" value="<?php echo $model_bayar; ?>">
-                        <input type="hidden" name="status_bayar" id="status_bayar" value="sudah">
+                        <input type="text" name="id_tkbix" id="id_tkbix" value="<?php echo $id_tkbix; ?>">
+                        <input type="text" name="nim" id="nim" value="<?php echo $nim_kirim; ?>">
+                         <input type="text" name="model_bayar" id="model_bayar" value="<?php echo $model_bayar; ?>">
+                        <input type="text" name="status_bayar" id="status_bayar" value="sudah">
                     </div>
 
                     <button type="button" class="btn btn-primary" id="saveBuktiBayar">Bayar</button>
