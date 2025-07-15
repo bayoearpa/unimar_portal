@@ -24,7 +24,7 @@ $(document).ready(function() {
             success: function (response) {
                 if (response.trim() === 'sukses') {
                     alert('Berhasil menambahkan data baru.');
-                    window.open('<?php echo base_url("bk/tkbi2_cari2_cetak/"); ?>' + nim, '_blank');
+                    window.open('<?php echo base_url("bk/tkbi_cetak/"); ?>' + nim, '_blank');
                     window.location.href = '<?php echo base_url("bk/tkbi2_cari2/"); ?>' + nim;
                 } else {
                     alert('Gagal menambahkan data baru: ' + response);
