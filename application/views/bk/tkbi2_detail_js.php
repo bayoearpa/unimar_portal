@@ -4,8 +4,8 @@ $(document).ready(function() {
     $('#saveBuktiBayar').click(function(e) {
         e.preventDefault(); // Hindari reload
 
-        var formData = new FormData($('#buktiBayarForm')[0]);
         var nim = $('#nim').val(); // simpan nilai nim sebelum AJAX
+        var formData = new FormData($('#buktiBayarForm')[0]);
         // var nim = $('[name="nim"]').val(); // lebih aman daripada $('#nim').val()
 
         if (!nim) {
