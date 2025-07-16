@@ -29,7 +29,7 @@
         $('#periode_kelas').val(parsedData.periode_kelas);
          if (parsedData.status === 'sudah') {
                 $('input[name="status"][value="sudah"]').prop('checked', true);
-            } else if (parsedData.status_d3 === 'belum') {
+            } else if (parsedData.status === 'belum') {
                 $('input[name="status"][value="belum"]').prop('checked', true);
             }
         $('#waktu_pelaksanaan').val(parsedData.waktu_pelaksanaan);
