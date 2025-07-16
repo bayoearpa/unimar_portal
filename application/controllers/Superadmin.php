@@ -87,6 +87,29 @@ class Superadmin extends CI_Controller {
     	$this->load->view('superadmin/header');
 		$this->load->view('superadmin/export_kelas',$data);
 		$this->load->view('superadmin/footer');
+		$this->load->view('superadmin/export_kelas_js');
+    }
+    public function preview_export()
+    {
+        // Ambil data dari request POST
+        $kelas = $this->input->post('kelas');
+        // $gelombang = $this->input->post('gelombang');
+
+        // $data['koperasi'] = $this; // Jika diperlukan di dalam view
+
+
+         $where = array(
+                'id_tkbi_kelas' => $kelas,
+            );
+
+            // Siapkan data untuk view
+            $data['frm_kelas'] = $kelas;
+
+        // Ambil data dari model
+        $data['results'] = $this->m_portal->get_data_join_tkbi($where);
+
+        // Load the view with the data, returning the HTML string (no headers or footers)
+        $this->load->view('superadmin/preview_export', $data);
     }
 	///////////////////////////////////////////////////// ./SET KELAS ////////////////////////////////////////////
 
