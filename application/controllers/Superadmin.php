@@ -33,8 +33,21 @@ class Superadmin extends CI_Controller {
         // Konversi data ke format JSON dan kirimkan ke view
         echo json_encode($data);
 	}
+	public function cekstatus_tkbi_periode($status)
+	{
+		# code...
+		$where = array(
+				'status' => $status,
+			);
+		$data = $this->m_portal->get_data($where, 'diklat_tkbi_kelas')->num_rows();
+
+		return $data;
+	}
 	public function set_kelas()
 	{
+		$status = "belum";
+		//cek periode kelas
+		$data['cek_periode'] = $this->cekstatus_tkbi_periode($status);
 		$data['kelas'] = $this->m_portal->get_data_all('diklat_tkbi_kelas')->result();
 		$this->load->view('superadmin/header');
 		$this->load->view('superadmin/set_kelas',$data);
