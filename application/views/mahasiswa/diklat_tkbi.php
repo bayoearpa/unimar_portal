@@ -82,7 +82,7 @@
                         Pengisian anda Berhasil!, Lakukan Pembayaran agar nama anda terdaftar mengikuti English Achievement
                     </div>
                     <!-- end peringatan jika sudah pernah Mendaftar dan harus membayar  -->
-                     <p align="center">Untuk Pembayaran dapat di Transfer ke Bank BTN dengan nomor rekening <b>0838810730 an. UNIMAR AMNI</b> biaya yang harus anda bayar sebesar:</p>
+                     <p align="center">Untuk Pembayaran dapat di Transfer ke Bank BNI dengan nomor rekening <b>0838810730 an. UNIMAR AMNI</b> biaya yang harus anda bayar sebesar:</p>
                     <h2 align="center">Rp. 295.000,-</h2>
                     <form id="buktiBayarForm" method="post" enctype="multipart/form-data">
                     <div class="form-group">
