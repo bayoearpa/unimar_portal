@@ -70,7 +70,7 @@
                     <input type="hidden" id="id_tkbi_kelas" name="id_tkbi_kelas">
                     <div class="form-group">
                         <label for="editNama">Periode Kelas:</label>
-                        <input type="text" class="form-control" id="periode_kelas" name="periode_kelas" readonly="">
+                        <input type="text" class="form-control" id="periode_kelas" name="periode_kelas">
                     </div>
                      <div class="form-group">
                         <label for="editstatpra">Status Kelas:</label>
