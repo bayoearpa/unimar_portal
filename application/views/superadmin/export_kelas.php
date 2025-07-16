@@ -18,7 +18,7 @@
                     <?php foreach ($kelas as $key) {
                         # code...
                     ?>
-                    <option value="<?php echo $key->id_tpkl_kelas ?>"><?php echo $key->periode_kelas ?></option>
+                    <option value="<?php echo $key->id_tkbi_kelas ?>"><?php echo $key->periode_kelas ?></option>
                     <?php } ?>     
                     </select> 
                     </div>
