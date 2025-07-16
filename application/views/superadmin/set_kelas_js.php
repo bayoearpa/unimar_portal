@@ -73,5 +73,49 @@
     });
 
 
+
+ // Saat tombol 'Tambah Kelas' ditekan, buka modal
+    $('.add-button').click(function () {
+        $('#insertModal').modal('show');
+        $('#insertForm')[0].reset(); // Reset form jika sebelumnya pernah dipakai
+    });
+
+    // Saat tombol 'Simpan' ditekan
+    $('#saveData').click(function () {
+        var formData = {
+            iperiode_kelas: $('#iperiode_kelas').val(),
+            istatus: $('input[name="istatus"]:checked').val(),
+            iwaktu_pelaksanaan: $('#iwaktu_pelaksanaan').val()
+        };
+
+        // Validasi sederhana
+        if (!formData.iperiode_kelas || !formData.istatus || !formData.iwaktu_pelaksanaan) {
+            alert("Semua field harus diisi!");
+            return;
+        }
+
+        $.ajax({
+            url: '<?php echo base_url("kelas/insert_kelas"); ?>', // Ganti dengan URL controller kamu
+            type: 'POST',
+            data: formData,
+            dataType: 'json',
+            success: function (res) {
+                if (res.status === 'success') {
+                    alert('Data berhasil disimpan!');
+                    $('#insertModal').modal('hide');
+                    $('#insertForm')[0].reset();
+                    // Reload table atau halaman jika perlu
+                    location.reload();
+                } else {
+                    alert('Gagal menyimpan data: ' + res.message);
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error(xhr.responseText);
+                alert('Terjadi kesalahan saat mengirim data: ' + error);
+            }
+        });
+    });
+
     });
     </script>
