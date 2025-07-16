@@ -2148,6 +2148,22 @@ function get_data_formon_mhs($id)
         return $this->db->where('id', $id)->update('tbl_notifikasi', ['status_notif' => 'sudah']);
     }
     ///////////////////////////////////// ./notifikasi 2025 ////////////////////////////////////////////////
+    ////////////////////////////////////  tkbi2025         /////////////////////////////////////////////////
+	function get_data_tkbi_kelas($id)
+    {
+        // Gantilah 'nama_tabel' dengan nama tabel yang sesuai dalam database Anda
+	    $this->db->select('id_tkbi_kelas,periode_kelas,status,waktu_pelaksanaan');
+	    $this->db->from('diklat_tkbi_kelas');
+        $this->db->where('id_tkbi_kelas', $id);
+        $query = $this->db->get();
+
+        if ($query->num_rows() > 0) {
+            return $query->row();
+        } else {
+            return null;
+        }
+    }
+	////////////////////////////////////  .tkbi2025         /////////////////////////////////////////////////
 		
 }
 /* End of file M_portal.php */

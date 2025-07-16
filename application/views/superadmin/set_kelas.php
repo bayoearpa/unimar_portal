@@ -67,50 +67,25 @@
             <div class="modal-body">
                 <!-- Form Edit Data -->
                 <form id="editForm">
-                    <input type="hidden" id="editidmon" name="id_mon">
-                    <input type="hidden" id="editNim" name="nim">
+                    <input type="hidden" id="id_tkbi_kelas" name="id_tkbi_kelas">
                     <div class="form-group">
-                        <label for="editNama">Nama:</label>
-                        <input type="text" class="form-control" id="editNama" name="nama" readonly="">
-                    </div>
-                    <div class="form-group">
-                        <label for="editTmptLahir">Tempat Lahir:</label>
-                        <input type="text" class="form-control" id="editTmptLahir" name="tl" readonly="">
-                    </div>
-                    <div class="form-group">
-                        <label for="editTglLahir">Tanggal Lahir:</label>
-                        <input type="text" class="form-control" id="editTglLahir" name="tgll" readonly="">
-                    </div>
-                    <div class="form-group">
-                        <label for="editAlamat">Alamat:</label>
-                        <textarea class="form-control" rows="3" id="editAlamat" name="alamat" readonly=""></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="editjnsklmn">Jenis Kelamin:</label>
-                        <input type="text" class="form-control" id="editjnsklmn" name="jk" readonly="">
+                        <label for="editNama">Periode Kelas:</label>
+                        <input type="text" class="form-control" id="periode_kelas" name="periode_kelas" readonly="">
                     </div>
                      <div class="form-group">
-                        <label for="edittgllls">Tanggal Lulus:</label>
-                        <input type="date" class="form-control" id="edittgllls" name="etgllls">
-                    </div>
-                     <div class="form-group">
-                        <label for="editnoijs">Nomor Ijasah:</label>
-                        <input type="text" class="form-control" id="editnoijs" name="enj" readonly="">
-                    </div>
-                     <div class="form-group">
-                        <label for="editstatpra">Status Lulus D3:</label>
+                        <label for="editstatpra">Status Kelas:</label>
                         <div class="form-check">
-                            <input type="radio" class="form-check-input" id="editstatd3" name="estatd3" value="sudah">
+                            <input type="radio" class="form-check-input" id="status" name="status" value="sudah">
                             <label class="form-check-label" for="editstatd3">Sudah</label>
                         </div>
                         <div class="form-check">
-                            <input type="radio" class="form-check-input" id="editstatd3" name="estatd3" value="belum">
+                            <input type="radio" class="form-check-input" id="status" name="status" value="belum">
                             <label class="form-check-label" for="editstatd3">Belum</label>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="editKetD3">Keterangan:</label>
-                        <textarea class="form-control" rows="3" id="editKetD3" name="ket_d3"></textarea>
+                     <div class="form-group">
+                        <label for="edittgllls">Waktu Pelaksanaan:</label>
+                        <input type="date" class="form-control" id="waktu_pelaksanaan" name="waktu_pelaksanaan">
                     </div>
                     <!-- Tambahkan input lain sesuai kebutuhan -->
                 </form>
