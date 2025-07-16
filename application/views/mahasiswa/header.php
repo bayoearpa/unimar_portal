@@ -187,6 +187,7 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MENU UTAMA</li>
         <li><a href="<?php echo base_url() ?>mahasiswa/home"><i class="fa fa-home"></i><span>Home</span></a></li>
+        <li><a href="<?php echo base_url() ?>mahasiswa/tkbi"><i class="fa fa-home"></i><span>English Achievement</span></a></li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-share"></i> <span>Kliring(soon)</span>
