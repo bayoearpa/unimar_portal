@@ -26,7 +26,7 @@ class Superadmin extends CI_Controller {
 	///////////////////////////////////////////////////// SET KELAS ////////////////////////////////////////////
 	public function set_kelas()
 	{
-		$data['kelas'] = $this->m_portal->get_data_all('diklat_tkbi_kelas');
+		$data['kelas'] = $this->m_portal->get_data_all('diklat_tkbi_kelas')->result();
 		$this->load->view('superadmin/header');
 		$this->load->view('superadmin/set_kelas',$data);
 		$this->load->view('superadmin/footer');
