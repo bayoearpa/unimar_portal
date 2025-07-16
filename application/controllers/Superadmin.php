@@ -57,7 +57,7 @@ class Superadmin extends CI_Controller {
 			$data = array(
                 'periode_kelas' => $periode_kelas,
                 'status' => $status,
-                'waktu_pelaksanaan' => $waktu_pelaksanaan,
+                'waktu_pelaksanaan' => date('Y-m-d', strtotime($waktu_pelaksanaan)),
             );
 			$proses = $this->m_portal->update_data2($where,$data,'diklat_tkbi_kelas');
 			if ($proses) {
