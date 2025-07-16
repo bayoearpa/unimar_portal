@@ -99,7 +99,8 @@ class Superadmin extends CI_Controller {
 
 
          $where = array(
-                'id_tkbi_kelas' => $kelas,
+                'diklat_tkbi_peserta.id_tkbi_kelas' => $kelas,
+                'diklat_tkbi_pembayaran.status_bayar' => 'sudah',
             );
 
             // Siapkan data untuk view
