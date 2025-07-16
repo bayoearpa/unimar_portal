@@ -69,7 +69,7 @@
                 </button>
             </div>
             <div class="modal-body">
-              <?php ($cek_periode > "0") { ?>
+              <?php if ($cek_periode > "0") { ?>
                  <!-- peringatan jika periode belum dibuka  -->
                 <div class="alert alert-danger alert-dismissible">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
