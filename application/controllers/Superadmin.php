@@ -41,6 +41,32 @@ class Superadmin extends CI_Controller {
 		$this->load->view('superadmin/footer');
 		$this->load->view('superadmin/set_kelas_js');
 	}
+	 public function set_kelas_edit()
+	{
+		# code...
+		$id_tkbi_kelas = $this->input->post('id_tkbi_kelas');
+		$periode_kelas = $this->input->post('periode_kelas');
+		$status = $this->input->post('status');
+        $waktu_pelaksanaan = $this->input->post('waktu_pelaksanaan');
+
+        //get pembayaran detail
+		
+        	$where = array(
+				'id_tkbi_kelas' => $id_tkbi_kelas
+			);
+			$data = array(
+                'periode_kelas' => $periode_kelas,
+                'status' => $status,
+                'waktu_pelaksanaan' => $waktu_pelaksanaan,
+            );
+			$proses = $this->m_portal->update_data2($where,$data,'diklat_tkbi_kelas');
+			if ($proses) {
+	            echo 'sukses';
+	        } else {
+	            echo 'gagal edit data';
+	        }
+      
+    }
 	///////////////////////////////////////////////////// ./SET KELAS ////////////////////////////////////////////
 
 }

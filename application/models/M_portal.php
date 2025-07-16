@@ -16,6 +16,13 @@ class M_portal extends CI_Model {
 		$this->db->where($where);
 		$this->db->update($table,$data);
 	}
+	function input_data2($data,$table){
+		return $this->db->insert($table,$data);
+	}
+	function update_data2($where,$data,$table){
+		$this->db->where($where);
+		return $this->db->update($table,$data);
+	}
 	function get_data_join_where($where){
 		$this->db->select('tbl_kliring_ujianktsk.id_uks,
 tbl_kliring_ujianktsk.nim,
