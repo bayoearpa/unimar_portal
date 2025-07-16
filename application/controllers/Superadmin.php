@@ -107,7 +107,7 @@ class Superadmin extends CI_Controller {
             $data['frm_kelas'] = $kelas;
 
         // Ambil data dari model
-        $data['results'] = $this->m_portal->get_data_join_tkbi($where)->results();
+        $data['results'] = $this->m_portal->get_data_join_tkbi($where)->result();
 
         // Load the view with the data, returning the HTML string (no headers or footers)
         $this->load->view('superadmin/preview_export', $data);
