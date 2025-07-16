@@ -80,6 +80,14 @@ class Superadmin extends CI_Controller {
 	        }
       
     }
+    public function export_kelas()
+    {
+    	# code...
+    	$data['kelas'] = $this->m_portal->get_data_all('diklat_tkbi_kelas')->result();
+    	$this->load->view('superadmin/header');
+		$this->load->view('superadmin/export_kelas',$data);
+		$this->load->view('superadmin/footer');
+    }
 	///////////////////////////////////////////////////// ./SET KELAS ////////////////////////////////////////////
 
 }

@@ -196,6 +196,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url() ?>superadmin/set_kelas"><i class="fa fa-circle-o"></i>Set Kelas</a></li>
+            <li><a href="<?php echo base_url() ?>superadmin/export_kelas"><i class="fa fa-circle-o"></i>Export Kelas</a></li>
                <!--  <li class="treeview">
                   <a href="#"><i class="fa fa-circle-o"></i> Ujian KT / Proposal / Skripsi
                     <span class="pull-right-container">
