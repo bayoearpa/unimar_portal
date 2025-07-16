@@ -2193,7 +2193,7 @@ function get_data_formon_mhs($id)
 			tmst_mahasiswa.Nama_mahasiswa as nama_mhs');
 				$this->db->from('diklat_tkbi_peserta');
 				$this->db->join('diklat_tkbi_kelas','diklat_tkbi_kelas.id_tkbi_kelas = diklat_tkbi_peserta.id_tkbi_kelas','inner');
-				$this->db->join('diklat_tkbi_pembayaran','diklat_tkbi_pembayaran.id_tpkl =  diklat_tkbi_peserta.id_tpkl','inner');
+				$this->db->join('diklat_tkbi_pembayaran','diklat_tkbi_pembayaran.id_tkbi =  diklat_tkbi_peserta.id_tkbi','inner');
 				$this->db->join('tmst_mahasiswa','tmst_mahasiswa.NIM = diklat_tkbi_peserta.nim','inner');
 				$this->db->where($where);
 				//$this->db->order_by('tbl_catar_validasi.no_reg', "asc");
