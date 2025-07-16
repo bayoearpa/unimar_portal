@@ -8,7 +8,10 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-               <button class="btn btn-primary add-button">Tambah Kelas</button>
+              <div class="form-group">
+                <button class="btn btn-primary add-button">Tambah Kelas</button>
+              </div>
+               
               <table id="example31082023" class="table table-bordered table-striped">
                 <thead>
                 <tr>
