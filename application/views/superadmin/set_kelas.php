@@ -69,15 +69,7 @@
                 </button>
             </div>
             <div class="modal-body">
-              <?php if ($cek_periode > "0") { ?>
-                 <!-- peringatan jika periode belum dibuka  -->
-                <div class="alert alert-danger alert-dismissible">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                    <h4><i class="icon fa fa-ban"></i> Alert!</h4>
-                    Periode Pendafataran English Achievement belum dibuka
-                </div>
-                <!-- end peringatan jika periode belum dibuka  -->
-                <?php }else{ ?>
+
                 <!-- Form Edit Data -->
                 <form id="editForm">
                     <input type="hidden" id="id_tkbi_kelas" name="id_tkbi_kelas">
@@ -102,8 +94,6 @@
                     </div>
                     <!-- Tambahkan input lain sesuai kebutuhan -->
                 </form>
-                <button type="button" class="btn btn-primary" id="saveEdit">Simpan</button>
-                <?php } ?>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
@@ -125,6 +115,15 @@
                 </button>
             </div>
             <div class="modal-body">
+              <?php if ($cek_periode > "0") { ?>
+                 <!-- peringatan jika periode belum dibuka  -->
+                <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h4><i class="icon fa fa-ban"></i> Alert!</h4>
+                    Periode Pendafataran English Achievement belum dibuka
+                </div>
+                <!-- end peringatan jika periode belum dibuka  -->
+                <?php }else{ ?>
                 <!-- Form Edit Data -->
                 <form id="insertForm">
                     <div class="form-group">
@@ -148,10 +147,12 @@
                     </div>
                     <!-- Tambahkan input lain sesuai kebutuhan -->
                 </form>
+                <button type="button" class="btn btn-primary" id="saveData">Simpan</button>
+                <?php  ?>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                <button type="button" class="btn btn-primary" id="saveData">Simpan</button>
+                
             </div>
         </div>
     </div>
