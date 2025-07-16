@@ -2171,8 +2171,8 @@ function get_data_formon_mhs($id)
         }
     }
     function get_data_join_tkbi($where){
-		$this->db->select('diklat_tkbi_peserta.id_tpkl,
-			diklat_tkbi_peserta.id_tpkl_kelas,
+		$this->db->select('diklat_tkbi_peserta.id_tkbi,
+			diklat_tkbi_peserta.id_tkbi_kelas,
 			diklat_tkbi_peserta.nim as nim,
 			diklat_tkbi_peserta.email as email,
 			diklat_tkbi_peserta.kode_akses as kode_akses,
@@ -2192,7 +2192,7 @@ function get_data_formon_mhs($id)
 			diklat_tkbi_pembayaran.status_bayar,
 			tmst_mahasiswa.Nama_mahasiswa as nama_mhs');
 				$this->db->from('diklat_tkbi_peserta');
-				$this->db->join('diklat_tkbi_kelas','diklat_tkbi_kelas.id_tpkl_kelas = diklat_tkbi_peserta.id_tpkl_kelas','inner');
+				$this->db->join('diklat_tkbi_kelas','diklat_tkbi_kelas.id_tkbi_kelas = diklat_tkbi_peserta.id_tkbi_kelas','inner');
 				$this->db->join('diklat_tkbi_pembayaran','diklat_tkbi_pembayaran.id_tpkl =  diklat_tkbi_peserta.id_tpkl','inner');
 				$this->db->join('tmst_mahasiswa','tmst_mahasiswa.NIM = diklat_tkbi_peserta.nim','inner');
 				$this->db->where($where);
