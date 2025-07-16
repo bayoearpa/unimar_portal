@@ -2180,7 +2180,7 @@ function get_data_formon_mhs($id)
 			diklat_tkbi_peserta.waktu_daftar,
 			diklat_tkbi_peserta.model_bayar,
 			diklat_tkbi_peserta.status_ujian,
-			diklat_tkbi_kelas.id_tpkl_kelas,
+			diklat_tkbi_kelas.id_tkbi_kelas,
 			diklat_tkbi_kelas.periode_kelas,
 			diklat_tkbi_kelas.status,
 			diklat_tkbi_kelas.waktu_pelaksanaan,
