@@ -119,26 +119,12 @@ class Superadmin extends CI_Controller {
         // Fetch data from the database
         $kelas = $this->input->post('kelas');
 
-        if ($jalur == "reguler") {
-        	# code...
-        	$where= array(
-            'tbl_catar_2025.jalur' => $jalur,
-            'tbl_catar_2025.prodi' => $prodi,
-            // 'tbl_catar_2025.gelombang' => $gelombang, 
-	        );
-
-	       $data['results'] = $this->m_registrasi->get_data_rekap_ukurpakaian($where);
-        }else{
-        	$where= array(
-            'tbl_catar_2025.jalur' => $jalur,
-            'tbl_catar_2025.prodi' => $prodi,
-	        );
-
-	       $data['results'] = $this->m_registrasi->get_data_rekap_ukurpakaian($where);
-        }
-
-
-        
+        $where = array(
+                'diklat_tkbi_peserta.id_tkbi_kelas' => $kelas,
+                'diklat_tkbi_pembayaran.status_bayar' => 'sudah',
+            );
+         // Ambil data dari model
+        $data['results'] = $this->m_portal->get_data_join_tkbi($where);
 
         // Load PHPExcel
         // Load plugin PHPExcel nya
