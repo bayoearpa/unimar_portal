@@ -112,7 +112,7 @@ class Superadmin extends CI_Controller {
         // Load the view with the data, returning the HTML string (no headers or footers)
         $this->load->view('superadmin/preview_export', $data);
     }
-    public function cetak_excel()
+    public function export_proses()
 	{
 		# code...
 		// Load necessary models and libraries here
