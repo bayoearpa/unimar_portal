@@ -173,7 +173,7 @@ class Superadmin extends CI_Controller {
             $objPHPExcel->getActiveSheet()->setCellValue('c' . $row, $result->nm_prodi);
             $objPHPExcel->getActiveSheet()->setCellValue('D' . $row, $result->email);
             $objPHPExcel->getActiveSheet()->setCellValue('E' . $row, $result->kode_akses);
-            $objPHPExcel->getActiveSheet()->setCellValue('F' . $row, '';
+            $objPHPExcel->getActiveSheet()->setCellValue('F' . $row, '');
             $objPHPExcel->getActiveSheet()->setCellValue('G' . $row, $result->no_wa);
 
 
