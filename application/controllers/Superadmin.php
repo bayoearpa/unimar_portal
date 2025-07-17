@@ -124,7 +124,7 @@ class Superadmin extends CI_Controller {
                 'diklat_tkbi_pembayaran.status_bayar' => 'sudah',
             );
          // Ambil data dari model
-        $data['results'] = $this->m_portal->get_data_join_tkbi($where)->row();
+        $data['results'] = $this->m_portal->get_data_join_tkbi($where)->result();
 
         // Load PHPExcel
         // Load plugin PHPExcel nya
