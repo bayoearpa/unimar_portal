@@ -2190,11 +2190,13 @@ function get_data_formon_mhs($id)
 			diklat_tkbi_pembayaran.bukti_bayar,
 			diklat_tkbi_pembayaran.waktu_bayar,
 			diklat_tkbi_pembayaran.status_bayar,
-			tmst_mahasiswa.Nama_mahasiswa as nama_mhs');
+			tmst_mahasiswa.Nama_mahasiswa as nama_mhs,
+			tmst_program_studi.Nama_program_studi as nm_prodi');
 				$this->db->from('diklat_tkbi_peserta');
 				$this->db->join('diklat_tkbi_kelas','diklat_tkbi_kelas.id_tkbi_kelas = diklat_tkbi_peserta.id_tkbi_kelas','inner');
 				$this->db->join('diklat_tkbi_pembayaran','diklat_tkbi_pembayaran.id_tkbi =  diklat_tkbi_peserta.id_tkbi','inner');
 				$this->db->join('tmst_mahasiswa','tmst_mahasiswa.NIM = diklat_tkbi_peserta.nim','inner');
+				$this->db->join('tmst_program_studi','tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi','inner');
 				$this->db->where($where);
 				//$this->db->order_by('tbl_catar_validasi.no_reg', "asc");
 				$query=$this->db->get();

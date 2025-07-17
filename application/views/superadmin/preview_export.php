@@ -1,5 +1,5 @@
 
-<form method="post" action="<?php echo base_url() ?>koperasi/cetak_excel">
+<form method="post" action="<?php echo base_url() ?>superadmin/export_proses">
     <input type="hidden" name="kelas" value="<?php echo isset($frm_kelas) ? $frm_kelas : ''; ?>">
     
     <button type="submit" class="btn btn-primary btn-sm" style="width:30%;">

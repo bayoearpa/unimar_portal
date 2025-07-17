@@ -112,6 +112,98 @@ class Superadmin extends CI_Controller {
         // Load the view with the data, returning the HTML string (no headers or footers)
         $this->load->view('superadmin/preview_export', $data);
     }
+    public function cetak_excel()
+	{
+		# code...
+		// Load necessary models and libraries here
+        // Fetch data from the database
+        $kelas = $this->input->post('kelas');
+
+        if ($jalur == "reguler") {
+        	# code...
+        	$where= array(
+            'tbl_catar_2025.jalur' => $jalur,
+            'tbl_catar_2025.prodi' => $prodi,
+            // 'tbl_catar_2025.gelombang' => $gelombang, 
+	        );
+
+	       $data['results'] = $this->m_registrasi->get_data_rekap_ukurpakaian($where);
+        }else{
+        	$where= array(
+            'tbl_catar_2025.jalur' => $jalur,
+            'tbl_catar_2025.prodi' => $prodi,
+	        );
+
+	       $data['results'] = $this->m_registrasi->get_data_rekap_ukurpakaian($where);
+        }
+
+
+        
+
+        // Load PHPExcel
+        // Load plugin PHPExcel nya
+	    ob_start();
+	    include APPPATH.'third_party/PHPExcel/PHPExcel.php';
+        $this->load->library('PHPExcel');
+        
+        // Create a new PHPExcel object
+        $objPHPExcel = new PHPExcel();
+
+        // Set document properties
+        $objPHPExcel->getProperties()->setCreator("UNIMAR AMNI SEMARANG")
+                                     ->setLastModifiedBy("UNIMAR AMNI SEMARANG")
+                                     ->setTitle("Peserta English Achievement")
+                                     ->setSubject("Peserta English Achievement")
+                                     ->setDescription("Peserta English Achievement");
+
+        // Add a worksheet
+        $objPHPExcel->setActiveSheetIndex(0);
+        $objPHPExcel->getActiveSheet()->setTitle('Peserta English Achievement');
+
+        // Set headers
+        // $objPHPExcel->getActiveSheet()->setCellValue('A1', 'PESERTA TES KOMPETENSI');
+        // $objPHPExcel->getActiveSheet()->getStyle('A1')->getFont()->setBold(true);
+
+        // $objPHPExcel->getActiveSheet()->setCellValue('A2', 'UNIMAR AMNI SEMARANG');
+        // $objPHPExcel->getActiveSheet()->getStyle('A2')->getFont()->setBold(true);
+
+
+
+        // Fetch Prodi from tbl_catar_2024
+
+        $objPHPExcel->getActiveSheet()->setCellValue('A1', 'NOMOR PESERTA');
+        $objPHPExcel->getActiveSheet()->setCellValue('B1', 'NAMA LENGKAP PESERTA');
+        $objPHPExcel->getActiveSheet()->setCellValue('C1', 'KELOMPOK');
+        $objPHPExcel->getActiveSheet()->setCellValue('D1', 'EMAIL');
+        $objPHPExcel->getActiveSheet()->setCellValue('E1', 'KODE AKSES');
+        $objPHPExcel->getActiveSheet()->setCellValue('F1', 'TAGS');
+        $objPHPExcel->getActiveSheet()->setCellValue('G1', 'NO WA');
+
+        // Loop through the data and populate the worksheet
+        $row = 2;
+        foreach ($data['results'] as $result) {
+            $objPHPExcel->getActiveSheet()->setCellValue('A' . $row, $result->nim);
+            $objPHPExcel->getActiveSheet()->setCellValue('B' . $row, $result->nama_mhs);
+            $objPHPExcel->getActiveSheet()->setCellValue('c' . $row, $result->nm_prodi);
+            $objPHPExcel->getActiveSheet()->setCellValue('D' . $row, $result->email);
+            $objPHPExcel->getActiveSheet()->setCellValue('E' . $row, $result->kode_akses);
+            $objPHPExcel->getActiveSheet()->setCellValue('F' . '');
+            $objPHPExcel->getActiveSheet()->setCellValue('G' . $row, $result->no_wa);
+
+
+         
+
+            $row++;
+        }
+
+        // Save Excel file
+        $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
+        $filename = 'Peserta TKBI.xlsx';
+        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        header('Content-Disposition: attachment;filename="' . $filename . '"');
+        header('Cache-Control: max-age=0');
+        $objWriter->save('php://output');
+	}
 	///////////////////////////////////////////////////// ./SET KELAS ////////////////////////////////////////////
 
 }
