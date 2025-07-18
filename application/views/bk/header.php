@@ -141,7 +141,7 @@
 
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-       <!--   <li class="dropdown notifications-menu" id="notifWrapper">
+         <li class="dropdown notifications-menu" id="notifWrapper">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <i class="fa fa-bell-o"></i>
                   <span class="label label-warning" id="notifCount">0</span>
@@ -154,7 +154,7 @@
                   </li>
                   <li class="footer"><a href="#">Lihat semua</a></li>
               </ul>
-          </li> -->
+          </li>
 
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
