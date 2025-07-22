@@ -190,7 +190,7 @@
         <li><a href="<?php echo base_url() ?>mahasiswa/tkbi/<?php echo $this->session->userdata('user')?>"><i class="fa fa-home"></i><span>English Achievement</span></a></li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-share"></i> <span>Kliring(soon)</span>
+            <i class="fa fa-share"></i> <span>Kliring</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -201,7 +201,7 @@
             <li><a href="#"><i class="fa fa-circle-o"></i>Karya Tulis/Proposal/Skripsi</a></li>
            <!--  <li><a href="<?php //echo base_url() ?>baak/mon_sbprala"><i class="fa fa-circle-o"></i> SB Prala</a></li> -->
             <li><a href="#"><i class="fa fa-circle-o"></i>Semester Antara</a></li>
-            <!-- <li><a href="#"><i class="fa fa-circle-o"></i>Summary</a></li> -->
+            <li><a href="#"><i class="fa fa-circle-o"></i>PKL</a></li>
           </ul>
         </li>
         <?php if ($this->session->userdata('prodi') == "92403" || $this->session->userdata('prodi') == "92402" ) {

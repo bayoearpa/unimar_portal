@@ -81,7 +81,11 @@
               
     <select name="prodi2" id="prodi" class="form-control">
       <option value="-">---</option>
-   <option value="61201">Transportasi</option>
+      <option value="61201">Transportasi</option>
+      <option value="21207">Teknik Transportasi Laut</option>
+      <option value="21201">Teknik Mesin</option>
+      <option value="32204">Teknik Keselamatan</option>
+      <option value="94205">Perdagangan Internasional</option>
     </select>
     </p>
 </div>

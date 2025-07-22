@@ -909,7 +909,15 @@ class Mahasiswa extends CI_Controller {
         ///else eufsignon_existing == 0
        }
     
-	} 
+	}
+
+
+	////////////////////////////////////////// KLIRING SECTION ////////////////////////////////////////////
+
+	public function pkl($nim)
+	 {
+	 	# code...
+	 } 
 
 }
 
