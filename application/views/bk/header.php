@@ -288,6 +288,7 @@
                 </li>
               </ul>
         </li>
+         <li><a href="<?php echo base_url() ?>bk/tkbi"><i class="fa fa-home"></i><span>TKBI</span></a></li>
 
       </ul>
     </section>
