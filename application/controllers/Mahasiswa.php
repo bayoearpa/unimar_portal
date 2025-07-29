@@ -219,7 +219,7 @@ class Mahasiswa extends CI_Controller {
             //notifikasi
             
             $notifikasi = $get_nama." dengan NIM/NRP ".$get_nim." telah melakukan pembayaran English Achievement";
-            $link = "bau/tkbival/".$id_tkbi;
+            $link = "bau/tkbi2_cari2/".$id_tkbi;
             $bagian = "keuangan";
             $status = "belum";
 

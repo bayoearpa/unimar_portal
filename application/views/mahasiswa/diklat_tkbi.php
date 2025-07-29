@@ -134,10 +134,10 @@
                     </div>
                      <div class="form-group">
                         <label for="editstatonboard">Pilih Model Pembayaran:</label>
-                        <div class="form-check">
+                      <!--   <div class="form-check">
                             <input type="radio" class="form-check-input" id="model_bayar" name="model_bayar" value="tf_bni">
                             <label class="form-check-label" for="valstatonboard">Transfer BNI</label>
-                        </div>
+                        </div> -->
                         <div class="form-check">
                             <input type="radio" class="form-check-input" id="model_bayar" name="model_bayar" value="loket">
                             <label class="form-check-label" for="valstatonboard">Langsung di Loket</label>
