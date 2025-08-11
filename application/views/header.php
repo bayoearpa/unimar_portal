@@ -53,7 +53,7 @@
                 <li><a href="<?php echo base_url() ?>ujianakhir">Ujian Karya Tulis / Proposal / Skripsi</a></li>
                 <li><a href="<?php echo base_url() ?>uas">Ujian Akhir Semester (UAS)</a></li>
                 <li><a href="<?php echo base_url() ?>prada">Prada</a></li>
-                <!-- <li><a href="<?php //echo base_url() ?>semestera">Semester Antara</a></li> -->
+                <li><a href="<?php echo base_url() ?>semestera">Semester Antara</a></li>
                 <li><a href="<?php echo base_url() ?>pkl">PKL</a></li>
                 <li><a href="<?php echo base_url() ?>tpkl">Turun PKL</a></li>
               </ul>
