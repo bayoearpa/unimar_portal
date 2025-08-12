@@ -47,7 +47,7 @@
           <li>Hubungi pihak terkait agar kliring segera di <b>ACC</b>, untuk nomor yang dapat dihibungi :
               <ul>>IT (082220220573 (Bayu)) catatan : hubungi jika terjadi masalah pada sistem</ul>
               <!-- <ul>>Mahatar (081312606684 (Pak Iwan Samsul))</ul> -->
-              <ul>>Keuangan (082241613131 (Aisah))</ul>
+              <ul>>Keuangan (085117450180 (BAUK UNIMAR AMNI))</ul>
               <ul>>BAAK 085876516196 (Rima)</ul>
               <ul>>Prodi (menghubungi prodi masing-masing)</ul>
           </li>
