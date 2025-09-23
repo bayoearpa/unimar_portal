@@ -61,6 +61,7 @@ class M_kues extends CI_Model {
 	function get_data_mhslem_count_responden($where){
 		$this->db->select('Count(distinct(tbl_kues_mhslem.nim)) as jml_mhs');
 		$this->db->from('tbl_kues_mhslem');
+		$this->db->join('tmst_mata_kuliah','tbl_kues_mhslem.nim = tmst_mahasiswa.NIM','inner');
 		$this->db->where($where);
 		//$this->db->order_by('tbl_catar_validasi.no_reg', "asc");
 		$query=$this->db->get();
@@ -93,6 +94,7 @@ class M_kues extends CI_Model {
 	function get_data_mhslem_count_item($where,$item){
 		$this->db->select('Count('.$item.') as jml_item');
 		$this->db->from('tbl_kues_mhslem');
+		$this->db->join('tmst_mahasiswa','tbl_kues_mhslem.nim = tmst_mahasiswa.NIM','inner');
 		$this->db->where($where);
 		//$this->db->order_by('tbl_catar_validasi.no_reg', "asc");
 		$query=$this->db->get();
