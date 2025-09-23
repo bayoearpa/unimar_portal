@@ -446,7 +446,7 @@ class Lpm extends CI_Controller {
 		$prodi = $this->input->post('prodi');
 		$ta = $this->input->post('ta');
 		$where = array(
-			'tbl_kues_mhsdsn.prodi' => $prodi,
+			'tmst_mahasiswa.Kode_program_studi' => $prodi,
 			'tbl_kues_mhsdsn.ta' => $ta,		
 		);
 		$data['select_dosen'] = $this->m_kues->get_data_distinct_dosen($where)->result();

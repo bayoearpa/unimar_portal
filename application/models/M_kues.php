@@ -25,9 +25,11 @@ class M_kues extends CI_Model {
 		$this->db->select('tbl_kues_mhsdsn.kd_dosen as kddosen,
 		tmst_dosen.Nama_dosen as nama_dosen,
 		tbl_kues_mhsdsn.ta as ta,
-		tbl_kues_mhsdsn.prodi');
+		tbl_kues_mhsdsn.prodi,
+		tmst_mahasiswa.Kode_program_studi');
 		$this->db->from('tbl_kues_mhsdsn');
 		$this->db->join('tmst_dosen','tbl_kues_mhsdsn.kd_dosen = tmst_dosen.Kode_dosen','inner');
+		$this->db->join('tmst_mahasiswa','tbl_kues_mhsdsn.nim = tmst_mahasiswa.NIM','inner');
 		$this->db->where($where);
 		//$this->db->order_by('tbl_catar_validasi.no_reg', "asc");
 		$query=$this->db->get();
