@@ -26,7 +26,7 @@
                     <?php
                     $kd = $k->kddosen;
                     $ta = $k->ta;
-                    $prodi = $k->prodi;
+                    $prodi = $k->kode_prodi;
                     $get_stats = $lpm->cektablelapmhsdsn_dsn($kd, $ta); 
                     if ($get_stats > 0) {
                       # code...
