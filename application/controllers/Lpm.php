@@ -510,7 +510,7 @@ class Lpm extends CI_Controller {
 		# code...
 		//cari total seluruh item per prodi
 		$where1 = array(
-			'tbl_kues_mhsdsn.prodi' => $prodi,
+			'tmst_mahasiswa.Kode_program_studi' => $prodi,
 			'tbl_kues_mhsdsn.ta' => $ta,		
 		);
 		$data = $this->m_kues->get_data_mhsdsn_count_item($where1, 'tbl_kues_mhsdsn.'.$item)->result();
@@ -521,7 +521,7 @@ class Lpm extends CI_Controller {
 
 		// cari total seluruh item per prodi dengan nilai 1
 		$where_1 = array(
-			'tbl_kues_mhsdsn.prodi' => $prodi,
+			'tmst_mahasiswa.Kode_program_studi' => $prodi,
 			'tbl_kues_mhsdsn.ta' => $ta,
 			'tbl_kues_mhsdsn.'.$item => $angka,		
 		);
