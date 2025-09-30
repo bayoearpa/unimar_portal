@@ -25,7 +25,6 @@ class M_kues extends CI_Model {
 		$this->db->select('tbl_kues_mhsdsn.kd_dosen as kddosen,
 		tmst_dosen.Nama_dosen as nama_dosen,
 		tbl_kues_mhsdsn.ta as ta,
-		tbl_kues_mhsdsn.prodi,
 		tmst_mahasiswa.Kode_program_studi as kode_prodi');
 		$this->db->from('tbl_kues_mhsdsn');
 		$this->db->join('tmst_dosen','tbl_kues_mhsdsn.kd_dosen = tmst_dosen.Kode_dosen','inner');
