@@ -587,11 +587,10 @@ class Lpm extends CI_Controller {
 
 			//buat array skala skor
 			$skala = array(
-				'STS' => "1",
-				'TS' => "2",
-				'KS' => "3",
-				'S' => "4",
-				'SS' => "5",
+				'TS' => "1",
+				'KS' => "2",
+				'S' => "3",
+				'SS' => "4",
 			);
 
 			//input ke tabel
@@ -634,11 +633,10 @@ class Lpm extends CI_Controller {
 
 			//buat array skala skor
 			$skala = array(
-				'STS' => "1",
-				'TS' => "2",
-				'KS' => "3",
-				'S' => "4",
-				'SS' => "5",
+				'TS' => "1",
+				'KS' => "2",
+				'S' => "3",
+				'SS' => "4",
 			);
 
 			//input ke tabel
