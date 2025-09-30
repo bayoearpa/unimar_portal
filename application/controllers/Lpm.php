@@ -509,11 +509,11 @@ class Lpm extends CI_Controller {
 	{
 		# code...
 		//cari total seluruh item per prodi
-		$where1 = array(
+		$where = array(
 			'tmst_mahasiswa.Kode_program_studi' => $prodi,
 			'tbl_kues_mhsdsn.ta' => $ta,		
 		);
-		$data = $this->m_kues->get_data_mhsdsn_count_item($where1, 'tbl_kues_mhsdsn.'.$item)->result();
+		$data = $this->m_kues->get_data_mhsdsn_count_item($where, 'tbl_kues_mhsdsn.'.$item)->result();
 		foreach ($data as $key) {
 			# code...
 			$total_seluruh = $key->jml_item;
