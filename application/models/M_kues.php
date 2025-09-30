@@ -25,10 +25,10 @@ class M_kues extends CI_Model {
 		$this->db->select('tbl_kues_mhsdsn.kd_dosen as kddosen,
 		tmst_dosen.Nama_dosen as nama_dosen,
 		tbl_kues_mhsdsn.ta as ta,
-		tmst_mahasiswa.Kode_program_studi as kode_prodi');
+		tbl_kues_mhsdsn.prodi as kode_prodi');
 		$this->db->from('tbl_kues_mhsdsn');
 		$this->db->join('tmst_dosen','tbl_kues_mhsdsn.kd_dosen = tmst_dosen.Kode_dosen','inner');
-		$this->db->join('tmst_mahasiswa','tbl_kues_mhsdsn.nim = tmst_mahasiswa.NIM','inner');
+		// $this->db->join('tmst_mahasiswa','tbl_kues_mhsdsn.nim = tmst_mahasiswa.NIM','inner');
 		$this->db->where($where);
 		//$this->db->order_by('tbl_catar_validasi.no_reg', "asc");
 		$query=$this->db->get();
@@ -62,7 +62,7 @@ class M_kues extends CI_Model {
 	function get_data_mhslem_count_responden($where){
 		$this->db->select('Count(distinct(tbl_kues_mhslem.nim)) as jml_mhs');
 		$this->db->from('tbl_kues_mhslem');
-		$this->db->join('tmst_mahasiswa','tbl_kues_mhslem.nim = tmst_mahasiswa.NIM','inner');
+		// $this->db->join('tmst_mahasiswa','tbl_kues_mhslem.nim = tmst_mahasiswa.NIM','inner');
 		$this->db->where($where);
 		//$this->db->order_by('tbl_catar_validasi.no_reg', "asc");
 		$query=$this->db->get();
@@ -87,7 +87,7 @@ class M_kues extends CI_Model {
 	function get_data_mhsdsn_count_item($where,$item){
 		$this->db->select('Count('.$item.') as jml_item');
 		$this->db->from('tbl_kues_mhsdsn');
-		$this->db->join('tmst_mahasiswa','tbl_kues_mhsdsn.nim = tmst_mahasiswa.NIM','inner');
+		// $this->db->join('tmst_mahasiswa','tbl_kues_mhsdsn.nim = tmst_mahasiswa.NIM','inner');
 		$this->db->where($where);
 		//$this->db->order_by('tbl_catar_validasi.no_reg', "asc");
 		$query=$this->db->get();
@@ -96,7 +96,7 @@ class M_kues extends CI_Model {
 	function get_data_mhslem_count_item($where,$item){
 		$this->db->select('Count('.$item.') as jml_item');
 		$this->db->from('tbl_kues_mhslem');
-		$this->db->join('tmst_mahasiswa','tbl_kues_mhslem.nim = tmst_mahasiswa.NIM','inner');
+		// $this->db->join('tmst_mahasiswa','tbl_kues_mhslem.nim = tmst_mahasiswa.NIM','inner');
 		$this->db->where($where);
 		//$this->db->order_by('tbl_catar_validasi.no_reg', "asc");
 		$query=$this->db->get();
