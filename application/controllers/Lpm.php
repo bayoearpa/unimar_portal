@@ -267,7 +267,7 @@ class Lpm extends CI_Controller {
 
 			//get data dosen
 			$where = array(
-			'tmst_mahasiswa.Kode_program_studi' => $prodi,
+			'tbl_kues_mhsdsn.prodi' => $prodi,
 			'tbl_kues_mhsdsn.ta' => $ta,		
 			);
 			$data['select_dosen'] = $this->m_kues->get_data_distinct_dosen($where)->result();
@@ -446,7 +446,7 @@ class Lpm extends CI_Controller {
 		$prodi = $this->input->post('prodi');
 		$ta = $this->input->post('ta');
 		$where = array(
-			'tmst_mahasiswa.Kode_program_studi' => $prodi,
+			'tbl_kues_mhsdsn.prodi' => $prodi,
 			'tbl_kues_mhsdsn.ta' => $ta,		
 		);
 		$data['select_dosen'] = $this->m_kues->get_data_distinct_dosen($where)->result();
@@ -510,7 +510,7 @@ class Lpm extends CI_Controller {
 		# code...
 		//cari total seluruh item per prodi
 		$where = array(
-			'tmst_mahasiswa.Kode_program_studi' => $prodi,
+			'tbl_kues_mhsdsn.prodi' => $prodi,
 			'tbl_kues_mhsdsn.ta' => $ta,		
 		);
 		$data = $this->m_kues->get_data_mhsdsn_count_item($where, 'tbl_kues_mhsdsn.'.$item)->result();
@@ -521,7 +521,7 @@ class Lpm extends CI_Controller {
 
 		// cari total seluruh item per prodi dengan nilai 1
 		$where_1 = array(
-			'tmst_mahasiswa.Kode_program_studi' => $prodi,
+			'tbl_kues_mhsdsn.prodi' => $prodi,
 			'tbl_kues_mhsdsn.ta' => $ta,
 			'tbl_kues_mhsdsn.'.$item => $angka,		
 		);
