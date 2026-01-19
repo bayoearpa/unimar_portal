@@ -948,7 +948,7 @@ class Mahasiswa extends CI_Controller {
         );
 
         $where3 = [
-        'nim' => $nim,
+        'nim' => $id,
         'ta'  => $ta
     	];
 
