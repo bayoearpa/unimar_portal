@@ -962,6 +962,7 @@ class Mahasiswa extends CI_Controller {
 	        redirect('mahasiswa/ujian_susulan/'.$nim);
 	    }
 
+	    if ($cek->num_rows() == null) {
 
 		$dt = $this->m_portal->get_data_join_nama_en_prodi($where2)->result();
 		foreach ($dt as $key) {
@@ -979,6 +980,8 @@ class Mahasiswa extends CI_Controller {
 		$this->load->view('mahasiswa/ujiansusulan',$data);
 		$this->load->view('mahasiswa/footer');
 		$this->load->view('mahasiswa/ujiansusulan_js',$data);
+
+		}
 
 	}
 	public function ujian_susulanp()
