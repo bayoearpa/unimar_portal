@@ -928,7 +928,7 @@ class Mahasiswa extends CI_Controller {
 	{
 		# code...
 		
-		$ta = $this->getTa();
+		$ta = $this->kliring->getTa();
 		$where = array(
 			'tran_nilai_semester_mhs.NIM' => $id,
         );
