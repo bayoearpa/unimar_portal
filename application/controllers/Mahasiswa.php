@@ -1025,7 +1025,7 @@ class Mahasiswa extends CI_Controller {
         ];
     }
 
-    $insert_makul = $this->db->insert_batch('tbl_kliring_us_temp', $result);
+    $insert_makul = $this->db->insert_batch('tbl_kliring_us_makul_temp', $result);
 
     // 🔹 FEEDBACK
     if ($res && $insert_makul) {
