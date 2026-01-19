@@ -957,7 +957,7 @@ class Mahasiswa extends CI_Controller {
 	    if ($cek->num_rows() > 0) {
 	        $this->session->set_flashdata(
 	            'success',
-	            "<b>Syarat untuk mengikuti ujian harus melunasi SPP dan SPI. Silakan lakukan validasi ke nomor WA : +62 851-1745-0180 .</b>"
+	            "<b>Anda sudah Mendaftar Ujian Susulan, selanjutnya untuk mengikuti ujian harus melunasi SPP dan SPI. Silakan lakukan validasi ke nomor WA : +62 851-1745-0180 . Jika sudah di validasi Bagian Keuangan Kartu Ujian akan Muncul</b>"
 	        );
 	        $data['status'] = "bayar";
 			$this->load->view('mahasiswa/header');

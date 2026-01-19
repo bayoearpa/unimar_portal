@@ -1644,7 +1644,44 @@ class bk extends CI_Controller {
 
         }
 	////////////////////////////////////////.tkbi//////////////////////////////////////////////////////
+        /////////////////////////////////////// UJIAN SUSULAN ////////////////////////////////////////
+        public function search_us_nim_cari()
+	{
+		# code..
+		$ta = $this->getTa();
 
+
+		$nim = $this->input->post('nim');
+		$wherenim = array(
+			'nim' => $nim,       
+	        );
+		$getMhs = $this->m_portal->get_data($wherenim,'tmst_mahasiswa')->result();
+		foreach ($getMhs as $row) {
+			$prodi = $row->Kode_program_studi;
+		}
+		$where = array(
+			'nim' => $nim,
+			'ta'  => $ta,			       
+	        );
+		$data['ku'] = $this->m_portal->get_data($where,'tbl_kliring_us')->result();
+		foreach ($data['ku'] as $row) {
+			$id_smta = $row->id_smta;
+		}
+		//get nama
+		$data['nama'] = $this->getNama($nim);
+		//get prodi
+		$data['prodi'] = $this->getProdi($prodi);
+
+
+        // $data['cek'] = $this->get_statusakhir_smta($id_smta);
+
+		# code...
+		$this->load->view('bk/header');
+		$this->load->view('bk/search_us_nim');
+		$this->load->view('bk/search_us_nimp',$data);
+		$this->load->view('bk/footer');
+	}
+        /////////////////////////////////////// .UJIAN SUSULAN ///////////////////////////////////////
 	
 
 
