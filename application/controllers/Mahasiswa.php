@@ -941,10 +941,10 @@ class Mahasiswa extends CI_Controller {
 		$ta = $this->getTa();
 		$where = array(
 			'tran_nilai_semester_mhs.NIM' => $id,
+			'tran_nilai_semester_mhs.thsmstrnlm' => $ta,
         );
         $where2 = array(
 			'tmst_mahasiswa.NIM' => $id,
-			'tran_nilai_semester_mhs.thsmstrnlm' => $ta,
         );
 
 		$dt = $this->m_portal->get_data_join_nama_en_prodi($where2)->result();
