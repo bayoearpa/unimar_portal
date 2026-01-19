@@ -923,12 +923,22 @@ class Mahasiswa extends CI_Controller {
 
 
 	 ///////////////////////////////////////// UJIAN SUSULAN ///////////////////////////////////////////////
-
+	 public function getTa(){
+	    $whereta = array(
+			'id_ta' => '1'		
+		);
+		$ta = $this->m_portal->get_data($whereta,'tbl_ta')->result();
+			foreach ($ta as $t) {
+			# code...
+			//$data['nama'] = $n->Nama_mahasiswa ;
+			return $t->ta;
+		}
+	}
 	 public function ujian_susulan($id)
 	{
 		# code...
 		
-		$ta = $this->kliring->getTa();
+		$ta = $this->getTa();
 		$where = array(
 			'tran_nilai_semester_mhs.NIM' => $id,
         );
