@@ -961,7 +961,7 @@ class Mahasiswa extends CI_Controller {
 	        );
 	        $data['status'] = "bayar";
 			$this->load->view('mahasiswa/header');
-			$this->load->view('mahasiswa/ujiansusulan',$data);
+			$this->load->view('mahasiswa/ujiansusulan_bayar',$data);
 			$this->load->view('mahasiswa/footer');
 			$this->load->view('mahasiswa/ujiansusulan_js',$data);
 	    }else{
