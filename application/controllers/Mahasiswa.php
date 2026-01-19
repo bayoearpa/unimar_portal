@@ -959,10 +959,11 @@ class Mahasiswa extends CI_Controller {
 	            'success',
 	            "<b>Syarat untuk mengikuti ujian harus melunasi SPP dan SPI. Silakan lakukan validasi ke nomor WA : +62 851-1745-0180 .</b>"
 	        );
-	        redirect('mahasiswa/ujian_susulan/'.$nim);
-	    }
-
-	    if ($cek->num_rows() > 0) {
+	        $data['status'] = "bayar";
+			$this->load->view('mahasiswa/header');
+			$this->load->view('mahasiswa/ujiansusulan',$data);
+			$this->load->view('mahasiswa/footer');
+			$this->load->view('mahasiswa/ujiansusulan_js',$data);
 	    }else{
 		$dt = $this->m_portal->get_data_join_nama_en_prodi($where2)->result();
 		foreach ($dt as $key) {
@@ -973,14 +974,11 @@ class Mahasiswa extends CI_Controller {
         	$data['kode_prodi'] = $key->kode_prodi;
         }
         $data['catar']= $this->m_portal->get_datadiri_join_where_nim_smta($where)->result();
-       
-
-        
+              
 		$this->load->view('mahasiswa/header');
 		$this->load->view('mahasiswa/ujiansusulan',$data);
 		$this->load->view('mahasiswa/footer');
 		$this->load->view('mahasiswa/ujiansusulan_js',$data);
-
 		}
 
 	}
