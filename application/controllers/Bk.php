@@ -1645,6 +1645,14 @@ class bk extends CI_Controller {
         }
 	////////////////////////////////////////.tkbi//////////////////////////////////////////////////////
         /////////////////////////////////////// UJIAN SUSULAN ////////////////////////////////////////
+        
+    public function search_us_nim()
+	{
+		# code...
+		$this->load->view('bk/header');
+		$this->load->view('bk/search_us_nim');
+		$this->load->view('bk/footer');
+	}    
         public function search_us_nim_cari()
 	{
 		# code..

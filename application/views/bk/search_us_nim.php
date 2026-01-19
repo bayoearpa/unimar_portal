@@ -3,14 +3,14 @@
 
         <div class="box box-default">
           <div class="box-header with-border">
-            <h3 class="box-title">Form Pencarian Mahasiswa dengan NRP/NIM</h3>
+            <h3 class="box-title">Form Pencarian Mahasiswa dengan NRP/NIM UJIAN SUSULAN</h3>
           </div>
           <div class="box-body">
             <?php echo validation_errors(); 
             echo $this->session->flashdata('success');
             echo $this->session->flashdata('error');
               ?>
-              <form action="<?php echo base_url() ?>bk/search_smta_nim_cari" name="form1" id="form1" method="post">
+              <form action="<?php echo base_url() ?>bk/search_us_nim_cari" name="form1" id="form1" method="post">
                 <div class="form-group">
                 <label for="exampleInputEmail1">Masukan NRP/NIM untuk mencari Mahasiswa atau Taruna :</label>
                  <input type="text" name="nim" id="nim" class="form-control">
