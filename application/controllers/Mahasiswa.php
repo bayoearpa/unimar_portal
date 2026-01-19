@@ -987,12 +987,12 @@ class Mahasiswa extends CI_Controller {
             'error',
             "<b>Error, Proses pengajuan gagal karena data sudah ada</b>"
         );
-        redirect('ujian_susulan/'.$nim);
+        redirect('mahasiswa/ujian_susulan/'.$nim);
     }
 
     // 🔹 VALIDASI FORM
     if ($this->form_validation->run() == false) {
-         redirect('ujian_susulan/'.$nim);
+          redirect('mahasiswa/ujian_susulan/'.$nim);
         return;
     }
 
@@ -1025,7 +1025,7 @@ class Mahasiswa extends CI_Controller {
         ];
     }
 
-    $insert_makul = $this->db->insert_batch('tbl_kliring_smta_us_temp', $result);
+    $insert_makul = $this->db->insert_batch('tbl_kliring_us_temp', $result);
 
     // 🔹 FEEDBACK
     if ($res && $insert_makul) {
@@ -1040,7 +1040,7 @@ class Mahasiswa extends CI_Controller {
         );
     }
 
-    redirect('ujian_susulan/'.$nim);
+     redirect('mahasiswa/ujian_susulan/'.$nim);
 }
 
 
