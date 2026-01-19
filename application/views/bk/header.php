@@ -293,7 +293,7 @@
                     </span>
                   </a>
                   <ul class="treeview-menu">
-                    <li><a href="<?php echo base_url() ?>bk/ujian_susulan"><i class="fa fa-circle-o"></i> Ajuan</a></li>
+                    <li><a href="<?php echo base_url() ?>bk/search_us_nim_cari"><i class="fa fa-circle-o"></i> Ajuan</a></li>
                     <!-- <li><a href="#"><i class="fa fa-circle-o"></i> Selesai</a></li> -->
                   </ul>
                 </li>
