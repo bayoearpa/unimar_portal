@@ -7,7 +7,7 @@
           </div>
           <div class="box-body">
             <!-- konten -->
-            <form name="form1" id="form1" method="post" enctype="multipart/form-data" action="<?php echo base_url() ?>proses_smta">
+            <form name="form1" id="form1" method="post" enctype="multipart/form-data" action="<?php echo base_url() ?>mahasiswa/ujian_susulanp">
                 <div class="col-md-6">
                     <div class="form-group">
                       <label for="exampleInputEmail1">NIM</label>
