@@ -3,7 +3,7 @@
 
         <div class="box box-default">
           <div class="box-header with-border">
-            <h3 class="box-title">Form Laporan Ujian Modeling</h3>
+            <h3 class="box-title">Form Ujian Susulan</h3>
           </div>
           <div class="box-body">
             <!-- konten -->
@@ -22,7 +22,12 @@
                       <label for="exampleInputPassword1">Program Studi</label>
                       <input type="text" class="form-control" id="nama_prodi" name="nama_prodi" placeholder="Program Studi" value="<?php echo $prodi ?>" style="width:70%;" readonly>
                       <input type="hidden" class="form-control" id="prodi" name="prodi" placeholder="Program Studi" value="<?php echo $kode_prodi ?>" style="width:70%;" readonly>
-                    </div>             
+                    </div> 
+
+                     <div class="form-group">
+                      <label for="exampleInputPassword1">Semester (Wajib Isi)</label>
+                      <input type="text" class="form-control" id="smt" name="smt" placeholder="Semester" style="width:50%;" readonly>
+                    </div>            
                 </div>
                 
                   <div class="col-md-12">

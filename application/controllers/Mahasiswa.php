@@ -961,9 +961,87 @@ class Mahasiswa extends CI_Controller {
 		$this->load->view('mahasiswa/header');
 		$this->load->view('mahasiswa/ujiansusulan',$data);
 		$this->load->view('mahasiswa/footer');
-		$this->load->view('mahasiswa/modeling_js',$data);
+		$this->load->view('mahasiswa/ujiansusulan_js',$data);
 
 	}
+	public function ujian_susulanp()
+{
+    $this->form_validation->set_rules('nim', 'NIM', 'required');
+    $this->form_validation->set_rules('prodi', 'Prodi', 'required');
+    $this->form_validation->set_rules('smt', 'Semester', 'required');
+
+    $ta  = $this->getTa();
+    $nim = $this->input->post('nim');
+
+    // 🔹 CEK DUPLIKASI DATA
+    $where = [
+        'nim' => $nim,
+        'ta'  => $ta
+    ];
+
+    $cek = $this->m_portal->get_data($where, 'tbl_kliring_us');
+
+    if ($cek->num_rows() > 0) {
+        $this->session->set_flashdata(
+            'error',
+            "<b>Error, Proses pengajuan gagal karena data sudah ada</b>"
+        );
+        redirect('ujian_susulan/'.$nim);
+    }
+
+    // 🔹 VALIDASI FORM
+    if ($this->form_validation->run() == false) {
+         redirect('ujian_susulan/'.$nim);
+        return;
+    }
+
+    // 🔹 VALIDASI MAKUL
+    if (empty($_POST['makul'])) {
+        $this->session->set_flashdata('error', 'Mata kuliah wajib dipilih');
+        redirect('ujian_susulan/'.$nim);
+    }
+
+    // 🔹 INSERT DATA UTAMA
+    $data_smta = [
+        'nim'     => $nim,
+        'prodi'   => $this->input->post('prodi'),
+        'smt'     => $this->input->post('smt'),
+        'jml_smt' => $this->input->post('jumlah_tahun_ajaran'),
+        'status'  => '1',
+        'ta'      => $ta
+    ];
+
+    $res = $this->m_portal->input_data($data_smta, 'tbl_kliring_us');
+    $id_smta = $this->db->insert_id();
+
+    // 🔹 INSERT MAKUL
+    $result = [];
+    foreach ($_POST['makul'] as $val) {
+        $result[] = [
+            'id_smta'            => $id_smta,
+            'Kode_mata_kuliah'   => $val,
+            'ta'                 => $ta
+        ];
+    }
+
+    $insert_makul = $this->db->insert_batch('tbl_kliring_smta_us_temp', $result);
+
+    // 🔹 FEEDBACK
+    if ($res && $insert_makul) {
+        $this->session->set_flashdata(
+            'success',
+            "<b>Selamat, Pengajuan Anda berhasil. Silakan cek status pengajuan</b>"
+        );
+    } else {
+        $this->session->set_flashdata(
+            'error',
+            "<b>Error, Proses pengajuan anda gagal</b>"
+        );
+    }
+
+    redirect('ujian_susulan/'.$nim);
+}
+
 
 	 ///////////////////////////////////////// .UJIAN SUSULAN ///////////////////////////////////////////////
 
