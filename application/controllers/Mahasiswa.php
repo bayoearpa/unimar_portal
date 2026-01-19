@@ -924,23 +924,23 @@ class Mahasiswa extends CI_Controller {
 
 	 ///////////////////////////////////////// UJIAN SUSULAN ///////////////////////////////////////////////
 
-	 public function ujian_susulan()
+	 public function ujian_susulan($id)
 	{
 		# code...
-		$nim = $this->input->post('name');
+		
 		$ta = $this->getTa();
 		$where = array(
-			'tran_nilai_semester_mhs.NIM' => $nim,
+			'tran_nilai_semester_mhs.NIM' => $id,
         );
         $where2 = array(
-			'tmst_mahasiswa.NIM' => $nim,
+			'tmst_mahasiswa.NIM' => $id,
         );
 
 		$dt = $this->m_portal->get_data_join_nama_en_prodi($where2)->result();
 		foreach ($dt as $key) {
         	# code...
         	$data['nama'] = $key->nama;
-        	$data['nim'] = $key->nim;
+        	$data['nim'] = $id;
         	$data['prodi'] = $key->prodi;
         	$data['kode_prodi'] = $key->kode_prodi;
         }
