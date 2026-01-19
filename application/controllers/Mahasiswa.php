@@ -947,6 +947,22 @@ class Mahasiswa extends CI_Controller {
 			'tmst_mahasiswa.NIM' => $id,
         );
 
+        $where3 = [
+        'nim' => $nim,
+        'ta'  => $ta
+    	];
+
+        $cek = $this->m_portal->get_data($where3, 'tbl_kliring_us');
+
+	    if ($cek->num_rows() > 0) {
+	        $this->session->set_flashdata(
+	            'success',
+	            "<b>Syarat untuk mengikuti ujian harus melunasi SPP dan SPI. Silakan lakukan validasi ke nomor WA : +62 851-1745-0180 .</b>"
+	        );
+	        redirect('mahasiswa/ujian_susulan/'.$nim);
+	    }
+
+
 		$dt = $this->m_portal->get_data_join_nama_en_prodi($where2)->result();
 		foreach ($dt as $key) {
         	# code...

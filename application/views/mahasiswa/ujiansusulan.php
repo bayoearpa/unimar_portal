@@ -7,6 +7,19 @@
           </div>
           <div class="box-body">
             <!-- konten -->
+            <?php if ($this->session->flashdata('success')): ?>
+              <div class="alert alert-success alert-dismissible">
+                  <button class="close" data-dismiss="alert">&times;</button>
+                  <?= $this->session->flashdata('success'); ?>
+              </div>
+              <?php endif; ?>
+
+              <?php if ($this->session->flashdata('error')): ?>
+              <div class="alert alert-danger alert-dismissible">
+                  <button class="close" data-dismiss="alert">&times;</button>
+                  <?= $this->session->flashdata('error'); ?>
+              </div>
+              <?php endif; ?>
             <form name="form1" id="form1" method="post" enctype="multipart/form-data" action="<?php echo base_url() ?>mahasiswa/ujian_susulanp">
                 <div class="col-md-6">
                     <div class="form-group">
