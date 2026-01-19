@@ -12,6 +12,7 @@ class Mahasiswa extends CI_Controller {
 		// 	redirect(base_url().'mahasiswa?pesan=belumlogin');
 		// }
 		$this->load->model('m_mahasiswa');
+		$this->load->model('m_portal');
 		$this->load->library('m_pdf');
 		$this->load->helper('download');
 	}
@@ -918,6 +919,43 @@ class Mahasiswa extends CI_Controller {
 	 {
 	 	# code...
 	 } 
+
+
+
+	 ///////////////////////////////////////// UJIAN SUSULAN ///////////////////////////////////////////////
+
+	 public function ujian_susulan()
+	{
+		# code...
+		$nim = $this->input->post('name');
+		$ta = $this->getTa();
+		$where = array(
+			'tran_nilai_semester_mhs.NIM' => $nim,
+        );
+        $where2 = array(
+			'tmst_mahasiswa.NIM' => $nim,
+        );
+
+		$dt = $this->m_portal->get_data_join_nama_en_prodi($where2)->result();
+		foreach ($dt as $key) {
+        	# code...
+        	$data['nama'] = $key->nama;
+        	$data['nim'] = $key->nim;
+        	$data['prodi'] = $key->prodi;
+        	$data['kode_prodi'] = $key->kode_prodi;
+        }
+        $data['catar']= $this->m_portal->get_datadiri_join_where_nim_smta($where)->result();
+       
+
+        
+		$this->load->view('mahasiswa/header');
+		$this->load->view('mahasiswa/ujiansusulan',$data);
+		$this->load->view('mahasiswa/footer');
+		$this->load->view('mahasiswa/modeling_js',$data);
+
+	}
+
+	 ///////////////////////////////////////// .UJIAN SUSULAN ///////////////////////////////////////////////
 
 }
 
