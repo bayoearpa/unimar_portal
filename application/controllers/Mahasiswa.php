@@ -944,6 +944,7 @@ class Mahasiswa extends CI_Controller {
         );
         $where2 = array(
 			'tmst_mahasiswa.NIM' => $id,
+			'tran_nilai_semester_mhs.thsmstrnlm' => $ta,
         );
 
 		$dt = $this->m_portal->get_data_join_nama_en_prodi($where2)->result();
