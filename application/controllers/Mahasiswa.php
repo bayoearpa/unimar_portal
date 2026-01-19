@@ -962,8 +962,8 @@ class Mahasiswa extends CI_Controller {
 	        redirect('mahasiswa/ujian_susulan/'.$nim);
 	    }
 
-	    if ($cek->num_rows() == null) {
-
+	    if ($cek->num_rows() > 0) {
+	    }else{
 		$dt = $this->m_portal->get_data_join_nama_en_prodi($where2)->result();
 		foreach ($dt as $key) {
         	# code...
