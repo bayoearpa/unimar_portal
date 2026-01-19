@@ -26,7 +26,7 @@
 
                      <div class="form-group">
                       <label for="exampleInputPassword1">Semester (Wajib Isi)</label>
-                      <input type="text" class="form-control" id="smt" name="smt" placeholder="Semester" style="width:50%;" readonly>
+                      <input type="text" class="form-control" id="smt" name="smt" placeholder="Semester" style="width:50%;">
                     </div>            
                 </div>
                 
