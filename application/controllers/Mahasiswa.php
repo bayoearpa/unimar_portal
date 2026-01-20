@@ -991,16 +991,19 @@ class Mahasiswa extends CI_Controller {
 	     $where4= [
         'id_smta' => $id_smta_us
     	];
-        $bk_data = $this->m_portal->get_data($where4, 'tbl_kliring_us_bk');
+        $bk_data = $this->m_portal->get_data($where4, 'tbl_kliring_us_bk')->row();
         // $data['catar'] = ($catar_data) ? array($catar_data) : array();
-        
+        if ($bk_data) {
+	        // Jika data ditemukan, baru ambil nilainya
+	        $id_smta = $bk_data->id_smta;
+	    }
 	    if ($id_smta > 0) {
 	    	# code...
 	    	 $this->session->set_flashdata(
 	            'success',
 	            "<b>Pengajuan Ujian Susulan anda disetujui oleh keuangan silakan download kartu ujian dibawah ini :</b>"
 	        );
-	    	$data['id_smta'] = $id_smta_us;
+	    	$data['id_smta'] = $id_smta;
 			$this->load->view('mahasiswa/header');
 			$this->load->view('mahasiswa/ujiansusulan_beres',$data);
 			$this->load->view('mahasiswa/footer');
