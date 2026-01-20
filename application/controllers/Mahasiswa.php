@@ -955,7 +955,16 @@ class Mahasiswa extends CI_Controller {
         
 
         $cek = $this->m_portal->get_data($where3, 'tbl_kliring_us');
-        $bk_data = $this->m_registrasi->get_data($where, 'tbl_kliring_us_bk')->row();
+        $us_data = $cek->row();
+        if ($us_data) {
+	        // Jika data ditemukan, baru ambil nilainya
+	        $id_smta_us = $us_data->id_smta;
+	    }
+	     $where4= [
+        'id_smta' => $id_smta_us,
+        'ta'  => $ta
+    	];
+        $bk_data = $this->m_registrasi->get_data($where4, 'tbl_kliring_us_bk')->row();
         // $data['catar'] = ($catar_data) ? array($catar_data) : array();
         if ($bk_data) {
 	        // Jika data ditemukan, baru ambil nilainya
