@@ -54,8 +54,9 @@
                      ?>
                   
                 </table>
-             
-
+            <br>
+             <hr>
+             <br>
               <form action="<?php echo base_url() ?>bk/kliringsmtap" name="form1" id="form1" method="post">
                 <input type="hidden" name="id_smta" id="id_smta" value="<?php echo $c->id_smta; ?>">              
                 <div class="form-group">
