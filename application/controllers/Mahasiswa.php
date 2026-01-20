@@ -952,9 +952,27 @@ class Mahasiswa extends CI_Controller {
         'ta'  => $ta
     	];
 
-        $cek = $this->m_portal->get_data($where3, 'tbl_kliring_us');
+        
 
-	    if ($cek->num_rows() > 0) {
+        $cek = $this->m_portal->get_data($where3, 'tbl_kliring_us');
+        $bk_data = $this->m_registrasi->get_data($where, 'tbl_kliring_us_bk')->row();
+        // $data['catar'] = ($catar_data) ? array($catar_data) : array();
+        if ($bk_data) {
+	        // Jika data ditemukan, baru ambil nilainya
+	        $id_smta = $bk_data->id_smta;
+	    }
+	    if ($id_smta > 0) {
+	    	# code...
+	    	 $this->session->set_flashdata(
+	            'success',
+	            "<b>Pengajuan Ujian Susulan anda disetujui oleh keuangan silakan download kartu ujian dibawah ini :</b>"
+	        );
+	    	$data['id_smta'] = $id_smta;
+			$this->load->view('mahasiswa/header');
+			$this->load->view('mahasiswa/ujiansusulan_beres',$data);
+			$this->load->view('mahasiswa/footer');
+			$this->load->view('mahasiswa/ujiansusulan_js',$data);
+	    }elseif ($cek->num_rows() > 0) {
 	        $this->session->set_flashdata(
 	            'success',
 	            "<b>Anda sudah Mendaftar Ujian Susulan, selanjutnya untuk mengikuti ujian harus melunasi SPP dan SPI. Silakan lakukan validasi ke nomor WA : +62 851-1745-0180 . Jika sudah di validasi Bagian Keuangan Kartu Ujian akan Muncul</b>"
