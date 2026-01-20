@@ -1135,11 +1135,11 @@ public function ujian_susulan_cetak($id)
 		}
 		$data['prodi'] = $this->getProdi($prodi);
 		$data['list_makul']=$this->m_portal->get_data_join_makul_us($where)->result();
-		$this->load->view('ujiansusulan_cetak',$data);
+		$this->load->view('mahasiswa/ujiansusulan_cetak',$data);
 
 		//pdf
 		$pdfFilePath="KARTU_UJIAN.pdf";
-		$html=$this->load->view('ujiansusulan_cetak',$data, TRUE);
+		$html=$this->load->view('mahasiswa/ujiansusulan_cetak',$data, TRUE);
 		$pdf = $this->m_pdf->load();
  
         $pdf->AddPage('P');
