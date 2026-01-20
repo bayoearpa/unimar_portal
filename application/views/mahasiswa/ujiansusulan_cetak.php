@@ -19,7 +19,7 @@
 </head>
 <body>
 <!-- header -->
-<!-- <img src="<?php //echo base_url() ?>assets/1/images/suratujians1.jpg" alt=""> -->
+<img src="<?php echo base_url() ?>assets/1/images/kop.png" alt="">
 <p style="margin-bottom: 0px;text-align: center;"><h3 style="text-align: center;margin-bottom: 0px;"><b>KARTU UJIAN SUSULAN</b></h3></p>
 <hr align="center" style="margin: 0px;width:30%;">
 
@@ -42,7 +42,7 @@
 		<td><b><?php echo $c->nim;?></b></td>
 	</tr>
 	 <tr>
-      <td><label for="exampleInputEmail1">Prodi</label></td>
+      <td><label for="exampleInputEmail1">Semester/Prodi</label></td>
       <td><label for="exampleInputEmail1">:</label></td>
       <td><label for="exampleInputEmail1"><?php echo "Semester ".$c->smt."/".$prodi; ?></label></td>
     </tr>
@@ -56,7 +56,7 @@
 		<td align="center">No.</td>
 		<td align="center">Mata Kuliah</td>
 		<td align="center">SKS</td>
-		<td align="center">TTD Petugas</td>
+		<td align="center">TTD Pengawas</td>
 	</tr>
 	<?php 
 	$no = 1;
@@ -90,7 +90,7 @@
 	</tr> -->
 	<tr>
 		<td></td>
-		<td align="center"><b>Wali Dosen</b></td>
+		<td align="center"><b>Wali / Ka. Prodi</b></td>
 	</tr>
 	<tr><td></td></tr>
 	<tr><td></td></tr>
