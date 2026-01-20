@@ -7,7 +7,7 @@
 		font-size: 12px;
 	}
 	.row-ttd td {
-        height: 50px; /* Atur tinggi baris di sini */
+        height: 40px; /* Atur tinggi baris di sini */
         vertical-align: middle; /* Agar teks nomor & makul tetap di tengah */
         border: 1px solid black;
     }
