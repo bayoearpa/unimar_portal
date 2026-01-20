@@ -1000,7 +1000,7 @@ class Mahasiswa extends CI_Controller {
 	            'success',
 	            "<b>Pengajuan Ujian Susulan anda disetujui oleh keuangan silakan download kartu ujian dibawah ini :</b>"
 	        );
-	    	$data['id_smta'] = $id_smta;
+	    	$data['id_smta'] = $id_smta_us;
 			$this->load->view('mahasiswa/header');
 			$this->load->view('mahasiswa/ujiansusulan_beres',$data);
 			$this->load->view('mahasiswa/footer');
