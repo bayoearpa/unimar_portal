@@ -6,6 +6,11 @@
 		margin-top: 0px;
 		font-size: 12px;
 	}
+	.row-ttd td {
+        height: 70px; /* Atur tinggi baris di sini */
+        vertical-align: middle; /* Agar teks nomor & makul tetap di tengah */
+        border: 1px solid black;
+    }
 </style>
 <!DOCTYPE html>
 <html>
@@ -39,14 +44,14 @@
 	 <tr>
       <td><label for="exampleInputEmail1">Prodi</label></td>
       <td><label for="exampleInputEmail1">:</label></td>
-      <td><label for="exampleInputEmail1"><?php echo $c->smt."/".$prodi; ?></label></td>
+      <td><label for="exampleInputEmail1"><?php echo "Semester ".$c->smt."/".$prodi; ?></label></td>
     </tr>
 	<tr><td colspan="3"></td></tr>
 	<tr><td colspan="3"></td></tr>
 </table>
 <?php } ?>
 
-<table width="100%">
+<table width="100%" style="border-collapse: collapse;border: 1px solid black;">
 	<tr>
 		<td>No.</td>
 		<td>Mata Kuliah</td>
@@ -56,15 +61,16 @@
 	<?php 
 	$no = 1;
 	foreach ($list_makul as $keyz) { ?>
-	<tr>
-		<td><?php echo $no++ ?></td>
-		<td><?php echo $keyz->nama_makul; ?></td>
-		<td><?php echo $keyz->sks;?></td>
-		<td></td>
-	</tr>
+	<tr class="row-ttd">
+        <td align="center"><?php echo $no++ ?></td>
+        <td><?php echo $keyz->nama_makul; ?></td>
+        <td align="center"><?php echo $keyz->sks;?></td>
+        <td width="100"></td> </tr>
 	<?php } ?>
 </table>
-
+<br>
+<br>
+<br>
 <table>
 	<tr>
 		<td>Catatan : Melampirkan <b>KPK ASLI</b></td>
@@ -75,7 +81,7 @@
 <table width="100%">
 	<tr>
 		<td width="60%"></td>
-		<td align="center">Semarang, <?php echo $tanggal;?></td>
+		<td align="center"><?php echo "Semarang, " . date("d-m-Y"); ?></td>
 		
 	</tr>
 	<!-- <tr>
