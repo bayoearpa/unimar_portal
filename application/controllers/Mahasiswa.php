@@ -991,13 +991,10 @@ class Mahasiswa extends CI_Controller {
 	     $where4= [
         'id_smta' => $id_smta_us
     	];
-        $bk_data = $this->m_portal->get_data($where4, 'tbl_kliring_us_bk')->row();
+        $bk_data = $this->m_portal->get_data($where4, 'tbl_kliring_us_bk');
         // $data['catar'] = ($catar_data) ? array($catar_data) : array();
-        if ($bk_data) {
-	        // Jika data ditemukan, baru ambil nilainya
-	        $id_smta = $bk_data->id_smta;
-	    }
-	    if ($id_smta > 0) {
+        
+	    if ($bk_data->num_rows() > 0) {
 	    	# code...
 	    	 $this->session->set_flashdata(
 	            'success',
