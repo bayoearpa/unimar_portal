@@ -934,6 +934,20 @@ class Mahasiswa extends CI_Controller {
 			return $t->ta;
 		}
 	}
+	public function getNama($nim)
+	{
+		# code...
+		//get nama
+		$where = array(
+			'NIM' => $nim,			       
+        );
+		$getNim = $this->m_portal->get_data($where,'tmst_mahasiswa')->result();
+		foreach ($getNim as $n) {
+			# code...
+			//$data['nama'] = $n->Nama_mahasiswa ;
+			return $n->Nama_mahasiswa;
+		}
+	}
 	 public function ujian_susulan($id)
 	{
 		# code...
