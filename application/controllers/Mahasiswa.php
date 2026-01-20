@@ -961,8 +961,7 @@ class Mahasiswa extends CI_Controller {
 	        $id_smta_us = $us_data->id_smta;
 	    }
 	     $where4= [
-        'id_smta' => $id_smta_us,
-        'ta'  => $ta
+        'id_smta' => $id_smta_us
     	];
         $bk_data = $this->m_portal->get_data($where4, 'tbl_kliring_us_bk')->row();
         // $data['catar'] = ($catar_data) ? array($catar_data) : array();
