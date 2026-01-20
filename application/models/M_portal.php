@@ -384,7 +384,7 @@ function get_data_join_makul ($where){
 function get_data_join_makul_us_temp ($where){
 	$this->db->select('tmst_mata_kuliah.Nama_mata_kuliah as nama_makul,
 		tmst_mata_kuliah.SKS_mata_kuliah as sks,
-		tbl_kliring_us_makul_temp.id_us_makul as id_makul_temp,
+		tbl_kliring_us_makul_temp.id_smta_makul as id_makul_temp,
 		tmst_mata_kuliah.Kode_mata_kuliah as kd_makul');
 		$this->db->from('tbl_kliring_us_makul_temp');
 		$this->db->join('tmst_mata_kuliah',' tbl_kliring_us_makul_temp.Kode_mata_kuliah = tmst_mata_kuliah.Kode_mata_kuliah','inner');
@@ -396,7 +396,7 @@ function get_data_join_makul_us_temp ($where){
 function get_data_join_makul_us ($where){
 	$this->db->select('tmst_mata_kuliah.Nama_mata_kuliah as nama_makul,
 		tmst_mata_kuliah.SKS_mata_kuliah as sks,
-		tbl_kliring_us_makul.id_us_makul as id_makul_temp,
+		tbl_kliring_us_makul.id_smta_makul as id_makul_temp,
 		tmst_mata_kuliah.Kode_mata_kuliah as kd_makul');
 		$this->db->from('tbl_kliring_us_makul');
 		$this->db->join('tmst_mata_kuliah',' tbl_kliring_us_makul.Kode_mata_kuliah = tmst_mata_kuliah.Kode_mata_kuliah','inner');
