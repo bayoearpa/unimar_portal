@@ -1712,7 +1712,7 @@ class bk extends CI_Controller {
 			$prodi = $row->Kode_program_studi;
 		}
 		$data['prodi'] = $this->getProdi($prodi);
-		$data['list_makul']=$this->m_portal->get_data_join_makul($where)->result();
+		$data['list_makul']=$this->m_portal->get_data_join_makul_us_temp($where)->result();
 
 
 
