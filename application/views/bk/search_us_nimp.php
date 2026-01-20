@@ -27,12 +27,12 @@
                
                 <tr>
                    <td colspan="3">
-                    <a class="btn btn-warning btn-sm" href="<?php echo base_url().'bk/kliring_smta/'.$k->id_smta;?>"><span class="glyphicon glyphicon-pencil"></span> Kliring</a>
+                    <a class="btn btn-warning btn-sm" href="<?php echo base_url().'bk/kliring_smta/'.$k->id_smta;?>"><span class="glyphicon glyphicon-pencil"></span> validasi</a>
                     <?php
                     $where = array(
                     'id_smta' => $k->id_smta      
                     );
-                    $m=$this->m_portal->get_data($where,'tbl_kliring_smta_bk')->row();
+                    $m=$this->m_portal->get_data($where,'tbl_kliring_us_bk')->row();
                     if ($m > "0"){
                      ?>
                      <a class="btn btn-warning btn-sm" href="<?php echo base_url().'bk/ekliring_smta/'.$k->id_smta; ?>"><span class="glyphicon glyphicon-pencil"></span> Edit</a>

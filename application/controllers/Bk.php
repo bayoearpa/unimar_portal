@@ -1689,6 +1689,86 @@ class bk extends CI_Controller {
 		$this->load->view('bk/search_us_nimp',$data);
 		$this->load->view('bk/footer');
 	}
+	public function kliring_us($id)
+	{
+		# code...
+		$data['bk'] = $this;
+		$ta = $this->getTa(); 
+		$where = array(
+			'id_smta' => $id,			       
+        );
+		$data['catar'] = $this->m_portal->get_data($where,'tbl_kliring_us')->result();
+		foreach ($data['catar'] as $row)
+		{
+        $nim = $row->nim;
+        $jml_smt = $row->jml_smt;
+		}
+		$data['nama'] = $this->getNama($nim);
+		$wherenim = array(
+			'NIM' => $nim,			       
+        );
+		$getMhs = $this->m_portal->get_data($wherenim,'tmst_mahasiswa')->result();
+		foreach ($getMhs as $row) {
+			$prodi = $row->Kode_program_studi;
+		}
+		$data['prodi'] = $this->getProdi($prodi);
+		$data['list_makul']=$this->m_portal->get_data_join_makul($where)->result();
+
+
+
+		$this->load->view('bk/header');
+		$this->load->view('bk/kliring_us',$data);
+		$this->load->view('bk/footer');
+	}
+	public function kliringusp()
+	{
+		# code...
+		// $this->form_validation->set_rules('kerapian', 'kerapian', 'required');
+		$ta = $this->getTa();
+		$this->form_validation->set_rules('hasil', 'hasil', 'required');
+		$this->form_validation->set_rules('keterangan', 'keteranan', 'required');
+		$id = $this->input->post('id_smta');
+		if ($this->form_validation->run() != false) {
+			$data = array(
+			'id_smta'  	=> $this->input->post('id_smta'),
+			'hasil'     	=> $this->input->post('hasil'),
+			'keterangan'   => $this->input->post('keterangan'),
+		   );
+			$res = $this->m_portal->input_data($data,'tbl_kliring_us_bk');
+		 	if($res==true)
+			 {
+				$this->session->set_flashdata('error', "<b>Error, Proses kliring anda gagal</b>");
+			 }else{
+				 $this->session->set_flashdata('success', "<b>Selamat, Kliring berhasil diproses</b>");  
+			 }
+			
+
+			 //after input
+			$where = array(
+				'id_smta' => $id,			       
+	        );
+			$data['catar'] = $this->m_portal->get_data($where,'tbl_kliring_us')->result();
+			foreach ($data['catar'] as $row)
+			{
+	        $nim = $row->nim;
+	        $jml_smt = $row->jml_smt;
+			}
+			$data['nama'] = $this->getNama($nim);
+			$wherenim = array(
+				'NIM' => $nim,			       
+	        );
+			$getMhs = $this->m_portal->get_data($wherenim,'tmst_mahasiswa')->result();
+			foreach ($getMhs as $row) {
+				$prodi = $row->Kode_program_studi;
+			}
+			$data['prodi'] = $this->getProdi($prodi);
+			
+			
+			$this->load->view('bk/cetak_nota_us',$data);
+		}else{
+			$this->search_smta_nim();
+		}
+	}
         /////////////////////////////////////// .UJIAN SUSULAN ///////////////////////////////////////
 	
 
