@@ -1085,6 +1085,40 @@ class Mahasiswa extends CI_Controller {
 
      redirect('mahasiswa/ujian_susulan/'.$nim);
 }
+public function ujian_susulan_cetak($id)
+{
+	# code...
+		$ta = $this->getTa(); 
+		$where = array(
+			'id_smta' => $id,			       
+        );
+		$data['catar'] = $this->m_portal->get_data($where,'tbl_kliring_us')->result();
+		foreach ($data['catar'] as $row)
+		{
+        $nim = $row->nim;
+		}
+		$data['nama'] = $this->getNama($nim);
+		$wherenim = array(
+			'NIM' => $nim,			       
+        );
+		$getMhs = $this->m_portal->get_data($wherenim,'tmst_mahasiswa')->result();
+		foreach ($getMhs as $row) {
+			$prodi = $row->Kode_program_studi;
+		}
+		$data['prodi'] = $this->getProdi($prodi);
+		$data['list_makul']=$this->m_portal->get_data_join_makul_us($where)->result();
+		$this->load->view('ujiansusulan_cetak',$data);
+
+		//pdf
+		$pdfFilePath="KARTU_UJIAN.pdf";
+		$html=$this->load->view('ujiansusulan_cetak',$data, TRUE);
+		$pdf = $this->m_pdf->load();
+ 
+        $pdf->AddPage('P');
+        $pdf->WriteHTML($html);
+        $pdf->Output($pdfFilePath, "D");
+        exit();
+}
 
 
 	 ///////////////////////////////////////// .UJIAN SUSULAN ///////////////////////////////////////////////
