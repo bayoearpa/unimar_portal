@@ -1005,7 +1005,9 @@ class Mahasiswa extends CI_Controller {
 			$this->load->view('mahasiswa/ujiansusulan_beres',$data);
 			$this->load->view('mahasiswa/footer');
 			$this->load->view('mahasiswa/ujiansusulan_js',$data);
-	    }elseif ($cek->num_rows() > 0) {
+	    }
+
+	    if ($cek->num_rows() > 0) {
 	        $this->session->set_flashdata(
 	            'success',
 	            "<b>Anda sudah Mendaftar Ujian Susulan, selanjutnya untuk mengikuti ujian harus melunasi SPP dan SPI. Silakan lakukan validasi ke nomor WA : +62 851-1745-0180 . Jika sudah di validasi Bagian Keuangan Kartu Ujian akan Muncul</b>"
