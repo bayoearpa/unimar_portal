@@ -1138,7 +1138,7 @@ public function ujian_susulan_cetak($id)
 		$this->load->view('mahasiswa/ujiansusulan_cetak',$data);
 
 		//pdf
-		$pdfFilePath="KARTU_UJIAN".$nim.".pdf";
+		$pdfFilePath="KARTU_UJIAN_".$nim.".pdf";
 		$html=$this->load->view('mahasiswa/ujiansusulan_cetak',$data, TRUE);
 		$pdf = $this->m_pdf->load();
  

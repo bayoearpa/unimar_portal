@@ -53,10 +53,10 @@
 
 <table width="100%" style="border-collapse: collapse;border: 1px solid black;">
 	<tr>
-		<td>No.</td>
-		<td>Mata Kuliah</td>
-		<td>SKS</td>
-		<td>TTD Petugas</td>
+		<td align="center">No.</td>
+		<td align="center">Mata Kuliah</td>
+		<td align="center">SKS</td>
+		<td align="center">TTD Petugas</td>
 	</tr>
 	<?php 
 	$no = 1;
