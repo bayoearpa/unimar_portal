@@ -948,6 +948,20 @@ class Mahasiswa extends CI_Controller {
 			return $n->Nama_mahasiswa;
 		}
 	}
+	public function getProdi($prodi)
+	{
+		# code...
+		//get nama
+		$where = array(
+			'Kode_program_studi' => $prodi,			       
+        );
+		$getP = $this->m_portal->get_data($where,'tmst_program_studi')->result();
+		foreach ($getP as $p) {
+			# code...
+			//$data['nama'] = $n->Nama_mahasiswa ;
+			return $p->Nama_program_studi;
+		}
+	}
 	 public function ujian_susulan($id)
 	{
 		# code...
