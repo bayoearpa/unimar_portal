@@ -1741,6 +1741,18 @@ class bk extends CI_Controller {
 			 }else{
 				 $this->session->set_flashdata('success', "<b>Selamat, Kliring berhasil diproses</b>");  
 			 }
+
+			 $where_insert = array(
+				'id_smta' => $id,
+				'ta'	=> $ta		       
+        	);
+			 $res1 = $this->m_portal->insert_into_us_makul_fix($where_insert);
+		 	if($res1==true)
+			 {
+				$this->session->set_flashdata('error', "<b>Error, Proses kliring makul anda gagal</b>");
+			 }else{
+				 $this->session->set_flashdata('success', "<b>Selamat, Kliring makul berhasil diproses</b>");  
+			 }
 			
 
 			 //after input

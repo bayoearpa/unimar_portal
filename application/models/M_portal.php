@@ -423,6 +423,15 @@ function insert_into_smta_makul_fix($where) {
         $this->db->insert('tbl_kliring_smta_makul', $r); // insert each row to another table
     }
 }
+function insert_into_us_makul_fix($where) {
+	$this->db->select('id_smta, Kode_mata_kuliah, ta');
+	$this->db->from('tbl_kliring_us_makul_temp');
+	$this->db->where($where);
+    $q = $this->db->get()->result(); // get first table
+    foreach($q as $r) { // loop over results
+        $this->db->insert('tbl_kliring_us_makul', $r); // insert each row to another table
+    }
+}
 function get_data_join_makul_smta_with_master_makul ($where){
 		$this->db->distinct();
 		$this->db->select('tmst_mata_kuliah.Nama_mata_kuliah as makul,
