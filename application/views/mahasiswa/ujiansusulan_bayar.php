@@ -20,8 +20,6 @@
                   <?= $this->session->flashdata('error'); ?>
               </div>
               <?php endif; ?>
-
-              <a href="<?php echo base_url() ?>mahasiswa/ujian_susulan_cetak/<?php echo $id_smta; ?>" target="__blank"><button class="btn btn-success" value="Cetak Kartu Ujian Susulan"></a>
           
        <!-- /.konten -->
           </div>
