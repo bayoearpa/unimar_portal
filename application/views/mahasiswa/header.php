@@ -202,8 +202,7 @@
            <!--  <li><a href="<?php //echo base_url() ?>baak/mon_sbprala"><i class="fa fa-circle-o"></i> SB Prala</a></li> -->
             <li><a href="#"><i class="fa fa-circle-o"></i>Semester Antara</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i>PKL</a></li>
-            <!-- <li><a href="<?php //echo base_url() ?>mahasiswa/ujian_susulan/<?php //echo $this->session->userdata('user')?>"><i class="fa fa-circle-o"></i>Ujian Susulan</a></li> -->
-          </ul>
+            <li><a href="<?php echo base_url() ?>mahasiswa/ujian_susulan/<?php echo $this->session->userdata('user')?>"><i class="fa fa-circle-o"></i>Ujian Susulan</a></li>
         </li>
         <?php if ($this->session->userdata('prodi') == "92403" || $this->session->userdata('prodi') == "92402" ) {
           # code...
