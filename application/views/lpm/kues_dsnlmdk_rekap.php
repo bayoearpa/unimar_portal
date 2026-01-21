@@ -25,6 +25,8 @@
                     <option value="21201">S1 Teknik Mesin</option>
                     <option value="13241">S1 Teknik Keselamatan</option>
                     <option value="94205">S1 Perdagangan Internasional</option>
+                    <option value="63317">D4 MPLM</option>
+                    <option value="61209">S1 Bisnis Digital</option>
 
                   </select>
                 </div>
