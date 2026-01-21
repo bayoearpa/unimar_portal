@@ -12,6 +12,7 @@
                   <button class="close" data-dismiss="alert">&times;</button>
                   <?= $this->session->flashdata('success'); ?>
               </div>
+               <a href="<?php echo base_url() ?>mahasiswa/ujian_susulan_cetak/<?php echo $id_smta; ?>" target="__blank"><button class="btn btn-primary">Cetak Kartu Ujian Susulan</button></a>
               <?php endif; ?>
 
               <?php if ($this->session->flashdata('error')): ?>
@@ -22,7 +23,7 @@
               <?php endif; ?>
 
 
-              <a href="<?php echo base_url() ?>mahasiswa/ujian_susulan_cetak/<?php echo $id_smta; ?>" target="__blank"><button class="btn btn-success">Cetak Kartu Ujian Susulan</button></a>
+             
           
        <!-- /.konten -->
           </div>

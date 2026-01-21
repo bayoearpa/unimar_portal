@@ -90,7 +90,7 @@
 	</tr> -->
 	<tr>
 		<td></td>
-		<td align="center"><b>Wali / Ka. Prodi</b></td>
+		<td align="center"><b>Dosen Wali / Ka. Prodi</b></td>
 	</tr>
 	<tr><td></td></tr>
 	<tr><td></td></tr>

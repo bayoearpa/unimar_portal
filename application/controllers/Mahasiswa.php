@@ -996,13 +996,24 @@ class Mahasiswa extends CI_Controller {
         if ($bk_data) {
 	        // Jika data ditemukan, baru ambil nilainya
 	        $id_smta = $bk_data->id_smta;
+	        $hasil = $bk_data->hasil;
 	    }
 	    if ($id_smta > 0) {
 	    	# code...
-	    	 $this->session->set_flashdata(
+
+	    	if ($hasil == "1") {
+	    		# code...
+	    		$this->session->set_flashdata(
 	            'success',
 	            "<b>Pengajuan Ujian Susulan anda disetujui oleh keuangan silakan download kartu ujian dibawah ini :</b>"
-	        );
+	        	);
+	    	}else{
+	    		$this->session->set_flashdata(
+	            'error',
+	            "<b>Pengajuan Ujian Susulan anda Tidak disetujui oleh keuangan silakan selesaikan administrasi anda</b>"
+	        	);
+	    	}
+	    	
 	    	$data['id_smta'] = $id_smta;
 			$this->load->view('mahasiswa/header');
 			$this->load->view('mahasiswa/ujiansusulan_beres',$data);

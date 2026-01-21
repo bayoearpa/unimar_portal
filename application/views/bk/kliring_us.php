@@ -3,7 +3,7 @@
 
         <div class="box box-default">
           <div class="box-header with-border">
-            <h3 class="box-title">Form Tambah Kliring UAS</h3>
+            <h3 class="box-title">Form Tambah Kliring UJian Susulan</h3>
           </div>
           <div class="box-body">
             <?php echo validation_errors(); 
