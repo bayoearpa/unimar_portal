@@ -444,6 +444,18 @@ function get_data_join_makul_smta_with_master_makul ($where){
 		$query=$this->db->get();
 		return $query;
 }
+function get_data_join_makul_ujiansusulan_with_master_makul ($where){
+		$this->db->distinct();
+		$this->db->select('tmst_mata_kuliah.Nama_mata_kuliah as makul,
+		tmst_mata_kuliah.Semester as smt,
+		tmst_mata_kuliah.Kode_mata_kuliah as kd_makul');
+		$this->db->from('tbl_kliring_us_makul');
+		$this->db->join('tmst_mata_kuliah',' tbl_kliring_us_makul.Kode_mata_kuliah = tmst_mata_kuliah.Kode_mata_kuliah','inner');
+		$this->db->where($where);
+		//$this->db->order_by('tbl_catar_validasi.no_reg', "asc");
+		$query=$this->db->get();
+		return $query;
+}
 function get_data_join_smta_select_all($where){
 		// $this->db->distinct();
 		$this->db->select('tbl_kliring_smta.id_smta as id_smta,

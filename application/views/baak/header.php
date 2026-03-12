@@ -242,6 +242,18 @@
                     <!-- <li><a href="#"><i class="fa fa-circle-o"></i> Selesai</a></li> -->
                   </ul>
                 </li>
+                <li class="treeview">
+                  <a href="#"><i class="fa fa-circle-o"></i>Ujian Susulan
+                    <span class="pull-right-container">
+                      <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                  </a>
+                  <ul class="treeview-menu">
+                    <li><a href="<?php echo base_url() ?>baak/search_ujiansusulan_cetak"><i class="fa fa-circle-o"></i>Rekapitulasi</a></li>
+                    <!-- <li><a href="<?php //echo base_url() ?>ppk/ajuan_prada"><i class="fa fa-circle-o"></i> Ajuan Prada</a></li> -->
+                    <!-- <li><a href="#"><i class="fa fa-circle-o"></i> Selesai</a></li> -->
+                  </ul>
+                </li>
                  <li class="treeview">
                   <a href="#"><i class="fa fa-circle-o"></i>PKL
                     <span class="pull-right-container">
