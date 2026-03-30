@@ -1548,7 +1548,7 @@ class baak extends CI_Controller {
 	{
 		# code...
 		$this->load->view('baak/header');
-		$this->load->view('baak/search_smta_cetak');
+		$this->load->view('baak/search_ujiansusulan_cetak');
 		$this->load->view('baak/footer');
 	}
 	public function search_ujiansusulan_cetakp()
@@ -1563,8 +1563,8 @@ class baak extends CI_Controller {
 	        );
 		$data['list_makul']=$this->m_portal->get_data_join_makul_ujiansusulan_with_master_makul($where)->result();
 		$this->load->view('baak/header');
-		$this->load->view('baak/search_smta_cetak');
-		$this->load->view('baak/search_smta_cetakp',$data);
+		$this->load->view('baak/search_ujiansusulan_cetak');
+		$this->load->view('baak/search_ujiansusulan_cetakp',$data);
 		$this->load->view('baak/footer');
 	}
 	//////////////////////////////////////////// .ujian susulan //////////////////////////////////////////////
