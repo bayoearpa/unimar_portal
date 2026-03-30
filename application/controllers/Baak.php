@@ -1552,21 +1552,28 @@ class baak extends CI_Controller {
 		$this->load->view('baak/footer');
 	}
 	public function search_ujiansusulan_cetakp()
-	{
-		# code...
-		$data['baak'] = $this;
-		$prodi = $this->input->post('prodi');
-		$smt = $this->input->post('semester');
-		$where = array(
-				'tmst_mata_kuliah.Kode_program_studi' => $prodi,			       
-				'tmst_mata_kuliah.Semester' => $smt
-	        );
-		$data['list_makul']=$this->m_portal->get_data_join_makul_ujiansusulan_with_master_makul($where)->result();
-		$this->load->view('baak/header');
-		$this->load->view('baak/search_ujiansusulan_cetak');
-		$this->load->view('baak/search_ujiansusulan_cetakp',$data);
-		$this->load->view('baak/footer');
-	}
+{
+    $prodi = $this->input->post('prodi');
+    $smt   = $this->input->post('semester');
+
+    if (!$prodi || !$smt) {
+        $this->session->set_flashdata('error', 'Prodi dan Semester wajib diisi');
+        redirect('baak/search_ujiansusulan');
+    }
+
+    $where = [
+        'tmst_mata_kuliah.Kode_program_studi' => $prodi,
+        'tmst_mata_kuliah.Semester' => $smt
+    ];
+
+    $data['list_makul'] = $this->m_portal
+        ->get_data_join_makul_ujiansusulan_with_master_makul($where);
+
+    $this->load->view('baak/header');
+    $this->load->view('baak/search_ujiansusulan_cetak', $data);
+    $this->load->view('baak/search_ujiansusulan_cetakp', $data);
+    $this->load->view('baak/footer');
+}
 	//////////////////////////////////////////// .ujian susulan //////////////////////////////////////////////
 	//////////////////////////////////////////Monitoring///////////////////////////////////////////////////////
 
