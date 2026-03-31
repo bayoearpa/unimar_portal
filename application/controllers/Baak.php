@@ -1601,6 +1601,7 @@ class baak extends CI_Controller {
 	}
 	public function search_ujiansusulan_cetakp()
 {
+	$data['baak'] = $this;
     $prodi = $this->input->post('prodi');
     $smt   = $this->input->post('semester');
 
