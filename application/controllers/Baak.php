@@ -1029,7 +1029,7 @@ class baak extends CI_Controller {
 				'tbl_kliring_us_makul.Kode_mata_kuliah' => $kdmakul,			       
 				'tbl_kliring_us.ta' => $ta
 	        );
-		$data=$this->m_portal->get_data_join_count_makul_absen($where)->result();
+		$data=$this->m_portal->get_data_join_count_us_makul_absen($where)->result();
 		foreach ($data as $key) {
 			# code...
 			$total = $key->jml_peserta;
