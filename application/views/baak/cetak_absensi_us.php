@@ -49,8 +49,8 @@
 		<td rowspan="2" style="height: 30px; font-size: 10px;">TUGAS</td>
 		<td rowspan="2" style="height: 30px; font-size: 10px;">MID</td>
 		<td rowspan="2" style="height: 30px; font-size: 10px;">SMT</td>
-		<td colspan="2" style="height: 30px; font-size: 10px;align-content: center;">NILAI</td>
-		<td colspan="2" style="height: 30px; font-size: 10px;align-content: center;">NILAI AKHIR</td>
+		<td colspan="2" style="height: 30px; font-size: 10px;"><center>NILAI</center></td>
+		<td colspan="2" style="height: 30px; font-size: 10px;"><center>NILAI AKHIR</center></td>
 	</tr>
 	<tr>
 		<td style="height: 30px; font-size: 10px;">TEORI</td>
