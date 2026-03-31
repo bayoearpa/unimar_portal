@@ -69,6 +69,10 @@ foreach($catar as $c){ ?>
 		<td></td>
 		<td></td>
 		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
 	</tr>
 <?php } ?>
 	</table>
