@@ -14,7 +14,7 @@
                 <td>Nama Mata Kuliah</td>
                 <td>Semester</td>
                 <td>Peserta</td>
-                <td>Dosen Pengampu</td>
+                <!-- <td>Dosen Pengampu</td> -->
                 <td>Cetak</td>
                </tr>
                <?php foreach($list_makul as $k){ 
@@ -25,11 +25,11 @@
                   <td><?php echo $k->makul ?></td>
                   <td><?php echo $k->smt ?></td>
                   <td><?php 
-                  $jml_peserta = $baak->totalpesertasmtabayardone($kdmakul);
+                  $jml_peserta = $baak->totalpesertausbayardone($kdmakul);
                   echo $jml_peserta ?></td>
                   <td><?php 
-                  $dosen = $baak->cekdosenpengampu($kdmakul);
-                  echo $dosen;
+                  // $dosen = $baak->cekdosenpengampu($kdmakul);
+                  // echo $dosen;
                    ?></td>
                   <td width="25%">
                     <?php 

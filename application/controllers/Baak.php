@@ -1021,6 +1021,22 @@ class baak extends CI_Controller {
 		return $total;
 
 	}
+	public function totalpesertausbayardone($kdmakul)
+	{
+		# code...
+		$ta = $this->getTa();
+		$where = array(
+				'tbl_kliring_us_makul.Kode_mata_kuliah' => $kdmakul,			       
+				'tbl_kliring_us.ta' => $ta
+	        );
+		$data=$this->m_portal->get_data_join_count_makul_absen($where)->result();
+		foreach ($data as $key) {
+			# code...
+			$total = $key->jml_peserta;
+		}
+		return $total;
+
+	}
 	public function cetakabsensisemesterantara($kdmakul)
 	{
 		# code...
@@ -1118,6 +1134,38 @@ class baak extends CI_Controller {
 				'Kode_mata_kuliah' => $kdmakul,			       
 	        );
 		$data= $this->m_portal->get_data($where,'tbl_kliring_smta_pengampu')->result();
+
+		if ($data == null) {
+			# code...
+			$pesan = "Dosen Belum Di Set";
+			return $pesan;
+		}else{
+
+		foreach ($data as $key) {
+			# code...
+			$kddosen= $key->Kode_dosen;
+		}
+		$where1 = array(
+				'Kode_dosen' => $kddosen,
+	        );
+		$data1= $this->m_portal->get_data($where1,'tmst_dosen')->result();
+
+		foreach ($data1 as $key) {
+			# code...
+			$nmdosen= $key->Nama_dosen;
+		}
+		 return $nmdosen;
+		}
+	}
+	public function cekdosenpengampuus($kdmakul)
+	{
+		# code...
+		/// cek dosen
+		$ta = $this->getTa();
+		$where = array(
+				'Kode_mata_kuliah' => $kdmakul,			       
+	        );
+		$data= $this->m_portal->get_data($where,'tbl_kliring_us_pengampu')->result();
 
 		if ($data == null) {
 			# code...
