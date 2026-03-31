@@ -1623,6 +1623,324 @@ class baak extends CI_Controller {
     $this->load->view('baak/search_ujiansusulan_cetakp', $data);
     $this->load->view('baak/footer');
 }
+public function cetakabsensiujiansusulan($kdmakul)
+	{
+		# code...
+		$ta = $this->getTa();
+		$data['tanggal'] = date("d-m-Y");
+		$where = array(
+				'tbl_kliring_us_makul.Kode_mata_kuliah' => $kdmakul,			       
+				'tbl_kliring_us.ta' => $ta
+	        );
+		$data['catar']=$this->m_portal->get_data_join_cetak_us_absensi_pdf($where)->result();
+
+		foreach ($data['catar'] as $key) {
+			# code...
+			$prodi = $key->prodi;
+		}
+		$data['prodi'] = $this->getProdi($prodi);
+		/// get data makul
+		$where1 = array(
+				'Kode_mata_kuliah' => $kdmakul
+	        );
+		$get_tbl_makul=$this->m_portal->get_data($where1,'tmst_mata_kuliah')->result();
+		foreach ($get_tbl_makul as $key) {
+			# code...
+			$data['nm_makul'] = $key->Nama_mata_kuliah;
+			$data['smt'] = $key->Semester;
+		}
+		// get dosen pengampu
+		$where2 = array(
+				'Kode_mata_kuliah' => $kdmakul,			       
+				'ta' => $ta
+	        );
+		$get_tbl_pengampu=$this->m_portal->get_data($where2,'tbl_kliring_us_pengampu')->result();
+		// $get_namaprodi = $this->getProdi($kdmakul);
+		// $data['prodi'] = $get_namaprodi;
+		if ($get_tbl_pengampu == null) {
+			# code...
+			$data['pengampu'] = "Dosen Belum ditentukan";
+		}else{
+			$data['pengampu'] = "belum jadi";
+		}
+
+
+		$this->load->view('baak/cetak_absensi_us',$data);
+
+		//pdf
+		$pdfFilePath="cetak_absensi_".$data['nm_makul'].".pdf";
+		$html=$this->load->view('baak/cetak_absensi_us',$data, TRUE);
+		$pdf = $this->m_pdf->load();
+ 
+        $pdf->AddPage('P');
+        $pdf->WriteHTML($html);
+        $pdf->Output($pdfFilePath, "D");
+        exit();
+
+	}
+	public function cek_us_peserta($kdmakul)
+	{
+		# code...
+		$ta = $this->getTa();
+		$data['tanggal'] = date("d-m-Y");
+		$where = array(
+				'tbl_kliring_us_makul.Kode_mata_kuliah' => $kdmakul,			       
+				'tbl_kliring_us.ta' => $ta
+	        );
+		$data['catar']=$this->m_portal->get_data_join_cetak_us_absensi_pdf($where)->result();
+
+		foreach ($data['catar'] as $key) {
+			# code...
+			$prodi = $key->prodi;
+		}
+		$data['prodi'] = $this->getProdi($prodi);
+		/// get data makul
+		$where1 = array(
+				'Kode_mata_kuliah' => $kdmakul
+	        );
+		$get_tbl_makul=$this->m_portal->get_data($where1,'tmst_mata_kuliah')->result();
+		foreach ($get_tbl_makul as $key) {
+			# code...
+			$data['nm_makul'] = $key->Nama_mata_kuliah;
+			$data['smt'] = $key->Semester;
+		}
+
+		$this->load->view('baak/header');
+		$this->load->view('baak/search_us_cetak');
+		$this->load->view('baak/cek_us_peserta',$data);
+		$this->load->view('baak/footer');
+
+	}
+	public function cetakpermohonanujiansusulan($kdmakul)
+	{
+		# code...
+		$ta = $this->getTa();
+
+		// get data dosen
+		$where = array(
+				'Kode_mata_kuliah' => $kdmakul,			       
+	        );
+		$data= $this->m_portal->get_data($where,'tbl_kliring_us_pengampu')->result();
+		foreach ($data as $key) {
+			# code...
+			$kddosen= $key->Kode_dosen;
+		}
+		$where1 = array(
+				'Kode_dosen' => $kddosen,
+	        );
+		$data1= $this->m_portal->get_data($where1,'tmst_dosen')->result();
+
+		foreach ($data1 as $key) {
+			# code...
+			$nmdosen= $key->Nama_dosen;
+		}
+
+		$data['nmdosen'] = $nmdosen;
+
+		/// get data makul
+		$where1 = array(
+				'Kode_mata_kuliah' => $kdmakul
+	        );
+		$get_tbl_makul=$this->m_portal->get_data($where1,'tmst_mata_kuliah')->result();
+		foreach ($get_tbl_makul as $key) {
+			# code...
+			$data['nm_makul'] = $key->Nama_mata_kuliah;
+			$data['smt'] = $key->Semester;
+		}
+
+		$get_tanggal = date("Y-m-d");
+		$set_tanggal = mediumdate_indo($get_tanggal);
+
+		$data['tanggal'] = $set_tanggal;
+
+		$this->load->view('baak/cetak_permohonan_us',$data);
+
+		//pdf
+		$pdfFilePath="cetak_permohonan_".$data['nm_makul'].".pdf";
+		$html=$this->load->view('baak/cetak_permohonan_us',$data, TRUE);
+		$pdf = $this->m_pdf->load();
+ 
+        $pdf->AddPage('P');
+        $pdf->WriteHTML($html);
+        $pdf->Output($pdfFilePath, "D");
+        exit();
+
+	}
+	public function export_excel_us($kdmakul){
+	///set cetak
+		$ta = $this->getTa();
+		$tanggal = date("d-m-Y");
+		$where = array(
+				'tbl_kliring_us_makul.Kode_mata_kuliah' => $kdmakul,			       
+				'tbl_kliring_us.ta' => $ta
+	        );
+		$get_absensi=$this->m_portal->get_data_join_cetak_absensi_pdf($where)->result();
+
+		foreach ($get_absensi as $key) {
+			# code...
+			$prodi = $key->prodi;
+		}
+		$prodi_set = $this->getProdi($prodi);
+		/// get data makul
+		$where1 = array(
+				'Kode_mata_kuliah' => $kdmakul
+	        );
+		$get_tbl_makul=$this->m_portal->get_data($where1,'tmst_mata_kuliah')->result();
+		foreach ($get_tbl_makul as $key) {
+			# code...
+			$nmmakul_set = $key->Nama_mata_kuliah;
+			$smt_set = $key->Semester;
+		}
+		// get dosen pengampu
+		$where2 = array(
+				'Kode_mata_kuliah' => $kdmakul,			       
+				'ta' => $ta
+	        );
+		$get_tbl_pengampu=$this->m_portal->get_data($where2,'tbl_kliring_us_pengampu')->result();
+		// $get_namaprodi = $this->getProdi($kdmakul);
+		// $data['prodi'] = $get_namaprodi;
+		if ($get_tbl_pengampu == null) {
+			# code...
+			$pengampu_set = "Dosen Belum ditentukan";
+		}else{
+			foreach ($get_tbl_pengampu as $key) {
+			# code...
+			$kddosen= $key->Kode_dosen;
+		}
+		$where1 = array(
+				'Kode_dosen' => $kddosen,
+	        );
+		$data1= $this->m_portal->get_data($where1,'tmst_dosen')->result();
+
+		foreach ($data1 as $key) {
+			# code...
+			$nmdosen= $key->Nama_dosen;
+		}
+			$pengampu_set = $nmdosen;
+		}
+
+
+    // Load plugin PHPExcel nya
+    ob_start();
+    include APPPATH.'third_party/PHPExcel/PHPExcel.php';
+    
+    // Panggil class PHPExcel nya
+    $excel = new PHPExcel();
+    // Settingan awal fil excel
+				    // $excel->getProperties()->setCreator('My Notes Code')
+				    //              ->setLastModifiedBy('My Notes Code')
+				    //              ->setTitle("Data Siswa")
+				    //              ->setSubject("Siswa")
+				    //              ->setDescription("Laporan Semua Data Siswa")
+				    //              ->setKeywords("Data Siswa");
+    // Buat sebuah variabel untuk menampung pengaturan style dari header tabel
+				    // $style_col = array(
+				    //   'font' => array('bold' => true), // Set font nya jadi bold
+				    //   'alignment' => array(
+				    //     'horizontal' => PHPExcel_Style_Alignment::HORIZONTAL_CENTER, // Set text jadi ditengah secara horizontal (center)
+				    //     'vertical' => PHPExcel_Style_Alignment::VERTICAL_CENTER // Set text jadi di tengah secara vertical (middle)
+				    //   ),
+				    //   'borders' => array(
+				    //     'top' => array('style'  => PHPExcel_Style_Border::BORDER_THIN), // Set border top dengan garis tipis
+				    //     'right' => array('style'  => PHPExcel_Style_Border::BORDER_THIN),  // Set border right dengan garis tipis
+				    //     'bottom' => array('style'  => PHPExcel_Style_Border::BORDER_THIN), // Set border bottom dengan garis tipis
+				    //     'left' => array('style'  => PHPExcel_Style_Border::BORDER_THIN) // Set border left dengan garis tipis
+				    //   )
+				    // );
+    // Buat sebuah variabel untuk menampung pengaturan style dari isi tabel
+				    // $style_row = array(
+				    //   'alignment' => array(
+				    //     'vertical' => PHPExcel_Style_Alignment::VERTICAL_CENTER // Set text jadi di tengah secara vertical (middle)
+				    //   ),
+				    //   'borders' => array(
+				    //     'top' => array('style'  => PHPExcel_Style_Border::BORDER_THIN), // Set border top dengan garis tipis
+				    //     'right' => array('style'  => PHPExcel_Style_Border::BORDER_THIN),  // Set border right dengan garis tipis
+				    //     'bottom' => array('style'  => PHPExcel_Style_Border::BORDER_THIN), // Set border bottom dengan garis tipis
+				    //     'left' => array('style'  => PHPExcel_Style_Border::BORDER_THIN) // Set border left dengan garis tipis
+				    //   )
+				    // );
+				    // $excel->setActiveSheetIndex(0)->setCellValue('A1', "DATA SISWA"); // Set kolom A1 dengan tulisan "DATA SISWA"
+				    // $excel->getActiveSheet()->mergeCells('A1:E1'); // Set Merge Cell pada kolom A1 sampai E1
+				    // $excel->getActiveSheet()->getStyle('A1')->getFont()->setBold(TRUE); // Set bold kolom A1
+				    // $excel->getActiveSheet()->getStyle('A1')->getFont()->setSize(15); // Set font size 15 untuk kolom A1
+				    // $excel->getActiveSheet()->getStyle('A1')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER); // Set text center untuk kolom A1
+    // Buat header tabel nya pada baris ke 1
+				    $excel->setActiveSheetIndex(0)->setCellValue('A1', "MATA KULIAH"); // Set kolom A3 dengan tulisan "NO"
+				    $excel->setActiveSheetIndex(0)->setCellValue('B1', ":"); // Set kolom B3 dengan tulisan "NIS"
+				    $excel->setActiveSheetIndex(0)->setCellValue('C1', $nmmakul_set); // Set kolom C3 dengan tulisan "NAMA"
+
+				    $excel->setActiveSheetIndex(0)->setCellValue('A2', "SMT / PRODI"); // Set kolom A3 dengan tulisan "NO"
+				    $excel->setActiveSheetIndex(0)->setCellValue('B2', ":"); // Set kolom B3 dengan tulisan "NIS"
+				    $excel->setActiveSheetIndex(0)->setCellValue('C2', $smt_set." / ".$prodi_set); // Set kolom C3 dengan tulisan "NAMA"
+
+				    $excel->setActiveSheetIndex(0)->setCellValue('A3', "DOSEN PENGAMPU"); // Set kolom A3 dengan tulisan "NO"
+				    $excel->setActiveSheetIndex(0)->setCellValue('B3', ":"); // Set kolom B3 dengan tulisan "NIS"
+				    $excel->setActiveSheetIndex(0)->setCellValue('C3', $pengampu_set); // Set kolom C3 dengan tulisan "NAMA"
+
+				    $excel->setActiveSheetIndex(0)->setCellValue('A4', "NO"); // Set kolom A3 dengan tulisan "NO"
+				    $excel->setActiveSheetIndex(0)->setCellValue('B4', "NAMA"); // Set kolom B3 dengan tulisan "NIS"
+				    $excel->setActiveSheetIndex(0)->setCellValue('C4', "NRP"); // Set kolom C3 dengan tulisan "NAMA"
+				   
+    // Apply style header yang telah kita buat tadi ke masing-masing kolom header
+				    // $excel->getActiveSheet()->getStyle('A3')->applyFromArray($style_col);
+				    // $excel->getActiveSheet()->getStyle('B3')->applyFromArray($style_col);
+				    // $excel->getActiveSheet()->getStyle('C3')->applyFromArray($style_col);
+				    // $excel->getActiveSheet()->getStyle('D3')->applyFromArray($style_col);
+				    // $excel->getActiveSheet()->getStyle('E3')->applyFromArray($style_col);
+   
+    // $no = 1; // Untuk penomoran tabel, di awal set dengan 1
+    $numrow = 5; // Set baris pertama untuk isi tabel adalah baris ke 1
+    $no = 1;
+
+    // $excel->setActiveSheetIndex(0)->setCellValue('A1', 'bayu');
+    foreach($get_absensi as $data){ // Lakukan looping pada variabel siswa 
+    	//DATA DIRI
+      $excel->setActiveSheetIndex(0)->setCellValue('A'.$numrow, $no++);
+      $excel->setActiveSheetIndex(0)->setCellValue('B'.$numrow, $data->nama);
+      $excel->setActiveSheetIndex(0)->setCellValue('C'.$numrow, $data->nim);
+      
+      // Apply style row yang telah kita buat tadi ke masing-masing baris (isi tabel)
+			      // $excel->getActiveSheet()->getStyle('A'.$numrow)->applyFromArray($style_row);
+			      // $excel->getActiveSheet()->getStyle('B'.$numrow)->applyFromArray($style_row);
+			      // $excel->getActiveSheet()->getStyle('C'.$numrow)->applyFromArray($style_row);
+			      // $excel->getActiveSheet()->getStyle('D'.$numrow)->applyFromArray($style_row);
+			      // $excel->getActiveSheet()->getStyle('E'.$numrow)->applyFromArray($style_row);
+      
+      // $no++; // Tambah 1 setiap kali looping
+      $numrow++; // Tambah 1 setiap kali looping
+    }
+    // Set width kolom
+			    // $excel->getActiveSheet()->getColumnDimension('A')->setWidth(5); // Set width kolom A
+			    // $excel->getActiveSheet()->getColumnDimension('B')->setWidth(15); // Set width kolom B
+			    // $excel->getActiveSheet()->getColumnDimension('C')->setWidth(25); // Set width kolom C
+			    // $excel->getActiveSheet()->getColumnDimension('D')->setWidth(20); // Set width kolom D
+			    // $excel->getActiveSheet()->getColumnDimension('E')->setWidth(30); // Set width kolom E
+    
+    // Set height semua kolom menjadi auto (mengikuti height isi dari kolommnya, jadi otomatis)
+    $excel->getActiveSheet()->getDefaultRowDimension()->setRowHeight(-1);
+    // Set orientasi kertas jadi LANDSCAPE
+    $excel->getActiveSheet()->getPageSetup()->setOrientation(PHPExcel_Worksheet_PageSetup::ORIENTATION_LANDSCAPE);
+    // Set judul file excel nya
+    $excel->getActiveSheet(0)->setTitle("Export Tracer");
+    $excel->setActiveSheetIndex(0);
+    // Proses file excel
+    
+    // Redirect output to a client’s web browser (Excel5)
+        // header('Content-Type: application/vnd.ms-excel');
+        // header('Content-Disposition: attachment;filename="Data Tracer "'.$tanggal_lulus.'".xlsx"');
+        // header('Cache-Control: max-age=0');
+        // $writer = PHPExcel_IOFactory::createWriter($excel, 'Excel5');
+        // $writer->save('php://output');
+    //old
+        $write = PHPExcel_IOFactory::createWriter($excel, 'Excel2007');
+        ob_end_clean();
+        // header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        // header('Content-Disposition: attachment; filename="Data Tracer "'.$tanggal_lulus.'".xlsx"'); // Set nama file excel nya
+        // header('Cache-Control: max-age=0');
+        header('Content-type: application/vnd.ms-excel');
+        header('Content-Disposition: attachment; filename="Excel Absensi Ujian Susulan "'.$nmmakul_set.'".xlsx"');
+        $write->save('php://output');
+  }
 	//////////////////////////////////////////// .ujian susulan //////////////////////////////////////////////
 	//////////////////////////////////////////Monitoring///////////////////////////////////////////////////////
 

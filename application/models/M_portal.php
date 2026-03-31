@@ -523,6 +523,22 @@ function get_data_join_cetak_absensi_pdf($where)
 		$query=$this->db->get();
 		return $query;
 }
+function get_data_join_ceta_us_absensi_pdf($where)
+{
+	# code...
+	$this->db->select('tmst_mahasiswa.Nama_mahasiswa as nama,
+		tmst_mahasiswa.NIM as nim,
+		tbl_kliring_us_makul.Kode_mata_kuliah as kd_makul,
+		tbl_kliring_us.prodi as prodi');
+		$this->db->from('tbl_kliring_us');
+		$this->db->join('tbl_kliring_us_bk',' tbl_kliring_us.id_smta = tbl_kliring_us_bk.id_smta','inner');
+		$this->db->join('tbl_kliring_us_makul',' tbl_kliring_us_bk.id_smta = tbl_kliring_us_makul.id_smta','inner');
+		$this->db->join('tmst_mahasiswa',' tbl_kliring_us.nim = tmst_mahasiswa.NIM','inner');
+		$this->db->where($where);
+		//$this->db->order_by('tbl_catar_validasi.no_reg', "asc");
+		$query=$this->db->get();
+		return $query;
+}
 	function get_datadiri_join_where_nim_smta($where){
 		$this->db->select('tran_nilai_semester_mhs.thsmstrnlm as taa,
 		tran_nilai_semester_mhs.Kode_Program_studi as kode_prodi,
