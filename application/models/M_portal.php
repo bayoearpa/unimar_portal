@@ -498,7 +498,7 @@ function get_data_join_count_makul_absen($where){
 		return $query;
 }
 function get_data_join_count_us_makul_absen($where){
-	$this->db->select('Count(tbl_kliring_us_makul.id_smta) as jml_peserta');
+	$this->db->select('Count(tbl_kliring_us_makul.id_us) as jml_peserta');
 		$this->db->from('tbl_kliring_us');
 		$this->db->join('tbl_kliring_us_bk',' tbl_kliring_us.id_us = tbl_kliring_us_bk.id_us','inner');
 		$this->db->join('tbl_kliring_us_makul',' tbl_kliring_us_bk.id_us = tbl_kliring_us_makul.id_us','inner');
