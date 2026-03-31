@@ -44,19 +44,19 @@
 		<td colspan="9" style="font-weight: bold;text-align: center;">HASIL UJIAN</td>
 	</tr>
 	<tr style="border-style: groove;">
-		<td rowspan="2" style="height: 50px; font-size: 10px;">PARAF</td>
-		<td rowspan="2" style="height: 50px; font-size: 10px;">KEHADIRAN</td>
-		<td rowspan="2" style="height: 50px; font-size: 10px;">TUGAS</td>
-		<td rowspan="2" style="height: 50px; font-size: 10px;">MID</td>
-		<td rowspan="2" style="height: 50px; font-size: 10px;">SMT</td>
-		<td colspan="2" style="height: 50px; font-size: 10px;">NILAI</td>
-		<td colspan="2" style="height: 50px; font-size: 10px;">NILAI AKHIR</td>
+		<td rowspan="2" style="height: 30px; font-size: 10px;">PARAF</td>
+		<td rowspan="2" style="height: 30px; font-size: 10px;">KEHADIRAN</td>
+		<td rowspan="2" style="height: 30px; font-size: 10px;">TUGAS</td>
+		<td rowspan="2" style="height: 30px; font-size: 10px;">MID</td>
+		<td rowspan="2" style="height: 30px; font-size: 10px;">SMT</td>
+		<td colspan="2" style="height: 30px; font-size: 10px;align-content: center;">NILAI</td>
+		<td colspan="2" style="height: 30px; font-size: 10px;align-content: center;">NILAI AKHIR</td>
 	</tr>
 	<tr>
-		<td style="height: 50px; font-size: 10px;">TEORI</td>
-		<td style="height: 50px; font-size: 10px;">PRAKTEK</td>
-		<td style="height: 50px; font-size: 10px;">ANGKA</td>
-		<td style="height: 50px; font-size: 10px;">HURUF</td>
+		<td style="height: 30px; font-size: 10px;">TEORI</td>
+		<td style="height: 30px; font-size: 10px;">PRAKTEK</td>
+		<td style="height: 30px; font-size: 10px;">ANGKA</td>
+		<td style="height: 30px; font-size: 10px;">HURUF</td>
 	</tr>
 
 
