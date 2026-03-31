@@ -38,18 +38,23 @@
 </table>
 <table width="100%" border="1" style="border-collapse: collapse;border: 1px solid black;">
 	<tr>
-		<td rowspan="2" style="font-weight: bold;text-align: center;">NO</td>
-		<td rowspan="2" style="font-weight: bold;text-align: center;">NAMA</td>
-		<td rowspan="2" style="font-weight: bold;text-align: center;">NRP</td>
-		<td colspan="5" style="font-weight: bold;text-align: center;">HARI / TANGGAL</td>
+		<td rowspan="3" style="font-weight: bold;text-align: center;">NO</td>
+		<td rowspan="3" style="font-weight: bold;text-align: center;">NAMA</td>
+		<td rowspan="3" style="font-weight: bold;text-align: center;">NRP</td>
+		<td colspan="9" style="font-weight: bold;text-align: center;">HASIL UJIAN</td>
 	</tr>
 	<tr style="border-style: groove;">
-		<td style="height: 50px;"></td>
-		<td style="height: 50px;"></td>
-		<td style="height: 50px;"></td>
-		<td style="height: 50px;"></td>
-		<td style="height: 50px;"></td>
+		<td rowspan="2" style="height: 50px;">PARAF</td>
+		<td rowspan="2" style="height: 50px;">KEHADIRAN</td>
+		<td rowspan="2" style="height: 50px;">TUGAS</td>
+		<td rowspan="2" style="height: 50px;">MID</td>
+		<td rowspan="2" style="height: 50px;">SMT</td>
+		<td style="height: 50px;">T</td>
+		<td style="height: 50px;">P</td>
+		<td style="height: 50px;">ANGKA</td>
+		<td style="height: 50px;">HURUF</td>
 	</tr>
+
 
 
 <?php 
@@ -85,6 +90,15 @@ foreach($catar as $c){ ?>
 						<li>DOSEN PENGAMPU</li>
 						<li>BAAK</li>
 					</ul>
+			</td>
+			<td>
+				<ul>
+					<li> A = 81 - 100</li>
+					<li> B = 61 - 80</li>
+					<li> C = 41 - 60</li>
+					<li> D = 21 - 40</li>
+					<li> E = 0 - 20</li>
+				</ul>
 			</td>
 		</tr>
 
