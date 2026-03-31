@@ -1654,7 +1654,8 @@ public function cetakabsensiujiansusulan($kdmakul)
 				'Kode_mata_kuliah' => $kdmakul,			       
 				'ta' => $ta
 	        );
-		$get_tbl_pengampu=$this->m_portal->get_data($where2,'tbl_kliring_us_pengampu')->result();
+		// $get_tbl_pengampu=$this->m_portal->get_data($where2,'tbl_kliring_us_pengampu')->result();
+		$get_tbl_pengampu= null;
 		// $get_namaprodi = $this->getProdi($kdmakul);
 		// $data['prodi'] = $get_namaprodi;
 		if ($get_tbl_pengampu == null) {
