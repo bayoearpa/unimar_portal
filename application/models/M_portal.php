@@ -523,7 +523,7 @@ function get_data_join_cetak_absensi_pdf($where)
 		$query=$this->db->get();
 		return $query;
 }
-function get_data_join_ceta_us_absensi_pdf($where)
+function get_data_join_cetak_us_absensi_pdf($where)
 {
 	# code...
 	$this->db->select('tmst_mahasiswa.Nama_mahasiswa as nama,
