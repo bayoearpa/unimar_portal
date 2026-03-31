@@ -49,6 +49,8 @@
 		<td rowspan="2" style="height: 50px;">TUGAS</td>
 		<td rowspan="2" style="height: 50px;">MID</td>
 		<td rowspan="2" style="height: 50px;">SMT</td>
+	</tr>
+	<tr>
 		<td style="height: 50px;">T</td>
 		<td style="height: 50px;">P</td>
 		<td style="height: 50px;">ANGKA</td>
