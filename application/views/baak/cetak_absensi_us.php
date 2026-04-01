@@ -18,7 +18,7 @@
 <body>
 <!-- header -->
 <img src="<?php echo base_url() ?>assets/1/images/kop.png" alt="">
-<h4 style="margin-top: 0px;text-align: center;">DAFTAR HADIR UJIAN SUSULAN PERIODE</h4>
+<h4 style="margin-top: 0px;text-align: center;">DAFTAR HADIR UJIAN SUSULAN</h4>
 <table width="100%">
 	<tr>
 		<td>MATA KULIAH:</td>
