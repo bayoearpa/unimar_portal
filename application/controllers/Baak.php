@@ -15,6 +15,7 @@ class baak extends CI_Controller {
 		}
 		$this->load->model('m_portal');
 		$this->load->library('m_pdf');
+		$this->load->helper('tgl_indo');
 	}
 
 	public function index()
