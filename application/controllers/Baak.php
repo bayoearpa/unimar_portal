@@ -1776,7 +1776,7 @@ public function cetakabsensiujiansusulan($kdmakul)
 				'tbl_kliring_us_makul.Kode_mata_kuliah' => $kdmakul,			       
 				'tbl_kliring_us.ta' => $ta
 	        );
-		$get_absensi=$this->m_portal->get_data_join_cetak_absensi_pdf($where)->result();
+		$get_absensi=$this->m_portal->get_data_join_cetak_us_absensi_pdf($where)->result();
 
 		foreach ($get_absensi as $key) {
 			# code...
