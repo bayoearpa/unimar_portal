@@ -1708,7 +1708,7 @@ public function cetakabsensiujiansusulan($kdmakul)
 		}
 
 		$this->load->view('baak/header');
-		$this->load->view('baak/search_us_cetak');
+		$this->load->view('baak/search_ujiansusulan_cetak');
 		$this->load->view('baak/cek_us_peserta',$data);
 		$this->load->view('baak/footer');
 
