@@ -78,7 +78,27 @@ foreach($catar as $c){ ?>
 		<td></td>
 		<td></td>
 	</tr>
-<?php } ?>
+<?php } 
+// 2. Tambahkan baris kosong jika data kurang dari 10
+$totalMinimal = 10;
+$sisaBaris = $totalMinimal - ($no - 1); // $no-1 karena di akhir loop no sudah bertambah
+
+if($sisaBaris > 0){
+    for($i = 0; $i < $sisaBaris; $i++){ ?>
+        <tr>
+            <td style="height: 30px; text-align: center;"><?php echo $no++ ?></td>
+            <td></td> <td></td> <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    <?php }
+} ?>
 	</table>
 	<table width="100%">
 		<tr>
