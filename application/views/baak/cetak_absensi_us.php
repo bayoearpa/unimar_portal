@@ -139,7 +139,7 @@ if($sisaBaris > 0){
 	</tr>
 	<tr>
 		<td></td>
-		<td align="center"><b>Ketua Prodi</b></td>
+		<td align="center"><b>Dosen Pengampu</b></td>
 	</tr>
 	<tr><td></td></tr>
 	<tr><td></td></tr>
