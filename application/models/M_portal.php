@@ -2129,6 +2129,22 @@ function get_data_formon_mhs($id)
         return $query->row()->total;
     }
 
+    public function countTotalBD3($programStudi, $tahunMasuk) {
+    // Hitung jumlah data berdasarkan program studi dan tahun masuk
+    $this->db->select('COUNT(*) as total');
+    $this->db->from('tbl_mon AS m');
+    $this->db->join('tmst_mahasiswa AS s', 'm.nim = s.NIM', 'inner');
+    
+    // Menggunakan where_in untuk mencakup "belum" DAN "none"
+    $this->db->where_in('m.status_d3', ['belum', 'none']);
+    
+    $this->db->where('s.Kode_program_studi', $programStudi);
+    $this->db->where('s.Tahun_masuk', $tahunMasuk);
+    
+    $query = $this->db->get();
+    return $query->row()->total;
+}
+
     //get summary
     public function getTaruna($prodi, $tahun)
     {
@@ -2219,6 +2235,23 @@ function get_data_formon_mhs($id)
         $this->db->where('s.Tahun_masuk', $tahun);
         return $this->db->get()->result();
     }
+
+    public function getTotalBD3($prodi, $tahun)
+	{
+	    $this->db->query("SET @rownum = 0");
+	    $this->db->select('(@rownum := @rownum + 1) AS no_urut, s.NIM as nim, s.Nama_mahasiswa as nama, s.Kode_program_studi as prodi, p.Nama_program_studi as nm_prodi');
+	    $this->db->from('tbl_mon AS m');
+	    $this->db->join('tmst_mahasiswa AS s', 'm.nim = s.NIM', 'inner');
+	    $this->db->join('tmst_program_studi AS p', 's.Kode_program_studi = p.Kode_program_studi', 'inner');
+	    
+	    // Mengganti status_d3 menjadi "belum" atau "none"
+	    $this->db->where_in('m.status_d3', ['belum', 'none']);
+	    
+	    $this->db->where('s.Kode_program_studi', $prodi);
+	    $this->db->where('s.Tahun_masuk', $tahun);
+	    
+	    return $this->db->get()->result();
+	}
 
     ///////////////////////////////////// notifikasi 2025 ////////////////////////////////////////////////
     public function get_keuangan_notif() {

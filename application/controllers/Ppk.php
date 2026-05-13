@@ -1566,12 +1566,7 @@ public function mon_vallapon()
 		$data['offBoardCount'] = $this->m_portal->countOffBoard($programStudi, $tahunMasuk);
 		$data['lulusUKPPascaCount'] = $this->m_portal->countLulusUKPPasca($programStudi, $tahunMasuk);
 		$data['totalD3Count'] = $this->m_portal->countTotalD3($programStudi, $tahunMasuk);
-
-		// yang blm lulus
-		$ct = $this->m_portal->countTaruna($programStudi, $tahunMasuk);
-		$ld3 = $this->m_portal->countTotalD3($programStudi, $tahunMasuk);
-
-		$data['totalBD3Count'] = $ct - $ld3;
+		$data['totalBD3Count'] = $this->m_portal->countTotalBD3($programStudi, $tahunMasuk);
 
 		 echo json_encode($data);
 	}
@@ -1610,6 +1605,9 @@ public function mon_vallapon()
         case 'd3':
             $data['items'] = $this->m_portal->getTotalD3($programStudi, $year);
             break;
+         case 'bd3':
+            $data['items'] = $this->m_portal->getTotalBD3($programStudi, $year);
+            break;    
         default:
             echo "<p>Jenis data tidak dikenali.</p>";
             return;
