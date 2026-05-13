@@ -18,6 +18,7 @@
           $('#offboard').text(data.offBoardCount);
           $('#lls_ukp_pasca').text(data.lulusUKPPascaCount);
           $('#lls_d3').text(data.totalD3Count);
+          $('#lls_bd3').text(data.totalBD3Count);
         }
       });
     } else {
