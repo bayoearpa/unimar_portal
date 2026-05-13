@@ -63,6 +63,11 @@
                   <td id="lls_d3">0</td>
                   <td><button type="button" class="btn btn-info btn-sm detail-btn" data-type="d3">Lihat</button></td>
                 </tr>
+                 <tr>
+                  <td>BELUM LULUS D3</td>
+                  <td id="lls_d3">0</td>
+                  <td><button type="button" class="btn btn-info btn-sm detail-btn" data-type="bd3">Lihat</button></td>
+                </tr>
               </tbody>
 
               </table>

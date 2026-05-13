@@ -1567,6 +1567,12 @@ public function mon_vallapon()
 		$data['lulusUKPPascaCount'] = $this->m_portal->countLulusUKPPasca($programStudi, $tahunMasuk);
 		$data['totalD3Count'] = $this->m_portal->countTotalD3($programStudi, $tahunMasuk);
 
+		// yang blm lulus
+		$ct = $this->m_portal->countTaruna($programStudi, $tahunMasuk);
+		$ld3 = $this->m_portal->countTotalD3($programStudi, $tahunMasuk);
+
+		$data['totalBD3Count'] = $ct - $ld3;
+
 		 echo json_encode($data);
 	}
 	public function mon_summary_get_detail_data()

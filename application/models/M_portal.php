@@ -2207,7 +2207,7 @@ function get_data_formon_mhs($id)
         return $this->db->get()->result();
     }
 
-    public function getTotalD3($prodi, $tahun)
+    public function  getTotalD3($prodi, $tahun)
     {
     	$this->db->query("SET @rownum = 0");
         $this->db->select('(@rownum := @rownum + 1) AS no_urut, s.NIM as nim, s.Nama_mahasiswa as nama, s.Kode_program_studi as prodi, p.Nama_program_studi as nm_prodi');
