@@ -8,6 +8,50 @@ $(document).on('click', '.view-filesignon-button', function(e) {
     var fileUrl = '/v1/assets/monitoring/onboard/' + filename;
     window.open(fileUrl, '_blank');
 });
+ // File perjkl
+$(document).on('click', '.view-fileperjkl-button', function(e) {
+    e.preventDefault();
+    var filename = $(this).data('filename');
+    var fileUrl = '/v1/assets/monitoring/onboard/' + filename;
+    window.open(fileUrl, '_blank');
+});
+
+//--------------------- offboard file
+ // File signoff
+$(document).on('click', '.view-filesignoff-button', function(e) {
+    e.preventDefault();
+    var filename = $(this).data('filename');
+    var fileUrl = '/v1/assets/monitoring/offboard/' + filename;
+    window.open(fileUrl, '_blank');
+});
+ // File krulist
+$(document).on('click', '.view-filekrulist-button', function(e) {
+    e.preventDefault();
+    var filename = $(this).data('filename');
+    var fileUrl = '/v1/assets/monitoring/offboard/' + filename;
+    window.open(fileUrl, '_blank');
+});
+ // File shippart
+$(document).on('click', '.view-fileshippart-button', function(e) {
+    e.preventDefault();
+    var filename = $(this).data('filename');
+    var fileUrl = '/v1/assets/monitoring/offboard/' + filename;
+    window.open(fileUrl, '_blank');
+});
+ // File swafoto
+$(document).on('click', '.view-fileswafoto-button', function(e) {
+    e.preventDefault();
+    var filename = $(this).data('filename');
+    var fileUrl = '/v1/assets/monitoring/offboard/' + filename;
+    window.open(fileUrl, '_blank');
+});
+ // File konprala
+$(document).on('click', '.view-filekonprala-button', function(e) {
+    e.preventDefault();
+    var filename = $(this).data('filename');
+    var fileUrl = '/v1/assets/monitoring/offboard/' + filename;
+    window.open(fileUrl, '_blank');
+});
 
  // file lapon 1-12
 // $(document).on('click', '.view-filelapon1-button', function(e) {
