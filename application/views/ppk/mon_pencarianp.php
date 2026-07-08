@@ -300,7 +300,7 @@ foreach ($results as $k) {
                         <a href="#" class="btn btn-info view-fileperjkkl-button" data-filename="<?php echo $k->upload_file_perjkkl; ?>">Lihat file Perjanjian Kerja Laut</a>
                       <?php } else { ?>
                           <!-- Tampilkan pesan jika file tidak ada -->
-                          File tidak tersedia
+                          File Perjanjian Kerja Laut tidak tersedia
                       <?php } ?>
                     </div>
                   </div>
@@ -665,7 +665,7 @@ foreach ($results as $k) {
                         <a href="#" class="btn btn-info view-filekonprala-button" data-filename="<?php echo $k->upload_file_konprala; ?>">Lihat file Konduite Prala</a>
                       <?php } else { ?>
                           <!-- Tampilkan pesan jika file tidak ada -->
-                          File tidak tersedia
+                          File Konduite Prala tidak tersedia
                       <?php } ?>
                     </div>
                   </div>
@@ -675,7 +675,7 @@ foreach ($results as $k) {
                         <a href="#" class="btn btn-info view-filesignoff-button" data-filename="<?php echo $k->upload_file_signoff; ?>">Lihat file Sign Off</a>
                       <?php } else { ?>
                           <!-- Tampilkan pesan jika file tidak ada -->
-                          File tidak tersedia
+                          File Sign Off tidak tersedia
                       <?php } ?>
                     </div>
                   </div>
@@ -685,7 +685,7 @@ foreach ($results as $k) {
                         <a href="#" class="btn btn-info view-filekrulist-button" data-filename="<?php echo $k->upload_file_krulist; ?>">Lihat file Kru List</a>
                       <?php } else { ?>
                           <!-- Tampilkan pesan jika file tidak ada -->
-                          File tidak tersedia
+                          File Kru List tidak tersedia
                       <?php } ?>
                     </div>
                   </div>
@@ -695,7 +695,7 @@ foreach ($results as $k) {
                         <a href="#" class="btn btn-info view-fileshippart-button" data-filename="<?php echo $k->upload_file_shippart; ?>">Lihat file Ship Particular</a>
                       <?php } else { ?>
                           <!-- Tampilkan pesan jika file tidak ada -->
-                          File tidak tersedia
+                          File Ship Particular tidak tersedia
                       <?php } ?>
                     </div>
                   </div>
@@ -705,7 +705,7 @@ foreach ($results as $k) {
                         <a href="#" class="btn btn-info view-fileswafoto-button" data-filename="<?php echo $k->upload_file_swafoto; ?>">Lihat file Swafoto</a>
                       <?php } else { ?>
                           <!-- Tampilkan pesan jika file tidak ada -->
-                          File tidak tersedia
+                          File file Swafoto tidak tersedia
                       <?php } ?>
                     </div>
                   </div>
