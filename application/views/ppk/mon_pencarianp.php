@@ -139,7 +139,7 @@ foreach ($results as $k) {
                   <!-- END timeline item -->
                   <!-- timeline item -->
                   <?php 
-                  if ($ppk->cekstatus("status_onboard","iya", $k->nim) > 0 || $mahasiswa->cekstatus("status_onboard","tidak", $nim) > 0 ) {
+                  if ($ppk->cekstatus("status_onboard","iya", $k->nim) > 0 || $ppk->cekstatus("status_onboard","tidak", $nim) > 0 ) {
                     # code...?>
                     <li>
                     <i class="fa fa-user bg-green"></i>
