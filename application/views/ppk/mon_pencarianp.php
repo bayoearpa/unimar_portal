@@ -294,6 +294,16 @@ foreach ($results as $k) {
                       <?php } ?>
                     </div>
                   </div>
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                       <?php if ($k->upload_file_perjkkl) { ?>
+                        <a href="#" class="btn btn-info view-fileperjkkl-button" data-filename="<?php echo $k->upload_file_perjkkl; ?>">Lihat file Perjanjian Kerja Laut</a>
+                      <?php } else { ?>
+                          <!-- Tampilkan pesan jika file tidak ada -->
+                          File tidak tersedia
+                      <?php } ?>
+                    </div>
+                  </div>
                 </form>
               </div>
               <!-- /.tab-pane -->
@@ -601,6 +611,105 @@ foreach ($results as $k) {
             <?php } ?>
             </div>
             
+              </div>
+              <!-- /.tab-pane -->
+
+               <!-- /.tab-pane -->
+              <div class="tab-pane" id="offboard">
+               <form class="form-horizontal">
+                  <div class="form-group">
+                    <label for="inputName" class="col-sm-2 control-label">NIM</label>
+
+                    <div class="col-sm-10">
+                      <input type="email" class="form-control" id="inputName" placeholder="Name" value="<?php echo $k->nim ?>" readonly="">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputEmail" class="col-sm-2 control-label">Nama</label>
+
+                    <div class="col-sm-10">
+                       <input type="email" class="form-control" id="inputName" placeholder="Name" value="<?php echo $k->nama ?>" readonly="">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputName" class="col-sm-2 control-label">Program Studi</label>
+
+                    <div class="col-sm-10">
+                       <input type="email" class="form-control" id="inputName" placeholder="Name" value="<?php echo $k->prodi ?>" readonly="">
+                    </div>
+                  </div>
+                   <div class="form-group">
+                    <label for="inputName" class="col-sm-2 control-label">Nama Perusahaan</label>
+
+                    <div class="col-sm-10">
+                       <input type="email" class="form-control" id="inputName" placeholder="Name" value="<?php echo $k->nama_perusahaan ?>" readonly="">
+                    </div>
+                  </div>
+                   <div class="form-group">
+                    <label for="inputName" class="col-sm-2 control-label">Nama Kapal</label>
+
+                    <div class="col-sm-10">
+                       <input type="email" class="form-control" id="inputName" placeholder="Name" value="<?php echo $k->nama_kapal ?>" readonly="">
+                    </div>
+                  </div>
+                   <div class="form-group">
+                    <label for="inputName" class="col-sm-2 control-label">Tanggal Sign Off</label>
+
+                    <div class="col-sm-10">
+                       <input type="email" class="form-control" id="inputName" placeholder="Name" value="<?php echo $k->tgl_sign_off ?>" readonly="">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                       <?php if ($k->upload_file_konprala) { ?>
+                        <a href="#" class="btn btn-info view-filekonprala-button" data-filename="<?php echo $k->upload_file_konprala; ?>">Lihat file Konduite Prala</a>
+                      <?php } else { ?>
+                          <!-- Tampilkan pesan jika file tidak ada -->
+                          File tidak tersedia
+                      <?php } ?>
+                    </div>
+                  </div>
+                   <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                       <?php if ($k->upload_file_signoff) { ?>
+                        <a href="#" class="btn btn-info view-filesignoff-button" data-filename="<?php echo $k->upload_file_signoff; ?>">Lihat file Sign Off</a>
+                      <?php } else { ?>
+                          <!-- Tampilkan pesan jika file tidak ada -->
+                          File tidak tersedia
+                      <?php } ?>
+                    </div>
+                  </div>
+                   <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                       <?php if ($k->upload_file_krulist) { ?>
+                        <a href="#" class="btn btn-info view-filekrulist-button" data-filename="<?php echo $k->upload_file_krulist; ?>">Lihat file Kru List</a>
+                      <?php } else { ?>
+                          <!-- Tampilkan pesan jika file tidak ada -->
+                          File tidak tersedia
+                      <?php } ?>
+                    </div>
+                  </div>
+                   <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                       <?php if ($k->upload_file_shippart) { ?>
+                        <a href="#" class="btn btn-info view-fileshippart-button" data-filename="<?php echo $k->upload_file_shippart; ?>">Lihat file Ship Particular</a>
+                      <?php } else { ?>
+                          <!-- Tampilkan pesan jika file tidak ada -->
+                          File tidak tersedia
+                      <?php } ?>
+                    </div>
+                  </div>
+                   <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                       <?php if ($k->upload_file_swafoto) { ?>
+                        <a href="#" class="btn btn-info view-fileswafoto-button" data-filename="<?php echo $k->upload_file_swafoto; ?>">Lihat file Swafoto</a>
+                      <?php } else { ?>
+                          <!-- Tampilkan pesan jika file tidak ada -->
+                          File tidak tersedia
+                      <?php } ?>
+                    </div>
+                  </div>
+                </form>
               </div>
               <!-- /.tab-pane -->
             </div>
