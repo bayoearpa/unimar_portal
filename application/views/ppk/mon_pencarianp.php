@@ -712,6 +712,84 @@ foreach ($results as $k) {
                 </form>
               </div>
               <!-- /.tab-pane -->
+
+               <!-- /.tab-pane -->
+              <div class="tab-pane" id="modeling">
+               <form class="form-horizontal">
+                  <div class="form-group">
+                    <label for="inputName" class="col-sm-2 control-label">NIM</label>
+
+                    <div class="col-sm-10">
+                      <input type="email" class="form-control" id="inputName" placeholder="Name" value="<?php echo $k->nim ?>" readonly="">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputEmail" class="col-sm-2 control-label">Nama</label>
+
+                    <div class="col-sm-10">
+                       <input type="email" class="form-control" id="inputName" placeholder="Name" value="<?php echo $k->nama ?>" readonly="">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputName" class="col-sm-2 control-label">Program Studi</label>
+
+                    <div class="col-sm-10">
+                       <input type="email" class="form-control" id="inputName" placeholder="Name" value="<?php echo $k->prodi ?>" readonly="">
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                       <?php if ($k->upload_file_batrnprala) { ?>
+                        <a href="#" class="btn btn-info view-filebatrnprala-button" data-filename="<?php echo $k->upload_file_batrnprala; ?>">Lihat file Berita Acara Turun Prala</a>
+                      <?php } else { ?>
+                          <!-- Tampilkan pesan jika file tidak ada -->
+                          File Berita Acara Turun Prala Prala tidak tersedia
+                      <?php } ?>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <!-- /.tab-pane -->
+
+              <!-- /.tab-pane -->
+              <div class="tab-pane" id="trb">
+               <form class="form-horizontal">
+                  <div class="form-group">
+                    <label for="inputName" class="col-sm-2 control-label">NIM</label>
+
+                    <div class="col-sm-10">
+                      <input type="email" class="form-control" id="inputName" placeholder="Name" value="<?php echo $k->nim ?>" readonly="">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputEmail" class="col-sm-2 control-label">Nama</label>
+
+                    <div class="col-sm-10">
+                       <input type="email" class="form-control" id="inputName" placeholder="Name" value="<?php echo $k->nama ?>" readonly="">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputName" class="col-sm-2 control-label">Program Studi</label>
+
+                    <div class="col-sm-10">
+                       <input type="email" class="form-control" id="inputName" placeholder="Name" value="<?php echo $k->prodi ?>" readonly="">
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                       <?php if ($k->upload_file_trb) { ?>
+                        <a href="#" class="btn btn-info view-filetrb-button" data-filename="<?php echo $k->upload_file_trb; ?>">Lihat file TRB</a>
+                      <?php } else { ?>
+                          <!-- Tampilkan pesan jika file tidak ada -->
+                          File TRB tidak tersedia
+                      <?php } ?>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <!-- /.tab-pane -->
             </div>
             <!-- /.tab-content -->
           </div>
