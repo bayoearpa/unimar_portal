@@ -8,6 +8,8 @@ foreach ($results as $k) {
               <li><a href="#onboard" data-toggle="tab">Onboard</a></li>
               <li><a href="#laponboard" data-toggle="tab">Lap. Onboard</a></li>
               <li><a href="#offboard" data-toggle="tab">Offboard</a></li>
+              <li><a href="#modeling" data-toggle="tab">Modeling</a></li>
+              <li><a href="#trb" data-toggle="tab">TRB</a></li>
             </ul>
             <div class="tab-content">
               <div class="active tab-pane" id="activity">
