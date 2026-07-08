@@ -409,6 +409,129 @@ class Mahasiswa extends CI_Controller {
 
 	}
 	public function onboardp()
+{
+    $id_mon          = $this->input->post('id_mon');
+    $nim             = $this->input->post('nim');
+    $cekfile         = $this->input->post('ufsignon_existing');
+
+    $namaperusahaan  = $this->input->post('namaperusahaan');
+    $status_onboard  = $this->input->post('status_onboard');
+    $nama_kapal      = $this->input->post('namakapal');
+    $tgl_signon      = $this->input->post('tglsignon');
+
+    $tgl_signonf     = date('Y-m-d', strtotime($tgl_signon));
+    $tgl_lap_signon  = date('Y-m-d');
+
+    $where = array(
+        'id_mon' => $id_mon
+    );
+
+    $data = array(
+        'status_onboard'   => $status_onboard,
+        'nama_perusahaan'  => $namaperusahaan,
+        'nama_kapal'       => $nama_kapal,
+        'tgl_sign_on'      => $tgl_signonf,
+        'status_sb'        => 'tidak',
+        'tgl_lap_sign_on'  => $tgl_lap_signon
+    );
+
+    $this->load->library('upload');
+
+    /*
+    |-------------------------------------------------------------
+    | Daftar file upload
+    |-------------------------------------------------------------
+    */
+    $uploads = [
+        'ufsignon' => [
+            'field_db' => 'upload_file_signon',
+            'filename' => $nim . '_signon',
+            'type'     => 'pdf'
+        ],
+        'ufperjkl' => [
+            'field_db' => 'upload_file_perjkl',
+            'filename' => $nim . '_perjkl',
+            'type'     => 'pdf'
+        ]
+    ];
+
+    foreach ($uploads as $input_name => $file) {
+
+        // Jika user memilih file
+        if (!empty($_FILES[$input_name]['name'])) {
+
+            $config = [
+                'upload_path'   => './assets/monitoring/onboard/',
+                'allowed_types' => $file['type'],
+                'max_size'      => 1048,
+                'file_name'     => $file['filename'],
+                'overwrite'     => TRUE
+            ];
+
+            /*
+            |-------------------------------------------------------------
+            | Hapus file lama jika ada
+            |-------------------------------------------------------------
+            */
+            $old = $this->m_mahasiswa
+                        ->get_data($where,'tbl_mon')
+                        ->row();
+
+            if ($old && !empty($old->{$file['field_db']})) {
+
+                $old_file = FCPATH.'assets/monitoring/onboard/'.$old->{$file['field_db']};
+
+                if (file_exists($old_file)) {
+                    unlink($old_file);
+                }
+            }
+
+            $this->upload->initialize($config);
+
+            if ($this->upload->do_upload($input_name)) {
+
+                $upload = $this->upload->data();
+
+                $data[$file['field_db']] = $upload['file_name'];
+
+            } else {
+
+                // Jika upload gagal bisa diaktifkan untuk debugging
+                // echo $this->upload->display_errors();
+            }
+        }
+    }
+
+    /*
+    |-------------------------------------------------------------
+    | Update tbl_mon
+    |-------------------------------------------------------------
+    */
+    $this->m_mahasiswa->update_data($where, $data, 'tbl_mon');
+
+    /*
+    |-------------------------------------------------------------
+    | Buat tbl_lap_onboard jika belum ada
+    |-------------------------------------------------------------
+    */
+    $cek_lapon = $this->m_mahasiswa
+                      ->get_data(
+                          ['id_mon'=>$id_mon],
+                          'tbl_lap_onboard'
+                      )->num_rows();
+
+    if ($cek_lapon == 0) {
+
+        $data_lapon = [
+            'id_mon' => $id_mon
+        ];
+
+        $this->m_mahasiswa->input_data($data_lapon,'tbl_lap_onboard');
+    }
+
+    redirect(base_url().'mahasiswa/onboard/'.$nim);
+}
+	public function onboardp_old()
 	{
        /// cek file
     $cekfile = $this->input->post('ufsignon_existing');
@@ -724,7 +847,8 @@ class Mahasiswa extends CI_Controller {
         'ufsignoff' => ['field' => 'upload_file_signoff', 'filename' => $nim . '-signoff', 'type' => 'pdf'],
         'ufkrulist'   => ['field' => 'upload_file_krulist', 'filename' => $nim . '-krulist', 'type' => 'pdf'],
         'ufshippart'  => ['field' => 'upload_file_shippart', 'filename' => $nim . '-shippart', 'type' => 'pdf'],
-        'ufswafoto'   => ['field' => 'upload_file_swafoto', 'filename' => $nim . '-swafoto', 'type' => 'jpg|jpeg']
+        'ufswafoto'   => ['field' => 'upload_file_swafoto', 'filename' => $nim . '-swafoto', 'type' => 'jpg|jpeg'],
+        'ufkonprala'  => ['field' => 'upload_file_konprala', 'filename' => $nim . '-konprala', 'type' => 'pdf']
     ];
 
     foreach ($uploads as $form_name => $file_info) {

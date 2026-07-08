@@ -78,6 +78,12 @@
                         <input type="hidden" id="editufsignon_existing" name="ufsignon_existing" value="<?php echo $c->upload_file_signon; ?>">
                     </div>
                     <div id="fileUploadStatus">Belum ada file yang diunggah.</div>
+                      <div class="form-group">
+                        <label for="editufperjkl">Upload File Sign On (file harus dengan format .pdf dan Maks. 1 MB)</label>
+                        <input type="file" class="form-control" id="editufperjkl" name="ufperjkl">
+                        <input type="hidden" id="editufperjkl_existing" name="ufperjkl_existing" value="<?php echo $c->upload_file_perjkl; ?>">
+                    </div>
+                    <div id="fileUploadStatus">Belum ada file yang diunggah.</div>
                    
                     <div class="form-group">
                         <div class="form-check">

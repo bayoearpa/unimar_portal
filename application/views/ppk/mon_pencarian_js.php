@@ -53,6 +53,23 @@ $(document).on('click', '.view-filekonprala-button', function(e) {
     window.open(fileUrl, '_blank');
 });
 
+//-----------------------------------------------
+ // File batrnprala
+$(document).on('click', '.view-filebatrnprala-button', function(e) {
+    e.preventDefault();
+    var filename = $(this).data('filename');
+    var fileUrl = '/v1/assets/monitoring/modeling/' + filename;
+    window.open(fileUrl, '_blank');
+});
+//-------------------------------------------------
+ // File trb
+$(document).on('click', '.view-filetrb-button', function(e) {
+    e.preventDefault();
+    var filename = $(this).data('filename');
+    var fileUrl = '/v1/assets/monitoring/trb/' + filename;
+    window.open(fileUrl, '_blank');
+});
+
  // file lapon 1-12
 // $(document).on('click', '.view-filelapon1-button', function(e) {
 //     e.preventDefault();

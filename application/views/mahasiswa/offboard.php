@@ -103,6 +103,12 @@
                         <input type="hidden" id="editufswafoto_existing" name="ufswafoto_existing" value="<?php echo $c->upload_file_swafoto; ?>">
                     </div>
                     <div id="fileUploadStatus">Belum ada file yang diunggah.</div>
+                     <div class="form-group">
+                        <label for="editufsignon">Konduite Prala (file harus dengan format .pdf dan Maks. 1 MB)</label>
+                        <input type="file" class="form-control" id="editufkonprala" name="ufkonprala">
+                        <input type="hidden" id="editufkonprala_existing" name="ufkonprala_existing" value="<?php echo $c->upload_file_konprala; ?>">
+                    </div>
+                    <div id="fileUploadStatus">Belum ada file yang diunggah.</div>
                     <div class="form-group">
                         <div class="form-check">
                             <input type="checkbox" class="form-check-input" id="status_offboard" name="status_offboard" value="iya" required="harus dicentang!" <?php echo $cek = ($c->status_offboard == "iya") ? "Checked" : "" ; ?>>
