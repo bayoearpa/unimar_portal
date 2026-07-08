@@ -1349,7 +1349,8 @@ function get_data_mhs_detail($id)
 	        tbl_mon.nama_perusahaan,
 	        tbl_mon.status_prada,
 	        tbl_mon.status_modeling,
-	        tbl_mon.upload_file_trb,
+	        tbl_mon.upload_file_batrnprala as upload_file_batrnprala,
+	        tbl_mon.upload_file_trb as upload_file_trb,
 	        tbl_mon.status_trb,
 	        tbl_mon.status_sb,
 	        tbl_mon.status_d3');
