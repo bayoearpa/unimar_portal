@@ -148,6 +148,12 @@
                         <!-- Tampilkan pesan jika file tidak ada -->
                         File tidak tersedia
                     <?php } ?>
+                    <?php if ($c->upload_file_konprala > "0") { ?>
+                       <button class="btn btn-success view-file-button-konprala" data-filename="<?php echo $c->upload_file_konprala; ?>">Lihat file Konduite Prala</button>
+                    <?php } else { ?>
+                        <!-- Tampilkan pesan jika file tidak ada -->
+                        File tidak tersedia
+                    <?php } ?>
                   <div class="alert alert-info alert-dismissible">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                     <h4><i class="icon fa fa-thumbs-o-up"></i> Terima Kasih!</h4>
@@ -176,6 +182,12 @@
                     <?php } ?>
                     <?php if ($c->upload_file_swafoto > "0") { ?>
                        <button class="btn btn-success view-file-button-swafoto" data-filename="<?php echo $c->upload_file_swafoto; ?>">Lihat file Swafoto</button>
+                    <?php } else { ?>
+                        <!-- Tampilkan pesan jika file tidak ada -->
+                        File tidak tersedia
+                    <?php } ?>
+                     <?php if ($c->upload_file_konprala > "0") { ?>
+                       <button class="btn btn-success view-file-button-konprala" data-filename="<?php echo $c->upload_file_konprala; ?>">Lihat file Konduite Prala</button>
                     <?php } else { ?>
                         <!-- Tampilkan pesan jika file tidak ada -->
                         File tidak tersedia

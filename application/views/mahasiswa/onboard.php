@@ -79,7 +79,7 @@
                     </div>
                     <div id="fileUploadStatus">Belum ada file yang diunggah.</div>
                       <div class="form-group">
-                        <label for="editufperjkl">Upload File Sign On (file harus dengan format .pdf dan Maks. 1 MB)</label>
+                        <label for="editufperjkl">Upload File Perjanjian Kerja Laut (file harus dengan format .pdf dan Maks. 1 MB)</label>
                         <input type="file" class="form-control" id="editufperjkl" name="ufperjkl">
                         <input type="hidden" id="editufperjkl_existing" name="ufperjkl_existing" value="<?php echo $c->upload_file_perjkl; ?>">
                     </div>
@@ -91,6 +91,7 @@
                             <label class="form-check-label" for="addstatpra">Dengan mencentang tombol berikut menandakan anda telah melakukan laporan Onboard kepada PPK UNIMAR AMNI Semarang.</label>
                         </div>
                     </div>
+
                   </div>
 
                 <button type="submit" class="btn btn-primary">Simpan</button>
@@ -102,6 +103,12 @@
                   <!-- Tombol Lihat File Sign On -->
                     <?php if ($c->upload_file_signon) { ?>
                         <button class="btn btn-success view-file-button" data-filename="<?php echo $c->upload_file_signon; ?>">Lihat file onboard</button>
+                    <?php } else { ?>
+                        <!-- Tampilkan pesan jika file tidak ada -->
+                        File tidak tersedia
+                    <?php } ?>
+                    <?php if ($c->upload_file_perjkl) { ?>
+                        <button class="btn btn-success view-file-button2" data-filename="<?php echo $c->upload_file_perjkl; ?>">Lihat file Perjanjian Kerja Laut</button>
                     <?php } else { ?>
                         <!-- Tampilkan pesan jika file tidak ada -->
                         File tidak tersedia
