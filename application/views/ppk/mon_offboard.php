@@ -90,6 +90,13 @@
                         <!-- Tampilkan pesan jika file tidak ada -->
                         File tidak tersedia
                     <?php } ?>
+                    <!-- Tombol Lihat File Konduite Prala-->
+                    <?php if ($i->upload_file_signoff) { ?>
+                        <button class="btn btn-warning view-file-button" alt="Surat Konduite Prala" data-filename="<?php echo $i->upload_file_konprala; ?>"><i class="fa fa-fw fa-file-pdf-o"></i></button>
+                    <?php } else { ?>
+                        <!-- Tampilkan pesan jika file tidak ada -->
+                        File tidak tersedia
+                    <?php } ?>
                 </td>
                 <td>
                       <!-- Tombol Tambah/Edit -->
