@@ -74,6 +74,7 @@ class M_mahasiswa extends CI_Model {
 	        tbl_mon.upload_file_krulist as upload_file_krulist,
 	        tbl_mon.upload_file_shippart as upload_file_shippart,
 	        tbl_mon.upload_file_swafoto as upload_file_swafoto,
+	        tbl_mon.upload_file_swafoto as upload_file_konprala,
 	        tbl_mon.nama_perusahaan,
 	        tbl_mon.status_prada,
 	        tbl_mon.status_modeling,
