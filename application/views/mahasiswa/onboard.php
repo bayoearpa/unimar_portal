@@ -127,6 +127,12 @@
                         <!-- Tampilkan pesan jika file tidak ada -->
                         File tidak tersedia
                     <?php } ?>
+                     <?php if ($c->upload_file_perjkl) { ?>
+                        <button class="btn btn-success view-file-button2" data-filename="<?php echo $c->upload_file_perjkl; ?>">Lihat file Perjanjian Kerja Laut</button>
+                    <?php } else { ?>
+                        <!-- Tampilkan pesan jika file tidak ada -->
+                        File tidak tersedia
+                    <?php } ?>
                   <div class="alert alert-danger alert-dismissible">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                     <h4><i class="icon fa fa-ban"></i> Alert!</h4>

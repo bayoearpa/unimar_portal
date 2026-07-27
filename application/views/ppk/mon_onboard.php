@@ -41,6 +41,7 @@
                   <th>Nama Kapal</th>
                   <th>Tanggal Sign On</th>
                   <th>File Sign On</th>
+                  <th>File Perjanjian Kerja</th>
                   <th>proses</th>
                 </tr>
                 </thead>
@@ -61,6 +62,15 @@
                     <!-- Tombol Lihat File Sign On -->
                     <?php if ($i->upload_file_signon) { ?>
                         <button class="btn btn-info view-file-button" data-filename="<?php echo $i->upload_file_signon; ?>">Lihat</button>
+                    <?php } else { ?>
+                        <!-- Tampilkan pesan jika file tidak ada -->
+                        File tidak tersedia
+                    <?php } ?>
+                </td>
+                 <td>
+                    <!-- Tombol Lihat File Sign On -->
+                    <?php if ($i->upload_file_perjkl) { ?>
+                        <button class="btn btn-warning view-file-button" data-filename="<?php echo $i->upload_file_perjkl; ?>">Lihat</button>
                     <?php } else { ?>
                         <!-- Tampilkan pesan jika file tidak ada -->
                         File tidak tersedia
@@ -88,6 +98,7 @@
                   <th>Nama Kapal</th>
                   <th>Tanggal Sign On</th>
                   <th>File Sign On</th>
+                  <th>File Perjanjian Kerja</th>
                   <th>proses</th>
                 </tr>
                 </tfoot>

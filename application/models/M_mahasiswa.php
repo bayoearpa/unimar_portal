@@ -68,6 +68,7 @@ class M_mahasiswa extends CI_Model {
 	        tbl_mon.tgl_sign_on,
 	        tbl_mon.tgl_lap_sign_on,
 	        tbl_mon.upload_file_signon,
+	        tbl_mon.upload_file_perjkl,
 	        tbl_mon.tgl_sign_off,
 	        tbl_mon.tgl_lap_sign_off,
 	        tbl_mon.upload_file_signoff as upload_file_signoff,
