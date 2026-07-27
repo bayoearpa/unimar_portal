@@ -1072,6 +1072,7 @@ function get_data_formon_mhsall_ob($limit, $offset)
 	        tbl_mon.nama_kapal,
 	        tbl_mon.tgl_sign_on,
 	        tbl_mon.upload_file_signon,
+	        tbl_mon.upload_file_perjkl,
 	        tbl_mon.tgl_sign_off,
 	        tbl_mon.upload_file_signoff,
 	        upload_file_krulist,

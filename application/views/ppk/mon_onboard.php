@@ -70,7 +70,7 @@
                  <td>
                     <!-- Tombol Lihat File Sign On -->
                     <?php if ($i->upload_file_perjkl) { ?>
-                        <button class="btn btn-warning view-file-button" data-filename="<?php echo $i->upload_file_perjkl; ?>">Lihat</button>
+                        <button class="btn btn-warning view-file-button2" data-filename="<?php echo $i->upload_file_perjkl; ?>">Lihat</button>
                     <?php } else { ?>
                         <!-- Tampilkan pesan jika file tidak ada -->
                         File tidak tersedia
