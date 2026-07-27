@@ -1395,7 +1395,8 @@ function get_data_formon_mhsall_lapon($limit, $offset)
 	        tbl_mon.upload_file_signoff,
 	        upload_file_krulist,
 	        upload_file_shippart,
-	        upload_file_swafoto');
+	        upload_file_swafoto,
+	        upload_file_konprala');
 	    $this->db->from('tmst_mahasiswa');
 	    $this->db->join('tmst_program_studi', 'tmst_mahasiswa.Kode_program_studi = tmst_program_studi.Kode_program_studi', 'inner');
 	    $this->db->join('tbl_mon','tmst_mahasiswa.NIM = tbl_mon.nim','inner');
