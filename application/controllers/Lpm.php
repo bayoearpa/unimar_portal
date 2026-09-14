@@ -783,8 +783,8 @@ class Lpm extends CI_Controller {
 	{
 		# code...
 		$where = array(
-			'tmst_mahasiswa.Kode_program_studi' => $prodi,
-			'tbl_kues_mhslem.ta' => $ta		
+			'prodi' => $prodi,
+			'ta' => $ta		
 		);
 		$data = $this->m_kues->get_data_mhslem_count_responden($where)->result();
 		foreach ($data as $key) {
