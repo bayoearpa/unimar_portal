@@ -799,7 +799,7 @@ class Lpm extends CI_Controller {
 	{
 		# code...
 		$where = array(
-			'tmst_mahasiswa.prodi' => $prodi,
+			'tbl_kues_mhslem.prodi' => $prodi,
 			'tbl_kues_mhslem.ta' => $ta,
 			'tbl_kues_mhslem.'.$item => $nilai_item,		
 		);
