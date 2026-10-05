@@ -243,6 +243,31 @@
               </ul>
         </li>
 
+        <?php
+          $smw_in   = (bool) $this->session->userdata('smw_token');
+          $smw_open = ($this->router->fetch_class() === 'simkatmawa');
+          $smw_lock = $smw_in ? '' : ' <i class="fa fa-lock text-yellow" title="Perlu login SIMKATMAWA"></i>';
+        ?>
+        <li class="treeview<?php echo $smw_open ? ' active menu-open' : ''; ?>">
+          <a href="#">
+            <i class="fa fa-graduation-cap"></i> <span>SIMKATMAWA</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu"<?php echo $smw_open ? ' style="display:block"' : ''; ?>>
+            <?php if (!$smw_in): ?>
+            <li><a href="<?php echo base_url() ?>simkatmawa/login"><i class="fa fa-sign-in"></i> Login SIMKATMAWA</a></li>
+            <?php endif; ?>
+            <li><a href="<?php echo base_url() ?>simkatmawa/modul/prestasi_mandiri"><i class="fa fa-circle-o"></i> Prestasi Mandiri<?php echo $smw_lock; ?></a></li>
+            <li><a href="<?php echo base_url() ?>simkatmawa/modul/sertifikasi"><i class="fa fa-circle-o"></i> Sertifikasi<?php echo $smw_lock; ?></a></li>
+            <li><a href="<?php echo base_url() ?>simkatmawa/modul/rekognisi"><i class="fa fa-circle-o"></i> Rekognisi<?php echo $smw_lock; ?></a></li>
+            <?php if ($smw_in): ?>
+            <li><a href="<?php echo base_url() ?>simkatmawa/logout"><i class="fa fa-sign-out"></i> Logout SIMKATMAWA</a></li>
+            <?php endif; ?>
+          </ul>
+        </li>
+
       </ul>
     </section>
     <!-- /.sidebar -->
@@ -258,5 +283,6 @@
       </h1>
 
     </section>
+    <?php $this->load->view('mahatar/_notif'); ?>
 
  
