@@ -10,24 +10,46 @@
                 url: '<?php echo base_url('baak/mon_llspascadata'); ?>',
                 data: { year: year, program_studi: programStudi }, // Send both year and program_studi
                 success: function(response) {
-                    $('#example31082023').html(response); // Ganti isi #item-list dengan hasil AJAX
+                    replaceTable(response); // Ganti isi #item-list dengan hasil AJAX
                 }
             });
         });
         ////datatables
-         $('#example31082023').DataTable({
+         var dtOptions = {
                 "paging": true, // Enable pagination
                 "pageLength": 20, // Set the number of records per page
+                "lengthMenu": [[10, 20, 50, 100], [10, 20, 50, 100]],
                 'lengthChange': true,
                   'searching'   : true,
                   'ordering'    : true,
                 //   'info'        : true,
                 //   'autoWidth'   : false
                 // Other DataTables options...
-            });
+            };
+
+        // Inisialisasi DataTables (dipakai ulang setiap kali tabel dimuat ulang)
+        function initTable(keyword) {
+            var opts = $.extend({}, dtOptions);
+            if (keyword) { opts.search = { search: keyword }; }
+            return $('#example31082023').DataTable(opts);
+        }
+
+        // Ganti tabel dengan hasil AJAX TANPA merusak DataTables
+        function replaceTable(html) {
+            var keyword = '';
+            if ($.fn.DataTable.isDataTable('#example31082023')) {
+                var dt = $('#example31082023').DataTable();
+                keyword = dt.search();      // simpan kata kunci pencarian
+                dt.destroy();               // kembalikan <table> ke kondisi semula
+            }
+            $('#example31082023').replaceWith(html); // ganti elemen <table> lama (bukan isinya)
+            initTable(keyword);             // init ulang DataTables pada tabel baru
+        }
+
+        initTable();
 
  // Menampilkan modal saat tombol "Tambah" diklik
-  $('.add-button').click(function() {
+  $(document).on('click', '.add-button', function() {
     var id = $(this).data('id');
     // Ambil data yang akan diedit dari server dengan AJAX
     $.ajax({
@@ -56,7 +78,7 @@
     });
   });
 // Menampilkan modal saat tombol "Edit" diklik
-  $('.edit-button').click(function() {
+  $(document).on('click', '.edit-button', function() {
     var id = $(this).data('id');
     // Ambil data yang akan diedit dari server dengan AJAX
     $.ajax({
@@ -106,61 +128,12 @@ function reloadTable() {
         url: '<?php echo base_url('baak/mon_llspradata'); ?>',
         data: { year: $('#year').val(), program_studi: $('#program_studi').val() },
         success: function(response) {
-            $('#example31082023').html(response);
+            replaceTable(response);
 
-            connectEditButtonListeners()
         }
     });
 }
 // Fungsi untuk menampilkan modal saat tombol "Edit" diklik
-function connectEditButtonListeners() { 
-  // Menampilkan modal saat tombol "Edit" diklik
-  $('.edit-button').click(function() {
-    var id = $(this).data('id');
-    // Ambil data yang akan diedit dari server dengan AJAX
-    $.ajax({
-      url: '<?php echo base_url('baak/mon_pascaedit/'); ?>' + id, // Sesuaikan dengan URL yang sesuai
-      type: 'GET',
-      success: function(data) {
-        // Isi modal dengan data yang diambil
-        console.log(data); // Cetak nilai data ke konsol
-        var parsedData = JSON.parse(data);
-        $('#editidmon').val(parsedData.id_mon);
-        $('#editNim').val(parsedData.nim);
-        $('#editNama').val(parsedData.nama);
-        $('#editTmptLahir').val(parsedData.tl);
-        $('#editTglLahir').val(parsedData.tgll);
-        $('#editAlamat').val(parsedData.alamat);
-            // Set jenis kelamin sesuai dengan data dari database
-            if (parsedData.jk === 'L') {
-                $('#editjnsklmn').val('Laki-laki');
-            } else if (parsedData.jk === 'P') {
-                $('#editjnsklmn').val('Perempuan');
-            }
-        $('#editseafarercode').val(parsedData.seafarercode);
-        $('#edittglllspasca').val(parsedData.pasca_lulus_ukp);
-        $('#editnoijasah').val(parsedData.pasca_nomor_ijasah);
-        // Mengatur status checkbox sesuai dengan data dari database
-        // if (parsedData.pasca_status === 'sudah') {
-        //     $('#editstatpasca').prop('checked', true);
-        // } else if (parsedData.pasca_status === 'belum') {
-        //     $('#editstatpasca').prop('checked', true);
-        // }
-        // Mengatur status Radio sesuai dengan data dari database
-         if (parsedData.pasca_status === 'sudah') {
-                $('input[name="estatpasca"][value="sudah"]').prop('checked', true);
-            } else if (parsedData.pasca_status === 'belum') {
-                $('input[name="estatpasca"][value="belum"]').prop('checked', true);
-            }
-        $('#editKetPasca').val(parsedData.ket_pasca);
-        // Tambahkan input lain sesuai kebutuhan
-        $('#editModal').modal('show');
-      }
-    });
-  });
-}
-
-
     // Menyimpan perubahan dengan AJAX
     $('#saveAdd').click(function() {
         $.ajax({

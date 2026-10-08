@@ -10,24 +10,46 @@
                 url: '<?php echo base_url('ppk/mon_trbdata'); ?>',
                 data: { year: year, program_studi: programStudi }, // Send both year and program_studi
                 success: function(response) {
-                    $('#example31082023').html(response); // Ganti isi #item-list dengan hasil AJAX
+                    replaceTable(response); // Ganti isi #item-list dengan hasil AJAX
                 }
             });
         });
         ////datatables
-         $('#example31082023').DataTable({
+         var dtOptions = {
                 "paging": true, // Enable pagination
                 "pageLength": 20, // Set the number of records per page
+                "lengthMenu": [[10, 20, 50, 100], [10, 20, 50, 100]],
                 'lengthChange': true,
                   'searching'   : true,
                   'ordering'    : true,
                 //   'info'        : true,
                 //   'autoWidth'   : false
                 // Other DataTables options...
-            });
+            };
+
+        // Inisialisasi DataTables (dipakai ulang setiap kali tabel dimuat ulang)
+        function initTable(keyword) {
+            var opts = $.extend({}, dtOptions);
+            if (keyword) { opts.search = { search: keyword }; }
+            return $('#example31082023').DataTable(opts);
+        }
+
+        // Ganti tabel dengan hasil AJAX TANPA merusak DataTables
+        function replaceTable(html) {
+            var keyword = '';
+            if ($.fn.DataTable.isDataTable('#example31082023')) {
+                var dt = $('#example31082023').DataTable();
+                keyword = dt.search();      // simpan kata kunci pencarian
+                dt.destroy();               // kembalikan <table> ke kondisi semula
+            }
+            $('#example31082023').replaceWith(html); // ganti elemen <table> lama (bukan isinya)
+            initTable(keyword);             // init ulang DataTables pada tabel baru
+        }
+
+        initTable();
 
  // Menampilkan modal saat tombol "Tambah" diklik
-  $('.add-button').click(function() {
+  $(document).on('click', '.add-button', function() {
     var id = $(this).data('id');
     // Ambil data yang akan diedit dari server dengan AJAX
     $.ajax({
@@ -69,7 +91,7 @@
             });
 
 // Menampilkan modal saat tombol "Edit" diklik
-  $('.edit-button').click(function() {
+  $(document).on('click', '.edit-button', function() {
     var id = $(this).data('id');
     // Ambil data yang akan diedit dari server dengan AJAX
     $.ajax({
@@ -129,83 +151,12 @@ function reloadTable() {
         url: '<?php echo base_url('ppk/mon_trbdata'); ?>',
         data: { year: $('#year').val(), program_studi: $('#program_studi').val() },
         success: function(response) {
-            $('#example31082023').html(response);
+            replaceTable(response);
 
-            connectEditButtonListeners()
-            connectViewButtonListeners()
         }
     });
 }
 // Fungsi untuk menampilkan modal saat tombol "Edit" diklik
-function connectEditButtonListeners() { 
- // Menampilkan modal saat tombol "Edit" diklik
-  $('.edit-button').click(function() {
-    var id = $(this).data('id');
-    // Ambil data yang akan diedit dari server dengan AJAX
-    $.ajax({
-      url: '<?php echo base_url('ppk/mon_trbedit/'); ?>' + id, // Sesuaikan dengan URL yang sesuai
-      type: 'GET',
-      success: function(data) {
-        // Isi modal dengan data yang diambil
-        console.log(data); // Cetak nilai data ke konsol
-        var parsedData = JSON.parse(data);
-        $('#editidmon').val(parsedData.id_mon);
-        $('#editNim').val(parsedData.nim);
-        $('#editNama').val(parsedData.nama);
-        $('#editTmptLahir').val(parsedData.tl);
-        $('#editTglLahir').val(parsedData.tgll);
-        $('#editAlamat').val(parsedData.alamat);
-            // Set jenis kelamin sesuai dengan data dari database
-            if (parsedData.jk === 'L') {
-                $('#editjnsklmn').val('Laki-laki');
-            } else if (parsedData.jk === 'P') {
-                $('#editjnsklmn').val('Perempuan');
-            }
-        $('#editseafarercode').val(parsedData.seafarercode);
-         // Mengatur status checkbox sesuai dengan data dari database
-        // if (parsedData.status_board === 'onboard') {
-        //     $('#editstatonboard').prop('checked', true);
-        // } else if (parsedData.status_board === 'offboard') {
-        //     $('#editstatonboard').prop('checked', true);
-        // }
-
-        // Mengatur radio button "Status UKP Pasca" sesuai dengan data dari database
-            if (parsedData.status_trb === 'sudah') {
-                $('input[name="estattrb"][value="sudah"]').prop('checked', true);
-            } else if (parsedData.status_trb === 'belum') {
-                $('input[name="estattrb"][value="belum"]').prop('checked', true);
-            }
-        $('#editnamakapal').val(parsedData.nama_kapal);
-        $('#edittglsignon').val(parsedData.tgl_sign_on);
-
-        $('#edittglsignoff').val(parsedData.tgl_sign_off);
-        // $('#editufsignoff').val(parsedData.upload_file_signoff);
-
-         if (parsedData.upload_file_trb) {
-            $('#editufsignoff_existing').val(parsedData.upload_file_trb);
-        } else {
-            $('#editufsignoff_existing').val('');
-        }
-        $('#editKetTrb').val(parsedData.ket_trb);
-        // Tambahkan input lain sesuai kebutuhan
-        $('#editModal').modal('show');
-      }
-    });
-  });
-}
-
-function connectViewButtonListeners() { 
-    $('.view-file-button').click(function() {
-            var filename = $(this).data('filename');
-            // Gantilah '/uploads/' dengan direktori tempat Anda menyimpan file
-            var fileUrl = './assets/monitoring/offboard' + filename;
-            
-            // Buka tautan ke file di jendela baru
-            window.open(fileUrl, '_blank');
-        });
-
-}
-
     // Menyimpan perubahan dengan AJAX
     $('#saveAdd').click(function() {
         $.ajax({
@@ -254,7 +205,7 @@ $(document).on('click', '#saveEdit', function() {
 });
 
 
-     $('.view-file-button').click(function() {
+     $(document).on('click', '.view-file-button', function() {
             var filename = $(this).data('filename');
             // Gantilah '/uploads/' dengan direktori tempat Anda menyimpan file
             var fileUrl = '/v1/assets/monitoring/offboard/' + filename;

@@ -1,7 +1,7 @@
  <script>
     $(document).ready(function() {
         // Inisialisasi awal DataTables
-    $('#example31082023').DataTable({
+    var dtOptions = {
         responsive: true,
         paging: true,
         searching: true,
@@ -14,7 +14,28 @@
                 previous: "Sebelumnya"
             }
         }
-    });
+    };
+
+        // Inisialisasi DataTables (dipakai ulang setiap kali tabel dimuat ulang)
+        function initTable(keyword) {
+            var opts = $.extend({}, dtOptions);
+            if (keyword) { opts.search = { search: keyword }; }
+            return $('#example31082023').DataTable(opts);
+        }
+
+        // Ganti tabel dengan hasil AJAX TANPA merusak DataTables
+        function replaceTable(html) {
+            var keyword = '';
+            if ($.fn.DataTable.isDataTable('#example31082023')) {
+                var dt = $('#example31082023').DataTable();
+                keyword = dt.search();      // simpan kata kunci pencarian
+                dt.destroy();               // kembalikan <table> ke kondisi semula
+            }
+            $('#tabel-container').html(html); // ganti isi container (tabel baru ada di dalamnya)
+            initTable(keyword);             // init ulang DataTables pada tabel baru
+        }
+
+        initTable();
 
     // Submit filter
     $('#filter-form').submit(function(e) {
@@ -31,28 +52,7 @@
                 program_studi: programStudi
             },
             success: function(response) {
-                // Destroy dan replace DataTables
-                if ($.fn.DataTable.isDataTable('#example31082023')) {
-                    $('#example31082023').DataTable().destroy();
-                }
-
-                $('#tabel-container').html(response);
-
-                // Re-init DataTables
-                $('#example31082023').DataTable({
-                    responsive: true,
-                    paging: true,
-                    searching: true,
-                    language: {
-                        search: "Cari:",
-                        lengthMenu: "Tampilkan _MENU_ data",
-                        info: "Menampilkan _START_ sampai _END_ dari _TOTAL_ data",
-                        paginate: {
-                            next: "Berikutnya",
-                            previous: "Sebelumnya"
-                        }
-                    }
-                });
+                replaceTable(response);
             },
             error: function(xhr, status, error) {
                 alert('Gagal memuat data');
@@ -62,7 +62,7 @@
     });
 
  // Menampilkan modal saat tombol "Tambah" diklik
-  $('.add-button').click(function() {
+  $(document).on('click', '.add-button', function() {
     var id = $(this).data('id');
     // Ambil data yang akan diedit dari server dengan AJAX
     $.ajax({
@@ -91,7 +91,7 @@
     });
   });
 // Menampilkan modal saat tombol "Edit" diklik
-  $('.edit-button').click(function() {
+  $(document).on('click', '.edit-button', function() {
     var id = $(this).data('id');
     // Ambil data yang akan diedit dari server dengan AJAX
     $.ajax({
@@ -127,7 +127,7 @@ function reloadTable() {
         url: '<?php echo base_url('baak/mon_sbpraladata'); ?>',
         data: { year: $('#year').val(), program_studi: $('#program_studi').val() },
         success: function(response) {
-            $('#example31082023').html(response);
+            replaceTable(response);
         }
     });
 }

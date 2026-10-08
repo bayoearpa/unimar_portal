@@ -10,24 +10,46 @@
                 url: '<?php echo base_url('baak/mon_sbpraladata'); ?>',
                 data: { year: year, program_studi: programStudi }, // Send both year and program_studi
                 success: function(response) {
-                    $('#example31082023').html(response); // Ganti isi #item-list dengan hasil AJAX
+                    replaceTable(response); // Ganti isi #item-list dengan hasil AJAX
                 }
             });
         });
         ////datatables
-         $('#example31082023').DataTable({
+         var dtOptions = {
                 "paging": true, // Enable pagination
                 "pageLength": 20, // Set the number of records per page
+                "lengthMenu": [[10, 20, 50, 100], [10, 20, 50, 100]],
                 'lengthChange': true,
                   'searching'   : true,
                   'ordering'    : true,
                 //   'info'        : true,
                 //   'autoWidth'   : false
                 // Other DataTables options...
-            });
+            };
+
+        // Inisialisasi DataTables (dipakai ulang setiap kali tabel dimuat ulang)
+        function initTable(keyword) {
+            var opts = $.extend({}, dtOptions);
+            if (keyword) { opts.search = { search: keyword }; }
+            return $('#example31082023').DataTable(opts);
+        }
+
+        // Ganti tabel dengan hasil AJAX TANPA merusak DataTables
+        function replaceTable(html) {
+            var keyword = '';
+            if ($.fn.DataTable.isDataTable('#example31082023')) {
+                var dt = $('#example31082023').DataTable();
+                keyword = dt.search();      // simpan kata kunci pencarian
+                dt.destroy();               // kembalikan <table> ke kondisi semula
+            }
+            $('#example31082023').replaceWith(html); // ganti elemen <table> lama (bukan isinya)
+            initTable(keyword);             // init ulang DataTables pada tabel baru
+        }
+
+        initTable();
 
  // Menampilkan modal saat tombol "Tambah" diklik
-  $('.add-button').click(function() {
+  $(document).on('click', '.add-button', function() {
     var id = $(this).data('id');
     // Ambil data yang akan diedit dari server dengan AJAX
     $.ajax({
@@ -56,7 +78,7 @@
     });
   });
 // Menampilkan modal saat tombol "Edit" diklik
-  $('.edit-button').click(function() {
+  $(document).on('click', '.edit-button', function() {
     var id = $(this).data('id');
     // Ambil data yang akan diedit dari server dengan AJAX
     $.ajax({
@@ -92,7 +114,7 @@ function reloadTable() {
         url: '<?php echo base_url('baak/mon_llsd3data'); ?>',
         data: { year: $('#year').val(), program_studi: $('#program_studi').val() },
         success: function(response) {
-            $('#example31082023').html(response);
+            replaceTable(response);
         }
     });
 }
