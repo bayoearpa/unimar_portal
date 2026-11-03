@@ -220,6 +220,22 @@
                 </li> -->
               </ul>
         </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-graduation-cap"></i> <span>Mahasiswa 2026</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="<?php echo base_url() ?>ppk2026/data/prada"><i class="fa fa-circle-o"></i> Prada</a></li>
+            <li><a href="<?php echo base_url() ?>ppk2026/lapgiat/lapgiat_prada"><i class="fa fa-circle-o"></i> LapGiat Prada</a></li>
+            <li><a href="<?php echo base_url() ?>ppk2026/data/turun_prada"><i class="fa fa-circle-o"></i> Turun Prada</a></li>
+            <li><a href="<?php echo base_url() ?>ppk2026/lapgiat/lapgiat_pkl"><i class="fa fa-circle-o"></i> LapGiat PKL</a></li>
+            <li><a href="<?php echo base_url() ?>ppk2026/data/turun_pkl"><i class="fa fa-circle-o"></i> Turun PKL</a></li>
+            <li><a href="<?php echo base_url() ?>ppk2026/data/ujian_skripsi"><i class="fa fa-circle-o"></i> Pemberkasan Ujian Skripsi</a></li>
+          </ul>
+        </li>
 
       </ul>
     </section>
