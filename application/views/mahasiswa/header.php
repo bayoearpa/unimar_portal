@@ -226,6 +226,32 @@
           </ul>
         </li>
        <?php } ?>
+        <?php
+        // Menu baru 2026 (Prada, LapGiat, Turun, Ujian Skripsi) - akses prodi diatur di config/mahasiswa2026.php
+        $this->config->load('mahasiswa2026', TRUE);
+        $m26 = $this->config->item('menus', 'mahasiswa2026');
+        $m26_grup = array(
+          'Prada'         => array('fa-graduation-cap', array('prada' => 'Prada', 'lapgiat_prada' => 'LapGiat Prada', 'turun_prada' => 'Turun Prada')),
+          'PKL & Skripsi' => array('fa-file-text-o',    array('lapgiat_pkl' => 'LapGiat PKL', 'turun_pkl' => 'Turun PKL', 'ujian_skripsi' => 'Pemberkasan Ujian Skripsi')),
+        );
+        foreach ($m26_grup as $m26_judul => $m26_g) {
+          $m26_keys = array_keys($m26_g[1]);
+          if (!in_array(trim($this->session->userdata('prodi')), $m26[$m26_keys[0]]['prodi'], TRUE)) { continue; }
+        ?>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa <?php echo $m26_g[0] ?>"></i> <span><?php echo $m26_judul ?></span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <?php foreach ($m26_g[1] as $m26_k => $m26_label) { ?>
+            <li><a href="<?php echo base_url() ?>mahasiswa2026/tampil/<?php echo $m26_k ?>"><i class="fa fa-circle-o"></i><?php echo $m26_label ?></a></li>
+            <?php } ?>
+          </ul>
+        </li>
+        <?php } ?>
       </ul>
     </section>
     <!-- /.sidebar -->
