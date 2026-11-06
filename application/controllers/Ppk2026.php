@@ -17,8 +17,8 @@ class Ppk2026 extends CI_Controller
 
     // Kolom ringkas yang ditampilkan di tabel daftar (nama field dari config)
     private $kolom = [
-        'prada'         => ['nama_perusahaan', 'judul_acc', 'nilai', 'ipk'],
-        'turun_prada'   => ['nama_perusahaan', 'judul_kti', 'tgl_bimbingan'],
+        'prada'         => ['nama_perusahaan', 'telp_perusahaan', 'hp_aktif'],
+        'turun_prada'   => ['nama_perusahaan', 'judul_kti'],
         'turun_pkl'     => ['nama_perusahaan', 'judul', 'nilai_konduite', 'nilai_bimbingan_pkl'],
         'ujian_skripsi' => ['judul', 'nilai_proposal', 'nilai_skripsi'],
     ];
@@ -66,10 +66,15 @@ class Ppk2026 extends CI_Controller
     {
         $this->_boot($key, 'lapgiat');
 
+        $rows = $this->p26->list_data($this->cfg['table']);
+        foreach ($rows as $r) {
+            $r->bulan = $this->m26->bulan_untuk($this->cfg, $r->kode_prodi);
+        }
+
         $data = [
             'key'  => $key,
             'cfg'  => $this->cfg,
-            'rows' => $this->p26->list_data($this->cfg['table']),
+            'rows' => $rows,
         ];
         $this->_render('ppk/lapgiat2026', $data, $key);
     }
@@ -101,8 +106,10 @@ class Ppk2026 extends CI_Controller
             echo 'Data tidak ditemukan.';
             return;
         }
+        $cfg = $this->cfg;
+        $cfg['bulan'] = $this->m26->bulan_untuk($cfg, $row->kode_prodi);
         $this->load->view('ppk/lapgiatcek2026', [
-            'cfg'        => $this->cfg,
+            'cfg'        => $cfg,
             'row'        => $row,
             'upload_url' => $this->config->item('upload_url', 'mahasiswa2026'),
         ]);
@@ -120,7 +127,8 @@ class Ppk2026 extends CI_Controller
 
         $valid = ['proses', 'sudah', 'belum'];
         $data  = [];
-        for ($i = 1; $i <= $this->cfg['bulan']; $i++) {
+        $bulan = $this->m26->bulan_untuk($this->cfg, $row->kode_prodi);
+        for ($i = 1; $i <= $bulan; $i++) {
             $st = $this->input->post('status_lapgiat' . $i);
             if (!in_array($st, $valid, TRUE)) {
                 $st = $row->{'status_lapgiat' . $i};

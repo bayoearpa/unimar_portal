@@ -36,7 +36,23 @@ $warna = ['primary', 'danger', 'success', 'warning', 'info', 'default'];
             Nama: <b><?php echo html_escape(trim($mhs->Nama_mahasiswa)); ?></b> &nbsp;|&nbsp;
             Program Studi: <b><?php echo html_escape(trim($mhs->nama_prodi)); ?></b>
           </p>
-          <p class="text-muted">Format file PDF/JPG/PNG, maksimal 5 MB per laporan.</p>
+          <p class="text-muted">Format file PDF/JPG/PNG, maksimal 5 MB per laporan. Jumlah laporan: <?php echo (int) $cfg['bulan']; ?> bulan.</p>
+
+          <?php if (!empty($download)): ?>
+            <div class="callout callout-info">
+              <h4><i class="fa fa-download"></i> Format Dokumen</h4>
+              <?php foreach ($download as $d): ?>
+                <p>
+                  <?php if ($d['url']): ?>
+                    <a href="<?php echo $d['url']; ?>" target="_blank" class="btn btn-default btn-sm"><i class="fa fa-file-o"></i> <?php echo html_escape($d['label']); ?></a>
+                  <?php else: ?>
+                    <?php echo html_escape($d['label']); ?> <span class="text-muted">(file belum tersedia, hubungi PPK)</span>
+                  <?php endif; ?>
+                </p>
+              <?php endforeach; ?>
+            </div>
+          <?php endif; ?>
+
 
           <?php for ($i = 1; $i <= $cfg['bulan']; $i++):
             $file   = $row ? trim((string) $row->{'lapgiat' . $i}) : '';

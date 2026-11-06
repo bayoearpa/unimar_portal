@@ -18,6 +18,9 @@
 $config['upload_base']     = FCPATH . 'assets/monitoring/';
 // Bagian URL (dipakai base_url()) untuk link unduh file
 $config['upload_url']      = 'assets/monitoring/';
+// Folder file format yang bisa diunduh mahasiswa (nama file dicari otomatis dengan ekstensi apa pun)
+$config['download_dir']    = FCPATH . 'assets/download/';
+$config['download_url']    = 'assets/download/';
 $config['upload_types']    = 'pdf|jpg|jpeg|png';
 $config['upload_max_kb']   = 5120;          // 5 MB per file
 // Session login mahasiswa portal: 'user' = NIM, 'status' = 'login' (lihat Mahasiswa::login)
@@ -62,27 +65,25 @@ $config['menus'] = [
             ],
             $perusahaan,
             [
-                ['name' => 'dosbing1',      'label' => 'Dosen Pembimbing 1', 'type' => 'dosen', 'rules' => $dsn],
-                ['name' => 'dosbing2',      'label' => 'Dosen Pembimbing 2', 'type' => 'dosen', 'rules' => $dsn],
-                ['name' => 'dosen_penguji', 'label' => 'Dosen Penguji',      'type' => 'dosen', 'rules' => $dsn],
-                ['name' => 'judul_acc',     'label' => 'Judul ACC',          'type' => 'text',  'rules' => 'trim|required|max_length[255]'],
-                ['name' => 'tanggal_lulus', 'label' => 'Tanggal Lulus',      'type' => 'date',  'rules' => $tgl],
-                ['name' => 'tgl_date',      'label' => 'Date',               'type' => 'date',  'rules' => $tgl],
-                ['name' => 'nilai',         'label' => 'Nilai',              'type' => 'number', 'rules' => $nilai],
-                ['name' => 'ipk',           'label' => 'IPK',                'type' => 'number', 'rules' => 'trim|required|numeric|greater_than_equal_to[0]|less_than_equal_to[4]'],
-                ['name' => 'file_kliring_ujian', 'label' => 'PDF Scan Kliring Ujian Karya Tulis', 'type' => 'file', 'folder' => 'prada_kliring'],
+                ['name' => 'dosbing1', 'label' => 'Dosen Pembimbing 1', 'type' => 'dosen', 'rules' => $dsn],
+                ['name' => 'dosbing2', 'label' => 'Dosen Pembimbing 2', 'type' => 'dosen', 'rules' => $dsn],
+                ['name' => 'file_signon', 'label' => 'Upload Sign On Prada', 'type' => 'file', 'folder' => 'prada_signon'],
             ]
         ),
     ],
 
-    // 2. LAPGIAT PRADA (4 bulan) ----------------------------------
+    // 2. LAPGIAT PRADA (default 4 bulan; Ketatalaksanaan 6 bulan) ---
     'lapgiat_prada' => [
-        'title'  => 'LapGiat Prada',
-        'type'   => 'lapgiat',
-        'table'  => 'tbl_lapgiat_prada_2026',
-        'prodi'  => $prodi_prada,
-        'bulan'  => 4,
-        'folder' => 'lapgiatprada',
+        'title'       => 'LapGiat Prada',
+        'type'        => 'lapgiat',
+        'table'       => 'tbl_lapgiat_prada_2026',
+        'prodi'       => $prodi_prada,
+        'bulan'       => 4,
+        'bulan_prodi' => ['92401' => 6],   // KPN / Ketatalaksanaan
+        'folder'      => 'lapgiatprada',
+        'download'    => [
+            ['label' => 'Download Format Laporan Bulanan Prada', 'file' => 'Format_laporan_bulanan_prada'],
+        ],
     ],
 
     // 3. TURUN PRADA ----------------------------------------------
@@ -92,20 +93,22 @@ $config['menus'] = [
         'table'  => 'tbl_turun_prada_2026',
         'prodi'  => $prodi_prada,
         'hook'   => 'mon_prada',   // setelah simpan: insert tbl_mon sekali (nim + status_prada=sudah)
+        'download' => [
+            ['label' => 'Download Formulir Pengajuan Judul Karya Tulis D3', 'file' => 'Formulir_Pengajuan_Judul_Karya_Tulis_D3'],
+        ],
         'fields' => array_merge(
             [
                 ['name' => 'no_telp', 'label' => 'No. Telepon', 'type' => 'tel', 'rules' => $hp],
             ],
             $perusahaan,
             [
-                ['name' => 'judul_kti',     'label' => 'Judul KTI',          'type' => 'text',  'rules' => 'trim|required|max_length[255]'],
-                ['name' => 'dosbing1',      'label' => 'Dosen Pembimbing 1', 'type' => 'dosen', 'rules' => $dsn],
-                ['name' => 'dosbing2',      'label' => 'Dosen Pembimbing 2', 'type' => 'dosen', 'rules' => $dsn],
-                ['name' => 'tgl_bimbingan', 'label' => 'Tanggal Bimbingan',  'type' => 'date',  'rules' => $tgl],
-                ['name' => 'file_kliring',  'label' => 'Scan Semua Kliring Turun Prada', 'type' => 'file', 'folder' => 'turunprada_kliring'],
-                ['name' => 'file_signoff',  'label' => 'Upload Signoff',                 'type' => 'file', 'folder' => 'turunprada_signoff'],
-                ['name' => 'file_conduite', 'label' => 'Upload Conduite Prada',          'type' => 'file', 'folder' => 'turunprada_conduite'],
-                ['name' => 'file_humas',    'label' => 'File Humas',                     'type' => 'file', 'folder' => 'turunprada_humas'],
+                ['name' => 'judul_kti', 'label' => 'Judul KTI',          'type' => 'text',  'rules' => 'trim|required|max_length[255]'],
+                ['name' => 'dosbing1',  'label' => 'Dosen Pembimbing 1', 'type' => 'dosen', 'rules' => $dsn],
+                ['name' => 'dosbing2',  'label' => 'Dosen Pembimbing 2', 'type' => 'dosen', 'rules' => $dsn],
+                ['name' => 'file_form_judul', 'label' => 'Upload Form Pengajuan Judul (diketahui Dosbing 1 dan 2)', 'type' => 'file', 'folder' => 'turunprada_formjudul'],
+                ['name' => 'file_signoff',  'label' => 'Upload Signoff',        'type' => 'file', 'folder' => 'turunprada_signoff'],
+                ['name' => 'file_conduite', 'label' => 'Upload Conduite Prada', 'type' => 'file', 'folder' => 'turunprada_conduite'],
+                ['name' => 'file_humas',    'label' => 'File Humas',            'type' => 'file', 'folder' => 'turunprada_humas'],
             ]
         ),
     ],

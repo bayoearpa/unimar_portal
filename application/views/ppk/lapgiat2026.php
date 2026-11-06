@@ -24,7 +24,7 @@
             <tbody>
               <?php foreach ($rows as $r):
                 $up = $ok = $no = $wait = 0;
-                for ($i = 1; $i <= $cfg['bulan']; $i++) {
+                for ($i = 1; $i <= $r->bulan; $i++) {
                     if (trim((string) $r->{'lapgiat' . $i}) === '') { continue; }
                     $up++;
                     $st = $r->{'status_lapgiat' . $i};
@@ -35,7 +35,7 @@
                   <td><?php echo html_escape(trim($r->nim)); ?></td>
                   <td><?php echo html_escape(trim((string) $r->Nama_mahasiswa)); ?></td>
                   <td><?php echo html_escape(trim((string) $r->nama_prodi)); ?></td>
-                  <td><?php echo $up . ' / ' . $cfg['bulan']; ?></td>
+                  <td><?php echo $up . ' / ' . $r->bulan; ?></td>
                   <td><span class="label label-success"><?php echo $ok; ?></span></td>
                   <td><span class="label label-danger"><?php echo $no; ?></span></td>
                   <td><span class="label label-warning"><?php echo $wait; ?></span></td>

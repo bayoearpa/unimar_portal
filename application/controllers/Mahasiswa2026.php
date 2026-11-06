@@ -217,6 +217,11 @@ class Mahasiswa2026 extends CI_Controller
         if (!$this->mhs || !in_array(trim($this->mhs->Kode_program_studi), $this->cfg['prodi'], TRUE)) {
             show_error('Menu ini tidak tersedia untuk program studi Anda.', 403, 'Akses ditolak');
         }
+
+        // Jumlah bulan laporan bisa berbeda per prodi (mis. Ketatalaksanaan 6 bulan)
+        if ($this->cfg['type'] === 'lapgiat') {
+            $this->cfg['bulan'] = $this->m26->bulan_untuk($this->cfg, $this->mhs->Kode_program_studi);
+        }
     }
 
     private function _tampil(array $errors = [])
@@ -228,6 +233,7 @@ class Mahasiswa2026 extends CI_Controller
             'row'        => $this->m26->get_row($this->cfg['table'], $this->nim),
             'errors'     => $errors,
             'upload_url' => $this->_c('upload_url'),
+            'download'   => $this->_download_links(),
         ];
 
         if ($this->cfg['type'] === 'form') {
@@ -236,6 +242,23 @@ class Mahasiswa2026 extends CI_Controller
         } else {
             $this->_render('mahasiswa/lapgiat2026', $data);
         }
+    }
+
+    /** Link unduh format dokumen (cfg['download']); url NULL bila file belum ada di assets/download. */
+    private function _download_links()
+    {
+        $out = [];
+        if (empty($this->cfg['download'])) {
+            return $out;
+        }
+        foreach ($this->cfg['download'] as $d) {
+            $file = $this->m26->cari_file_download($d['file']);
+            $out[] = [
+                'label' => $d['label'],
+                'url'   => $file ? base_url() . $this->_c('download_url') . rawurlencode($file) : NULL,
+            ];
+        }
+        return $out;
     }
 
     /** Template portal mahasiswa (AdminLTE): header + sidebar, isi, footer. */

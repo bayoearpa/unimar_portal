@@ -79,4 +79,25 @@ class Mahasiswa2026_model extends CI_Model
 
         return $ok;
     }
+
+    /** Jumlah bulan laporan untuk prodi tertentu (cfg['bulan_prodi'] menimpa cfg['bulan']). */
+    public function bulan_untuk(array $cfg, $kode_prodi)
+    {
+        $kode = trim((string) $kode_prodi);
+        if (isset($cfg['bulan_prodi'][$kode])) {
+            return (int) $cfg['bulan_prodi'][$kode];
+        }
+        return isset($cfg['bulan']) ? (int) $cfg['bulan'] : 0;
+    }
+
+    /**
+     * Cari file format unduhan di folder assets/download tanpa peduli ekstensi.
+     * Kembalian: nama file lengkap (mis. Format_x.docx) atau NULL jika belum ada.
+     */
+    public function cari_file_download($nama)
+    {
+        $dir = $this->config->item('download_dir', 'mahasiswa2026');
+        $hit = glob($dir . $nama . '.*');
+        return $hit ? basename($hit[0]) : NULL;
+    }
 }
